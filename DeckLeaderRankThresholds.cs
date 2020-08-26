@@ -24,18 +24,18 @@ public class DeckLeaderRankThresholds
 		"SD"
 	};
 	public string[] rankImages = {
-		"images/leader_ranks/1_2LT.png",
-		"images/leader_ranks/2_1LT.png",
-		"images/leader_ranks/3_CPT.png",
-		"images/leader_ranks/4_MAJ.png",
-		"images/leader_ranks/5_LTC.png",
-		"images/leader_ranks/6_COL.png",
-		"images/leader_ranks/7_BG.png",
-		"images/leader_ranks/8_RADM.png",
-		"images/leader_ranks/9_VADM.png",
-		"images/leader_ranks/10_ADM.png",
-		"images/leader_ranks/11_SADM.png",
-		"images/leader_ranks/12_SD.png"
+		"images/deck_leader_ranks/1_2LT.png",
+		"images/deck_leader_ranks/2_1LT.png",
+		"images/deck_leader_ranks/3_CPT.png",
+		"images/deck_leader_ranks/4_MAJ.png",
+		"images/deck_leader_ranks/5_LTC.png",
+		"images/deck_leader_ranks/6_COL.png",
+		"images/deck_leader_ranks/7_BG.png",
+		"images/deck_leader_ranks/8_RADM.png",
+		"images/deck_leader_ranks/9_VADM.png",
+		"images/deck_leader_ranks/10_ADM.png",
+		"images/deck_leader_ranks/11_SADM.png",
+		"images/deck_leader_ranks/12_SD.png"
 	};
 
 	public byte[] ByteData
@@ -103,8 +103,10 @@ public class DeckLeaderRankThresholdRow
 		this.Rank = rankName;
 		this.Threshold = threshold;
 
-		string projectPath = "D:\\Git\\dotr_deck_leader_threshold\\DOTR Deck Leader Thresholds\\DOTR Deck Leader Thresholds\\";
-		string path = Path.Combine(projectPath, imagePath);
+		string workingDirectory = Environment.CurrentDirectory;
+		string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+
+		string path = Path.Combine(projectDirectory, imagePath);
 		Image ogImage = Image.FromFile(path);
 		Image = (Image)(new Bitmap(ogImage, new Size(30, 30)));
 	}

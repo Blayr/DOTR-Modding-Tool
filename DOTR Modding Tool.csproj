@@ -82,7 +82,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\testrank.jpg" />
+    <Content Include="images\deck_leader_ranks\10_ADM.png" />
+    <Content Include="images\deck_leader_ranks\11_SADM.png" />
+    <Content Include="images\deck_leader_ranks\12_SD.png" />
+    <Content Include="images\deck_leader_ranks\1_2LT.png" />
+    <Content Include="images\deck_leader_ranks\2_1LT.png" />
+    <Content Include="images\deck_leader_ranks\3_CPT.png" />
+    <Content Include="images\deck_leader_ranks\4_MAJ.png" />
+    <Content Include="images\deck_leader_ranks\5_LTC.png" />
+    <Content Include="images\deck_leader_ranks\6_COL.png" />
+    <Content Include="images\deck_leader_ranks\7_BG.png" />
+    <Content Include="images\deck_leader_ranks\8_RADM.png" />
+    <Content Include="images\deck_leader_ranks\9_VADM.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
