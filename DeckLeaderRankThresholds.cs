@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class DeckLeaderRankThresholds
 {
-  public static readonly int SLUSByteOffset = 2754898;
   public List<ushort> Thresholds = new List<ushort>(new ushort[12]);
   public string[] RankNames =
   {
@@ -46,6 +45,7 @@ public class DeckLeaderRankThresholds
   public DeckLeaderRankThresholds(byte[] byteData)
   {
     this.ByteData = byteData;
+    this.ForceUpdateThresholds();
   }
 
   public DeckLeaderRankThresholds(ushort[] thresholds) => Buffer.BlockCopy(thresholds, 0, this.ByteData, 0, this.ByteData.Length);
