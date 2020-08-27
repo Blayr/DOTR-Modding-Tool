@@ -80,7 +80,7 @@
       this.openISOMenuItem.Name = "openISOMenuItem";
       this.openISOMenuItem.Size = new System.Drawing.Size(69, 20);
       this.openISOMenuItem.Text = "Open ISO";
-      this.openISOMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
+      this.openISOMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
       // 
       // tabControl1
       // 
@@ -177,7 +177,7 @@
       this.button1.TabIndex = 18;
       this.button1.Text = "button1";
       this.button1.UseVisualStyleBackColor = true;
-      this.button1.Click += new System.EventHandler(this.button1_Click);
+      this.button1.Click += new System.EventHandler(this.Button1_Click);
       // 
       // MainForm
       // 

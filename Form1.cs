@@ -25,22 +25,22 @@
       openFileDialog1.Title = "Open DOTR ISO file";
       // openSelectISODialog();
       openIso("C:\\Users\\Blair\\Desktop\\DOTR_NTSC_TEST.iso");
-      loadLeaderTresholdData();
+      LoadLeaderTresholdData();
       PopulateDataGridView();
     }
 
-    private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+    private void FileToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      openSelectISODialog();
+      OpenSelectISODialog();
     }
 
-    private void openSelectISODialog()
+    private void OpenSelectISODialog()
     {
       if (openFileDialog1.ShowDialog() != DialogResult.OK) { return; }
 
       rankThresholdsTextbox.Text = openFileDialog1.FileName;
       openIso(openFileDialog1.FileName);
-      loadLeaderTresholdData();
+      LoadLeaderTresholdData();
     }
 
     private void openIso(string filePath)
@@ -58,38 +58,38 @@
       }
     }
 
-    private void loadLeaderTresholdData()
+    private void LoadLeaderTresholdData()
     {
       lock (FileStreamLock)
       {
-        fileStream.Seek(DeckLeaderRankThresholds.SLUS_RANK_BYTE_OFFSET, SeekOrigin.Begin);
+        fileStream.Seek(DeckLeaderRankThresholds.SLUSByteOffset, SeekOrigin.Begin);
         fileStream.Read(deckLeaderRankThresholds.ByteData, 0, deckLeaderRankThresholds.ByteData.Length);
       }
 
-      deckLeaderRankThresholds.forceUpdateThresholds();
+      deckLeaderRankThresholds.ForceUpdateThresholds();
       rankThresholdsTextbox.Text = "Byte data: " + BitConverter.ToString(deckLeaderRankThresholds.ByteData);
     }
 
     private void PopulateDataGridView()
     {
-      rankThresholdsDataGridView.DataSource = deckLeaderRankThresholds.tableData();
+      rankThresholdsDataGridView.DataSource = deckLeaderRankThresholds.TableData;
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void Button1_Click(object sender, EventArgs e)
     {
 
 
-      for (int i = 0; i < deckLeaderRankThresholds.thresholds.Count; i++)
+      for (int i = 0; i < deckLeaderRankThresholds.Thresholds.Count; i++)
       {
         DataGridViewRow row = rankThresholdsDataGridView.Rows[i];
         // deckLeaderRankThresholds[i] = row[2];
       }
 
-      //test = test.ToList();
+      // test = test.ToList();
       // new DeckLeaderRankThresholds(test.Select(x => x.threshold))
 
-      //fs.Seek(DeckLeaderRankThresholds.SLUS_RANK_BYTE_OFFSET, SeekOrigin.Begin);
-      //fs.Write(deckLeaderRankThresholds.ByteData, 0, deckLeaderRankThresholds.ByteData.Length);
+      // fs.Seek(DeckLeaderRankThresholds.SLUS_RANK_BYTE_OFFSET, SeekOrigin.Begin);
+      // fs.Write(deckLeaderRankThresholds.ByteData, 0, deckLeaderRankThresholds.ByteData.Length);
     }
   }
 }

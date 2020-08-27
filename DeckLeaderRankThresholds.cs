@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 
 public class DeckLeaderRankThresholds
 {
-  public static int SLUS_RANK_BYTE_OFFSET = 2754898;
-
-  private byte[] byteData = new byte[24];
-  public List<ushort> thresholds = new List<ushort>(new ushort[12]);
-  public string[] rankNames = {
+  public static readonly int SLUSByteOffset = 2754898;
+  public List<ushort> Thresholds = new List<ushort>(new ushort[12]);
+  public string[] RankNames =
+  {
     "2LT",
     "1LT",
     "CPT",
@@ -23,7 +20,9 @@ public class DeckLeaderRankThresholds
     "SADM",
     "SD"
   };
-  public string[] rankImages = {
+
+  public string[] RankImages =
+  {
     "images/deck_leader_ranks/1_2LT.png",
     "images/deck_leader_ranks/2_1LT.png",
     "images/deck_leader_ranks/3_CPT.png",
@@ -38,77 +37,65 @@ public class DeckLeaderRankThresholds
     "images/deck_leader_ranks/12_SD.png"
   };
 
-  public byte[] ByteData
-  {
-    get { return byteData; }
-    set
-    {
-      byteData = value;
-      setThresholdsWithBytes(byteData);
-    }
-  }
+  private byte[] byteData = new byte[24];
 
-  public ushort this[int i]
-  {
-    get => thresholds[i];
-    set => thresholds[i] = value;
+  public DeckLeaderRankThresholds() {
   }
-
-  public DeckLeaderRankThresholds() { }
 
   public DeckLeaderRankThresholds(byte[] byteData)
   {
     this.ByteData = byteData;
   }
 
-  public DeckLeaderRankThresholds(ushort[] _thresholds)
+  public DeckLeaderRankThresholds(ushort[] thresholds) => Buffer.BlockCopy(thresholds, 0, this.ByteData, 0, this.ByteData.Length);
+
+  public byte[] ByteData
   {
-    Buffer.BlockCopy(_thresholds, 0, ByteData, 0, ByteData.Length);
+    get
+    {
+      return this.byteData;
+    }
+
+    set
+    {
+      this.byteData = value;
+      this.SetThresholdsWithBytes(this.byteData);
+    }
   }
 
-  private void setThresholdsWithBytes(byte[] bytes)
+  public DeckLeaderRankThresholdRow[] TableData
   {
-    for (int thresholdsIndex = 0; thresholdsIndex < thresholds.Count; thresholdsIndex++)
+    get
+    {
+      DeckLeaderRankThresholdRow[] rows = new DeckLeaderRankThresholdRow[12];
+
+      for (int i = 0; i < this.Thresholds.Count; i++)
+      {
+        rows[i] = new DeckLeaderRankThresholdRow(this.RankImages[i], this.RankNames[i], this.Thresholds[i]);
+      }
+
+      return rows;
+    }
+  }
+
+  public ushort this[int i]
+  {
+    get => this.Thresholds[i];
+    set => this.Thresholds[i] = value;
+  }
+
+  public void ForceUpdateThresholds()
+  {
+    this.SetThresholdsWithBytes(this.byteData);
+  }
+
+  private void SetThresholdsWithBytes(byte[] bytes)
+  {
+    for (int thresholdsIndex = 0; thresholdsIndex < this.Thresholds.Count; thresholdsIndex++)
     {
       int bytesIndex = thresholdsIndex * 2;
-      byte[] thresholdBytes = new byte[] { this.byteData[bytesIndex], this.byteData[bytesIndex + 1] };
+      byte[] thresholdBytes = new byte[] { bytes[bytesIndex], bytes[bytesIndex + 1] };
       this[thresholdsIndex] = BitConverter.ToUInt16(thresholdBytes, 0);
     }
-  }
-
-  public void forceUpdateThresholds()
-  {
-    setThresholdsWithBytes(this.byteData);
-  }
-
-  public DeckLeaderRankThresholdRow[] tableData()
-  {
-    DeckLeaderRankThresholdRow[] rows = new DeckLeaderRankThresholdRow[12];
-
-    for (int i = 0; i < thresholds.Count; i++)
-    {
-      rows[i] = new DeckLeaderRankThresholdRow(rankImages[i], rankNames[i], thresholds[i]);
-    }
-
-    return rows;
-  }
-}
-public class DeckLeaderRankThresholdRow
-{
-  public Image Image { get; set; }
-  public string Rank { get; set; }
-  public ushort Threshold { get; set; }
-
-  public DeckLeaderRankThresholdRow(string imagePath, string rankName, ushort threshold)
-  {
-    this.Rank = rankName;
-    this.Threshold = threshold;
-
-    string workingDirectory = Environment.CurrentDirectory;
-    string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
-
-    string path = Path.Combine(projectDirectory, imagePath);
-    Image ogImage = Image.FromFile(path);
-    Image = (Image)(new Bitmap(ogImage, new Size(30, 30)));
   }
 }
