@@ -1,17 +1,14 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Security;
-using System.Windows.Forms;
-using System.Linq;
-
-namespace DOTR_Deck_Leader_Thresholds
+﻿namespace DOTR_Deck_Leader_Thresholds
 {
+  using System;
+  using System.IO;
+  using System.Security;
+  using System.Windows.Forms;
+
   public partial class MainForm : Form
   {
-
-    private static readonly object fsLock = new object();
-    private static FileStream fs;
+    private static readonly object FileStreamLock = new object();
+    private static FileStream fileStream;
     private DeckLeaderRankThresholds deckLeaderRankThresholds = new DeckLeaderRankThresholds();
 
 
@@ -50,9 +47,9 @@ namespace DOTR_Deck_Leader_Thresholds
     {
       try
       {
-        if (fs != null) { fs.Dispose(); }
+        if (fileStream != null) { fileStream.Dispose(); }
 
-        fs = new FileStream(filePath, FileMode.Open);
+        fileStream = new FileStream(filePath, FileMode.Open);
       }
       catch (SecurityException ex)
       {
@@ -63,10 +60,10 @@ namespace DOTR_Deck_Leader_Thresholds
 
     private void loadLeaderTresholdData()
     {
-      lock (fsLock)
+      lock (FileStreamLock)
       {
-        fs.Seek(DeckLeaderRankThresholds.SLUS_RANK_BYTE_OFFSET, SeekOrigin.Begin);
-        fs.Read(deckLeaderRankThresholds.ByteData, 0, deckLeaderRankThresholds.ByteData.Length);
+        fileStream.Seek(DeckLeaderRankThresholds.SLUS_RANK_BYTE_OFFSET, SeekOrigin.Begin);
+        fileStream.Read(deckLeaderRankThresholds.ByteData, 0, deckLeaderRankThresholds.ByteData.Length);
       }
 
       deckLeaderRankThresholds.forceUpdateThresholds();
@@ -75,16 +72,16 @@ namespace DOTR_Deck_Leader_Thresholds
 
     private void PopulateDataGridView()
     {
-      RankThresholdsDataGridView.DataSource = deckLeaderRankThresholds.tableData();
+      rankThresholdsDataGridView.DataSource = deckLeaderRankThresholds.tableData();
     }
 
     private void button1_Click(object sender, EventArgs e)
     {
-      
+
 
       for (int i = 0; i < deckLeaderRankThresholds.thresholds.Count; i++)
       {
-        DataGridViewRow row = RankThresholdsDataGridView.Rows[i];
+        DataGridViewRow row = rankThresholdsDataGridView.Rows[i];
         // deckLeaderRankThresholds[i] = row[2];
       }
 
@@ -93,11 +90,6 @@ namespace DOTR_Deck_Leader_Thresholds
 
       //fs.Seek(DeckLeaderRankThresholds.SLUS_RANK_BYTE_OFFSET, SeekOrigin.Begin);
       //fs.Write(deckLeaderRankThresholds.ByteData, 0, deckLeaderRankThresholds.ByteData.Length);
-    }
-
-    private void leaderRankTresholdsTabControl_Click(object sender, EventArgs e)
-    {
-
     }
   }
 }

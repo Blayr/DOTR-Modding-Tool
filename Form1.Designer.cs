@@ -1,56 +1,64 @@
-﻿using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Security;
-using System.Windows.Forms;
-
-namespace DOTR_Deck_Leader_Thresholds
+﻿namespace DOTR_Deck_Leader_Thresholds
 {
-    partial class MainForm
+  using System.Windows.Forms;
+
+  partial class MainForm
+  {
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+    private System.Windows.Forms.OpenFileDialog openFileDialog1;
+    private System.Windows.Forms.MenuStrip menuStrip1;
+    private System.Windows.Forms.ToolStripMenuItem openISOMenuItem;
+    private TabControl tabControl1;
+    private TabPage leaderRankTresholdsTabControl;
+    private TextBox rankThresholdsTextbox;
+    private DataGridView rankThresholdsDataGridView;
+    private DataGridViewImageColumn rankImageColumn;
+    private DataGridViewTextBoxColumn rankNameColumn;
+    private DataGridViewTextBoxColumn rankThresholdColumn;
+    private TabPage tabPage1;
+    private Button button1;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+      if (disposing && (this.components != null))
+      {
+        this.components.Dispose();
+      }
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+      base.Dispose(disposing);
+    }
 
-        #region Windows Form Designer generated code
+    #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.leaderRankTresholdsTabControl = new System.Windows.Forms.TabPage();
-      this.RankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
+      this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
       this.rankThresholdsTextbox = new System.Windows.Forms.TextBox();
-      this.RankImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-      this.RankNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.RankThresholdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.rankImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+      this.rankNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.rankThresholdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.button1 = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.RankThresholdsDataGridView)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).BeginInit();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -76,8 +84,8 @@ namespace DOTR_Deck_Leader_Thresholds
       // 
       // tabControl1
       // 
-      this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+      this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tabControl1.Controls.Add(this.leaderRankTresholdsTabControl);
       this.tabControl1.Controls.Add(this.tabPage1);
@@ -90,7 +98,7 @@ namespace DOTR_Deck_Leader_Thresholds
       // leaderRankTresholdsTabControl
       // 
       this.leaderRankTresholdsTabControl.Controls.Add(this.button1);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.RankThresholdsDataGridView);
+      this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsDataGridView);
       this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsTextbox);
       this.leaderRankTresholdsTabControl.Location = new System.Drawing.Point(4, 22);
       this.leaderRankTresholdsTabControl.Name = "leaderRankTresholdsTabControl";
@@ -99,26 +107,25 @@ namespace DOTR_Deck_Leader_Thresholds
       this.leaderRankTresholdsTabControl.TabIndex = 0;
       this.leaderRankTresholdsTabControl.Text = "Rank Thresholds";
       this.leaderRankTresholdsTabControl.UseVisualStyleBackColor = true;
-      this.leaderRankTresholdsTabControl.Click += new System.EventHandler(this.leaderRankTresholdsTabControl_Click);
       // 
       // RankThresholdsDataGridView
       // 
-      this.RankThresholdsDataGridView.AllowUserToAddRows = false;
-      this.RankThresholdsDataGridView.AllowUserToDeleteRows = false;
-      this.RankThresholdsDataGridView.AllowUserToResizeColumns = false;
-      this.RankThresholdsDataGridView.AllowUserToResizeRows = false;
-      this.RankThresholdsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.RankThresholdsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RankImageColumn,
-            this.RankNameColumn,
-            this.RankThresholdColumn});
-      this.RankThresholdsDataGridView.Location = new System.Drawing.Point(-4, 0);
-      this.RankThresholdsDataGridView.MultiSelect = false;
-      this.RankThresholdsDataGridView.Name = "RankThresholdsDataGridView";
-      this.RankThresholdsDataGridView.RowHeadersVisible = false;
-      this.RankThresholdsDataGridView.RowTemplate.Height = 30;
-      this.RankThresholdsDataGridView.Size = new System.Drawing.Size(315, 426);
-      this.RankThresholdsDataGridView.TabIndex = 17;
+      this.rankThresholdsDataGridView.AllowUserToAddRows = false;
+      this.rankThresholdsDataGridView.AllowUserToDeleteRows = false;
+      this.rankThresholdsDataGridView.AllowUserToResizeColumns = false;
+      this.rankThresholdsDataGridView.AllowUserToResizeRows = false;
+      this.rankThresholdsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.rankThresholdsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rankImageColumn,
+            this.rankNameColumn,
+            this.rankThresholdColumn});
+      this.rankThresholdsDataGridView.Location = new System.Drawing.Point(-4, 0);
+      this.rankThresholdsDataGridView.MultiSelect = false;
+      this.rankThresholdsDataGridView.Name = "RankThresholdsDataGridView";
+      this.rankThresholdsDataGridView.RowHeadersVisible = false;
+      this.rankThresholdsDataGridView.RowTemplate.Height = 30;
+      this.rankThresholdsDataGridView.Size = new System.Drawing.Size(315, 426);
+      this.rankThresholdsDataGridView.TabIndex = 17;
       // 
       // rankThresholdsTextbox
       // 
@@ -132,25 +139,25 @@ namespace DOTR_Deck_Leader_Thresholds
       // 
       // RankImageColumn
       // 
-      this.RankImageColumn.DataPropertyName = "Image";
-      this.RankImageColumn.Frozen = true;
-      this.RankImageColumn.HeaderText = "";
-      this.RankImageColumn.Name = "RankImageColumn";
-      this.RankImageColumn.ReadOnly = true;
+      this.rankImageColumn.DataPropertyName = "Image";
+      this.rankImageColumn.Frozen = true;
+      this.rankImageColumn.HeaderText = string.Empty;
+      this.rankImageColumn.Name = "RankImageColumn";
+      this.rankImageColumn.ReadOnly = true;
       // 
       // RankNameColumn
       // 
-      this.RankNameColumn.DataPropertyName = "Rank";
-      this.RankNameColumn.Frozen = true;
-      this.RankNameColumn.HeaderText = "Rank";
-      this.RankNameColumn.Name = "RankNameColumn";
-      this.RankNameColumn.ReadOnly = true;
+      this.rankNameColumn.DataPropertyName = "Rank";
+      this.rankNameColumn.Frozen = true;
+      this.rankNameColumn.HeaderText = "Rank";
+      this.rankNameColumn.Name = "RankNameColumn";
+      this.rankNameColumn.ReadOnly = true;
       // 
       // RankThresholdColumn
       // 
-      this.RankThresholdColumn.DataPropertyName = "Threshold";
-      this.RankThresholdColumn.HeaderText = "Threshold";
-      this.RankThresholdColumn.Name = "RankThresholdColumn";
+      this.rankThresholdColumn.DataPropertyName = "Threshold";
+      this.rankThresholdColumn.HeaderText = "Threshold";
+      this.rankThresholdColumn.Name = "RankThresholdColumn";
       // 
       // tabPage1
       // 
@@ -189,25 +196,11 @@ namespace DOTR_Deck_Leader_Thresholds
       this.tabControl1.ResumeLayout(false);
       this.leaderRankTresholdsTabControl.ResumeLayout(false);
       this.leaderRankTresholdsTabControl.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.RankThresholdsDataGridView)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
+    }
 
-        }
-
-        #endregion
-
-    private System.Windows.Forms.OpenFileDialog openFileDialog1;
-    private System.Windows.Forms.MenuStrip menuStrip1;
-    private System.Windows.Forms.ToolStripMenuItem openISOMenuItem;
-    private TabControl tabControl1;
-    private TabPage leaderRankTresholdsTabControl;
-    private TextBox rankThresholdsTextbox;
-    private DataGridView RankThresholdsDataGridView;
-    private DataGridViewImageColumn RankImageColumn;
-    private DataGridViewTextBoxColumn RankNameColumn;
-    private DataGridViewTextBoxColumn RankThresholdColumn;
-    private TabPage tabPage1;
-    private Button button1;
+    #endregion
   }
 }
