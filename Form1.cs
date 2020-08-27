@@ -11,10 +11,9 @@
     private static FileStream fileStream;
     private DeckLeaderRankThresholds deckLeaderRankThresholds = new DeckLeaderRankThresholds();
 
-
     public MainForm()
     {
-      InitializeComponent();
+      this.InitializeComponent();
     }
 
     private void Form1_Load(object sender, EventArgs e)
@@ -24,30 +23,36 @@
       openFileDialog1.Filter = "ISO files (*.iso)|*.iso";
       openFileDialog1.Title = "Open DOTR ISO file";
       // openSelectISODialog();
-      openIso("C:\\Users\\Blair\\Desktop\\DOTR_NTSC_TEST.iso");
-      LoadLeaderTresholdData();
-      PopulateDataGridView();
+      this.OpenIso("C:\\Users\\Blair\\Desktop\\DOTR_NTSC_TEST.iso");
+      this.LoadLeaderTresholdData();
+      this.PopulateDataGridView();
     }
 
     private void FileToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      OpenSelectISODialog();
+      this.OpenSelectISODialog();
     }
 
     private void OpenSelectISODialog()
     {
-      if (openFileDialog1.ShowDialog() != DialogResult.OK) { return; }
+      if (openFileDialog1.ShowDialog() != DialogResult.OK)
+      {
+        return;
+      }
 
       rankThresholdsTextbox.Text = openFileDialog1.FileName;
-      openIso(openFileDialog1.FileName);
-      LoadLeaderTresholdData();
+      this.OpenIso(openFileDialog1.FileName);
+      this.LoadLeaderTresholdData();
     }
 
-    private void openIso(string filePath)
+    private void OpenIso(string filePath)
     {
       try
       {
-        if (fileStream != null) { fileStream.Dispose(); }
+        if (fileStream != null)
+        {
+          fileStream.Dispose();
+        }
 
         fileStream = new FileStream(filePath, FileMode.Open);
       }
@@ -63,23 +68,21 @@
       lock (FileStreamLock)
       {
         fileStream.Seek(DeckLeaderRankThresholds.SLUSByteOffset, SeekOrigin.Begin);
-        fileStream.Read(deckLeaderRankThresholds.ByteData, 0, deckLeaderRankThresholds.ByteData.Length);
+        fileStream.Read(this.deckLeaderRankThresholds.ByteData, 0, this.deckLeaderRankThresholds.ByteData.Length);
       }
 
-      deckLeaderRankThresholds.ForceUpdateThresholds();
-      rankThresholdsTextbox.Text = "Byte data: " + BitConverter.ToString(deckLeaderRankThresholds.ByteData);
+      this.deckLeaderRankThresholds.ForceUpdateThresholds();
+      this.rankThresholdsTextbox.Text = "Byte data: " + BitConverter.ToString(this.deckLeaderRankThresholds.ByteData);
     }
 
     private void PopulateDataGridView()
     {
-      rankThresholdsDataGridView.DataSource = deckLeaderRankThresholds.TableData;
+      rankThresholdsDataGridView.DataSource = this.deckLeaderRankThresholds.TableData;
     }
 
     private void Button1_Click(object sender, EventArgs e)
     {
-
-
-      for (int i = 0; i < deckLeaderRankThresholds.Thresholds.Count; i++)
+      for (int i = 0; i < this.deckLeaderRankThresholds.Thresholds.Count; i++)
       {
         DataGridViewRow row = rankThresholdsDataGridView.Rows[i];
         // deckLeaderRankThresholds[i] = row[2];

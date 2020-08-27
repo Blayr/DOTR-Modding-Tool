@@ -39,7 +39,8 @@ public class DeckLeaderRankThresholds
 
   private byte[] byteData = new byte[24];
 
-  public DeckLeaderRankThresholds() {
+  public DeckLeaderRankThresholds()
+  {
   }
 
   public DeckLeaderRankThresholds(byte[] byteData)
