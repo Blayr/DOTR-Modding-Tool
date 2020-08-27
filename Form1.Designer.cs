@@ -2,7 +2,7 @@
 {
   using System.Windows.Forms;
 
-  partial class MainForm
+  public partial class MainForm
   {
     /// <summary>
     /// Required designer variable.
