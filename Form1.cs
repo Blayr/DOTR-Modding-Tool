@@ -65,8 +65,6 @@
       // test = test.ToList();
       // new DeckLeaderRankThresholds(test.Select(x => x.threshold))
 
-      // fs.Seek(DeckLeaderRankThresholds.SLUS_RANK_BYTE_OFFSET, SeekOrigin.Begin);
-      // fs.Write(deckLeaderRankThresholds.ByteData, 0, deckLeaderRankThresholds.ByteData.Length);
     }
   }
 }
