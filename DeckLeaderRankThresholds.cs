@@ -1,9 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 
 public class DeckLeaderRankThresholds
 {
-  public List<ushort> Thresholds = new List<ushort>(new ushort[12]);
+  private byte totalRanks = 12;
+  public List<DeckLeaderRankThreshold> Thresholds = new List<DeckLeaderRankThreshold> { };
+
+  public DeckLeaderRankThresholds(byte[] byteData)
+  {
+    this.SetThresholdsWithBytes(byteData);
+  }
+
+  public void SetThresholdsWithBytes(byte[] bytes)
+  {
+    for (byte thresholdsIndex = 0; thresholdsIndex < totalRanks; thresholdsIndex++)
+    {
+      int bytesIndex = thresholdsIndex * 2;
+      byte[] thresholdBytes = new byte[] { bytes[bytesIndex], bytes[bytesIndex + 1] };
+      this.Thresholds.Add(new DeckLeaderRankThreshold(thresholdsIndex, thresholdBytes));
+    }
+  }
+
+  public byte[] Bytes
+  {
+    get
+    {
+      return this.Thresholds.SelectMany(x => x.Bytes).ToArray();
+    }
+  }
+}
+
+public class DeckLeaderRankThreshold {
   public string[] RankNames =
   {
     "2LT",
@@ -35,68 +65,76 @@ public class DeckLeaderRankThresholds
     "images/deck_leader_ranks/11_SADM.png",
     "images/deck_leader_ranks/12_SD.png"
   };
-
-  private byte[] byteData = new byte[24];
-
-  public DeckLeaderRankThresholds()
+  public DeckLeaderRankThreshold(byte rankIndex, byte[] byteData)
   {
+    this.Bytes = byteData;
+    this.rankIndex = rankIndex;
+    this.rankName = RankNames[this.rankIndex];
+    this.SetRankImage();
   }
 
-  public DeckLeaderRankThresholds(byte[] byteData)
+  public void SetThresholdWithBytes(byte[] byteData)
   {
-    this.ByteData = byteData;
-    this.ForceUpdateThresholds();
+    this.threshold = BitConverter.ToUInt16(new byte[] { byteData[0], byteData[1] }, 0);
   }
 
-  public DeckLeaderRankThresholds(ushort[] thresholds) => Buffer.BlockCopy(thresholds, 0, this.ByteData, 0, this.ByteData.Length);
+  public void SetRankImage()
+  {
+    string workingDirectory = Environment.CurrentDirectory;
+    string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
 
-  public byte[] ByteData
+    string path = Path.Combine(projectDirectory, this.RankImages[this.rankIndex]);
+    Image originalImage = Image.FromFile(path);
+    this.rankImage = (Image)(new Bitmap(originalImage, new Size(30, 30)));
+  }
+
+  private byte rankIndex;
+  private byte[] bytes;
+  private ushort threshold;
+  private string rankName;
+  private Image rankImage;
+
+  public byte[] Bytes
   {
     get
     {
-      return this.byteData;
+      return this.bytes;
     }
 
     set
     {
-      this.byteData = value;
-      this.SetThresholdsWithBytes(this.byteData);
+      this.bytes = value;
+      this.SetThresholdWithBytes(this.bytes);
     }
   }
 
-  public DeckLeaderRankThresholdRow[] TableData
+  public ushort Threshold
   {
     get
     {
-      DeckLeaderRankThresholdRow[] rows = new DeckLeaderRankThresholdRow[12];
+      return this.threshold;
+    }
 
-      for (int i = 0; i < this.Thresholds.Count; i++)
-      {
-        rows[i] = new DeckLeaderRankThresholdRow(this.RankImages[i], this.RankNames[i], this.Thresholds[i]);
-      }
-
-      return rows;
+    set
+    {
+      this.threshold = value;
+      this.bytes = BitConverter.GetBytes(this.threshold);
     }
   }
 
-  public ushort this[int i]
+  public string RankName
   {
-    get => this.Thresholds[i];
-    set => this.Thresholds[i] = value;
-  }
-
-  public void ForceUpdateThresholds()
-  {
-    this.SetThresholdsWithBytes(this.byteData);
-  }
-
-  private void SetThresholdsWithBytes(byte[] bytes)
-  {
-    for (int thresholdsIndex = 0; thresholdsIndex < this.Thresholds.Count; thresholdsIndex++)
+    get
     {
-      int bytesIndex = thresholdsIndex * 2;
-      byte[] thresholdBytes = new byte[] { bytes[bytesIndex], bytes[bytesIndex + 1] };
-      this[thresholdsIndex] = BitConverter.ToUInt16(thresholdBytes, 0);
+      return this.rankName;
+    }
+  }
+
+  public Image RankImage
+  {
+    get
+    {
+      return this.rankImage;
     }
   }
 }

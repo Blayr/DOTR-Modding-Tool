@@ -13,11 +13,8 @@
     private System.Windows.Forms.ToolStripMenuItem openISOMenuItem;
     private TabControl tabControl1;
     private TabPage leaderRankTresholdsTabControl;
-    private TextBox rankThresholdsTextbox;
+    private TextBox originalRankThresholdsTextbox;
     private DataGridView rankThresholdsDataGridView;
-    private DataGridViewImageColumn rankImageColumn;
-    private DataGridViewTextBoxColumn rankNameColumn;
-    private DataGridViewTextBoxColumn rankThresholdColumn;
     private TabPage tabPage1;
     private Button button1;
 
@@ -48,13 +45,13 @@
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.leaderRankTresholdsTabControl = new System.Windows.Forms.TabPage();
-      this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
-      this.rankThresholdsTextbox = new System.Windows.Forms.TextBox();
-      this.rankImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-      this.rankNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.rankThresholdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.textBox2 = new System.Windows.Forms.TextBox();
+      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.newRankThresholdsTextbox = new System.Windows.Forms.TextBox();
       this.button1 = new System.Windows.Forms.Button();
+      this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
+      this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
+      this.tabPage1 = new System.Windows.Forms.TabPage();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -84,8 +81,8 @@
       // 
       // tabControl1
       // 
-      this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+      this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tabControl1.Controls.Add(this.leaderRankTresholdsTabControl);
       this.tabControl1.Controls.Add(this.tabPage1);
@@ -97,9 +94,12 @@
       // 
       // leaderRankTresholdsTabControl
       // 
+      this.leaderRankTresholdsTabControl.Controls.Add(this.textBox2);
+      this.leaderRankTresholdsTabControl.Controls.Add(this.textBox1);
+      this.leaderRankTresholdsTabControl.Controls.Add(this.newRankThresholdsTextbox);
       this.leaderRankTresholdsTabControl.Controls.Add(this.button1);
       this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsDataGridView);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsTextbox);
+      this.leaderRankTresholdsTabControl.Controls.Add(this.originalRankThresholdsTextbox);
       this.leaderRankTresholdsTabControl.Location = new System.Drawing.Point(4, 22);
       this.leaderRankTresholdsTabControl.Name = "leaderRankTresholdsTabControl";
       this.leaderRankTresholdsTabControl.Padding = new System.Windows.Forms.Padding(3);
@@ -108,56 +108,72 @@
       this.leaderRankTresholdsTabControl.Text = "Rank Thresholds";
       this.leaderRankTresholdsTabControl.UseVisualStyleBackColor = true;
       // 
-      // RankThresholdsDataGridView
+      // textBox2
+      // 
+      this.textBox2.BackColor = System.Drawing.SystemColors.Window;
+      this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.textBox2.Location = new System.Drawing.Point(317, 25);
+      this.textBox2.Name = "textBox2";
+      this.textBox2.ReadOnly = true;
+      this.textBox2.Size = new System.Drawing.Size(71, 13);
+      this.textBox2.TabIndex = 22;
+      this.textBox2.Text = "New Bytes:";
+      // 
+      // textBox1
+      // 
+      this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+      this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.textBox1.Location = new System.Drawing.Point(317, 6);
+      this.textBox1.Name = "textBox1";
+      this.textBox1.ReadOnly = true;
+      this.textBox1.Size = new System.Drawing.Size(71, 13);
+      this.textBox1.TabIndex = 21;
+      this.textBox1.Text = "Orignal Bytes:";
+      // 
+      // newRankThresholdsTextbox
+      // 
+      this.newRankThresholdsTextbox.BackColor = System.Drawing.SystemColors.Window;
+      this.newRankThresholdsTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.newRankThresholdsTextbox.Location = new System.Drawing.Point(438, 25);
+      this.newRankThresholdsTextbox.Name = "newRankThresholdsTextbox";
+      this.newRankThresholdsTextbox.ReadOnly = true;
+      this.newRankThresholdsTextbox.Size = new System.Drawing.Size(493, 13);
+      this.newRankThresholdsTextbox.TabIndex = 20;
+      // 
+      // button1
+      // 
+      this.button1.Location = new System.Drawing.Point(385, 114);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(75, 23);
+      this.button1.TabIndex = 18;
+      this.button1.Text = "Save";
+      this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.Button1_Click);
+      // 
+      // rankThresholdsDataGridView
       // 
       this.rankThresholdsDataGridView.AllowUserToAddRows = false;
       this.rankThresholdsDataGridView.AllowUserToDeleteRows = false;
       this.rankThresholdsDataGridView.AllowUserToResizeColumns = false;
       this.rankThresholdsDataGridView.AllowUserToResizeRows = false;
       this.rankThresholdsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.rankThresholdsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rankImageColumn,
-            this.rankNameColumn,
-            this.rankThresholdColumn});
       this.rankThresholdsDataGridView.Location = new System.Drawing.Point(-4, 0);
       this.rankThresholdsDataGridView.MultiSelect = false;
-      this.rankThresholdsDataGridView.Name = "RankThresholdsDataGridView";
+      this.rankThresholdsDataGridView.Name = "rankThresholdsDataGridView";
       this.rankThresholdsDataGridView.RowHeadersVisible = false;
       this.rankThresholdsDataGridView.RowTemplate.Height = 30;
       this.rankThresholdsDataGridView.Size = new System.Drawing.Size(315, 426);
       this.rankThresholdsDataGridView.TabIndex = 17;
       // 
-      // rankThresholdsTextbox
+      // originalRankThresholdsTextbox
       // 
-      this.rankThresholdsTextbox.BackColor = System.Drawing.SystemColors.Window;
-      this.rankThresholdsTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.rankThresholdsTextbox.Location = new System.Drawing.Point(329, 39);
-      this.rankThresholdsTextbox.Name = "rankThresholdsTextbox";
-      this.rankThresholdsTextbox.ReadOnly = true;
-      this.rankThresholdsTextbox.Size = new System.Drawing.Size(493, 13);
-      this.rankThresholdsTextbox.TabIndex = 0;
-      // 
-      // RankImageColumn
-      // 
-      this.rankImageColumn.DataPropertyName = "Image";
-      this.rankImageColumn.Frozen = true;
-      this.rankImageColumn.HeaderText = string.Empty;
-      this.rankImageColumn.Name = "RankImageColumn";
-      this.rankImageColumn.ReadOnly = true;
-      // 
-      // RankNameColumn
-      // 
-      this.rankNameColumn.DataPropertyName = "Rank";
-      this.rankNameColumn.Frozen = true;
-      this.rankNameColumn.HeaderText = "Rank";
-      this.rankNameColumn.Name = "RankNameColumn";
-      this.rankNameColumn.ReadOnly = true;
-      // 
-      // RankThresholdColumn
-      // 
-      this.rankThresholdColumn.DataPropertyName = "Threshold";
-      this.rankThresholdColumn.HeaderText = "Threshold";
-      this.rankThresholdColumn.Name = "RankThresholdColumn";
+      this.originalRankThresholdsTextbox.BackColor = System.Drawing.SystemColors.Window;
+      this.originalRankThresholdsTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.originalRankThresholdsTextbox.Location = new System.Drawing.Point(438, 6);
+      this.originalRankThresholdsTextbox.Name = "originalRankThresholdsTextbox";
+      this.originalRankThresholdsTextbox.ReadOnly = true;
+      this.originalRankThresholdsTextbox.Size = new System.Drawing.Size(493, 13);
+      this.originalRankThresholdsTextbox.TabIndex = 0;
       // 
       // tabPage1
       // 
@@ -168,16 +184,6 @@
       this.tabPage1.TabIndex = 1;
       this.tabPage1.Text = "tabPage1";
       this.tabPage1.UseVisualStyleBackColor = true;
-      // 
-      // button1
-      // 
-      this.button1.Location = new System.Drawing.Point(394, 84);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(75, 23);
-      this.button1.TabIndex = 18;
-      this.button1.Text = "button1";
-      this.button1.UseVisualStyleBackColor = true;
-      this.button1.Click += new System.EventHandler(this.Button1_Click);
       // 
       // MainForm
       // 
@@ -199,8 +205,13 @@
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
+
     }
 
     #endregion
+
+    private TextBox newRankThresholdsTextbox;
+    private TextBox textBox2;
+    private TextBox textBox1;
   }
 }
