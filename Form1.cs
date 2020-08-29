@@ -1,6 +1,7 @@
 ﻿namespace DOTR_Deck_Leader_Thresholds
 {
   using System;
+  using System.Diagnostics;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -21,8 +22,13 @@
       this.openFileDialog1.FileName = "dotr.iso";
       this.openFileDialog1.Filter = "ISO files (*.iso)|*.iso";
       this.openFileDialog1.Title = "Open DOTR ISO file";
-      //// openSelectISODialog();
-      this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\DOTR_NTSC_TEST.iso");
+
+      #if DEBUG
+        this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\DOTR_NTSC_TEST.iso");
+      #else
+        this.OpenSelectISODialog();
+      #endif
+
       this.LoadLeaderTresholdData();
     }
 
