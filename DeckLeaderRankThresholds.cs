@@ -19,6 +19,7 @@ public class DeckLeaderRankThresholds
     for (byte thresholdsIndex = 0; thresholdsIndex < totalRanks; thresholdsIndex++)
     {
       int bytesIndex = thresholdsIndex * 2;
+      // Insert the bytes here in reverse order, as the word size is 4, and the PS2 processor architecture is little-endian
       byte[] thresholdBytes = new byte[] { bytes[bytesIndex], bytes[bytesIndex + 1] };
       this.Thresholds.Add(new DeckLeaderRankThreshold(thresholdsIndex, thresholdBytes));
     }

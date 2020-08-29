@@ -24,7 +24,6 @@
       //// openSelectISODialog();
       this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\DOTR_NTSC_TEST.iso");
       this.LoadLeaderTresholdData();
-      this.PopulateDataGridView();
     }
 
     private void SetupRankThresholdDataGridView()
@@ -86,16 +85,13 @@
       this.originalDeckLeaderRankThresholds = new DeckLeaderRankThresholds(byteData);
       this.newDeckLeaderRankThresholds = new DeckLeaderRankThresholds(byteData);
       this.DisplayThresholdBytes(this.originalRankThresholdsTextbox, this.originalDeckLeaderRankThresholds.Bytes);
-    }
-
-    private void PopulateDataGridView()
-    {
-      rankThresholdsDataGridView.DataSource = this.newDeckLeaderRankThresholds.Thresholds;
+      this.rankThresholdsDataGridView.DataSource = this.newDeckLeaderRankThresholds.Thresholds;
     }
 
     private void Button1_Click(object sender, EventArgs e)
     {
-    
+      this.dataAccess.SetDeckLeaderTresholds(this.newDeckLeaderRankThresholds.Bytes);
+      this.LoadLeaderTresholdData();
     }
   }
 }
