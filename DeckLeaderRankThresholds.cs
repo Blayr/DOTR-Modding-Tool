@@ -86,7 +86,7 @@ public class DeckLeaderRankThreshold {
 
     string path = Path.Combine(projectDirectory, this.RankImages[this.rankIndex]);
     Image originalImage = Image.FromFile(path);
-    this.rankImage = (Image)(new Bitmap(originalImage, new Size(30, 30)));
+    this.rankImage = new Bitmap(originalImage, new Size(30, 30));
   }
 
   private byte rankIndex;
