@@ -49,6 +49,35 @@
       rankThresholdColumn.ReadOnly = false;
       this.rankThresholdsDataGridView.Columns.Add(rankThresholdColumn);
       this.rankThresholdsDataGridView.CellValueChanged += this.RankThresholdDataGridView_CellValueChanged;
+      this.rankThresholdsDataGridView.DataError += this.CorrectInvalidRankThreshold;
+    }
+
+    private void CorrectInvalidRankThreshold(object sender, DataGridViewDataErrorEventArgs e)
+    {
+      DataGridViewCell cell = this.rankThresholdsDataGridView[e.ColumnIndex, e.RowIndex];
+      string cellValue = (string)cell.EditedFormattedValue;
+
+      ushort newThresholdValue;
+      int inputtedNumber;
+
+      if (!Int32.TryParse(cellValue, out inputtedNumber))
+      {
+        newThresholdValue = (ushort)cell.Value;
+      }
+      else if (inputtedNumber < ushort.MinValue)
+      {
+        newThresholdValue = ushort.MinValue;
+      }
+      else if (inputtedNumber > ushort.MaxValue)
+      {
+        newThresholdValue = ushort.MaxValue;
+      } else
+      {
+        newThresholdValue = (ushort)cell.Value;
+      }
+
+      cell.Value = newThresholdValue;
+      e.Cancel = false;
     }
 
     private void RankThresholdDataGridView_CellValueChanged(
