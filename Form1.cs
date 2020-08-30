@@ -9,6 +9,7 @@
     private DataAccess dataAccess = new DataAccess();
     private DeckLeaderRankThresholds originalDeckLeaderRankThresholds;
     private DeckLeaderRankThresholds newDeckLeaderRankThresholds;
+    private CardConstants cardConstants;
 
     public MainForm()
     {
@@ -30,6 +31,7 @@
       #endif
 
       byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
+      this.cardConstants = new CardConstants(cardConstantsBytes);
 
       this.LoadLeaderTresholdData();
     }
