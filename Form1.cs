@@ -29,6 +29,8 @@
         this.OpenSelectISODialog();
       #endif
 
+      byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
+
       this.LoadLeaderTresholdData();
     }
 
