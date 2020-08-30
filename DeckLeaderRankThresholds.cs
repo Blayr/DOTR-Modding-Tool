@@ -1,11 +1,8 @@
-﻿using DOTR_Deck_Leader_Thresholds;
-using DOTR_MODDING_TOOL.Properties;
+﻿using DOTR_MODDING_TOOL.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Windows.Forms.PropertyGridInternal;
 
 public class DeckLeaderRankThresholds
 {

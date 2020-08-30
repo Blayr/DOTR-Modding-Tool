@@ -8,7 +8,7 @@ public class CardConstants
 
 	public CardConstants(byte[][] bytes)
 	{
-		for (ushort i = 0; i < 857; i++)
+		for (ushort i = 0; i < Cards.TotalCardCount; i++)
     {
 			Constants.Add(new CardConstant(i, bytes[i]));
     }
@@ -46,7 +46,7 @@ public class CardConstant
 		this.deckCost = bytes[3];
 		this.effectId = BitConverter.ToUInt16(new byte[] { bytes[4], bytes[5] }, 0);
 		this.xaxId = BitConverter.ToUInt16(new byte[] { bytes[4], bytes[5] }, 0);
-		this.name = CardName.GetNameByIndex(cardIndex);
+		this.name = Cards.GetNameByIndex(cardIndex);
 	}
 
 	public ushort Index

@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Runtime.Versioning;
 using DOTR_MODDING_TOOL.Properties;
 
-public class CardName
+public class Cards
 {
+  public static readonly ushort TotalCardCount = 854;
   public static string[] cardNameList;
 
-  static CardName()
+  static Cards()
   {
-    CardName.cardNameList = Resources.CardList.ToString().Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+    Cards.cardNameList = Resources.CardList.ToString().Split(new[] { Environment.NewLine }, StringSplitOptions.None);
   }
 
   public static string GetNameByIndex(ushort index)

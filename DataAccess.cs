@@ -6,7 +6,7 @@ public class DataAccess
   public static readonly int DeckLeaderRankThresholdByteLength = 24;
   public static readonly int SLUSCardConstantsByteOffset = 2683264;
   public static readonly int CardConstantByteLength = 20;
-  public static readonly int CardConstantCount = 857;
+  public static readonly int CardConstantCount = Cards.TotalCardCount;
 
   private static readonly object FileStreamLock = new object();
 	private static FileStream fileStream;
