@@ -61,6 +61,42 @@ namespace DOTR_MODDING_TOOL.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blue Eyes White Dragon
+        ///Seiyaryu
+        ///Blue-Eyes Ultimate Dragon
+        ///Kaiser Dragon
+        ///Blackland Fire Dragon
+        ///Koumori Dragon
+        ///Curse of Dragon 
+        ///Red Eyes Black Dragon
+        ///Darkfire Dragon
+        ///B. Skull Dragon
+        ///Tri-Horned Dragon
+        ///Serpent Night Dragon
+        ///Mikazukinoyaiba
+        ///Yamadron
+        ///Meteor B Dragon
+        ///Tyhone #2  
+        ///Ryu-Ran
+        ///Manga Ryu-Ran
+        ///Crawling Dragon  
+        ///Meteor Dragon
+        ///B. Dragon Jungle King
+        ///Baby Dragon
+        ///Winged Dragon, Guardian of the Fortress #1
+        ///Gaia the Dragon Champion 
+        ///Thousand Dragon
+        ///Yamatano Dragon Scroll
+        ///Petit Dragon 
+        ///One [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string CardList {
+            get {
+                return ResourceManager.GetString("CardList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap DeckRank_1_2LT {
