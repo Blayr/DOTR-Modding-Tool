@@ -48,4 +48,28 @@ public class CardConstant
 		this.xaxId = BitConverter.ToUInt16(new byte[] { bytes[4], bytes[5] }, 0);
 		this.name = CardName.GetNameByIndex(cardIndex);
 	}
+
+	public ushort Index
+  {
+    get
+    {
+			return this.cardIndex;
+    }
+  }
+
+	public string Name
+  {
+		get
+    {
+			return this.name;
+    }
+  }
+
+	public ushort DeckCost
+  {
+		get
+    {
+			return this.deckCost;
+    }
+  }
 }

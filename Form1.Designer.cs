@@ -52,10 +52,13 @@
       this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
       this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
       this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).BeginInit();
+      this.tabPage1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).BeginInit();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -177,13 +180,22 @@
       // 
       // tabPage1
       // 
+      this.tabPage1.Controls.Add(this.cardConstantsDataGridView);
       this.tabPage1.Location = new System.Drawing.Point(4, 22);
       this.tabPage1.Name = "tabPage1";
       this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
       this.tabPage1.Size = new System.Drawing.Size(850, 426);
       this.tabPage1.TabIndex = 1;
-      this.tabPage1.Text = "tabPage1";
+      this.tabPage1.Text = "Card Constants";
       this.tabPage1.UseVisualStyleBackColor = true;
+      // 
+      // cardConstantsDataGridView
+      // 
+      this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.cardConstantsDataGridView.Location = new System.Drawing.Point(-4, 0);
+      this.cardConstantsDataGridView.Name = "cardConstantsDataGridView";
+      this.cardConstantsDataGridView.Size = new System.Drawing.Size(627, 430);
+      this.cardConstantsDataGridView.TabIndex = 0;
       // 
       // MainForm
       // 
@@ -203,6 +215,8 @@
       this.leaderRankTresholdsTabControl.ResumeLayout(false);
       this.leaderRankTresholdsTabControl.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).EndInit();
+      this.tabPage1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -213,5 +227,6 @@
     private TextBox newRankThresholdsTextbox;
     private TextBox textBox2;
     private TextBox textBox1;
+    private DataGridView cardConstantsDataGridView;
   }
 }

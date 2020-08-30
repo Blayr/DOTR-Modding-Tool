@@ -34,6 +34,7 @@
       this.cardConstants = new CardConstants(cardConstantsBytes);
 
       this.LoadLeaderTresholdData();
+      this.cardConstantsDataGridView.DataSource = this.cardConstants.Constants;
     }
 
     private void SetupRankThresholdDataGridView()
