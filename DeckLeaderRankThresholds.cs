@@ -1,8 +1,11 @@
-﻿using System;
+﻿using DOTR_Deck_Leader_Thresholds;
+using DOTR_MODDING_TOOL.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms.PropertyGridInternal;
 
 public class DeckLeaderRankThresholds
 {
@@ -51,20 +54,20 @@ public class DeckLeaderRankThreshold {
     "SD"
   };
 
-  public string[] RankImages =
+  public Image[] RankImages =
   {
-    "images/deck_leader_ranks/1_2LT.png",
-    "images/deck_leader_ranks/2_1LT.png",
-    "images/deck_leader_ranks/3_CPT.png",
-    "images/deck_leader_ranks/4_MAJ.png",
-    "images/deck_leader_ranks/5_LTC.png",
-    "images/deck_leader_ranks/6_COL.png",
-    "images/deck_leader_ranks/7_BG.png",
-    "images/deck_leader_ranks/8_RADM.png",
-    "images/deck_leader_ranks/9_VADM.png",
-    "images/deck_leader_ranks/10_ADM.png",
-    "images/deck_leader_ranks/11_SADM.png",
-    "images/deck_leader_ranks/12_SD.png"
+    Resources.DeckRank_1_2LT,
+    Resources.DeckRank_2_1LT,
+    Resources.DeckRank_3_CPT,
+    Resources.DeckRank_4_MAJ,
+    Resources.DeckRank_5_LTC,
+    Resources.DeckRank_6_COL,
+    Resources.DeckRank_7_BG,
+    Resources.DeckRank_8_RADM,
+    Resources.DeckRank_9_VADM,
+    Resources.DeckRank_10_ADM,
+    Resources.DeckRank_11_SADM,
+    Resources.DeckRank_12_SD
   };
   public DeckLeaderRankThreshold(byte rankIndex, byte[] byteData)
   {
@@ -81,12 +84,7 @@ public class DeckLeaderRankThreshold {
 
   public void SetRankImage()
   {
-    string workingDirectory = Environment.CurrentDirectory;
-    string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
-
-    string path = Path.Combine(projectDirectory, this.RankImages[this.rankIndex]);
-    Image originalImage = Image.FromFile(path);
-    this.rankImage = new Bitmap(originalImage, new Size(30, 30));
+    this.rankImage = new Bitmap(RankImages[this.rankIndex], new Size(30, 30));
   }
 
   private byte rankIndex;

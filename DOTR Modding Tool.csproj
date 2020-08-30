@@ -83,6 +83,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\DeckRank_1_2LT.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="images\deck_leader_ranks\10_ADM.png" />
     <Content Include="images\deck_leader_ranks\11_SADM.png" />
     <Content Include="images\deck_leader_ranks\12_SD.png" />
