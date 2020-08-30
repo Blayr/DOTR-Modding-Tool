@@ -191,10 +191,16 @@
       // 
       // cardConstantsDataGridView
       // 
+      this.cardConstantsDataGridView.AllowUserToAddRows = false;
+      this.cardConstantsDataGridView.AllowUserToDeleteRows = false;
+      this.cardConstantsDataGridView.AllowUserToOrderColumns = true;
+      this.cardConstantsDataGridView.AllowUserToResizeRows = false;
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.cardConstantsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
       this.cardConstantsDataGridView.Location = new System.Drawing.Point(-4, 0);
+      this.cardConstantsDataGridView.MultiSelect = false;
       this.cardConstantsDataGridView.Name = "cardConstantsDataGridView";
-      this.cardConstantsDataGridView.Size = new System.Drawing.Size(627, 430);
+      this.cardConstantsDataGridView.Size = new System.Drawing.Size(858, 430);
       this.cardConstantsDataGridView.TabIndex = 0;
       // 
       // MainForm
