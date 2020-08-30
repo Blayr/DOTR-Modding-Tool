@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardConstants.cs" />
-    <Compile Include="CardName.cs" />
+    <Compile Include="CardKind.cs" />
+    <Compile Include="Cards.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

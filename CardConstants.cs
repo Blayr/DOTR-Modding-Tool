@@ -21,6 +21,7 @@ public class CardConstant
 	string name;
 	byte[] bytes;
 	byte kind;
+	CardKind cardKind;
 	byte kindOfs;
 	byte lvAttr;
 	byte deckCost;
@@ -41,6 +42,7 @@ public class CardConstant
 		this.cardIndex = cardIndex;
 		this.bytes = bytes;
 		this.kind = bytes[0];
+		this.cardKind = new CardKind(this.kind);
 		this.kindOfs = bytes[1];
 		this.lvAttr = bytes[2];
 		this.deckCost = bytes[3];
@@ -70,6 +72,30 @@ public class CardConstant
 		get
     {
 			return this.deckCost;
+    }
+  }
+
+	public byte Kind
+  {
+    get
+    {
+			return this.kind;
+    }
+  }
+
+	public string KindName
+  {
+    get
+    {
+			return this.cardKind.Name;
+    }
+  }
+
+	public ushort EffectId
+  {
+    get
+    {
+			return this.effectId;
     }
   }
 }
