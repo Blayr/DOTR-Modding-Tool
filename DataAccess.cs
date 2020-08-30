@@ -35,7 +35,7 @@ public class DataAccess
       {
         byte[] buffer = new byte[CardConstantByteLength];
         int cardIndexOffset = CardConstantByteLength * cardIndex;
-        fileStream.Seek(DataAccess.SLUSDeckLeaderRankThresholdsByteOffset + cardIndexOffset, SeekOrigin.Begin);
+        fileStream.Seek(DataAccess.SLUSCardConstantsByteOffset + cardIndexOffset, SeekOrigin.Begin);
         fileStream.Read(buffer, 0, buffer.Length);
         cardConstantsBytes[cardIndex] = buffer;
       }
