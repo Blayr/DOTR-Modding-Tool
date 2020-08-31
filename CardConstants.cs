@@ -28,6 +28,8 @@ public class CardConstant
 	CardKind cardKind;
 	byte kindOfs;
 	byte lvAttr;
+	byte level;
+	byte attribute;
 	byte deckCost;
 	ushort effectId;
 	ushort xaxId;
@@ -51,6 +53,8 @@ public class CardConstant
 		this.cardKind = new CardKind(this.kind);
 		this.kindOfs = bytes[1];
 		this.lvAttr = bytes[2];
+		this.level = CardConstant.GetLevel(bytes);
+		this.attribute = CardConstant.GetAttribute(bytes);
 		this.deckCost = bytes[3];
 		this.effectId = BitConverter.ToUInt16(new byte[] { bytes[4], bytes[5] }, 0);
 		this.xaxId = BitConverter.ToUInt16(new byte[] { bytes[6], bytes[7] }, 0);
@@ -77,6 +81,36 @@ public class CardConstant
 		byte[] newBytes = new byte[2];
 		bitArray.CopyTo(newBytes, 0);
 		return BitConverter.ToUInt16(newBytes, 0);
+	}
+
+	public static byte GetLevel(byte[] bytes)
+  {
+		BitArray tempBitArray = new BitArray(new byte[] { bytes[2] });
+		BitArray halfByteBitArray = new BitArray(4);
+		halfByteBitArray[0] = tempBitArray[4];
+		halfByteBitArray[1] = tempBitArray[5];
+		halfByteBitArray[2] = tempBitArray[6];
+		halfByteBitArray[3] = tempBitArray[7];
+
+		byte[] level = new byte[1];
+		halfByteBitArray.CopyTo(level, 0);
+
+		return level[0];
+  }
+
+	public static byte GetAttribute(byte[] bytes)
+	{
+		BitArray tempBitArray = new BitArray(new byte[] { bytes[2] });
+		BitArray halfByteBitArray = new BitArray(4);
+		halfByteBitArray[0] = tempBitArray[0];
+		halfByteBitArray[1] = tempBitArray[1];
+		halfByteBitArray[2] = tempBitArray[2];
+		halfByteBitArray[3] = tempBitArray[3];
+
+		byte[] attribute = new byte[1];
+		halfByteBitArray.CopyTo(attribute, 0);
+
+		return attribute[0];
 	}
 
 	public ushort Index
@@ -116,6 +150,22 @@ public class CardConstant
     get
     {
 			return this.effectId;
+    }
+  }
+
+	public byte Level
+  {
+    get
+    {
+			return this.level;
+    }
+  }
+
+	public byte Attribute
+  {
+    get
+    {
+			return this.attribute;
     }
   }
 

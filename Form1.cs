@@ -124,6 +124,7 @@
       byte[] byteData = this.dataAccess.LoadLeaderTresholdData();
       this.originalDeckLeaderRankThresholds = new DeckLeaderRankThresholds(byteData);
       this.newDeckLeaderRankThresholds = new DeckLeaderRankThresholds(byteData);
+
       this.DisplayThresholdBytes(this.originalRankThresholdsTextbox, this.originalDeckLeaderRankThresholds.Bytes);
       this.rankThresholdsDataGridView.DataSource = this.newDeckLeaderRankThresholds.Thresholds;
     }
