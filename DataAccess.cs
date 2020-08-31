@@ -44,6 +44,17 @@ public class DataAccess
     return cardConstantsBytes;
   }
 
+  public byte[][] SetCardConstantData(byte[] byteData)
+  {
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(DataAccess.SLUSCardConstantsByteOffset, SeekOrigin.Begin);
+      fileStream.Write(byteData, 0, byteData.Length);
+    }
+
+    return this.LoadCardConstantData();
+  }
+
   public byte[] LoadLeaderTresholdData()
   {
     byte[] buffer = new byte[24];
