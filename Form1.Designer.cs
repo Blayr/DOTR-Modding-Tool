@@ -53,6 +53,8 @@
       this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
+      this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.DeckCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -196,12 +198,31 @@
       this.cardConstantsDataGridView.AllowUserToOrderColumns = true;
       this.cardConstantsDataGridView.AllowUserToResizeRows = false;
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.DeckCost});
+      this.cardConstantsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.cardConstantsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-      this.cardConstantsDataGridView.Location = new System.Drawing.Point(-4, 0);
+      this.cardConstantsDataGridView.Location = new System.Drawing.Point(3, 3);
       this.cardConstantsDataGridView.MultiSelect = false;
       this.cardConstantsDataGridView.Name = "cardConstantsDataGridView";
-      this.cardConstantsDataGridView.Size = new System.Drawing.Size(858, 430);
+      this.cardConstantsDataGridView.Size = new System.Drawing.Size(844, 420);
       this.cardConstantsDataGridView.TabIndex = 0;
+      // 
+      // ID
+      // 
+      this.ID.DataPropertyName = "Index";
+      this.ID.HeaderText = "ID";
+      this.ID.Name = "ID";
+      this.ID.ReadOnly = true;
+      this.ID.Width = 26;
+      // 
+      // DeckCost
+      // 
+      this.DeckCost.DataPropertyName = "DeckCost";
+      this.DeckCost.HeaderText = "DC";
+      this.DeckCost.Name = "DeckCost";
+      this.DeckCost.Width = 30;
       // 
       // MainForm
       // 
@@ -234,5 +255,7 @@
     private TextBox textBox2;
     private TextBox textBox1;
     private DataGridView cardConstantsDataGridView;
+    private DataGridViewTextBoxColumn ID;
+    private DataGridViewTextBoxColumn DeckCost;
   }
 }

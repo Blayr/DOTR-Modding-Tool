@@ -32,7 +32,6 @@
 
       byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
       this.cardConstants = new CardConstants(cardConstantsBytes);
-
       this.LoadLeaderTresholdData();
       this.cardConstantsDataGridView.DataSource = this.cardConstants.Constants;
     }
