@@ -1,10 +1,6 @@
-﻿using DOTR_MODDING_TOOL.Properties;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO.Ports;
-using System.Security.Policy;
-using System.Text;
 
 public class CardConstants
 {
@@ -115,6 +111,38 @@ public class CardConstant
 		return attribute[0];
 	}
 
+	private byte[] calculateByteSequence()
+	{
+		byte[] newByteArray = new byte[20];
+		newByteArray[0] = this.kind;
+		newByteArray[1] = this.kindOfs;
+		newByteArray[2] = this.lvAttr;
+		newByteArray[3] = this.deckCost;
+		newByteArray[4] = BitConverter.GetBytes(this.effectId)[0];
+		newByteArray[5] = BitConverter.GetBytes(this.effectId)[1];
+		newByteArray[6] = BitConverter.GetBytes(this.xaxId)[0];
+		newByteArray[7] = BitConverter.GetBytes(this.xaxId)[1];
+		byte[] apWithFlagsByteArray = new byte[2];
+		this.apWithFlags.CopyTo(apWithFlagsByteArray, 0);
+		newByteArray[8] = apWithFlagsByteArray[0];
+		newByteArray[9] = apWithFlagsByteArray[1];
+		byte[] dpWithFlagsByteArray = new byte[2];
+		this.dpWithFlags.CopyTo(dpWithFlagsByteArray, 0);
+		newByteArray[10] = dpWithFlagsByteArray[0];
+		newByteArray[11] = dpWithFlagsByteArray[1];
+		this.passwordArray.CopyTo(newByteArray, 12);
+
+		return newByteArray;
+	}
+
+	public byte[] Bytes
+  {
+    get
+    {
+			return this.calculateByteSequence();
+    }
+  }
+
 	public ushort Index
   {
     get
@@ -201,6 +229,11 @@ public class CardConstant
     {
 			return this.appearsInSlotReels;
     }
+    set
+    {
+			this.appearsInSlotReels = value;
+			this.dpWithFlags[this.dpWithFlags.Length - 3] = this.appearsInSlotReels;
+    }
   }
 
 	public bool AppearsInReincarnation
@@ -209,6 +242,11 @@ public class CardConstant
     {
 			return this.appearsInReincarnation;
     }
+    set
+    {
+			this.appearsInReincarnation = value;
+			this.apWithFlags[this.apWithFlags.Length - 1] = this.appearsInReincarnation;
+    }
   }
 
 	public bool PasswordWorks
@@ -216,6 +254,11 @@ public class CardConstant
     get
     {
 			return this.passwordWorks;
+    }
+    set
+    {
+			this.passwordWorks = value;
+			this.apWithFlags[apWithFlags.Length - 2] = this.passwordWorks;
     }
   }
 
