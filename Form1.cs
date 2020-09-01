@@ -36,6 +36,18 @@
     private void SetupCardConstantsDataGridView()
     {
       this.cardConstantsDataGridView.AutoGenerateColumns = false;
+      this.cardConstantsDataGridView.LostFocus += OnDataGridViewLostFocus;
+    }
+
+    private void OnDataGridViewLostFocus(object sender, System.EventArgs e)
+    {
+      // Ensure the datagridviews edits are commited when selecting the menustrip
+      DataGridView dataGridView = (DataGridView)sender;
+
+      if (dataGridView.IsCurrentCellInEditMode && dataGridView.IsCurrentCellDirty)
+      {
+        dataGridView.EndEdit();
+      }
     }
 
     private void SetupRankThresholdDataGridView()
@@ -62,6 +74,7 @@
       this.rankThresholdsDataGridView.Columns.Add(rankThresholdColumn);
       this.rankThresholdsDataGridView.CellValueChanged += this.RankThresholdDataGridView_CellValueChanged;
       this.rankThresholdsDataGridView.DataError += this.CorrectInvalidRankThreshold;
+      this.rankThresholdsDataGridView.LostFocus += OnDataGridViewLostFocus;
     }
 
     private void CorrectInvalidRankThreshold(object sender, DataGridViewDataErrorEventArgs e)
@@ -159,6 +172,12 @@
       byte[] cardConstantsBytes = this.cardConstants.Bytes;
       this.dataAccess.SetCardConstantData(cardConstantsBytes);
       this.LoadCardConstantsData();
+    }
+
+    private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      // Ensure the menustrip is focused so that the datagridview changes are commited
+      this.menuStrip1.Focus();
     }
   }
 }

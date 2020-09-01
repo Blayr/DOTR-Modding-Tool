@@ -43,6 +43,8 @@
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.saveCardConstantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.leaderRankTresholdsTabControl = new System.Windows.Forms.TabPage();
       this.textBox2 = new System.Windows.Forms.TextBox();
@@ -62,8 +64,6 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.saveCardConstantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -93,6 +93,22 @@
       this.openISOMenuItem.Size = new System.Drawing.Size(69, 20);
       this.openISOMenuItem.Text = "Open ISO";
       this.openISOMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
+      // 
+      // saveToolStripMenuItem
+      // 
+      this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveCardConstantsToolStripMenuItem});
+      this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+      this.saveToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+      this.saveToolStripMenuItem.Text = "Save";
+      this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+      // 
+      // saveCardConstantsToolStripMenuItem
+      // 
+      this.saveCardConstantsToolStripMenuItem.Name = "saveCardConstantsToolStripMenuItem";
+      this.saveCardConstantsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+      this.saveCardConstantsToolStripMenuItem.Text = "Save Card Constants";
+      this.saveCardConstantsToolStripMenuItem.Click += new System.EventHandler(this.saveCardConstantsToolStripMenuItem_Click);
       // 
       // tabControl1
       // 
@@ -276,29 +292,17 @@
       // CardConstantReincarnation
       // 
       this.CardConstantReincarnation.DataPropertyName = "AppearsInReincarnation";
+      this.CardConstantReincarnation.FalseValue = "false";
       this.CardConstantReincarnation.HeaderText = "Reincarnation";
+      this.CardConstantReincarnation.IndeterminateValue = "false";
       this.CardConstantReincarnation.Name = "CardConstantReincarnation";
+      this.CardConstantReincarnation.TrueValue = "true";
       // 
       // CardConstantPasswordWorks
       // 
       this.CardConstantPasswordWorks.DataPropertyName = "PasswordWorks";
       this.CardConstantPasswordWorks.HeaderText = "PWD Works";
       this.CardConstantPasswordWorks.Name = "CardConstantPasswordWorks";
-      // 
-      // saveToolStripMenuItem
-      // 
-      this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveCardConstantsToolStripMenuItem});
-      this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-      this.saveToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-      this.saveToolStripMenuItem.Text = "Save";
-      // 
-      // saveCardConstantsToolStripMenuItem
-      // 
-      this.saveCardConstantsToolStripMenuItem.Name = "saveCardConstantsToolStripMenuItem";
-      this.saveCardConstantsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-      this.saveCardConstantsToolStripMenuItem.Text = "Save Card Constants";
-      this.saveCardConstantsToolStripMenuItem.Click += new System.EventHandler(this.saveCardConstantsToolStripMenuItem_Click);
       // 
       // MainForm
       // 
@@ -331,6 +335,8 @@
     private TextBox textBox2;
     private TextBox textBox1;
     private DataGridView cardConstantsDataGridView;
+    private ToolStripMenuItem saveToolStripMenuItem;
+    private ToolStripMenuItem saveCardConstantsToolStripMenuItem;
     private DataGridViewTextBoxColumn CardConstantId;
     private DataGridViewTextBoxColumn CardConstantName;
     private DataGridViewTextBoxColumn CardConstantDeckCost;
@@ -340,7 +346,5 @@
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
-    private ToolStripMenuItem saveToolStripMenuItem;
-    private ToolStripMenuItem saveCardConstantsToolStripMenuItem;
   }
 }
