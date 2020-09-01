@@ -20,6 +20,7 @@
     {
       this.WindowState = FormWindowState.Normal;
       this.SetupRankThresholdDataGridView();
+      this.SetupCardConstantsDataGridView();
       this.openFileDialog1.FileName = "dotr.iso";
       this.openFileDialog1.Filter = "ISO files (*.iso)|*.iso";
       this.openFileDialog1.Title = "Open DOTR ISO file";
@@ -32,8 +33,13 @@
 
       byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
       this.cardConstants = new CardConstants(cardConstantsBytes);
-      this.LoadLeaderTresholdData();
       this.cardConstantsDataGridView.DataSource = this.cardConstants.Constants;
+      this.LoadLeaderTresholdData();
+    }
+
+    private void SetupCardConstantsDataGridView()
+    {
+      this.cardConstantsDataGridView.AutoGenerateColumns = false;
     }
 
     private void SetupRankThresholdDataGridView()

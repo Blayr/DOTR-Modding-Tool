@@ -53,8 +53,15 @@
       this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
-      this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.DeckCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantDeckCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantAttack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantDefense = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantSlots = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -199,8 +206,15 @@
       this.cardConstantsDataGridView.AllowUserToResizeRows = false;
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.DeckCost});
+            this.CardConstantId,
+            this.CardConstantName,
+            this.CardConstantDeckCost,
+            this.CardConstantAttack,
+            this.CardConstantDefense,
+            this.CardConstantSlots,
+            this.CardConstantIsSlotRare,
+            this.CardConstantReincarnation,
+            this.CardConstantPasswordWorks});
       this.cardConstantsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.cardConstantsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
       this.cardConstantsDataGridView.Location = new System.Drawing.Point(3, 3);
@@ -208,21 +222,65 @@
       this.cardConstantsDataGridView.Name = "cardConstantsDataGridView";
       this.cardConstantsDataGridView.Size = new System.Drawing.Size(844, 420);
       this.cardConstantsDataGridView.TabIndex = 0;
+      this.cardConstantsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cardConstantsDataGridView_CellContentClick);
       // 
-      // ID
+      // CardConstantId
       // 
-      this.ID.DataPropertyName = "Index";
-      this.ID.HeaderText = "ID";
-      this.ID.Name = "ID";
-      this.ID.ReadOnly = true;
-      this.ID.Width = 26;
+      this.CardConstantId.DataPropertyName = "Index";
+      this.CardConstantId.HeaderText = "ID";
+      this.CardConstantId.Name = "CardConstantId";
+      this.CardConstantId.ReadOnly = true;
+      this.CardConstantId.Width = 26;
       // 
-      // DeckCost
+      // CardConstantName
       // 
-      this.DeckCost.DataPropertyName = "DeckCost";
-      this.DeckCost.HeaderText = "DC";
-      this.DeckCost.Name = "DeckCost";
-      this.DeckCost.Width = 30;
+      this.CardConstantName.DataPropertyName = "Name";
+      this.CardConstantName.HeaderText = "Name";
+      this.CardConstantName.Name = "CardConstantName";
+      this.CardConstantName.ReadOnly = true;
+      // 
+      // CardConstantDeckCost
+      // 
+      this.CardConstantDeckCost.DataPropertyName = "DeckCost";
+      this.CardConstantDeckCost.HeaderText = "DC";
+      this.CardConstantDeckCost.Name = "CardConstantDeckCost";
+      this.CardConstantDeckCost.Width = 30;
+      // 
+      // CardConstantAttack
+      // 
+      this.CardConstantAttack.DataPropertyName = "Attack";
+      this.CardConstantAttack.HeaderText = "Attack";
+      this.CardConstantAttack.Name = "CardConstantAttack";
+      // 
+      // CardConstantDefense
+      // 
+      this.CardConstantDefense.DataPropertyName = "Defense";
+      this.CardConstantDefense.HeaderText = "Defense";
+      this.CardConstantDefense.Name = "CardConstantDefense";
+      // 
+      // CardConstantSlots
+      // 
+      this.CardConstantSlots.DataPropertyName = "AppearsInSlotReels";
+      this.CardConstantSlots.HeaderText = "Slots";
+      this.CardConstantSlots.Name = "CardConstantSlots";
+      // 
+      // CardConstantIsSlotRare
+      // 
+      this.CardConstantIsSlotRare.DataPropertyName = "IsSlotRare";
+      this.CardConstantIsSlotRare.HeaderText = "Slot Rare";
+      this.CardConstantIsSlotRare.Name = "CardConstantIsSlotRare";
+      // 
+      // CardConstantReincarnation
+      // 
+      this.CardConstantReincarnation.DataPropertyName = "AppearsInReincarnation";
+      this.CardConstantReincarnation.HeaderText = "Reincarnation";
+      this.CardConstantReincarnation.Name = "CardConstantReincarnation";
+      // 
+      // CardConstantPasswordWorks
+      // 
+      this.CardConstantPasswordWorks.DataPropertyName = "PasswordWorks";
+      this.CardConstantPasswordWorks.HeaderText = "PWD Works";
+      this.CardConstantPasswordWorks.Name = "CardConstantPasswordWorks";
       // 
       // MainForm
       // 
@@ -255,7 +313,14 @@
     private TextBox textBox2;
     private TextBox textBox1;
     private DataGridView cardConstantsDataGridView;
-    private DataGridViewTextBoxColumn ID;
-    private DataGridViewTextBoxColumn DeckCost;
+    private DataGridViewTextBoxColumn CardConstantId;
+    private DataGridViewTextBoxColumn CardConstantName;
+    private DataGridViewTextBoxColumn CardConstantDeckCost;
+    private DataGridViewTextBoxColumn CardConstantAttack;
+    private DataGridViewTextBoxColumn CardConstantDefense;
+    private DataGridViewCheckBoxColumn CardConstantSlots;
+    private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
+    private DataGridViewCheckBoxColumn CardConstantReincarnation;
+    private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
   }
 }
