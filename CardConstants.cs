@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class CardConstants
 {
@@ -13,6 +14,14 @@ public class CardConstants
 			Constants.Add(new CardConstant(i, bytes[i]));
     }
 	}
+
+	public byte[] Bytes
+  {
+		get
+		{
+			return this.Constants.SelectMany(c => c.Bytes).ToArray();
+		}
+  }
 }
 
 public class CardConstant
@@ -254,7 +263,7 @@ public class CardConstant
     {
 			this.appearsInReincarnation = value;
 			this.apWithFlags[this.apWithFlags.Length - 1] = this.appearsInReincarnation;
-    }
+		}
   }
 
 	public bool PasswordWorks

@@ -62,6 +62,8 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.saveCardConstantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -77,7 +79,8 @@
       // menuStrip1
       // 
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openISOMenuItem});
+            this.openISOMenuItem,
+            this.saveToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
       this.menuStrip1.Size = new System.Drawing.Size(858, 24);
@@ -282,6 +285,21 @@
       this.CardConstantPasswordWorks.HeaderText = "PWD Works";
       this.CardConstantPasswordWorks.Name = "CardConstantPasswordWorks";
       // 
+      // saveToolStripMenuItem
+      // 
+      this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveCardConstantsToolStripMenuItem});
+      this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+      this.saveToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+      this.saveToolStripMenuItem.Text = "Save";
+      // 
+      // saveCardConstantsToolStripMenuItem
+      // 
+      this.saveCardConstantsToolStripMenuItem.Name = "saveCardConstantsToolStripMenuItem";
+      this.saveCardConstantsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+      this.saveCardConstantsToolStripMenuItem.Text = "Save Card Constants";
+      this.saveCardConstantsToolStripMenuItem.Click += new System.EventHandler(this.saveCardConstantsToolStripMenuItem_Click);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,5 +340,7 @@
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
+    private ToolStripMenuItem saveToolStripMenuItem;
+    private ToolStripMenuItem saveCardConstantsToolStripMenuItem;
   }
 }

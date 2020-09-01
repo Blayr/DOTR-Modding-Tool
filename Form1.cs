@@ -30,11 +30,7 @@
       #else
         this.OpenSelectISODialog();
       #endif
-
-      byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
-      this.cardConstants = new CardConstants(cardConstantsBytes);
-      this.cardConstantsDataGridView.DataSource = this.cardConstants.Constants;
-      this.LoadLeaderTresholdData();
+      this.LoadDataFromIso();
     }
 
     private void SetupCardConstantsDataGridView()
@@ -124,6 +120,19 @@
       this.LoadLeaderTresholdData();
     }
 
+    private void LoadDataFromIso()
+    {
+      this.LoadLeaderTresholdData();
+      this.LoadCardConstantsData();
+    }
+
+    private void LoadCardConstantsData()
+    {
+      byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
+      this.cardConstants = new CardConstants(cardConstantsBytes);
+      this.cardConstantsDataGridView.DataSource = this.cardConstants.Constants;
+    }
+
     private void LoadLeaderTresholdData()
     {
       byte[] byteData = this.dataAccess.LoadLeaderTresholdData();
@@ -138,6 +147,18 @@
     {
       this.dataAccess.SetDeckLeaderTresholds(this.newDeckLeaderRankThresholds.Bytes);
       this.LoadLeaderTresholdData();
+    }
+
+    private void cardConstantsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
+    }
+
+    private void saveCardConstantsToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      byte[] cardConstantsBytes = this.cardConstants.Bytes;
+      this.dataAccess.SetCardConstantData(cardConstantsBytes);
+      this.LoadCardConstantsData();
     }
   }
 }
