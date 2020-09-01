@@ -221,6 +221,12 @@ public class CardConstant
     {
 			return this.isSlotRare;
     }
+
+    set
+    {
+			this.isSlotRare = value;
+			this.dpWithFlags[dpWithFlags.Length - 2] = this.isSlotRare;
+		}
   }
 
 	public bool AppearsInSlotReels
@@ -229,6 +235,7 @@ public class CardConstant
     {
 			return this.appearsInSlotReels;
     }
+
     set
     {
 			this.appearsInSlotReels = value;
@@ -242,6 +249,7 @@ public class CardConstant
     {
 			return this.appearsInReincarnation;
     }
+
     set
     {
 			this.appearsInReincarnation = value;
@@ -255,6 +263,7 @@ public class CardConstant
     {
 			return this.passwordWorks;
     }
+
     set
     {
 			this.passwordWorks = value;
