@@ -2,6 +2,7 @@
 {
   using System;
   using System.Diagnostics;
+  using System.Drawing;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -37,6 +38,48 @@
     {
       this.cardConstantsDataGridView.AutoGenerateColumns = false;
       this.cardConstantsDataGridView.LostFocus += OnDataGridViewLostFocus;
+      this.cardConstantsDataGridView.CellFormatting += this.FormatCardConstantTable;
+    }
+
+    private void FormatCardConstantTable(object sender, DataGridViewCellFormattingEventArgs e)
+    {
+      DataGridView bro = (DataGridView)sender;
+      if (e.ColumnIndex != 1)
+      {
+        return;
+      }
+
+      ushort cardIndex = (ushort)this.cardConstantsDataGridView.Rows[e.RowIndex].Cells[0].Value;
+      CardConstant cardConstant = this.cardConstants.Constants[cardIndex];
+      Color rowColor;
+
+      if (cardConstant.EffectId == 65535)
+      {
+        // Normal Monster
+        rowColor = Color.FromArgb(160, 128, 0);
+      }
+      else if (cardConstant.Kind.ID < 32)
+      {
+        // Effect Monster
+        rowColor = Color.FromArgb(160, 80, 0);
+      }
+      else if (cardConstant.Kind.ID == 96 || cardConstant.Kind.ID == 128)
+      {
+        // Trap
+        rowColor = Color.FromArgb(160, 16, 64);
+      }
+      else if (cardConstant.Kind.ID == 160)
+      {
+        rowColor = Color.FromArgb(81, 102, 141);
+      }
+      else
+      {
+        // Magic
+        rowColor = Color.FromArgb(0, 96, 48);
+      }
+
+      bro.Rows[e.RowIndex].DefaultCellStyle.BackColor = rowColor;
+      bro.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
     }
 
     private void OnDataGridViewLostFocus(object sender, System.EventArgs e)
@@ -144,6 +187,7 @@
       byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
       this.cardConstants = new CardConstants(cardConstantsBytes);
       this.cardConstantsDataGridView.DataSource = this.cardConstants.Constants;
+      this.cardConstantsDataGridView.DefaultCellStyle.Font = new Font("OpenSans", 9.75F, FontStyle.Regular);
     }
 
     private void LoadLeaderTresholdData()

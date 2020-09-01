@@ -40,6 +40,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,7 @@
       this.CardConstantSlots = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -223,6 +224,16 @@
       this.cardConstantsDataGridView.AllowUserToDeleteRows = false;
       this.cardConstantsDataGridView.AllowUserToOrderColumns = true;
       this.cardConstantsDataGridView.AllowUserToResizeRows = false;
+      this.cardConstantsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.cardConstantsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardConstantId,
@@ -239,6 +250,7 @@
       this.cardConstantsDataGridView.Location = new System.Drawing.Point(3, 3);
       this.cardConstantsDataGridView.MultiSelect = false;
       this.cardConstantsDataGridView.Name = "cardConstantsDataGridView";
+      this.cardConstantsDataGridView.RowHeadersVisible = false;
       this.cardConstantsDataGridView.Size = new System.Drawing.Size(844, 420);
       this.cardConstantsDataGridView.TabIndex = 0;
       this.cardConstantsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cardConstantsDataGridView_CellContentClick);
@@ -257,6 +269,7 @@
       this.CardConstantName.HeaderText = "Name";
       this.CardConstantName.Name = "CardConstantName";
       this.CardConstantName.ReadOnly = true;
+      this.CardConstantName.Width = 160;
       // 
       // CardConstantDeckCost
       // 
@@ -268,26 +281,30 @@
       // CardConstantAttack
       // 
       this.CardConstantAttack.DataPropertyName = "Attack";
-      this.CardConstantAttack.HeaderText = "Attack";
+      this.CardConstantAttack.HeaderText = "Atk";
       this.CardConstantAttack.Name = "CardConstantAttack";
+      this.CardConstantAttack.Width = 40;
       // 
       // CardConstantDefense
       // 
       this.CardConstantDefense.DataPropertyName = "Defense";
-      this.CardConstantDefense.HeaderText = "Defense";
+      this.CardConstantDefense.HeaderText = "Def";
       this.CardConstantDefense.Name = "CardConstantDefense";
+      this.CardConstantDefense.Width = 40;
       // 
       // CardConstantSlots
       // 
       this.CardConstantSlots.DataPropertyName = "AppearsInSlotReels";
       this.CardConstantSlots.HeaderText = "Slots";
       this.CardConstantSlots.Name = "CardConstantSlots";
+      this.CardConstantSlots.Width = 40;
       // 
       // CardConstantIsSlotRare
       // 
       this.CardConstantIsSlotRare.DataPropertyName = "IsSlotRare";
       this.CardConstantIsSlotRare.HeaderText = "Slot Rare";
       this.CardConstantIsSlotRare.Name = "CardConstantIsSlotRare";
+      this.CardConstantIsSlotRare.Width = 40;
       // 
       // CardConstantReincarnation
       // 
@@ -297,6 +314,7 @@
       this.CardConstantReincarnation.IndeterminateValue = "false";
       this.CardConstantReincarnation.Name = "CardConstantReincarnation";
       this.CardConstantReincarnation.TrueValue = "true";
+      this.CardConstantReincarnation.Width = 70;
       // 
       // CardConstantPasswordWorks
       // 
@@ -345,6 +363,6 @@
     private DataGridViewCheckBoxColumn CardConstantSlots;
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
-    private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
+    private DataGridViewTextBoxColumn CardConstantPasswordWorks;
   }
 }

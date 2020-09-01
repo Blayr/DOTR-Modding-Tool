@@ -75,6 +75,9 @@ public class CardConstant
 		this.defense = CardConstant.GetAttackOrDefense(new byte[] { bytes[10], bytes[11] });
 		this.appearsInSlotReels = dpWithFlags[dpWithFlags.Length - 3];
 		this.isSlotRare = dpWithFlags[dpWithFlags.Length - 2];
+
+		this.dpWithFlags[dpWithFlags.Length - 2] = true;
+
 		this.hasAlternateArt = dpWithFlags[dpWithFlags.Length - 1];
 		this.passwordArray = new byte[] { bytes[12], bytes[13], bytes[14], bytes[15], bytes[16], bytes[17], bytes[18], bytes[19] };
 	}
@@ -173,6 +176,14 @@ public class CardConstant
 		get
     {
 			return this.deckCost;
+    }
+  }
+
+	public CardKind Kind
+  {
+    get
+    {
+			return this.cardKind;
     }
   }
 
