@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>program_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Equin.ApplicationFramework.BindingListView, Version=1.2.2446.31718, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -90,9 +93,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\DeckRank_1_2LT.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="CardList.txt" />
     <Content Include="DLLs\Equin.ApplicationFramework.BindingListView.dll" />
     <Content Include="images\deck_leader_ranks\10_ADM.png" />
@@ -107,6 +107,10 @@
     <Content Include="images\deck_leader_ranks\7_BG.png" />
     <Content Include="images\deck_leader_ranks\8_RADM.png" />
     <Content Include="images\deck_leader_ranks\9_VADM.png" />
+    <Content Include="images\program_icon.ico" />
+    <Content Include="images\program_icon.png" />
+    <Content Include="program_icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
