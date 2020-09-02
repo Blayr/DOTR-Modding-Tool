@@ -296,6 +296,7 @@
       this.CardConstantSlots.DataPropertyName = "AppearsInSlotReels";
       this.CardConstantSlots.HeaderText = "Slots";
       this.CardConstantSlots.Name = "CardConstantSlots";
+      this.CardConstantSlots.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantSlots.Width = 40;
       // 
       // CardConstantIsSlotRare
@@ -303,6 +304,7 @@
       this.CardConstantIsSlotRare.DataPropertyName = "IsSlotRare";
       this.CardConstantIsSlotRare.HeaderText = "Slot Rare";
       this.CardConstantIsSlotRare.Name = "CardConstantIsSlotRare";
+      this.CardConstantIsSlotRare.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantIsSlotRare.Width = 40;
       // 
       // CardConstantReincarnation
@@ -312,6 +314,7 @@
       this.CardConstantReincarnation.HeaderText = "Reincarnation";
       this.CardConstantReincarnation.IndeterminateValue = "false";
       this.CardConstantReincarnation.Name = "CardConstantReincarnation";
+      this.CardConstantReincarnation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantReincarnation.TrueValue = "true";
       this.CardConstantReincarnation.Width = 70;
       // 
