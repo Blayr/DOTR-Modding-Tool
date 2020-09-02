@@ -64,7 +64,7 @@
       this.CardConstantSlots = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -311,18 +311,21 @@
       // 
       this.CardConstantReincarnation.DataPropertyName = "AppearsInReincarnation";
       this.CardConstantReincarnation.FalseValue = "false";
-      this.CardConstantReincarnation.HeaderText = "Reincarnation";
+      this.CardConstantReincarnation.HeaderText = "Reinc.";
       this.CardConstantReincarnation.IndeterminateValue = "false";
       this.CardConstantReincarnation.Name = "CardConstantReincarnation";
       this.CardConstantReincarnation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantReincarnation.TrueValue = "true";
-      this.CardConstantReincarnation.Width = 70;
+      this.CardConstantReincarnation.Width = 46;
       // 
       // CardConstantPasswordWorks
       // 
       this.CardConstantPasswordWorks.DataPropertyName = "PasswordWorks";
       this.CardConstantPasswordWorks.HeaderText = "PWD Works";
       this.CardConstantPasswordWorks.Name = "CardConstantPasswordWorks";
+      this.CardConstantPasswordWorks.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+      this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantPasswordWorks.Width = 46;
       // 
       // MainForm
       // 
@@ -365,6 +368,6 @@
     private DataGridViewCheckBoxColumn CardConstantSlots;
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
-    private DataGridViewTextBoxColumn CardConstantPasswordWorks;
+    private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
   }
 }
