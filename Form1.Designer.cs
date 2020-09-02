@@ -253,7 +253,6 @@
       this.cardConstantsDataGridView.RowHeadersVisible = false;
       this.cardConstantsDataGridView.Size = new System.Drawing.Size(844, 420);
       this.cardConstantsDataGridView.TabIndex = 0;
-      this.cardConstantsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cardConstantsDataGridView_CellContentClick);
       // 
       // CardConstantId
       // 
@@ -261,7 +260,7 @@
       this.CardConstantId.HeaderText = "ID";
       this.CardConstantId.Name = "CardConstantId";
       this.CardConstantId.ReadOnly = true;
-      this.CardConstantId.Width = 26;
+      this.CardConstantId.Width = 34;
       // 
       // CardConstantName
       // 

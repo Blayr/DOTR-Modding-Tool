@@ -1,6 +1,8 @@
 ﻿namespace DOTR_Deck_Leader_Thresholds
 {
+  using Equin.ApplicationFramework;
   using System;
+  using System.ComponentModel;
   using System.Diagnostics;
   using System.Drawing;
   using System.Windows.Forms;
@@ -11,6 +13,7 @@
     private DeckLeaderRankThresholds originalDeckLeaderRankThresholds;
     private DeckLeaderRankThresholds newDeckLeaderRankThresholds;
     private CardConstants cardConstants;
+    private BindingListView<CardConstant> cardConstantsBinding;
 
     public MainForm()
     {
@@ -186,7 +189,8 @@
     {
       byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
       this.cardConstants = new CardConstants(cardConstantsBytes);
-      this.cardConstantsDataGridView.DataSource = this.cardConstants.Constants;
+      this.cardConstantsBinding = new BindingListView<CardConstant>(this.cardConstants.Constants);
+      this.cardConstantsDataGridView.DataSource = cardConstantsBinding;
       this.cardConstantsDataGridView.DefaultCellStyle.Font = new Font("OpenSans", 9.75F, FontStyle.Regular);
     }
 
@@ -205,12 +209,6 @@
       this.dataAccess.SetDeckLeaderTresholds(this.newDeckLeaderRankThresholds.Bytes);
       this.LoadLeaderTresholdData();
     }
-
-    private void cardConstantsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
-
-    }
-
     private void saveCardConstantsToolStripMenuItem_Click(object sender, EventArgs e)
     {
       byte[] cardConstantsBytes = this.cardConstants.Bytes;
