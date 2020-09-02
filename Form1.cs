@@ -221,5 +221,39 @@
       // Ensure the menustrip is focused so that the datagridview changes are commited
       this.menuStrip1.Focus();
     }
+
+    private void cardConstantsFilterTextbox_KeyDown(object sender, KeyEventArgs e)
+    {
+      if (e.KeyCode == Keys.Enter)
+      {
+        this.applyCardConstantSearchFilter();
+        e.Handled = true;
+        e.SuppressKeyPress = true;
+      }
+    }
+
+    private void cardConstantsFilterButton_Click(object sender, EventArgs e)
+    {
+      this.applyCardConstantSearchFilter();
+    }
+
+    private void applyCardConstantSearchFilter()
+    {
+      string searchTerm = this.cardConstantsFilterTextbox.Text.ToLower().Trim();
+
+      if (searchTerm == String.Empty)
+      {
+        this.cardConstantsBinding.RemoveFilter();
+        return;
+      }
+
+      this.cardConstantsBinding.ApplyFilter(delegate (CardConstant cardConstant) { return cardConstant.Name.ToLower().Contains(searchTerm); });
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+      this.cardConstantsFilterTextbox.Clear();
+      this.cardConstantsBinding.RemoveFilter();
+    }
   }
 }

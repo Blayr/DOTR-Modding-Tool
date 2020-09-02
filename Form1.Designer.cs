@@ -40,7 +40,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -56,6 +56,10 @@
       this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
       this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
       this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+      this.label1 = new System.Windows.Forms.Label();
+      this.cardConstantsFilterButton = new System.Windows.Forms.Button();
+      this.cardConstantsFilterTextbox = new System.Windows.Forms.TextBox();
       this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
       this.CardConstantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,11 +70,16 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.cardConstantFilterClearButton = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).BeginInit();
       this.tabPage1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+      this.splitContainer1.Panel1.SuspendLayout();
+      this.splitContainer1.Panel2.SuspendLayout();
+      this.splitContainer1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).BeginInit();
       this.SuspendLayout();
       // 
@@ -85,7 +94,7 @@
             this.saveToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(858, 24);
+      this.menuStrip1.Size = new System.Drawing.Size(938, 24);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
       // 
@@ -122,7 +131,7 @@
       this.tabControl1.Location = new System.Drawing.Point(0, 27);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
-      this.tabControl1.Size = new System.Drawing.Size(858, 452);
+      this.tabControl1.Size = new System.Drawing.Size(938, 522);
       this.tabControl1.TabIndex = 3;
       // 
       // leaderRankTresholdsTabControl
@@ -136,7 +145,7 @@
       this.leaderRankTresholdsTabControl.Location = new System.Drawing.Point(4, 22);
       this.leaderRankTresholdsTabControl.Name = "leaderRankTresholdsTabControl";
       this.leaderRankTresholdsTabControl.Padding = new System.Windows.Forms.Padding(3);
-      this.leaderRankTresholdsTabControl.Size = new System.Drawing.Size(850, 426);
+      this.leaderRankTresholdsTabControl.Size = new System.Drawing.Size(930, 496);
       this.leaderRankTresholdsTabControl.TabIndex = 0;
       this.leaderRankTresholdsTabControl.Text = "Rank Thresholds";
       this.leaderRankTresholdsTabControl.UseVisualStyleBackColor = true;
@@ -210,14 +219,62 @@
       // 
       // tabPage1
       // 
-      this.tabPage1.Controls.Add(this.cardConstantsDataGridView);
+      this.tabPage1.Controls.Add(this.splitContainer1);
       this.tabPage1.Location = new System.Drawing.Point(4, 22);
       this.tabPage1.Name = "tabPage1";
       this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage1.Size = new System.Drawing.Size(850, 426);
+      this.tabPage1.Size = new System.Drawing.Size(930, 496);
       this.tabPage1.TabIndex = 1;
       this.tabPage1.Text = "Card Constants";
       this.tabPage1.UseVisualStyleBackColor = true;
+      // 
+      // splitContainer1
+      // 
+      this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+      this.splitContainer1.Name = "splitContainer1";
+      this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+      // 
+      // splitContainer1.Panel1
+      // 
+      this.splitContainer1.Panel1.Controls.Add(this.cardConstantFilterClearButton);
+      this.splitContainer1.Panel1.Controls.Add(this.label1);
+      this.splitContainer1.Panel1.Controls.Add(this.cardConstantsFilterButton);
+      this.splitContainer1.Panel1.Controls.Add(this.cardConstantsFilterTextbox);
+      // 
+      // splitContainer1.Panel2
+      // 
+      this.splitContainer1.Panel2.Controls.Add(this.cardConstantsDataGridView);
+      this.splitContainer1.Size = new System.Drawing.Size(924, 490);
+      this.splitContainer1.SplitterDistance = 25;
+      this.splitContainer1.TabIndex = 1;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(5, 7);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(32, 13);
+      this.label1.TabIndex = 2;
+      this.label1.Text = "Filter:";
+      // 
+      // cardConstantsFilterButton
+      // 
+      this.cardConstantsFilterButton.Location = new System.Drawing.Point(161, 2);
+      this.cardConstantsFilterButton.Name = "cardConstantsFilterButton";
+      this.cardConstantsFilterButton.Size = new System.Drawing.Size(75, 23);
+      this.cardConstantsFilterButton.TabIndex = 1;
+      this.cardConstantsFilterButton.Text = "Apply";
+      this.cardConstantsFilterButton.UseVisualStyleBackColor = true;
+      this.cardConstantsFilterButton.Click += new System.EventHandler(this.cardConstantsFilterButton_Click);
+      // 
+      // cardConstantsFilterTextbox
+      // 
+      this.cardConstantsFilterTextbox.Location = new System.Drawing.Point(43, 4);
+      this.cardConstantsFilterTextbox.Name = "cardConstantsFilterTextbox";
+      this.cardConstantsFilterTextbox.Size = new System.Drawing.Size(112, 20);
+      this.cardConstantsFilterTextbox.TabIndex = 0;
+      this.cardConstantsFilterTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cardConstantsFilterTextbox_KeyDown);
       // 
       // cardConstantsDataGridView
       // 
@@ -227,14 +284,14 @@
       this.cardConstantsDataGridView.AllowUserToResizeRows = false;
       this.cardConstantsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
       this.cardConstantsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardConstantId,
@@ -248,11 +305,11 @@
             this.CardConstantPasswordWorks});
       this.cardConstantsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.cardConstantsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-      this.cardConstantsDataGridView.Location = new System.Drawing.Point(3, 3);
+      this.cardConstantsDataGridView.Location = new System.Drawing.Point(0, 0);
       this.cardConstantsDataGridView.MultiSelect = false;
       this.cardConstantsDataGridView.Name = "cardConstantsDataGridView";
       this.cardConstantsDataGridView.RowHeadersVisible = false;
-      this.cardConstantsDataGridView.Size = new System.Drawing.Size(844, 420);
+      this.cardConstantsDataGridView.Size = new System.Drawing.Size(924, 461);
       this.cardConstantsDataGridView.TabIndex = 0;
       // 
       // CardConstantId
@@ -328,11 +385,21 @@
       this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantPasswordWorks.Width = 46;
       // 
+      // cardConstantFilterClearButton
+      // 
+      this.cardConstantFilterClearButton.Location = new System.Drawing.Point(242, 2);
+      this.cardConstantFilterClearButton.Name = "cardConstantFilterClearButton";
+      this.cardConstantFilterClearButton.Size = new System.Drawing.Size(75, 23);
+      this.cardConstantFilterClearButton.TabIndex = 3;
+      this.cardConstantFilterClearButton.Text = "Clear";
+      this.cardConstantFilterClearButton.UseVisualStyleBackColor = true;
+      this.cardConstantFilterClearButton.Click += new System.EventHandler(this.button2_Click);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(858, 477);
+      this.ClientSize = new System.Drawing.Size(938, 547);
       this.Controls.Add(this.tabControl1);
       this.Controls.Add(this.menuStrip1);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -348,6 +415,11 @@
       this.leaderRankTresholdsTabControl.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).EndInit();
       this.tabPage1.ResumeLayout(false);
+      this.splitContainer1.Panel1.ResumeLayout(false);
+      this.splitContainer1.Panel1.PerformLayout();
+      this.splitContainer1.Panel2.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+      this.splitContainer1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -371,5 +443,10 @@
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
+    private SplitContainer splitContainer1;
+    private TextBox cardConstantsFilterTextbox;
+    private Button cardConstantsFilterButton;
+    private Label label1;
+    private Button cardConstantFilterClearButton;
   }
 }
