@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardAttribute.cs" />
     <Compile Include="CardConstants.cs" />
     <Compile Include="CardKind.cs" />
     <Compile Include="Cards.cs" />

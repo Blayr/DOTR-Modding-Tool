@@ -34,7 +34,7 @@ public class CardConstant
 	byte kindOfs;
 	byte lvAttr;
 	byte level;
-	byte attribute;
+	CardAttribute attribute;
 	byte deckCost;
 	ushort effectId;
 	ushort xaxId;
@@ -60,7 +60,7 @@ public class CardConstant
 		this.kindOfs = bytes[1];
 		this.lvAttr = bytes[2];
 		this.level = CardConstant.GetLevel(bytes);
-		this.attribute = CardConstant.GetAttribute(bytes);
+		this.attribute = new CardAttribute(CardConstant.GetAttribute(bytes));
 		this.deckCost = bytes[3];
 		this.effectId = BitConverter.ToUInt16(new byte[] { bytes[4], bytes[5] }, 0);
 		this.xaxId = BitConverter.ToUInt16(new byte[] { bytes[6], bytes[7] }, 0);
@@ -187,6 +187,14 @@ public class CardConstant
     }
   }
 
+	public string Type
+  {
+    get
+    {
+			return this.cardKind.Name;
+    }
+  }
+
 	public string KindName
   {
     get
@@ -211,11 +219,11 @@ public class CardConstant
     }
   }
 
-	public byte Attribute
+	public string AttributeName
   {
     get
     {
-			return this.attribute;
+			return this.attribute.Name;
     }
   }
 
