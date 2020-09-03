@@ -57,20 +57,23 @@
       this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+      this.cardConstantFilterClearButton = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
       this.cardConstantsFilterButton = new System.Windows.Forms.Button();
       this.cardConstantsFilterTextbox = new System.Windows.Forms.TextBox();
       this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
       this.CardConstantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.CardConstantDeckCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantAttack = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantDefense = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantsAttribute = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantsLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantDeckCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantSlots = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.cardConstantFilterClearButton = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -249,6 +252,16 @@
       this.splitContainer1.SplitterDistance = 25;
       this.splitContainer1.TabIndex = 1;
       // 
+      // cardConstantFilterClearButton
+      // 
+      this.cardConstantFilterClearButton.Location = new System.Drawing.Point(242, 2);
+      this.cardConstantFilterClearButton.Name = "cardConstantFilterClearButton";
+      this.cardConstantFilterClearButton.Size = new System.Drawing.Size(75, 23);
+      this.cardConstantFilterClearButton.TabIndex = 3;
+      this.cardConstantFilterClearButton.Text = "Clear";
+      this.cardConstantFilterClearButton.UseVisualStyleBackColor = true;
+      this.cardConstantFilterClearButton.Click += new System.EventHandler(this.button2_Click);
+      // 
       // label1
       // 
       this.label1.AutoSize = true;
@@ -296,9 +309,12 @@
       this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardConstantId,
             this.CardConstantName,
-            this.CardConstantDeckCost,
             this.CardConstantAttack,
             this.CardConstantDefense,
+            this.CardConstantsType,
+            this.CardConstantsAttribute,
+            this.CardConstantsLevel,
+            this.CardConstantDeckCost,
             this.CardConstantSlots,
             this.CardConstantIsSlotRare,
             this.CardConstantReincarnation,
@@ -328,13 +344,6 @@
       this.CardConstantName.ReadOnly = true;
       this.CardConstantName.Width = 160;
       // 
-      // CardConstantDeckCost
-      // 
-      this.CardConstantDeckCost.DataPropertyName = "DeckCost";
-      this.CardConstantDeckCost.HeaderText = "DC";
-      this.CardConstantDeckCost.Name = "CardConstantDeckCost";
-      this.CardConstantDeckCost.Width = 30;
-      // 
       // CardConstantAttack
       // 
       this.CardConstantAttack.DataPropertyName = "Attack";
@@ -348,6 +357,37 @@
       this.CardConstantDefense.HeaderText = "Def";
       this.CardConstantDefense.Name = "CardConstantDefense";
       this.CardConstantDefense.Width = 40;
+      // 
+      // CardConstantsType
+      // 
+      this.CardConstantsType.DataPropertyName = "Type";
+      this.CardConstantsType.HeaderText = "Type";
+      this.CardConstantsType.Name = "CardConstantsType";
+      this.CardConstantsType.ReadOnly = true;
+      this.CardConstantsType.Width = 60;
+      // 
+      // CardConstantsAttribute
+      // 
+      this.CardConstantsAttribute.DataPropertyName = "AttributeName";
+      this.CardConstantsAttribute.HeaderText = "Attr.";
+      this.CardConstantsAttribute.Name = "CardConstantsAttribute";
+      this.CardConstantsAttribute.ReadOnly = true;
+      this.CardConstantsAttribute.Width = 50;
+      // 
+      // CardConstantsLevel
+      // 
+      this.CardConstantsLevel.DataPropertyName = "Level";
+      this.CardConstantsLevel.HeaderText = "Lvl";
+      this.CardConstantsLevel.Name = "CardConstantsLevel";
+      this.CardConstantsLevel.ReadOnly = true;
+      this.CardConstantsLevel.Width = 30;
+      // 
+      // CardConstantDeckCost
+      // 
+      this.CardConstantDeckCost.DataPropertyName = "DeckCost";
+      this.CardConstantDeckCost.HeaderText = "DC";
+      this.CardConstantDeckCost.Name = "CardConstantDeckCost";
+      this.CardConstantDeckCost.Width = 30;
       // 
       // CardConstantSlots
       // 
@@ -384,16 +424,6 @@
       this.CardConstantPasswordWorks.Resizable = System.Windows.Forms.DataGridViewTriState.True;
       this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantPasswordWorks.Width = 46;
-      // 
-      // cardConstantFilterClearButton
-      // 
-      this.cardConstantFilterClearButton.Location = new System.Drawing.Point(242, 2);
-      this.cardConstantFilterClearButton.Name = "cardConstantFilterClearButton";
-      this.cardConstantFilterClearButton.Size = new System.Drawing.Size(75, 23);
-      this.cardConstantFilterClearButton.TabIndex = 3;
-      this.cardConstantFilterClearButton.Text = "Clear";
-      this.cardConstantFilterClearButton.UseVisualStyleBackColor = true;
-      this.cardConstantFilterClearButton.Click += new System.EventHandler(this.button2_Click);
       // 
       // MainForm
       // 
@@ -434,19 +464,22 @@
     private DataGridView cardConstantsDataGridView;
     private ToolStripMenuItem saveToolStripMenuItem;
     private ToolStripMenuItem saveCardConstantsToolStripMenuItem;
-    private DataGridViewTextBoxColumn CardConstantId;
-    private DataGridViewTextBoxColumn CardConstantName;
-    private DataGridViewTextBoxColumn CardConstantDeckCost;
-    private DataGridViewTextBoxColumn CardConstantAttack;
-    private DataGridViewTextBoxColumn CardConstantDefense;
-    private DataGridViewCheckBoxColumn CardConstantSlots;
-    private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
-    private DataGridViewCheckBoxColumn CardConstantReincarnation;
-    private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
     private SplitContainer splitContainer1;
     private TextBox cardConstantsFilterTextbox;
     private Button cardConstantsFilterButton;
     private Label label1;
     private Button cardConstantFilterClearButton;
+    private DataGridViewTextBoxColumn CardConstantId;
+    private DataGridViewTextBoxColumn CardConstantName;
+    private DataGridViewTextBoxColumn CardConstantAttack;
+    private DataGridViewTextBoxColumn CardConstantDefense;
+    private DataGridViewTextBoxColumn CardConstantsType;
+    private DataGridViewTextBoxColumn CardConstantsAttribute;
+    private DataGridViewTextBoxColumn CardConstantsLevel;
+    private DataGridViewTextBoxColumn CardConstantDeckCost;
+    private DataGridViewCheckBoxColumn CardConstantSlots;
+    private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
+    private DataGridViewCheckBoxColumn CardConstantReincarnation;
+    private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
   }
 }
