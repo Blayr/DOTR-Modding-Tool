@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 public class CardKind
 {
@@ -36,6 +37,11 @@ public class CardKind
 		this.cardKindId = cardKindId;
 		this.cardKindName = Array.Find(CardKind.Kinds, kind => kind.ID == this.cardKindId).Name;
 	}
+
+	public bool isMonster()
+  {
+		return this.cardKindId < 32;
+  }
 
 	public byte ID
   {

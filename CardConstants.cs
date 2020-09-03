@@ -215,7 +215,7 @@ public class CardConstant
   {
     get
     {
-			return this.level;
+		  return this.level;
     }
   }
 
@@ -223,7 +223,12 @@ public class CardConstant
   {
     get
     {
-			return this.attribute.Name;
+			if (this.cardKind.isMonster())
+      {
+				return this.attribute.Name;
+      }
+
+			return null;
     }
   }
 
