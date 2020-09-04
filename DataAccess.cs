@@ -5,6 +5,8 @@ public class DataAccess
   public static readonly int SLUSDeckLeaderRankThresholdsByteOffset = 2754898;
   public static readonly int DeckLeaderRankThresholdByteLength = 24;
   public static readonly int SLUSCardConstantsByteOffset = 2683264;
+  public static readonly int SLUSFusionListByteOffset = 2550064;
+  public static readonly int FusionListByteLength = 26540;
   public static readonly int CardConstantByteLength = 20;
   public static readonly int CardConstantCount = Cards.TotalCardCount;
 
@@ -77,6 +79,19 @@ public class DataAccess
     }
 
     return this.LoadLeaderTresholdData();
+  }
+
+  public byte[] LoadFusionData()
+  {
+    byte[] buffer = new byte[DataAccess.FusionListByteLength];
+
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(DataAccess.SLUSFusionListByteOffset, SeekOrigin.Begin);
+      fileStream.Read(buffer, 0, buffer.Length);
+    }
+
+    return buffer;
   }
 }
 
