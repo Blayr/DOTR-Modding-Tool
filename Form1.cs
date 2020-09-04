@@ -14,6 +14,7 @@
     private DeckLeaderRankThresholds newDeckLeaderRankThresholds;
     private CardConstants cardConstants;
     private BindingListView<CardConstant> cardConstantsBinding;
+    private Fusions fusions;
 
     public MainForm()
     {
@@ -183,6 +184,15 @@
     {
       this.LoadLeaderTresholdData();
       this.LoadCardConstantsData();
+      this.LoadFusionData();
+    }
+
+    private void LoadFusionData()
+    {
+      this.fusions = new Fusions(this.dataAccess.LoadFusionData());
+      this.fusionsDataGridView.AutoGenerateColumns = true;
+      this.fusionsDataGridView.DataSource = this.fusions.fusions;
+      this.fusionsDataGridView.AutoGenerateColumns = true;
     }
 
     private void LoadCardConstantsData()

@@ -74,6 +74,8 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -84,6 +86,8 @@
       this.splitContainer1.Panel2.SuspendLayout();
       this.splitContainer1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).BeginInit();
+      this.tabPage2.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).BeginInit();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -100,6 +104,7 @@
       this.menuStrip1.Size = new System.Drawing.Size(938, 24);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
+      this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
       // 
       // openISOMenuItem
       // 
@@ -131,6 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tabControl1.Controls.Add(this.leaderRankTresholdsTabControl);
       this.tabControl1.Controls.Add(this.tabPage1);
+      this.tabControl1.Controls.Add(this.tabPage2);
       this.tabControl1.Location = new System.Drawing.Point(0, 27);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
@@ -425,6 +431,26 @@
       this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantPasswordWorks.Width = 46;
       // 
+      // tabPage2
+      // 
+      this.tabPage2.Controls.Add(this.fusionsDataGridView);
+      this.tabPage2.Location = new System.Drawing.Point(4, 22);
+      this.tabPage2.Name = "tabPage2";
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage2.Size = new System.Drawing.Size(930, 496);
+      this.tabPage2.TabIndex = 2;
+      this.tabPage2.Text = "tabPage2";
+      this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // fusionsDataGridView
+      // 
+      this.fusionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.fusionsDataGridView.Location = new System.Drawing.Point(3, 3);
+      this.fusionsDataGridView.Name = "fusionsDataGridView";
+      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 490);
+      this.fusionsDataGridView.TabIndex = 0;
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +477,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).EndInit();
+      this.tabPage2.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -481,5 +509,7 @@
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
+    private TabPage tabPage2;
+    private DataGridView fusionsDataGridView;
   }
 }
