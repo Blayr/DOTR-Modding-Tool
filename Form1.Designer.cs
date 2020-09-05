@@ -62,7 +62,10 @@
       this.cardConstantsFilterButton = new System.Windows.Forms.Button();
       this.cardConstantsFilterTextbox = new System.Windows.Forms.TextBox();
       this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
       this.CardConstantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CardConstantsXaxid = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantAttack = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantDefense = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,8 +77,6 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -314,6 +315,7 @@
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardConstantId,
+            this.CardConstantsXaxid,
             this.CardConstantName,
             this.CardConstantAttack,
             this.CardConstantDefense,
@@ -334,6 +336,26 @@
       this.cardConstantsDataGridView.Size = new System.Drawing.Size(924, 461);
       this.cardConstantsDataGridView.TabIndex = 0;
       // 
+      // tabPage2
+      // 
+      this.tabPage2.Controls.Add(this.fusionsDataGridView);
+      this.tabPage2.Location = new System.Drawing.Point(4, 22);
+      this.tabPage2.Name = "tabPage2";
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage2.Size = new System.Drawing.Size(930, 496);
+      this.tabPage2.TabIndex = 2;
+      this.tabPage2.Text = "tabPage2";
+      this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // fusionsDataGridView
+      // 
+      this.fusionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.fusionsDataGridView.Location = new System.Drawing.Point(3, 3);
+      this.fusionsDataGridView.Name = "fusionsDataGridView";
+      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 490);
+      this.fusionsDataGridView.TabIndex = 0;
+      // 
       // CardConstantId
       // 
       this.CardConstantId.DataPropertyName = "Index";
@@ -341,6 +363,13 @@
       this.CardConstantId.Name = "CardConstantId";
       this.CardConstantId.ReadOnly = true;
       this.CardConstantId.Width = 34;
+      // 
+      // CardConstantsXaxid
+      // 
+      this.CardConstantsXaxid.DataPropertyName = "XaxId";
+      this.CardConstantsXaxid.HeaderText = "XaxId";
+      this.CardConstantsXaxid.Name = "CardConstantsXaxid";
+      this.CardConstantsXaxid.ReadOnly = true;
       // 
       // CardConstantName
       // 
@@ -431,26 +460,6 @@
       this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantPasswordWorks.Width = 46;
       // 
-      // tabPage2
-      // 
-      this.tabPage2.Controls.Add(this.fusionsDataGridView);
-      this.tabPage2.Location = new System.Drawing.Point(4, 22);
-      this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(930, 496);
-      this.tabPage2.TabIndex = 2;
-      this.tabPage2.Text = "tabPage2";
-      this.tabPage2.UseVisualStyleBackColor = true;
-      // 
-      // fusionsDataGridView
-      // 
-      this.fusionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.fusionsDataGridView.Location = new System.Drawing.Point(3, 3);
-      this.fusionsDataGridView.Name = "fusionsDataGridView";
-      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 490);
-      this.fusionsDataGridView.TabIndex = 0;
-      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,7 +506,10 @@
     private Button cardConstantsFilterButton;
     private Label label1;
     private Button cardConstantFilterClearButton;
+    private TabPage tabPage2;
+    private DataGridView fusionsDataGridView;
     private DataGridViewTextBoxColumn CardConstantId;
+    private DataGridViewTextBoxColumn CardConstantsXaxid;
     private DataGridViewTextBoxColumn CardConstantName;
     private DataGridViewTextBoxColumn CardConstantAttack;
     private DataGridViewTextBoxColumn CardConstantDefense;
@@ -509,7 +521,5 @@
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
-    private TabPage tabPage2;
-    private DataGridView fusionsDataGridView;
   }
 }

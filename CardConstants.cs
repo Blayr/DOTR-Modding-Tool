@@ -217,6 +217,14 @@ public class CardConstant
     }
   }
 
+	public ushort XaxId
+  {
+    get
+    {
+			return this.xaxId;
+    }
+  }
+
 	public string AttributeName
   {
     get
