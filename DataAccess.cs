@@ -6,7 +6,7 @@ public class DataAccess
   public static readonly int DeckLeaderRankThresholdByteLength = 24;
   public static readonly int SLUSCardConstantsByteOffset = 2683264;
   public static readonly int SLUSFusionListByteOffset = 2550064;
-  public static readonly int FusionListByteLength = 26540;
+  public static readonly int FusionListByteLength = 26540 * 4;
   public static readonly int CardConstantByteLength = 20;
   public static readonly int CardConstantCount = Cards.TotalCardCount;
 
