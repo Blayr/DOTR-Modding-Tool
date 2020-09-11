@@ -10,7 +10,7 @@ public class Fusions
 {
 	public Fusions(byte[] bytes)
 	{
-		for (int i = 0; i + 3 < bytes.Length; i++)
+		for (int i = 0; i < bytes.Length; i += 4)
     {
 			byte[] fusionByteArray = new byte[] { bytes[i], bytes[i + 1], bytes[i + 2], bytes[i + 3] };
 			fusions.Add(new Fusion(fusionByteArray));
