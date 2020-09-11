@@ -25,8 +25,8 @@ public class Fusion
 	public Fusion(byte[] fourBytes)
   {
 		this.bitArray = new BitArray(fourBytes);
-		this.lowerCardId = this.getCardIdFromBitArray(this.bitArray, 0);
-		this.upperCardId = this.getCardIdFromBitArray(this.bitArray, 10);
+		this.upperCardId = this.getCardIdFromBitArray(this.bitArray, 0);
+		this.lowerCardId = this.getCardIdFromBitArray(this.bitArray, 10);
 		this.fusionResultId = this.getCardIdFromBitArray(this.bitArray, 20);
 
 		this.lowerCardName = Cards.GetNameByIndex(this.lowerCardId);
