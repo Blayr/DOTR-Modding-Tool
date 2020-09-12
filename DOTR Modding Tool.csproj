@@ -58,6 +58,7 @@
     <Compile Include="CardKind.cs" />
     <Compile Include="Cards.cs" />
     <Compile Include="DataAccess.cs" />
+    <Compile Include="DebugHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
