@@ -6,10 +6,10 @@ public class Fusions
 {
 	public Fusions(byte[] bytes)
 	{
-		for (int i = 0; i < bytes.Length; i += 4)
+		for (int i = 0; i < bytes.Length; i += Fusion.ByteLength)
     {
 			byte[] fusionByteArray = new byte[] { bytes[i], bytes[i + 1], bytes[i + 2], bytes[i + 3] };
-			fusions.Add(new Fusion(fusionByteArray));
+			fusions.Add(new Fusion(i / Fusion.ByteLength, fusionByteArray));
     }
 	}
 
@@ -18,8 +18,10 @@ public class Fusions
 
 public class Fusion
 {
-	public Fusion(byte[] fourBytes)
+	public static int ByteLength = 4;
+	public Fusion(int index, byte[] fourBytes)
   {
+		this.index = index;
 		this.bitArray = new BitArray(fourBytes);
 		this.upperCardIndex = this.getCardIdFromBitArray(this.bitArray, 0);
 		this.lowerCardIndex = this.getCardIdFromBitArray(this.bitArray, 10);
@@ -43,6 +45,14 @@ public class Fusion
 		byteBitArray.CopyTo(tempByteArray, 0);
 
 		return BitConverter.ToUInt16(tempByteArray, 0);
+  }
+
+	public int Index
+  {
+		get
+    {
+			return this.index;
+    }
   }
 
 	public ushort LowerCardIndex
@@ -111,6 +121,7 @@ public class Fusion
     }
   }
 
+	int index;
 	BitArray bitArray;
 	ushort lowerCardIndex;
 	ushort upperCardIndex;
