@@ -191,7 +191,16 @@
 
     private void LoadFusionData()
     {
-      this.fusions = new Fusions(this.dataAccess.LoadFusionData());
+      byte[] fusionBytes = this.dataAccess.LoadFusionData();
+      this.fusions = new Fusions(fusionBytes);
+
+      DebugHelper.PrintByteArray(fusionBytes);
+
+      System.Diagnostics.Debug.Print("--------------------------------------------");
+
+      DebugHelper.PrintByteArray(this.fusions.Bytes);
+
+
       this.fusionsBinding = new BindingListView<Fusion>(this.fusions.fusions);
       this.fusionsDataGridView.AutoGenerateColumns = false;
 

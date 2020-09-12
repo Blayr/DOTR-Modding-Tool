@@ -13,6 +13,22 @@ public class Fusions
     }
 	}
 
+	public byte[] Bytes
+  {
+    get
+    {
+			byte[] bytes = new byte[this.fusions.Count * Fusion.ByteLength];
+
+			for (int i = 0; i < bytes.Length; i += Fusion.ByteLength)
+      {
+				byte[] fusionBytes = this.fusions[i / Fusion.ByteLength].Bytes;
+				fusionBytes.CopyTo(bytes, i);
+      }
+
+			return bytes;
+    }
+  }
+
 	public List<Fusion> fusions = new List<Fusion> { };
 }
 
@@ -30,6 +46,39 @@ public class Fusion
 		this.lowerCardName = Cards.GetNameByIndex(this.lowerCardIndex);
 		this.upperCardName = Cards.GetNameByIndex(this.upperCardIndex);
 		this.fusionCardName = Cards.GetNameByIndex(this.fusionResultIndex);
+	}
+
+	public byte[] Bytes
+  {
+    get
+    {
+			byte[] bytes = new byte[4];
+			this.bitArray.CopyTo(bytes, 0);
+			return bytes;
+    }
+  }
+
+	private void updateBitArray()
+	{
+		BitArray lowerBits = new BitArray(BitConverter.GetBytes(this.lowerCardIndex));
+		BitArray upperBits = new BitArray(BitConverter.GetBytes(this.upperCardIndex));
+		BitArray fusionResultBits = new BitArray(BitConverter.GetBytes(this.fusionResultIndex));
+
+		for (int i = 0; i < 30; i++)
+    {
+			if (i < 10)
+      {
+				this.bitArray[i] = upperBits[i];
+      } else if (i < 20)
+      {
+				this.bitArray[i] = lowerBits[i - 10];
+      } else if (i < 30)
+      {
+				this.bitArray[i] = fusionResultBits[i - 20];
+      }
+
+			DebugHelper.PrintBitArray(this.bitArray, 10);
+    } 
 	}
 
 	private ushort getCardIdFromBitArray(BitArray bitArray, int startIndex)
@@ -66,6 +115,7 @@ public class Fusion
     {
 			this.lowerCardIndex = value;
 			this.lowerCardName = Cards.GetNameByIndex(this.lowerCardIndex);
+			this.updateBitArray();
 		}
   }
 
@@ -88,6 +138,7 @@ public class Fusion
 		{
 			this.upperCardIndex = value;
 			this.upperCardName = Cards.GetNameByIndex(this.upperCardIndex);
+			this.updateBitArray();
 		}
 	}
 
@@ -110,6 +161,7 @@ public class Fusion
 		{
 			this.fusionResultIndex = value;
 			this.fusionCardName = Cards.GetNameByIndex(this.fusionResultIndex);
+			this.updateBitArray();
 		}
 	}
 
