@@ -62,8 +62,6 @@
       this.cardConstantsFilterButton = new System.Windows.Forms.Button();
       this.cardConstantsFilterTextbox = new System.Windows.Forms.TextBox();
       this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
-      this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
       this.CardConstantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantsXaxid = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +75,13 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
+      this.listBox1 = new System.Windows.Forms.ListBox();
+      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.FusionsDataGridViewLowerCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -105,7 +110,6 @@
       this.menuStrip1.Size = new System.Drawing.Size(938, 24);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
-      this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
       // 
       // openISOMenuItem
       // 
@@ -146,6 +150,8 @@
       // 
       // leaderRankTresholdsTabControl
       // 
+      this.leaderRankTresholdsTabControl.Controls.Add(this.comboBox1);
+      this.leaderRankTresholdsTabControl.Controls.Add(this.listBox1);
       this.leaderRankTresholdsTabControl.Controls.Add(this.textBox2);
       this.leaderRankTresholdsTabControl.Controls.Add(this.textBox1);
       this.leaderRankTresholdsTabControl.Controls.Add(this.newRankThresholdsTextbox);
@@ -336,26 +342,6 @@
       this.cardConstantsDataGridView.Size = new System.Drawing.Size(924, 461);
       this.cardConstantsDataGridView.TabIndex = 0;
       // 
-      // tabPage2
-      // 
-      this.tabPage2.Controls.Add(this.fusionsDataGridView);
-      this.tabPage2.Location = new System.Drawing.Point(4, 22);
-      this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(930, 496);
-      this.tabPage2.TabIndex = 2;
-      this.tabPage2.Text = "tabPage2";
-      this.tabPage2.UseVisualStyleBackColor = true;
-      // 
-      // fusionsDataGridView
-      // 
-      this.fusionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.fusionsDataGridView.Location = new System.Drawing.Point(3, 3);
-      this.fusionsDataGridView.Name = "fusionsDataGridView";
-      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 490);
-      this.fusionsDataGridView.TabIndex = 0;
-      // 
       // CardConstantId
       // 
       this.CardConstantId.DataPropertyName = "Index";
@@ -460,6 +446,77 @@
       this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantPasswordWorks.Width = 46;
       // 
+      // tabPage2
+      // 
+      this.tabPage2.Controls.Add(this.fusionsDataGridView);
+      this.tabPage2.Location = new System.Drawing.Point(4, 22);
+      this.tabPage2.Name = "tabPage2";
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage2.Size = new System.Drawing.Size(930, 496);
+      this.tabPage2.TabIndex = 2;
+      this.tabPage2.Text = "Fusions";
+      this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // fusionsDataGridView
+      // 
+      this.fusionsDataGridView.AllowUserToAddRows = false;
+      this.fusionsDataGridView.AllowUserToDeleteRows = false;
+      this.fusionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.fusionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FusionsDataGridViewLowerCard,
+            this.FusionsDataGridViewUpperCard,
+            this.FusionsDataGridViewFusionCard});
+      this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.fusionsDataGridView.Location = new System.Drawing.Point(3, 3);
+      this.fusionsDataGridView.Name = "fusionsDataGridView";
+      this.fusionsDataGridView.RowHeadersVisible = false;
+      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 490);
+      this.fusionsDataGridView.TabIndex = 0;
+      // 
+      // listBox1
+      // 
+      this.listBox1.FormattingEnabled = true;
+      this.listBox1.Location = new System.Drawing.Point(722, 40);
+      this.listBox1.Name = "listBox1";
+      this.listBox1.Size = new System.Drawing.Size(120, 95);
+      this.listBox1.TabIndex = 23;
+      // 
+      // comboBox1
+      // 
+      this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+      this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+      this.comboBox1.DisplayMember = "Name";
+      this.comboBox1.FormattingEnabled = true;
+      this.comboBox1.Location = new System.Drawing.Point(640, 202);
+      this.comboBox1.Name = "comboBox1";
+      this.comboBox1.Size = new System.Drawing.Size(243, 21);
+      this.comboBox1.TabIndex = 24;
+      this.comboBox1.ValueMember = "cardIndex";
+      // 
+      // FusionsDataGridViewLowerCard
+      // 
+      this.FusionsDataGridViewLowerCard.DataPropertyName = "CardIndex";
+      this.FusionsDataGridViewLowerCard.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+      this.FusionsDataGridViewLowerCard.HeaderText = "Fusion Material 1";
+      this.FusionsDataGridViewLowerCard.Name = "FusionsDataGridViewLowerCard";
+      this.FusionsDataGridViewLowerCard.Width = 200;
+      // 
+      // FusionsDataGridViewUpperCard
+      // 
+      this.FusionsDataGridViewUpperCard.HeaderText = "Fusion Material 2";
+      this.FusionsDataGridViewUpperCard.Name = "FusionsDataGridViewUpperCard";
+      this.FusionsDataGridViewUpperCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+      this.FusionsDataGridViewUpperCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.FusionsDataGridViewUpperCard.Width = 200;
+      // 
+      // FusionsDataGridViewFusionCard
+      // 
+      this.FusionsDataGridViewFusionCard.HeaderText = "Resulting Fusion";
+      this.FusionsDataGridViewFusionCard.Name = "FusionsDataGridViewFusionCard";
+      this.FusionsDataGridViewFusionCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+      this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.FusionsDataGridViewFusionCard.Width = 200;
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,5 +578,10 @@
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
+    private ListBox listBox1;
+    private ComboBox comboBox1;
+    private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
+    private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
+    private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
   }
 }

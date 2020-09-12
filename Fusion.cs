@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO.Ports;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 public class Fusions
 {
@@ -25,13 +21,13 @@ public class Fusion
 	public Fusion(byte[] fourBytes)
   {
 		this.bitArray = new BitArray(fourBytes);
-		this.upperCardId = this.getCardIdFromBitArray(this.bitArray, 0);
-		this.lowerCardId = this.getCardIdFromBitArray(this.bitArray, 10);
-		this.fusionResultId = this.getCardIdFromBitArray(this.bitArray, 20);
+		this.upperCardIndex = this.getCardIdFromBitArray(this.bitArray, 0);
+		this.lowerCardIndex = this.getCardIdFromBitArray(this.bitArray, 10);
+		this.fusionResultIndex = this.getCardIdFromBitArray(this.bitArray, 20);
 
-		this.lowerCardName = Cards.GetNameByIndex(this.lowerCardId);
-		this.upperCardName = Cards.GetNameByIndex(this.upperCardId);
-		this.fusionCardName = Cards.GetNameByIndex(this.fusionResultId);
+		this.lowerCardName = Cards.GetNameByIndex(this.lowerCardIndex);
+		this.upperCardName = Cards.GetNameByIndex(this.upperCardIndex);
+		this.fusionCardName = Cards.GetNameByIndex(this.fusionResultIndex);
 	}
 
 	private ushort getCardIdFromBitArray(BitArray bitArray, int startIndex)
@@ -49,6 +45,20 @@ public class Fusion
 		return BitConverter.ToUInt16(tempByteArray, 0);
   }
 
+	public ushort LowerCardIndex
+  {
+    get
+    {
+			return this.lowerCardIndex;
+    }
+
+		set
+    {
+			this.lowerCardIndex = value;
+			this.lowerCardName = Cards.GetNameByIndex(this.lowerCardIndex);
+		}
+  }
+
 	public string LowerCardName
   {
     get
@@ -57,6 +67,20 @@ public class Fusion
     }
   }
 
+	public ushort UpperCardIndex
+	{
+		get
+		{
+			return this.upperCardIndex;
+		}
+
+		set
+		{
+			this.upperCardIndex = value;
+			this.upperCardName = Cards.GetNameByIndex(this.upperCardIndex);
+		}
+	}
+
 	public string UpperCardName
   {
     get
@@ -64,6 +88,20 @@ public class Fusion
 			return this.upperCardName;
     }
   }
+
+	public ushort FusionCardIndex
+	{
+		get
+		{
+			return this.fusionResultIndex;
+		}
+
+		set
+		{
+			this.fusionResultIndex = value;
+			this.fusionCardName = Cards.GetNameByIndex(this.fusionResultIndex);
+		}
+	}
 
 	public string FusionCardName
   {
@@ -74,9 +112,9 @@ public class Fusion
   }
 
 	BitArray bitArray;
-	ushort lowerCardId;
-	ushort upperCardId;
-	ushort fusionResultId;
+	ushort lowerCardIndex;
+	ushort upperCardIndex;
+	ushort fusionResultIndex;
 
 	string lowerCardName;
 	string upperCardName;

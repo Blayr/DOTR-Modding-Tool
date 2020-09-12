@@ -5,6 +5,7 @@
   using System.ComponentModel;
   using System.Diagnostics;
   using System.Drawing;
+  using System.Runtime.CompilerServices;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -15,6 +16,7 @@
     private CardConstants cardConstants;
     private BindingListView<CardConstant> cardConstantsBinding;
     private Fusions fusions;
+    private BindingListView<Fusion> fusionsBinding;
 
     public MainForm()
     {
@@ -177,7 +179,7 @@
 
       originalRankThresholdsTextbox.Text = openFileDialog1.FileName;
       this.dataAccess.OpenIso(openFileDialog1.FileName);
-      this.LoadLeaderTresholdData();
+      this.LoadDataFromIso();
     }
 
     private void LoadDataFromIso()
@@ -190,9 +192,48 @@
     private void LoadFusionData()
     {
       this.fusions = new Fusions(this.dataAccess.LoadFusionData());
-      this.fusionsDataGridView.AutoGenerateColumns = true;
-      this.fusionsDataGridView.DataSource = this.fusions.fusions;
-      this.fusionsDataGridView.AutoGenerateColumns = true;
+      this.fusionsBinding = new BindingListView<Fusion>(this.fusions.fusions);
+      this.fusionsDataGridView.AutoGenerateColumns = false;
+
+      this.FusionsDataGridViewLowerCard.DataPropertyName = "LowerCardIndex";
+      this.FusionsDataGridViewLowerCard.ValueMember = "LowerCardIndex";
+      this.FusionsDataGridViewLowerCard.DisplayMember = "LowerCardName";
+      this.FusionsDataGridViewLowerCard.AutoComplete = true;
+      this.FusionsDataGridViewLowerCard.FlatStyle = FlatStyle.Flat;
+
+      this.FusionsDataGridViewUpperCard.DataPropertyName = "UpperCardIndex";
+      this.FusionsDataGridViewUpperCard.ValueMember = "UpperCardIndex";
+      this.FusionsDataGridViewUpperCard.DisplayMember = "UpperCardName";
+      this.FusionsDataGridViewUpperCard.AutoComplete = true;
+      this.FusionsDataGridViewUpperCard.FlatStyle = FlatStyle.Flat;
+
+
+      this.FusionsDataGridViewFusionCard.DataPropertyName = "FusionCardIndex";
+      this.FusionsDataGridViewFusionCard.ValueMember = "FusionCardIndex";
+      this.FusionsDataGridViewFusionCard.DisplayMember = "FusionCardName";
+      this.FusionsDataGridViewFusionCard.AutoComplete = true;
+      this.FusionsDataGridViewFusionCard.FlatStyle = FlatStyle.Flat;
+
+      foreach (CardConstant cardConstant in this.cardConstants.Constants)
+      {
+        this.FusionsDataGridViewLowerCard.Items.Add(new { LowerCardName = cardConstant.Name, LowerCardIndex = cardConstant.Index });
+        this.FusionsDataGridViewUpperCard.Items.Add(new { UpperCardName = cardConstant.Name, UpperCardIndex= cardConstant.Index });
+        this.FusionsDataGridViewFusionCard.Items.Add(new { FusionCardName = cardConstant.Name, FusionCardIndex = cardConstant.Index });
+      }
+     
+      this.fusionsDataGridView.EditingControlShowing += this.FusionEditControlShowing;
+
+      this.fusionsDataGridView.DataSource = this.fusionsBinding;
+    }
+
+    private void FusionEditControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+    {
+      if (e.Control is DataGridViewComboBoxEditingControl)
+      {
+        ((ComboBox)e.Control).DropDownStyle = ComboBoxStyle.DropDown;
+        ((ComboBox)e.Control).AutoCompleteSource = AutoCompleteSource.ListItems;
+        ((ComboBox)e.Control).AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+      }
     }
 
     private void LoadCardConstantsData()
@@ -202,6 +243,8 @@
       this.cardConstantsBinding = new BindingListView<CardConstant>(this.cardConstants.Constants);
       this.cardConstantsDataGridView.DataSource = cardConstantsBinding;
       this.cardConstantsDataGridView.DefaultCellStyle.Font = new Font("OpenSans", 9.75F, FontStyle.Regular);
+      this.comboBox1.DataSource = this.cardConstants.Constants;
+      this.comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
     }
 
     private void LoadLeaderTresholdData()
