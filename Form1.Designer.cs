@@ -553,9 +553,10 @@
       // 
       // fusionSaveButton
       // 
-      this.fusionSaveButton.Location = new System.Drawing.Point(844, 3);
+      this.fusionSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
+      this.fusionSaveButton.Location = new System.Drawing.Point(849, 0);
       this.fusionSaveButton.Name = "fusionSaveButton";
-      this.fusionSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.fusionSaveButton.Size = new System.Drawing.Size(75, 25);
       this.fusionSaveButton.TabIndex = 0;
       this.fusionSaveButton.Text = "Save";
       this.fusionSaveButton.UseVisualStyleBackColor = false;
