@@ -78,11 +78,13 @@
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.splitContainer2 = new System.Windows.Forms.SplitContainer();
       this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
       this.FusionsDataGridViewIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.FusionsDataGridViewLowerCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.fusionSaveButton = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -94,6 +96,10 @@
       this.splitContainer1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).BeginInit();
       this.tabPage2.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+      this.splitContainer2.Panel1.SuspendLayout();
+      this.splitContainer2.Panel2.SuspendLayout();
+      this.splitContainer2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).BeginInit();
       this.SuspendLayout();
       // 
@@ -469,7 +475,7 @@
       // 
       // tabPage2
       // 
-      this.tabPage2.Controls.Add(this.fusionsDataGridView);
+      this.tabPage2.Controls.Add(this.splitContainer2);
       this.tabPage2.Location = new System.Drawing.Point(4, 22);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -477,6 +483,24 @@
       this.tabPage2.TabIndex = 2;
       this.tabPage2.Text = "Fusions";
       this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // splitContainer2
+      // 
+      this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+      this.splitContainer2.Name = "splitContainer2";
+      this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+      // 
+      // splitContainer2.Panel1
+      // 
+      this.splitContainer2.Panel1.Controls.Add(this.fusionSaveButton);
+      // 
+      // splitContainer2.Panel2
+      // 
+      this.splitContainer2.Panel2.Controls.Add(this.fusionsDataGridView);
+      this.splitContainer2.Size = new System.Drawing.Size(924, 490);
+      this.splitContainer2.SplitterDistance = 25;
+      this.splitContainer2.TabIndex = 1;
       // 
       // fusionsDataGridView
       // 
@@ -489,10 +513,10 @@
             this.FusionsDataGridViewUpperCard,
             this.FusionsDataGridViewFusionCard});
       this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.fusionsDataGridView.Location = new System.Drawing.Point(3, 3);
+      this.fusionsDataGridView.Location = new System.Drawing.Point(0, 0);
       this.fusionsDataGridView.Name = "fusionsDataGridView";
       this.fusionsDataGridView.RowHeadersVisible = false;
-      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 490);
+      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 461);
       this.fusionsDataGridView.TabIndex = 0;
       // 
       // FusionsDataGridViewIndex
@@ -527,6 +551,16 @@
       this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.FusionsDataGridViewFusionCard.Width = 200;
       // 
+      // fusionSaveButton
+      // 
+      this.fusionSaveButton.Location = new System.Drawing.Point(844, 3);
+      this.fusionSaveButton.Name = "fusionSaveButton";
+      this.fusionSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.fusionSaveButton.TabIndex = 0;
+      this.fusionSaveButton.Text = "Save";
+      this.fusionSaveButton.UseVisualStyleBackColor = false;
+      this.fusionSaveButton.Click += new System.EventHandler(this.fusionSaveButton_Click);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,6 +588,10 @@
       this.splitContainer1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).EndInit();
       this.tabPage2.ResumeLayout(false);
+      this.splitContainer2.Panel1.ResumeLayout(false);
+      this.splitContainer2.Panel2.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+      this.splitContainer2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -594,5 +632,7 @@
     private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
     private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
     private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
+    private SplitContainer splitContainer2;
+    private Button fusionSaveButton;
   }
 }

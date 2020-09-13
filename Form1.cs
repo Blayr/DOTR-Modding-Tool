@@ -191,6 +191,7 @@
 
     private void LoadFusionData()
     {
+      this.fusionsDataGridView.DataSource = null;
       byte[] fusionBytes = this.dataAccess.LoadFusionData();
       this.fusions = new Fusions(fusionBytes);
 
@@ -316,6 +317,12 @@
     {
       this.cardConstantsFilterTextbox.Clear();
       this.cardConstantsBinding.RemoveFilter();
+    }
+
+    private void fusionSaveButton_Click(object sender, EventArgs e)
+    {
+      this.dataAccess.SaveFusionData(this.fusions.Bytes);
+      this.LoadFusionData();
     }
   }
 }

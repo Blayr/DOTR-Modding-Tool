@@ -93,5 +93,14 @@ public class DataAccess
 
     return buffer;
   }
+
+  public void SaveFusionData(byte[] byteData)
+  {
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(DataAccess.SLUSFusionListByteOffset, SeekOrigin.Begin);
+      fileStream.Write(byteData, 0, byteData.Length);
+    }
+  }
 }
 
