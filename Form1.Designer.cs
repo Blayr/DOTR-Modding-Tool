@@ -64,8 +64,15 @@
       this.cardConstantsFilterButton = new System.Windows.Forms.Button();
       this.cardConstantsFilterTextbox = new System.Windows.Forms.TextBox();
       this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+      this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
+      this.FusionsDataGridViewIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.FusionsDataGridViewLowerCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.fusionSaveButton = new System.Windows.Forms.Button();
       this.CardConstantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.CardConstantsXaxid = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantAttack = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantDefense = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,14 +84,6 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.tabPage2 = new System.Windows.Forms.TabPage();
-      this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-      this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
-      this.FusionsDataGridViewIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.FusionsDataGridViewLowerCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
-      this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
-      this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
-      this.fusionSaveButton = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -348,7 +347,6 @@
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardConstantId,
-            this.CardConstantsXaxid,
             this.CardConstantName,
             this.CardConstantAttack,
             this.CardConstantDefense,
@@ -368,110 +366,6 @@
       this.cardConstantsDataGridView.RowHeadersVisible = false;
       this.cardConstantsDataGridView.Size = new System.Drawing.Size(924, 461);
       this.cardConstantsDataGridView.TabIndex = 0;
-      // 
-      // CardConstantId
-      // 
-      this.CardConstantId.DataPropertyName = "Index";
-      this.CardConstantId.HeaderText = "ID";
-      this.CardConstantId.Name = "CardConstantId";
-      this.CardConstantId.ReadOnly = true;
-      this.CardConstantId.Width = 34;
-      // 
-      // CardConstantsXaxid
-      // 
-      this.CardConstantsXaxid.DataPropertyName = "XaxId";
-      this.CardConstantsXaxid.HeaderText = "XaxId";
-      this.CardConstantsXaxid.Name = "CardConstantsXaxid";
-      this.CardConstantsXaxid.ReadOnly = true;
-      // 
-      // CardConstantName
-      // 
-      this.CardConstantName.DataPropertyName = "Name";
-      this.CardConstantName.HeaderText = "Name";
-      this.CardConstantName.Name = "CardConstantName";
-      this.CardConstantName.ReadOnly = true;
-      this.CardConstantName.Width = 160;
-      // 
-      // CardConstantAttack
-      // 
-      this.CardConstantAttack.DataPropertyName = "Attack";
-      this.CardConstantAttack.HeaderText = "Atk";
-      this.CardConstantAttack.Name = "CardConstantAttack";
-      this.CardConstantAttack.Width = 40;
-      // 
-      // CardConstantDefense
-      // 
-      this.CardConstantDefense.DataPropertyName = "Defense";
-      this.CardConstantDefense.HeaderText = "Def";
-      this.CardConstantDefense.Name = "CardConstantDefense";
-      this.CardConstantDefense.Width = 40;
-      // 
-      // CardConstantsType
-      // 
-      this.CardConstantsType.DataPropertyName = "Type";
-      this.CardConstantsType.HeaderText = "Type";
-      this.CardConstantsType.Name = "CardConstantsType";
-      this.CardConstantsType.ReadOnly = true;
-      this.CardConstantsType.Width = 60;
-      // 
-      // CardConstantsAttribute
-      // 
-      this.CardConstantsAttribute.DataPropertyName = "AttributeName";
-      this.CardConstantsAttribute.HeaderText = "Attr.";
-      this.CardConstantsAttribute.Name = "CardConstantsAttribute";
-      this.CardConstantsAttribute.ReadOnly = true;
-      this.CardConstantsAttribute.Width = 50;
-      // 
-      // CardConstantsLevel
-      // 
-      this.CardConstantsLevel.DataPropertyName = "Level";
-      this.CardConstantsLevel.HeaderText = "Lvl";
-      this.CardConstantsLevel.Name = "CardConstantsLevel";
-      this.CardConstantsLevel.ReadOnly = true;
-      this.CardConstantsLevel.Width = 30;
-      // 
-      // CardConstantDeckCost
-      // 
-      this.CardConstantDeckCost.DataPropertyName = "DeckCost";
-      this.CardConstantDeckCost.HeaderText = "DC";
-      this.CardConstantDeckCost.Name = "CardConstantDeckCost";
-      this.CardConstantDeckCost.Width = 30;
-      // 
-      // CardConstantSlots
-      // 
-      this.CardConstantSlots.DataPropertyName = "AppearsInSlotReels";
-      this.CardConstantSlots.HeaderText = "Slots";
-      this.CardConstantSlots.Name = "CardConstantSlots";
-      this.CardConstantSlots.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-      this.CardConstantSlots.Width = 40;
-      // 
-      // CardConstantIsSlotRare
-      // 
-      this.CardConstantIsSlotRare.DataPropertyName = "IsSlotRare";
-      this.CardConstantIsSlotRare.HeaderText = "Slot Rare";
-      this.CardConstantIsSlotRare.Name = "CardConstantIsSlotRare";
-      this.CardConstantIsSlotRare.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-      this.CardConstantIsSlotRare.Width = 40;
-      // 
-      // CardConstantReincarnation
-      // 
-      this.CardConstantReincarnation.DataPropertyName = "AppearsInReincarnation";
-      this.CardConstantReincarnation.FalseValue = "false";
-      this.CardConstantReincarnation.HeaderText = "Reinc.";
-      this.CardConstantReincarnation.IndeterminateValue = "false";
-      this.CardConstantReincarnation.Name = "CardConstantReincarnation";
-      this.CardConstantReincarnation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-      this.CardConstantReincarnation.TrueValue = "true";
-      this.CardConstantReincarnation.Width = 46;
-      // 
-      // CardConstantPasswordWorks
-      // 
-      this.CardConstantPasswordWorks.DataPropertyName = "PasswordWorks";
-      this.CardConstantPasswordWorks.HeaderText = "PWD Works";
-      this.CardConstantPasswordWorks.Name = "CardConstantPasswordWorks";
-      this.CardConstantPasswordWorks.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-      this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-      this.CardConstantPasswordWorks.Width = 46;
       // 
       // tabPage2
       // 
@@ -562,6 +456,103 @@
       this.fusionSaveButton.UseVisualStyleBackColor = false;
       this.fusionSaveButton.Click += new System.EventHandler(this.fusionSaveButton_Click);
       // 
+      // CardConstantId
+      // 
+      this.CardConstantId.DataPropertyName = "Index";
+      this.CardConstantId.HeaderText = "ID";
+      this.CardConstantId.Name = "CardConstantId";
+      this.CardConstantId.ReadOnly = true;
+      this.CardConstantId.Width = 34;
+      // 
+      // CardConstantName
+      // 
+      this.CardConstantName.DataPropertyName = "Name";
+      this.CardConstantName.HeaderText = "Name";
+      this.CardConstantName.Name = "CardConstantName";
+      this.CardConstantName.ReadOnly = true;
+      this.CardConstantName.Width = 160;
+      // 
+      // CardConstantAttack
+      // 
+      this.CardConstantAttack.DataPropertyName = "Attack";
+      this.CardConstantAttack.HeaderText = "Atk";
+      this.CardConstantAttack.Name = "CardConstantAttack";
+      this.CardConstantAttack.Width = 40;
+      // 
+      // CardConstantDefense
+      // 
+      this.CardConstantDefense.DataPropertyName = "Defense";
+      this.CardConstantDefense.HeaderText = "Def";
+      this.CardConstantDefense.Name = "CardConstantDefense";
+      this.CardConstantDefense.Width = 40;
+      // 
+      // CardConstantsType
+      // 
+      this.CardConstantsType.DataPropertyName = "Type";
+      this.CardConstantsType.HeaderText = "Type";
+      this.CardConstantsType.Name = "CardConstantsType";
+      this.CardConstantsType.ReadOnly = true;
+      this.CardConstantsType.Width = 60;
+      // 
+      // CardConstantsAttribute
+      // 
+      this.CardConstantsAttribute.DataPropertyName = "AttributeName";
+      this.CardConstantsAttribute.HeaderText = "Attr.";
+      this.CardConstantsAttribute.Name = "CardConstantsAttribute";
+      this.CardConstantsAttribute.ReadOnly = true;
+      this.CardConstantsAttribute.Width = 50;
+      // 
+      // CardConstantsLevel
+      // 
+      this.CardConstantsLevel.DataPropertyName = "Level";
+      this.CardConstantsLevel.HeaderText = "Lvl";
+      this.CardConstantsLevel.Name = "CardConstantsLevel";
+      this.CardConstantsLevel.ReadOnly = true;
+      this.CardConstantsLevel.Width = 30;
+      // 
+      // CardConstantDeckCost
+      // 
+      this.CardConstantDeckCost.DataPropertyName = "DeckCost";
+      this.CardConstantDeckCost.HeaderText = "DC";
+      this.CardConstantDeckCost.Name = "CardConstantDeckCost";
+      this.CardConstantDeckCost.Width = 30;
+      // 
+      // CardConstantSlots
+      // 
+      this.CardConstantSlots.DataPropertyName = "AppearsInSlotReels";
+      this.CardConstantSlots.HeaderText = "Slots";
+      this.CardConstantSlots.Name = "CardConstantSlots";
+      this.CardConstantSlots.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantSlots.Width = 40;
+      // 
+      // CardConstantIsSlotRare
+      // 
+      this.CardConstantIsSlotRare.DataPropertyName = "IsSlotRare";
+      this.CardConstantIsSlotRare.HeaderText = "Slot Rare";
+      this.CardConstantIsSlotRare.Name = "CardConstantIsSlotRare";
+      this.CardConstantIsSlotRare.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantIsSlotRare.Width = 40;
+      // 
+      // CardConstantReincarnation
+      // 
+      this.CardConstantReincarnation.DataPropertyName = "AppearsInReincarnation";
+      this.CardConstantReincarnation.FalseValue = "false";
+      this.CardConstantReincarnation.HeaderText = "Reinc.";
+      this.CardConstantReincarnation.IndeterminateValue = "false";
+      this.CardConstantReincarnation.Name = "CardConstantReincarnation";
+      this.CardConstantReincarnation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantReincarnation.TrueValue = "true";
+      this.CardConstantReincarnation.Width = 46;
+      // 
+      // CardConstantPasswordWorks
+      // 
+      this.CardConstantPasswordWorks.DataPropertyName = "PasswordWorks";
+      this.CardConstantPasswordWorks.HeaderText = "PWD Works";
+      this.CardConstantPasswordWorks.Name = "CardConstantPasswordWorks";
+      this.CardConstantPasswordWorks.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+      this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantPasswordWorks.Width = 46;
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,8 +605,15 @@
     private Button cardConstantFilterClearButton;
     private TabPage tabPage2;
     private DataGridView fusionsDataGridView;
+    private ListBox listBox1;
+    private ComboBox comboBox1;
+    private DataGridViewTextBoxColumn FusionsDataGridViewIndex;
+    private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
+    private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
+    private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
+    private SplitContainer splitContainer2;
+    private Button fusionSaveButton;
     private DataGridViewTextBoxColumn CardConstantId;
-    private DataGridViewTextBoxColumn CardConstantsXaxid;
     private DataGridViewTextBoxColumn CardConstantName;
     private DataGridViewTextBoxColumn CardConstantAttack;
     private DataGridViewTextBoxColumn CardConstantDefense;
@@ -627,13 +625,5 @@
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
-    private ListBox listBox1;
-    private ComboBox comboBox1;
-    private DataGridViewTextBoxColumn FusionsDataGridViewIndex;
-    private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
-    private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
-    private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
-    private SplitContainer splitContainer2;
-    private Button fusionSaveButton;
   }
 }
