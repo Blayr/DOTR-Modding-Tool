@@ -47,8 +47,6 @@
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.leaderRankTresholdsTabControl = new System.Windows.Forms.TabPage();
-      this.comboBox1 = new System.Windows.Forms.ComboBox();
-      this.listBox1 = new System.Windows.Forms.ListBox();
       this.textBox2 = new System.Windows.Forms.TextBox();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.newRankThresholdsTextbox = new System.Windows.Forms.TextBox();
@@ -138,8 +136,6 @@
       // 
       // leaderRankTresholdsTabControl
       // 
-      this.leaderRankTresholdsTabControl.Controls.Add(this.comboBox1);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.listBox1);
       this.leaderRankTresholdsTabControl.Controls.Add(this.textBox2);
       this.leaderRankTresholdsTabControl.Controls.Add(this.textBox1);
       this.leaderRankTresholdsTabControl.Controls.Add(this.newRankThresholdsTextbox);
@@ -153,26 +149,6 @@
       this.leaderRankTresholdsTabControl.TabIndex = 0;
       this.leaderRankTresholdsTabControl.Text = "Rank Thresholds";
       this.leaderRankTresholdsTabControl.UseVisualStyleBackColor = true;
-      // 
-      // comboBox1
-      // 
-      this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-      this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-      this.comboBox1.DisplayMember = "Name";
-      this.comboBox1.FormattingEnabled = true;
-      this.comboBox1.Location = new System.Drawing.Point(640, 202);
-      this.comboBox1.Name = "comboBox1";
-      this.comboBox1.Size = new System.Drawing.Size(243, 21);
-      this.comboBox1.TabIndex = 24;
-      this.comboBox1.ValueMember = "cardIndex";
-      // 
-      // listBox1
-      // 
-      this.listBox1.FormattingEnabled = true;
-      this.listBox1.Location = new System.Drawing.Point(722, 40);
-      this.listBox1.Name = "listBox1";
-      this.listBox1.Size = new System.Drawing.Size(120, 95);
-      this.listBox1.TabIndex = 23;
       // 
       // textBox2
       // 
@@ -597,12 +573,6 @@
     private Button cardConstantFilterClearButton;
     private TabPage tabPage2;
     private DataGridView fusionsDataGridView;
-    private ListBox listBox1;
-    private ComboBox comboBox1;
-    private DataGridViewTextBoxColumn FusionsDataGridViewIndex;
-    private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
-    private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
-    private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
     private SplitContainer splitContainer2;
     private Button fusionSaveButton;
     private DataGridViewTextBoxColumn CardConstantId;
@@ -618,5 +588,9 @@
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
     private Button cardConstantsSaveButton;
+    private DataGridViewTextBoxColumn FusionsDataGridViewIndex;
+    private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
+    private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
+    private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
   }
 }

@@ -253,8 +253,6 @@
       this.cardConstantsBinding = new BindingListView<CardConstant>(this.cardConstants.Constants);
       this.cardConstantsDataGridView.DataSource = cardConstantsBinding;
       this.cardConstantsDataGridView.DefaultCellStyle.Font = new Font("OpenSans", 9.75F, FontStyle.Regular);
-      this.comboBox1.DataSource = this.cardConstants.Constants;
-      this.comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
     }
 
     private void LoadLeaderTresholdData()
