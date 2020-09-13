@@ -505,7 +505,7 @@
       this.FusionsDataGridViewLowerCard.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
       this.FusionsDataGridViewLowerCard.HeaderText = "Fusion Material 1";
       this.FusionsDataGridViewLowerCard.Name = "FusionsDataGridViewLowerCard";
-      this.FusionsDataGridViewLowerCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.FusionsDataGridViewLowerCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
       this.FusionsDataGridViewLowerCard.Width = 200;
       // 
       // FusionsDataGridViewUpperCard
@@ -513,7 +513,7 @@
       this.FusionsDataGridViewUpperCard.HeaderText = "Fusion Material 2";
       this.FusionsDataGridViewUpperCard.Name = "FusionsDataGridViewUpperCard";
       this.FusionsDataGridViewUpperCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-      this.FusionsDataGridViewUpperCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.FusionsDataGridViewUpperCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
       this.FusionsDataGridViewUpperCard.Width = 200;
       // 
       // FusionsDataGridViewFusionCard
@@ -521,7 +521,7 @@
       this.FusionsDataGridViewFusionCard.HeaderText = "Resulting Fusion";
       this.FusionsDataGridViewFusionCard.Name = "FusionsDataGridViewFusionCard";
       this.FusionsDataGridViewFusionCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-      this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
       this.FusionsDataGridViewFusionCard.Width = 200;
       // 
       // MainForm

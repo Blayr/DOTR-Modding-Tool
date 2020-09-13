@@ -232,8 +232,54 @@
       }
      
       this.fusionsDataGridView.EditingControlShowing += this.FusionEditControlShowing;
+      this.fusionsDataGridView.ColumnHeaderMouseClick += this.fusionsDataGridView_SortColumns;
 
       this.fusionsDataGridView.DataSource = this.fusionsBinding;
+    }
+
+    private void fusionsDataGridView_SortColumns(object sender, DataGridViewCellMouseEventArgs e)
+    {
+      string nextSortDirection = "";
+      string sortColumn = "Index";
+
+      switch (e.ColumnIndex)
+      {
+        case 1:
+          sortColumn = "LowerCardName";
+          break;
+        case 2:
+          sortColumn = "UpperCardName";
+          break;
+        case 3:
+          sortColumn = "FusionCardName";
+          break;
+        default:
+          return;
+      }
+
+      if (this.fusionsBinding.SortProperty == null || this.fusionsBinding.SortProperty.Name != sortColumn)
+      {
+        nextSortDirection = "ASC";
+      }
+      else
+      {
+        switch (this.fusionsBinding.SortDirection)
+        {
+          case ListSortDirection.Ascending:
+            nextSortDirection = "DESC";
+            break;
+          case ListSortDirection.Descending:
+            sortColumn = "Index";
+            nextSortDirection = "ASC";
+            break;
+          default:
+            nextSortDirection = "ASC";
+            break;
+        }
+      }
+
+
+      this.fusionsBinding.Sort = $"{sortColumn} {nextSortDirection}";
     }
 
     private void FusionEditControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
