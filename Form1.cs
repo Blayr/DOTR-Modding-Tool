@@ -272,13 +272,6 @@
       this.dataAccess.SetDeckLeaderTresholds(this.newDeckLeaderRankThresholds.Bytes);
       this.LoadLeaderTresholdData();
     }
-    private void saveCardConstantsToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      byte[] cardConstantsBytes = this.cardConstants.Bytes;
-      this.dataAccess.SetCardConstantData(cardConstantsBytes);
-      this.LoadCardConstantsData();
-    }
-
     private void saveToolStripMenuItem_Click(object sender, EventArgs e)
     {
       // Ensure the menustrip is focused so that the datagridview changes are commited
@@ -323,6 +316,13 @@
     {
       this.dataAccess.SaveFusionData(this.fusions.Bytes);
       this.LoadFusionData();
+    }
+
+    private void cardConstantsSaveButton_Click(object sender, EventArgs e)
+    {
+      byte[] cardConstantsBytes = this.cardConstants.Bytes;
+      this.dataAccess.SetCardConstantData(cardConstantsBytes);
+      this.LoadCardConstantsData();
     }
   }
 }
