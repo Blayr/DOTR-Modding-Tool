@@ -505,6 +505,7 @@
       this.FusionsDataGridViewLowerCard.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
       this.FusionsDataGridViewLowerCard.HeaderText = "Fusion Material 1";
       this.FusionsDataGridViewLowerCard.Name = "FusionsDataGridViewLowerCard";
+      this.FusionsDataGridViewLowerCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.FusionsDataGridViewLowerCard.Width = 200;
       // 
       // FusionsDataGridViewUpperCard
