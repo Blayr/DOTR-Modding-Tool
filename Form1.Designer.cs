@@ -81,6 +81,8 @@
       this.FusionsDataGridViewLowerCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.viewSourceOnGithubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -106,7 +108,8 @@
       // menuStrip1
       // 
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openISOMenuItem});
+            this.openISOMenuItem,
+            this.aboutToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
       this.menuStrip1.Size = new System.Drawing.Size(938, 24);
@@ -524,6 +527,21 @@
       this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
       this.FusionsDataGridViewFusionCard.Width = 200;
       // 
+      // aboutToolStripMenuItem
+      // 
+      this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewSourceOnGithubToolStripMenuItem});
+      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+      this.aboutToolStripMenuItem.Text = "About";
+      // 
+      // viewSourceOnGithubToolStripMenuItem
+      // 
+      this.viewSourceOnGithubToolStripMenuItem.Name = "viewSourceOnGithubToolStripMenuItem";
+      this.viewSourceOnGithubToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+      this.viewSourceOnGithubToolStripMenuItem.Text = "View Source on Github";
+      this.viewSourceOnGithubToolStripMenuItem.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem_Click);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,5 +611,7 @@
     private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
     private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
     private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
+    private ToolStripMenuItem aboutToolStripMenuItem;
+    private ToolStripMenuItem viewSourceOnGithubToolStripMenuItem;
   }
 }
