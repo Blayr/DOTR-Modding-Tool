@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardAttribute.cs" />
+    <Compile Include="CardColorType.cs" />
     <Compile Include="CardConstants.cs" />
     <Compile Include="CardKind.cs" />
     <Compile Include="Cards.cs" />

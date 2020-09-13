@@ -45,6 +45,8 @@
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.viewSourceOnGithubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.leaderRankTresholdsTabControl = new System.Windows.Forms.TabPage();
       this.textBox2 = new System.Windows.Forms.TextBox();
@@ -81,8 +83,7 @@
       this.FusionsDataGridViewLowerCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
-      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.viewSourceOnGithubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.fusionTableTipLabel = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -122,6 +123,21 @@
       this.openISOMenuItem.Size = new System.Drawing.Size(69, 20);
       this.openISOMenuItem.Text = "Open ISO";
       this.openISOMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
+      // 
+      // aboutToolStripMenuItem
+      // 
+      this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewSourceOnGithubToolStripMenuItem});
+      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+      this.aboutToolStripMenuItem.Text = "About";
+      // 
+      // viewSourceOnGithubToolStripMenuItem
+      // 
+      this.viewSourceOnGithubToolStripMenuItem.Name = "viewSourceOnGithubToolStripMenuItem";
+      this.viewSourceOnGithubToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+      this.viewSourceOnGithubToolStripMenuItem.Text = "View Source on Github";
+      this.viewSourceOnGithubToolStripMenuItem.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem_Click);
       // 
       // tabControl1
       // 
@@ -457,6 +473,7 @@
       // 
       // splitContainer2.Panel1
       // 
+      this.splitContainer2.Panel1.Controls.Add(this.fusionTableTipLabel);
       this.splitContainer2.Panel1.Controls.Add(this.fusionSaveButton);
       // 
       // splitContainer2.Panel2
@@ -527,20 +544,14 @@
       this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
       this.FusionsDataGridViewFusionCard.Width = 200;
       // 
-      // aboutToolStripMenuItem
+      // fusionTableTipLabel
       // 
-      this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewSourceOnGithubToolStripMenuItem});
-      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-      this.aboutToolStripMenuItem.Text = "About";
-      // 
-      // viewSourceOnGithubToolStripMenuItem
-      // 
-      this.viewSourceOnGithubToolStripMenuItem.Name = "viewSourceOnGithubToolStripMenuItem";
-      this.viewSourceOnGithubToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-      this.viewSourceOnGithubToolStripMenuItem.Text = "View Source on Github";
-      this.viewSourceOnGithubToolStripMenuItem.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem_Click);
+      this.fusionTableTipLabel.AutoSize = true;
+      this.fusionTableTipLabel.Location = new System.Drawing.Point(5, 6);
+      this.fusionTableTipLabel.Name = "fusionTableTipLabel";
+      this.fusionTableTipLabel.Size = new System.Drawing.Size(279, 13);
+      this.fusionTableTipLabel.TabIndex = 1;
+      this.fusionTableTipLabel.Text = "Tip: You can start typing immediately after selecting a cell.";
       // 
       // MainForm
       // 
@@ -570,6 +581,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).EndInit();
       this.tabPage2.ResumeLayout(false);
       this.splitContainer2.Panel1.ResumeLayout(false);
+      this.splitContainer2.Panel1.PerformLayout();
       this.splitContainer2.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
       this.splitContainer2.ResumeLayout(false);
@@ -613,5 +625,6 @@
     private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
     private ToolStripMenuItem aboutToolStripMenuItem;
     private ToolStripMenuItem viewSourceOnGithubToolStripMenuItem;
+    private Label fusionTableTipLabel;
   }
 }

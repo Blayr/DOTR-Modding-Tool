@@ -59,29 +59,26 @@
       CardConstant cardConstant = this.cardConstants.Constants[cardIndex];
       Color rowColor;
 
-      if (cardConstant.EffectId == 65535)
+      switch (cardConstant.CardColor)
       {
-        // Normal Monster
-        rowColor = Color.FromArgb(160, 128, 0);
-      }
-      else if (cardConstant.Kind.ID < 32)
-      {
-        // Effect Monster
-        rowColor = Color.FromArgb(160, 80, 0);
-      }
-      else if (cardConstant.Kind.ID == 96 || cardConstant.Kind.ID == 128)
-      {
-        // Trap
-        rowColor = Color.FromArgb(160, 16, 64);
-      }
-      else if (cardConstant.Kind.ID == 160)
-      {
-        rowColor = Color.FromArgb(81, 102, 141);
-      }
-      else
-      {
-        // Magic
-        rowColor = Color.FromArgb(0, 96, 48);
+        case CardColorType.NormalMonster:
+          rowColor = Color.FromArgb(160, 128, 0);
+          break;
+        case CardColorType.EffectMonster:
+          rowColor = Color.FromArgb(160, 80, 0);
+          break;
+        case CardColorType.RitualMonster:
+          rowColor = Color.FromArgb(81, 102, 141);
+          break;
+        case CardColorType.Trap:
+          rowColor = Color.FromArgb(160, 16, 64);
+          break;
+        case CardColorType.Magic:
+          rowColor = Color.FromArgb(0, 96, 48);
+          break;
+        default:
+          rowColor = Color.FromArgb(160, 128, 0);
+          break;
       }
 
       bro.Rows[e.RowIndex].DefaultCellStyle.BackColor = rowColor;

@@ -26,6 +26,8 @@ public class CardConstants
 
 public class CardConstant
 {
+	public CardColorType CardColor { get; set; }
+
 	ushort cardIndex;
 	string name;
 	byte[] bytes;
@@ -51,7 +53,7 @@ public class CardConstant
 	byte[] passwordArray;
 
 	public CardConstant(ushort cardIndex, byte[] bytes)
-  {
+	{
 		this.cardIndex = cardIndex;
 		this.name = Cards.GetNameByIndex(cardIndex);
 		this.bytes = bytes;
@@ -78,10 +80,35 @@ public class CardConstant
 
 		this.hasAlternateArt = dpWithFlags[dpWithFlags.Length - 1];
 		this.passwordArray = new byte[] { bytes[12], bytes[13], bytes[14], bytes[15], bytes[16], bytes[17], bytes[18], bytes[19] };
+		this.setCardColor();
+	}
+
+	private void setCardColor()
+  {
+		if (this.EffectId == 65535)
+		{
+			this.CardColor = CardColorType.NormalMonster;
+		}
+		else if (this.Kind.ID < 32)
+		{
+			this.CardColor = CardColorType.EffectMonster;
+		}
+		else if (this.Kind.ID == 96 || this.Kind.ID == 128)
+		{
+			this.CardColor = CardColorType.Trap;
+		}
+		else if (this.Kind.ID == 160)
+		{
+			this.CardColor = CardColorType.RitualMonster;
+		}
+		else
+		{
+			this.CardColor = CardColorType.Magic;
+		}
 	}
 
 	public static ushort GetAttackOrDefense(byte[] bytes)
-  {
+	{
 		BitArray bitArray = new BitArray(bytes);
 		bitArray[bitArray.Length - 1] = false;
 		bitArray[bitArray.Length - 2] = false;
@@ -92,7 +119,7 @@ public class CardConstant
 	}
 
 	public static byte GetLevel(byte[] bytes)
-  {
+	{
 		BitArray tempBitArray = new BitArray(new byte[] { bytes[2] });
 		BitArray halfByteBitArray = new BitArray(4);
 		halfByteBitArray[0] = tempBitArray[4];
@@ -104,7 +131,7 @@ public class CardConstant
 		halfByteBitArray.CopyTo(level, 0);
 
 		return level[0];
-  }
+	}
 
 	public static byte GetAttribute(byte[] bytes)
 	{
@@ -146,20 +173,20 @@ public class CardConstant
 	}
 
 	public byte[] Bytes
-  {
-    get
-    {
+	{
+		get
+		{
 			return this.calculateByteSequence();
-    }
-  }
+		}
+	}
 
 	public ushort Index
-  {
-    get
-    {
+	{
+		get
+		{
 			return this.cardIndex;
-    }
-  }
+		}
+	}
 
 	public string Name
   {
