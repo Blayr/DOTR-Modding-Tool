@@ -2,7 +2,7 @@
 {
   NormalMonster,
   EffectMonster,
-  RitualMonster,
+  Ritual,
   Trap,
   Magic
 }

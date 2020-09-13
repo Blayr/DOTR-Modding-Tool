@@ -67,7 +67,7 @@
         case CardColorType.EffectMonster:
           rowColor = Color.FromArgb(160, 80, 0);
           break;
-        case CardColorType.RitualMonster:
+        case CardColorType.Ritual:
           rowColor = Color.FromArgb(81, 102, 141);
           break;
         case CardColorType.Trap:
@@ -221,7 +221,7 @@
       this.FusionsDataGridViewFusionCard.AutoComplete = true;
       this.FusionsDataGridViewFusionCard.FlatStyle = FlatStyle.Flat;
 
-      foreach (CardConstant cardConstant in this.cardConstants.Constants)
+      foreach (CardConstant cardConstant in this.cardConstants.Monsters)
       {
         this.FusionsDataGridViewLowerCard.Items.Add(new { LowerCardName = cardConstant.Name, LowerCardIndex = cardConstant.Index });
         this.FusionsDataGridViewUpperCard.Items.Add(new { UpperCardName = cardConstant.Name, UpperCardIndex= cardConstant.Index });

@@ -15,6 +15,15 @@ public class CardConstants
     }
 	}
 
+	public List<CardConstant> Monsters
+  {
+    get
+    {
+			CardColorType[] monsterTypes = { CardColorType.NormalMonster, CardColorType.EffectMonster };
+			return this.Constants.FindAll(constant => monsterTypes.Contains(constant.CardColor)).ToList<CardConstant>();
+    }
+  }
+
 	public byte[] Bytes
   {
 		get
@@ -99,7 +108,7 @@ public class CardConstant
 		}
 		else if (this.Kind.ID == 160)
 		{
-			this.CardColor = CardColorType.RitualMonster;
+			this.CardColor = CardColorType.Ritual;
 		}
 		else
 		{
