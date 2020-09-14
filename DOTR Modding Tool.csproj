@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ai.cs" />
+    <Compile Include="BitHelper.cs" />
     <Compile Include="CardAttribute.cs" />
     <Compile Include="CardColorType.cs" />
     <Compile Include="CardConstants.cs" />
