@@ -5,59 +5,73 @@ using System.Linq;
 public class Ai
 {
 	public static List<Ai> All { get; }
-	byte[] Bytes { get; }
-	string Name { get; }
+
+	public int Id { get; }
+	public byte[] Bytes { get; }
+	public string Name { get; }
 
 	static Ai()
 	{
 		Ai.All = new List<Ai> {
-			new Ai("00117C90", "Seto"),
-			new Ai("00110F00", "Weevil Underwood"),
-			new Ai("0011C430", "Rex Raptor"),
-			new Ai("00121630", "Keith"),
-			new Ai("00126AB0", "Ishtar"),
-			new Ai("0012B9A0", "Necromancer"),
-			new Ai("00130E90", "Darkness-ruler"),
-			new Ai("00135060", "Labyrinth-ruler"),
-			new Ai("001396C0", "Pegasus Crawford"),
-			new Ai("0013DAD0", "Richard Slysheen of York"),
-			new Ai("001422E0", "Tea"),
-			new Ai("00146790", "T. Tristan Grey"),
-			new Ai("0014B730", "Margaret Mai Beaufort"),
-			new Ai("0014FB70", "Mako"),
-			new Ai("00154040", "Joey"),
-			new Ai("00154210", "J. Shadi Morton"),
-			new Ai("00158AB0", "Jasper Dice Tudor"),
-			new Ai("0015D180", "Bakura"),
-			new Ai("00162F60", "Yugi"),
-			new Ai("001676E0", "Manawyddan fab Llyr (Skull Knight)"),
-			new Ai("0016B1F0", "Manawyddan fab Llyr (Chakra)"),
-			new Ai("00172370", "Deck Master K")
+			new Ai(0, "00117C90", "Seto"),
+			new Ai(1, "00110F00", "Weevil Underwood"),
+			new Ai(2, "0011C430", "Rex Raptor"),
+			new Ai(3, "00121630", "Keith"),
+			new Ai(4, "00126AB0", "Ishtar"),
+			new Ai(5, "0012B9A0", "Necromancer"),
+			new Ai(6, "00130E90", "Darkness-ruler"),
+			new Ai(7, "00135060", "Labyrinth-ruler"),
+			new Ai(8, "001396C0", "Pegasus Crawford"),
+			new Ai(9, "0013DAD0", "Richard Slysheen of York"),
+			new Ai(10, "001422E0", "Tea"),
+			new Ai(11, "00146790", "T. Tristan Grey"),
+			new Ai(12, "0014B730", "Margaret Mai Beaufort"),
+			new Ai(13, "0014FB70", "Mako"),
+			new Ai(14, "00154040", "Joey"),
+			new Ai(15, "00154210", "J. Shadi Morton"),
+			new Ai(16, "00158AB0", "Jasper Dice Tudor"),
+			new Ai(17, "0015D180", "Bakura"),
+			new Ai(18, "00162F60", "Yugi"),
+			new Ai(19, "001676E0", "Manawyddan fab Llyr (Skull Knight)"),
+			new Ai(20, "0016B1F0", "Manawyddan fab Llyr (Chakra)"),
+			new Ai(21, "00172370", "Deck Master K")
 		};
 	}
 
 	public Ai(byte[] bytes)
 	{
+		this.Id = Ai.GetAiByPointerValue(bytes).Id;
 		this.Bytes = bytes;
 		this.Name = Ai.GetAiName(bytes);
 	}
 
-	public Ai(string hexPointerAddress, string name)
+	public Ai(int id, string hexPointerAddress, string name)
 	{
+		this.Id = id;
 		byte[] bytes = BitHelper.HexStringToByteArray(hexPointerAddress);
 		this.Bytes = bytes;
 		this.Name = name;
 	}
 
+	public static Ai GetAiByPointerValue(byte[] aiAddressPointer)
+  {
+		byte[] byteArray = aiAddressPointer.ToArray();
+		Array.Reverse(byteArray);
+
+		Ai matchedAi = Ai.All.Find(x => x.Bytes.SequenceEqual(byteArray));
+
+		return matchedAi;
+	}
+
 	public static string GetAiName(byte[] aiAddressPointer)
 	{
-		if (BitConverter.IsLittleEndian)
-		{
-			Array.Reverse(aiAddressPointer);
-		}
-
-		Ai matchedAi = Ai.All.Find(x => x.Bytes.SequenceEqual(aiAddressPointer));
+		Ai matchedAi = Ai.GetAiByPointerValue(aiAddressPointer);
 
 		return matchedAi == null ? "???" : matchedAi.Name;
 	}
+
+	override public string ToString()
+  {
+		return this.Name;
+  }
 }

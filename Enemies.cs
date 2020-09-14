@@ -36,9 +36,9 @@ public class Enemies
 
 public class Enemy
 {
-	int Index { get; }
-	string Name { get; }
-	Ai AI { get; set; }
+	public int Index { get; }
+	public string Name { get; }
+	public Ai AI { get; set; }
 
 	private static string[] nameList = new string[]
 	{
@@ -80,5 +80,26 @@ public class Enemy
   {
 		return Enemy.nameList.ElementAtOrDefault(index) == null ? "???" : Enemy.nameList[index];
 	}
+
+	public int AiId
+  {
+		get
+    {
+			return this.AI.Id;
+    }
+
+		set
+    {
+			this.AI = Ai.All.Find(x => x.Id == value);
+    }
+  }
+
+	public string AiName
+  {
+		get
+		{
+			return this.AI.Name;
+		}
+  }
 }
 

@@ -84,6 +84,11 @@
       this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.fusionTableTipLabel = new System.Windows.Forms.Label();
+      this.tabPage3 = new System.Windows.Forms.TabPage();
+      this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.EnemyIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.EnemyNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.EnemyAiColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.leaderRankTresholdsTabControl.SuspendLayout();
@@ -100,6 +105,8 @@
       this.splitContainer2.Panel2.SuspendLayout();
       this.splitContainer2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).BeginInit();
+      this.tabPage3.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -147,6 +154,7 @@
       this.tabControl1.Controls.Add(this.leaderRankTresholdsTabControl);
       this.tabControl1.Controls.Add(this.tabPage1);
       this.tabControl1.Controls.Add(this.tabPage2);
+      this.tabControl1.Controls.Add(this.tabPage3);
       this.tabControl1.Location = new System.Drawing.Point(0, 27);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
@@ -553,6 +561,55 @@
       this.fusionTableTipLabel.TabIndex = 1;
       this.fusionTableTipLabel.Text = "Tip: You can start typing immediately after selecting a cell.";
       // 
+      // tabPage3
+      // 
+      this.tabPage3.Controls.Add(this.dataGridView1);
+      this.tabPage3.Location = new System.Drawing.Point(4, 22);
+      this.tabPage3.Name = "tabPage3";
+      this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage3.Size = new System.Drawing.Size(930, 496);
+      this.tabPage3.TabIndex = 3;
+      this.tabPage3.Text = "tabPage3";
+      this.tabPage3.UseVisualStyleBackColor = true;
+      // 
+      // dataGridView1
+      // 
+      this.dataGridView1.AllowUserToAddRows = false;
+      this.dataGridView1.AllowUserToDeleteRows = false;
+      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EnemyIndex,
+            this.EnemyNameColumn,
+            this.EnemyAiColumn});
+      this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+      this.dataGridView1.Name = "dataGridView1";
+      this.dataGridView1.RowHeadersVisible = false;
+      this.dataGridView1.Size = new System.Drawing.Size(924, 490);
+      this.dataGridView1.TabIndex = 0;
+      // 
+      // EnemyIndex
+      // 
+      this.EnemyIndex.DataPropertyName = "Index";
+      this.EnemyIndex.HeaderText = "Index";
+      this.EnemyIndex.Name = "EnemyIndex";
+      this.EnemyIndex.ReadOnly = true;
+      this.EnemyIndex.Width = 30;
+      // 
+      // EnemyNameColumn
+      // 
+      this.EnemyNameColumn.DataPropertyName = "Name";
+      this.EnemyNameColumn.HeaderText = "Name";
+      this.EnemyNameColumn.Name = "EnemyNameColumn";
+      this.EnemyNameColumn.ReadOnly = true;
+      this.EnemyNameColumn.Width = 140;
+      // 
+      // EnemyAiColumn
+      // 
+      this.EnemyAiColumn.HeaderText = "Ai";
+      this.EnemyAiColumn.Name = "EnemyAiColumn";
+      this.EnemyAiColumn.Width = 140;
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,6 +643,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
       this.splitContainer2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).EndInit();
+      this.tabPage3.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -626,5 +685,10 @@
     private ToolStripMenuItem aboutToolStripMenuItem;
     private ToolStripMenuItem viewSourceOnGithubToolStripMenuItem;
     private Label fusionTableTipLabel;
+    private TabPage tabPage3;
+    private DataGridView dataGridView1;
+    private DataGridViewTextBoxColumn EnemyIndex;
+    private DataGridViewTextBoxColumn EnemyNameColumn;
+    private DataGridViewComboBoxColumn EnemyAiColumn;
   }
 }

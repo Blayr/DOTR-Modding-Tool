@@ -2,6 +2,7 @@
 {
   using Equin.ApplicationFramework;
   using System;
+  using System.Collections.Generic;
   using System.ComponentModel;
   using System.Diagnostics;
   using System.Drawing;
@@ -17,6 +18,8 @@
     private BindingListView<CardConstant> cardConstantsBinding;
     private Fusions fusions;
     private BindingListView<Fusion> fusionsBinding;
+    private Enemies enemies;
+    private BindingListView<Enemy> enemiesBinding;
 
     public MainForm()
     {
@@ -38,6 +41,26 @@
         this.OpenSelectISODialog();
       #endif
       this.LoadDataFromIso();
+    }
+
+    private void LoadEnemyAI()
+    {
+      this.dataGridView1.AutoGenerateColumns = false;
+      byte[] bytes = this.dataAccess.LoadEnemyAIData();
+      this.enemies = new Enemies(bytes);
+      this.enemiesBinding = new BindingListView<Enemy>(this.enemies.List);
+      this.dataGridView1.DataSource = this.enemiesBinding;
+
+      this.EnemyAiColumn.DataPropertyName = "AiId";
+      this.EnemyAiColumn.ValueMember = "AiId";
+      this.EnemyAiColumn.DisplayMember = "AiName";
+
+      foreach (Ai ai in Ai.All)
+      {
+        this.EnemyAiColumn.Items.Add(new { AiId = ai.Id, AiName = ai.Name }); ;
+      }
+
+      // this.dataAccess.SaveEnemyAiData(bytes);
     }
 
     private void SetupCardConstantsDataGridView()
@@ -181,6 +204,7 @@
 
     private void LoadDataFromIso()
     {
+      this.LoadEnemyAI();
       this.LoadLeaderTresholdData();
       this.LoadCardConstantsData();
       this.LoadFusionData();
@@ -191,13 +215,6 @@
       this.fusionsDataGridView.DataSource = null;
       byte[] fusionBytes = this.dataAccess.LoadFusionData();
       this.fusions = new Fusions(fusionBytes);
-
-      DebugHelper.PrintByteArray(fusionBytes);
-
-      System.Diagnostics.Debug.Print("--------------------------------------------");
-
-      DebugHelper.PrintByteArray(this.fusions.Bytes);
-
 
       this.fusionsBinding = new BindingListView<Fusion>(this.fusions.fusions);
       this.fusionsDataGridView.AutoGenerateColumns = false;
@@ -274,7 +291,6 @@
             break;
         }
       }
-
 
       this.fusionsBinding.Sort = $"{sortColumn} {nextSortDirection}";
     }
