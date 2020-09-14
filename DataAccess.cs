@@ -9,6 +9,9 @@ public class DataAccess
   public static readonly int FusionListByteLength = 26540 * 4;
   public static readonly int CardConstantByteLength = 20;
   public static readonly int CardConstantCount = Cards.TotalCardCount;
+  public static readonly int EnemyAIByteOffset = 2666416;
+  public static readonly int EnemyAIByteLength = 4;
+  public static readonly int EnemyAiCount = 22;
 
   private static readonly object FileStreamLock = new object();
 	private static FileStream fileStream;
@@ -99,6 +102,28 @@ public class DataAccess
     lock (FileStreamLock)
     {
       fileStream.Seek(DataAccess.SLUSFusionListByteOffset, SeekOrigin.Begin);
+      fileStream.Write(byteData, 0, byteData.Length);
+    }
+  }
+
+  public byte[] LoadEnemyAIData()
+  {
+    byte[] buffer = new byte[DataAccess.EnemyAIByteLength * DataAccess.EnemyAiCount];
+
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(DataAccess.EnemyAIByteOffset, SeekOrigin.Begin);
+      fileStream.Read(buffer, 0, buffer.Length);
+    }
+
+    return buffer;
+  }
+
+  public void SaveEnemyAiData(byte[] byteData)
+  {
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(DataAccess.EnemyAIByteOffset, SeekOrigin.Begin);
       fileStream.Write(byteData, 0, byteData.Length);
     }
   }
