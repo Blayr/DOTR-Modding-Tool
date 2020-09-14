@@ -11,7 +11,7 @@ public class DataAccess
   public static readonly int CardConstantCount = Cards.TotalCardCount;
   public static readonly int EnemyAIByteOffset = 2666416;
   public static readonly int EnemyAIByteLength = 4;
-  public static readonly int EnemyAiCount = 22;
+  public static readonly int EnemyAiCount = 26;
 
   private static readonly object FileStreamLock = new object();
 	private static FileStream fileStream;
