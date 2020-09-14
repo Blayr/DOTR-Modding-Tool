@@ -42,6 +42,7 @@ public class Enemy
 
 	private static string[] nameList = new string[]
 	{
+		"Simon McMooran (Tutorial)?",
 		"Seto",
 		"Weevil Underwood",
 		"Rex Raptor",
