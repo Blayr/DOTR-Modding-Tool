@@ -29,6 +29,7 @@
     private void Form1_Load(object sender, EventArgs e)
     {
       this.WindowState = FormWindowState.Normal;
+      this.toggleEnableControls(false);
       this.SetupRankThresholdDataGridView();
       this.SetupCardConstantsDataGridView();
       this.openFileDialog1.FileName = "dotr.iso";
@@ -198,6 +199,18 @@
       this.LoadLeaderTresholdData();
       this.LoadCardConstantsData();
       this.LoadFusionData();
+      this.toggleEnableControls(true);
+    }
+
+    private void toggleEnableControls(bool enabled)
+    {
+      this.rankThresholdsSaveButton.Enabled = enabled;
+      this.cardConstantsFilterTextbox.Enabled = enabled;
+      this.cardConstantsFilterButton.Enabled = enabled;
+      this.cardConstantFilterClearButton.Enabled = enabled;
+      this.cardConstantsSaveButton.Enabled = enabled;
+      this.fusionSaveButton.Enabled = enabled;
+      this.enemyAiSaveButton.Enabled = enabled;
     }
 
     private void LoadFusionData()

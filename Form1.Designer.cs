@@ -16,7 +16,7 @@
     private TextBox originalRankThresholdsTextbox;
     private DataGridView rankThresholdsDataGridView;
     private TabPage tabPage1;
-    private Button button1;
+    private Button rankThresholdsSaveButton;
 
     /// <summary>
     /// Clean up any resources being used.
@@ -52,7 +52,7 @@
       this.textBox2 = new System.Windows.Forms.TextBox();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.newRankThresholdsTextbox = new System.Windows.Forms.TextBox();
-      this.button1 = new System.Windows.Forms.Button();
+      this.rankThresholdsSaveButton = new System.Windows.Forms.Button();
       this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
       this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
       this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -172,7 +172,7 @@
       this.leaderRankTresholdsTabControl.Controls.Add(this.textBox2);
       this.leaderRankTresholdsTabControl.Controls.Add(this.textBox1);
       this.leaderRankTresholdsTabControl.Controls.Add(this.newRankThresholdsTextbox);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.button1);
+      this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsSaveButton);
       this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsDataGridView);
       this.leaderRankTresholdsTabControl.Controls.Add(this.originalRankThresholdsTextbox);
       this.leaderRankTresholdsTabControl.Location = new System.Drawing.Point(4, 22);
@@ -215,15 +215,15 @@
       this.newRankThresholdsTextbox.Size = new System.Drawing.Size(493, 13);
       this.newRankThresholdsTextbox.TabIndex = 20;
       // 
-      // button1
+      // rankThresholdsSaveButton
       // 
-      this.button1.Location = new System.Drawing.Point(385, 114);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(75, 23);
-      this.button1.TabIndex = 18;
-      this.button1.Text = "Save";
-      this.button1.UseVisualStyleBackColor = true;
-      this.button1.Click += new System.EventHandler(this.Button1_Click);
+      this.rankThresholdsSaveButton.Location = new System.Drawing.Point(385, 114);
+      this.rankThresholdsSaveButton.Name = "rankThresholdsSaveButton";
+      this.rankThresholdsSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.rankThresholdsSaveButton.TabIndex = 18;
+      this.rankThresholdsSaveButton.Text = "Save";
+      this.rankThresholdsSaveButton.UseVisualStyleBackColor = true;
+      this.rankThresholdsSaveButton.Click += new System.EventHandler(this.Button1_Click);
       // 
       // rankThresholdsDataGridView
       // 
