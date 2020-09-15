@@ -626,7 +626,7 @@
       // EnemyIndex
       // 
       this.EnemyIndex.DataPropertyName = "Index";
-      this.EnemyIndex.HeaderText = "Index";
+      this.EnemyIndex.HeaderText = "#";
       this.EnemyIndex.Name = "EnemyIndex";
       this.EnemyIndex.ReadOnly = true;
       this.EnemyIndex.Width = 30;
@@ -634,7 +634,7 @@
       // EnemyNameColumn
       // 
       this.EnemyNameColumn.DataPropertyName = "Name";
-      this.EnemyNameColumn.HeaderText = "Name";
+      this.EnemyNameColumn.HeaderText = "Enemy";
       this.EnemyNameColumn.Name = "EnemyNameColumn";
       this.EnemyNameColumn.ReadOnly = true;
       this.EnemyNameColumn.Width = 160;
