@@ -31,6 +31,15 @@ public class Enemies
     }
   }
 
+	public byte[] AiBytes
+	{
+		get
+		{
+			return this.List.SelectMany(x => x.AI.Bytes).ToArray();
+		}
+	}
+
+
 	public List<Enemy> List { get; set; }
 }
 
@@ -91,8 +100,12 @@ public class Enemy
 
 		set
     {
-			this.AI = Ai.All.Find(x => x.Id == value);
-    }
+			Ai ai = Ai.All.Find(x => x.Id == value);
+			byte[] bytes = (byte[])ai.Bytes.Clone();
+			// I'm not entirely sure why the bytes need flipped here, but they do.
+			Array.Reverse(bytes);
+			this.AI = new Ai(bytes);
+		}
   }
 
 	public string AiName

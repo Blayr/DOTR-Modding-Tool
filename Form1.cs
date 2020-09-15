@@ -45,11 +45,11 @@
 
     private void LoadEnemyAI()
     {
-      this.dataGridView1.AutoGenerateColumns = false;
+      this.enemyAiDataGridView.AutoGenerateColumns = false;
       byte[] bytes = this.dataAccess.LoadEnemyAIData();
       this.enemies = new Enemies(bytes);
       this.enemiesBinding = new BindingListView<Enemy>(this.enemies.List);
-      this.dataGridView1.DataSource = this.enemiesBinding;
+      this.enemyAiDataGridView.DataSource = this.enemiesBinding;
 
       this.EnemyAiColumn.DataPropertyName = "AiId";
       this.EnemyAiColumn.ValueMember = "AiId";
@@ -59,8 +59,6 @@
       {
         this.EnemyAiColumn.Items.Add(new { AiId = ai.Id, AiName = ai.Name }); ;
       }
-
-      // this.dataAccess.SaveEnemyAiData(bytes);
     }
 
     private void SetupCardConstantsDataGridView()
@@ -385,6 +383,13 @@
     private void viewSourceOnGithubToolStripMenuItem_Click(object sender, EventArgs e)
     {
       System.Diagnostics.Process.Start("https://github.com/Blayr/DOTR-Modding-Tool");
+    }
+
+    private void enemyAiSaveButton_Click(object sender, EventArgs e)
+    {
+      byte[] aiBytes = this.enemies.AiBytes;
+      this.dataAccess.SaveEnemyAiData(aiBytes);
+      this.LoadEnemyAI();
     }
   }
 }

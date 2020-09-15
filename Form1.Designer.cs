@@ -84,8 +84,10 @@
       this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.fusionTableTipLabel = new System.Windows.Forms.Label();
-      this.tabPage3 = new System.Windows.Forms.TabPage();
-      this.dataGridView1 = new System.Windows.Forms.DataGridView();
+      this.enemyAiTab = new System.Windows.Forms.TabPage();
+      this.enemyAiDataGridView = new System.Windows.Forms.DataGridView();
+      this.enemyAiTabSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.enemyAiSaveButton = new System.Windows.Forms.Button();
       this.EnemyIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EnemyNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EnemyAiColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -105,8 +107,12 @@
       this.splitContainer2.Panel2.SuspendLayout();
       this.splitContainer2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).BeginInit();
-      this.tabPage3.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+      this.enemyAiTab.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.enemyAiDataGridView)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.enemyAiTabSplitContainer)).BeginInit();
+      this.enemyAiTabSplitContainer.Panel1.SuspendLayout();
+      this.enemyAiTabSplitContainer.Panel2.SuspendLayout();
+      this.enemyAiTabSplitContainer.SuspendLayout();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -154,7 +160,7 @@
       this.tabControl1.Controls.Add(this.leaderRankTresholdsTabControl);
       this.tabControl1.Controls.Add(this.tabPage1);
       this.tabControl1.Controls.Add(this.tabPage2);
-      this.tabControl1.Controls.Add(this.tabPage3);
+      this.tabControl1.Controls.Add(this.enemyAiTab);
       this.tabControl1.Location = new System.Drawing.Point(0, 27);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
@@ -561,32 +567,61 @@
       this.fusionTableTipLabel.TabIndex = 1;
       this.fusionTableTipLabel.Text = "Tip: You can start typing immediately after selecting a cell.";
       // 
-      // tabPage3
+      // enemyAiTab
       // 
-      this.tabPage3.Controls.Add(this.dataGridView1);
-      this.tabPage3.Location = new System.Drawing.Point(4, 22);
-      this.tabPage3.Name = "tabPage3";
-      this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage3.Size = new System.Drawing.Size(930, 496);
-      this.tabPage3.TabIndex = 3;
-      this.tabPage3.Text = "tabPage3";
-      this.tabPage3.UseVisualStyleBackColor = true;
+      this.enemyAiTab.Controls.Add(this.enemyAiTabSplitContainer);
+      this.enemyAiTab.Location = new System.Drawing.Point(4, 22);
+      this.enemyAiTab.Name = "enemyAiTab";
+      this.enemyAiTab.Padding = new System.Windows.Forms.Padding(3);
+      this.enemyAiTab.Size = new System.Drawing.Size(930, 496);
+      this.enemyAiTab.TabIndex = 3;
+      this.enemyAiTab.Text = "Enemy Ai";
+      this.enemyAiTab.UseVisualStyleBackColor = true;
       // 
-      // dataGridView1
+      // enemyAiDataGridView
       // 
-      this.dataGridView1.AllowUserToAddRows = false;
-      this.dataGridView1.AllowUserToDeleteRows = false;
-      this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+      this.enemyAiDataGridView.AllowUserToAddRows = false;
+      this.enemyAiDataGridView.AllowUserToDeleteRows = false;
+      this.enemyAiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.enemyAiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EnemyIndex,
             this.EnemyNameColumn,
             this.EnemyAiColumn});
-      this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-      this.dataGridView1.Name = "dataGridView1";
-      this.dataGridView1.RowHeadersVisible = false;
-      this.dataGridView1.Size = new System.Drawing.Size(924, 490);
-      this.dataGridView1.TabIndex = 0;
+      this.enemyAiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.enemyAiDataGridView.Location = new System.Drawing.Point(0, 0);
+      this.enemyAiDataGridView.Name = "enemyAiDataGridView";
+      this.enemyAiDataGridView.RowHeadersVisible = false;
+      this.enemyAiDataGridView.Size = new System.Drawing.Size(924, 461);
+      this.enemyAiDataGridView.TabIndex = 0;
+      // 
+      // enemyAiTabSplitContainer
+      // 
+      this.enemyAiTabSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.enemyAiTabSplitContainer.Location = new System.Drawing.Point(3, 3);
+      this.enemyAiTabSplitContainer.Name = "enemyAiTabSplitContainer";
+      this.enemyAiTabSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+      // 
+      // enemyAiTabSplitContainer.Panel1
+      // 
+      this.enemyAiTabSplitContainer.Panel1.Controls.Add(this.enemyAiSaveButton);
+      // 
+      // enemyAiTabSplitContainer.Panel2
+      // 
+      this.enemyAiTabSplitContainer.Panel2.Controls.Add(this.enemyAiDataGridView);
+      this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(924, 490);
+      this.enemyAiTabSplitContainer.SplitterDistance = 25;
+      this.enemyAiTabSplitContainer.TabIndex = 1;
+      // 
+      // enemyAiSaveButton
+      // 
+      this.enemyAiSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
+      this.enemyAiSaveButton.Location = new System.Drawing.Point(849, 0);
+      this.enemyAiSaveButton.Name = "enemyAiSaveButton";
+      this.enemyAiSaveButton.Size = new System.Drawing.Size(75, 25);
+      this.enemyAiSaveButton.TabIndex = 0;
+      this.enemyAiSaveButton.Text = "Save";
+      this.enemyAiSaveButton.UseVisualStyleBackColor = true;
+      this.enemyAiSaveButton.Click += new System.EventHandler(this.enemyAiSaveButton_Click);
       // 
       // EnemyIndex
       // 
@@ -602,13 +637,13 @@
       this.EnemyNameColumn.HeaderText = "Name";
       this.EnemyNameColumn.Name = "EnemyNameColumn";
       this.EnemyNameColumn.ReadOnly = true;
-      this.EnemyNameColumn.Width = 140;
+      this.EnemyNameColumn.Width = 160;
       // 
       // EnemyAiColumn
       // 
       this.EnemyAiColumn.HeaderText = "Ai";
       this.EnemyAiColumn.Name = "EnemyAiColumn";
-      this.EnemyAiColumn.Width = 140;
+      this.EnemyAiColumn.Width = 180;
       // 
       // MainForm
       // 
@@ -643,8 +678,12 @@
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
       this.splitContainer2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).EndInit();
-      this.tabPage3.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+      this.enemyAiTab.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.enemyAiDataGridView)).EndInit();
+      this.enemyAiTabSplitContainer.Panel1.ResumeLayout(false);
+      this.enemyAiTabSplitContainer.Panel2.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.enemyAiTabSplitContainer)).EndInit();
+      this.enemyAiTabSplitContainer.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -685,8 +724,10 @@
     private ToolStripMenuItem aboutToolStripMenuItem;
     private ToolStripMenuItem viewSourceOnGithubToolStripMenuItem;
     private Label fusionTableTipLabel;
-    private TabPage tabPage3;
-    private DataGridView dataGridView1;
+    private TabPage enemyAiTab;
+    private DataGridView enemyAiDataGridView;
+    private SplitContainer enemyAiTabSplitContainer;
+    private Button enemyAiSaveButton;
     private DataGridViewTextBoxColumn EnemyIndex;
     private DataGridViewTextBoxColumn EnemyNameColumn;
     private DataGridViewComboBoxColumn EnemyAiColumn;

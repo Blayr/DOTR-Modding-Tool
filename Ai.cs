@@ -34,13 +34,15 @@ public class Ai
 			new Ai(18, "00162F60", "Yugi"),
 			new Ai(19, "001676E0", "Manawyddan fab Llyr (Skull Knight)"),
 			new Ai(20, "0016B1F0", "Manawyddan fab Llyr (Chakra)"),
-			new Ai(21, "00172370", "Deck Master K")
+			new Ai(21, "00172370", "Deck Master K"),
+			new Ai(-1, "00000000", "Bad Data")
 		};
 	}
 
 	public Ai(byte[] bytes)
 	{
-		this.Id = Ai.GetAiByPointerValue(bytes).Id;
+		Ai matchedAi = Ai.GetAiByPointerValue(bytes);
+		this.Id = matchedAi == null ? Ai.All.Last().Id : matchedAi.Id;
 		this.Bytes = bytes;
 		this.Name = Ai.GetAiName(bytes);
 	}
@@ -55,7 +57,7 @@ public class Ai
 
 	public static Ai GetAiByPointerValue(byte[] aiAddressPointer)
   {
-		byte[] byteArray = aiAddressPointer.ToArray();
+		byte[] byteArray = (byte[])aiAddressPointer.Clone();
 		Array.Reverse(byteArray);
 
 		Ai matchedAi = Ai.All.Find(x => x.Bytes.SequenceEqual(byteArray));
