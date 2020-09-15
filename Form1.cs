@@ -55,6 +55,11 @@
       this.EnemyAiColumn.ValueMember = "AiId";
       this.EnemyAiColumn.DisplayMember = "AiName";
 
+      if (this.EnemyAiColumn.Items.Count > 0)
+      {
+        return;
+      }
+
       foreach (Ai ai in Ai.All)
       {
         this.EnemyAiColumn.Items.Add(new { AiId = ai.Id, AiName = ai.Name }); ;
