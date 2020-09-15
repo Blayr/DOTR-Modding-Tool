@@ -69,7 +69,6 @@
     private void SetupCardConstantsDataGridView()
     {
       this.cardConstantsDataGridView.AutoGenerateColumns = false;
-      this.cardConstantsDataGridView.LostFocus += OnDataGridViewLostFocus;
       this.cardConstantsDataGridView.CellFormatting += this.FormatCardConstantTable;
     }
 
@@ -111,17 +110,6 @@
       bro.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
     }
 
-    private void OnDataGridViewLostFocus(object sender, System.EventArgs e)
-    {
-      // Ensure the datagridviews edits are commited when selecting the menustrip
-      DataGridView dataGridView = (DataGridView)sender;
-
-      if (dataGridView.IsCurrentCellInEditMode && dataGridView.IsCurrentCellDirty)
-      {
-        dataGridView.EndEdit();
-      }
-    }
-
     private void SetupRankThresholdDataGridView()
     {
       this.rankThresholdsDataGridView.AutoGenerateColumns = false;
@@ -146,7 +134,6 @@
       this.rankThresholdsDataGridView.Columns.Add(rankThresholdColumn);
       this.rankThresholdsDataGridView.CellValueChanged += this.RankThresholdDataGridView_CellValueChanged;
       this.rankThresholdsDataGridView.DataError += this.CorrectInvalidRankThreshold;
-      this.rankThresholdsDataGridView.LostFocus += OnDataGridViewLostFocus;
     }
 
     private void CorrectInvalidRankThreshold(object sender, DataGridViewDataErrorEventArgs e)
