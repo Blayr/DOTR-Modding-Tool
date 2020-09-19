@@ -205,11 +205,15 @@ public class CardConstant
     }
   }
 
-	public ushort DeckCost
+	public byte DeckCost
   {
 		get
     {
 			return this.deckCost;
+    }
+		set
+    {
+			this.deckCost = value;
     }
   }
 
