@@ -12,6 +12,9 @@ public class DataAccess
   public static readonly int EnemyAIByteOffset = 2666416;
   public static readonly int EnemyAIByteLength = 4;
   public static readonly int EnemyAiCount = 32;
+  public static readonly int TreasureCardByteOffset = 2755024;
+  public static readonly int TreasureCardByteSize = 4;
+  public static readonly int TreasureCardCount = 22;
 
   private static readonly object FileStreamLock = new object();
 	private static FileStream fileStream;
@@ -125,6 +128,30 @@ public class DataAccess
     {
       fileStream.Seek(DataAccess.EnemyAIByteOffset, SeekOrigin.Begin);
       fileStream.Write(byteData, 0, byteData.Length);
+    }
+  }
+
+  public byte[] GetTreasureCardData()
+  {
+    byte[] buffer = new byte[DataAccess.TreasureCardByteSize * DataAccess.TreasureCardCount];
+
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(DataAccess.TreasureCardByteOffset, SeekOrigin.Begin);
+      fileStream.Read(buffer, 0, buffer.Length);
+    }
+
+    return buffer;
+  }
+
+  public void SaveTreasureCard(int index, byte[] treasureCardBytes)
+  {
+    int writeOffset = DataAccess.TreasureCardByteOffset + (index * DataAccess.TreasureCardByteSize);
+
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(writeOffset, SeekOrigin.Begin);
+      fileStream.Write(treasureCardBytes, 0, DataAccess.TreasureCardByteSize);
     }
   }
 }

@@ -6,6 +6,7 @@
   using System.ComponentModel;
   using System.Diagnostics;
   using System.Drawing;
+  using System.Linq;
   using System.Runtime.CompilerServices;
   using System.Windows.Forms;
 
@@ -20,6 +21,8 @@
     private BindingListView<Fusion> fusionsBinding;
     private Enemies enemies;
     private BindingListView<Enemy> enemiesBinding;
+    private TreasureCards treasureCards;
+    private TreasureCard selectedTreasureCard;
 
     public MainForm()
     {
@@ -199,7 +202,16 @@
       this.LoadLeaderTresholdData();
       this.LoadCardConstantsData();
       this.LoadFusionData();
+      this.LoadTreasureCardData();
       this.toggleEnableControls(true);
+    }
+
+    private void LoadTreasureCardData()
+    {
+      byte[] treasureCardBytes = this.dataAccess.GetTreasureCardData();
+      this.treasureCards = new TreasureCards(treasureCardBytes);
+      this.setupTreasureCardForm();
+      this.treasureCardsListbox.DataSource = this.treasureCards.List;
     }
 
     private void toggleEnableControls(bool enabled)
@@ -395,6 +407,43 @@
       byte[] aiBytes = this.enemies.AiBytes;
       this.dataAccess.SaveEnemyAiData(aiBytes);
       this.LoadEnemyAI();
+    }
+
+    private void setupTreasureCardForm()
+    {
+      if (this.treasureCardCardComboBox.DataSource != null)
+      {
+        return;
+      }
+
+      this.treasureCardCardComboBox.DataSource = this.cardConstants.Constants;
+      this.treasureCardCardComboBox.DropDownStyle = ComboBoxStyle.DropDown;
+      this.treasureCardCardComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+      this.treasureCardCardComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
+    }
+
+    private void treasureCardsListbox_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      this.selectedTreasureCard = this.treasureCards.List[this.treasureCardsListbox.SelectedIndex];
+      this.treasureCardCardComboBox.SelectedValue = this.selectedTreasureCard.CardIndex;
+      this.treasureCardRowNumericUpDown.Value = (int)this.selectedTreasureCard.Row;
+      this.treasureCardColumnNumericUpDown.Value = (int)this.selectedTreasureCard.Column;
+    }
+
+    private void treasureCardSaveButton_Click(object sender, EventArgs e)
+    {
+      this.selectedTreasureCard.CardIndex = (ushort)this.treasureCardCardComboBox.SelectedValue;
+
+      byte rowByte = BitConverter.GetBytes((int)this.treasureCardRowNumericUpDown.Value)[0];
+      byte columnByte = BitConverter.GetBytes((int)this.treasureCardColumnNumericUpDown.Value)[0];
+
+      this.selectedTreasureCard.Row = rowByte;
+      this.selectedTreasureCard.Column = columnByte;
+
+      byte[] tempBytes = this.selectedTreasureCard.Bytes;
+      TreasureCard tempTreasureCard = new TreasureCard(tempBytes);
+
+      this.dataAccess.SaveTreasureCard(this.treasureCardsListbox.SelectedIndex, selectedTreasureCard.Bytes);
     }
   }
 }
