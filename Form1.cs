@@ -40,7 +40,7 @@
       this.openFileDialog1.Title = "Open DOTR ISO file";
 
       #if DEBUG
-        this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\DOTR_NTSC_TEST.iso");
+        this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\duelists of the roses\\DOTR_NTSC_TEST.iso");
         this.LoadDataFromIso();
       #else
         this.OpenSelectISODialog();
