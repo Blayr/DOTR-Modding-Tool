@@ -1,43 +1,43 @@
-Blue Eyes White Dragon
+Blue-Eyes White Dragon
 Seiyaryu
 Blue-Eyes Ultimate Dragon
 Kaiser Dragon
 Blackland Fire Dragon
 Koumori Dragon
-Curse of Dragon 
-Red Eyes Black Dragon
+Curse of Dragon
+Red-Eyes B. Dragon
 Darkfire Dragon
 B. Skull Dragon
 Tri-Horned Dragon
 Serpent Night Dragon
 Mikazukinoyaiba
 Yamadron
-Meteor B Dragon
-Tyhone #2  
+Meteor B. Dragon
+Tyhone #2
 Ryu-Ran
 Manga Ryu-Ran
-Crawling Dragon  
+Crawling Dragon
 Meteor Dragon
 B. Dragon Jungle King
 Baby Dragon
 Winged Dragon, Guardian of the Fortress #1
-Gaia the Dragon Champion 
+Gaia the Dragon Champion
 Thousand Dragon
 Yamatano Dragon Scroll
-Petit Dragon 
-One-Eyed Shield Dragon 
+Petit Dragon
+One-Eyed Shield Dragon
 Wicked Dragon with the Ersatz Head
 Parrot Dragon
-Harpie's Pet Dragon  
+Harpie's Pet Dragon
 Sky Dragon
 Lesser Dragon
 Fairy Dragon
-Twin-Headed Behemoth 
+Twin-Headed Behemoth
 Mystical Elf
-Time Wizard 
+Time Wizard
 Rogue Doll
 White Magical Hat
-La Moon
+LaMoon
 Lucky Trinket
 Genin
 Fairy's Gift
@@ -50,7 +50,7 @@ Lady of Faith
 Ill Witch
 Maiden of the Moonlight
 The Stern Mystic
-Neo the Magical Swordsman
+Neo the Magic Swordsman
 The Unhappy Maiden
 Right Leg of the Forbidden One
 Left Leg of the Forbidden One
@@ -63,13 +63,13 @@ Illusionist Faceless Mage
 Curtain of the Dark Ones
 Kamionwizard
 Nemuriko
-Necromancer the Timelord
+Necrolancer the Timelord
 The Bewitching Phantom Thief
 Phantom Dewan
 Akakieisu
-Masked Sorceror 
-Fairywitch 
-Ancient Sorceror
+Masked Sorcerer
+Fairywitch
+Ancient Sorcerer
 Sectarian of Secrets
 Mystic Lamp
 Boo Koo
@@ -99,18 +99,18 @@ Djinn the Watcher of the Wind
 Hurricail
 Kazejin
 Aqua Madoor
-Shadow Spectre
+Shadow Specter
 Skull Servant
 Zombie Warrior
-The Snake Hair 
+The Snake Hair
 Armored Zombie
 Dragon Zombie
 Clown Zombie
-Pumpking The King Of Ghosts
+Pumpking the King of Ghosts
 Graveyard and the Hand of Invitation
 The 13th Grave
 Fiend's Hand
-Blue Eyes Silver Zombie
+Blue-Eyed Silver Zombie
 Temple of Skulls
 Dokuroizo the Grim Reaper
 Fire Reaper
@@ -119,8 +119,8 @@ Phantom Ghost
 Flame Ghost
 Wood Remains
 Dark Assailant
-Yaranzo 
-Three Legged Zombies
+Yaranzo
+Three-Legged Zombies
 Shadow Ghoul
 Magical Ghost
 Corroding Shark
@@ -132,12 +132,12 @@ Great Mammoth of Goldfine
 Ghoul with an Appetite
 Patrician of Darkness
 Moon Envoy
-Giltia the Dark Knight
+Giltia the D. Knight
 Skull Guardian
 Luminous Soldier
 Kageningen
-Masked Clown 
-Fiend Sword 
+Masked Clown
+Fiend Sword
 Skull Stalker
 Vishwar Randi
 Unknown Warrior of Fiend
@@ -153,10 +153,10 @@ Flame Swordsman
 Tactical Warrior
 Swamp Battleguard
 Judge Man
-Gaia the Fierce Knight
+Gaia The Fierce Knight
 Celtic Guardian
 Karbonala Warrior
-Kojicocy
+Kojikocy
 Axe Raider
 Zanki
 Battle Warrior
@@ -166,11 +166,11 @@ Dream Clown
 Ansatsu
 Dragon Statue
 Monster Egg
-Rhainurdos of the Red Sword
+Rhaimundos of the Red Sword
 Hard Armor
 M-Warrior #1
 M-Warrior #2
-Judgement Hand 
+The Judgement Hand
 Mysterious Puppeteer
 Armaill
 Eyearmor
@@ -202,7 +202,7 @@ Warrior of Tradition
 Queen's Double
 Invader of the Throne
 Hibikime
-Princess of Tsurogai
+Princess of Tsurugi
 Dragoness the Wicked Knight
 Hyo
 The Little Swordsman of Aile
@@ -216,12 +216,12 @@ Tiger Axe
 Rabid Horseman
 Solitude
 One Who Hunts Souls
-Ogre Of The Black Shadow
+Ogre of the Black Shadow
 Rude Kaiser
 Sengenjin
 Nekogal #2
 Panther Warrior
-Wolf Axewielder
+Wolf Axwielder
 Gate Deeg
 Dark Rabbit
 Firewing Pegasus
@@ -240,13 +240,13 @@ Lisark
 Synchar
 Fusionist
 Frenzied Panda
-Air Marmot Of Nefariousness
+Air Marmot of Nefariousness
 Meotoko
 Master & Expert
 Nekogal #1
 Prevent Rat
 Mystical Sheep #2
-Super War Lion
+Super War-Lion
 Leogun
 Tatsunootoshigo
 Burglar
@@ -256,35 +256,35 @@ Wilmee
 Milus Radiant
 Togex
 Hane-Hane
-Ancient One Of The Deep Forest
+Ancient One of the Deep Forest
 Mon Larvas
 Pale Beast
-Obese Marmot Of Nefariousness
+Obese Marmot of Nefariousness
 Great Bill
 Armored Rat
 Mystical Sheep #1
-Gazelle The King Of Mythical Beasts
+Gazelle the King of Mythical Beasts
 King Tiger Wanghu
-Chimera The Flying Mythical Beast
+Chimera the Flying Mythical Beast
 Fiend Reflection #2
 Crimson Sunbird
 Niwatori
 Tyhone
 Harpie Lady
 Harpie Lady Sisters
-Spirit Of The Books
+Spirit of the Books
 Faith Bird
 Droll Bird
 Mavelus
 Kurama
 Wing Eagle
-Punished Eagke
+Punished Eagle
 Skull Red Bird
 Queen Bird
 Peacock
 Skullbird
 Monstrous Bird
-Winged Dragon, Guardian Of The Fortress #2
+Winged Dragon, Guardian of the Fortress #2
 Crow Goblin
 Takuhee
 Fiend Reflection #1
@@ -296,29 +296,29 @@ Summoned Skull
 Horn Imp
 Sangan
 Kuriboh
-Castle Of Dark Illusions
-Reaper Of The Cards
-King Of Yamakai
+Castle of Dark Illusions
+Reaper of the Cards
+King of Yamimakai
 Barox
 Dark Chimera
 Metal Guardian
 Crass Clown
-Mask Of Darkness
-Job Change Mirror
-That Which Feeds On Life
-Trial Of Nightmare
+Mask of Darkness
+Job-Change Mirror
+That Which Feeds on Life
+Trial of Nightmare
 Witty Phantom
 Mystery Hand
-The Shadow Who Controls The Dark
-Lord Of The Lamp
+The Shadow Who Controls the Dark
+Lord of the Lamp
 Tainted Wisdom
-Lord Of Zemia
-Dark King Of The Abyss
+Lord of Zemia
+Dark King of the Abyss
 Big Eye
 Dark Prisoner
 Ancient Brain
 Claw Reacher
-Terra The Terrible
+Terra the Terrible
 Mabarrel
 Midnight Fiend
 Madjinn Gunn
@@ -328,7 +328,7 @@ Candle of Fate
 Meda Bat
 Embryonic Beast
 Wicked Mirror
-Versago The Destroyer
+Versago the Destroyer
 Megirus Light
 Gorgon Egg
 King Fog
@@ -338,7 +338,7 @@ Bio Plant
 Zera The Mant
 Fiend's Mirror
 Ryu-Kishin Powered
-La Jinn The Mystical Genie Of Lamp
+La Jinn the Mystical Genie of the Lamp
 Bickuribox
 Zoa
 Ushi Oni
@@ -348,12 +348,12 @@ Needle Ball
 Morinphen
 Dragon Seeker
 Fungi of the Musk
-Bistro Butcher
+The Bistro Butcher
 Neck Hunter
 Chakra
-Psycho Puppet
-Invader From Another Dimension
-Wretched Ghost Of The Attic
+Psycho-Puppet
+Invader from Another Dimension
+Wretched Ghost of the Attic
 Key Mace #2
 Hiro's Shadow Scout
 Whiptail Crow
@@ -362,7 +362,7 @@ Baron of the Fiend Sword
 Wall of Illusion
 Toon Summoned Skull
 Three-Headed Geedo
-Berformet
+Berfomet
 Kryuel
 Dark Shade
 Air Eater
@@ -375,12 +375,12 @@ Spirit of the Harp
 Key Mace
 Happy Lover
 Petit Angel
-Hourglass Of Life
+Hourglass of Life
 Lunar Queen Elzaim
 Wing Egg Elf
 Ray & Temperature
 Ocubeam
-Goddess Of Whim
+Goddess of Whim
 Hoshiningen
 Skelengel
 Dark Witch
@@ -388,10 +388,10 @@ Binding Chain
 Muse-A
 Tenderness
 Shining Friendship
-Hourglass Of Courage
+Hourglass of Courage
 Winged Egg of New Life
 Airknight Parshath
-Doma the Angel of Silence
+Doma The Angel of Silence
 Dancing Elf
 Spiked Snail
 Big Insect
@@ -404,7 +404,7 @@ Great Moth
 Perfectly Ultimate Great Moth
 Nightmare Scorpion
 Winged Cleaver
-Kumootuko
+Kumootoko
 Petit Moth
 Jirai Gumo
 Dungeon Worm
@@ -412,24 +412,24 @@ Leghul
 Ganigumo
 Alinsection
 Cockroach Knight
-Kuwagata Alpha
+Kuwagata α
 Korogashi
 Kattapillar
 Man-Eater Bug
 Gale Dogra
 Kwagar Hercules
 Minar
-Kamakimaran
+Kamakiriman
 Javelin Beetle
 Needle Worm
 Giant Scorpion of the Tundra
 Hunter Spider
 Acid Crawler
-Larva Of Moth
+Larva of Moth
 Pupa of Moth
 Arsenal Bug
 Killer Needle
-Insect Soldiers Of the Sky
+Insect Soldiers of the Sky
 Bladefly
 Sword Arm of Dragon
 Two-Headed King Rex
@@ -441,7 +441,7 @@ Tomozaurus
 Two-Mouth Darkruler
 Pragtical
 Anthrosaurus
-Trakodon
+Trakadon
 Little D
 Bracchio-raidus
 Armored Lizard
@@ -474,7 +474,7 @@ Fortress Whale
 Man-eating Black Shark
 Marine Beast
 Amazon of the Seas
-Kairyu-shin
+Kairyu-Shin
 Takriminos
 Aqua Dragon
 Sea King Dragon
@@ -525,7 +525,7 @@ Patrol Robo
 Royal Guard
 Machine Attacker
 Steel Ogre Grotto #2
-Gear Golem of the Moving Fortress
+Gear Golem the Moving Fortress
 Kinetic Soldier
 Metal Dragon
 Bat
@@ -610,7 +610,7 @@ Gruesome Goo
 Hyosube
 Red Archery Girl
 Toon Mermaid
-Maiden of the Aqua
+Maiden of The Aqua
 Dragon Piper
 Wings of Wicked Flame
 Charubin the Fire Knight
@@ -653,7 +653,7 @@ Firegrass
 Man Eater
 Arlownay
 Yashinoki
-Ancient Tree of Enlightment
+Ancient Tree of Enlightenment
 Green Phantom King
 Rainbow Flower
 Barrel Lily
@@ -706,7 +706,7 @@ Red Medicine
 Goblin's Secret Remedy
 Soul of the Pure
 Dian Keto the Cure Master
-Gift of the Mystical Elf
+Gift of The Mystical Elf
 Sparks
 Hinotama
 Final Flame
@@ -732,7 +732,7 @@ Cold Wave
 Fairy Meteor Crush
 Change of Heart
 Brain Control
-Magical Neutralizing Force
+Magical Neutralizing Force Field
 Winged Trumpeter
 Shield & Sword
 Yellow Luster Shield
@@ -743,7 +743,7 @@ Sebek's Blessing
 Aqua Chorus
 Stop Defense
 Monster Recovery
-Call of the Haunted
+Call Of The Haunted
 Shift
 Solomon's Lawbook
 Magic Drain
@@ -802,7 +802,7 @@ Insect Imitation
 Spellbinding Circle
 Shadow Spell
 Mesmeric Control
-Tears of a Mermaid
+Tears of the Mermaid
 Infinite Dismissal
 Gravity Bind
 House of Adhesive Tape
