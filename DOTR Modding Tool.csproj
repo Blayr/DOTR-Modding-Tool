@@ -53,29 +53,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ai.cs" />
-    <Compile Include="BitHelper.cs" />
-    <Compile Include="CardAttribute.cs" />
-    <Compile Include="CardColorType.cs" />
-    <Compile Include="CardConstants.cs" />
-    <Compile Include="CardKind.cs" />
-    <Compile Include="Cards.cs" />
-    <Compile Include="CustomExtensions.cs" />
-    <Compile Include="DataAccess.cs" />
-    <Compile Include="DebugHelper.cs" />
-    <Compile Include="Enemies.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Classes\Ai.cs" />
+    <Compile Include="Classes\BitHelper.cs" />
+    <Compile Include="Classes\CardAttribute.cs" />
+    <Compile Include="Classes\CardColorType.cs" />
+    <Compile Include="Classes\CardConstants.cs" />
+    <Compile Include="Classes\CardKind.cs" />
+    <Compile Include="Classes\Cards.cs" />
+    <Compile Include="Classes\CustomExtensions.cs" />
+    <Compile Include="Classes\DataAccess.cs" />
+    <Compile Include="Classes\DebugHelper.cs" />
+    <Compile Include="Classes\Enemies.cs" />
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fusion.cs" />
+    <Compile Include="Classes\Fusion.cs" />
+    <Compile Include="Forms\TreasureCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DeckLeaderRankThresholds.cs" />
-    <Compile Include="TreasureCards.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="Classes\DeckLeaderRankThresholds.cs" />
+    <Compile Include="Classes\TreasureCards.cs" />
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

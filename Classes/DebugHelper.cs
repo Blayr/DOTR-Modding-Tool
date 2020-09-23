@@ -28,4 +28,19 @@ public static class DebugHelper
   {
 		System.Diagnostics.Debug.Print(BitConverter.ToString(byteArray));
   }
+
+	public static void PrintEnemyAi(byte[] bytes)
+  {
+    for (int i = 0; i < bytes.Length; i += DataAccess.EnemyAIByteLength)
+    {
+      byte[] tempByteArray = new byte[DataAccess.EnemyAIByteLength];
+
+      for (int j = 0; j < tempByteArray.Length; j++)
+      {
+        tempByteArray[j] = bytes[i + j];
+      }
+
+      DebugHelper.PrintByteArray(tempByteArray);
+    }
+  }
 }
