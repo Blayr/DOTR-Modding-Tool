@@ -1,4 +1,4 @@
-﻿namespace DOTR_Deck_Leader_Thresholds
+﻿namespace DOTR_Modding_Tool
 {
   using System;
   using System.Windows.Forms;
