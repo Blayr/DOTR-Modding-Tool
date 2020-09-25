@@ -66,6 +66,9 @@
     <Compile Include="Classes\DebugHelper.cs" />
     <Compile Include="Classes\Enemies.cs" />
     <Compile Include="Forms\DeckLeaderThresholdsForm.cs" />
+    <Compile Include="Forms\EnemyAiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FusionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
