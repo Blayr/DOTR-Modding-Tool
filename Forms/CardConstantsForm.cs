@@ -7,6 +7,7 @@
   using System.Diagnostics;
   using System.Drawing;
   using System.Linq;
+  using System.Reflection;
   using System.Runtime.CompilerServices;
   using System.Windows.Forms;
 
@@ -70,6 +71,15 @@
     {
       this.cardConstantsDataGridView.AutoGenerateColumns = false;
       this.cardConstantsDataGridView.CellFormatting += this.FormatCardConstantTable;
+      this.cardConstantsDataGridView.CellMouseClick += this.handleCardConstantsDataGridViewClick;
+      this.cardConstantsContextStrip.Items.Add("Edit selected cards");
+    }
+
+    private void handleCardConstantsDataGridViewClick(object sender, DataGridViewCellMouseEventArgs e)
+    {
+      if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+        this.cardConstantsContextStrip.Show(Cursor.Position);
+      }
     }
 
     private void FormatCardConstantTable(object sender, DataGridViewCellFormattingEventArgs e)

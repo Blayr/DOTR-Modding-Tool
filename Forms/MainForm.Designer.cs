@@ -34,6 +34,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -98,6 +99,7 @@
       this.rankThresholdsSaveButton = new System.Windows.Forms.Button();
       this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
       this.tabControl = new System.Windows.Forms.TabControl();
+      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -806,6 +808,11 @@
       this.tabControl.Size = new System.Drawing.Size(938, 522);
       this.tabControl.TabIndex = 3;
       // 
+      // cardConstantsContextStrip
+      // 
+      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
+      this.cardConstantsContextStrip.Size = new System.Drawing.Size(181, 26);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -918,5 +925,6 @@
     private Label label6;
     private Label label5;
     private Label label7;
+    private ContextMenuStrip cardConstantsContextStrip;
   }
 }
