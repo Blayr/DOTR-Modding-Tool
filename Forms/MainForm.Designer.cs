@@ -811,7 +811,7 @@
       // cardConstantsContextStrip
       // 
       this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
-      this.cardConstantsContextStrip.Size = new System.Drawing.Size(181, 26);
+      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
       // MainForm
       // 

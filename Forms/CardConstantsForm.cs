@@ -4,6 +4,7 @@
   using System;
   using System.Collections.Generic;
   using System.ComponentModel;
+  using System.Data;
   using System.Diagnostics;
   using System.Drawing;
   using System.Linq;
@@ -73,6 +74,7 @@
       this.cardConstantsDataGridView.CellFormatting += this.FormatCardConstantTable;
       this.cardConstantsDataGridView.CellMouseClick += this.handleCardConstantsDataGridViewClick;
       this.cardConstantsContextStrip.Items.Add("Edit selected cards");
+      this.cardConstantsContextStrip.ItemClicked += ShowMultipleEditDialog;
     }
 
     private void handleCardConstantsDataGridViewClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -80,6 +82,21 @@
       if (e.Button == System.Windows.Forms.MouseButtons.Right) {
         this.cardConstantsContextStrip.Show(Cursor.Position);
       }
+    }
+
+    private void ShowMultipleEditDialog(object sender, ToolStripItemClickedEventArgs e)
+    {
+      List<CardConstant> selectedCardConstants = new List<CardConstant>();
+
+      for (int i = 0; i < this.cardConstantsDataGridView.SelectedRows.Count; i++)
+      {
+        CardConstant cardConstant = ((ObjectView<CardConstant>)this.cardConstantsDataGridView.SelectedRows[i].DataBoundItem).Object;
+        selectedCardConstants.Add(this.cardConstants.Constants[cardConstant.Index]);
+      }
+
+      CardConstantsMultiEditForm form = new CardConstantsMultiEditForm(selectedCardConstants, ref this.cardConstants);
+      form.ShowDialog();
+      this.cardConstantsDataGridView.Refresh();
     }
 
     private void FormatCardConstantTable(object sender, DataGridViewCellFormattingEventArgs e)
