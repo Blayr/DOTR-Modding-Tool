@@ -70,7 +70,7 @@ public class CardConstant
 		this.kind = bytes[0];
 		this.cardKind = new CardKind(this.kind);
 		this.kindOfs = bytes[1];
-		this.levelAttribute = new BitArray(bytes[2]);
+		this.levelAttribute = new BitArray(new byte[] { bytes[2] });
 		this.level = bytes[2].splitByte()[1];
 		this.attribute = new CardAttribute(bytes[2].splitByte()[0]);
 		this.deckCost = bytes[3];
@@ -225,6 +225,12 @@ public class CardConstant
     get
     {
 		  return this.level;
+    }
+
+		set
+    {
+			this.level = value;
+			this.levelAttribute.setHalfByte(value, 4);
     }
   }
 

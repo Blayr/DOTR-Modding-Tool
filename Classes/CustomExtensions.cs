@@ -20,6 +20,16 @@ namespace CustomExtensions
 
 			return result[0];
 		}
+
+		public static void setHalfByte(this BitArray bitArray, byte inputByte, int startIndex)
+    {
+			BitArray halfByteBitArray = new BitArray(new byte[] { inputByte });
+
+			for (int i = 0, j = startIndex; j < startIndex + 4; i++, j++)
+      {
+				bitArray[j] = halfByteBitArray[i];
+      }
+    }
 	}
 
 	public static class ByteExtension
