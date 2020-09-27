@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -25,7 +25,11 @@ public class CardConstantsMultiEditForm : Form
   private bool slotsTouched = false;
   private bool slotsRareTouched = false;
   private bool reincarnationTouched = false;
-  private bool passwordWorksTouched = false;
+  private bool levelTouched = false;
+  
+    private NumericUpDown levelNumericUpDown;
+    private Label label3;
+    private bool passwordWorksTouched = false;
 
   public CardConstantsMultiEditForm(List<CardConstant> selectedCardConstants, ref CardConstants allCardConstants)
 	{
@@ -49,7 +53,10 @@ public class CardConstantsMultiEditForm : Form
       this.passwordWorksCheckbox = new System.Windows.Forms.CheckBox();
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
+      this.levelNumericUpDown = new System.Windows.Forms.NumericUpDown();
+      this.label3 = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.deckCostNumericUpDown)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.levelNumericUpDown)).BeginInit();
       this.SuspendLayout();
       // 
       // numberOfCardsSelectedLabel
@@ -167,9 +174,33 @@ public class CardConstantsMultiEditForm : Form
       this.label2.TabIndex = 11;
       this.label2.Text = "Deck Cost";
       // 
+      // levelNumericUpDown
+      // 
+      this.levelNumericUpDown.Location = new System.Drawing.Point(276, 88);
+      this.levelNumericUpDown.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+      this.levelNumericUpDown.Name = "levelNumericUpDown";
+      this.levelNumericUpDown.Size = new System.Drawing.Size(57, 20);
+      this.levelNumericUpDown.TabIndex = 12;
+      this.levelNumericUpDown.ValueChanged += new System.EventHandler(this.rankNumericUpDown_ValueChanged);
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(216, 88);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(33, 13);
+      this.label3.TabIndex = 14;
+      this.label3.Text = "Level";
+      // 
       // CardConstantsMultiEditForm
       // 
       this.ClientSize = new System.Drawing.Size(582, 369);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.levelNumericUpDown);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.passwordWorksCheckbox);
@@ -183,6 +214,7 @@ public class CardConstantsMultiEditForm : Form
       this.Controls.Add(this.numberOfCardsSelectedLabel);
       this.Name = "CardConstantsMultiEditForm";
       ((System.ComponentModel.ISupportInitialize)(this.deckCostNumericUpDown)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.levelNumericUpDown)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -231,6 +263,11 @@ public class CardConstantsMultiEditForm : Form
     {
       cardConstant.PasswordWorks = this.passwordWorksCheckbox.Checked;
     }
+
+    if (this.levelTouched)
+    {
+      cardConstant.Level = this.levelNumericUpDown.Value;
+    }
   }
 
   private void slotsCheckbox_CheckedChanged(object sender, EventArgs e)
@@ -261,5 +298,11 @@ public class CardConstantsMultiEditForm : Form
   {
     this.deckCostTouched = true;
     this.deckCostNumericUpDown.BackColor = this.touchedColor;
+  }
+
+  private void rankNumericUpDown_ValueChanged(object sender, EventArgs e)
+  {
+    this.levelTouched = true;
+    this.levelNumericUpDown.BackColor = this.touchedColor;
   }
 }
