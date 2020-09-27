@@ -21,4 +21,18 @@ namespace CustomExtensions
 			return result[0];
 		}
 	}
+
+	public static class ByteExtension
+  {
+		public static byte[] splitByte(this byte inputByte)
+    {
+			BitArray tempBitArray = new BitArray(new byte[] { inputByte });
+			byte[] splitBytes = new byte[2];
+
+			splitBytes[0] = tempBitArray.toByte(0, 4);
+			splitBytes[1] = tempBitArray.toByte(4, 4);
+
+			return splitBytes;
+		}
+  }
 }

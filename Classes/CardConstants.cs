@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomExtensions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ public class CardConstant
 	byte kind;
 	CardKind cardKind;
 	byte kindOfs;
-	byte lvAttr;
+	BitArray levelAttribute;
 	byte level;
 	CardAttribute attribute;
 	byte deckCost;
@@ -69,9 +70,9 @@ public class CardConstant
 		this.kind = bytes[0];
 		this.cardKind = new CardKind(this.kind);
 		this.kindOfs = bytes[1];
-		this.lvAttr = bytes[2];
-		this.level = CardConstant.GetLevel(bytes);
-		this.attribute = new CardAttribute(CardConstant.GetAttribute(bytes));
+		this.levelAttribute = new BitArray(bytes[2]);
+		this.level = bytes[2].splitByte()[1];
+		this.attribute = new CardAttribute(bytes[2].splitByte()[0]);
 		this.deckCost = bytes[3];
 		this.effectId = BitConverter.ToUInt16(new byte[] { bytes[4], bytes[5] }, 0);
 		this.xaxId = BitConverter.ToUInt16(new byte[] { bytes[6], bytes[7] }, 0);
@@ -127,42 +128,12 @@ public class CardConstant
 		return BitConverter.ToUInt16(newBytes, 0);
 	}
 
-	public static byte GetLevel(byte[] bytes)
-	{
-		BitArray tempBitArray = new BitArray(new byte[] { bytes[2] });
-		BitArray halfByteBitArray = new BitArray(4);
-		halfByteBitArray[0] = tempBitArray[4];
-		halfByteBitArray[1] = tempBitArray[5];
-		halfByteBitArray[2] = tempBitArray[6];
-		halfByteBitArray[3] = tempBitArray[7];
-
-		byte[] level = new byte[1];
-		halfByteBitArray.CopyTo(level, 0);
-
-		return level[0];
-	}
-
-	public static byte GetAttribute(byte[] bytes)
-	{
-		BitArray tempBitArray = new BitArray(new byte[] { bytes[2] });
-		BitArray halfByteBitArray = new BitArray(4);
-		halfByteBitArray[0] = tempBitArray[0];
-		halfByteBitArray[1] = tempBitArray[1];
-		halfByteBitArray[2] = tempBitArray[2];
-		halfByteBitArray[3] = tempBitArray[3];
-
-		byte[] attribute = new byte[1];
-		halfByteBitArray.CopyTo(attribute, 0);
-
-		return attribute[0];
-	}
-
 	private byte[] calculateByteSequence()
 	{
 		byte[] newByteArray = new byte[20];
 		newByteArray[0] = this.kind;
 		newByteArray[1] = this.kindOfs;
-		newByteArray[2] = this.lvAttr;
+		newByteArray[2] = this.levelAttribute.toByte();
 		newByteArray[3] = this.deckCost;
 		newByteArray[4] = BitConverter.GetBytes(this.effectId)[0];
 		newByteArray[5] = BitConverter.GetBytes(this.effectId)[1];
