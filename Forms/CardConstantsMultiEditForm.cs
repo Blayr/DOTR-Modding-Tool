@@ -266,7 +266,7 @@ public class CardConstantsMultiEditForm : Form
 
     if (this.levelTouched)
     {
-      cardConstant.Level = this.levelNumericUpDown.Value;
+      cardConstant.Level = (byte)this.levelNumericUpDown.Value;
     }
   }
 
