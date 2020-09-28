@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
@@ -26,10 +27,10 @@ public class CardConstantsMultiEditForm : Form
   private bool slotsRareTouched = false;
   private bool reincarnationTouched = false;
   private bool levelTouched = false;
-  
-    private NumericUpDown levelNumericUpDown;
-    private Label label3;
-    private bool passwordWorksTouched = false;
+  private bool passwordWorksTouched = false;
+
+  private NumericUpDown levelNumericUpDown;
+  private Label label3;
 
   public CardConstantsMultiEditForm(List<CardConstant> selectedCardConstants, ref CardConstants allCardConstants)
 	{
@@ -37,8 +38,8 @@ public class CardConstantsMultiEditForm : Form
     this.cardConstants = allCardConstants;
 
     this.InitializeComponent();
-    this.SetupFormFields();
     this.PopulateFields();
+    this.SetupFormFields();
   }
 
   private void InitializeComponent()
@@ -110,7 +111,6 @@ public class CardConstantsMultiEditForm : Form
       this.deckCostNumericUpDown.Name = "deckCostNumericUpDown";
       this.deckCostNumericUpDown.Size = new System.Drawing.Size(57, 20);
       this.deckCostNumericUpDown.TabIndex = 5;
-      this.deckCostNumericUpDown.ValueChanged += new System.EventHandler(this.deckCostNumericUpDown_ValueChanged);
       // 
       // slotsCheckbox
       // 
@@ -122,7 +122,7 @@ public class CardConstantsMultiEditForm : Form
       this.slotsCheckbox.TabIndex = 6;
       this.slotsCheckbox.Text = "Slots";
       this.slotsCheckbox.UseVisualStyleBackColor = false;
-      this.slotsCheckbox.CheckedChanged += new System.EventHandler(this.slotsCheckbox_CheckedChanged);
+      
       // 
       // slotRaresCheckbox
       // 
@@ -133,33 +133,33 @@ public class CardConstantsMultiEditForm : Form
       this.slotRaresCheckbox.TabIndex = 7;
       this.slotRaresCheckbox.Text = "Slots Rare";
       this.slotRaresCheckbox.UseVisualStyleBackColor = true;
-      this.slotRaresCheckbox.CheckedChanged += new System.EventHandler(this.slotRaresCheckbox_CheckedChanged);
-      // 
-      // reincarnationCheckbox
-      // 
-      this.reincarnationCheckbox.AutoSize = true;
+
+    // 
+    // reincarnationCheckbox
+    // 
+    this.reincarnationCheckbox.AutoSize = true;
       this.reincarnationCheckbox.Location = new System.Drawing.Point(441, 112);
       this.reincarnationCheckbox.Name = "reincarnationCheckbox";
       this.reincarnationCheckbox.Size = new System.Drawing.Size(92, 17);
       this.reincarnationCheckbox.TabIndex = 8;
       this.reincarnationCheckbox.Text = "Reincarnation";
       this.reincarnationCheckbox.UseVisualStyleBackColor = true;
-      this.reincarnationCheckbox.CheckedChanged += new System.EventHandler(this.reincarnationCheckbox_CheckedChanged);
-      // 
-      // passwordWorksCheckbox
-      // 
-      this.passwordWorksCheckbox.AutoSize = true;
+
+    // 
+    // passwordWorksCheckbox
+    // 
+    this.passwordWorksCheckbox.AutoSize = true;
       this.passwordWorksCheckbox.Location = new System.Drawing.Point(441, 136);
       this.passwordWorksCheckbox.Name = "passwordWorksCheckbox";
       this.passwordWorksCheckbox.Size = new System.Drawing.Size(106, 17);
       this.passwordWorksCheckbox.TabIndex = 9;
       this.passwordWorksCheckbox.Text = "Password Works";
       this.passwordWorksCheckbox.UseVisualStyleBackColor = true;
-      this.passwordWorksCheckbox.CheckedChanged += new System.EventHandler(this.passwordWorksCheckbox_CheckedChanged);
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
+
+    // 
+    // label1
+    // 
+    this.label1.AutoSize = true;
       this.label1.Location = new System.Drawing.Point(438, 45);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(82, 13);
@@ -186,7 +186,6 @@ public class CardConstantsMultiEditForm : Form
       this.levelNumericUpDown.Name = "levelNumericUpDown";
       this.levelNumericUpDown.Size = new System.Drawing.Size(57, 20);
       this.levelNumericUpDown.TabIndex = 12;
-      this.levelNumericUpDown.ValueChanged += new System.EventHandler(this.rankNumericUpDown_ValueChanged);
       // 
       // label3
       // 
@@ -226,11 +225,15 @@ public class CardConstantsMultiEditForm : Form
     this.numberOfCardsSelectedLabel.Text = this.selectedCardConstants.Count.ToString() + " cards selected.";
 
     this.selectedCardConstants.ForEach((cc) => this.selectedCardList.Items.Add(cc.Name));
-    this.deckCostNumericUpDown.Text = "";
-    this.levelNumericUpDown.Text = "";
 
     this.deckCostNumericUpDown.KeyDown += this.OnControlKeyPress;
     this.levelNumericUpDown.KeyDown+= this.OnControlKeyPress;
+    this.deckCostNumericUpDown.ValueChanged += new System.EventHandler(this.deckCostNumericUpDown_ValueChanged);
+    this.levelNumericUpDown.ValueChanged += new System.EventHandler(this.rankNumericUpDown_ValueChanged);
+    this.passwordWorksCheckbox.CheckedChanged += new System.EventHandler(this.passwordWorksCheckbox_CheckedChanged);
+    this.reincarnationCheckbox.CheckedChanged += new System.EventHandler(this.reincarnationCheckbox_CheckedChanged);
+    this.slotRaresCheckbox.CheckedChanged += new System.EventHandler(this.slotRaresCheckbox_CheckedChanged);
+    this.slotsCheckbox.CheckedChanged += new System.EventHandler(this.slotsCheckbox_CheckedChanged);
   }
 
   private void OnControlKeyPress(Object sender, EventArgs e)
@@ -241,7 +244,50 @@ public class CardConstantsMultiEditForm : Form
 
   private void PopulateFields()
   {
+    CardConstant firstCard = this.selectedCardConstants.First();
 
+    bool deckCostChanged = false;
+    bool levelChanged = false;
+    bool appearsInSlotReelsChanged = false;
+    bool isSlotRareChanged = false;
+    bool appearsInReincarnationChanged = false;
+    bool passwordWorksChanged = false;
+
+    foreach (CardConstant constant in this.selectedCardConstants)
+    {
+      if (!deckCostChanged && (constant.DeckCost != firstCard.DeckCost)) { deckCostChanged = true; }
+
+      if (!levelChanged && (constant.Level != firstCard.Level)) { levelChanged = true; }
+
+      if (!appearsInSlotReelsChanged && (constant.AppearsInSlotReels != firstCard.AppearsInSlotReels)) { appearsInSlotReelsChanged = true; }
+
+      if (!isSlotRareChanged && (constant.IsSlotRare != firstCard.IsSlotRare)) { appearsInSlotReelsChanged = true; }
+
+      if (!appearsInReincarnationChanged && (constant.AppearsInReincarnation != firstCard.AppearsInReincarnation)) { appearsInReincarnationChanged = true; }
+      
+      if (!passwordWorksChanged && (constant.PasswordWorks != firstCard.PasswordWorks)) { passwordWorksChanged = true; }
+    }
+
+    if (deckCostChanged)
+    {
+      this.deckCostNumericUpDown.Text = "";
+    } else
+    {
+      this.deckCostNumericUpDown.Value = firstCard.DeckCost;
+    }
+
+    if (levelChanged)
+    {
+      this.levelNumericUpDown.Text = "";
+    } else
+    {
+      this.levelNumericUpDown.Value = firstCard.Level;
+    }
+
+    this.slotsCheckbox.Checked = appearsInSlotReelsChanged ? false : firstCard.AppearsInSlotReels;
+    this.slotRaresCheckbox.Checked = isSlotRareChanged ? false : firstCard.IsSlotRare;
+    this.reincarnationCheckbox.Checked = appearsInReincarnationChanged ? false : firstCard.AppearsInReincarnation;
+    this.passwordWorksCheckbox.Checked = passwordWorksChanged ? false : firstCard.PasswordWorks;
   }
 
   private void cancelButton_Click(object sender, EventArgs e)
