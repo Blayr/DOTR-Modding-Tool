@@ -35,9 +35,10 @@ public class CardConstantsMultiEditForm : Form
 	{
     this.selectedCardConstants = selectedCardConstants;
     this.cardConstants = allCardConstants;
+
     this.InitializeComponent();
-    this.numberOfCardsSelectedLabel.Text = this.selectedCardConstants.Count.ToString() + " cards selected.";
-    this.selectedCardConstants.ForEach((cc) => this.selectedCardList.Items.Add(cc.Name));
+    this.SetupFormFields();
+    this.PopulateFields();
   }
 
   private void InitializeComponent()
@@ -99,8 +100,8 @@ public class CardConstantsMultiEditForm : Form
       // 
       // deckCostNumericUpDown
       // 
-      this.deckCostNumericUpDown.BackColor = System.Drawing.SystemColors.Control;
-      this.deckCostNumericUpDown.Location = new System.Drawing.Point(276, 43);
+      this.deckCostNumericUpDown.BackColor = System.Drawing.SystemColors.Window;
+      this.deckCostNumericUpDown.Location = new System.Drawing.Point(272, 69);
       this.deckCostNumericUpDown.Maximum = new decimal(new int[] {
             127,
             0,
@@ -168,7 +169,7 @@ public class CardConstantsMultiEditForm : Form
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(213, 45);
+      this.label2.Location = new System.Drawing.Point(209, 71);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(57, 13);
       this.label2.TabIndex = 11;
@@ -176,7 +177,7 @@ public class CardConstantsMultiEditForm : Form
       // 
       // levelNumericUpDown
       // 
-      this.levelNumericUpDown.Location = new System.Drawing.Point(276, 88);
+      this.levelNumericUpDown.Location = new System.Drawing.Point(272, 45);
       this.levelNumericUpDown.Maximum = new decimal(new int[] {
             12,
             0,
@@ -190,7 +191,7 @@ public class CardConstantsMultiEditForm : Form
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(216, 88);
+      this.label3.Location = new System.Drawing.Point(220, 47);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(33, 13);
       this.label3.TabIndex = 14;
@@ -217,6 +218,29 @@ public class CardConstantsMultiEditForm : Form
       ((System.ComponentModel.ISupportInitialize)(this.levelNumericUpDown)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
+
+  }
+
+  private void SetupFormFields()
+  {
+    this.numberOfCardsSelectedLabel.Text = this.selectedCardConstants.Count.ToString() + " cards selected.";
+
+    this.selectedCardConstants.ForEach((cc) => this.selectedCardList.Items.Add(cc.Name));
+    this.deckCostNumericUpDown.Text = "";
+    this.levelNumericUpDown.Text = "";
+
+    this.deckCostNumericUpDown.KeyDown += this.OnControlKeyPress;
+    this.levelNumericUpDown.KeyDown+= this.OnControlKeyPress;
+  }
+
+  private void OnControlKeyPress(Object sender, EventArgs e)
+  {
+    Control field = (Control)sender;
+    field.BackColor = this.touchedColor;
+  }
+
+  private void PopulateFields()
+  {
 
   }
 
