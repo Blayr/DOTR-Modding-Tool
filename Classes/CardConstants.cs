@@ -261,6 +261,13 @@ public class CardConstant
     {
 			return this.attack;
     }
+		set
+    {
+			this.attack = this.roundAttackDefense(value);
+			byte[] attackBytes = BitConverter.GetBytes(this.attack);
+			BitArray attackBitArray = new BitArray(attackBytes);
+			attackBitArray.copyRangeTo(new int[] { 0, 12 }, ref this.apWithFlags, 0);
+    }
   }
 
 	public ushort Defense
@@ -269,7 +276,28 @@ public class CardConstant
     {
 			return this.defense;
     }
+		set
+    {
+			this.defense = this.roundAttackDefense(value);
+			byte[] defenseBytes = BitConverter.GetBytes(this.defense);
+			BitArray defenseBitArray= new BitArray(defenseBytes);
+			defenseBitArray.copyRangeTo(new int[] { 0, 12 }, ref this.dpWithFlags, 0);
+		}
   }
+
+	private ushort roundAttackDefense(ushort value)
+  {
+		if (value < 0)
+		{
+			value = 0;
+		}
+		else if (value > 8192)
+		{
+			value = 8192;
+		}
+
+		return value;
+	}
 
 	public bool IsSlotRare
   {

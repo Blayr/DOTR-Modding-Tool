@@ -73,12 +73,22 @@
       this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+      this.label8 = new System.Windows.Forms.Label();
       this.cardConstantsSaveButton = new System.Windows.Forms.Button();
       this.cardConstantFilterClearButton = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
       this.cardConstantsFilterButton = new System.Windows.Forms.Button();
       this.cardConstantsFilterTextbox = new System.Windows.Forms.TextBox();
       this.cardConstantsDataGridView = new System.Windows.Forms.DataGridView();
+      this.leaderRankTresholdsTabControl = new System.Windows.Forms.TabPage();
+      this.textBox2 = new System.Windows.Forms.TextBox();
+      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.newRankThresholdsTextbox = new System.Windows.Forms.TextBox();
+      this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
+      this.rankThresholdsSaveButton = new System.Windows.Forms.Button();
+      this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
+      this.tabControl = new System.Windows.Forms.TabControl();
+      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.CardConstantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CardConstantAttack = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,16 +101,6 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.leaderRankTresholdsTabControl = new System.Windows.Forms.TabPage();
-      this.textBox2 = new System.Windows.Forms.TextBox();
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      this.newRankThresholdsTextbox = new System.Windows.Forms.TextBox();
-      this.originalRankThresholdsTextbox = new System.Windows.Forms.TextBox();
-      this.rankThresholdsSaveButton = new System.Windows.Forms.Button();
-      this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
-      this.tabControl = new System.Windows.Forms.TabControl();
-      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.label8 = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -138,19 +138,20 @@
       // 
       // menuStrip1
       // 
+      this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openISOMenuItem,
             this.aboutToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(938, 24);
+      this.menuStrip1.Size = new System.Drawing.Size(1251, 30);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
       // 
       // openISOMenuItem
       // 
       this.openISOMenuItem.Name = "openISOMenuItem";
-      this.openISOMenuItem.Size = new System.Drawing.Size(69, 20);
+      this.openISOMenuItem.Size = new System.Drawing.Size(86, 26);
       this.openISOMenuItem.Text = "Open ISO";
       this.openISOMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
       // 
@@ -159,23 +160,24 @@
       this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewSourceOnGithubToolStripMenuItem});
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
       this.aboutToolStripMenuItem.Text = "About";
       // 
       // viewSourceOnGithubToolStripMenuItem
       // 
       this.viewSourceOnGithubToolStripMenuItem.Name = "viewSourceOnGithubToolStripMenuItem";
-      this.viewSourceOnGithubToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+      this.viewSourceOnGithubToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
       this.viewSourceOnGithubToolStripMenuItem.Text = "View Source on Github";
       this.viewSourceOnGithubToolStripMenuItem.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem_Click);
       // 
       // hiddenCardsTab
       // 
       this.hiddenCardsTab.Controls.Add(this.hiddenCardsSplitContainer);
-      this.hiddenCardsTab.Location = new System.Drawing.Point(4, 22);
+      this.hiddenCardsTab.Location = new System.Drawing.Point(4, 25);
+      this.hiddenCardsTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.hiddenCardsTab.Name = "hiddenCardsTab";
-      this.hiddenCardsTab.Padding = new System.Windows.Forms.Padding(3);
-      this.hiddenCardsTab.Size = new System.Drawing.Size(930, 496);
+      this.hiddenCardsTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.hiddenCardsTab.Size = new System.Drawing.Size(1243, 613);
       this.hiddenCardsTab.TabIndex = 4;
       this.hiddenCardsTab.Text = "Hidden Cards";
       this.hiddenCardsTab.UseVisualStyleBackColor = true;
@@ -183,7 +185,8 @@
       // hiddenCardsSplitContainer
       // 
       this.hiddenCardsSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.hiddenCardsSplitContainer.Location = new System.Drawing.Point(3, 3);
+      this.hiddenCardsSplitContainer.Location = new System.Drawing.Point(4, 4);
+      this.hiddenCardsSplitContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.hiddenCardsSplitContainer.Name = "hiddenCardsSplitContainer";
       // 
       // hiddenCardsSplitContainer.Panel1
@@ -202,8 +205,9 @@
       this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardRowNumericUpDown);
       this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardSaveButton);
       this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardCardComboBox);
-      this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(924, 490);
-      this.hiddenCardsSplitContainer.SplitterDistance = 194;
+      this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(1235, 605);
+      this.hiddenCardsSplitContainer.SplitterDistance = 259;
+      this.hiddenCardsSplitContainer.SplitterWidth = 5;
       this.hiddenCardsSplitContainer.TabIndex = 0;
       // 
       // treasureCardsListbox
@@ -211,95 +215,106 @@
       this.treasureCardsListbox.DisplayMember = "EnemyName";
       this.treasureCardsListbox.Dock = System.Windows.Forms.DockStyle.Fill;
       this.treasureCardsListbox.FormattingEnabled = true;
+      this.treasureCardsListbox.ItemHeight = 16;
       this.treasureCardsListbox.Location = new System.Drawing.Point(0, 0);
+      this.treasureCardsListbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.treasureCardsListbox.Name = "treasureCardsListbox";
-      this.treasureCardsListbox.Size = new System.Drawing.Size(194, 490);
+      this.treasureCardsListbox.Size = new System.Drawing.Size(259, 605);
       this.treasureCardsListbox.TabIndex = 0;
       this.treasureCardsListbox.SelectedIndexChanged += new System.EventHandler(this.treasureCardsListbox_SelectedIndexChanged);
       // 
       // label7
       // 
       this.label7.AutoSize = true;
-      this.label7.Location = new System.Drawing.Point(44, 132);
+      this.label7.Location = new System.Drawing.Point(59, 162);
+      this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(276, 13);
+      this.label7.Size = new System.Drawing.Size(370, 17);
       this.label7.TabIndex = 14;
       this.label7.Text = "Valid Row and Column numbers are 0-6 ( total of 7 each )";
       // 
       // label6
       // 
       this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(44, 176);
+      this.label6.Location = new System.Drawing.Point(59, 217);
+      this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(311, 13);
+      this.label6.Size = new System.Drawing.Size(412, 17);
       this.label6.TabIndex = 13;
       this.label6.Text = "Vs Red Rose - Row # and Column # start at 0 in the bottom right";
       // 
       // label5
       // 
       this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(44, 154);
+      this.label5.Location = new System.Drawing.Point(59, 190);
+      this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(296, 13);
+      this.label5.Size = new System.Drawing.Size(390, 17);
       this.label5.TabIndex = 12;
       this.label5.Text = "Vs White Rose - Row # and Column # start at 0 in the top left";
       // 
       // label4
       // 
       this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(44, 19);
+      this.label4.Location = new System.Drawing.Point(59, 23);
+      this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(29, 13);
+      this.label4.Size = new System.Drawing.Size(38, 17);
       this.label4.TabIndex = 11;
       this.label4.Text = "Card";
       // 
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(125, 76);
+      this.label3.Location = new System.Drawing.Point(167, 94);
+      this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(52, 13);
+      this.label3.Size = new System.Drawing.Size(67, 17);
       this.label3.TabIndex = 9;
       this.label3.Text = "Column #";
       // 
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(44, 76);
+      this.label2.Location = new System.Drawing.Point(59, 94);
+      this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(39, 13);
+      this.label2.Size = new System.Drawing.Size(47, 17);
       this.label2.TabIndex = 8;
       this.label2.Text = "Row #";
       // 
       // treasureCardColumnNumericUpDown
       // 
-      this.treasureCardColumnNumericUpDown.Location = new System.Drawing.Point(128, 92);
+      this.treasureCardColumnNumericUpDown.Location = new System.Drawing.Point(171, 113);
+      this.treasureCardColumnNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.treasureCardColumnNumericUpDown.Maximum = new decimal(new int[] {
             6,
             0,
             0,
             0});
       this.treasureCardColumnNumericUpDown.Name = "treasureCardColumnNumericUpDown";
-      this.treasureCardColumnNumericUpDown.Size = new System.Drawing.Size(46, 20);
+      this.treasureCardColumnNumericUpDown.Size = new System.Drawing.Size(61, 22);
       this.treasureCardColumnNumericUpDown.TabIndex = 7;
       // 
       // treasureCardRowNumericUpDown
       // 
-      this.treasureCardRowNumericUpDown.Location = new System.Drawing.Point(47, 92);
+      this.treasureCardRowNumericUpDown.Location = new System.Drawing.Point(63, 113);
+      this.treasureCardRowNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.treasureCardRowNumericUpDown.Maximum = new decimal(new int[] {
             6,
             0,
             0,
             0});
       this.treasureCardRowNumericUpDown.Name = "treasureCardRowNumericUpDown";
-      this.treasureCardRowNumericUpDown.Size = new System.Drawing.Size(46, 20);
+      this.treasureCardRowNumericUpDown.Size = new System.Drawing.Size(61, 22);
       this.treasureCardRowNumericUpDown.TabIndex = 6;
       // 
       // treasureCardSaveButton
       // 
-      this.treasureCardSaveButton.Location = new System.Drawing.Point(202, 89);
+      this.treasureCardSaveButton.Location = new System.Drawing.Point(269, 110);
+      this.treasureCardSaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.treasureCardSaveButton.Name = "treasureCardSaveButton";
-      this.treasureCardSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.treasureCardSaveButton.Size = new System.Drawing.Size(100, 28);
       this.treasureCardSaveButton.TabIndex = 2;
       this.treasureCardSaveButton.Text = "Save";
       this.treasureCardSaveButton.UseVisualStyleBackColor = true;
@@ -309,19 +324,21 @@
       // 
       this.treasureCardCardComboBox.DisplayMember = "Name";
       this.treasureCardCardComboBox.FormattingEnabled = true;
-      this.treasureCardCardComboBox.Location = new System.Drawing.Point(47, 40);
+      this.treasureCardCardComboBox.Location = new System.Drawing.Point(63, 49);
+      this.treasureCardCardComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.treasureCardCardComboBox.Name = "treasureCardCardComboBox";
-      this.treasureCardCardComboBox.Size = new System.Drawing.Size(166, 21);
+      this.treasureCardCardComboBox.Size = new System.Drawing.Size(220, 24);
       this.treasureCardCardComboBox.TabIndex = 0;
       this.treasureCardCardComboBox.ValueMember = "Index";
       // 
       // enemyAiTab
       // 
       this.enemyAiTab.Controls.Add(this.enemyAiTabSplitContainer);
-      this.enemyAiTab.Location = new System.Drawing.Point(4, 22);
+      this.enemyAiTab.Location = new System.Drawing.Point(4, 25);
+      this.enemyAiTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.enemyAiTab.Name = "enemyAiTab";
-      this.enemyAiTab.Padding = new System.Windows.Forms.Padding(3);
-      this.enemyAiTab.Size = new System.Drawing.Size(930, 496);
+      this.enemyAiTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.enemyAiTab.Size = new System.Drawing.Size(1243, 613);
       this.enemyAiTab.TabIndex = 3;
       this.enemyAiTab.Text = "Enemy Ai";
       this.enemyAiTab.UseVisualStyleBackColor = true;
@@ -329,7 +346,8 @@
       // enemyAiTabSplitContainer
       // 
       this.enemyAiTabSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.enemyAiTabSplitContainer.Location = new System.Drawing.Point(3, 3);
+      this.enemyAiTabSplitContainer.Location = new System.Drawing.Point(4, 4);
+      this.enemyAiTabSplitContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.enemyAiTabSplitContainer.Name = "enemyAiTabSplitContainer";
       this.enemyAiTabSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
       // 
@@ -340,16 +358,18 @@
       // enemyAiTabSplitContainer.Panel2
       // 
       this.enemyAiTabSplitContainer.Panel2.Controls.Add(this.enemyAiDataGridView);
-      this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(924, 490);
-      this.enemyAiTabSplitContainer.SplitterDistance = 25;
+      this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(1235, 605);
+      this.enemyAiTabSplitContainer.SplitterDistance = 30;
+      this.enemyAiTabSplitContainer.SplitterWidth = 5;
       this.enemyAiTabSplitContainer.TabIndex = 1;
       // 
       // enemyAiSaveButton
       // 
       this.enemyAiSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
-      this.enemyAiSaveButton.Location = new System.Drawing.Point(849, 0);
+      this.enemyAiSaveButton.Location = new System.Drawing.Point(1135, 0);
+      this.enemyAiSaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.enemyAiSaveButton.Name = "enemyAiSaveButton";
-      this.enemyAiSaveButton.Size = new System.Drawing.Size(75, 25);
+      this.enemyAiSaveButton.Size = new System.Drawing.Size(100, 30);
       this.enemyAiSaveButton.TabIndex = 0;
       this.enemyAiSaveButton.Text = "Save";
       this.enemyAiSaveButton.UseVisualStyleBackColor = true;
@@ -366,15 +386,18 @@
             this.EnemyAiColumn});
       this.enemyAiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.enemyAiDataGridView.Location = new System.Drawing.Point(0, 0);
+      this.enemyAiDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.enemyAiDataGridView.Name = "enemyAiDataGridView";
       this.enemyAiDataGridView.RowHeadersVisible = false;
-      this.enemyAiDataGridView.Size = new System.Drawing.Size(924, 461);
+      this.enemyAiDataGridView.RowHeadersWidth = 51;
+      this.enemyAiDataGridView.Size = new System.Drawing.Size(1235, 570);
       this.enemyAiDataGridView.TabIndex = 0;
       // 
       // EnemyIndex
       // 
       this.EnemyIndex.DataPropertyName = "Index";
       this.EnemyIndex.HeaderText = "#";
+      this.EnemyIndex.MinimumWidth = 6;
       this.EnemyIndex.Name = "EnemyIndex";
       this.EnemyIndex.ReadOnly = true;
       this.EnemyIndex.Width = 30;
@@ -383,6 +406,7 @@
       // 
       this.EnemyNameColumn.DataPropertyName = "Name";
       this.EnemyNameColumn.HeaderText = "Enemy";
+      this.EnemyNameColumn.MinimumWidth = 6;
       this.EnemyNameColumn.Name = "EnemyNameColumn";
       this.EnemyNameColumn.ReadOnly = true;
       this.EnemyNameColumn.Width = 160;
@@ -390,16 +414,18 @@
       // EnemyAiColumn
       // 
       this.EnemyAiColumn.HeaderText = "Ai";
+      this.EnemyAiColumn.MinimumWidth = 6;
       this.EnemyAiColumn.Name = "EnemyAiColumn";
       this.EnemyAiColumn.Width = 180;
       // 
       // tabPage2
       // 
       this.tabPage2.Controls.Add(this.splitContainer2);
-      this.tabPage2.Location = new System.Drawing.Point(4, 22);
+      this.tabPage2.Location = new System.Drawing.Point(4, 25);
+      this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(930, 496);
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.tabPage2.Size = new System.Drawing.Size(1243, 613);
       this.tabPage2.TabIndex = 2;
       this.tabPage2.Text = "Fusions";
       this.tabPage2.UseVisualStyleBackColor = true;
@@ -407,7 +433,8 @@
       // splitContainer2
       // 
       this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+      this.splitContainer2.Location = new System.Drawing.Point(4, 4);
+      this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.splitContainer2.Name = "splitContainer2";
       this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
       // 
@@ -419,25 +446,28 @@
       // splitContainer2.Panel2
       // 
       this.splitContainer2.Panel2.Controls.Add(this.fusionsDataGridView);
-      this.splitContainer2.Size = new System.Drawing.Size(924, 490);
-      this.splitContainer2.SplitterDistance = 25;
+      this.splitContainer2.Size = new System.Drawing.Size(1235, 605);
+      this.splitContainer2.SplitterDistance = 30;
+      this.splitContainer2.SplitterWidth = 5;
       this.splitContainer2.TabIndex = 1;
       // 
       // fusionTableTipLabel
       // 
       this.fusionTableTipLabel.AutoSize = true;
-      this.fusionTableTipLabel.Location = new System.Drawing.Point(5, 6);
+      this.fusionTableTipLabel.Location = new System.Drawing.Point(7, 7);
+      this.fusionTableTipLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.fusionTableTipLabel.Name = "fusionTableTipLabel";
-      this.fusionTableTipLabel.Size = new System.Drawing.Size(279, 13);
+      this.fusionTableTipLabel.Size = new System.Drawing.Size(374, 17);
       this.fusionTableTipLabel.TabIndex = 1;
       this.fusionTableTipLabel.Text = "Tip: You can start typing immediately after selecting a cell.";
       // 
       // fusionSaveButton
       // 
       this.fusionSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
-      this.fusionSaveButton.Location = new System.Drawing.Point(849, 0);
+      this.fusionSaveButton.Location = new System.Drawing.Point(1135, 0);
+      this.fusionSaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.fusionSaveButton.Name = "fusionSaveButton";
-      this.fusionSaveButton.Size = new System.Drawing.Size(75, 25);
+      this.fusionSaveButton.Size = new System.Drawing.Size(100, 30);
       this.fusionSaveButton.TabIndex = 0;
       this.fusionSaveButton.Text = "Save";
       this.fusionSaveButton.UseVisualStyleBackColor = false;
@@ -455,15 +485,18 @@
             this.FusionsDataGridViewFusionCard});
       this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.fusionsDataGridView.Location = new System.Drawing.Point(0, 0);
+      this.fusionsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.fusionsDataGridView.Name = "fusionsDataGridView";
       this.fusionsDataGridView.RowHeadersVisible = false;
-      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 461);
+      this.fusionsDataGridView.RowHeadersWidth = 51;
+      this.fusionsDataGridView.Size = new System.Drawing.Size(1235, 570);
       this.fusionsDataGridView.TabIndex = 0;
       // 
       // FusionsDataGridViewIndex
       // 
       this.FusionsDataGridViewIndex.DataPropertyName = "Index";
       this.FusionsDataGridViewIndex.HeaderText = "Index";
+      this.FusionsDataGridViewIndex.MinimumWidth = 6;
       this.FusionsDataGridViewIndex.Name = "FusionsDataGridViewIndex";
       this.FusionsDataGridViewIndex.ReadOnly = true;
       this.FusionsDataGridViewIndex.Width = 40;
@@ -473,6 +506,7 @@
       this.FusionsDataGridViewLowerCard.DataPropertyName = "CardIndex";
       this.FusionsDataGridViewLowerCard.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
       this.FusionsDataGridViewLowerCard.HeaderText = "Fusion Material 1";
+      this.FusionsDataGridViewLowerCard.MinimumWidth = 6;
       this.FusionsDataGridViewLowerCard.Name = "FusionsDataGridViewLowerCard";
       this.FusionsDataGridViewLowerCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
       this.FusionsDataGridViewLowerCard.Width = 200;
@@ -480,6 +514,7 @@
       // FusionsDataGridViewUpperCard
       // 
       this.FusionsDataGridViewUpperCard.HeaderText = "Fusion Material 2";
+      this.FusionsDataGridViewUpperCard.MinimumWidth = 6;
       this.FusionsDataGridViewUpperCard.Name = "FusionsDataGridViewUpperCard";
       this.FusionsDataGridViewUpperCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
       this.FusionsDataGridViewUpperCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
@@ -488,6 +523,7 @@
       // FusionsDataGridViewFusionCard
       // 
       this.FusionsDataGridViewFusionCard.HeaderText = "Resulting Fusion";
+      this.FusionsDataGridViewFusionCard.MinimumWidth = 6;
       this.FusionsDataGridViewFusionCard.Name = "FusionsDataGridViewFusionCard";
       this.FusionsDataGridViewFusionCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
       this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
@@ -496,10 +532,11 @@
       // tabPage1
       // 
       this.tabPage1.Controls.Add(this.splitContainer1);
-      this.tabPage1.Location = new System.Drawing.Point(4, 22);
+      this.tabPage1.Location = new System.Drawing.Point(4, 25);
+      this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.tabPage1.Name = "tabPage1";
-      this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage1.Size = new System.Drawing.Size(930, 496);
+      this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.tabPage1.Size = new System.Drawing.Size(1243, 613);
       this.tabPage1.TabIndex = 1;
       this.tabPage1.Text = "Card Properties";
       this.tabPage1.UseVisualStyleBackColor = true;
@@ -507,7 +544,8 @@
       // splitContainer1
       // 
       this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+      this.splitContainer1.Location = new System.Drawing.Point(4, 4);
+      this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.splitContainer1.Name = "splitContainer1";
       this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
       // 
@@ -523,16 +561,28 @@
       // splitContainer1.Panel2
       // 
       this.splitContainer1.Panel2.Controls.Add(this.cardConstantsDataGridView);
-      this.splitContainer1.Size = new System.Drawing.Size(924, 490);
-      this.splitContainer1.SplitterDistance = 25;
+      this.splitContainer1.Size = new System.Drawing.Size(1235, 605);
+      this.splitContainer1.SplitterDistance = 30;
+      this.splitContainer1.SplitterWidth = 5;
       this.splitContainer1.TabIndex = 1;
+      // 
+      // label8
+      // 
+      this.label8.AutoSize = true;
+      this.label8.Location = new System.Drawing.Point(431, 9);
+      this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label8.Name = "label8";
+      this.label8.Size = new System.Drawing.Size(328, 17);
+      this.label8.TabIndex = 5;
+      this.label8.Text = "Tip: Select multiple rows with shift, right click to edit";
       // 
       // cardConstantsSaveButton
       // 
       this.cardConstantsSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
-      this.cardConstantsSaveButton.Location = new System.Drawing.Point(849, 0);
+      this.cardConstantsSaveButton.Location = new System.Drawing.Point(1135, 0);
+      this.cardConstantsSaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.cardConstantsSaveButton.Name = "cardConstantsSaveButton";
-      this.cardConstantsSaveButton.Size = new System.Drawing.Size(75, 25);
+      this.cardConstantsSaveButton.Size = new System.Drawing.Size(100, 30);
       this.cardConstantsSaveButton.TabIndex = 4;
       this.cardConstantsSaveButton.Text = "Save";
       this.cardConstantsSaveButton.UseVisualStyleBackColor = true;
@@ -540,9 +590,10 @@
       // 
       // cardConstantFilterClearButton
       // 
-      this.cardConstantFilterClearButton.Location = new System.Drawing.Point(242, 2);
+      this.cardConstantFilterClearButton.Location = new System.Drawing.Point(323, 2);
+      this.cardConstantFilterClearButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.cardConstantFilterClearButton.Name = "cardConstantFilterClearButton";
-      this.cardConstantFilterClearButton.Size = new System.Drawing.Size(75, 23);
+      this.cardConstantFilterClearButton.Size = new System.Drawing.Size(100, 28);
       this.cardConstantFilterClearButton.TabIndex = 3;
       this.cardConstantFilterClearButton.Text = "Clear";
       this.cardConstantFilterClearButton.UseVisualStyleBackColor = true;
@@ -551,17 +602,19 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(5, 7);
+      this.label1.Location = new System.Drawing.Point(7, 9);
+      this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(32, 13);
+      this.label1.Size = new System.Drawing.Size(43, 17);
       this.label1.TabIndex = 2;
       this.label1.Text = "Filter:";
       // 
       // cardConstantsFilterButton
       // 
-      this.cardConstantsFilterButton.Location = new System.Drawing.Point(161, 2);
+      this.cardConstantsFilterButton.Location = new System.Drawing.Point(215, 2);
+      this.cardConstantsFilterButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.cardConstantsFilterButton.Name = "cardConstantsFilterButton";
-      this.cardConstantsFilterButton.Size = new System.Drawing.Size(75, 23);
+      this.cardConstantsFilterButton.Size = new System.Drawing.Size(100, 28);
       this.cardConstantsFilterButton.TabIndex = 1;
       this.cardConstantsFilterButton.Text = "Apply";
       this.cardConstantsFilterButton.UseVisualStyleBackColor = true;
@@ -569,9 +622,10 @@
       // 
       // cardConstantsFilterTextbox
       // 
-      this.cardConstantsFilterTextbox.Location = new System.Drawing.Point(43, 4);
+      this.cardConstantsFilterTextbox.Location = new System.Drawing.Point(57, 5);
+      this.cardConstantsFilterTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.cardConstantsFilterTextbox.Name = "cardConstantsFilterTextbox";
-      this.cardConstantsFilterTextbox.Size = new System.Drawing.Size(112, 20);
+      this.cardConstantsFilterTextbox.Size = new System.Drawing.Size(148, 22);
       this.cardConstantsFilterTextbox.TabIndex = 0;
       this.cardConstantsFilterTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cardConstantsFilterTextbox_KeyDown);
       // 
@@ -608,107 +662,13 @@
       this.cardConstantsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.cardConstantsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
       this.cardConstantsDataGridView.Location = new System.Drawing.Point(0, 0);
+      this.cardConstantsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.cardConstantsDataGridView.Name = "cardConstantsDataGridView";
       this.cardConstantsDataGridView.RowHeadersVisible = false;
+      this.cardConstantsDataGridView.RowHeadersWidth = 51;
       this.cardConstantsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.cardConstantsDataGridView.Size = new System.Drawing.Size(924, 461);
+      this.cardConstantsDataGridView.Size = new System.Drawing.Size(1235, 570);
       this.cardConstantsDataGridView.TabIndex = 0;
-      // 
-      // CardConstantId
-      // 
-      this.CardConstantId.DataPropertyName = "Index";
-      this.CardConstantId.HeaderText = "ID";
-      this.CardConstantId.Name = "CardConstantId";
-      this.CardConstantId.ReadOnly = true;
-      this.CardConstantId.Width = 34;
-      // 
-      // CardConstantName
-      // 
-      this.CardConstantName.DataPropertyName = "Name";
-      this.CardConstantName.HeaderText = "Name";
-      this.CardConstantName.Name = "CardConstantName";
-      this.CardConstantName.ReadOnly = true;
-      this.CardConstantName.Width = 160;
-      // 
-      // CardConstantAttack
-      // 
-      this.CardConstantAttack.DataPropertyName = "Attack";
-      this.CardConstantAttack.HeaderText = "Atk";
-      this.CardConstantAttack.Name = "CardConstantAttack";
-      this.CardConstantAttack.Width = 40;
-      // 
-      // CardConstantDefense
-      // 
-      this.CardConstantDefense.DataPropertyName = "Defense";
-      this.CardConstantDefense.HeaderText = "Def";
-      this.CardConstantDefense.Name = "CardConstantDefense";
-      this.CardConstantDefense.Width = 40;
-      // 
-      // CardConstantsType
-      // 
-      this.CardConstantsType.DataPropertyName = "Type";
-      this.CardConstantsType.HeaderText = "Type";
-      this.CardConstantsType.Name = "CardConstantsType";
-      this.CardConstantsType.ReadOnly = true;
-      this.CardConstantsType.Width = 60;
-      // 
-      // CardConstantsAttribute
-      // 
-      this.CardConstantsAttribute.DataPropertyName = "AttributeName";
-      this.CardConstantsAttribute.HeaderText = "Attr.";
-      this.CardConstantsAttribute.Name = "CardConstantsAttribute";
-      this.CardConstantsAttribute.ReadOnly = true;
-      this.CardConstantsAttribute.Width = 50;
-      // 
-      // CardConstantsLevel
-      // 
-      this.CardConstantsLevel.DataPropertyName = "Level";
-      this.CardConstantsLevel.HeaderText = "Lvl";
-      this.CardConstantsLevel.Name = "CardConstantsLevel";
-      this.CardConstantsLevel.Width = 30;
-      // 
-      // CardConstantDeckCost
-      // 
-      this.CardConstantDeckCost.DataPropertyName = "DeckCost";
-      this.CardConstantDeckCost.HeaderText = "DC";
-      this.CardConstantDeckCost.Name = "CardConstantDeckCost";
-      this.CardConstantDeckCost.Width = 30;
-      // 
-      // CardConstantSlots
-      // 
-      this.CardConstantSlots.DataPropertyName = "AppearsInSlotReels";
-      this.CardConstantSlots.HeaderText = "Slots";
-      this.CardConstantSlots.Name = "CardConstantSlots";
-      this.CardConstantSlots.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-      this.CardConstantSlots.Width = 40;
-      // 
-      // CardConstantIsSlotRare
-      // 
-      this.CardConstantIsSlotRare.DataPropertyName = "IsSlotRare";
-      this.CardConstantIsSlotRare.HeaderText = "Slot Rare";
-      this.CardConstantIsSlotRare.Name = "CardConstantIsSlotRare";
-      this.CardConstantIsSlotRare.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-      this.CardConstantIsSlotRare.Width = 40;
-      // 
-      // CardConstantReincarnation
-      // 
-      this.CardConstantReincarnation.DataPropertyName = "AppearsInReincarnation";
-      this.CardConstantReincarnation.FalseValue = "false";
-      this.CardConstantReincarnation.HeaderText = "Reinc.";
-      this.CardConstantReincarnation.IndeterminateValue = "false";
-      this.CardConstantReincarnation.Name = "CardConstantReincarnation";
-      this.CardConstantReincarnation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-      this.CardConstantReincarnation.TrueValue = "true";
-      this.CardConstantReincarnation.Width = 46;
-      // 
-      // CardConstantPasswordWorks
-      // 
-      this.CardConstantPasswordWorks.DataPropertyName = "PasswordWorks";
-      this.CardConstantPasswordWorks.HeaderText = "PWD Works";
-      this.CardConstantPasswordWorks.Name = "CardConstantPasswordWorks";
-      this.CardConstantPasswordWorks.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-      this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-      this.CardConstantPasswordWorks.Width = 46;
       // 
       // leaderRankTresholdsTabControl
       // 
@@ -718,10 +678,11 @@
       this.leaderRankTresholdsTabControl.Controls.Add(this.originalRankThresholdsTextbox);
       this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsSaveButton);
       this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsDataGridView);
-      this.leaderRankTresholdsTabControl.Location = new System.Drawing.Point(4, 22);
+      this.leaderRankTresholdsTabControl.Location = new System.Drawing.Point(4, 25);
+      this.leaderRankTresholdsTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.leaderRankTresholdsTabControl.Name = "leaderRankTresholdsTabControl";
-      this.leaderRankTresholdsTabControl.Padding = new System.Windows.Forms.Padding(3);
-      this.leaderRankTresholdsTabControl.Size = new System.Drawing.Size(930, 496);
+      this.leaderRankTresholdsTabControl.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.leaderRankTresholdsTabControl.Size = new System.Drawing.Size(1243, 613);
       this.leaderRankTresholdsTabControl.TabIndex = 0;
       this.leaderRankTresholdsTabControl.Text = "Rank Thresholds";
       this.leaderRankTresholdsTabControl.UseVisualStyleBackColor = true;
@@ -730,10 +691,11 @@
       // 
       this.textBox2.BackColor = System.Drawing.SystemColors.Window;
       this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.textBox2.Location = new System.Drawing.Point(317, 25);
+      this.textBox2.Location = new System.Drawing.Point(423, 31);
+      this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.textBox2.Name = "textBox2";
       this.textBox2.ReadOnly = true;
-      this.textBox2.Size = new System.Drawing.Size(71, 13);
+      this.textBox2.Size = new System.Drawing.Size(95, 15);
       this.textBox2.TabIndex = 22;
       this.textBox2.Text = "New Bytes:";
       // 
@@ -741,10 +703,11 @@
       // 
       this.textBox1.BackColor = System.Drawing.SystemColors.Window;
       this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.textBox1.Location = new System.Drawing.Point(317, 6);
+      this.textBox1.Location = new System.Drawing.Point(423, 7);
+      this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.textBox1.Name = "textBox1";
       this.textBox1.ReadOnly = true;
-      this.textBox1.Size = new System.Drawing.Size(71, 13);
+      this.textBox1.Size = new System.Drawing.Size(95, 15);
       this.textBox1.TabIndex = 21;
       this.textBox1.Text = "Orignal Bytes:";
       // 
@@ -752,27 +715,30 @@
       // 
       this.newRankThresholdsTextbox.BackColor = System.Drawing.SystemColors.Window;
       this.newRankThresholdsTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.newRankThresholdsTextbox.Location = new System.Drawing.Point(438, 25);
+      this.newRankThresholdsTextbox.Location = new System.Drawing.Point(584, 31);
+      this.newRankThresholdsTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.newRankThresholdsTextbox.Name = "newRankThresholdsTextbox";
       this.newRankThresholdsTextbox.ReadOnly = true;
-      this.newRankThresholdsTextbox.Size = new System.Drawing.Size(493, 13);
+      this.newRankThresholdsTextbox.Size = new System.Drawing.Size(657, 15);
       this.newRankThresholdsTextbox.TabIndex = 20;
       // 
       // originalRankThresholdsTextbox
       // 
       this.originalRankThresholdsTextbox.BackColor = System.Drawing.SystemColors.Window;
       this.originalRankThresholdsTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.originalRankThresholdsTextbox.Location = new System.Drawing.Point(438, 6);
+      this.originalRankThresholdsTextbox.Location = new System.Drawing.Point(584, 7);
+      this.originalRankThresholdsTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.originalRankThresholdsTextbox.Name = "originalRankThresholdsTextbox";
       this.originalRankThresholdsTextbox.ReadOnly = true;
-      this.originalRankThresholdsTextbox.Size = new System.Drawing.Size(493, 13);
+      this.originalRankThresholdsTextbox.Size = new System.Drawing.Size(657, 15);
       this.originalRankThresholdsTextbox.TabIndex = 0;
       // 
       // rankThresholdsSaveButton
       // 
-      this.rankThresholdsSaveButton.Location = new System.Drawing.Point(385, 114);
+      this.rankThresholdsSaveButton.Location = new System.Drawing.Point(513, 140);
+      this.rankThresholdsSaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.rankThresholdsSaveButton.Name = "rankThresholdsSaveButton";
-      this.rankThresholdsSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.rankThresholdsSaveButton.Size = new System.Drawing.Size(100, 28);
       this.rankThresholdsSaveButton.TabIndex = 18;
       this.rankThresholdsSaveButton.Text = "Save";
       this.rankThresholdsSaveButton.UseVisualStyleBackColor = true;
@@ -785,12 +751,14 @@
       this.rankThresholdsDataGridView.AllowUserToResizeColumns = false;
       this.rankThresholdsDataGridView.AllowUserToResizeRows = false;
       this.rankThresholdsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.rankThresholdsDataGridView.Location = new System.Drawing.Point(-4, 0);
+      this.rankThresholdsDataGridView.Location = new System.Drawing.Point(-5, 0);
+      this.rankThresholdsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.rankThresholdsDataGridView.MultiSelect = false;
       this.rankThresholdsDataGridView.Name = "rankThresholdsDataGridView";
       this.rankThresholdsDataGridView.RowHeadersVisible = false;
+      this.rankThresholdsDataGridView.RowHeadersWidth = 51;
       this.rankThresholdsDataGridView.RowTemplate.Height = 30;
-      this.rankThresholdsDataGridView.Size = new System.Drawing.Size(315, 426);
+      this.rankThresholdsDataGridView.Size = new System.Drawing.Size(420, 524);
       this.rankThresholdsDataGridView.TabIndex = 17;
       // 
       // tabControl
@@ -803,35 +771,138 @@
       this.tabControl.Controls.Add(this.tabPage2);
       this.tabControl.Controls.Add(this.enemyAiTab);
       this.tabControl.Controls.Add(this.hiddenCardsTab);
-      this.tabControl.Location = new System.Drawing.Point(0, 27);
+      this.tabControl.Location = new System.Drawing.Point(0, 33);
+      this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.tabControl.Name = "tabControl";
       this.tabControl.SelectedIndex = 0;
-      this.tabControl.Size = new System.Drawing.Size(938, 522);
+      this.tabControl.Size = new System.Drawing.Size(1251, 642);
       this.tabControl.TabIndex = 3;
       // 
       // cardConstantsContextStrip
       // 
+      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
       this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
       this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
-      // label8
+      // CardConstantId
       // 
-      this.label8.AutoSize = true;
-      this.label8.Location = new System.Drawing.Point(323, 7);
-      this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(248, 13);
-      this.label8.TabIndex = 5;
-      this.label8.Text = "Tip: Select multiple rows with shift, right click to edit";
+      this.CardConstantId.DataPropertyName = "Index";
+      this.CardConstantId.HeaderText = "ID";
+      this.CardConstantId.MinimumWidth = 6;
+      this.CardConstantId.Name = "CardConstantId";
+      this.CardConstantId.ReadOnly = true;
+      this.CardConstantId.Width = 34;
+      // 
+      // CardConstantName
+      // 
+      this.CardConstantName.DataPropertyName = "Name";
+      this.CardConstantName.HeaderText = "Name";
+      this.CardConstantName.MinimumWidth = 6;
+      this.CardConstantName.Name = "CardConstantName";
+      this.CardConstantName.ReadOnly = true;
+      this.CardConstantName.Width = 160;
+      // 
+      // CardConstantAttack
+      // 
+      this.CardConstantAttack.DataPropertyName = "Attack";
+      this.CardConstantAttack.HeaderText = "Atk";
+      this.CardConstantAttack.MaxInputLength = 4;
+      this.CardConstantAttack.MinimumWidth = 6;
+      this.CardConstantAttack.Name = "CardConstantAttack";
+      this.CardConstantAttack.Width = 40;
+      // 
+      // CardConstantDefense
+      // 
+      this.CardConstantDefense.DataPropertyName = "Defense";
+      this.CardConstantDefense.HeaderText = "Def";
+      this.CardConstantDefense.MinimumWidth = 6;
+      this.CardConstantDefense.Name = "CardConstantDefense";
+      this.CardConstantDefense.Width = 40;
+      // 
+      // CardConstantsType
+      // 
+      this.CardConstantsType.DataPropertyName = "Type";
+      this.CardConstantsType.HeaderText = "Type";
+      this.CardConstantsType.MinimumWidth = 6;
+      this.CardConstantsType.Name = "CardConstantsType";
+      this.CardConstantsType.ReadOnly = true;
+      this.CardConstantsType.Width = 60;
+      // 
+      // CardConstantsAttribute
+      // 
+      this.CardConstantsAttribute.DataPropertyName = "AttributeName";
+      this.CardConstantsAttribute.HeaderText = "Attr.";
+      this.CardConstantsAttribute.MinimumWidth = 6;
+      this.CardConstantsAttribute.Name = "CardConstantsAttribute";
+      this.CardConstantsAttribute.ReadOnly = true;
+      this.CardConstantsAttribute.Width = 50;
+      // 
+      // CardConstantsLevel
+      // 
+      this.CardConstantsLevel.DataPropertyName = "Level";
+      this.CardConstantsLevel.HeaderText = "Lvl";
+      this.CardConstantsLevel.MinimumWidth = 6;
+      this.CardConstantsLevel.Name = "CardConstantsLevel";
+      this.CardConstantsLevel.Width = 30;
+      // 
+      // CardConstantDeckCost
+      // 
+      this.CardConstantDeckCost.DataPropertyName = "DeckCost";
+      this.CardConstantDeckCost.HeaderText = "DC";
+      this.CardConstantDeckCost.MinimumWidth = 6;
+      this.CardConstantDeckCost.Name = "CardConstantDeckCost";
+      this.CardConstantDeckCost.Width = 30;
+      // 
+      // CardConstantSlots
+      // 
+      this.CardConstantSlots.DataPropertyName = "AppearsInSlotReels";
+      this.CardConstantSlots.HeaderText = "Slots";
+      this.CardConstantSlots.MinimumWidth = 6;
+      this.CardConstantSlots.Name = "CardConstantSlots";
+      this.CardConstantSlots.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantSlots.Width = 40;
+      // 
+      // CardConstantIsSlotRare
+      // 
+      this.CardConstantIsSlotRare.DataPropertyName = "IsSlotRare";
+      this.CardConstantIsSlotRare.HeaderText = "Slot Rare";
+      this.CardConstantIsSlotRare.MinimumWidth = 6;
+      this.CardConstantIsSlotRare.Name = "CardConstantIsSlotRare";
+      this.CardConstantIsSlotRare.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantIsSlotRare.Width = 40;
+      // 
+      // CardConstantReincarnation
+      // 
+      this.CardConstantReincarnation.DataPropertyName = "AppearsInReincarnation";
+      this.CardConstantReincarnation.FalseValue = "false";
+      this.CardConstantReincarnation.HeaderText = "Reinc.";
+      this.CardConstantReincarnation.IndeterminateValue = "false";
+      this.CardConstantReincarnation.MinimumWidth = 6;
+      this.CardConstantReincarnation.Name = "CardConstantReincarnation";
+      this.CardConstantReincarnation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantReincarnation.TrueValue = "true";
+      this.CardConstantReincarnation.Width = 46;
+      // 
+      // CardConstantPasswordWorks
+      // 
+      this.CardConstantPasswordWorks.DataPropertyName = "PasswordWorks";
+      this.CardConstantPasswordWorks.HeaderText = "PWD Works";
+      this.CardConstantPasswordWorks.MinimumWidth = 6;
+      this.CardConstantPasswordWorks.Name = "CardConstantPasswordWorks";
+      this.CardConstantPasswordWorks.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+      this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+      this.CardConstantPasswordWorks.Width = 46;
       // 
       // MainForm
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(938, 547);
+      this.ClientSize = new System.Drawing.Size(1251, 673);
       this.Controls.Add(this.tabControl);
       this.Controls.Add(this.menuStrip1);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MainMenuStrip = this.menuStrip1;
+      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Name = "MainForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "DOTR Modding Tool";
@@ -924,6 +995,7 @@
     private Label label5;
     private Label label7;
     private ContextMenuStrip cardConstantsContextStrip;
+    private Label label8;
     private DataGridViewTextBoxColumn CardConstantId;
     private DataGridViewTextBoxColumn CardConstantName;
     private DataGridViewTextBoxColumn CardConstantAttack;
@@ -936,6 +1008,5 @@
     private DataGridViewCheckBoxColumn CardConstantIsSlotRare;
     private DataGridViewCheckBoxColumn CardConstantReincarnation;
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
-    private Label label8;
   }
 }
