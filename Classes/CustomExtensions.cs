@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 
 namespace CustomExtensions
 {
@@ -56,4 +57,14 @@ namespace CustomExtensions
 			return splitBytes;
 		}
   }
+
+	public static class StringExtension
+  {
+		public static string Reverse(this string s)
+		{
+			char[] charArray = s.ToCharArray();
+			Array.Reverse(charArray);
+			return new string(charArray);
+		}
+	}
 }
