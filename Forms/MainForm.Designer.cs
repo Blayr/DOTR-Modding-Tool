@@ -815,6 +815,7 @@
       // 
       this.CardConstantDefense.DataPropertyName = "Defense";
       this.CardConstantDefense.HeaderText = "Def";
+      this.CardConstantDefense.MaxInputLength = 4;
       this.CardConstantDefense.MinimumWidth = 6;
       this.CardConstantDefense.Name = "CardConstantDefense";
       this.CardConstantDefense.Width = 40;

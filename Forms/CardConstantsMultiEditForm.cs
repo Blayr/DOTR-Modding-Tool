@@ -28,8 +28,14 @@ public class CardConstantsMultiEditForm : Form
   private bool reincarnationTouched = false;
   private bool levelTouched = false;
   private bool passwordWorksTouched = false;
+  private bool attackTouched = false;
+  private bool defenseTouched = false;
 
   private NumericUpDown levelNumericUpDown;
+  private NumericUpDown attackNumericUpDown;
+  private NumericUpDown defenseNumericUpDown;
+  private Label label4;
+  private Label label5;
   private Label label3;
 
   public CardConstantsMultiEditForm(List<CardConstant> selectedCardConstants, ref CardConstants allCardConstants)
@@ -57,8 +63,14 @@ public class CardConstantsMultiEditForm : Form
       this.label2 = new System.Windows.Forms.Label();
       this.levelNumericUpDown = new System.Windows.Forms.NumericUpDown();
       this.label3 = new System.Windows.Forms.Label();
+      this.attackNumericUpDown = new System.Windows.Forms.NumericUpDown();
+      this.defenseNumericUpDown = new System.Windows.Forms.NumericUpDown();
+      this.label4 = new System.Windows.Forms.Label();
+      this.label5 = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.deckCostNumericUpDown)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.levelNumericUpDown)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.attackNumericUpDown)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.defenseNumericUpDown)).BeginInit();
       this.SuspendLayout();
       // 
       // numberOfCardsSelectedLabel
@@ -66,17 +78,18 @@ public class CardConstantsMultiEditForm : Form
       this.numberOfCardsSelectedLabel.AutoSize = true;
       this.numberOfCardsSelectedLabel.Location = new System.Drawing.Point(12, 9);
       this.numberOfCardsSelectedLabel.Name = "numberOfCardsSelectedLabel";
-      this.numberOfCardsSelectedLabel.Size = new System.Drawing.Size(115, 13);
+      this.numberOfCardsSelectedLabel.Size = new System.Drawing.Size(155, 17);
       this.numberOfCardsSelectedLabel.TabIndex = 0;
       this.numberOfCardsSelectedLabel.Text = "(Card count goes here)";
       // 
       // selectedCardList
       // 
       this.selectedCardList.FormattingEnabled = true;
+      this.selectedCardList.ItemHeight = 16;
       this.selectedCardList.Location = new System.Drawing.Point(12, 28);
       this.selectedCardList.Name = "selectedCardList";
       this.selectedCardList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-      this.selectedCardList.Size = new System.Drawing.Size(183, 329);
+      this.selectedCardList.Size = new System.Drawing.Size(183, 324);
       this.selectedCardList.TabIndex = 2;
       // 
       // applyButton
@@ -102,14 +115,14 @@ public class CardConstantsMultiEditForm : Form
       // deckCostNumericUpDown
       // 
       this.deckCostNumericUpDown.BackColor = System.Drawing.SystemColors.Window;
-      this.deckCostNumericUpDown.Location = new System.Drawing.Point(272, 69);
+      this.deckCostNumericUpDown.Location = new System.Drawing.Point(295, 129);
       this.deckCostNumericUpDown.Maximum = new decimal(new int[] {
             127,
             0,
             0,
             0});
       this.deckCostNumericUpDown.Name = "deckCostNumericUpDown";
-      this.deckCostNumericUpDown.Size = new System.Drawing.Size(57, 20);
+      this.deckCostNumericUpDown.Size = new System.Drawing.Size(57, 22);
       this.deckCostNumericUpDown.TabIndex = 5;
       // 
       // slotsCheckbox
@@ -118,87 +131,133 @@ public class CardConstantsMultiEditForm : Form
       this.slotsCheckbox.BackColor = System.Drawing.SystemColors.Control;
       this.slotsCheckbox.Location = new System.Drawing.Point(441, 64);
       this.slotsCheckbox.Name = "slotsCheckbox";
-      this.slotsCheckbox.Size = new System.Drawing.Size(49, 17);
+      this.slotsCheckbox.Size = new System.Drawing.Size(61, 21);
       this.slotsCheckbox.TabIndex = 6;
       this.slotsCheckbox.Text = "Slots";
       this.slotsCheckbox.UseVisualStyleBackColor = false;
-      
       // 
       // slotRaresCheckbox
       // 
       this.slotRaresCheckbox.AutoSize = true;
       this.slotRaresCheckbox.Location = new System.Drawing.Point(441, 88);
       this.slotRaresCheckbox.Name = "slotRaresCheckbox";
-      this.slotRaresCheckbox.Size = new System.Drawing.Size(75, 17);
+      this.slotRaresCheckbox.Size = new System.Drawing.Size(96, 21);
       this.slotRaresCheckbox.TabIndex = 7;
       this.slotRaresCheckbox.Text = "Slots Rare";
       this.slotRaresCheckbox.UseVisualStyleBackColor = true;
-
-    // 
-    // reincarnationCheckbox
-    // 
-    this.reincarnationCheckbox.AutoSize = true;
+      // 
+      // reincarnationCheckbox
+      // 
+      this.reincarnationCheckbox.AutoSize = true;
       this.reincarnationCheckbox.Location = new System.Drawing.Point(441, 112);
       this.reincarnationCheckbox.Name = "reincarnationCheckbox";
-      this.reincarnationCheckbox.Size = new System.Drawing.Size(92, 17);
+      this.reincarnationCheckbox.Size = new System.Drawing.Size(118, 21);
       this.reincarnationCheckbox.TabIndex = 8;
       this.reincarnationCheckbox.Text = "Reincarnation";
       this.reincarnationCheckbox.UseVisualStyleBackColor = true;
-
-    // 
-    // passwordWorksCheckbox
-    // 
-    this.passwordWorksCheckbox.AutoSize = true;
+      // 
+      // passwordWorksCheckbox
+      // 
+      this.passwordWorksCheckbox.AutoSize = true;
       this.passwordWorksCheckbox.Location = new System.Drawing.Point(441, 136);
       this.passwordWorksCheckbox.Name = "passwordWorksCheckbox";
-      this.passwordWorksCheckbox.Size = new System.Drawing.Size(106, 17);
+      this.passwordWorksCheckbox.Size = new System.Drawing.Size(135, 21);
       this.passwordWorksCheckbox.TabIndex = 9;
       this.passwordWorksCheckbox.Text = "Password Works";
       this.passwordWorksCheckbox.UseVisualStyleBackColor = true;
-
-    // 
-    // label1
-    // 
-    this.label1.AutoSize = true;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
       this.label1.Location = new System.Drawing.Point(438, 45);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(82, 13);
+      this.label1.Size = new System.Drawing.Size(109, 17);
       this.label1.TabIndex = 10;
       this.label1.Text = "Card Attainment";
       // 
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(209, 71);
+      this.label2.Location = new System.Drawing.Point(209, 131);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(57, 13);
+      this.label2.Size = new System.Drawing.Size(72, 17);
       this.label2.TabIndex = 11;
       this.label2.Text = "Deck Cost";
       // 
       // levelNumericUpDown
       // 
-      this.levelNumericUpDown.Location = new System.Drawing.Point(272, 45);
+      this.levelNumericUpDown.Location = new System.Drawing.Point(295, 100);
       this.levelNumericUpDown.Maximum = new decimal(new int[] {
             12,
             0,
             0,
             0});
       this.levelNumericUpDown.Name = "levelNumericUpDown";
-      this.levelNumericUpDown.Size = new System.Drawing.Size(57, 20);
+      this.levelNumericUpDown.Size = new System.Drawing.Size(57, 22);
       this.levelNumericUpDown.TabIndex = 12;
       // 
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(220, 47);
+      this.label3.Location = new System.Drawing.Point(239, 102);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(33, 13);
+      this.label3.Size = new System.Drawing.Size(42, 17);
       this.label3.TabIndex = 14;
       this.label3.Text = "Level";
+      // 
+      // attackNumericUpDown
+      // 
+      this.attackNumericUpDown.BackColor = System.Drawing.SystemColors.Window;
+      this.attackNumericUpDown.Location = new System.Drawing.Point(295, 41);
+      this.attackNumericUpDown.Maximum = new decimal(new int[] {
+            8192,
+            0,
+            0,
+            0});
+      this.attackNumericUpDown.Name = "attackNumericUpDown";
+      this.attackNumericUpDown.Size = new System.Drawing.Size(77, 22);
+      this.attackNumericUpDown.TabIndex = 15;
+      this.attackNumericUpDown.ValueChanged += new System.EventHandler(this.attackNumericUpDown_ValueChanged);
+      // 
+      // defenseNumericUpDown
+      // 
+      this.defenseNumericUpDown.BackColor = System.Drawing.SystemColors.Window;
+      this.defenseNumericUpDown.Location = new System.Drawing.Point(295, 69);
+      this.defenseNumericUpDown.Maximum = new decimal(new int[] {
+            8192,
+            0,
+            0,
+            0});
+      this.defenseNumericUpDown.Name = "defenseNumericUpDown";
+      this.defenseNumericUpDown.Size = new System.Drawing.Size(77, 22);
+      this.defenseNumericUpDown.TabIndex = 16;
+      this.defenseNumericUpDown.ValueChanged += new System.EventHandler(this.DefenseNumericUpDown_ValueChanged);
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(234, 45);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(47, 17);
+      this.label4.TabIndex = 17;
+      this.label4.Text = "Attack";
+      // 
+      // label5
+      // 
+      this.label5.AutoSize = true;
+      this.label5.Location = new System.Drawing.Point(220, 71);
+      this.label5.Name = "label5";
+      this.label5.Size = new System.Drawing.Size(61, 17);
+      this.label5.TabIndex = 18;
+      this.label5.Text = "Defense";
       // 
       // CardConstantsMultiEditForm
       // 
       this.ClientSize = new System.Drawing.Size(582, 369);
+      this.Controls.Add(this.label5);
+      this.Controls.Add(this.label4);
+      this.Controls.Add(this.defenseNumericUpDown);
+      this.Controls.Add(this.attackNumericUpDown);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.levelNumericUpDown);
       this.Controls.Add(this.label2);
@@ -215,6 +274,8 @@ public class CardConstantsMultiEditForm : Form
       this.Name = "CardConstantsMultiEditForm";
       ((System.ComponentModel.ISupportInitialize)(this.deckCostNumericUpDown)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.levelNumericUpDown)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.attackNumericUpDown)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.defenseNumericUpDown)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -227,7 +288,9 @@ public class CardConstantsMultiEditForm : Form
     this.selectedCardConstants.ForEach((cc) => this.selectedCardList.Items.Add(cc.Name));
 
     this.deckCostNumericUpDown.KeyDown += this.OnControlKeyPress;
-    this.levelNumericUpDown.KeyDown+= this.OnControlKeyPress;
+    this.levelNumericUpDown.KeyDown += this.OnControlKeyPress;
+    this.attackNumericUpDown.KeyDown += this.OnControlKeyPress;
+    this.defenseNumericUpDown.KeyDown += this.OnControlKeyPress;
     this.deckCostNumericUpDown.ValueChanged += new System.EventHandler(this.deckCostNumericUpDown_ValueChanged);
     this.levelNumericUpDown.ValueChanged += new System.EventHandler(this.rankNumericUpDown_ValueChanged);
     this.passwordWorksCheckbox.CheckedChanged += new System.EventHandler(this.passwordWorksCheckbox_CheckedChanged);
@@ -246,6 +309,8 @@ public class CardConstantsMultiEditForm : Form
   {
     CardConstant firstCard = this.selectedCardConstants.First();
 
+    bool attackChanged = false;
+    bool defenseChanged = false;
     bool deckCostChanged = false;
     bool levelChanged = false;
     bool appearsInSlotReelsChanged = false;
@@ -255,6 +320,10 @@ public class CardConstantsMultiEditForm : Form
 
     foreach (CardConstant constant in this.selectedCardConstants)
     {
+      if (!attackChanged && (constant.Attack != firstCard.Attack)) { attackChanged = true; }
+
+      if (!defenseTouched && (constant.Defense != firstCard.Defense)) { defenseChanged = true; }
+
       if (!deckCostChanged && (constant.DeckCost != firstCard.DeckCost)) { deckCostChanged = true; }
 
       if (!levelChanged && (constant.Level != firstCard.Level)) { levelChanged = true; }
@@ -266,6 +335,22 @@ public class CardConstantsMultiEditForm : Form
       if (!appearsInReincarnationChanged && (constant.AppearsInReincarnation != firstCard.AppearsInReincarnation)) { appearsInReincarnationChanged = true; }
       
       if (!passwordWorksChanged && (constant.PasswordWorks != firstCard.PasswordWorks)) { passwordWorksChanged = true; }
+    }
+
+    if (attackChanged)
+    {
+      this.attackNumericUpDown.Text = "";
+    } else
+    {
+      this.attackNumericUpDown.Value = firstCard.Attack;
+    }
+
+    if (defenseChanged)
+    {
+      this.defenseNumericUpDown.Text = "";
+    } else
+    {
+      this.defenseNumericUpDown.Value = firstCard.Defense;
     }
 
     if (deckCostChanged)
@@ -309,6 +394,16 @@ public class CardConstantsMultiEditForm : Form
 
   private void applyCardChanges(ref CardConstant cardConstant)
   {
+    if (this.attackTouched)
+    {
+      cardConstant.Attack = (ushort)this.attackNumericUpDown.Value;
+    }
+
+    if (this.defenseTouched)
+    {
+      cardConstant.Defense = (ushort)this.defenseNumericUpDown.Value;
+    }
+
     if (this.deckCostTouched)
     {
       cardConstant.DeckCost = (byte)this.deckCostNumericUpDown.Value;
@@ -374,5 +469,15 @@ public class CardConstantsMultiEditForm : Form
   {
     this.levelTouched = true;
     this.levelNumericUpDown.BackColor = this.touchedColor;
+  }
+
+  private void attackNumericUpDown_ValueChanged(object sender, EventArgs e)
+  {
+    this.attackTouched = true;
+  }
+
+  private void DefenseNumericUpDown_ValueChanged(object sender, EventArgs e)
+  {
+    this.defenseTouched = true;
   }
 }
