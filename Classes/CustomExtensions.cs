@@ -36,11 +36,11 @@ namespace CustomExtensions
 			int fromStartIndex = range[0];
 			int toEndIndex = range[1];
 
-			for (int fi = fromStartIndex, ti = toStartIndex; fi < toEndIndex; fi++, ti++)
+			for (int fi = fromStartIndex, ti = toStartIndex; fi <= toEndIndex; fi++, ti++)
       {
 				to[ti] = from[fi];
       }
-    }
+		}
 	}
 
 	public static class ByteExtension

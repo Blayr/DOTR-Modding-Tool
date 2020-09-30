@@ -38,6 +38,7 @@ public class CardConstant
 {
 	public CardColorType CardColor { get; set; }
 
+	const int maxAttackDefense = 8191;
 	ushort cardIndex;
 	string name;
 	byte[] bytes;
@@ -291,9 +292,9 @@ public class CardConstant
 		{
 			value = 0;
 		}
-		else if (value > 8192)
+		else if (value > CardConstant.maxAttackDefense)
 		{
-			value = 8192;
+			value = CardConstant.maxAttackDefense;
 		}
 
 		return value;
