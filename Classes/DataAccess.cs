@@ -15,6 +15,10 @@ public class DataAccess
   public static readonly int TreasureCardByteOffset = 2755024;
   public static readonly int TreasureCardByteSize = 4;
   public static readonly int TreasureCardCount = 22;
+  public static readonly int CardLeaderAbilitiesOffset = 0x293438;
+  public static readonly int CardLeaderAbilityCount = 683;
+  public static readonly int CardLeaderAbilityTypeCount = 20;
+  public static readonly int CardLeaderAbilityByteSize = 2;
 
   private static readonly object FileStreamLock = new object();
 	private static FileStream fileStream;
@@ -22,6 +26,30 @@ public class DataAccess
 	public DataAccess()
 	{
 	}
+
+  public byte[][][] LoadCardDeckLeaderAbilities()
+  {
+    byte[][][] cardLeaderAbilitiesBytes = new byte[CardLeaderAbilityCount][][];
+
+    lock (FileStreamLock)
+    {
+      for (int cardIndex = 0; cardIndex < CardLeaderAbilityCount; cardIndex++)
+      {
+        cardLeaderAbilitiesBytes[cardIndex] = new byte[CardLeaderAbilityTypeCount][];
+
+        for (int abilityTypeIndex = 0; abilityTypeIndex < CardLeaderAbilityTypeCount; abilityTypeIndex++)
+        {
+          byte[] buffer = new byte[CardLeaderAbilityByteSize];
+          int cardIndexOffset = cardIndex * CardLeaderAbilityByteSize;
+          fileStream.Seek(DataAccess.CardLeaderAbilitiesOffset + cardIndexOffset, SeekOrigin.Begin);
+          fileStream.Read(buffer, 0, buffer.Length);
+          cardLeaderAbilitiesBytes[cardIndex][abilityTypeIndex] = buffer;
+        }
+      }
+    }
+
+    return cardLeaderAbilitiesBytes;
+  }
 
   public void OpenIso(string filePath)
   {
