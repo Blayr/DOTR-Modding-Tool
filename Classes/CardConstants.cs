@@ -39,8 +39,6 @@ public class CardConstant
 	public CardColorType CardColor { get; set; }
 
 	const int maxAttackDefense = 8191;
-	ushort cardIndex;
-	string name;
 	byte[] bytes;
 	byte kind;
 	CardKind cardKind;
@@ -65,8 +63,8 @@ public class CardConstant
 
 	public CardConstant(ushort cardIndex, byte[] bytes)
 	{
-		this.cardIndex = cardIndex;
-		this.name = Cards.GetNameByIndex(cardIndex);
+		this.Index = cardIndex;
+		this.Name = Cards.GetNameByIndex(cardIndex);
 		this.bytes = bytes;
 		this.kind = bytes[0];
 		this.cardKind = new CardKind(this.kind);
@@ -74,7 +72,7 @@ public class CardConstant
 		this.levelAttribute = new BitArray(new byte[] { bytes[2] });
 		this.level = bytes[2].splitByte()[1];
 		this.attribute = new CardAttribute(bytes[2].splitByte()[0]);
-		this.deckCost = bytes[3];
+		this.DeckCost = bytes[3];
 		this.effectId = BitConverter.ToUInt16(new byte[] { bytes[4], bytes[5] }, 0);
 		this.xaxId = BitConverter.ToUInt16(new byte[] { bytes[6], bytes[7] }, 0);
 
@@ -161,33 +159,11 @@ public class CardConstant
 		}
 	}
 
-	public ushort Index
-	{
-		get
-		{
-			return this.cardIndex;
-		}
-	}
+	public ushort Index { get; }
 
-	public string Name
-  {
-		get
-    {
-			return this.name;
-    }
-  }
+	public string Name { get; }
 
-	public byte DeckCost
-  {
-		get
-    {
-			return this.deckCost;
-    }
-		set
-    {
-			this.deckCost = value;
-    }
-  }
+	public byte DeckCost { get; set; }
 
 	public CardKind Kind
   {
