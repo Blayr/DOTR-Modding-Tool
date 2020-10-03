@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 public static class DebugHelper
 {
@@ -27,6 +28,14 @@ public static class DebugHelper
 	public static void PrintByteArray(byte[] byteArray)
   {
 		System.Diagnostics.Debug.Print(BitConverter.ToString(byteArray));
+  }
+
+  public static void Print2DByteArray(byte[][] byteArray)
+  {
+    for (int i = 0; i < byteArray.Length; i++)
+    {
+      DebugHelper.PrintByteArray(byteArray[i]);
+    }
   }
 
 	public static void PrintEnemyAi(byte[] bytes)
