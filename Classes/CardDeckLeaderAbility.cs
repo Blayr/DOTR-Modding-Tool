@@ -21,7 +21,7 @@ public class CardDeckLeaderAbility
 	public int Index { get; }
 	public string Name { get; }
 
-	public DeckLeaderAbility[] deckLeaderAbilityList = new DeckLeaderAbility[20];
+	public DeckLeaderAbility[] deckLeaderAbilityList = new DeckLeaderAbility[DataAccess.CardLeaderAbilityTypeCount];
 
 	public CardDeckLeaderAbility(int cardIndex, byte[][] bytes)
   {

@@ -40,7 +40,7 @@ public class DataAccess
         for (int abilityTypeIndex = 0; abilityTypeIndex < CardLeaderAbilityTypeCount; abilityTypeIndex++)
         {
           byte[] buffer = new byte[CardLeaderAbilityByteSize];
-          int cardIndexOffset = cardIndex * CardLeaderAbilityByteSize;
+          int cardIndexOffset = cardIndex + (abilityTypeIndex * CardLeaderAbilityByteSize);
           fileStream.Seek(DataAccess.CardLeaderAbilitiesOffset + cardIndexOffset, SeekOrigin.Begin);
           fileStream.Read(buffer, 0, buffer.Length);
           cardLeaderAbilitiesBytes[cardIndex][abilityTypeIndex] = buffer;
