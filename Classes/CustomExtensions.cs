@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 
 namespace CustomExtensions
 {

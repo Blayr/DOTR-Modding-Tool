@@ -1,6 +1,4 @@
-﻿using System;
-
-public class CardAttribute
+﻿public class CardAttribute
 {
 	public static string[] AttributeNames = {
 		"Light",

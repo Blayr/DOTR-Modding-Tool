@@ -1,8 +1,6 @@
 ﻿namespace DOTR_Modding_Tool
 {
   using Equin.ApplicationFramework;
-  using System.Collections.Generic;
-  using System.Runtime.CompilerServices;
   using System.Windows.Forms;
 
   public partial class MainForm : Form

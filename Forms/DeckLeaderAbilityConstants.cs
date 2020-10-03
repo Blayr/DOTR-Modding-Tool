@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-
-public class DeckLeaderAbilityInfo
+﻿public class DeckLeaderAbilityInfo
 {
   public readonly static string[][] NameAndDescriptions;
 

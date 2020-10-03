@@ -2,12 +2,6 @@
 {
   using Equin.ApplicationFramework;
   using System;
-  using System.Collections.Generic;
-  using System.ComponentModel;
-  using System.Diagnostics;
-  using System.Drawing;
-  using System.Linq;
-  using System.Runtime.CompilerServices;
   using System.Windows.Forms;
 
   public partial class MainForm : Form

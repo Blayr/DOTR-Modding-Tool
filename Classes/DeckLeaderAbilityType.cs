@@ -1,6 +1,4 @@
-﻿using System;
-
-public enum DeckLeaderAbilityType : int
+﻿public enum DeckLeaderAbilityType : int
 {
 	HiddenCard = 0,
 	ExtraSlots = 1,
