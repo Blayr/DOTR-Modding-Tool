@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 public class CardKind
 {
@@ -34,43 +33,27 @@ public class CardKind
 
 	public CardKind(byte cardKindId)
 	{
-		this.cardKindId = cardKindId;
-		this.cardKindName = Array.Find(CardKind.Kinds, kind => kind.ID == this.cardKindId).Name;
+		this.Id = cardKindId;
+		this.Name = Array.Find(CardKind.Kinds, kind => kind.Id == this.Id).Name;
 	}
 
 	public bool isMonster()
   {
-		return this.cardKindId < 32;
+		return this.Id < 32;
   }
 
-	public byte ID
-  {
-    get
-    {
-			return this.cardKindId;
-    }
-  }
-
-	public string Name
-  {
-    get
-    {
-			return this.cardKindName;
-    }
-  }
-
-	private byte cardKindId;
-	private string cardKindName;
+	public byte Id { get; }
+	public string Name { get; }
 }
 
 public class CardKindMap
 {
 	public CardKindMap(byte id, string name)
   {
-		this.ID = id;
+		this.Id = id;
 		this.Name = name;
   }
 
-	public byte ID;
-	public string Name;
+	public byte Id { get; }
+	public string Name { get; }
 }

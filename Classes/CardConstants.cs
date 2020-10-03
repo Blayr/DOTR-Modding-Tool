@@ -98,15 +98,15 @@ public class CardConstant
 		{
 			this.CardColor = CardColorType.NormalMonster;
 		}
-		else if (this.Kind.ID < 32)
+		else if (this.Kind.Id < 32)
 		{
 			this.CardColor = CardColorType.EffectMonster;
 		}
-		else if (this.Kind.ID == 96 || this.Kind.ID == 128)
+		else if (this.Kind.Id == 96 || this.Kind.Id == 128)
 		{
 			this.CardColor = CardColorType.Trap;
 		}
-		else if (this.Kind.ID == 160)
+		else if (this.Kind.Id == 160)
 		{
 			this.CardColor = CardColorType.Ritual;
 		}
