@@ -2,12 +2,13 @@
 
 public class DeckLeaderAbility
 {
+	public static readonly uint DisabledBytesValue = 0xFFFF;
 	public byte[] Bytes { get; }
 	public int Index { get; }
 	public DeckLeaderAbilityType DeckLeaderAbilityType { get; }
 	public string Name { get; }
 	public string Description { get; }
-	
+	public bool isEnabled { get; }
 
 	public DeckLeaderAbility(int index, byte[] bytes)
 	{
@@ -16,6 +17,8 @@ public class DeckLeaderAbility
 		this.DeckLeaderAbilityType = (DeckLeaderAbilityType)this.Index;
 		this.Name = DeckLeaderAbilityInfo.NameAndDescriptions[index][0];
 		this.Description = DeckLeaderAbilityInfo.NameAndDescriptions[index][1];
+		ushort ushortBytesValue = BitConverter.ToUInt16(this.Bytes, 0);
+		this.isEnabled = !(ushortBytesValue == DisabledBytesValue);
 	}
 }
 
