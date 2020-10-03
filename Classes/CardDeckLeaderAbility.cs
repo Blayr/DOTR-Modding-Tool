@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 public class CardDeckLeaderAbilities
@@ -34,6 +35,24 @@ public class CardDeckLeaderAbility
 			this.deckLeaderAbilityList[i] = new DeckLeaderAbility(i, bytes[i]);
     }
   }
+
+	public List<DeckLeaderAbility> EnabledAbilityList()
+  {
+		return this.deckLeaderAbilityList.Where(e => e.IsEnabled ).ToList();
+  }
+
+	public string EnabledAbilitiesString
+  {
+		get
+		{
+			List<DeckLeaderAbility> enabledAbilityList = this.EnabledAbilityList();
+			List<string> enabledAbiltiesInfo = new List<string>();
+
+			this.EnabledAbilityList().ForEach(a => enabledAbiltiesInfo.Add(a.AbilityDetails()));
+
+			return String.Join(", ", enabledAbiltiesInfo.ToArray());
+		}
+	}
 }
 
 // 001E0C80: bool SzDuel_GetUnitLeaderAbility3(Unit *unit, s32 abil,

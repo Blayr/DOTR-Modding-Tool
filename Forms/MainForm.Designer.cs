@@ -100,9 +100,13 @@
       this.rankThresholdsSaveButton = new System.Windows.Forms.Button();
       this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
       this.tabControl = new System.Windows.Forms.TabControl();
-      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.deckLeaderAbilitiesTab = new System.Windows.Forms.TabPage();
       this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.cardDeckLeaderAbilitiesDatagridview = new System.Windows.Forms.DataGridView();
+      this.cardDeckLeaderAbilitiesIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardDeckLeaderAbilitiesNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -134,7 +138,9 @@
       this.tabControl.SuspendLayout();
       this.deckLeaderAbilitiesTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesSplitContainer)).BeginInit();
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel2.SuspendLayout();
       this.cardDeckLeaderAbilitiesSplitContainer.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesDatagridview)).BeginInit();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -181,7 +187,7 @@
       this.hiddenCardsTab.Controls.Add(this.hiddenCardsSplitContainer);
       this.hiddenCardsTab.Location = new System.Drawing.Point(4, 22);
       this.hiddenCardsTab.Name = "hiddenCardsTab";
-      this.hiddenCardsTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.hiddenCardsTab.Padding = new System.Windows.Forms.Padding(3);
       this.hiddenCardsTab.Size = new System.Drawing.Size(930, 496);
       this.hiddenCardsTab.TabIndex = 4;
       this.hiddenCardsTab.Text = "Hidden Cards";
@@ -327,7 +333,7 @@
       this.enemyAiTab.Controls.Add(this.enemyAiTabSplitContainer);
       this.enemyAiTab.Location = new System.Drawing.Point(4, 22);
       this.enemyAiTab.Name = "enemyAiTab";
-      this.enemyAiTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.enemyAiTab.Padding = new System.Windows.Forms.Padding(3);
       this.enemyAiTab.Size = new System.Drawing.Size(930, 496);
       this.enemyAiTab.TabIndex = 3;
       this.enemyAiTab.Text = "Enemy Ai";
@@ -409,7 +415,7 @@
       this.tabPage2.Controls.Add(this.splitContainer2);
       this.tabPage2.Location = new System.Drawing.Point(4, 22);
       this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
       this.tabPage2.Size = new System.Drawing.Size(930, 496);
       this.tabPage2.TabIndex = 2;
       this.tabPage2.Text = "Fusions";
@@ -514,7 +520,7 @@
       this.tabPage1.Controls.Add(this.splitContainer1);
       this.tabPage1.Location = new System.Drawing.Point(4, 22);
       this.tabPage1.Name = "tabPage1";
-      this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
       this.tabPage1.Size = new System.Drawing.Size(930, 496);
       this.tabPage1.TabIndex = 1;
       this.tabPage1.Text = "Card Properties";
@@ -760,7 +766,7 @@
       this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsDataGridView);
       this.leaderRankTresholdsTabControl.Location = new System.Drawing.Point(4, 22);
       this.leaderRankTresholdsTabControl.Name = "leaderRankTresholdsTabControl";
-      this.leaderRankTresholdsTabControl.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.leaderRankTresholdsTabControl.Padding = new System.Windows.Forms.Padding(3);
       this.leaderRankTresholdsTabControl.Size = new System.Drawing.Size(930, 496);
       this.leaderRankTresholdsTabControl.TabIndex = 0;
       this.leaderRankTresholdsTabControl.Text = "Rank Thresholds";
@@ -851,12 +857,6 @@
       this.tabControl.Size = new System.Drawing.Size(938, 522);
       this.tabControl.TabIndex = 3;
       // 
-      // cardConstantsContextStrip
-      // 
-      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
-      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
-      // 
       // deckLeaderAbilitiesTab
       // 
       this.deckLeaderAbilitiesTab.Controls.Add(this.cardDeckLeaderAbilitiesSplitContainer);
@@ -874,9 +874,59 @@
       this.cardDeckLeaderAbilitiesSplitContainer.Location = new System.Drawing.Point(3, 3);
       this.cardDeckLeaderAbilitiesSplitContainer.Name = "cardDeckLeaderAbilitiesSplitContainer";
       this.cardDeckLeaderAbilitiesSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+      // 
+      // cardDeckLeaderAbilitiesSplitContainer.Panel2
+      // 
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel2.Controls.Add(this.cardDeckLeaderAbilitiesDatagridview);
       this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(924, 490);
       this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 27;
       this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
+      // 
+      // cardConstantsContextStrip
+      // 
+      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
+      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
+      // 
+      // cardDeckLeaderAbilitiesDatagridview
+      // 
+      this.cardDeckLeaderAbilitiesDatagridview.AllowUserToAddRows = false;
+      this.cardDeckLeaderAbilitiesDatagridview.AllowUserToDeleteRows = false;
+      this.cardDeckLeaderAbilitiesDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.cardDeckLeaderAbilitiesDatagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cardDeckLeaderAbilitiesIndexColumn,
+            this.cardDeckLeaderAbilitiesNameColumn,
+            this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn});
+      this.cardDeckLeaderAbilitiesDatagridview.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.cardDeckLeaderAbilitiesDatagridview.Location = new System.Drawing.Point(0, 0);
+      this.cardDeckLeaderAbilitiesDatagridview.Name = "cardDeckLeaderAbilitiesDatagridview";
+      this.cardDeckLeaderAbilitiesDatagridview.RowHeadersVisible = false;
+      this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(924, 459);
+      this.cardDeckLeaderAbilitiesDatagridview.TabIndex = 0;
+      // 
+      // cardDeckLeaderAbilitiesIndexColumn
+      // 
+      this.cardDeckLeaderAbilitiesIndexColumn.DataPropertyName = "Index";
+      this.cardDeckLeaderAbilitiesIndexColumn.HeaderText = "Index";
+      this.cardDeckLeaderAbilitiesIndexColumn.Name = "cardDeckLeaderAbilitiesIndexColumn";
+      this.cardDeckLeaderAbilitiesIndexColumn.ReadOnly = true;
+      this.cardDeckLeaderAbilitiesIndexColumn.Width = 30;
+      // 
+      // cardDeckLeaderAbilitiesNameColumn
+      // 
+      this.cardDeckLeaderAbilitiesNameColumn.DataPropertyName = "Name";
+      this.cardDeckLeaderAbilitiesNameColumn.HeaderText = "Name";
+      this.cardDeckLeaderAbilitiesNameColumn.Name = "cardDeckLeaderAbilitiesNameColumn";
+      this.cardDeckLeaderAbilitiesNameColumn.ReadOnly = true;
+      this.cardDeckLeaderAbilitiesNameColumn.Width = 60;
+      // 
+      // cardDeckLeaderAbilitiesEnabledAbilitiesColumn
+      // 
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.DataPropertyName = "EnabledAbilitiesString";
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.HeaderText = "Enabled Abilities";
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.Name = "cardDeckLeaderAbilitiesEnabledAbilitiesColumn";
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.ReadOnly = true;
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.Width = 800;
       // 
       // MainForm
       // 
@@ -926,8 +976,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).EndInit();
       this.tabControl.ResumeLayout(false);
       this.deckLeaderAbilitiesTab.ResumeLayout(false);
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesSplitContainer)).EndInit();
       this.cardDeckLeaderAbilitiesSplitContainer.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesDatagridview)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -997,5 +1049,9 @@
     private DataGridViewCheckBoxColumn CardConstantPasswordWorks;
     private TabPage deckLeaderAbilitiesTab;
     private SplitContainer cardDeckLeaderAbilitiesSplitContainer;
+    private DataGridView cardDeckLeaderAbilitiesDatagridview;
+    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesIndexColumn;
+    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesNameColumn;
+    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesEnabledAbilitiesColumn;
   }
 }

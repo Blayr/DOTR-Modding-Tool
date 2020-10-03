@@ -15,6 +15,7 @@
       // DebugHelper.Print2DByteArray(byteArray);
       this.cardDeckLeaderAbilities = new CardDeckLeaderAbilities(byteArray);
       this.cardDeckLeaderAbilitiesBinding = new BindingListView<CardDeckLeaderAbility>(this.cardDeckLeaderAbilities.List);
+      this.cardDeckLeaderAbilitiesDatagridview.DataSource = this.cardDeckLeaderAbilitiesBinding;
     }
   }
 }
