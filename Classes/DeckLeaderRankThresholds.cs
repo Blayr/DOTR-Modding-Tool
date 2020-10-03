@@ -112,5 +112,5 @@ public class DeckLeaderRankThreshold {
 
   public ushort RankIndex { get; }
   public string RankName{ get; }
-  public Image RankImage { get;  }
+  public Image RankImage { get; }
 }

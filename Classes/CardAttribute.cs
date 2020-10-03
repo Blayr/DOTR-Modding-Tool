@@ -13,27 +13,11 @@ public class CardAttribute
 
 	public CardAttribute(byte attributeId)
 	{
-		this.id = attributeId;
-		this.name = CardAttribute.AttributeNames[id];
+		this.Id = attributeId;
+		this.Name = CardAttribute.AttributeNames[this.Id];
 	}
 
-	public byte ID
-	{
-		get
-		{
-			return this.id;
-		}
-	}
-
-	public string Name
-	{
-		get
-		{
-			return this.name;
-		}
-	}
-
-	private byte id;
-	private string name;
+	public byte Id { get; }
+	public string Name { get; }
 }
 

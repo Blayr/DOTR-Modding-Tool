@@ -5,7 +5,6 @@ using System.Linq;
 public class Ai
 {
 	public static List<Ai> All { get; }
-
 	public int Id { get; }
 	public byte[] Bytes { get; }
 	public string Name { get; }
