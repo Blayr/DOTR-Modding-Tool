@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DeckLeaderRank.cs" />
     <Compile Include="Forms\CardConstantsForm.cs" />
     <Compile Include="Classes\Ai.cs" />
     <Compile Include="Classes\BitHelper.cs" />
