@@ -102,8 +102,8 @@
       this.tabControl = new System.Windows.Forms.TabControl();
       this.deckLeaderAbilitiesTab = new System.Windows.Forms.TabPage();
       this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
-      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesDatagridview = new System.Windows.Forms.DataGridView();
+      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardDeckLeaderAbilitiesNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -882,12 +882,6 @@
       this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 27;
       this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
       // 
-      // cardConstantsContextStrip
-      // 
-      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
-      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
-      // 
       // cardDeckLeaderAbilitiesDatagridview
       // 
       this.cardDeckLeaderAbilitiesDatagridview.AllowUserToAddRows = false;
@@ -904,6 +898,12 @@
       this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(924, 459);
       this.cardDeckLeaderAbilitiesDatagridview.TabIndex = 0;
       // 
+      // cardConstantsContextStrip
+      // 
+      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
+      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
+      // 
       // cardDeckLeaderAbilitiesIndexColumn
       // 
       this.cardDeckLeaderAbilitiesIndexColumn.DataPropertyName = "Index";
@@ -918,7 +918,7 @@
       this.cardDeckLeaderAbilitiesNameColumn.HeaderText = "Name";
       this.cardDeckLeaderAbilitiesNameColumn.Name = "cardDeckLeaderAbilitiesNameColumn";
       this.cardDeckLeaderAbilitiesNameColumn.ReadOnly = true;
-      this.cardDeckLeaderAbilitiesNameColumn.Width = 60;
+      this.cardDeckLeaderAbilitiesNameColumn.Width = 140;
       // 
       // cardDeckLeaderAbilitiesEnabledAbilitiesColumn
       // 
