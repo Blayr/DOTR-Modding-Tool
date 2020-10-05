@@ -17,9 +17,8 @@ public class DeckLeaderRankThresholds
 
   public void SetThresholdsWithBytes(byte[] bytes)
   {
-    for (byte thresholdsIndex = 0; thresholdsIndex < totalRanks; thresholdsIndex++)
+    for (byte thresholdsIndex = 1, bytesIndex = 0; thresholdsIndex <= totalRanks; thresholdsIndex++, bytesIndex += rankByteSize)
     {
-      int bytesIndex = thresholdsIndex * rankByteSize;
       byte[] thresholdBytes = new byte[] { bytes[bytesIndex], bytes[bytesIndex + 1] };
       this.Thresholds.Add(new DeckLeaderRankThreshold(thresholdsIndex, thresholdBytes));
     }
