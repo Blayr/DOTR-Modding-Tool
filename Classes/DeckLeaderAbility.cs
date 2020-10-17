@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class DeckLeaderAbility
 {
 	public static readonly uint DisabledBytesValue = 0xFFFF;
 	public byte[] Bytes { get; }
 	public int Index { get; }
-	public DeckLeaderAbilityType DeckLeaderAbilityType { get; }
+	public DeckLeaderAbilityType AbilityType { get; }
 	public string Name { get; }
 	public string Description { get; }
 	public bool IsEnabled { get; }
@@ -14,20 +16,80 @@ public class DeckLeaderAbility
 	{
 		this.Bytes = bytes;
 		this.Index = index;
-		this.DeckLeaderAbilityType = (DeckLeaderAbilityType)this.Index;
+		this.AbilityType = (DeckLeaderAbilityType)this.Index;
 		this.Name = DeckLeaderAbilityInfo.NameAndDescriptions[index][0];
 		this.Description = DeckLeaderAbilityInfo.NameAndDescriptions[index][1];
 		ushort ushortBytesValue = BitConverter.ToUInt16(this.Bytes, 0);
 		this.IsEnabled = !(ushortBytesValue == DisabledBytesValue);
 	}
 
-	public string AbilityDetails()
+	public override string ToString()
   {
 		return this.Name;
   }
+
+	public string AbilityDetails()
+	{
+		return this.ToString();
+	}
+
+	public static List<DeckLeaderAbilityType> YesNoAbilityList;
+	public static List<DeckLeaderAbilityType> RankRequirementAbilityList;
+	public static List<DeckLeaderAbilityType> RankRequirementUpperByteAbilityList;
+	public static List<DeckLeaderAbilityType> RankRequirementLowerByteAbilityList;
+
+	static DeckLeaderAbility() {
+	  DeckLeaderAbility.YesNoAbilityList = new List<DeckLeaderAbilityType> {
+			DeckLeaderAbilityType.HiddenCard,
+			DeckLeaderAbilityType.ExtraSlots
+		};
+
+		DeckLeaderAbility.RankRequirementLowerByteAbilityList = new List<DeckLeaderAbilityType> {
+			DeckLeaderAbilityType.TerrainChange,
+			DeckLeaderAbilityType.LevelCostReduction,
+			DeckLeaderAbilityType.FriendlyIncreasedStrength,
+			DeckLeaderAbilityType.WeakenSpecificEnemyType
+		};
+
+		DeckLeaderAbility.RankRequirementUpperByteAbilityList = new List<DeckLeaderAbilityType> {
+			DeckLeaderAbilityType.DestinyDraw,
+			DeckLeaderAbilityType.IncreasedMovement,
+			DeckLeaderAbilityType.LPRecovery,
+			DeckLeaderAbilityType.DirectDamageHalved,
+			DeckLeaderAbilityType.ExtendedSupportRange,
+			DeckLeaderAbilityType.FriendlyImprovedResistance,
+			DeckLeaderAbilityType.FriendlyMovementBoost,
+			DeckLeaderAbilityType.FlipCard,
+			DeckLeaderAbilityType.SpellbindSpecificEnemyType,
+			DeckLeaderAbilityType.DestroySpecificEnemyType
+		};
+
+		DeckLeaderAbility.RankRequirementAbilityList = RankRequirementLowerByteAbilityList.Concat(RankRequirementUpperByteAbilityList).ToList();
+	}
+
+	// Extra Slots: index 1, has extra slots if and only if the data is nonzero.
+	// Hidden Card: index 0, has hidden card if and only if the data is nonzero.
+	// ???: index 3, rank requirement is upper byte and extra information is lower byte.
+	// Destiny Draw: index 2, rank requirement for getting Destiny Draw is upper byte.
+	// Increased Movement: index 5, rank requirement is upper byte.
+	// LP Recovery: index 4, rank requirement is upper byte.
+	// Direct Damage Halved: index 7, rank requirement is upper byte.
+	// Terrain Change: index 6, rank requirement is lower byte. Extra information is the terrain
+	// 	the Leader changes the square to and is the upper byte.
+	// Level Cost Reduction for Summoning Same Type: index 9, rank requirement is lower
+	// byte. Extra information is the level reduction and is the upper byte.
+	// Extended Support Range: index 8, rank requirement is upper byte.
+	// Increased Strength for Same Type Friendlies: index 11, rank requirement is lower byte.
+	// 	Extra information is the boost divided by 100 and is the upper byte.
+	// Improved Resistance for Same Type Friendlies: index 10, rank requirement is upper byte.
+	// Movement Boost for Same Type Friendlies: index 13, rank requirement is upper byte.
+	// Open Opponent’s Card: index 12, rank requirement is upper byte.
+	// Weaken Specific Enemy Type: index 15, rank requirement is lower byte. Extra
+	// information is the decreased divided by 100 and is the upper byte.
+	// Spellbind Specific Enemy Type: index 14, rank requirement is upper byte.
+	// Destroy Specific Enemy Type: index 17, rank requirement is upper byte.
+
 }
-
-
 // 001C9C38: u16 leaderAbilities[683][20]
 // Stores the leader abilities.
 

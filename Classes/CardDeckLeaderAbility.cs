@@ -28,10 +28,11 @@ public class CardDeckLeaderAbility
 		this.OriginalByteSequence = bytes;
 		this.Index = cardIndex;
 		this.Name = Cards.GetNameByIndex((ushort)this.Index);
+		DeckLeaderAbilityFactory deckLeaderAbilityCardFactory = new DeckLeaderAbilityFactory();
 
 		for (int i = 0; i < deckLeaderAbilityList.Length; i++)
     {
-			this.deckLeaderAbilityList[i] = new DeckLeaderAbility(i, bytes[i]);
+			this.deckLeaderAbilityList[i] = deckLeaderAbilityCardFactory.GetDeckLeaderAbility(i, bytes[i]);
     }
   }
 

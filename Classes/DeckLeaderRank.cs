@@ -6,16 +6,32 @@ public class DeckLeaderRank
 {
   public int Index { get; }
   public string Name { get; }
-  public Image Image { get; }
+  private Image image;
+  public Image Image {
+    get
+    {
+      if (this.image == null && this.Index != 0)
+      {
+        this.image = DeckLeaderRank.RankImages[this.Index];
+      }
+
+      return this.image;
+    }
+  }
 	public DeckLeaderRank(int index)
 	{
     this.Index = index;
-    this.Name = this.RankNames[this.Index];
-    this.Image = this.RankImages[this.Index];
+    this.Name = DeckLeaderRank.RankNames[this.Index];
 	}
 
-   public string[] RankNames =
+  public override string ToString()
+  {
+    return this.Name;
+  }
+
+   public static string[] RankNames =
    {
+      "NCO",
       "2LT",
       "1LT",
       "CPT",
@@ -30,8 +46,9 @@ public class DeckLeaderRank
       "SD"
     };
 
-    public Image[] RankImages =
+    public static Image[] RankImages =
     {
+      null,
       Resources.DeckRank_1_2LT,
       Resources.DeckRank_2_1LT,
       Resources.DeckRank_3_CPT,
@@ -43,6 +60,7 @@ public class DeckLeaderRank
       Resources.DeckRank_9_VADM,
       Resources.DeckRank_10_ADM,
       Resources.DeckRank_11_SADM,
+      Resources.DeckRank_12_SD,
       Resources.DeckRank_12_SD
     };
 }
