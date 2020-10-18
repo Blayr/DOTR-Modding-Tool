@@ -67,10 +67,6 @@
       this.fusionTableTipLabel = new System.Windows.Forms.Label();
       this.fusionSaveButton = new System.Windows.Forms.Button();
       this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
-      this.FusionsDataGridViewIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.FusionsDataGridViewLowerCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
-      this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
-      this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
       this.label8 = new System.Windows.Forms.Label();
@@ -108,6 +104,13 @@
       this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.FusionsDataGridViewIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.LowerCardMaterialCardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.FusionsDataGridViewLowerCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.HigherCardMaterialCardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
+      this.ResultingFusionId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -468,8 +471,11 @@
       this.fusionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.fusionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FusionsDataGridViewIndex,
+            this.LowerCardMaterialCardNumber,
             this.FusionsDataGridViewLowerCard,
+            this.HigherCardMaterialCardNumber,
             this.FusionsDataGridViewUpperCard,
+            this.ResultingFusionId,
             this.FusionsDataGridViewFusionCard});
       this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.fusionsDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -478,43 +484,6 @@
       this.fusionsDataGridView.RowHeadersWidth = 51;
       this.fusionsDataGridView.Size = new System.Drawing.Size(924, 461);
       this.fusionsDataGridView.TabIndex = 0;
-      // 
-      // FusionsDataGridViewIndex
-      // 
-      this.FusionsDataGridViewIndex.DataPropertyName = "Index";
-      this.FusionsDataGridViewIndex.HeaderText = "Index";
-      this.FusionsDataGridViewIndex.MinimumWidth = 6;
-      this.FusionsDataGridViewIndex.Name = "FusionsDataGridViewIndex";
-      this.FusionsDataGridViewIndex.ReadOnly = true;
-      this.FusionsDataGridViewIndex.Width = 40;
-      // 
-      // FusionsDataGridViewLowerCard
-      // 
-      this.FusionsDataGridViewLowerCard.DataPropertyName = "CardIndex";
-      this.FusionsDataGridViewLowerCard.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-      this.FusionsDataGridViewLowerCard.HeaderText = "Fusion Material 1";
-      this.FusionsDataGridViewLowerCard.MinimumWidth = 6;
-      this.FusionsDataGridViewLowerCard.Name = "FusionsDataGridViewLowerCard";
-      this.FusionsDataGridViewLowerCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-      this.FusionsDataGridViewLowerCard.Width = 200;
-      // 
-      // FusionsDataGridViewUpperCard
-      // 
-      this.FusionsDataGridViewUpperCard.HeaderText = "Fusion Material 2";
-      this.FusionsDataGridViewUpperCard.MinimumWidth = 6;
-      this.FusionsDataGridViewUpperCard.Name = "FusionsDataGridViewUpperCard";
-      this.FusionsDataGridViewUpperCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-      this.FusionsDataGridViewUpperCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-      this.FusionsDataGridViewUpperCard.Width = 200;
-      // 
-      // FusionsDataGridViewFusionCard
-      // 
-      this.FusionsDataGridViewFusionCard.HeaderText = "Resulting Fusion";
-      this.FusionsDataGridViewFusionCard.MinimumWidth = 6;
-      this.FusionsDataGridViewFusionCard.Name = "FusionsDataGridViewFusionCard";
-      this.FusionsDataGridViewFusionCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-      this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-      this.FusionsDataGridViewFusionCard.Width = 200;
       // 
       // tabPage1
       // 
@@ -935,6 +904,70 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
+      // FusionsDataGridViewIndex
+      // 
+      this.FusionsDataGridViewIndex.DataPropertyName = "Index";
+      this.FusionsDataGridViewIndex.HeaderText = "Index";
+      this.FusionsDataGridViewIndex.MinimumWidth = 6;
+      this.FusionsDataGridViewIndex.Name = "FusionsDataGridViewIndex";
+      this.FusionsDataGridViewIndex.ReadOnly = true;
+      this.FusionsDataGridViewIndex.Width = 40;
+      // 
+      // LowerCardMaterialCardNumber
+      // 
+      this.LowerCardMaterialCardNumber.DataPropertyName = "LowerCardIndex";
+      this.LowerCardMaterialCardNumber.HeaderText = "LC#";
+      this.LowerCardMaterialCardNumber.Name = "LowerCardMaterialCardNumber";
+      this.LowerCardMaterialCardNumber.ReadOnly = true;
+      this.LowerCardMaterialCardNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+      this.LowerCardMaterialCardNumber.Width = 40;
+      // 
+      // FusionsDataGridViewLowerCard
+      // 
+      this.FusionsDataGridViewLowerCard.DataPropertyName = "LowerCardIndex";
+      this.FusionsDataGridViewLowerCard.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+      this.FusionsDataGridViewLowerCard.HeaderText = "Lower card name";
+      this.FusionsDataGridViewLowerCard.MinimumWidth = 6;
+      this.FusionsDataGridViewLowerCard.Name = "FusionsDataGridViewLowerCard";
+      this.FusionsDataGridViewLowerCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+      this.FusionsDataGridViewLowerCard.Width = 200;
+      // 
+      // HigherCardMaterialCardNumber
+      // 
+      this.HigherCardMaterialCardNumber.DataPropertyName = "UpperCardIndex";
+      this.HigherCardMaterialCardNumber.HeaderText = "HC#";
+      this.HigherCardMaterialCardNumber.Name = "HigherCardMaterialCardNumber";
+      this.HigherCardMaterialCardNumber.ReadOnly = true;
+      this.HigherCardMaterialCardNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+      this.HigherCardMaterialCardNumber.Width = 40;
+      // 
+      // FusionsDataGridViewUpperCard
+      // 
+      this.FusionsDataGridViewUpperCard.HeaderText = "Higher card name";
+      this.FusionsDataGridViewUpperCard.MinimumWidth = 6;
+      this.FusionsDataGridViewUpperCard.Name = "FusionsDataGridViewUpperCard";
+      this.FusionsDataGridViewUpperCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+      this.FusionsDataGridViewUpperCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+      this.FusionsDataGridViewUpperCard.Width = 200;
+      // 
+      // ResultingFusionId
+      // 
+      this.ResultingFusionId.DataPropertyName = "FusionCardIndex";
+      this.ResultingFusionId.HeaderText = "RF#";
+      this.ResultingFusionId.Name = "ResultingFusionId";
+      this.ResultingFusionId.ReadOnly = true;
+      this.ResultingFusionId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+      this.ResultingFusionId.Width = 40;
+      // 
+      // FusionsDataGridViewFusionCard
+      // 
+      this.FusionsDataGridViewFusionCard.HeaderText = "Resulting Fusion Name";
+      this.FusionsDataGridViewFusionCard.MinimumWidth = 6;
+      this.FusionsDataGridViewFusionCard.Name = "FusionsDataGridViewFusionCard";
+      this.FusionsDataGridViewFusionCard.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+      this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+      this.FusionsDataGridViewFusionCard.Width = 200;
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1009,10 +1042,6 @@
     private Label fusionTableTipLabel;
     private Button fusionSaveButton;
     private DataGridView fusionsDataGridView;
-    private DataGridViewTextBoxColumn FusionsDataGridViewIndex;
-    private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
-    private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
-    private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
     private TabPage tabPage1;
     private SplitContainer splitContainer1;
     private Button cardConstantsSaveButton;
@@ -1061,5 +1090,12 @@
     private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesNameColumn;
     private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesEnabledAbilitiesColumn;
     private ContextMenuStrip cardDeckLeaderAbilitiesContextStrip;
+    private DataGridViewTextBoxColumn FusionsDataGridViewIndex;
+    private DataGridViewTextBoxColumn LowerCardMaterialCardNumber;
+    private DataGridViewComboBoxColumn FusionsDataGridViewLowerCard;
+    private DataGridViewTextBoxColumn HigherCardMaterialCardNumber;
+    private DataGridViewComboBoxColumn FusionsDataGridViewUpperCard;
+    private DataGridViewTextBoxColumn ResultingFusionId;
+    private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
   }
 }

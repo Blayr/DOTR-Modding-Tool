@@ -70,12 +70,21 @@
       switch (e.ColumnIndex)
       {
         case 1:
-          sortColumn = "LowerCardName";
+          sortColumn = "LowerCardIndex";
           break;
         case 2:
-          sortColumn = "UpperCardName";
+          sortColumn = "LowerCardName";
           break;
         case 3:
+          sortColumn = "UpperCardIndex";
+          break;
+        case 4:
+          sortColumn = "UpperCardName";
+          break;
+        case 5:
+          sortColumn = "FusionCardIndex";
+          break;
+        case 6:
           sortColumn = "FusionCardName";
           break;
         default:
