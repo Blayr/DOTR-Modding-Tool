@@ -9,6 +9,7 @@
   {
     private Fusions fusions;
     private BindingListView<Fusion> fusionsBinding;
+    private bool fusionDataGridviewIsSetup = false;
 
     private void LoadFusionData()
     {
@@ -16,7 +17,17 @@
       byte[] fusionBytes = this.dataAccess.LoadFusionData();
       this.fusions = new Fusions(fusionBytes);
 
+      if (!this.fusionDataGridviewIsSetup)
+      {
+        this.SetupFusionDataGridView();
+      }
+
       this.fusionsBinding = new BindingListView<Fusion>(this.fusions.fusions);
+      this.fusionsDataGridView.DataSource = this.fusionsBinding;
+    }
+
+    private void SetupFusionDataGridView()
+    {
       this.fusionsDataGridView.AutoGenerateColumns = false;
 
       this.FusionsDataGridViewLowerCard.DataPropertyName = "LowerCardIndex";
@@ -48,7 +59,7 @@
       this.fusionsDataGridView.EditingControlShowing += this.FusionEditControlShowing;
       this.fusionsDataGridView.ColumnHeaderMouseClick += this.fusionsDataGridView_SortColumns;
 
-      this.fusionsDataGridView.DataSource = this.fusionsBinding;
+      this.fusionDataGridviewIsSetup = true;
     }
 
     private void fusionsDataGridView_SortColumns(object sender, DataGridViewCellMouseEventArgs e)
