@@ -103,10 +103,11 @@
       this.deckLeaderAbilitiesTab = new System.Windows.Forms.TabPage();
       this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
       this.cardDeckLeaderAbilitiesDatagridview = new System.Windows.Forms.DataGridView();
-      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardDeckLeaderAbilitiesNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -895,14 +896,9 @@
       this.cardDeckLeaderAbilitiesDatagridview.Location = new System.Drawing.Point(0, 0);
       this.cardDeckLeaderAbilitiesDatagridview.Name = "cardDeckLeaderAbilitiesDatagridview";
       this.cardDeckLeaderAbilitiesDatagridview.RowHeadersVisible = false;
+      this.cardDeckLeaderAbilitiesDatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(924, 459);
       this.cardDeckLeaderAbilitiesDatagridview.TabIndex = 0;
-      // 
-      // cardConstantsContextStrip
-      // 
-      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
-      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
       // cardDeckLeaderAbilitiesIndexColumn
       // 
@@ -927,6 +923,17 @@
       this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.Name = "cardDeckLeaderAbilitiesEnabledAbilitiesColumn";
       this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.ReadOnly = true;
       this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.Width = 800;
+      // 
+      // cardConstantsContextStrip
+      // 
+      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
+      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
+      // 
+      // cardDeckLeaderAbilitiesContextStrip
+      // 
+      this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
+      this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
       // MainForm
       // 
@@ -1053,5 +1060,6 @@
     private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesIndexColumn;
     private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesNameColumn;
     private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesEnabledAbilitiesColumn;
+    private ContextMenuStrip cardDeckLeaderAbilitiesContextStrip;
   }
 }

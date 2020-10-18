@@ -46,7 +46,6 @@ public class CardConstant
 	BitArray levelAttribute;
 	byte level;
 	CardAttribute attribute;
-	byte deckCost;
 	ushort effectId;
 	ushort xaxId;
 	BitArray apWithFlags;
@@ -133,7 +132,7 @@ public class CardConstant
 		newByteArray[0] = this.kind;
 		newByteArray[1] = this.kindOfs;
 		newByteArray[2] = this.levelAttribute.toByte();
-		newByteArray[3] = this.deckCost;
+		newByteArray[3] = this.DeckCost;
 		newByteArray[4] = BitConverter.GetBytes(this.effectId)[0];
 		newByteArray[5] = BitConverter.GetBytes(this.effectId)[1];
 		newByteArray[6] = BitConverter.GetBytes(this.xaxId)[0];

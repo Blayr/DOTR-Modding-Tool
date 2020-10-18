@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -284,7 +284,6 @@ public class CardConstantsMultiEditForm : Form
   private void SetupFormFields()
   {
     this.numberOfCardsSelectedLabel.Text = this.selectedCardConstants.Count.ToString() + " cards selected.";
-
     this.selectedCardConstants.ForEach((cc) => this.selectedCardList.Items.Add(cc.Name));
 
     this.deckCostNumericUpDown.KeyDown += this.OnControlKeyPress;

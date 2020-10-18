@@ -67,7 +67,6 @@
       this.LoadCardConstantsData();
     }
 
-
     private void SetupCardConstantsDataGridView()
     {
       this.cardConstantsDataGridView.AutoGenerateColumns = false;

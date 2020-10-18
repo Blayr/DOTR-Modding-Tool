@@ -74,6 +74,9 @@
     <Compile Include="Forms\CardDeckLeaderAbilitiesForm.cs" />
     <Compile Include="Classes\DeckLeaderAbility.cs" />
     <Compile Include="Classes\DeckLeaderAbilityType.cs" />
+    <Compile Include="Forms\CardDeckLeaderAbilityMultiEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\DeckLeaderAbilityConstants.cs" />
     <Compile Include="Forms\DeckLeaderThresholdsForm.cs" />
     <Compile Include="Forms\EnemyAiForm.cs" />
@@ -90,9 +93,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\DeckLeaderRankThresholds.cs" />
     <Compile Include="Classes\TreasureCards.cs" />
-    <Compile Include="Classes\RankRequirementDeckLeaderAbilityType.cs" />
+    <Compile Include="Classes\RankRequirementDeckLeaderAbility.cs" />
     <EmbeddedResource Include="Forms\CardConstantsMultiEditForm.resx">
       <DependentUpon>CardConstantsMultiEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardDeckLeaderAbilityMultiEditForm.resx">
+      <DependentUpon>CardDeckLeaderAbilityMultiEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
