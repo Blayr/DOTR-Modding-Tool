@@ -114,9 +114,31 @@ public class Fusion
 		set
     {
 			this.lowerCardIndex = value;
+
+			if (this.fusionMaterialsNeedReOrdering())
+      {
+				this.orderFusionMaterials();
+				return;
+      }
+
 			this.lowerCardName = Cards.GetNameByIndex(this.lowerCardIndex);
 			this.updateBitArray();
 		}
+  }
+
+	private bool fusionMaterialsNeedReOrdering()
+  {
+		return this.lowerCardIndex > this.upperCardIndex;
+	}
+
+	private void orderFusionMaterials()
+  {
+		if (this.fusionMaterialsNeedReOrdering())
+    {
+			ushort tempIndex = this.upperCardIndex;
+			this.UpperCardIndex = this.lowerCardIndex;
+			this.LowerCardIndex = tempIndex;
+    }
   }
 
 	public string LowerCardName
@@ -137,6 +159,13 @@ public class Fusion
 		set
 		{
 			this.upperCardIndex = value;
+
+			if (this.fusionMaterialsNeedReOrdering())
+			{
+				this.orderFusionMaterials();
+				return;
+			}
+
 			this.upperCardName = Cards.GetNameByIndex(this.upperCardIndex);
 			this.updateBitArray();
 		}
