@@ -8,7 +8,7 @@ using System.Windows.Forms;
 public class MonsterCardEquipCompatibilities {
 	public MonsterCardEquipCompatibilities(byte[][] byteArray)
   {
-		for (int cardIndex = Cards.MonsterCardStartIndex; cardIndex < Cards.MonsterCardEndIndex; cardIndex++)
+		for (int cardIndex = Cards.MonsterCardStartIndex; cardIndex <= Cards.MonsterCardEndIndex; cardIndex++)
     {
 			this.List.Add(new MonsterCardEquipCompability(cardIndex, byteArray[cardIndex]));
     }
