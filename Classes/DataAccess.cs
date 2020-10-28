@@ -19,6 +19,9 @@ public class DataAccess
   public static readonly int CardLeaderAbilityCount = 683;
   public static readonly int CardLeaderAbilityTypeCount = 20;
   public static readonly int CardLeaderAbilityByteSize = 2;
+  public static readonly int MonsterEquipCardCompatabilityOffset = 0x26D680;
+  public static readonly int MonsterEquipCardCompabilityCardCount = 687;
+  public static readonly int MonsterEquipCardCompabilityByteSize = 7;
 
   private static readonly object FileStreamLock = new object();
 	private static FileStream fileStream;
@@ -26,6 +29,25 @@ public class DataAccess
 	public DataAccess()
 	{
 	}
+
+  public byte[][] LoadMonsterEquipCardCompability()
+  {
+    byte[][] monsterEquipCardCompabilityBytes= new byte[MonsterEquipCardCompabilityCardCount][];
+
+    lock (FileStreamLock)
+    {
+      for (int cardIndex = 0; cardIndex < MonsterEquipCardCompabilityCardCount; cardIndex++)
+      {
+        byte[] buffer = new byte[MonsterEquipCardCompabilityByteSize];
+        int offset = MonsterEquipCardCompatabilityOffset + (cardIndex * MonsterEquipCardCompabilityByteSize);
+        fileStream.Seek(offset, SeekOrigin.Begin);
+        fileStream.Read(buffer, 0, buffer.Length);
+        monsterEquipCardCompabilityBytes[cardIndex] = buffer;
+      }
+    }
+
+    return monsterEquipCardCompabilityBytes;
+  }
 
   public byte[][][] LoadCardDeckLeaderAbilities()
   {

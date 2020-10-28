@@ -54,6 +54,7 @@
       this.LoadFusionData();
       this.LoadTreasureCardData();
       this.LoadCardDeckLeaderAbilitesData();
+      this.LoadCardEquipData();
       this.toggleEnableControls(true);
     }
 

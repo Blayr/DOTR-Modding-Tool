@@ -80,6 +80,7 @@
     <Compile Include="Forms\DeckLeaderAbilityConstants.cs" />
     <Compile Include="Forms\DeckLeaderThresholdsForm.cs" />
     <Compile Include="Forms\EnemyAiForm.cs" />
+    <Compile Include="Forms\EquipCompabilityForm.cs" />
     <Compile Include="Forms\FusionsForm.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +89,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Fusion.cs" />
+    <Compile Include="Classes\MonsterCardEquipCompability.cs" />
     <Compile Include="Forms\TreasureCardForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
