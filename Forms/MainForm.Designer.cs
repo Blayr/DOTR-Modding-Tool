@@ -116,6 +116,7 @@
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.EquipCompatabilityCardIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EquipCompatabilityCardNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.CompatibleEquipCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EquipCompatabilityEquipCardsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
@@ -1003,6 +1004,7 @@
       this.equipCompatibilityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EquipCompatabilityCardIndexColumn,
             this.EquipCompatabilityCardNameColumn,
+            this.CompatibleEquipCountColumn,
             this.EquipCompatabilityEquipCardsColumn});
       this.equipCompatibilityDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.equipCompatibilityDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -1026,7 +1028,9 @@
       // EquipCompatabilityCardIndexColumn
       // 
       this.EquipCompatabilityCardIndexColumn.DataPropertyName = "Index";
+      this.EquipCompatabilityCardIndexColumn.Frozen = true;
       this.EquipCompatabilityCardIndexColumn.HeaderText = "Index";
+      this.EquipCompatabilityCardIndexColumn.MinimumWidth = 40;
       this.EquipCompatabilityCardIndexColumn.Name = "EquipCompatabilityCardIndexColumn";
       this.EquipCompatabilityCardIndexColumn.ReadOnly = true;
       this.EquipCompatabilityCardIndexColumn.Width = 40;
@@ -1034,10 +1038,21 @@
       // EquipCompatabilityCardNameColumn
       // 
       this.EquipCompatabilityCardNameColumn.DataPropertyName = "Name";
+      this.EquipCompatabilityCardNameColumn.Frozen = true;
       this.EquipCompatabilityCardNameColumn.HeaderText = "Monster Name";
       this.EquipCompatabilityCardNameColumn.Name = "EquipCompatabilityCardNameColumn";
       this.EquipCompatabilityCardNameColumn.ReadOnly = true;
       this.EquipCompatabilityCardNameColumn.Width = 140;
+      // 
+      // CompatibleEquipCountColumn
+      // 
+      this.CompatibleEquipCountColumn.DataPropertyName = "CompatibleEquipCount";
+      this.CompatibleEquipCountColumn.HeaderText = "Count";
+      this.CompatibleEquipCountColumn.MinimumWidth = 40;
+      this.CompatibleEquipCountColumn.Name = "CompatibleEquipCountColumn";
+      this.CompatibleEquipCountColumn.ReadOnly = true;
+      this.CompatibleEquipCountColumn.ToolTipText = "Number of compatible equip cards";
+      this.CompatibleEquipCountColumn.Width = 40;
       // 
       // EquipCompatabilityEquipCardsColumn
       // 
@@ -1187,6 +1202,7 @@
     private DataGridView equipCompatibilityDataGridView;
     private DataGridViewTextBoxColumn EquipCompatabilityCardIndexColumn;
     private DataGridViewTextBoxColumn EquipCompatabilityCardNameColumn;
+    private DataGridViewTextBoxColumn CompatibleEquipCountColumn;
     private DataGridViewTextBoxColumn EquipCompatabilityEquipCardsColumn;
   }
 }

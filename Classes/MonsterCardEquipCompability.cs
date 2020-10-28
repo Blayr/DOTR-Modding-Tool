@@ -38,15 +38,26 @@ public class MonsterCardEquipCompability
 		return this.Name;
   }
 
+	private List<CardEquipCompabilityFlag> compatibleEquipList()
+  {
+		return this.CardEquipCompabilityFlags.Where(ce => ce.Enabled == true).ToList();
+	}
+
 	public int Index { get; }
 	public string Name { get; }
-
+	public int CompatibleEquipCount
+  {
+		get
+    {
+			return this.compatibleEquipList().Count();
+		}
+  }
 	public string CompatibleEquipNames
 	{
 		get
 		{
-			List<CardEquipCompabilityFlag> compatibleEquipList = this.CardEquipCompabilityFlags.Where(ce => ce.Enabled == true).ToList();
-			string[] compatibleEquipNameArray = compatibleEquipList.Select(ce => ce.Name).ToArray();
+			
+			string[] compatibleEquipNameArray = this.compatibleEquipList().Select(ce => ce.Name).ToArray();
 			return string.Join(", ", compatibleEquipNameArray);
 		}
 	}
