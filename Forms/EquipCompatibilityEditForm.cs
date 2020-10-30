@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 public class EquipCompatibilityEditForm : Form
@@ -9,7 +11,9 @@ public class EquipCompatibilityEditForm : Form
   private MonsterCardEquipCompatibilities allMonsterCardEquipCompatibilities;
   private ListBox selectedCardList;
   private Label numberOfCardsSelectedLabel;
-  private Object[][] checkBoxFlagList = new Object[DataAccess.CardLeaderAbilityCount][];
+  private bool[] enabledFlagsInCommon;
+  private Object[][] checkBoxFlagList = new Object[DataAccess.MonsterEquipCardCompabilityCardCount][];
+  // checkBoxFlagList 2nd dimension is 2 in size, index 0 is Checkbox, index 1 is boolean to track if checkbox was clicked at least once
 
   public EquipCompatibilityEditForm(List<MonsterCardEquipCompability> selectedMonsterCardEquipCompatibilities, ref MonsterCardEquipCompatibilities allMonsterCardEquipCompatibilities)
   {
@@ -17,7 +21,7 @@ public class EquipCompatibilityEditForm : Form
     this.selectedMonsterCardEquipCompatibilities = selectedMonsterCardEquipCompatibilities;
 
     this.InitializeComponent();
-    // this.PopulateFields();
+    this.setFlagsInCommon();
     this.SetupFormFields();
     this.SetupCheckboxes();
   }
@@ -26,6 +30,28 @@ public class EquipCompatibilityEditForm : Form
   {
     this.numberOfCardsSelectedLabel.Text = this.selectedMonsterCardEquipCompatibilities.Count.ToString() + " cards selected.";
     this.selectedMonsterCardEquipCompatibilities.ForEach((cdla) => this.selectedCardList.Items.Add(cdla.Name));
+  }
+
+  private void setFlagsInCommon() {
+    this.enabledFlagsInCommon = new bool[this.allMonsterCardEquipCompatibilities.List[0].CardEquipCompabilityFlags.Count];
+
+    for (int f = 0; f < this.enabledFlagsInCommon.Length; f++)
+    {
+      bool currentFlagIsTrue = true;
+
+      for (int c = 0; c < this.selectedMonsterCardEquipCompatibilities.Count; c++)
+      {
+        bool currentCardFlagValue = this.selectedMonsterCardEquipCompatibilities[c].CardEquipCompabilityFlags[f].Enabled;
+
+        if (!currentCardFlagValue)
+        {
+          currentFlagIsTrue = false;
+          break;
+        }
+      }
+
+      enabledFlagsInCommon[f] = currentFlagIsTrue;
+    }
   }
 
   private void SetupCheckboxes()
@@ -54,8 +80,13 @@ public class EquipCompatibilityEditForm : Form
       flagCheckbox.AutoSize = true;
       flagCheckbox.Text = $"{flag.Name}";
       flagCheckbox.UseVisualStyleBackColor = true;
-      flagCheckbox.Checked = flag.Enabled;
+      flagCheckbox.Checked = this.enabledFlagsInCommon[i];
       flagCheckbox.Click += this.onCheckboxClick;
+      
+      if (enabledFlagsInCommon[i])
+      {
+        flagCheckbox.BackColor = Color.LightGreen;
+      }
 
       this.Controls.Add(flagCheckbox);
       this.checkBoxFlagList[i] = new Object[] { flagCheckbox, false };
