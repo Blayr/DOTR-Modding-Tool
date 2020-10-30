@@ -111,6 +111,7 @@
       this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.equipCompabilityTab = new System.Windows.Forms.TabPage();
       this.equipCompabilitySplitContainer = new System.Windows.Forms.SplitContainer();
+      this.cardEquipNoteLabel1 = new System.Windows.Forms.Label();
       this.equipCompatibilitySaveButton = new System.Windows.Forms.Button();
       this.equipCompatibilityDataGridView = new System.Windows.Forms.DataGridView();
       this.EquipCompatabilityCardIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -605,9 +606,9 @@
       this.label8.AutoSize = true;
       this.label8.Location = new System.Drawing.Point(323, 7);
       this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(248, 13);
+      this.label8.Size = new System.Drawing.Size(311, 13);
       this.label8.TabIndex = 5;
-      this.label8.Text = "Tip: Select multiple rows with shift, right click to edit";
+      this.label8.Text = "Tip: Select multiple rows with shift and ctrl keys, right click to edit";
       // 
       // cardConstantsSaveButton
       // 
@@ -996,6 +997,7 @@
       // 
       // equipCompabilitySplitContainer.Panel1
       // 
+      this.equipCompabilitySplitContainer.Panel1.Controls.Add(this.cardEquipNoteLabel1);
       this.equipCompabilitySplitContainer.Panel1.Controls.Add(this.equipCompatibilitySaveButton);
       // 
       // equipCompabilitySplitContainer.Panel2
@@ -1004,6 +1006,16 @@
       this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(924, 490);
       this.equipCompabilitySplitContainer.SplitterDistance = 31;
       this.equipCompabilitySplitContainer.TabIndex = 0;
+      // 
+      // cardEquipNoteLabel1
+      // 
+      this.cardEquipNoteLabel1.AutoSize = true;
+      this.cardEquipNoteLabel1.Location = new System.Drawing.Point(3, 10);
+      this.cardEquipNoteLabel1.Name = "cardEquipNoteLabel1";
+      this.cardEquipNoteLabel1.Size = new System.Drawing.Size(447, 13);
+      this.cardEquipNoteLabel1.TabIndex = 1;
+      this.cardEquipNoteLabel1.Text = "Note: Select multiple records with shift and control keys, right click to edit eq" +
+    "uip compatibilities";
       // 
       // equipCompatibilitySaveButton
       // 
@@ -1153,6 +1165,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesDatagridview)).EndInit();
       this.equipCompabilityTab.ResumeLayout(false);
       this.equipCompabilitySplitContainer.Panel1.ResumeLayout(false);
+      this.equipCompabilitySplitContainer.Panel1.PerformLayout();
       this.equipCompabilitySplitContainer.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.equipCompabilitySplitContainer)).EndInit();
       this.equipCompabilitySplitContainer.ResumeLayout(false);
@@ -1245,5 +1258,6 @@
     private ContextMenuStrip monsterCardEquipCompatibilitiesContextMenuStrip;
     private ToolStripMenuItem editMonsterEquipMenuItem;
     private Button equipCompatibilitySaveButton;
+    private Label cardEquipNoteLabel1;
   }
 }
