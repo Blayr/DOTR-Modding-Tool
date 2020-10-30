@@ -2,6 +2,7 @@
 {
   using Equin.ApplicationFramework;
   using System;
+  using System.Collections.Generic;
   using System.ComponentModel;
   using System.Windows.Forms;
 
@@ -18,6 +19,21 @@
 
       this.equipCompatibilityDataGridView.AutoGenerateColumns = false;
       this.equipCompatibilityDataGridView.DataSource = equipCompatabilitiesBinding;
+    }
+
+    private void ShowMonsterCardEquipCompatibilityEditDialog(object sender, EventArgs e)
+    {
+      List<MonsterCardEquipCompability> selectedMonsterCardEquipCompatibilitys = new List<MonsterCardEquipCompability>();
+
+      for (int i = this.equipCompatibilityDataGridView.SelectedRows.Count - 1; i >= 0; i--)
+      {
+        MonsterCardEquipCompability monsterCardEquipCompatibility = ((ObjectView<MonsterCardEquipCompability>)this.equipCompatibilityDataGridView.SelectedRows[i].DataBoundItem).Object;
+        selectedMonsterCardEquipCompatibilitys.Add(this.equipCompatabilities.List[monsterCardEquipCompatibility.Index]);
+      }
+
+      EquipCompatibilityEditForm form = new EquipCompatibilityEditForm(selectedMonsterCardEquipCompatibilitys, ref this.equipCompatabilities);
+      form.ShowDialog();
+      this.equipCompatibilityDataGridView.Refresh();
     }
   }
 }

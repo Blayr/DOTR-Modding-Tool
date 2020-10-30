@@ -112,12 +112,14 @@
       this.equipCompabilityTab = new System.Windows.Forms.TabPage();
       this.equipCompabilitySplitContainer = new System.Windows.Forms.SplitContainer();
       this.equipCompatibilityDataGridView = new System.Windows.Forms.DataGridView();
-      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.EquipCompatabilityCardIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EquipCompatabilityCardNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.CompatibleEquipCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EquipCompatabilityEquipCardsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.monsterCardEquipCompatibilitiesContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -157,6 +159,7 @@
       this.equipCompabilitySplitContainer.Panel2.SuspendLayout();
       this.equipCompabilitySplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.equipCompatibilityDataGridView)).BeginInit();
+      this.monsterCardEquipCompatibilitiesContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -1006,6 +1009,7 @@
             this.EquipCompatabilityCardNameColumn,
             this.CompatibleEquipCountColumn,
             this.EquipCompatabilityEquipCardsColumn});
+      this.equipCompatibilityDataGridView.ContextMenuStrip = this.monsterCardEquipCompatibilitiesContextMenuStrip;
       this.equipCompatibilityDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.equipCompatibilityDataGridView.Location = new System.Drawing.Point(0, 0);
       this.equipCompatibilityDataGridView.Name = "equipCompatibilityDataGridView";
@@ -1013,17 +1017,6 @@
       this.equipCompatibilityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(924, 455);
       this.equipCompatibilityDataGridView.TabIndex = 0;
-      // 
-      // cardConstantsContextStrip
-      // 
-      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
-      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
-      // 
-      // cardDeckLeaderAbilitiesContextStrip
-      // 
-      this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
-      this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
       // EquipCompatabilityCardIndexColumn
       // 
@@ -1062,6 +1055,31 @@
       this.EquipCompatabilityEquipCardsColumn.MinimumWidth = 400;
       this.EquipCompatabilityEquipCardsColumn.Name = "EquipCompatabilityEquipCardsColumn";
       this.EquipCompatabilityEquipCardsColumn.ReadOnly = true;
+      // 
+      // monsterCardEquipCompatibilitiesContextMenuStrip
+      // 
+      this.monsterCardEquipCompatibilitiesContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editMonsterEquipMenuItem});
+      this.monsterCardEquipCompatibilitiesContextMenuStrip.Name = "monsterCardEquipCompatibilitiesContextMenuStrip";
+      this.monsterCardEquipCompatibilitiesContextMenuStrip.Size = new System.Drawing.Size(181, 48);
+      // 
+      // editMonsterEquipMenuItem
+      // 
+      this.editMonsterEquipMenuItem.Name = "editMonsterEquipMenuItem";
+      this.editMonsterEquipMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.editMonsterEquipMenuItem.Text = "Edit selected items";
+      this.editMonsterEquipMenuItem.Click += new System.EventHandler(this.ShowMonsterCardEquipCompatibilityEditDialog);
+      // 
+      // cardConstantsContextStrip
+      // 
+      this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+      this.cardConstantsContextStrip.Name = "cardConstantsContextStrip";
+      this.cardConstantsContextStrip.Size = new System.Drawing.Size(61, 4);
+      // 
+      // cardDeckLeaderAbilitiesContextStrip
+      // 
+      this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
+      this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
       // MainForm
       // 
@@ -1120,6 +1138,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.equipCompabilitySplitContainer)).EndInit();
       this.equipCompabilitySplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.equipCompatibilityDataGridView)).EndInit();
+      this.monsterCardEquipCompatibilitiesContextMenuStrip.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1204,5 +1223,7 @@
     private DataGridViewTextBoxColumn EquipCompatabilityCardNameColumn;
     private DataGridViewTextBoxColumn CompatibleEquipCountColumn;
     private DataGridViewTextBoxColumn EquipCompatabilityEquipCardsColumn;
+    private ContextMenuStrip monsterCardEquipCompatibilitiesContextMenuStrip;
+    private ToolStripMenuItem editMonsterEquipMenuItem;
   }
 }
