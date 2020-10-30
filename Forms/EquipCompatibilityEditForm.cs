@@ -14,13 +14,14 @@ public class EquipCompatibilityEditForm : Form
   private bool[] enabledFlagsInCommon;
   private Button EquipCompatibilityEditFormApplyButton;
   private Button EquipCompatibilityEditFormCancelButton;
-  private Object[][] checkBoxFlagList = new Object[48][];
-  // checkBoxFlagList 2nd dimension is 2 in size, index 0 is Checkbox, index 1 is boolean to track if checkbox was clicked at least once
+  private Object[][] checkBoxFlagList;
 
   public EquipCompatibilityEditForm(List<MonsterCardEquipCompability> selectedMonsterCardEquipCompatibilities, ref MonsterCardEquipCompatibilities allMonsterCardEquipCompatibilities)
   {
     this.allMonsterCardEquipCompatibilities = allMonsterCardEquipCompatibilities;
     this.selectedMonsterCardEquipCompatibilities = selectedMonsterCardEquipCompatibilities;
+    // checkBoxFlagList 2nd dimension is 2 in size, index 0 is Checkbox, index 1 is boolean to track if checkbox was clicked at least once
+    this.checkBoxFlagList = new Object[allMonsterCardEquipCompatibilities.List[0].CardEquipCompabilityFlags.Count][];
 
     this.InitializeComponent();
     this.setFlagsInCommon();

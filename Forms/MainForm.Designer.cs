@@ -111,6 +111,7 @@
       this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.equipCompabilityTab = new System.Windows.Forms.TabPage();
       this.equipCompabilitySplitContainer = new System.Windows.Forms.SplitContainer();
+      this.equipCompatibilitySaveButton = new System.Windows.Forms.Button();
       this.equipCompatibilityDataGridView = new System.Windows.Forms.DataGridView();
       this.EquipCompatabilityCardIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EquipCompatabilityCardNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,6 +157,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesDatagridview)).BeginInit();
       this.equipCompabilityTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.equipCompabilitySplitContainer)).BeginInit();
+      this.equipCompabilitySplitContainer.Panel1.SuspendLayout();
       this.equipCompabilitySplitContainer.Panel2.SuspendLayout();
       this.equipCompabilitySplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.equipCompatibilityDataGridView)).BeginInit();
@@ -987,9 +989,14 @@
       // equipCompabilitySplitContainer
       // 
       this.equipCompabilitySplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.equipCompabilitySplitContainer.IsSplitterFixed = true;
       this.equipCompabilitySplitContainer.Location = new System.Drawing.Point(3, 3);
       this.equipCompabilitySplitContainer.Name = "equipCompabilitySplitContainer";
       this.equipCompabilitySplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+      // 
+      // equipCompabilitySplitContainer.Panel1
+      // 
+      this.equipCompabilitySplitContainer.Panel1.Controls.Add(this.equipCompatibilitySaveButton);
       // 
       // equipCompabilitySplitContainer.Panel2
       // 
@@ -997,6 +1004,17 @@
       this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(924, 490);
       this.equipCompabilitySplitContainer.SplitterDistance = 31;
       this.equipCompabilitySplitContainer.TabIndex = 0;
+      // 
+      // equipCompatibilitySaveButton
+      // 
+      this.equipCompatibilitySaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      this.equipCompatibilitySaveButton.Location = new System.Drawing.Point(844, 5);
+      this.equipCompatibilitySaveButton.Name = "equipCompatibilitySaveButton";
+      this.equipCompatibilitySaveButton.Size = new System.Drawing.Size(75, 23);
+      this.equipCompatibilitySaveButton.TabIndex = 0;
+      this.equipCompatibilitySaveButton.Text = "Save";
+      this.equipCompatibilitySaveButton.UseVisualStyleBackColor = true;
+      this.equipCompatibilitySaveButton.Click += new System.EventHandler(this.equipCompatibilitySaveButton_Click);
       // 
       // equipCompatibilityDataGridView
       // 
@@ -1061,12 +1079,12 @@
       this.monsterCardEquipCompatibilitiesContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editMonsterEquipMenuItem});
       this.monsterCardEquipCompatibilitiesContextMenuStrip.Name = "monsterCardEquipCompatibilitiesContextMenuStrip";
-      this.monsterCardEquipCompatibilitiesContextMenuStrip.Size = new System.Drawing.Size(181, 48);
+      this.monsterCardEquipCompatibilitiesContextMenuStrip.Size = new System.Drawing.Size(173, 26);
       // 
       // editMonsterEquipMenuItem
       // 
       this.editMonsterEquipMenuItem.Name = "editMonsterEquipMenuItem";
-      this.editMonsterEquipMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.editMonsterEquipMenuItem.Size = new System.Drawing.Size(172, 22);
       this.editMonsterEquipMenuItem.Text = "Edit selected items";
       this.editMonsterEquipMenuItem.Click += new System.EventHandler(this.ShowMonsterCardEquipCompatibilityEditDialog);
       // 
@@ -1134,6 +1152,7 @@
       this.cardDeckLeaderAbilitiesSplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesDatagridview)).EndInit();
       this.equipCompabilityTab.ResumeLayout(false);
+      this.equipCompabilitySplitContainer.Panel1.ResumeLayout(false);
       this.equipCompabilitySplitContainer.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.equipCompabilitySplitContainer)).EndInit();
       this.equipCompabilitySplitContainer.ResumeLayout(false);
@@ -1225,5 +1244,6 @@
     private DataGridViewTextBoxColumn EquipCompatabilityEquipCardsColumn;
     private ContextMenuStrip monsterCardEquipCompatibilitiesContextMenuStrip;
     private ToolStripMenuItem editMonsterEquipMenuItem;
+    private Button equipCompatibilitySaveButton;
   }
 }

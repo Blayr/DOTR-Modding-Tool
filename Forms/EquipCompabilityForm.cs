@@ -35,5 +35,11 @@
       form.ShowDialog();
       this.equipCompatibilityDataGridView.Refresh();
     }
+
+    private void equipCompatibilitySaveButton_Click(object sender, EventArgs e)
+    {
+      this.dataAccess.SetMonsterEquipCardCompatibility(this.equipCompatabilities.Bytes);
+      this.LoadCardConstantsData();
+    }
   }
 }

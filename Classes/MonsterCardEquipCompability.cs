@@ -1,8 +1,7 @@
-﻿using System.Collections;
+﻿using CustomExtensions;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 
 public class MonsterCardEquipCompatibilities {
@@ -11,6 +10,14 @@ public class MonsterCardEquipCompatibilities {
 		for (int cardIndex = Cards.MonsterCardStartIndex; cardIndex <= Cards.MonsterCardEndIndex; cardIndex++)
     {
 			this.List.Add(new MonsterCardEquipCompability(cardIndex, byteArray[cardIndex]));
+    }
+  }
+
+	public byte[] Bytes
+  {
+		get
+    {
+			return this.List.SelectMany(ce => ce.Bytes).ToArray();
     }
   }
 
@@ -25,9 +32,10 @@ public class MonsterCardEquipCompability
 		BitArray bitArray = new BitArray(this.bytes);
 		this.Index = cardIndex;
 		this.Name = Cards.GetNameByIndex((ushort)cardIndex);
-		int equipFlagCount = Cards.EquipCardEndIndex - Cards.EquipCardStartIndex;
+		int flagCount = Cards.EquipCardCount;
+		flagCount += 2; // Unused flag and Powered up on toon terrain
 
-		for (int i = 0; i < equipFlagCount; i++)
+		for (int i = 0; i < flagCount; i++)
     {
 			this.CardEquipCompabilityFlags.Add(new CardEquipCompabilityFlag(i, bitArray[i]));
     }
@@ -68,6 +76,15 @@ public class MonsterCardEquipCompability
   {
 		get
     {
+			BitArray bitArray = new BitArray(this.bytes);
+
+			for (int i = 0; i < this.CardEquipCompabilityFlags.Count; i++)
+      {
+				bitArray[i] = CardEquipCompabilityFlags[i].Enabled;
+      }
+
+			this.bytes = bitArray.ToByteArray();
+
 			return this.bytes;
     }
   }
@@ -79,7 +96,18 @@ public class CardEquipCompabilityFlag {
 	public CardEquipCompabilityFlag(int flagIndex, bool flagValue)
   {
 		this.Index = flagIndex;
-		this.Name = Cards.GetNameByIndex((ushort)(Cards.EquipCardStartIndex + flagIndex));
+
+		if (flagIndex < Cards.EquipCardCount)
+    {
+			this.Name = Cards.GetNameByIndex((ushort)(Cards.EquipCardStartIndex + flagIndex));
+		} else if (flagIndex == 49)
+    {
+			this.Name = "(Powered up in Toon Terrain)";
+		} else
+    {
+			this.Name = "???";
+    }
+
 		this.Enabled = flagValue;
 	}
 
