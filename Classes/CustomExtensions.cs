@@ -20,6 +20,13 @@ namespace CustomExtensions
 			return result[0];
 		}
 
+		public static byte[] ToByteArray(this BitArray bits)
+    {
+			byte[] ret = new byte[(bits.Length - 1) / 8 + 1];
+			bits.CopyTo(ret, 0);
+			return ret;
+		}
+
 		public static void setHalfByte(this BitArray bitArray, byte inputByte, int startIndex)
     {
 			BitArray halfByteBitArray = new BitArray(new byte[] { inputByte });
