@@ -189,7 +189,9 @@ public class EquipCompatibilityEditForm : Form
       this.Controls.Add(this.EquipCompatibilityEditFormApplyButton);
       this.Controls.Add(this.selectedCardList);
       this.Controls.Add(this.numberOfCardsSelectedLabel);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Name = "EquipCompatibilityEditForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.ResumeLayout(false);
       this.PerformLayout();
 

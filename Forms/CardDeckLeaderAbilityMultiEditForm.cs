@@ -55,6 +55,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       this.Controls.Add(this.selectedCardList);
       this.Controls.Add(this.numberOfCardsSelectedLabel);
       this.Name = "CardDeckLeaderAbilityMultiEditForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.ResumeLayout(false);
       this.PerformLayout();
 
