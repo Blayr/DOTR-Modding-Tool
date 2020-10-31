@@ -14,6 +14,7 @@ public class EquipCompatibilityEditForm : Form
   private bool[] enabledFlagsInCommon;
   private Button EquipCompatibilityEditFormApplyButton;
   private Button EquipCompatibilityEditFormCancelButton;
+  private RichTextBox richTextBox1;
   private Object[][] checkBoxFlagList;
 
   public EquipCompatibilityEditForm(List<MonsterCardEquipCompability> selectedMonsterCardEquipCompatibilities, ref MonsterCardEquipCompatibilities allMonsterCardEquipCompatibilities)
@@ -140,6 +141,7 @@ public class EquipCompatibilityEditForm : Form
       this.numberOfCardsSelectedLabel = new System.Windows.Forms.Label();
       this.EquipCompatibilityEditFormApplyButton = new System.Windows.Forms.Button();
       this.EquipCompatibilityEditFormCancelButton = new System.Windows.Forms.Button();
+      this.richTextBox1 = new System.Windows.Forms.RichTextBox();
       this.SuspendLayout();
       // 
       // selectedCardList
@@ -182,9 +184,22 @@ public class EquipCompatibilityEditForm : Form
       this.EquipCompatibilityEditFormCancelButton.UseVisualStyleBackColor = true;
       this.EquipCompatibilityEditFormCancelButton.Click += new System.EventHandler(this.EquipCompatibilityEditFormCancelButton_Click);
       // 
+      // richTextBox1
+      // 
+      this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
+      this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.richTextBox1.Location = new System.Drawing.Point(642, 379);
+      this.richTextBox1.Name = "richTextBox1";
+      this.richTextBox1.ReadOnly = true;
+      this.richTextBox1.Size = new System.Drawing.Size(209, 39);
+      this.richTextBox1.TabIndex = 8;
+      this.richTextBox1.Text = "*** Metalmorph and Insect imitation flags only affect what appears on the \"Power " +
+    "Up\" section of a card.";
+      // 
       // EquipCompatibilityEditForm
       // 
       this.ClientSize = new System.Drawing.Size(863, 471);
+      this.Controls.Add(this.richTextBox1);
       this.Controls.Add(this.EquipCompatibilityEditFormCancelButton);
       this.Controls.Add(this.EquipCompatibilityEditFormApplyButton);
       this.Controls.Add(this.selectedCardList);
