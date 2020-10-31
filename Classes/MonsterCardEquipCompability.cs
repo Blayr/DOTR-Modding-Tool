@@ -100,11 +100,6 @@ public class CardEquipCompabilityFlag {
 		if (flagIndex <= Cards.EquipCardCount)
     {
 			this.Name = Cards.GetNameByIndex((ushort)(Cards.EquipCardStartIndex + flagIndex));
-
-			if (this.Index == 47 || this.Index == 48)
-      {
-				this.Name += " (Non functional)***";
-      }
 		} else if (flagIndex == 49)
     {
 			this.Name = "(Powered up in Toon Terrain)";

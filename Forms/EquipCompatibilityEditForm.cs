@@ -82,7 +82,14 @@ public class EquipCompatibilityEditForm : Form
       flagCheckbox.Location = new System.Drawing.Point(x, y);
       flagCheckbox.Name = i.ToString();
       flagCheckbox.AutoSize = true;
-      flagCheckbox.Text = $"{flag.Name}";
+      flagCheckbox.Text = flag.Name;
+
+      // Insect Imitation and MetalMorph
+      if (flag.Index == 47 || flag.Index == 48)
+      {
+        flagCheckbox.Text += " (Non functional)***";
+      }
+
       flagCheckbox.UseVisualStyleBackColor = true;
       flagCheckbox.Checked = this.enabledFlagsInCommon[i];
       flagCheckbox.Click += this.onCheckboxClick;
