@@ -38,7 +38,7 @@ public class CardDeckLeaderAbility
 
 	public List<DeckLeaderAbility> EnabledAbilityList()
   {
-		return this.deckLeaderAbilityList.Where(e => e.IsEnabled ).ToList();
+		return this.deckLeaderAbilityList.Where(e => e.Enabled ).ToList();
   }
 
 	public string EnabledAbilitiesString

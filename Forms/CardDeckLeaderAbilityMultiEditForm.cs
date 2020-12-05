@@ -8,6 +8,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
   private CardDeckLeaderAbilities allCardDeckLeaderAbilities;
   private ListBox selectedCardList;
   private Label numberOfCardsSelectedLabel;
+  private Object[][] deckLeaderAbilities;
 
   public CardDeckLeaderAbilityMultiEditForm(List<CardDeckLeaderAbility> selectedCardDeckLeaderAbilityList, ref CardDeckLeaderAbilities allCardDeckLeaderAbilities)
 	{
@@ -15,7 +16,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     this.selectedCardDeckLeaderAbilityList = selectedCardDeckLeaderAbilityList;
 
     this.InitializeComponent();
-    // this.PopulateFields();
+    this.populateDeckLeaderAbilities();
     this.SetupFormFields();
   }
 
@@ -23,6 +24,86 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
   {
     this.numberOfCardsSelectedLabel.Text = this.selectedCardDeckLeaderAbilityList.Count.ToString() + " cards selected.";
     this.selectedCardDeckLeaderAbilityList.ForEach((cdla) => this.selectedCardList.Items.Add(cdla.Name));
+
+    // DeckLeaderAbility test = this.selectedCardDeckLeaderAbilityList[0].deckLeaderAbilityList[1];
+    // System.Diagnostics.Debug.Print(test.Name);
+    // DebugHelper.PrintByteArray(test.Bytes);
+
+    this.createAbilityInputs();
+  }
+
+  private void createAbilityInputs()
+  {
+    int startX = 300;
+    int startY= 40;
+    int rowSpacing = 40;
+
+    for (int i = 0; i < this.deckLeaderAbilities.Length; i++)
+    {
+      int xpos = startX;
+      int ypos = startY + (i * rowSpacing);
+      this.createAbilityLabelAndButton(i, (DeckLeaderAbility)this.deckLeaderAbilities[i][0], xpos, ypos);
+    }
+  }
+
+  private void createAbilityLabelAndButton(int abilityIndex, DeckLeaderAbility ability, int xstartpos, int ypos)
+  {
+    int labelLength = 200;
+    int labelButtonSpacing = 40;
+    int labelStart = xstartpos;
+    int labelEnd = labelStart + labelLength;
+    int buttonStart = labelEnd + labelButtonSpacing;
+
+    Label abilityLabel = new Label();
+    abilityLabel.Location = new System.Drawing.Point(labelStart, ypos);
+    abilityLabel.Name = $"abilityLabel{abilityIndex}";
+    abilityLabel.Size = new System.Drawing.Size(200, 23);
+    abilityLabel.Text = ability.ToString();
+    
+    Button abilityEditButton = new Button();
+    abilityEditButton.Text = "Edit";
+    abilityEditButton.Location = new System.Drawing.Point(buttonStart, ypos);
+
+    this.Controls.Add(abilityLabel);
+    this.Controls.Add(abilityEditButton);
+  }
+
+  private void populateDeckLeaderAbilities()
+  {
+    this.deckLeaderAbilities = new Object[17][];
+
+    for (int i = 0; i < deckLeaderAbilities.Length; i++)
+    {
+      DeckLeaderAbility firstCardDeckLeaderAbility = this.selectedCardDeckLeaderAbilityList[0].deckLeaderAbilityList[i];
+      bool allCardsHaveSameAbilityValue = true;
+
+      for (int scai = 0; scai < selectedCardDeckLeaderAbilityList.Count; scai++)
+      {
+        DeckLeaderAbility selectedCardAbility = this.selectedCardDeckLeaderAbilityList[scai].deckLeaderAbilityList[i];
+
+        if (selectedCardAbility.Bytes != firstCardDeckLeaderAbility.Bytes)
+        {
+          allCardsHaveSameAbilityValue = false;
+          break;
+        }
+      }
+
+      if (allCardsHaveSameAbilityValue)
+      {
+        this.deckLeaderAbilities[i] = new Object[] { firstCardDeckLeaderAbility, false };
+      } else
+      {
+        Object[] args = new Object[] { firstCardDeckLeaderAbility.Index, firstCardDeckLeaderAbility.Bytes };
+        DeckLeaderAbility ability = (DeckLeaderAbility)Activator.CreateInstance(firstCardDeckLeaderAbility.GetType(), args);
+        ability.Enabled = false;
+        this.deckLeaderAbilities[i] = new Object[] { ability, false };
+      }
+    }
+  }
+
+  private void renderAbilityControls(int index, DeckLeaderAbility deckLeaderAbility)
+  {
+
   }
 
   private void InitializeComponent()
@@ -51,7 +132,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // 
       // CardDeckLeaderAbilityMultiEditForm
       // 
-      this.ClientSize = new System.Drawing.Size(724, 444);
+      this.ClientSize = new System.Drawing.Size(992, 725);
       this.Controls.Add(this.selectedCardList);
       this.Controls.Add(this.numberOfCardsSelectedLabel);
       this.Name = "CardDeckLeaderAbilityMultiEditForm";

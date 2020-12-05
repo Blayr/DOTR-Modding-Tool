@@ -939,6 +939,7 @@
       // 
       this.cardDeckLeaderAbilitiesDatagridview.AllowUserToAddRows = false;
       this.cardDeckLeaderAbilitiesDatagridview.AllowUserToDeleteRows = false;
+      this.cardDeckLeaderAbilitiesDatagridview.AllowUserToResizeRows = false;
       this.cardDeckLeaderAbilitiesDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardDeckLeaderAbilitiesDatagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cardDeckLeaderAbilitiesIndexColumn,

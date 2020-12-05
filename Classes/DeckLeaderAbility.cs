@@ -5,12 +5,23 @@ using System.Linq;
 public class DeckLeaderAbility
 {
 	public static readonly uint DisabledBytesValue = 0xFFFF;
-	public byte[] Bytes { get; }
+	public byte[] Bytes { get; set; }
 	public int Index { get; }
 	public DeckLeaderAbilityType AbilityType { get; }
 	public string Name { get; }
 	public string Description { get; }
-	public bool IsEnabled { get; }
+	protected bool enabled;
+	public bool Enabled
+	{
+		get
+		{
+			return this.enabled;
+		}
+		set
+		{
+			this.enabled = value;
+		}
+	}
 
 	public DeckLeaderAbility(int index, byte[] bytes)
 	{
@@ -18,9 +29,16 @@ public class DeckLeaderAbility
 		this.Index = index;
 		this.AbilityType = (DeckLeaderAbilityType)this.Index;
 		this.Name = DeckLeaderAbilityInfo.NameAndDescriptions[index][0];
+
+		if (index == 3)
+    {
+			this.Name = BitConverter.ToString(bytes);
+
+		}
+
 		this.Description = DeckLeaderAbilityInfo.NameAndDescriptions[index][1];
 		ushort ushortBytesValue = BitConverter.ToUInt16(this.Bytes, 0);
-		this.IsEnabled = !(ushortBytesValue == DisabledBytesValue);
+		this.Enabled = !(ushortBytesValue == DisabledBytesValue);
 	}
 
 	public override string ToString()

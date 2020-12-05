@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Classes\DeckLeaderAbilityFactory.cs" />
     <Compile Include="Classes\DeckLeaderRank.cs" />
+    <Compile Include="Classes\FlagDeckLeaderAbility.cs" />
     <Compile Include="Forms\CardConstantsForm.cs">
       <SubType>Form</SubType>
     </Compile>

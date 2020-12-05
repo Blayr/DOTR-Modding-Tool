@@ -58,6 +58,15 @@ public class DataAccess
     }
   }
 
+  public void SaveCardDeckLeaderAbilities(byte[] byteData)
+  {
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(DataAccess.CardLeaderAbilitiesOffset, SeekOrigin.Begin);
+      fileStream.Write(byteData, 0, byteData.Length);
+    }
+  }
+
   public byte[][][] LoadCardDeckLeaderAbilities()
   {
     byte[][][] cardLeaderAbilitiesBytes = new byte[CardLeaderAbilityCount][][];

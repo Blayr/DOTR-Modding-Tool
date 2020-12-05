@@ -3,10 +3,22 @@
 public class RankRequirementDeckLeaderAbility : DeckLeaderAbility
 {
 	public DeckLeaderRank UnlockRank { get; }
+	public bool Enabledd
+  {
+		get
+    {
+			return this.enabled;
+    }
+		
+		set
+    {
+			this.enabled = value;
+    }
+  }
 
 	public RankRequirementDeckLeaderAbility(int index, byte[] bytes) : base(index, bytes)
 	{
-		if (!this.IsEnabled)
+		if (!this.Enabled)
     {
 			return;
     }
