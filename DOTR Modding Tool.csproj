@@ -53,7 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DeckLeaderAbilityFactory.cs" />
+    <Compile Include="Classes\DeckLeaderAbilities\FlagDeckLeaderAbility.cs" />
+    <Compile Include="Classes\DeckLeaderAbilities\DeckLeaderAbilityFactory.cs" />
     <Compile Include="Classes\DeckLeaderRank.cs" />
     <Compile Include="Classes\FlagDeckLeaderAbility.cs" />
     <Compile Include="Forms\CardConstantsForm.cs">
@@ -77,17 +78,23 @@
     <Compile Include="Forms\CardDeckLeaderAbilitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Classes\DeckLeaderAbility.cs" />
-    <Compile Include="Classes\DeckLeaderAbilityType.cs" />
+    <Compile Include="Classes\DeckLeaderAbilities\DeckLeaderAbility.cs" />
+    <Compile Include="Classes\DeckLeaderAbilities\DeckLeaderAbilityType.cs" />
     <Compile Include="Forms\CardDeckLeaderAbilityMultiEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Classes\DeckLeaderAbilityConstants.cs" />
+    <Compile Include="Classes\DeckLeaderAbilities\DeckLeaderAbilityConstants.cs" />
     <Compile Include="Forms\DeckLeaderAbilityForms\EditDeckLeaderAbilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DeckLeaderAbilityForms\EditDeckLeaderAbilityForm.Designer.cs">
       <DependentUpon>EditDeckLeaderAbilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbility.Designer.cs">
+      <DependentUpon>EditFlagDeckLeaderAbility.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DeckLeaderAbilityForms\EditRankRequirementDeckLeaderAbilityForm.cs">
       <SubType>Form</SubType>
@@ -125,7 +132,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\DeckLeaderRankThresholds.cs" />
     <Compile Include="Classes\TreasureCards.cs" />
-    <Compile Include="Classes\RankRequirementDeckLeaderAbility.cs" />
+    <Compile Include="Classes\DeckLeaderAbilities\RankRequirementDeckLeaderAbility.cs" />
     <EmbeddedResource Include="Forms\CardConstantsMultiEditForm.resx">
       <DependentUpon>CardConstantsMultiEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditDeckLeaderAbilityForm.resx">
       <DependentUpon>EditDeckLeaderAbilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbility.resx">
+      <DependentUpon>EditFlagDeckLeaderAbility.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditRankRequirementDeckLeaderAbilityForm.resx">
       <DependentUpon>EditRankRequirementDeckLeaderAbilityForm.cs</DependentUpon>

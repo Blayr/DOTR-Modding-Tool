@@ -3,7 +3,7 @@
 public class RankRequirementDeckLeaderAbility : DeckLeaderAbility
 {
 	public DeckLeaderRank UnlockRank { get; }
-	public bool Enabledd
+	public override bool Enabled
   {
 		get
     {

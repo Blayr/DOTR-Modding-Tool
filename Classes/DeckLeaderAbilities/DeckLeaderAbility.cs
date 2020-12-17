@@ -11,7 +11,7 @@ public class DeckLeaderAbility
 	public string Name { get; }
 	public string Description { get; }
 	protected bool enabled;
-	public bool Enabled
+	public virtual bool Enabled
 	{
 		get
 		{
