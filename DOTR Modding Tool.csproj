@@ -90,11 +90,11 @@
     <Compile Include="Forms\DeckLeaderAbilityForms\EditDeckLeaderAbilityForm.Designer.cs">
       <DependentUpon>EditDeckLeaderAbilityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbility.cs">
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbility.Designer.cs">
-      <DependentUpon>EditFlagDeckLeaderAbility.cs</DependentUpon>
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbilityForm.Designer.cs">
+      <DependentUpon>EditFlagDeckLeaderAbilityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DeckLeaderAbilityForms\EditRankRequirementDeckLeaderAbilityForm.cs">
       <SubType>Form</SubType>
@@ -142,8 +142,8 @@
     <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditDeckLeaderAbilityForm.resx">
       <DependentUpon>EditDeckLeaderAbilityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbility.resx">
-      <DependentUpon>EditFlagDeckLeaderAbility.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditFlagDeckLeaderAbilityForm.resx">
+      <DependentUpon>EditFlagDeckLeaderAbilityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditRankRequirementDeckLeaderAbilityForm.resx">
       <DependentUpon>EditRankRequirementDeckLeaderAbilityForm.cs</DependentUpon>

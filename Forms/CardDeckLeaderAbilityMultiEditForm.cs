@@ -78,10 +78,15 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     DeckLeaderAbility ability = (DeckLeaderAbility)this.deckLeaderAbilities[abilityIndex][0];
     EditDeckLeaderAbilityForm editForm;
 
-    if (ability.GetType() == typeof(RankRequirementDeckLeaderAbility))
+    if (ability.GetType() == typeof(FlagDeckLeaderAbility))
+    {
+      editForm = new EditFlagDeckLeaderAbilityForm(ability);
+    }
+    else if (ability.GetType() == typeof(RankRequirementDeckLeaderAbility))
     {
       editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
-    } else
+    }
+    else
     {
       editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
     }
