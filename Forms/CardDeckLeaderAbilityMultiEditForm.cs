@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -61,11 +62,31 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     abilityLabel.Text = ability.ToString();
     
     Button abilityEditButton = new Button();
+    abilityEditButton.Name = abilityIndex.ToString();
     abilityEditButton.Text = "Edit";
     abilityEditButton.Location = new System.Drawing.Point(buttonStart, ypos);
+    abilityEditButton.Click += this.handleEditButtonClick;
 
     this.Controls.Add(abilityLabel);
     this.Controls.Add(abilityEditButton);
+  }
+
+  private void handleEditButtonClick(object sender, EventArgs e)
+  {
+    Button abilityEditButton = (Button)sender;
+    int abilityIndex = Int32.Parse(abilityEditButton.Name);
+    DeckLeaderAbility ability = (DeckLeaderAbility)this.deckLeaderAbilities[abilityIndex][0];
+    EditDeckLeaderAbilityForm editForm;
+
+    if (ability.GetType() == typeof(RankRequirementDeckLeaderAbility))
+    {
+      editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
+    } else
+    {
+      editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
+    }
+
+    DialogResult dialogResult = editForm.ShowDialog();
   }
 
   private void populateDeckLeaderAbilities()

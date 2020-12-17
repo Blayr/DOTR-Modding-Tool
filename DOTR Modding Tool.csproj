@@ -83,6 +83,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Classes\DeckLeaderAbilityConstants.cs" />
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditDeckLeaderAbilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditDeckLeaderAbilityForm.Designer.cs">
+      <DependentUpon>EditDeckLeaderAbilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditRankRequirementDeckLeaderAbilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditRankRequirementDeckLeaderAbilityForm.Designer.cs">
+      <DependentUpon>EditRankRequirementDeckLeaderAbilityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DeckLeaderThresholdsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CardDeckLeaderAbilityMultiEditForm.resx">
       <DependentUpon>CardDeckLeaderAbilityMultiEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditDeckLeaderAbilityForm.resx">
+      <DependentUpon>EditDeckLeaderAbilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditRankRequirementDeckLeaderAbilityForm.resx">
+      <DependentUpon>EditRankRequirementDeckLeaderAbilityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EquipCompatibilityEditForm.resx">
       <DependentUpon>EquipCompatibilityEditForm.cs</DependentUpon>
