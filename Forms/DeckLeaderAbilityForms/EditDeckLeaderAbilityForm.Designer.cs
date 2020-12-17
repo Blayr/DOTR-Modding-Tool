@@ -31,6 +31,7 @@
       this.cancelButton = new System.Windows.Forms.Button();
       this.applyButton = new System.Windows.Forms.Button();
       this.abilityNameLabel = new System.Windows.Forms.Label();
+      this.abilityDescriptionTextbox = new System.Windows.Forms.RichTextBox();
       this.SuspendLayout();
       // 
       // cancelButton
@@ -65,11 +66,22 @@
       this.abilityNameLabel.TabIndex = 10;
       this.abilityNameLabel.Text = "Ability:";
       // 
+      // abilityDescriptionTextbox
+      // 
+      this.abilityDescriptionTextbox.BackColor = System.Drawing.SystemColors.Control;
+      this.abilityDescriptionTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.abilityDescriptionTextbox.Location = new System.Drawing.Point(12, 32);
+      this.abilityDescriptionTextbox.Name = "abilityDescriptionTextbox";
+      this.abilityDescriptionTextbox.Size = new System.Drawing.Size(250, 89);
+      this.abilityDescriptionTextbox.TabIndex = 13;
+      this.abilityDescriptionTextbox.Text = "";
+      // 
       // EditDeckLeaderAbilityForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.abilityDescriptionTextbox);
       this.Controls.Add(this.abilityNameLabel);
       this.Controls.Add(this.applyButton);
       this.Controls.Add(this.cancelButton);
@@ -85,5 +97,6 @@
     protected System.Windows.Forms.Button cancelButton;
     protected System.Windows.Forms.Button applyButton;
     protected System.Windows.Forms.Label abilityNameLabel;
+    protected System.Windows.Forms.RichTextBox abilityDescriptionTextbox;
   }
 }

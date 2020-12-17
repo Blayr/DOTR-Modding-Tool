@@ -23,12 +23,19 @@ namespace DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms
     {
       this.DeckLeaderAbility = deckLeaderAbility;
       InitializeComponent();
-      this.abilityNameLabel.Text = this.DeckLeaderAbility.Name;
+      this.loadForm();
     }
 
-    protected void applyChangesToAbility()
+    protected virtual void applyChangesToAbility()
     {
       // This should be overriden by child class.
+    }
+
+    protected virtual void loadForm()
+    {
+      // this should be overridden by a child class.
+      this.abilityNameLabel.Text = this.DeckLeaderAbility.Name;
+      this.abilityDescriptionTextbox.Text = this.DeckLeaderAbility.Description;
     }
 
     protected void cancelButton_Click(object sender, EventArgs e)
