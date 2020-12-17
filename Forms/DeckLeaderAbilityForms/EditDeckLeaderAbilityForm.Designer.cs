@@ -32,6 +32,8 @@
       this.applyButton = new System.Windows.Forms.Button();
       this.abilityNameLabel = new System.Windows.Forms.Label();
       this.abilityDescriptionTextbox = new System.Windows.Forms.RichTextBox();
+      this.bytesLabel = new System.Windows.Forms.Label();
+      this.bytesTextbox = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // cancelButton
@@ -74,13 +76,33 @@
       this.abilityDescriptionTextbox.Name = "abilityDescriptionTextbox";
       this.abilityDescriptionTextbox.Size = new System.Drawing.Size(250, 89);
       this.abilityDescriptionTextbox.TabIndex = 13;
-      this.abilityDescriptionTextbox.Text = "";
+      this.abilityDescriptionTextbox.Text = "Description";
+      // 
+      // bytesLabel
+      // 
+      this.bytesLabel.AutoSize = true;
+      this.bytesLabel.Location = new System.Drawing.Point(13, 124);
+      this.bytesLabel.Name = "bytesLabel";
+      this.bytesLabel.Size = new System.Drawing.Size(39, 13);
+      this.bytesLabel.TabIndex = 15;
+      this.bytesLabel.Text = "Bytes: ";
+      // 
+      // bytesTextbox
+      // 
+      this.bytesTextbox.BackColor = System.Drawing.SystemColors.Control;
+      this.bytesTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.bytesTextbox.Location = new System.Drawing.Point(58, 124);
+      this.bytesTextbox.Name = "bytesTextbox";
+      this.bytesTextbox.Size = new System.Drawing.Size(101, 13);
+      this.bytesTextbox.TabIndex = 16;
       // 
       // EditDeckLeaderAbilityForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.bytesTextbox);
+      this.Controls.Add(this.bytesLabel);
       this.Controls.Add(this.abilityDescriptionTextbox);
       this.Controls.Add(this.abilityNameLabel);
       this.Controls.Add(this.applyButton);
@@ -98,5 +120,7 @@
     protected System.Windows.Forms.Button applyButton;
     protected System.Windows.Forms.Label abilityNameLabel;
     protected System.Windows.Forms.RichTextBox abilityDescriptionTextbox;
+    protected System.Windows.Forms.Label bytesLabel;
+    protected System.Windows.Forms.TextBox bytesTextbox;
   }
 }

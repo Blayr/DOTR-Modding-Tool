@@ -36,6 +36,7 @@ namespace DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms
       // this should be overridden by a child class.
       this.abilityNameLabel.Text = this.DeckLeaderAbility.Name;
       this.abilityDescriptionTextbox.Text = this.DeckLeaderAbility.Description;
+      this.bytesTextbox.Text = BitConverter.ToString(this.DeckLeaderAbility.Bytes);
     }
 
     protected void cancelButton_Click(object sender, EventArgs e)
