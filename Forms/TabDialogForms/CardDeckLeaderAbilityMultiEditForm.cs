@@ -1,7 +1,9 @@
 ﻿using DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 
 public class CardDeckLeaderAbilityMultiEditForm : Form
 {
@@ -60,6 +62,11 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     abilityLabel.Name = $"abilityLabel{abilityIndex}";
     abilityLabel.Size = new System.Drawing.Size(200, 23);
     abilityLabel.Text = ability.ToString();
+
+    if (ability.Enabled)
+    {
+      abilityLabel.BackColor = Color.LimeGreen;
+    }
     
     Button abilityEditButton = new Button();
     abilityEditButton.Name = abilityIndex.ToString();
@@ -107,7 +114,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       {
         DeckLeaderAbility selectedCardAbility = this.selectedCardDeckLeaderAbilityList[scai].deckLeaderAbilityList[i];
 
-        if (selectedCardAbility.Bytes != firstCardDeckLeaderAbility.Bytes)
+        if (!selectedCardAbility.Bytes.SequenceEqual(firstCardDeckLeaderAbility.Bytes))
         {
           allCardsHaveSameAbilityValue = false;
           break;
@@ -165,6 +172,5 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.ResumeLayout(false);
       this.PerformLayout();
-
   }
 }
