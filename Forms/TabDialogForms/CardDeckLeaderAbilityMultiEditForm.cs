@@ -40,12 +40,20 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     int startX = 300;
     int startY= 40;
     int rowSpacing = 40;
+    int numberOfRowsGenerated = 0;
 
     for (int i = 0; i < this.deckLeaderAbilities.Length; i++)
     {
+      // unknown ability/junk data, don't show
+      if (i == 3 || i == 16)
+      {
+        continue;
+      }
+
       int xpos = startX;
-      int ypos = startY + (i * rowSpacing);
+      int ypos = startY + (numberOfRowsGenerated * rowSpacing);
       this.createAbilityLabelAndButton(i, (DeckLeaderAbility)this.deckLeaderAbilities[i][0], xpos, ypos);
+      numberOfRowsGenerated++;
     }
   }
 
