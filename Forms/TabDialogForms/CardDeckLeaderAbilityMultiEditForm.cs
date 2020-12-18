@@ -73,7 +73,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
 
     if (ability.Enabled)
     {
-      abilityLabel.BackColor = Color.LimeGreen;
+      abilityLabel.BackColor = Color.LightGreen;
     }
     
     Button abilityEditButton = new Button();
