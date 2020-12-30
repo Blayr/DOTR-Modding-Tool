@@ -14,7 +14,7 @@
       this.DisplayThresholdBytes(this.newRankThresholdsTextbox, this.newDeckLeaderRankThresholds.Bytes);
     }
 
-    private void LoadLeaderTresholdData()
+    private void LoadLeaderThresholdData()
     {
       byte[] byteData = this.dataAccess.LoadLeaderTresholdData();
       this.originalDeckLeaderRankThresholds = new DeckLeaderRankThresholds(byteData);
@@ -27,7 +27,7 @@
     private void Button1_Click(object sender, EventArgs e)
     {
       this.dataAccess.SetDeckLeaderTresholds(this.newDeckLeaderRankThresholds.Bytes);
-      this.LoadLeaderTresholdData();
+      this.LoadLeaderThresholdData();
     }
 
     private void SetupRankThresholdDataGridView()

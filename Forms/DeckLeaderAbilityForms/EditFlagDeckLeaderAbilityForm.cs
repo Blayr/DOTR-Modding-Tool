@@ -29,10 +29,7 @@ namespace DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms
 
     protected override void applyChangesToAbility()
     {
-      if (this.flagCheckbox.Checked)
-      {
-
-      }
+      this.DeckLeaderAbility.Enabled = this.flagCheckbox.Checked;
     }
   }
 }

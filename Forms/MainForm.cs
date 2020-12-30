@@ -49,7 +49,7 @@
     private void LoadDataFromIso()
     {
       this.LoadEnemyAI();
-      this.LoadLeaderTresholdData();
+      this.LoadLeaderThresholdData();
       this.LoadCardConstantsData();
       this.LoadFusionData();
       this.LoadTreasureCardData();

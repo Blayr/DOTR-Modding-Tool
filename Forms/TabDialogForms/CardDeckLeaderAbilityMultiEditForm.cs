@@ -11,6 +11,8 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
   private CardDeckLeaderAbilities allCardDeckLeaderAbilities;
   private ListBox selectedCardList;
   private Label numberOfCardsSelectedLabel;
+  private Button applyButton;
+  private Button cancelButton;
   private Object[][] deckLeaderAbilities;
 
   public CardDeckLeaderAbilityMultiEditForm(List<CardDeckLeaderAbility> selectedCardDeckLeaderAbilityList, ref CardDeckLeaderAbilities allCardDeckLeaderAbilities)
@@ -27,11 +29,6 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
   {
     this.numberOfCardsSelectedLabel.Text = this.selectedCardDeckLeaderAbilityList.Count.ToString() + " cards selected.";
     this.selectedCardDeckLeaderAbilityList.ForEach((cdla) => this.selectedCardList.Items.Add(cdla.Name));
-
-    // DeckLeaderAbility test = this.selectedCardDeckLeaderAbilityList[0].deckLeaderAbilityList[1];
-    // System.Diagnostics.Debug.Print(test.Name);
-    // DebugHelper.PrintByteArray(test.Bytes);
-
     this.createAbilityInputs();
   }
 
@@ -52,7 +49,8 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
 
       int xpos = startX;
       int ypos = startY + (numberOfRowsGenerated * rowSpacing);
-      this.createAbilityLabelAndButton(i, (DeckLeaderAbility)this.deckLeaderAbilities[i][0], xpos, ypos);
+      DeckLeaderAbility deckLeaderAbility = (DeckLeaderAbility)this.deckLeaderAbilities[i][0];
+      this.createAbilityLabelAndButton(i, deckLeaderAbility, xpos, ypos);
       numberOfRowsGenerated++;
     }
   }
@@ -107,6 +105,13 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     }
 
     DialogResult dialogResult = editForm.ShowDialog();
+
+    if (dialogResult.Equals(DialogResult.OK))
+    {
+      this.deckLeaderAbilities[abilityIndex][0] = editForm.DeckLeaderAbility;
+      this.deckLeaderAbilities[abilityIndex][1] = true;
+      this.Controls.Find($"abilityLabel{abilityIndex}", false)[0].BackColor = Color.Yellow;
+    }
   }
 
   private void populateDeckLeaderAbilities()
@@ -115,7 +120,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
 
     for (int i = 0; i < deckLeaderAbilities.Length; i++)
     {
-      DeckLeaderAbility firstCardDeckLeaderAbility = this.selectedCardDeckLeaderAbilityList[0].deckLeaderAbilityList[i];
+      DeckLeaderAbility firstCardDeckLeaderAbility = this.selectedCardDeckLeaderAbilityList[0].deckLeaderAbilityList[i].Clone();
       bool allCardsHaveSameAbilityValue = true;
 
       for (int scai = 0; scai < selectedCardDeckLeaderAbilityList.Count; scai++)
@@ -134,23 +139,40 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
         this.deckLeaderAbilities[i] = new Object[] { firstCardDeckLeaderAbility, false };
       } else
       {
-        Object[] args = new Object[] { firstCardDeckLeaderAbility.Index, firstCardDeckLeaderAbility.Bytes };
-        DeckLeaderAbility ability = (DeckLeaderAbility)Activator.CreateInstance(firstCardDeckLeaderAbility.GetType(), args);
-        ability.Enabled = false;
-        this.deckLeaderAbilities[i] = new Object[] { ability, false };
+        firstCardDeckLeaderAbility.Enabled = false;
+        this.deckLeaderAbilities[i] = new Object[] { firstCardDeckLeaderAbility, false };
       }
     }
   }
 
-  private void renderAbilityControls(int index, DeckLeaderAbility deckLeaderAbility)
+  private void applyAbilityChangesToCards()
   {
+    for (int abilityIndex = 0; abilityIndex < this.deckLeaderAbilities.Length; abilityIndex++)
+    {
+      bool deckLeaderAbilityHasChanged = (bool)this.deckLeaderAbilities[abilityIndex][1];
 
+      if (!deckLeaderAbilityHasChanged)
+      {
+        continue;
+      }
+
+      DeckLeaderAbility deckLeaderAbility = (DeckLeaderAbility)this.deckLeaderAbilities[abilityIndex][0];
+      System.Diagnostics.Debug.Print($"{deckLeaderAbility.Name} has changed");
+
+      for (int cardIndex = 0; cardIndex < this.selectedCardDeckLeaderAbilityList.Count; cardIndex++)
+      {
+        CardDeckLeaderAbility cardDeckLeaderAbility = this.selectedCardDeckLeaderAbilityList[cardIndex];
+        this.allCardDeckLeaderAbilities.List[cardDeckLeaderAbility.Index].deckLeaderAbilityList[abilityIndex] = deckLeaderAbility;
+      }
+    }
   }
 
   private void InitializeComponent()
   {
       this.selectedCardList = new System.Windows.Forms.ListBox();
       this.numberOfCardsSelectedLabel = new System.Windows.Forms.Label();
+      this.applyButton = new System.Windows.Forms.Button();
+      this.cancelButton = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // selectedCardList
@@ -171,14 +193,49 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       this.numberOfCardsSelectedLabel.TabIndex = 3;
       this.numberOfCardsSelectedLabel.Text = "(Card count goes here)";
       // 
+      // applyButton
+      // 
+      this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      this.applyButton.Location = new System.Drawing.Point(905, 690);
+      this.applyButton.Name = "applyButton";
+      this.applyButton.Size = new System.Drawing.Size(75, 23);
+      this.applyButton.TabIndex = 5;
+      this.applyButton.Text = "Apply";
+      this.applyButton.UseVisualStyleBackColor = true;
+      this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
+      // 
+      // cancelButton
+      // 
+      this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      this.cancelButton.Location = new System.Drawing.Point(824, 690);
+      this.cancelButton.Name = "cancelButton";
+      this.cancelButton.Size = new System.Drawing.Size(75, 23);
+      this.cancelButton.TabIndex = 6;
+      this.cancelButton.Text = "Cancel";
+      this.cancelButton.UseVisualStyleBackColor = true;
+      this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+      // 
       // CardDeckLeaderAbilityMultiEditForm
       // 
       this.ClientSize = new System.Drawing.Size(992, 725);
+      this.Controls.Add(this.cancelButton);
+      this.Controls.Add(this.applyButton);
       this.Controls.Add(this.selectedCardList);
       this.Controls.Add(this.numberOfCardsSelectedLabel);
       this.Name = "CardDeckLeaderAbilityMultiEditForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.ResumeLayout(false);
       this.PerformLayout();
+  }
+
+  private void cancelButton_Click(object sender, EventArgs e)
+  {
+    this.DialogResult = DialogResult.Cancel;
+  }
+
+  private void applyButton_Click(object sender, EventArgs e)
+  {
+    this.applyAbilityChangesToCards();
+    this.DialogResult = DialogResult.OK;
   }
 }

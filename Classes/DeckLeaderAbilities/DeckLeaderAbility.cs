@@ -51,6 +51,13 @@ public class DeckLeaderAbility
 		return this.ToString();
 	}
 
+	public DeckLeaderAbility Clone()
+  {
+		DeckLeaderAbilityFactory deckLeaderAbilityFactory = new DeckLeaderAbilityFactory();
+		DeckLeaderAbility clonedDeckLeaderAbility = deckLeaderAbilityFactory.GetDeckLeaderAbility(this.Index, this.Bytes);
+		return clonedDeckLeaderAbility;
+  }
+
 	public static List<DeckLeaderAbilityType> YesNoAbilityList;
 	public static List<DeckLeaderAbilityType> RankRequirementAbilityList;
 	public static List<DeckLeaderAbilityType> RankRequirementUpperByteAbilityList;

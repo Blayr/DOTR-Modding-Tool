@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DOTR_MODDING_TOOL.Classes.DeckLeaderAbilities
-{
-  class FlagDeckLeaderAbility : DeckLeaderAbility
+  public class FlagDeckLeaderAbility : DeckLeaderAbility
   {
+    public static readonly uint EnabledBytesValue = 0xFF01;
+
     public FlagDeckLeaderAbility(int index, byte[] bytes) : base(index, bytes)
     {
 
@@ -24,16 +24,13 @@ namespace DOTR_MODDING_TOOL.Classes.DeckLeaderAbilities
       {
         if (value == true)
         {
-          this.Bytes = BitConverter.GetBytes(DisabledBytesValue - 1);
+          this.Bytes = BitConverter.GetBytes(EnabledBytesValue);
         } else
         {
-          // Anything other than the DisabledBytesValue will mark it as true
           this.Bytes = BitConverter.GetBytes(DisabledBytesValue);
         }
 
         this.enabled = value;
       }
     }
-
   }
-}
