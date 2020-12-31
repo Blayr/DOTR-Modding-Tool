@@ -1,6 +1,7 @@
 ﻿namespace DOTR_Modding_Tool
 {
   using Equin.ApplicationFramework;
+  using System;
   using System.Collections.Generic;
   using System.Windows.Forms;
 
@@ -8,14 +9,20 @@
   {
     private CardDeckLeaderAbilities cardDeckLeaderAbilities;
     private BindingListView<CardDeckLeaderAbility> cardDeckLeaderAbilitiesBinding;
+    private bool deckLeaderAbilityDataGridViewIsSetup = false;
+
     private void LoadCardDeckLeaderAbilitesData()
     {
       byte[][][] byteArray = this.dataAccess.LoadCardDeckLeaderAbilities();
-      // DebugHelper.Print2DByteArray(byteArray);
       this.cardDeckLeaderAbilities = new CardDeckLeaderAbilities(byteArray);
       this.cardDeckLeaderAbilitiesBinding = new BindingListView<CardDeckLeaderAbility>(this.cardDeckLeaderAbilities.List);
       this.cardDeckLeaderAbilitiesDatagridview.DataSource = this.cardDeckLeaderAbilitiesBinding;
-      this.setupDeckLeaderAbilitiesDataGridView();
+
+      if (!deckLeaderAbilityDataGridViewIsSetup)
+      {
+        this.setupDeckLeaderAbilitiesDataGridView();
+        this.deckLeaderAbilityDataGridViewIsSetup = true;
+      }
     }
 
     private void setupDeckLeaderAbilitiesDataGridView()
@@ -46,6 +53,14 @@
       CardDeckLeaderAbilityMultiEditForm form = new CardDeckLeaderAbilityMultiEditForm(selectedCardDeckLeaderAbilityList, ref this.cardDeckLeaderAbilities);
       form.ShowDialog();
       this.cardDeckLeaderAbilitiesDatagridview.Refresh();
+    }
+
+    private void deckLeaderAbilitiesSaveButton_Click(object sender, EventArgs e)
+    {
+      byte[] bytes = this.cardDeckLeaderAbilities.Bytes;
+      System.Diagnostics.Debug.Print(bytes.Length.ToString());
+      this.dataAccess.SaveCardDeckLeaderAbilities(bytes); ;
+      this.LoadCardDeckLeaderAbilitesData();
     }
   }
 }

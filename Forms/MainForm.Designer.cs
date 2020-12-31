@@ -105,6 +105,7 @@
       this.tabControl = new System.Windows.Forms.TabControl();
       this.deckLeaderAbilitiesTab = new System.Windows.Forms.TabPage();
       this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.deckLeaderAbilitiesSaveButton = new System.Windows.Forms.Button();
       this.cardDeckLeaderAbilitiesDatagridview = new System.Windows.Forms.DataGridView();
       this.cardDeckLeaderAbilitiesIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardDeckLeaderAbilitiesNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,6 +154,7 @@
       this.tabControl.SuspendLayout();
       this.deckLeaderAbilitiesTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesSplitContainer)).BeginInit();
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.SuspendLayout();
       this.cardDeckLeaderAbilitiesSplitContainer.Panel2.SuspendLayout();
       this.cardDeckLeaderAbilitiesSplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesDatagridview)).BeginInit();
@@ -928,12 +930,26 @@
       this.cardDeckLeaderAbilitiesSplitContainer.Name = "cardDeckLeaderAbilitiesSplitContainer";
       this.cardDeckLeaderAbilitiesSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
       // 
+      // cardDeckLeaderAbilitiesSplitContainer.Panel1
+      // 
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesSaveButton);
+      // 
       // cardDeckLeaderAbilitiesSplitContainer.Panel2
       // 
       this.cardDeckLeaderAbilitiesSplitContainer.Panel2.Controls.Add(this.cardDeckLeaderAbilitiesDatagridview);
       this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(924, 490);
       this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 27;
       this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
+      // 
+      // deckLeaderAbilitiesSaveButton
+      // 
+      this.deckLeaderAbilitiesSaveButton.Location = new System.Drawing.Point(844, 3);
+      this.deckLeaderAbilitiesSaveButton.Name = "deckLeaderAbilitiesSaveButton";
+      this.deckLeaderAbilitiesSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.deckLeaderAbilitiesSaveButton.TabIndex = 0;
+      this.deckLeaderAbilitiesSaveButton.Text = "Save";
+      this.deckLeaderAbilitiesSaveButton.UseVisualStyleBackColor = true;
+      this.deckLeaderAbilitiesSaveButton.Click += new System.EventHandler(this.deckLeaderAbilitiesSaveButton_Click);
       // 
       // cardDeckLeaderAbilitiesDatagridview
       // 
@@ -1160,6 +1176,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).EndInit();
       this.tabControl.ResumeLayout(false);
       this.deckLeaderAbilitiesTab.ResumeLayout(false);
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.ResumeLayout(false);
       this.cardDeckLeaderAbilitiesSplitContainer.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesSplitContainer)).EndInit();
       this.cardDeckLeaderAbilitiesSplitContainer.ResumeLayout(false);
@@ -1260,5 +1277,6 @@
     private ToolStripMenuItem editMonsterEquipMenuItem;
     private Button equipCompatibilitySaveButton;
     private Label cardEquipNoteLabel1;
+    private Button deckLeaderAbilitiesSaveButton;
   }
 }
