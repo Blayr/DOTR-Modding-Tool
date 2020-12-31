@@ -5,6 +5,7 @@ using System.Linq;
 public class DeckLeaderAbility
 {
 	public static readonly ushort DisabledBytesValue = 0xFFFF;
+	public readonly bool IsUnusedAbility;
 	public byte[] Bytes { get; set; }
 	public int Index { get; }
 	public DeckLeaderAbilityType AbilityType { get; }
@@ -29,13 +30,8 @@ public class DeckLeaderAbility
 		this.Index = index;
 		this.AbilityType = (DeckLeaderAbilityType)this.Index;
 		this.Name = DeckLeaderAbilityInfo.NameAndDescriptions[index][0];
-
-		if (index == 3)
-    {
-			this.Name = BitConverter.ToString(bytes);
-		}
-
 		this.Description = DeckLeaderAbilityInfo.NameAndDescriptions[index][1];
+		this.IsUnusedAbility = !Enum.IsDefined(typeof(DeckLeaderAbilityType), index);
 		ushort ushortBytesValue = BitConverter.ToUInt16(this.Bytes, 0);
 		this.Enabled = !(ushortBytesValue == DisabledBytesValue);
 	}

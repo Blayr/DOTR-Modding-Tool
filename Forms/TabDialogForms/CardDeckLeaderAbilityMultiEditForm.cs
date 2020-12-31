@@ -41,15 +41,15 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
 
     for (int i = 0; i < this.deckLeaderAbilities.Length; i++)
     {
-      // unknown ability/junk data, don't show
-      if (i == 3 || i == 16)
+      DeckLeaderAbility deckLeaderAbility = (DeckLeaderAbility)this.deckLeaderAbilities[i][0];
+
+      if (deckLeaderAbility.IsUnusedAbility)
       {
         continue;
       }
 
       int xpos = startX;
       int ypos = startY + (numberOfRowsGenerated * rowSpacing);
-      DeckLeaderAbility deckLeaderAbility = (DeckLeaderAbility)this.deckLeaderAbilities[i][0];
       this.createAbilityLabelAndButton(i, deckLeaderAbility, xpos, ypos);
       numberOfRowsGenerated++;
     }
