@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
   public class FlagDeckLeaderAbility : DeckLeaderAbility
   {
-    public static readonly uint EnabledBytesValue = 0xFF01;
+    public static readonly ushort EnabledBytesValue = 0xFF01;
 
     public FlagDeckLeaderAbility(int index, byte[] bytes) : base(index, bytes)
     {

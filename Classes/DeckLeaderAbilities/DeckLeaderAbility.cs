@@ -4,7 +4,7 @@ using System.Linq;
 
 public class DeckLeaderAbility
 {
-	public static readonly uint DisabledBytesValue = 0xFFFF;
+	public static readonly ushort DisabledBytesValue = 0xFFFF;
 	public byte[] Bytes { get; set; }
 	public int Index { get; }
 	public DeckLeaderAbilityType AbilityType { get; }
@@ -33,7 +33,6 @@ public class DeckLeaderAbility
 		if (index == 3)
     {
 			this.Name = BitConverter.ToString(bytes);
-
 		}
 
 		this.Description = DeckLeaderAbilityInfo.NameAndDescriptions[index][1];
