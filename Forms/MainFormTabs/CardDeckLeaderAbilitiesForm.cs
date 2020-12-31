@@ -27,6 +27,7 @@
 
     private void setupDeckLeaderAbilitiesDataGridView()
     {
+      this.cardDeckLeaderAbilitiesDatagridview.AutoGenerateColumns = false;
       this.cardDeckLeaderAbilitiesDatagridview.CellMouseClick += handleCardDeckLeaderAbilitiesDataGridViewClick;
       this.cardDeckLeaderAbilitiesContextStrip.Items.Add("Edit selected cards");
       this.cardDeckLeaderAbilitiesContextStrip.ItemClicked += ShowMultipleCardDeckLeaderAbilityEditDialog;

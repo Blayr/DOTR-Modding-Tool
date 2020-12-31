@@ -107,9 +107,6 @@
       this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
       this.deckLeaderAbilitiesSaveButton = new System.Windows.Forms.Button();
       this.cardDeckLeaderAbilitiesDatagridview = new System.Windows.Forms.DataGridView();
-      this.cardDeckLeaderAbilitiesIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.cardDeckLeaderAbilitiesNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.equipCompabilityTab = new System.Windows.Forms.TabPage();
       this.equipCompabilitySplitContainer = new System.Windows.Forms.SplitContainer();
       this.cardEquipNoteLabel1 = new System.Windows.Forms.Label();
@@ -123,6 +120,10 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.cardDeckLeaderAbilitiesIndexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardDeckLeaderAbilitiesNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.Bytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -960,7 +961,8 @@
       this.cardDeckLeaderAbilitiesDatagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cardDeckLeaderAbilitiesIndexColumn,
             this.cardDeckLeaderAbilitiesNameColumn,
-            this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn});
+            this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn,
+            this.Bytes});
       this.cardDeckLeaderAbilitiesDatagridview.Dock = System.Windows.Forms.DockStyle.Fill;
       this.cardDeckLeaderAbilitiesDatagridview.Location = new System.Drawing.Point(0, 0);
       this.cardDeckLeaderAbilitiesDatagridview.Name = "cardDeckLeaderAbilitiesDatagridview";
@@ -968,30 +970,6 @@
       this.cardDeckLeaderAbilitiesDatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(924, 459);
       this.cardDeckLeaderAbilitiesDatagridview.TabIndex = 0;
-      // 
-      // cardDeckLeaderAbilitiesIndexColumn
-      // 
-      this.cardDeckLeaderAbilitiesIndexColumn.DataPropertyName = "Index";
-      this.cardDeckLeaderAbilitiesIndexColumn.HeaderText = "Index";
-      this.cardDeckLeaderAbilitiesIndexColumn.Name = "cardDeckLeaderAbilitiesIndexColumn";
-      this.cardDeckLeaderAbilitiesIndexColumn.ReadOnly = true;
-      this.cardDeckLeaderAbilitiesIndexColumn.Width = 30;
-      // 
-      // cardDeckLeaderAbilitiesNameColumn
-      // 
-      this.cardDeckLeaderAbilitiesNameColumn.DataPropertyName = "Name";
-      this.cardDeckLeaderAbilitiesNameColumn.HeaderText = "Name";
-      this.cardDeckLeaderAbilitiesNameColumn.Name = "cardDeckLeaderAbilitiesNameColumn";
-      this.cardDeckLeaderAbilitiesNameColumn.ReadOnly = true;
-      this.cardDeckLeaderAbilitiesNameColumn.Width = 140;
-      // 
-      // cardDeckLeaderAbilitiesEnabledAbilitiesColumn
-      // 
-      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.DataPropertyName = "EnabledAbilitiesString";
-      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.HeaderText = "Enabled Abilities";
-      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.Name = "cardDeckLeaderAbilitiesEnabledAbilitiesColumn";
-      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.ReadOnly = true;
-      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.Width = 800;
       // 
       // equipCompabilityTab
       // 
@@ -1128,6 +1106,37 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
+      // cardDeckLeaderAbilitiesIndexColumn
+      // 
+      this.cardDeckLeaderAbilitiesIndexColumn.DataPropertyName = "Index";
+      this.cardDeckLeaderAbilitiesIndexColumn.HeaderText = "Index";
+      this.cardDeckLeaderAbilitiesIndexColumn.Name = "cardDeckLeaderAbilitiesIndexColumn";
+      this.cardDeckLeaderAbilitiesIndexColumn.ReadOnly = true;
+      this.cardDeckLeaderAbilitiesIndexColumn.Width = 30;
+      // 
+      // cardDeckLeaderAbilitiesNameColumn
+      // 
+      this.cardDeckLeaderAbilitiesNameColumn.DataPropertyName = "Name";
+      this.cardDeckLeaderAbilitiesNameColumn.HeaderText = "Name";
+      this.cardDeckLeaderAbilitiesNameColumn.Name = "cardDeckLeaderAbilitiesNameColumn";
+      this.cardDeckLeaderAbilitiesNameColumn.ReadOnly = true;
+      this.cardDeckLeaderAbilitiesNameColumn.Width = 140;
+      // 
+      // cardDeckLeaderAbilitiesEnabledAbilitiesColumn
+      // 
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.DataPropertyName = "EnabledAbilitiesString";
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.HeaderText = "Enabled Abilities";
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.Name = "cardDeckLeaderAbilitiesEnabledAbilitiesColumn";
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.ReadOnly = true;
+      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn.Width = 800;
+      // 
+      // Bytes
+      // 
+      this.Bytes.DataPropertyName = "Bytes";
+      this.Bytes.HeaderText = "Bytes";
+      this.Bytes.Name = "Bytes";
+      this.Bytes.Visible = false;
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1255,9 +1264,6 @@
     private TabPage deckLeaderAbilitiesTab;
     private SplitContainer cardDeckLeaderAbilitiesSplitContainer;
     private DataGridView cardDeckLeaderAbilitiesDatagridview;
-    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesIndexColumn;
-    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesNameColumn;
-    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesEnabledAbilitiesColumn;
     private ContextMenuStrip cardDeckLeaderAbilitiesContextStrip;
     private DataGridViewTextBoxColumn FusionsDataGridViewIndex;
     private DataGridViewTextBoxColumn LowerCardMaterialCardNumber;
@@ -1278,5 +1284,9 @@
     private Button equipCompatibilitySaveButton;
     private Label cardEquipNoteLabel1;
     private Button deckLeaderAbilitiesSaveButton;
+    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesIndexColumn;
+    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesNameColumn;
+    private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesEnabledAbilitiesColumn;
+    private DataGridViewTextBoxColumn Bytes;
   }
 }
