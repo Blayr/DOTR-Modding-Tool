@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DOTR_MODDING_TOOL.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms
     private void setupForm()
     {
       List<DeckLeaderRank> validRanks = DeckLeaderRank.RankList();
-      validRanks.RemoveAt(0); // Remove NCO
+      validRanks.RemoveAt((int)DeckLeaderRankType.NCO);
       this.rankDropdown.DataSource = validRanks;
       this.rankDropdown.DisplayMember = "Name";
       this.rankDropdown.ValueMember = "Index";
@@ -32,6 +33,11 @@ namespace DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms
 
       this.enabledCheckbox.Checked = this.DeckLeaderAbility.Enabled;
       this.toggleDropdownVisibility(this.DeckLeaderAbility.Enabled);
+
+      RankRequirementDeckLeaderAbility rankRequirementDeckLeaderAbility = (RankRequirementDeckLeaderAbility)this.DeckLeaderAbility;
+      DeckLeaderRank unlockRank = rankRequirementDeckLeaderAbility.UnlockRank != null ? rankRequirementDeckLeaderAbility.UnlockRank : new DeckLeaderRank((int)DeckLeaderRankType.SECOND_LT);
+
+      this.rankDropdown.SelectedValue = unlockRank.Index;
     }
 
     private void toggleDropdownVisibility(bool abilityEnabled)

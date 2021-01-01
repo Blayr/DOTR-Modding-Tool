@@ -1,5 +1,4 @@
 ﻿using DOTR_MODDING_TOOL.Properties;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 
