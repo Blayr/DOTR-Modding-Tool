@@ -62,7 +62,7 @@
       this.EnemyIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EnemyNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.EnemyAiColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.fusionsTab = new System.Windows.Forms.TabPage();
       this.splitContainer2 = new System.Windows.Forms.SplitContainer();
       this.fusionTableTipLabel = new System.Windows.Forms.Label();
       this.fusionSaveButton = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@
       this.FusionsDataGridViewUpperCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
       this.ResultingFusionId = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.FusionsDataGridViewFusionCard = new System.Windows.Forms.DataGridViewComboBoxColumn();
-      this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.cardPropertiesTab = new System.Windows.Forms.TabPage();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
       this.label8 = new System.Windows.Forms.Label();
       this.cardConstantsSaveButton = new System.Windows.Forms.Button();
@@ -95,7 +95,7 @@
       this.CardConstantIsSlotRare = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantReincarnation = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.CardConstantPasswordWorks = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-      this.leaderRankTresholdsTabControl = new System.Windows.Forms.TabPage();
+      this.leaderRankTresholdsTab = new System.Windows.Forms.TabPage();
       this.textBox2 = new System.Windows.Forms.TextBox();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.newRankThresholdsTextbox = new System.Windows.Forms.TextBox();
@@ -138,19 +138,19 @@
       this.enemyAiTabSplitContainer.Panel2.SuspendLayout();
       this.enemyAiTabSplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.enemyAiDataGridView)).BeginInit();
-      this.tabPage2.SuspendLayout();
+      this.fusionsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
       this.splitContainer2.Panel1.SuspendLayout();
       this.splitContainer2.Panel2.SuspendLayout();
       this.splitContainer2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).BeginInit();
-      this.tabPage1.SuspendLayout();
+      this.cardPropertiesTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
       this.splitContainer1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).BeginInit();
-      this.leaderRankTresholdsTabControl.SuspendLayout();
+      this.leaderRankTresholdsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).BeginInit();
       this.tabControl.SuspendLayout();
       this.deckLeaderAbilitiesTab.SuspendLayout();
@@ -437,16 +437,16 @@
       this.EnemyAiColumn.Name = "EnemyAiColumn";
       this.EnemyAiColumn.Width = 180;
       // 
-      // tabPage2
+      // fusionsTab
       // 
-      this.tabPage2.Controls.Add(this.splitContainer2);
-      this.tabPage2.Location = new System.Drawing.Point(4, 22);
-      this.tabPage2.Name = "tabPage2";
-      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage2.Size = new System.Drawing.Size(930, 496);
-      this.tabPage2.TabIndex = 2;
-      this.tabPage2.Text = "Fusions";
-      this.tabPage2.UseVisualStyleBackColor = true;
+      this.fusionsTab.Controls.Add(this.splitContainer2);
+      this.fusionsTab.Location = new System.Drawing.Point(4, 22);
+      this.fusionsTab.Name = "fusionsTab";
+      this.fusionsTab.Padding = new System.Windows.Forms.Padding(3);
+      this.fusionsTab.Size = new System.Drawing.Size(930, 496);
+      this.fusionsTab.TabIndex = 2;
+      this.fusionsTab.Text = "Fusions";
+      this.fusionsTab.UseVisualStyleBackColor = true;
       // 
       // splitContainer2
       // 
@@ -574,16 +574,16 @@
       this.FusionsDataGridViewFusionCard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
       this.FusionsDataGridViewFusionCard.Width = 200;
       // 
-      // tabPage1
+      // cardPropertiesTab
       // 
-      this.tabPage1.Controls.Add(this.splitContainer1);
-      this.tabPage1.Location = new System.Drawing.Point(4, 22);
-      this.tabPage1.Name = "tabPage1";
-      this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage1.Size = new System.Drawing.Size(930, 496);
-      this.tabPage1.TabIndex = 1;
-      this.tabPage1.Text = "Card Properties";
-      this.tabPage1.UseVisualStyleBackColor = true;
+      this.cardPropertiesTab.Controls.Add(this.splitContainer1);
+      this.cardPropertiesTab.Location = new System.Drawing.Point(4, 22);
+      this.cardPropertiesTab.Name = "cardPropertiesTab";
+      this.cardPropertiesTab.Padding = new System.Windows.Forms.Padding(3);
+      this.cardPropertiesTab.Size = new System.Drawing.Size(930, 496);
+      this.cardPropertiesTab.TabIndex = 1;
+      this.cardPropertiesTab.Text = "Card Properties";
+      this.cardPropertiesTab.UseVisualStyleBackColor = true;
       // 
       // splitContainer1
       // 
@@ -817,21 +817,21 @@
       this.CardConstantPasswordWorks.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
       this.CardConstantPasswordWorks.Width = 46;
       // 
-      // leaderRankTresholdsTabControl
+      // leaderRankTresholdsTab
       // 
-      this.leaderRankTresholdsTabControl.Controls.Add(this.textBox2);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.textBox1);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.newRankThresholdsTextbox);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.originalRankThresholdsTextbox);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsSaveButton);
-      this.leaderRankTresholdsTabControl.Controls.Add(this.rankThresholdsDataGridView);
-      this.leaderRankTresholdsTabControl.Location = new System.Drawing.Point(4, 22);
-      this.leaderRankTresholdsTabControl.Name = "leaderRankTresholdsTabControl";
-      this.leaderRankTresholdsTabControl.Padding = new System.Windows.Forms.Padding(3);
-      this.leaderRankTresholdsTabControl.Size = new System.Drawing.Size(930, 496);
-      this.leaderRankTresholdsTabControl.TabIndex = 0;
-      this.leaderRankTresholdsTabControl.Text = "Rank Thresholds";
-      this.leaderRankTresholdsTabControl.UseVisualStyleBackColor = true;
+      this.leaderRankTresholdsTab.Controls.Add(this.textBox2);
+      this.leaderRankTresholdsTab.Controls.Add(this.textBox1);
+      this.leaderRankTresholdsTab.Controls.Add(this.newRankThresholdsTextbox);
+      this.leaderRankTresholdsTab.Controls.Add(this.originalRankThresholdsTextbox);
+      this.leaderRankTresholdsTab.Controls.Add(this.rankThresholdsSaveButton);
+      this.leaderRankTresholdsTab.Controls.Add(this.rankThresholdsDataGridView);
+      this.leaderRankTresholdsTab.Location = new System.Drawing.Point(4, 22);
+      this.leaderRankTresholdsTab.Name = "leaderRankTresholdsTab";
+      this.leaderRankTresholdsTab.Padding = new System.Windows.Forms.Padding(3);
+      this.leaderRankTresholdsTab.Size = new System.Drawing.Size(930, 496);
+      this.leaderRankTresholdsTab.TabIndex = 0;
+      this.leaderRankTresholdsTab.Text = "Rank Thresholds";
+      this.leaderRankTresholdsTab.UseVisualStyleBackColor = true;
       // 
       // textBox2
       // 
@@ -906,13 +906,13 @@
       this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.tabControl.Controls.Add(this.leaderRankTresholdsTabControl);
-      this.tabControl.Controls.Add(this.tabPage1);
-      this.tabControl.Controls.Add(this.tabPage2);
-      this.tabControl.Controls.Add(this.enemyAiTab);
-      this.tabControl.Controls.Add(this.hiddenCardsTab);
+      this.tabControl.Controls.Add(this.leaderRankTresholdsTab);
+      this.tabControl.Controls.Add(this.cardPropertiesTab);
       this.tabControl.Controls.Add(this.deckLeaderAbilitiesTab);
       this.tabControl.Controls.Add(this.equipCompabilityTab);
+      this.tabControl.Controls.Add(this.fusionsTab);
+      this.tabControl.Controls.Add(this.enemyAiTab);
+      this.tabControl.Controls.Add(this.hiddenCardsTab);
       this.tabControl.Location = new System.Drawing.Point(0, 27);
       this.tabControl.Name = "tabControl";
       this.tabControl.SelectedIndex = 0;
@@ -1175,22 +1175,22 @@
       ((System.ComponentModel.ISupportInitialize)(this.enemyAiTabSplitContainer)).EndInit();
       this.enemyAiTabSplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.enemyAiDataGridView)).EndInit();
-      this.tabPage2.ResumeLayout(false);
+      this.fusionsTab.ResumeLayout(false);
       this.splitContainer2.Panel1.ResumeLayout(false);
       this.splitContainer2.Panel1.PerformLayout();
       this.splitContainer2.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
       this.splitContainer2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.fusionsDataGridView)).EndInit();
-      this.tabPage1.ResumeLayout(false);
+      this.cardPropertiesTab.ResumeLayout(false);
       this.splitContainer1.Panel1.ResumeLayout(false);
       this.splitContainer1.Panel1.PerformLayout();
       this.splitContainer1.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardConstantsDataGridView)).EndInit();
-      this.leaderRankTresholdsTabControl.ResumeLayout(false);
-      this.leaderRankTresholdsTabControl.PerformLayout();
+      this.leaderRankTresholdsTab.ResumeLayout(false);
+      this.leaderRankTresholdsTab.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).EndInit();
       this.tabControl.ResumeLayout(false);
       this.deckLeaderAbilitiesTab.ResumeLayout(false);
@@ -1224,12 +1224,12 @@
     private DataGridViewTextBoxColumn EnemyIndex;
     private DataGridViewTextBoxColumn EnemyNameColumn;
     private DataGridViewComboBoxColumn EnemyAiColumn;
-    private TabPage tabPage2;
+    private TabPage fusionsTab;
     private SplitContainer splitContainer2;
     private Label fusionTableTipLabel;
     private Button fusionSaveButton;
     private DataGridView fusionsDataGridView;
-    private TabPage tabPage1;
+    private TabPage cardPropertiesTab;
     private SplitContainer splitContainer1;
     private Button cardConstantsSaveButton;
     private Button cardConstantFilterClearButton;
@@ -1237,7 +1237,7 @@
     private Button cardConstantsFilterButton;
     private TextBox cardConstantsFilterTextbox;
     private DataGridView cardConstantsDataGridView;
-    private TabPage leaderRankTresholdsTabControl;
+    private TabPage leaderRankTresholdsTab;
     private TextBox textBox2;
     private TextBox textBox1;
     private TextBox newRankThresholdsTextbox;
