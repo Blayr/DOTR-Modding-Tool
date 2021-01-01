@@ -34,8 +34,8 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
 
   private void createAbilityInputs()
   {
-    int startX = 300;
-    int startY= 40;
+    int startX = 220;
+    int startY= 30;
     int rowSpacing = 40;
     int numberOfRowsGenerated = 0;
 
@@ -197,7 +197,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // applyButton
       // 
       this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.applyButton.Location = new System.Drawing.Point(905, 690);
+      this.applyButton.Location = new System.Drawing.Point(460, 628);
       this.applyButton.Name = "applyButton";
       this.applyButton.Size = new System.Drawing.Size(75, 23);
       this.applyButton.TabIndex = 5;
@@ -208,7 +208,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // cancelButton
       // 
       this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.cancelButton.Location = new System.Drawing.Point(824, 690);
+      this.cancelButton.Location = new System.Drawing.Point(379, 628);
       this.cancelButton.Name = "cancelButton";
       this.cancelButton.Size = new System.Drawing.Size(75, 23);
       this.cancelButton.TabIndex = 6;
@@ -218,15 +218,17 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // 
       // CardDeckLeaderAbilityMultiEditForm
       // 
-      this.ClientSize = new System.Drawing.Size(992, 725);
+      this.ClientSize = new System.Drawing.Size(547, 663);
       this.Controls.Add(this.cancelButton);
       this.Controls.Add(this.applyButton);
       this.Controls.Add(this.selectedCardList);
       this.Controls.Add(this.numberOfCardsSelectedLabel);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Name = "CardDeckLeaderAbilityMultiEditForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.ResumeLayout(false);
       this.PerformLayout();
+
   }
 
   private void cancelButton_Click(object sender, EventArgs e)
