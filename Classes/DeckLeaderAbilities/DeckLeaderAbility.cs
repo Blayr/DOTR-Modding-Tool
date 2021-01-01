@@ -57,6 +57,7 @@ public class DeckLeaderAbility
 	public static List<DeckLeaderAbilityType> RankRequirementAbilityList;
 	public static List<DeckLeaderAbilityType> RankRequirementUpperByteAbilityList;
 	public static List<DeckLeaderAbilityType> RankRequirementLowerByteAbilityList;
+	public static List<DeckLeaderAbilityType> RankRequirementNoAdditionalInformationList;
 
 	static DeckLeaderAbility() {
 	  DeckLeaderAbility.YesNoAbilityList = new List<DeckLeaderAbilityType> {
@@ -72,6 +73,20 @@ public class DeckLeaderAbility
 		};
 
 		DeckLeaderAbility.RankRequirementUpperByteAbilityList = new List<DeckLeaderAbilityType> {
+			DeckLeaderAbilityType.DestinyDraw,
+			DeckLeaderAbilityType.IncreasedMovement,
+			DeckLeaderAbilityType.LPRecovery,
+			DeckLeaderAbilityType.DirectDamageHalved,
+			DeckLeaderAbilityType.ExtendedSupportRange,
+			DeckLeaderAbilityType.FriendlyImprovedResistance,
+			DeckLeaderAbilityType.FriendlyMovementBoost,
+			DeckLeaderAbilityType.FlipCard,
+			DeckLeaderAbilityType.SpellbindSpecificEnemyType,
+			DeckLeaderAbilityType.DestroySpecificEnemyType
+		};
+
+		DeckLeaderAbility.RankRequirementNoAdditionalInformationList = new List<DeckLeaderAbilityType>
+		{
 			DeckLeaderAbilityType.DestinyDraw,
 			DeckLeaderAbilityType.IncreasedMovement,
 			DeckLeaderAbilityType.LPRecovery,

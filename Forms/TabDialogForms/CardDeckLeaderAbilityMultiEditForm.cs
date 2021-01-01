@@ -66,7 +66,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     Label abilityLabel = new Label();
     abilityLabel.Location = new System.Drawing.Point(labelStart, ypos);
     abilityLabel.Name = $"abilityLabel{abilityIndex}";
-    abilityLabel.Size = new System.Drawing.Size(200, 23);
+    abilityLabel.Size = new System.Drawing.Size(240, 23);
     abilityLabel.Text = ability.ToString();
 
     if (ability.Enabled)
@@ -95,15 +95,16 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     {
       editForm = new EditFlagDeckLeaderAbilityForm(ability);
     }
-    else if (ability.GetType() == typeof(RankRequirementDeckLeaderAbility))
+    else if (DeckLeaderAbility.RankRequirementNoAdditionalInformationList.Contains((DeckLeaderAbilityType)ability.Index))
     {
       editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
     }
     else
     {
-      editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
+      return;
     }
 
+    editForm.StartPosition = FormStartPosition.CenterParent;
     DialogResult dialogResult = editForm.ShowDialog();
 
     if (dialogResult.Equals(DialogResult.OK))

@@ -3,26 +3,28 @@
 public class RankRequirementDeckLeaderAbility : DeckLeaderAbility
 {
 	private DeckLeaderRank unlockRank;
-	public DeckLeaderRank UnlockRank {
-    get {
+	private RankRequirementByteLocation rankRequirementHalfByteLocation;
+	public DeckLeaderRank UnlockRank
+	{
+		get
+		{
 			return unlockRank;
 		}
 
 		set
-    {
+		{
 			this.unlockRank = value;
 
 			if (this.rankRequirementHalfByteLocation == RankRequirementByteLocation.LOWER_BYTE)
-      {
+			{
 				this.Bytes[0] = Convert.ToByte(value.Index);
-			} else
-      {
+			}
+			else
+			{
 				this.Bytes[1] = Convert.ToByte(value.Index);
 			}
-    }
+		}
 	}
-
-	private RankRequirementByteLocation rankRequirementHalfByteLocation;
 	public override bool Enabled
   {
 		get
@@ -33,9 +35,13 @@ public class RankRequirementDeckLeaderAbility : DeckLeaderAbility
 		set
     {
 			this.enabled = value;
+
+			if (value == false)
+      {
+				this.Bytes = BitConverter.GetBytes(DisabledBytesValue);
+      }
     }
   }
-
 	public RankRequirementDeckLeaderAbility(int index, byte[] bytes) : base(index, bytes)
 	{
 		if (DeckLeaderAbility.RankRequirementLowerByteAbilityList.Contains((DeckLeaderAbilityType)index))
