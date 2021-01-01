@@ -492,6 +492,7 @@
       // 
       this.fusionsDataGridView.AllowUserToAddRows = false;
       this.fusionsDataGridView.AllowUserToDeleteRows = false;
+      this.fusionsDataGridView.AllowUserToResizeRows = false;
       this.fusionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.fusionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FusionsDataGridViewIndex,
