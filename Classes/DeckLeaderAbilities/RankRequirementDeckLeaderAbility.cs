@@ -62,11 +62,6 @@ public class RankRequirementDeckLeaderAbility : DeckLeaderAbility
 		}
 	}
 
-	public void setUnlockRank(DeckLeaderRank deckLeaderRank)
-  {
-		this.UnlockRank = deckLeaderRank;
-  }
-
 	public override string ToString()
 	{
 		if (this.UnlockRank != null)

@@ -60,7 +60,6 @@ public class DeckLeaderRank
       Resources.DeckRank_9_VADM,
       Resources.DeckRank_10_ADM,
       Resources.DeckRank_11_SADM,
-      Resources.DeckRank_12_SD,
       Resources.DeckRank_12_SD
     };
 }
