@@ -64,7 +64,7 @@
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyImprovedResistance] = new string[] {
 			"Improved resistance for same type friendlies",
-			"Improves the defense points for same type friendlies (100-500 points depending on card level)."
+			"Any of your creatures of the same type and within your Deck Leader's range will be immune to enemy traps, spells and creature abilities."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyMovementBoost] = new string[] {
