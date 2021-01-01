@@ -48,7 +48,6 @@
       this.selectedTreasureCard.Column = columnByte;
 
       byte[] tempBytes = this.selectedTreasureCard.Bytes;
-      TreasureCard tempTreasureCard = new TreasureCard(tempBytes);
 
       this.dataAccess.SaveTreasureCard(this.treasureCardsListbox.SelectedIndex, selectedTreasureCard.Bytes);
     }
