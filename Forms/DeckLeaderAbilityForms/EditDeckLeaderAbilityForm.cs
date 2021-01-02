@@ -34,6 +34,7 @@ namespace DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms
     protected virtual void loadForm()
     {
       // this should be overridden by a child class.
+      this.Text = $"Deck leader ability editor - {this.DeckLeaderAbility.Name}";
       this.abilityNameLabel.Text = this.DeckLeaderAbility.Name;
       this.abilityDescriptionTextbox.Text = this.DeckLeaderAbility.Description;
       this.bytesTextbox.Text = BitConverter.ToString(this.DeckLeaderAbility.Bytes);

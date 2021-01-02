@@ -144,6 +144,7 @@ public class EquipCompatibilityEditForm : Form
 
   private void InitializeComponent()
   {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EquipCompatibilityEditForm));
       this.selectedCardList = new System.Windows.Forms.ListBox();
       this.numberOfCardsSelectedLabel = new System.Windows.Forms.Label();
       this.EquipCompatibilityEditFormApplyButton = new System.Windows.Forms.Button();
@@ -212,8 +213,10 @@ public class EquipCompatibilityEditForm : Form
       this.Controls.Add(this.selectedCardList);
       this.Controls.Add(this.numberOfCardsSelectedLabel);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "EquipCompatibilityEditForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+      this.Text = "Monster equip card compatibility editor";
       this.ResumeLayout(false);
       this.PerformLayout();
 

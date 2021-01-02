@@ -50,6 +50,7 @@ public class CardConstantsMultiEditForm : Form
 
   private void InitializeComponent()
   {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardConstantsMultiEditForm));
       this.numberOfCardsSelectedLabel = new System.Windows.Forms.Label();
       this.selectedCardList = new System.Windows.Forms.ListBox();
       this.applyButton = new System.Windows.Forms.Button();
@@ -273,8 +274,10 @@ public class CardConstantsMultiEditForm : Form
       this.Controls.Add(this.selectedCardList);
       this.Controls.Add(this.numberOfCardsSelectedLabel);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "CardConstantsMultiEditForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+      this.Text = "Card property editor";
       ((System.ComponentModel.ISupportInitialize)(this.deckCostNumericUpDown)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.levelNumericUpDown)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.attackNumericUpDown)).EndInit();

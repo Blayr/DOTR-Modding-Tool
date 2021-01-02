@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDeckLeaderAbilityForm));
       this.cancelButton = new System.Windows.Forms.Button();
       this.applyButton = new System.Windows.Forms.Button();
       this.abilityNameLabel = new System.Windows.Forms.Label();
@@ -107,8 +108,9 @@
       this.Controls.Add(this.abilityNameLabel);
       this.Controls.Add(this.applyButton);
       this.Controls.Add(this.cancelButton);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "EditDeckLeaderAbilityForm";
-      this.Text = "EditDeckLeaderAbilityForm";
+      this.Text = "Deck leader ability editor";
       this.ResumeLayout(false);
       this.PerformLayout();
 

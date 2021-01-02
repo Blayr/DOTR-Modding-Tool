@@ -175,6 +175,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
 
   private void InitializeComponent()
   {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardDeckLeaderAbilityMultiEditForm));
       this.selectedCardList = new System.Windows.Forms.ListBox();
       this.numberOfCardsSelectedLabel = new System.Windows.Forms.Label();
       this.applyButton = new System.Windows.Forms.Button();
@@ -229,8 +230,10 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       this.Controls.Add(this.selectedCardList);
       this.Controls.Add(this.numberOfCardsSelectedLabel);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "CardDeckLeaderAbilityMultiEditForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+      this.Text = "Deck leader ability editor";
       this.ResumeLayout(false);
       this.PerformLayout();
 
