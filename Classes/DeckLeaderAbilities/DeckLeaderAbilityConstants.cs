@@ -19,7 +19,7 @@
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.ExtraSlots] = new string[] {
 			"Extra Slots",
-			"Enables multiple angles to win 3-in-a-row in card slots."
+			"Enables multiple angles to win 3-in-a-row in card slots. The higher the Deck Leader rank achieved, the more additional angles become available."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.DestinyDraw] = new string[] {
@@ -28,7 +28,7 @@
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.IncreasedMovement] = new string[] {
-			"Increased movement",
+			"Increased Movement",
 			"Deck leader can move 2 squares at a time instead of 1."
 		};
 
@@ -75,12 +75,12 @@ Dragon, Winged Beast, Fish, Machine -> 2 if level is at least 7, else 1."
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyIncreasedStrength] = new string[] {
 			"Improved Strength For Same Type Friendlies",
-			"Improves the attack points for same type friendlies (100-500 points depending on card level)."
+			"Improves the attack points for same type friendlies (100-500 points depending on the deck leader's level)."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyImprovedResistance] = new string[] {
 			"Improved Resistance For Same Type Friendlies",
-			"Any of your creatures of the same type and within your Deck Leader's range will be immune to enemy traps, spells and creature abilities."
+			"Any of your monsters of the same type and within your Deck Leader's range will be immune to enemy traps, spells and monster abilities."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyMovementBoost] = new string[] {
@@ -95,7 +95,7 @@ Dragon, Winged Beast, Fish, Machine -> 2 if level is at least 7, else 1."
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.WeakenSpecificEnemyType] = new string[] {
 			"Weaken Specific Enemy Type",
-			@"Weakens monsters of the specific enemy type by 100-500 depending on level.
+			@"Weakens monsters of the specific enemy type (depending on deck leader's type) by 100-500 (depending deck leader's level).
 
 The logic regarding what type powers down what type is hardcoded.
 
@@ -117,7 +117,7 @@ Pyro powers down Beast-Warrior."
 			"Spellbind Specific Enemy Type",
 			@"Spellbind specific enemy type for 1(?) turn.
 
-This logic is hardcoded, and can't be changed by this tool.
+This logic is hardcoded and can't be changed with this tool.
 
 Fairy destroys Fiend.
 Reptile destroys Insect.
@@ -128,7 +128,11 @@ Plant destroys Rock."
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.DestroySpecificEnemyType] = new string[] {
 			"Destroy Specific Enemy Type",
-		  @"Fairy destroys Fiend
+		  @"Destroys a specific type of monster, depending on the deck leader's type.
+
+This logic is hardcoded and can't be changed with this tool.
+
+Fairy destroys Fiend
 Reptile destroys Insect
 Pyro destroys Zombie and Plant
 Rock destroys Dinosaur
