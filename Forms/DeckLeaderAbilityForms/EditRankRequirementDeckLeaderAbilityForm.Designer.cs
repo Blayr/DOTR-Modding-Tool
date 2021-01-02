@@ -35,16 +35,33 @@
       // 
       // cancelButton
       // 
-      this.cancelButton.Location = new System.Drawing.Point(320, 236);
+      this.cancelButton.Location = new System.Drawing.Point(323, 291);
       // 
       // applyButton
       // 
-      this.applyButton.Location = new System.Drawing.Point(401, 236);
+      this.applyButton.Location = new System.Drawing.Point(404, 291);
+      // 
+      // abilityNameLabel
+      // 
+      this.abilityNameLabel.Location = new System.Drawing.Point(8, 9);
+      // 
+      // abilityDescriptionTextbox
+      // 
+      this.abilityDescriptionTextbox.Size = new System.Drawing.Size(250, 281);
+      // 
+      // bytesLabel
+      // 
+      this.bytesLabel.Location = new System.Drawing.Point(398, 9);
+      // 
+      // bytesTextbox
+      // 
+      this.bytesTextbox.Location = new System.Drawing.Point(441, 9);
+      this.bytesTextbox.Size = new System.Drawing.Size(45, 13);
       // 
       // rankLabel
       // 
       this.rankLabel.AutoSize = true;
-      this.rankLabel.Location = new System.Drawing.Point(308, 109);
+      this.rankLabel.Location = new System.Drawing.Point(327, 119);
       this.rankLabel.Name = "rankLabel";
       this.rankLabel.Size = new System.Drawing.Size(80, 13);
       this.rankLabel.TabIndex = 8;
@@ -53,7 +70,7 @@
       // rankDropdown
       // 
       this.rankDropdown.FormattingEnabled = true;
-      this.rankDropdown.Location = new System.Drawing.Point(311, 125);
+      this.rankDropdown.Location = new System.Drawing.Point(330, 135);
       this.rankDropdown.Name = "rankDropdown";
       this.rankDropdown.Size = new System.Drawing.Size(87, 21);
       this.rankDropdown.TabIndex = 7;
@@ -61,7 +78,7 @@
       // enabledCheckbox
       // 
       this.enabledCheckbox.AutoSize = true;
-      this.enabledCheckbox.Location = new System.Drawing.Point(311, 75);
+      this.enabledCheckbox.Location = new System.Drawing.Point(330, 85);
       this.enabledCheckbox.Name = "enabledCheckbox";
       this.enabledCheckbox.Size = new System.Drawing.Size(65, 17);
       this.enabledCheckbox.TabIndex = 6;
@@ -72,10 +89,11 @@
       // EditRankRequirementDeckLeaderAbilityForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      this.ClientSize = new System.Drawing.Size(488, 271);
+      this.ClientSize = new System.Drawing.Size(491, 326);
       this.Controls.Add(this.rankLabel);
       this.Controls.Add(this.rankDropdown);
       this.Controls.Add(this.enabledCheckbox);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Name = "EditRankRequirementDeckLeaderAbilityForm";
       this.Controls.SetChildIndex(this.abilityDescriptionTextbox, 0);
       this.Controls.SetChildIndex(this.bytesLabel, 0);
@@ -93,7 +111,7 @@
 
     #endregion
     private System.Windows.Forms.Label rankLabel;
-    private System.Windows.Forms.ComboBox rankDropdown;
-    private System.Windows.Forms.CheckBox enabledCheckbox;
+    protected System.Windows.Forms.CheckBox enabledCheckbox;
+    protected System.Windows.Forms.ComboBox rankDropdown;
   }
 }

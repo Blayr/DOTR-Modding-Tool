@@ -58,6 +58,7 @@ public class DeckLeaderAbility
 	public static List<DeckLeaderAbilityType> RankRequirementUpperByteAbilityList;
 	public static List<DeckLeaderAbilityType> RankRequirementLowerByteAbilityList;
 	public static List<DeckLeaderAbilityType> RankRequirementNoAdditionalInformationList;
+	public static List<DeckLeaderAbilityType> StrengthModifierAbilityList;
 
 	static DeckLeaderAbility() {
 	  DeckLeaderAbility.YesNoAbilityList = new List<DeckLeaderAbilityType> {
@@ -97,6 +98,11 @@ public class DeckLeaderAbility
 			DeckLeaderAbilityType.FlipCard,
 			DeckLeaderAbilityType.SpellbindSpecificEnemyType,
 			DeckLeaderAbilityType.DestroySpecificEnemyType
+		};
+
+		DeckLeaderAbility.StrengthModifierAbilityList = new List<DeckLeaderAbilityType> {
+			DeckLeaderAbilityType.FriendlyIncreasedStrength,
+			DeckLeaderAbilityType.WeakenSpecificEnemyType
 		};
 
 		DeckLeaderAbility.RankRequirementAbilityList = RankRequirementLowerByteAbilityList.Concat(RankRequirementUpperByteAbilityList).ToList();

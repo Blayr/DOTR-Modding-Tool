@@ -55,7 +55,15 @@
   <ItemGroup>
     <Compile Include="Classes\DeckLeaderAbilities\FlagDeckLeaderAbility.cs" />
     <Compile Include="Classes\DeckLeaderAbilities\DeckLeaderAbilityFactory.cs" />
+    <Compile Include="Classes\DeckLeaderAbilities\StrengthModifierDeckLeaderAbility.cs" />
     <Compile Include="Classes\DeckLeaderRank.cs" />
+    <Compile Include="Classes\DeckLeaderRankType.cs" />
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditStrengthModifierDeckLeaderAbilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeckLeaderAbilityForms\EditStrengthModifierDeckLeaderAbilityForm.Designer.cs">
+      <DependentUpon>EditStrengthModifierDeckLeaderAbilityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainFormTabs\CardConstantsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +140,9 @@
     <Compile Include="Classes\DeckLeaderRankThresholds.cs" />
     <Compile Include="Classes\TreasureCards.cs" />
     <Compile Include="Classes\DeckLeaderAbilities\RankRequirementDeckLeaderAbility.cs" />
+    <EmbeddedResource Include="Forms\DeckLeaderAbilityForms\EditStrengthModifierDeckLeaderAbilityForm.resx">
+      <DependentUpon>EditStrengthModifierDeckLeaderAbilityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TabDialogForms\CardConstantsMultiEditForm.resx">
       <DependentUpon>CardConstantsMultiEditForm.cs</DependentUpon>
     </EmbeddedResource>

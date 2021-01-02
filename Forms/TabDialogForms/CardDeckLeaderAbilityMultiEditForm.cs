@@ -57,8 +57,8 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
 
   private void createAbilityLabelAndButton(int abilityIndex, DeckLeaderAbility ability, int xstartpos, int ypos)
   {
-    int labelLength = 200;
-    int labelButtonSpacing = 40;
+    int labelLength = 280;
+    int labelButtonSpacing = 20;
     int labelStart = xstartpos;
     int labelEnd = labelStart + labelLength;
     int buttonStart = labelEnd + labelButtonSpacing;
@@ -66,7 +66,8 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     Label abilityLabel = new Label();
     abilityLabel.Location = new System.Drawing.Point(labelStart, ypos);
     abilityLabel.Name = $"abilityLabel{abilityIndex}";
-    abilityLabel.Size = new System.Drawing.Size(240, 23);
+    abilityLabel.Size = new System.Drawing.Size(labelLength, 23);
+    abilityLabel.Padding = new Padding(4);
     abilityLabel.Text = ability.ToString();
 
     if (ability.Enabled)
@@ -90,14 +91,18 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     int abilityIndex = Int32.Parse(abilityEditButton.Name);
     DeckLeaderAbility ability = (DeckLeaderAbility)this.deckLeaderAbilities[abilityIndex][0];
     EditDeckLeaderAbilityForm editForm;
+    Type abilityType = ability.GetType();
 
-    if (ability.GetType() == typeof(FlagDeckLeaderAbility))
+    if (abilityType == typeof(FlagDeckLeaderAbility))
     {
       editForm = new EditFlagDeckLeaderAbilityForm(ability);
     }
-    else if (DeckLeaderAbility.RankRequirementNoAdditionalInformationList.Contains((DeckLeaderAbilityType)ability.Index))
+    else if (DeckLeaderAbility.RankRequirementNoAdditionalInformationList.Contains(ability.AbilityType))
     {
       editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
+    } else if (abilityType == typeof(StrengthModifierDeckLeaderAbility))
+    {
+      editForm = new EditStrengthModifierDeckLeaderAbilityForm(ability);
     }
     else
     {
@@ -182,7 +187,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       this.selectedCardList.Location = new System.Drawing.Point(12, 31);
       this.selectedCardList.Name = "selectedCardList";
       this.selectedCardList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-      this.selectedCardList.Size = new System.Drawing.Size(183, 316);
+      this.selectedCardList.Size = new System.Drawing.Size(183, 615);
       this.selectedCardList.TabIndex = 4;
       // 
       // numberOfCardsSelectedLabel
@@ -197,7 +202,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // applyButton
       // 
       this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.applyButton.Location = new System.Drawing.Point(460, 628);
+      this.applyButton.Location = new System.Drawing.Point(520, 628);
       this.applyButton.Name = "applyButton";
       this.applyButton.Size = new System.Drawing.Size(75, 23);
       this.applyButton.TabIndex = 5;
@@ -208,7 +213,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // cancelButton
       // 
       this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.cancelButton.Location = new System.Drawing.Point(379, 628);
+      this.cancelButton.Location = new System.Drawing.Point(439, 628);
       this.cancelButton.Name = "cancelButton";
       this.cancelButton.Size = new System.Drawing.Size(75, 23);
       this.cancelButton.TabIndex = 6;
@@ -218,7 +223,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // 
       // CardDeckLeaderAbilityMultiEditForm
       // 
-      this.ClientSize = new System.Drawing.Size(547, 663);
+      this.ClientSize = new System.Drawing.Size(607, 663);
       this.Controls.Add(this.cancelButton);
       this.Controls.Add(this.applyButton);
       this.Controls.Add(this.selectedCardList);

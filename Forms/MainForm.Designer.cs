@@ -124,6 +124,7 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.deckLeaderAbilityTabTipsLabel = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -615,9 +616,9 @@
       this.label8.AutoSize = true;
       this.label8.Location = new System.Drawing.Point(323, 7);
       this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(311, 13);
+      this.label8.Size = new System.Drawing.Size(281, 13);
       this.label8.TabIndex = 5;
-      this.label8.Text = "Tip: Select multiple rows with shift and ctrl keys, right click to edit";
+      this.label8.Text = "Select multiple rows with shift or ctrl keys, right click to edit";
       // 
       // cardConstantsSaveButton
       // 
@@ -940,6 +941,7 @@
       // 
       // cardDeckLeaderAbilitiesSplitContainer.Panel1
       // 
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilityTabTipsLabel);
       this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesSaveButton);
       // 
       // cardDeckLeaderAbilitiesSplitContainer.Panel2
@@ -1047,10 +1049,10 @@
       this.cardEquipNoteLabel1.AutoSize = true;
       this.cardEquipNoteLabel1.Location = new System.Drawing.Point(3, 10);
       this.cardEquipNoteLabel1.Name = "cardEquipNoteLabel1";
-      this.cardEquipNoteLabel1.Size = new System.Drawing.Size(447, 13);
+      this.cardEquipNoteLabel1.Size = new System.Drawing.Size(412, 13);
       this.cardEquipNoteLabel1.TabIndex = 1;
-      this.cardEquipNoteLabel1.Text = "Note: Select multiple records with shift and control keys, right click to edit eq" +
-    "uip compatibilities";
+      this.cardEquipNoteLabel1.Text = "Select multiple records with shift or control keys, right click to edit equip com" +
+    "patibilities.";
       // 
       // equipCompatibilitySaveButton
       // 
@@ -1146,6 +1148,16 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
+      // deckLeaderAbilityTabTipsLabel
+      // 
+      this.deckLeaderAbilityTabTipsLabel.AutoSize = true;
+      this.deckLeaderAbilityTabTipsLabel.Location = new System.Drawing.Point(5, 8);
+      this.deckLeaderAbilityTabTipsLabel.Name = "deckLeaderAbilityTabTipsLabel";
+      this.deckLeaderAbilityTabTipsLabel.Size = new System.Drawing.Size(411, 13);
+      this.deckLeaderAbilityTabTipsLabel.TabIndex = 2;
+      this.deckLeaderAbilityTabTipsLabel.Text = "Select multiple records with shift or control keys, right click to edit deck lead" +
+    "er abilities.";
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1195,6 +1207,7 @@
       this.tabControl.ResumeLayout(false);
       this.deckLeaderAbilitiesTab.ResumeLayout(false);
       this.cardDeckLeaderAbilitiesSplitContainer.Panel1.ResumeLayout(false);
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.PerformLayout();
       this.cardDeckLeaderAbilitiesSplitContainer.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesSplitContainer)).EndInit();
       this.cardDeckLeaderAbilitiesSplitContainer.ResumeLayout(false);
@@ -1297,5 +1310,6 @@
     private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesNameColumn;
     private DataGridViewTextBoxColumn cardDeckLeaderAbilitiesEnabledAbilitiesColumn;
     private DataGridViewTextBoxColumn Bytes;
+    private Label deckLeaderAbilityTabTipsLabel;
   }
 }

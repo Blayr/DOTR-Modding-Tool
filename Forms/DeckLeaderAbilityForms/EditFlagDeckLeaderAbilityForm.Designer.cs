@@ -33,26 +33,30 @@
       // 
       // cancelButton
       // 
-      this.cancelButton.Location = new System.Drawing.Point(335, 143);
+      this.cancelButton.Location = new System.Drawing.Point(318, 143);
       // 
       // applyButton
       // 
-      this.applyButton.Location = new System.Drawing.Point(416, 143);
+      this.applyButton.Location = new System.Drawing.Point(399, 143);
       // 
       // abilityNameLabel
       // 
       this.abilityNameLabel.Size = new System.Drawing.Size(50, 20);
       this.abilityNameLabel.Text = "Ability";
-      //
-      // bytesLabel
-      //
-      this.bytesLabel.Location = new System.Drawing.Point(13, 124);
       // 
       // abilityDescriptionTextbox
       // 
       this.abilityDescriptionTextbox.Location = new System.Drawing.Point(16, 32);
       this.abilityDescriptionTextbox.ReadOnly = true;
-      this.abilityDescriptionTextbox.Text = "Description";
+      // 
+      // bytesLabel
+      // 
+      this.bytesLabel.Location = new System.Drawing.Point(402, 12);
+      // 
+      // bytesTextbox
+      // 
+      this.bytesTextbox.Location = new System.Drawing.Point(447, 12);
+      this.bytesTextbox.Size = new System.Drawing.Size(44, 13);
       // 
       // flagCheckbox
       // 
@@ -65,19 +69,20 @@
       this.flagCheckbox.Text = "Enabled";
       this.flagCheckbox.UseVisualStyleBackColor = true;
       // 
-      // EditFlagDeckLeaderAbility
+      // EditFlagDeckLeaderAbilityForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      this.ClientSize = new System.Drawing.Size(503, 178);
+      this.ClientSize = new System.Drawing.Size(486, 178);
       this.Controls.Add(this.flagCheckbox);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.Name = "EditFlagDeckLeaderAbility";
+      this.Name = "EditFlagDeckLeaderAbilityForm";
+      this.Controls.SetChildIndex(this.bytesLabel, 0);
+      this.Controls.SetChildIndex(this.bytesTextbox, 0);
       this.Controls.SetChildIndex(this.cancelButton, 0);
       this.Controls.SetChildIndex(this.applyButton, 0);
       this.Controls.SetChildIndex(this.abilityNameLabel, 0);
       this.Controls.SetChildIndex(this.abilityDescriptionTextbox, 0);
       this.Controls.SetChildIndex(this.flagCheckbox, 0);
-      //this.Controls.SetChildIndex(this.bytesLabel, 0);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -85,6 +90,6 @@
 
     #endregion
 
-    private System.Windows.Forms.CheckBox flagCheckbox;
+    protected System.Windows.Forms.CheckBox flagCheckbox;
   }
 }

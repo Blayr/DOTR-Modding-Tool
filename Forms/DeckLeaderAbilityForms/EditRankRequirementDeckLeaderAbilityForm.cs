@@ -54,7 +54,7 @@ namespace DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms
       this.DeckLeaderAbility = ability;
     }
 
-    private void enabledCheckbox_CheckedChanged(object sender, EventArgs e)
+    protected virtual void enabledCheckbox_CheckedChanged(object sender, EventArgs e)
     {
       this.toggleDropdownVisibility(this.enabledCheckbox.Checked);
     }

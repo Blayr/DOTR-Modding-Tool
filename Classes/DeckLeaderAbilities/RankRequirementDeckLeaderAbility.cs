@@ -2,8 +2,8 @@
 
 public class RankRequirementDeckLeaderAbility : DeckLeaderAbility
 {
-	private DeckLeaderRank unlockRank;
-	private RankRequirementByteLocation rankRequirementHalfByteLocation;
+	protected DeckLeaderRank unlockRank;
+	protected RankRequirementByteLocation rankRequirementHalfByteLocation;
 	public DeckLeaderRank UnlockRank
 	{
 		get
@@ -23,6 +23,8 @@ public class RankRequirementDeckLeaderAbility : DeckLeaderAbility
 			{
 				this.Bytes[1] = Convert.ToByte(value.Index);
 			}
+
+			this.enabled = true;
 		}
 	}
 	public override bool Enabled

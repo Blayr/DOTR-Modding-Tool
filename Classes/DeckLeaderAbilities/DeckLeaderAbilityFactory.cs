@@ -12,11 +12,14 @@ public class DeckLeaderAbilityFactory
     {
 			return new FlagDeckLeaderAbility(index, bytes);
     }
-		else if (DeckLeaderAbility.RankRequirementAbilityList.Contains((DeckLeaderAbilityType)index))
+		else if (DeckLeaderAbility.RankRequirementNoAdditionalInformationList.Contains((DeckLeaderAbilityType)index))
     {
 			return new RankRequirementDeckLeaderAbility(index, bytes);
-    }
+    } else if (DeckLeaderAbility.StrengthModifierAbilityList.Contains((DeckLeaderAbilityType)index))
+    {
+			return new StrengthModifierDeckLeaderAbility(index, bytes);
+		}
 
-		return new DeckLeaderAbility(index, bytes);
+			return new DeckLeaderAbility(index, bytes);
   }
 }
