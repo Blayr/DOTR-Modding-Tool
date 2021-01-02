@@ -13,7 +13,7 @@
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.HiddenCard] = new string[] {
 			"Hidden Card",
-			"Gains the ability to find hidden cards found on the campaign map. At lower ranks," +
+			"Gains the ability to find hidden cards found on the campaign map. At lower ranks, " +
 			"only finds card if directly on top of them. At higher ranks, the range is increased by 1 in each direction."
 		};
 
@@ -24,7 +24,7 @@
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.DestinyDraw] = new string[] {
 			"Destiny Draw",
-			"Gives chance to draw a special card when LP are 500 or lower (Once per duel)."
+			"Gives chance to draw a special card when LP are 1000 or lower (once per duel)."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.IncreasedMovement] = new string[] {
@@ -34,16 +34,16 @@
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.LPRecovery] = new string[] {
 			"LP Recovery",
-			"Restore 50 lifepoints at the start of every turn."
+			"Restore 50 lifepoints at the end of every turn."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.DirectDamageHalved] = new string[] {
-			"Direct damage halved",
+			"Direct Damage Halved",
 			"Only take half damage from direct attacks."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.TerrainChange] = new string[] {
-			"Terrain change",
+			"Terrain Change",
 			@"When the deck leader moves onto a tile, the terrain is transformed to the specified type.
 The logic for determining what the terrain is actually transformed into is hardcoded and can't be changed with this tool.
 
@@ -57,7 +57,7 @@ All other types -> Dark"
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.LevelCostReduction] = new string[] {
-			"Level cost reduction",
+			"Level Cost Reduction",
 			@"Summoning cost for same type friendlies is reduced (1-2, depending on rank).
 
 The logic is hardcoded and can't be changed with this tool.
@@ -69,32 +69,32 @@ Dragon, Winged Beast, Fish, Machine -> 2 if level is at least 7, else 1."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.ExtendedSupportRange] = new string[] {
-			"Extended support range",
+			"Extended Support Range",
 			"Extends the range of other deck leader abilities such as increased strength for same type friendlies."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyIncreasedStrength] = new string[] {
-			"Improved strength for same type friendlies",
+			"Improved Strength For Same Type Friendlies",
 			"Improves the attack points for same type friendlies (100-500 points depending on card level)."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyImprovedResistance] = new string[] {
-			"Improved resistance for same type friendlies",
+			"Improved Resistance For Same Type Friendlies",
 			"Any of your creatures of the same type and within your Deck Leader's range will be immune to enemy traps, spells and creature abilities."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyMovementBoost] = new string[] {
-			"Movement boost for same type friendlies",
+			"Movement Boost For Same Type friendlies",
 			"Boosts movement for same type friendlies by 1 (does not stack with other movement bonuses)."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FlipCard] = new string[] {
-			"Open opponent's card",
+			"Open Opponent's Card",
 			"Flips up enemy cards within the deck leader's support range."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.WeakenSpecificEnemyType] = new string[] {
-			"Weaken specific enemy type",
+			"Weaken Specific Enemy Type",
 			@"Weakens monsters of the specific enemy type by 100-500 depending on level.
 
 The logic regarding what type powers down what type is hardcoded.
@@ -114,7 +114,7 @@ Pyro powers down Beast-Warrior."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.SpellbindSpecificEnemyType] = new string[] {
-			"Spellbind specific enemy type",
+			"Spellbind Specific Enemy Type",
 			@"Spellbind specific enemy type for 1(?) turn.
 
 This logic is hardcoded, and can't be changed by this tool.
@@ -123,19 +123,16 @@ Fairy destroys Fiend.
 Reptile destroys Insect.
 Pyro destroys Zombie and Plant.
 Rock destroys Dinosaur.
-Plant destroys Rock.
-"
+Plant destroys Rock."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.DestroySpecificEnemyType] = new string[] {
-			"Destroy specific enemy type",
-			"Destroy specific enemy type.",
-			@"This Fairy destroys Fiend
+			"Destroy Specific Enemy Type",
+		  @"Fairy destroys Fiend
 Reptile destroys Insect
 Pyro destroys Zombie and Plant
 Rock destroys Dinosaur
-Plant destroys Rock
-"
+Plant destroys Rock"
 		};
 	}
 }
