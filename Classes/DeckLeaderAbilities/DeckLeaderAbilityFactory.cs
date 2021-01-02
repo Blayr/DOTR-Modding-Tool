@@ -17,7 +17,13 @@ public class DeckLeaderAbilityFactory
 			return new RankRequirementDeckLeaderAbility(index, bytes);
     } else if (DeckLeaderAbility.StrengthModifierAbilityList.Contains((DeckLeaderAbilityType)index))
     {
-			return new StrengthModifierDeckLeaderAbility(index, bytes);
+			return new RankRequirementDeckLeaderAbility(index, bytes);
+		} else if ((DeckLeaderAbilityType)index == DeckLeaderAbilityType.LevelCostReduction)
+    {
+			return new RankRequirementDeckLeaderAbility(index, bytes);
+    } else if ((DeckLeaderAbilityType)index == DeckLeaderAbilityType.TerrainChange)
+    {
+			return new RankRequirementDeckLeaderAbility(index, bytes);
 		}
 
 			return new DeckLeaderAbility(index, bytes);

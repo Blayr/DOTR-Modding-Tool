@@ -48,9 +48,16 @@ namespace DOTR_MODDING_TOOL.Forms.DeckLeaderAbilityForms
 
     protected override void applyChangesToAbility()
     {
+      // Mark as enabled first here, as some classes have slightly different implementations of enabled.
+      System.Diagnostics.Debug.Print(this.DeckLeaderAbility.GetType().ToString());
+      this.DeckLeaderAbility.Enabled = this.enabledCheckbox.Checked;
       RankRequirementDeckLeaderAbility ability = (RankRequirementDeckLeaderAbility)this.DeckLeaderAbility;
-      ability.UnlockRank = new DeckLeaderRank(((DeckLeaderRank)this.rankDropdown.SelectedItem).Index);
-      ability.Enabled = this.enabledCheckbox.Checked;
+
+      if (this.enabledCheckbox.Checked)
+      {
+        ability.UnlockRank = new DeckLeaderRank(((DeckLeaderRank)this.rankDropdown.SelectedItem).Index);
+      }
+
       this.DeckLeaderAbility = ability;
     }
 

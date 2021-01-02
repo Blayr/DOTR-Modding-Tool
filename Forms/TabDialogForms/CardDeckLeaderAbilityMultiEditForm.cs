@@ -96,17 +96,15 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
     if (abilityType == typeof(FlagDeckLeaderAbility))
     {
       editForm = new EditFlagDeckLeaderAbilityForm(ability);
-    }
-    else if (DeckLeaderAbility.RankRequirementNoAdditionalInformationList.Contains(ability.AbilityType))
+    } else if (DeckLeaderAbility.RankRequirementNoAdditionalInformationList.Contains(ability.AbilityType))
     {
       editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
     } else if (abilityType == typeof(StrengthModifierDeckLeaderAbility))
     {
       editForm = new EditStrengthModifierDeckLeaderAbilityForm(ability);
-    }
-    else
+    } else
     {
-      return;
+      editForm = new EditRankRequirementDeckLeaderAbilityForm(ability);
     }
 
     editForm.StartPosition = FormStartPosition.CenterParent;
@@ -122,11 +120,13 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
 
   private void populateDeckLeaderAbilities()
   {
-    this.deckLeaderAbilities = new Object[17][];
+    DeckLeaderAbility[] deckLeaderAbilityList = this.selectedCardDeckLeaderAbilityList[0].deckLeaderAbilityList;
+    this.deckLeaderAbilities = new Object[deckLeaderAbilityList.Length][];
 
-    for (int i = 0; i < deckLeaderAbilities.Length; i++)
+    for (int i = 0; i < deckLeaderAbilityList.Length; i++)
     {
-      DeckLeaderAbility firstCardDeckLeaderAbility = this.selectedCardDeckLeaderAbilityList[0].deckLeaderAbilityList[i].Clone();
+      DeckLeaderAbility firstCardDeckLeaderAbility = deckLeaderAbilityList[i].Clone();
+
       bool allCardsHaveSameAbilityValue = true;
 
       for (int scai = 0; scai < selectedCardDeckLeaderAbilityList.Count; scai++)
@@ -202,7 +202,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // applyButton
       // 
       this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.applyButton.Location = new System.Drawing.Point(520, 628);
+      this.applyButton.Location = new System.Drawing.Point(520, 668);
       this.applyButton.Name = "applyButton";
       this.applyButton.Size = new System.Drawing.Size(75, 23);
       this.applyButton.TabIndex = 5;
@@ -213,7 +213,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // cancelButton
       // 
       this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.cancelButton.Location = new System.Drawing.Point(439, 628);
+      this.cancelButton.Location = new System.Drawing.Point(439, 668);
       this.cancelButton.Name = "cancelButton";
       this.cancelButton.Size = new System.Drawing.Size(75, 23);
       this.cancelButton.TabIndex = 6;
@@ -223,7 +223,7 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       // 
       // CardDeckLeaderAbilityMultiEditForm
       // 
-      this.ClientSize = new System.Drawing.Size(607, 663);
+      this.ClientSize = new System.Drawing.Size(607, 703);
       this.Controls.Add(this.cancelButton);
       this.Controls.Add(this.applyButton);
       this.Controls.Add(this.selectedCardList);

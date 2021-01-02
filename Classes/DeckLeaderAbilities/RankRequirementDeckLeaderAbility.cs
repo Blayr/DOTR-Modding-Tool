@@ -23,8 +23,6 @@ public class RankRequirementDeckLeaderAbility : DeckLeaderAbility
 			{
 				this.Bytes[1] = Convert.ToByte(value.Index);
 			}
-
-			this.enabled = true;
 		}
 	}
 	public override bool Enabled
