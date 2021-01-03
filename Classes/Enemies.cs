@@ -8,7 +8,7 @@ public class Enemies
   {
 		this.List = new List<Enemy> { };
 
-		for (int i = 0, bi = 0; bi < bytes.Length; i++, bi += DataAccess.EnemyAIByteLength)
+		for (int i = 0, bi = 0; bi < bytes.Length; i++, bi += DataAccess.EnemyAiByteLength)
     {
 			byte[] enemyBytes = new byte[] { bytes[bi], bytes[bi + 1], bytes[bi + 2], bytes[bi + 3] };
 			this.List.Add(new Enemy(i, enemyBytes));

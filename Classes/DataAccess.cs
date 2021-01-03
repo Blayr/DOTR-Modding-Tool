@@ -2,26 +2,26 @@
 
 public class DataAccess
 {
-  public static readonly int SLUSDeckLeaderRankThresholdsByteOffset = 2754898;
-  public static readonly int DeckLeaderRankThresholdByteLength = 24;
-  public static readonly int SLUSCardConstantsByteOffset = 2683264;
-  public static readonly int SLUSFusionListByteOffset = 2550064;
-  public static readonly int FusionListByteLength = 26540 * 4;
-  public static readonly int CardConstantByteLength = 20;
-  public static readonly int CardConstantCount = Cards.TotalCardCount;
-  public static readonly int EnemyAIByteOffset = 2666416;
-  public static readonly int EnemyAIByteLength = 4;
-  public static readonly int EnemyAiCount = 32;
-  public static readonly int TreasureCardByteOffset = 2755024;
-  public static readonly int TreasureCardByteSize = 4;
-  public static readonly int TreasureCardCount = 22;
-  public static readonly int CardLeaderAbilitiesOffset = 0x293438;
-  public static readonly int CardLeaderAbilityCount = 683;
-  public static readonly int CardLeaderAbilityTypeCount = 20;
-  public static readonly int CardLeaderAbilityByteSize = 2;
-  public static readonly int MonsterEquipCardCompatabilityOffset = 0x26D680;
-  public static readonly int MonsterEquipCardCompabilityCardCount = 687;
-  public static readonly int MonsterEquipCardCompabilityByteSize = 7;
+  public const int DeckLeaderRankThresholdsByteOffset = 2754898;
+  public const int DeckLeaderRankThresholdByteLength = 24;
+  public const int CardConstantsByteOffset = 2683264;
+  public const int FusionListByteOffset = 2550064;
+  public const int FusionListByteLength = 26540 * 4;
+  public const int CardConstantByteLength = 20;
+  public const int CardConstantCount = Cards.TotalCardCount;
+  public const int EnemyAiByteOffset = 2666416;
+  public const int EnemyAiByteLength = 4;
+  public const int EnemyAiCount = 32;
+  public const int TreasureCardByteOffset = 2755024;
+  public const int TreasureCardByteSize = 4;
+  public const int TreasureCardCount = 22;
+  public const int CardLeaderAbilitiesOffset = 0x293438;
+  public const int CardLeaderAbilityCount = 683;
+  public const int CardLeaderAbilityTypeCount = 20;
+  public const int CardLeaderAbilityByteSize = 2;
+  public const int MonsterEquipCardCompatabilityOffset = 0x26D680;
+  public const int MonsterEquipCardCompabilityCardCount = 687;
+  public const int MonsterEquipCardCompabilityByteSize = 7;
 
   private static readonly object FileStreamLock = new object();
 	private static FileStream fileStream;
@@ -111,7 +111,7 @@ public class DataAccess
       {
         byte[] buffer = new byte[CardConstantByteLength];
         int cardIndexOffset = CardConstantByteLength * cardIndex;
-        fileStream.Seek(DataAccess.SLUSCardConstantsByteOffset + cardIndexOffset, SeekOrigin.Begin);
+        fileStream.Seek(DataAccess.CardConstantsByteOffset + cardIndexOffset, SeekOrigin.Begin);
         fileStream.Read(buffer, 0, buffer.Length);
         cardConstantsBytes[cardIndex] = buffer;
       }
@@ -124,7 +124,7 @@ public class DataAccess
   {
     lock (FileStreamLock)
     {
-      fileStream.Seek(DataAccess.SLUSCardConstantsByteOffset, SeekOrigin.Begin);
+      fileStream.Seek(DataAccess.CardConstantsByteOffset, SeekOrigin.Begin);
       fileStream.Write(byteData, 0, byteData.Length);
     }
 
@@ -137,7 +137,7 @@ public class DataAccess
 
     lock (FileStreamLock)
     {
-      fileStream.Seek(DataAccess.SLUSDeckLeaderRankThresholdsByteOffset, SeekOrigin.Begin);
+      fileStream.Seek(DataAccess.DeckLeaderRankThresholdsByteOffset, SeekOrigin.Begin);
       fileStream.Read(buffer, 0, buffer.Length);
     }
 
@@ -148,7 +148,7 @@ public class DataAccess
   {
     lock (FileStreamLock)
     {
-      fileStream.Seek(DataAccess.SLUSDeckLeaderRankThresholdsByteOffset, SeekOrigin.Begin);
+      fileStream.Seek(DataAccess.DeckLeaderRankThresholdsByteOffset, SeekOrigin.Begin);
       fileStream.Write(byteData, 0, DataAccess.DeckLeaderRankThresholdByteLength);
     }
 
@@ -161,7 +161,7 @@ public class DataAccess
 
     lock (FileStreamLock)
     {
-      fileStream.Seek(DataAccess.SLUSFusionListByteOffset, SeekOrigin.Begin);
+      fileStream.Seek(DataAccess.FusionListByteOffset, SeekOrigin.Begin);
       fileStream.Read(buffer, 0, buffer.Length);
     }
 
@@ -172,18 +172,18 @@ public class DataAccess
   {
     lock (FileStreamLock)
     {
-      fileStream.Seek(DataAccess.SLUSFusionListByteOffset, SeekOrigin.Begin);
+      fileStream.Seek(DataAccess.FusionListByteOffset, SeekOrigin.Begin);
       fileStream.Write(byteData, 0, byteData.Length);
     }
   }
 
   public byte[] LoadEnemyAIData()
   {
-    byte[] buffer = new byte[DataAccess.EnemyAIByteLength * DataAccess.EnemyAiCount];
+    byte[] buffer = new byte[DataAccess.EnemyAiByteLength * DataAccess.EnemyAiCount];
 
     lock (FileStreamLock)
     {
-      fileStream.Seek(DataAccess.EnemyAIByteOffset, SeekOrigin.Begin);
+      fileStream.Seek(DataAccess.EnemyAiByteOffset, SeekOrigin.Begin);
       fileStream.Read(buffer, 0, buffer.Length);
     }
 
@@ -194,7 +194,7 @@ public class DataAccess
   {
     lock (FileStreamLock)
     {
-      fileStream.Seek(DataAccess.EnemyAIByteOffset, SeekOrigin.Begin);
+      fileStream.Seek(DataAccess.EnemyAiByteOffset, SeekOrigin.Begin);
       fileStream.Write(byteData, 0, byteData.Length);
     }
   }

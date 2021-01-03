@@ -39,9 +39,9 @@ public static class DebugHelper
 
 	public static void PrintEnemyAi(byte[] bytes)
   {
-    for (int i = 0; i < bytes.Length; i += DataAccess.EnemyAIByteLength)
+    for (int i = 0; i < bytes.Length; i += DataAccess.EnemyAiByteLength)
     {
-      byte[] tempByteArray = new byte[DataAccess.EnemyAIByteLength];
+      byte[] tempByteArray = new byte[DataAccess.EnemyAiByteLength];
 
       for (int j = 0; j < tempByteArray.Length; j++)
       {
