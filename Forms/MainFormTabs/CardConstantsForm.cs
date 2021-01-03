@@ -3,13 +3,7 @@
   using Equin.ApplicationFramework;
   using System;
   using System.Collections.Generic;
-  using System.ComponentModel;
-  using System.Data;
-  using System.Diagnostics;
   using System.Drawing;
-  using System.Linq;
-  using System.Reflection;
-  using System.Runtime.CompilerServices;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -23,7 +17,6 @@
       this.cardConstants = new CardConstants(cardConstantsBytes);
       this.cardConstantsBinding = new BindingListView<CardConstant>(this.cardConstants.Constants);
       this.cardConstantsDataGridView.DataSource = cardConstantsBinding;
-      this.cardConstantsDataGridView.DefaultCellStyle.Font = new Font("OpenSans", 9.75F, FontStyle.Regular);
     }
 
     private void cardConstantsFilterTextbox_KeyDown(object sender, KeyEventArgs e)
@@ -70,15 +63,17 @@
     private void SetupCardConstantsDataGridView()
     {
       this.cardConstantsDataGridView.AutoGenerateColumns = false;
-      this.cardConstantsDataGridView.CellFormatting += this.FormatCardConstantTable;
+      this.cardConstantsDataGridView.DefaultCellStyle.Font = new Font("OpenSans", 9.75F, FontStyle.Regular);
       this.cardConstantsDataGridView.CellMouseClick += this.handleCardConstantsDataGridViewClick;
+      this.cardConstantsDataGridView.DataBindingComplete += this.FormatCardConstantTable;
+
       this.cardConstantsContextStrip.Items.Add("Edit selected cards");
       this.cardConstantsContextStrip.ItemClicked += ShowMultipleEditDialog;
     }
 
     private void handleCardConstantsDataGridViewClick(object sender, DataGridViewCellMouseEventArgs e)
     {
-      if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+      if (e.Button == MouseButtons.Right) {
         this.cardConstantsContextStrip.Show(Cursor.Position);
       }
     }
@@ -98,42 +93,33 @@
       this.cardConstantsDataGridView.Refresh();
     }
 
-    private void FormatCardConstantTable(object sender, DataGridViewCellFormattingEventArgs e)
+    private void FormatCardConstantTable(object sender, DataGridViewBindingCompleteEventArgs e)
     {
-      DataGridView bro = (DataGridView)sender;
-      if (e.ColumnIndex != 1)
+      foreach (DataGridViewRow row in cardConstantsDataGridView.Rows)
       {
-        return;
+        CardConstant cardConstant = ((ObjectView<CardConstant>)row.DataBoundItem).Object;
+        row.DefaultCellStyle.BackColor = CardConstantRowColor(cardConstant);
+        row.DefaultCellStyle.ForeColor = Color.White;
       }
+    }
 
-      ushort cardIndex = (ushort)this.cardConstantsDataGridView.Rows[e.RowIndex].Cells[0].Value;
-      CardConstant cardConstant = this.cardConstants.Constants[cardIndex];
-      Color rowColor;
-
+    private Color CardConstantRowColor(CardConstant cardConstant)
+    {
       switch (cardConstant.CardColor)
       {
         case CardColorType.NormalMonster:
-          rowColor = Color.FromArgb(160, 128, 0);
-          break;
+          return Color.FromArgb(160, 128, 0);
         case CardColorType.EffectMonster:
-          rowColor = Color.FromArgb(160, 80, 0);
-          break;
+          return Color.FromArgb(160, 80, 0);
         case CardColorType.Ritual:
-          rowColor = Color.FromArgb(81, 102, 141);
-          break;
+          return Color.FromArgb(81, 102, 141);
         case CardColorType.Trap:
-          rowColor = Color.FromArgb(160, 16, 64);
-          break;
+          return Color.FromArgb(160, 16, 64);
         case CardColorType.Magic:
-          rowColor = Color.FromArgb(0, 96, 48);
-          break;
+          return Color.FromArgb(0, 96, 48);
         default:
-          rowColor = Color.FromArgb(160, 128, 0);
-          break;
+          return Color.FromArgb(160, 128, 0);
       }
-
-      bro.Rows[e.RowIndex].DefaultCellStyle.BackColor = rowColor;
-      bro.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
     }
   }
 }
