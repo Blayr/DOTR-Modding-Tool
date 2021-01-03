@@ -59,7 +59,6 @@
     private void deckLeaderAbilitiesSaveButton_Click(object sender, EventArgs e)
     {
       byte[] bytes = this.cardDeckLeaderAbilities.Bytes;
-      System.Diagnostics.Debug.Print(bytes.Length.ToString());
       this.dataAccess.SaveCardDeckLeaderAbilities(bytes); ;
       this.LoadCardDeckLeaderAbilitesData();
     }

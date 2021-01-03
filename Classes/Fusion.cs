@@ -76,8 +76,6 @@ public class Fusion
       {
 				this.bitArray[i] = fusionResultBits[i - 20];
       }
-
-			DebugHelper.PrintBitArray(this.bitArray, 10);
     } 
 	}
 

@@ -163,7 +163,6 @@ public class CardDeckLeaderAbilityMultiEditForm : Form
       }
 
       DeckLeaderAbility deckLeaderAbility = (DeckLeaderAbility)this.deckLeaderAbilities[abilityIndex][0];
-      System.Diagnostics.Debug.Print($"{deckLeaderAbility.Name} has changed");
 
       for (int cardIndex = 0; cardIndex < this.selectedCardDeckLeaderAbilityList.Count; cardIndex++)
       {
