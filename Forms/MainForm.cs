@@ -1,6 +1,7 @@
 ﻿namespace DOTR_Modding_Tool
 {
   using System;
+  using System.Reflection;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -78,6 +79,13 @@
     private void viewSourceOnGithubToolStripMenuItem_Click(object sender, EventArgs e)
     {
       System.Diagnostics.Process.Start("https://github.com/Blayr/DOTR-Modding-Tool");
+    }
+
+    private static void EnableDoubleBuffering(DataGridView view)
+    {
+      // Reflection is a hack because the DoubleBuffered property is protected. Maybe this indicates we should be subclassing DataGridView.
+      PropertyInfo property = typeof(DataGridView).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
+      property.SetValue(view, true, null);
     }
   }
 }

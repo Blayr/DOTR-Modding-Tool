@@ -4,7 +4,8 @@
   using System;
   using System.Collections.Generic;
   using System.Drawing;
-  using System.Windows.Forms;
+    using System.Reflection;
+    using System.Windows.Forms;
 
   public partial class MainForm : Form
   {
@@ -66,6 +67,7 @@
       this.cardConstantsDataGridView.DefaultCellStyle.Font = new Font("OpenSans", 9.75F, FontStyle.Regular);
       this.cardConstantsDataGridView.CellMouseClick += this.handleCardConstantsDataGridViewClick;
       this.cardConstantsDataGridView.DataBindingComplete += this.FormatCardConstantTable;
+      MainForm.EnableDoubleBuffering(this.cardConstantsDataGridView);
 
       this.cardConstantsContextStrip.Items.Add("Edit selected cards");
       this.cardConstantsContextStrip.ItemClicked += ShowMultipleEditDialog;

@@ -58,6 +58,7 @@
 
       this.fusionsDataGridView.EditingControlShowing += this.FusionEditControlShowing;
       this.fusionsDataGridView.ColumnHeaderMouseClick += this.fusionsDataGridView_SortColumns;
+      MainForm.EnableDoubleBuffering(this.fusionsDataGridView);
 
       this.fusionDataGridviewIsSetup = true;
     }
