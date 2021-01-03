@@ -54,6 +54,7 @@
       this.rankThresholdsDataGridView.Columns.Add(rankThresholdColumn);
       this.rankThresholdsDataGridView.CellValueChanged += this.RankThresholdDataGridView_CellValueChanged;
       this.rankThresholdsDataGridView.DataError += this.CorrectInvalidRankThreshold;
+      MainForm.EnableDoubleBuffering(this.rankThresholdsDataGridView);
     }
 
     private void CorrectInvalidRankThreshold(object sender, DataGridViewDataErrorEventArgs e)

@@ -16,6 +16,7 @@
       this.enemies = new Enemies(bytes);
       this.enemiesBinding = new BindingListView<Enemy>(this.enemies.List);
       this.enemyAiDataGridView.DataSource = this.enemiesBinding;
+      MainForm.EnableDoubleBuffering(this.enemyAiDataGridView);
 
       this.EnemyAiColumn.DataPropertyName = "AiId";
       this.EnemyAiColumn.ValueMember = "AiId";

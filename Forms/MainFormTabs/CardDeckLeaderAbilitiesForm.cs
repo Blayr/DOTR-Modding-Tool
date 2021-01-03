@@ -31,6 +31,7 @@
       this.cardDeckLeaderAbilitiesDatagridview.CellMouseClick += handleCardDeckLeaderAbilitiesDataGridViewClick;
       this.cardDeckLeaderAbilitiesContextStrip.Items.Add("Edit selected cards");
       this.cardDeckLeaderAbilitiesContextStrip.ItemClicked += ShowMultipleCardDeckLeaderAbilityEditDialog;
+      MainForm.EnableDoubleBuffering(this.cardDeckLeaderAbilitiesDatagridview);
     }
 
     private void handleCardDeckLeaderAbilitiesDataGridViewClick(object sender, DataGridViewCellMouseEventArgs e)

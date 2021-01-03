@@ -3,7 +3,6 @@
   using Equin.ApplicationFramework;
   using System;
   using System.Collections.Generic;
-  using System.ComponentModel;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -15,10 +14,11 @@
     {
       byte[][] cardEquipBytes = this.dataAccess.LoadMonsterEquipCardCompability();
       this.equipCompatabilities = new MonsterCardEquipCompatibilities(cardEquipBytes);
-      this.equipCompatabilitiesBinding= new BindingListView<MonsterCardEquipCompability>(this.equipCompatabilities.List);
+      this.equipCompatabilitiesBinding = new BindingListView<MonsterCardEquipCompability>(this.equipCompatabilities.List);
 
       this.equipCompatibilityDataGridView.AutoGenerateColumns = false;
       this.equipCompatibilityDataGridView.DataSource = equipCompatabilitiesBinding;
+      MainForm.EnableDoubleBuffering(this.equipCompatibilityDataGridView);
     }
 
     private void ShowMonsterCardEquipCompatibilityEditDialog(object sender, EventArgs e)
