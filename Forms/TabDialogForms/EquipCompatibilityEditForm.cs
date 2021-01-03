@@ -201,7 +201,7 @@ public class EquipCompatibilityEditForm : Form
       this.richTextBox1.ReadOnly = true;
       this.richTextBox1.Size = new System.Drawing.Size(209, 39);
       this.richTextBox1.TabIndex = 8;
-      this.richTextBox1.Text = "*** Metalmorph and Insect imitation flags only affect what appears on the \"Power " +
+      this.richTextBox1.Text = "*** Metalmorph and Insect Imitation flags only affect what appears on the \"Power " +
     "Up\" section of a card.";
       // 
       // EquipCompatibilityEditForm

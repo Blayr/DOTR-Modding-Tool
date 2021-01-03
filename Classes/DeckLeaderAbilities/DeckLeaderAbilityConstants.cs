@@ -84,7 +84,7 @@ Dragon, Winged Beast, Fish, Machine -> 2 if level is at least 7, else 1."
 		};
 
 		NameAndDescriptions[(int)DeckLeaderAbilityType.FriendlyMovementBoost] = new string[] {
-			"Movement Boost For Same Type friendlies",
+			"Movement Boost For Same Type Friendlies",
 			"Boosts movement for same type friendlies by 1 (does not stack with other movement bonuses)."
 		};
 
