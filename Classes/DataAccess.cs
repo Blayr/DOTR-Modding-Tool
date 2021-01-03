@@ -2,17 +2,17 @@
 
 public class DataAccess
 {
-  public const int DeckLeaderRankThresholdsByteOffset = 2754898;
+  public const int DeckLeaderRankThresholdsByteOffset = 0x2A0952;
   public const int DeckLeaderRankThresholdByteLength = 24;
-  public const int CardConstantsByteOffset = 2683264;
-  public const int FusionListByteOffset = 2550064;
+  public const int CardConstantsByteOffset = 0x28F180;
+  public const int FusionListByteOffset = 0x26E930;
   public const int FusionListByteLength = 26540 * 4;
   public const int CardConstantByteLength = 20;
   public const int CardConstantCount = Cards.TotalCardCount;
-  public const int EnemyAiByteOffset = 2666416;
+  public const int EnemyAiByteOffset = 0x28AFB0;
   public const int EnemyAiByteLength = 4;
   public const int EnemyAiCount = 32;
-  public const int TreasureCardByteOffset = 2755024;
+  public const int TreasureCardByteOffset = 0x2A09D0;
   public const int TreasureCardByteSize = 4;
   public const int TreasureCardCount = 22;
   public const int CardLeaderAbilitiesOffset = 0x293438;
