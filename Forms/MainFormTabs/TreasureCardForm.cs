@@ -23,7 +23,7 @@
         return;
       }
 
-      this.treasureCardCardComboBox.DataSource = this.cardConstants.Constants;
+      this.treasureCardCardComboBox.DataSource = CardConstant.List;
       this.treasureCardCardComboBox.DropDownStyle = ComboBoxStyle.DropDown;
       this.treasureCardCardComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
       this.treasureCardCardComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;

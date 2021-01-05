@@ -49,7 +49,7 @@
       this.FusionsDataGridViewFusionCard.AutoComplete = true;
       this.FusionsDataGridViewFusionCard.FlatStyle = FlatStyle.Flat;
 
-      foreach (CardConstant cardConstant in this.cardConstants.Monsters)
+      foreach (CardConstant cardConstant in CardConstant.Monsters)
       {
         this.FusionsDataGridViewLowerCard.Items.Add(new { LowerCardName = cardConstant.Name, LowerCardIndex = cardConstant.Index });
         this.FusionsDataGridViewUpperCard.Items.Add(new { UpperCardName = cardConstant.Name, UpperCardIndex = cardConstant.Index });
