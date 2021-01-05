@@ -4,38 +4,37 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class CardConstants
-{
-	public List<CardConstant> Constants = new List<CardConstant> { };
-
-	public CardConstants(byte[][] bytes)
-	{
-		for (ushort i = 0; i < Cards.TotalCardCount; i++)
-    {
-			Constants.Add(new CardConstant(i, bytes[i]));
-    }
-	}
-
-	public List<CardConstant> Monsters
-  {
-    get
-    {
-			CardColorType[] monsterTypes = { CardColorType.NormalMonster, CardColorType.EffectMonster };
-			return this.Constants.FindAll(constant => monsterTypes.Contains(constant.CardColor)).ToList<CardConstant>();
-    }
-  }
-
-	public byte[] Bytes
-  {
-		get
-		{
-			return this.Constants.SelectMany(c => c.Bytes).ToArray();
-		}
-  }
-}
-
 public class CardConstant
 {
+	public static List<CardConstant> List = new List<CardConstant> { };
+
+	public static void LoadFromBytes(byte[][] bytes)
+	{
+		List.Clear();
+
+		for (ushort i = 0; i < Cards.TotalCardCount; i++)
+		{
+			List.Add(new CardConstant(i, bytes[i]));
+		}
+	}
+
+	public static List<CardConstant> Monsters
+	{
+		get
+		{
+			CardColorType[] monsterTypes = { CardColorType.NormalMonster, CardColorType.EffectMonster };
+			return List.FindAll(constant => monsterTypes.Contains(constant.CardColor)).ToList<CardConstant>();
+		}
+	}
+
+	public static byte[] AllBytes
+	{
+		get
+		{
+			return List.SelectMany(c => c.Bytes).ToArray();
+		}
+	}
+
 	public CardColorType CardColor { get; set; }
 
 	const int maxAttackDefense = 8191;
@@ -345,5 +344,10 @@ public class CardConstant
     {
 			return this.hasAlternateArt;
     }
+  }
+
+	public override string ToString()
+  {
+		return Name;
   }
 }
