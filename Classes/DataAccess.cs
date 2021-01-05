@@ -23,7 +23,7 @@ public class DataAccess
   public const int MonsterEquipCardCompabilityCardCount = 687;
   public const int MonsterEquipCardCompabilityByteSize = 7;
   public const int DeckByteOffset = 0x2A0A70;
-  public const int DeckCount = 41;
+  public const int DeckCount = 51;
   public const int DeckCardCount = 41;
   public const int DeckCardByteCount = 2;
 
