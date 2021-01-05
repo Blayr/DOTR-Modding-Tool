@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Deck.cs" />
+    <Compile Include="Classes\DeckCard.cs" />
     <Compile Include="Classes\DeckLeaderAbilities\FlagDeckLeaderAbility.cs" />
     <Compile Include="Classes\DeckLeaderAbilities\DeckLeaderAbilityFactory.cs" />
     <Compile Include="Classes\DeckLeaderAbilities\StrengthModifierDeckLeaderAbility.cs" />
@@ -71,7 +73,7 @@
     <Compile Include="Classes\BitHelper.cs" />
     <Compile Include="Classes\CardAttribute.cs" />
     <Compile Include="Classes\CardColorType.cs" />
-    <Compile Include="Classes\CardConstants.cs" />
+    <Compile Include="Classes\CardConstant.cs" />
     <Compile Include="Classes\CardKind.cs" />
     <Compile Include="Classes\Cards.cs" />
     <Compile Include="Classes\CustomExtensions.cs" />
