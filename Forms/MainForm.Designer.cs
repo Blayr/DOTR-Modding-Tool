@@ -704,7 +704,6 @@
       this.cardConstantsDataGridView.AllowUserToOrderColumns = true;
       this.cardConstantsDataGridView.AllowUserToResizeRows = false;
       this.cardConstantsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.cardConstantsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
