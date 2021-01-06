@@ -66,7 +66,7 @@
     <Compile Include="Forms\DeckLeaderAbilityForms\EditStrengthModifierDeckLeaderAbilityForm.Designer.cs">
       <DependentUpon>EditStrengthModifierDeckLeaderAbilityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainFormTabs\CardConstantsTab.cs">
+    <Compile Include="Forms\MainFormTabs\CardConstantsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Classes\Ai.cs" />
@@ -80,7 +80,7 @@
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\DebugHelper.cs" />
     <Compile Include="Classes\Enemies.cs" />
-    <Compile Include="Forms\MainFormTabs\DeckEditorTab.cs">
+    <Compile Include="Forms\MainFormTabs\DeckEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TabDialogForms\CardConstantsMultiEditForm.cs">

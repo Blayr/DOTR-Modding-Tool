@@ -106,6 +106,7 @@
       this.deckEditorTab = new System.Windows.Forms.TabPage();
       this.deckEditorTabSplitContainer = new System.Windows.Forms.SplitContainer();
       this.cardTrunkSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.cardTrunkLabel = new System.Windows.Forms.Label();
       this.trunkFilterTextBox = new System.Windows.Forms.TextBox();
       this.trunkClearFilterButton = new System.Windows.Forms.Button();
       this.trunkApplyFilterButton = new System.Windows.Forms.Button();
@@ -120,6 +121,7 @@
       this.cardTrunkTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardTrunkDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.deckEditorSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.decksLabel = new System.Windows.Forms.Label();
       this.deckLabel = new System.Windows.Forms.Label();
       this.comboBox1 = new System.Windows.Forms.ComboBox();
       this.deckEditSaveButton = new System.Windows.Forms.Button();
@@ -226,7 +228,7 @@
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
       this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-      this.menuStrip1.Size = new System.Drawing.Size(938, 24);
+      this.menuStrip1.Size = new System.Drawing.Size(1125, 24);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
       // 
@@ -258,7 +260,7 @@
       this.hiddenCardsTab.Location = new System.Drawing.Point(4, 22);
       this.hiddenCardsTab.Name = "hiddenCardsTab";
       this.hiddenCardsTab.Padding = new System.Windows.Forms.Padding(3);
-      this.hiddenCardsTab.Size = new System.Drawing.Size(930, 496);
+      this.hiddenCardsTab.Size = new System.Drawing.Size(1117, 528);
       this.hiddenCardsTab.TabIndex = 4;
       this.hiddenCardsTab.Text = "Hidden Cards";
       this.hiddenCardsTab.UseVisualStyleBackColor = true;
@@ -285,8 +287,8 @@
       this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardRowNumericUpDown);
       this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardSaveButton);
       this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardCardComboBox);
-      this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(924, 490);
-      this.hiddenCardsSplitContainer.SplitterDistance = 193;
+      this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(1111, 522);
+      this.hiddenCardsSplitContainer.SplitterDistance = 232;
       this.hiddenCardsSplitContainer.TabIndex = 0;
       // 
       // treasureCardsListbox
@@ -296,7 +298,7 @@
       this.treasureCardsListbox.FormattingEnabled = true;
       this.treasureCardsListbox.Location = new System.Drawing.Point(0, 0);
       this.treasureCardsListbox.Name = "treasureCardsListbox";
-      this.treasureCardsListbox.Size = new System.Drawing.Size(193, 490);
+      this.treasureCardsListbox.Size = new System.Drawing.Size(232, 522);
       this.treasureCardsListbox.TabIndex = 0;
       this.treasureCardsListbox.SelectedIndexChanged += new System.EventHandler(this.treasureCardsListbox_SelectedIndexChanged);
       // 
@@ -404,7 +406,7 @@
       this.enemyAiTab.Location = new System.Drawing.Point(4, 22);
       this.enemyAiTab.Name = "enemyAiTab";
       this.enemyAiTab.Padding = new System.Windows.Forms.Padding(3);
-      this.enemyAiTab.Size = new System.Drawing.Size(930, 496);
+      this.enemyAiTab.Size = new System.Drawing.Size(1117, 528);
       this.enemyAiTab.TabIndex = 3;
       this.enemyAiTab.Text = "Enemy Ai";
       this.enemyAiTab.UseVisualStyleBackColor = true;
@@ -424,14 +426,14 @@
       // enemyAiTabSplitContainer.Panel2
       // 
       this.enemyAiTabSplitContainer.Panel2.Controls.Add(this.enemyAiDataGridView);
-      this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(924, 490);
+      this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(1111, 522);
       this.enemyAiTabSplitContainer.SplitterDistance = 25;
       this.enemyAiTabSplitContainer.TabIndex = 1;
       // 
       // enemyAiSaveButton
       // 
       this.enemyAiSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
-      this.enemyAiSaveButton.Location = new System.Drawing.Point(849, 0);
+      this.enemyAiSaveButton.Location = new System.Drawing.Point(1036, 0);
       this.enemyAiSaveButton.Name = "enemyAiSaveButton";
       this.enemyAiSaveButton.Size = new System.Drawing.Size(75, 25);
       this.enemyAiSaveButton.TabIndex = 0;
@@ -454,7 +456,7 @@
       this.enemyAiDataGridView.Name = "enemyAiDataGridView";
       this.enemyAiDataGridView.RowHeadersVisible = false;
       this.enemyAiDataGridView.RowHeadersWidth = 51;
-      this.enemyAiDataGridView.Size = new System.Drawing.Size(924, 461);
+      this.enemyAiDataGridView.Size = new System.Drawing.Size(1111, 493);
       this.enemyAiDataGridView.TabIndex = 0;
       // 
       // EnemyIndex
@@ -488,7 +490,7 @@
       this.fusionsTab.Location = new System.Drawing.Point(4, 22);
       this.fusionsTab.Name = "fusionsTab";
       this.fusionsTab.Padding = new System.Windows.Forms.Padding(3);
-      this.fusionsTab.Size = new System.Drawing.Size(930, 496);
+      this.fusionsTab.Size = new System.Drawing.Size(1117, 528);
       this.fusionsTab.TabIndex = 2;
       this.fusionsTab.Text = "Fusions";
       this.fusionsTab.UseVisualStyleBackColor = true;
@@ -509,7 +511,7 @@
       // splitContainer2.Panel2
       // 
       this.splitContainer2.Panel2.Controls.Add(this.fusionsDataGridView);
-      this.splitContainer2.Size = new System.Drawing.Size(924, 490);
+      this.splitContainer2.Size = new System.Drawing.Size(1111, 522);
       this.splitContainer2.SplitterDistance = 25;
       this.splitContainer2.TabIndex = 1;
       // 
@@ -525,7 +527,7 @@
       // fusionSaveButton
       // 
       this.fusionSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
-      this.fusionSaveButton.Location = new System.Drawing.Point(849, 0);
+      this.fusionSaveButton.Location = new System.Drawing.Point(1036, 0);
       this.fusionSaveButton.Name = "fusionSaveButton";
       this.fusionSaveButton.Size = new System.Drawing.Size(75, 25);
       this.fusionSaveButton.TabIndex = 0;
@@ -552,7 +554,7 @@
       this.fusionsDataGridView.Name = "fusionsDataGridView";
       this.fusionsDataGridView.RowHeadersVisible = false;
       this.fusionsDataGridView.RowHeadersWidth = 51;
-      this.fusionsDataGridView.Size = new System.Drawing.Size(924, 461);
+      this.fusionsDataGridView.Size = new System.Drawing.Size(1111, 493);
       this.fusionsDataGridView.TabIndex = 0;
       // 
       // FusionsDataGridViewIndex
@@ -625,7 +627,7 @@
       this.cardPropertiesTab.Location = new System.Drawing.Point(4, 22);
       this.cardPropertiesTab.Name = "cardPropertiesTab";
       this.cardPropertiesTab.Padding = new System.Windows.Forms.Padding(3);
-      this.cardPropertiesTab.Size = new System.Drawing.Size(930, 496);
+      this.cardPropertiesTab.Size = new System.Drawing.Size(1117, 528);
       this.cardPropertiesTab.TabIndex = 1;
       this.cardPropertiesTab.Text = "Card Properties";
       this.cardPropertiesTab.UseVisualStyleBackColor = true;
@@ -651,7 +653,7 @@
       // splitContainer1.Panel2
       // 
       this.splitContainer1.Panel2.Controls.Add(this.cardConstantsDataGridView);
-      this.splitContainer1.Size = new System.Drawing.Size(924, 490);
+      this.splitContainer1.Size = new System.Drawing.Size(1111, 522);
       this.splitContainer1.SplitterDistance = 25;
       this.splitContainer1.TabIndex = 1;
       // 
@@ -667,7 +669,7 @@
       // cardConstantsSaveButton
       // 
       this.cardConstantsSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
-      this.cardConstantsSaveButton.Location = new System.Drawing.Point(849, 0);
+      this.cardConstantsSaveButton.Location = new System.Drawing.Point(1036, 0);
       this.cardConstantsSaveButton.Name = "cardConstantsSaveButton";
       this.cardConstantsSaveButton.Size = new System.Drawing.Size(75, 25);
       this.cardConstantsSaveButton.TabIndex = 4;
@@ -748,7 +750,7 @@
       this.cardConstantsDataGridView.RowHeadersVisible = false;
       this.cardConstantsDataGridView.RowHeadersWidth = 51;
       this.cardConstantsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.cardConstantsDataGridView.Size = new System.Drawing.Size(924, 461);
+      this.cardConstantsDataGridView.Size = new System.Drawing.Size(1111, 493);
       this.cardConstantsDataGridView.TabIndex = 0;
       // 
       // CardConstantId
@@ -872,7 +874,7 @@
       this.leaderRankTresholdsTab.Location = new System.Drawing.Point(4, 22);
       this.leaderRankTresholdsTab.Name = "leaderRankTresholdsTab";
       this.leaderRankTresholdsTab.Padding = new System.Windows.Forms.Padding(3);
-      this.leaderRankTresholdsTab.Size = new System.Drawing.Size(930, 496);
+      this.leaderRankTresholdsTab.Size = new System.Drawing.Size(1117, 528);
       this.leaderRankTresholdsTab.TabIndex = 0;
       this.leaderRankTresholdsTab.Text = "Rank Thresholds";
       this.leaderRankTresholdsTab.UseVisualStyleBackColor = true;
@@ -961,7 +963,7 @@
       this.mainTabControl.Location = new System.Drawing.Point(0, 27);
       this.mainTabControl.Name = "mainTabControl";
       this.mainTabControl.SelectedIndex = 0;
-      this.mainTabControl.Size = new System.Drawing.Size(938, 522);
+      this.mainTabControl.Size = new System.Drawing.Size(1125, 554);
       this.mainTabControl.TabIndex = 3;
       // 
       // deckEditorTab
@@ -970,7 +972,7 @@
       this.deckEditorTab.Location = new System.Drawing.Point(4, 22);
       this.deckEditorTab.Name = "deckEditorTab";
       this.deckEditorTab.Padding = new System.Windows.Forms.Padding(3);
-      this.deckEditorTab.Size = new System.Drawing.Size(930, 496);
+      this.deckEditorTab.Size = new System.Drawing.Size(1117, 528);
       this.deckEditorTab.TabIndex = 7;
       this.deckEditorTab.Text = "Deck Editor";
       this.deckEditorTab.UseVisualStyleBackColor = true;
@@ -988,8 +990,8 @@
       // deckEditorTabSplitContainer.Panel2
       // 
       this.deckEditorTabSplitContainer.Panel2.Controls.Add(this.deckEditorSplitContainer);
-      this.deckEditorTabSplitContainer.Size = new System.Drawing.Size(924, 490);
-      this.deckEditorTabSplitContainer.SplitterDistance = 400;
+      this.deckEditorTabSplitContainer.Size = new System.Drawing.Size(1111, 522);
+      this.deckEditorTabSplitContainer.SplitterDistance = 550;
       this.deckEditorTabSplitContainer.TabIndex = 0;
       // 
       // cardTrunkSplitContainer
@@ -1003,6 +1005,7 @@
       // 
       // cardTrunkSplitContainer.Panel1
       // 
+      this.cardTrunkSplitContainer.Panel1.Controls.Add(this.cardTrunkLabel);
       this.cardTrunkSplitContainer.Panel1.Controls.Add(this.trunkFilterTextBox);
       this.cardTrunkSplitContainer.Panel1.Controls.Add(this.trunkClearFilterButton);
       this.cardTrunkSplitContainer.Panel1.Controls.Add(this.trunkApplyFilterButton);
@@ -1011,13 +1014,23 @@
       // cardTrunkSplitContainer.Panel2
       // 
       this.cardTrunkSplitContainer.Panel2.Controls.Add(this.deckEditAllCardsDataGridView);
-      this.cardTrunkSplitContainer.Size = new System.Drawing.Size(400, 490);
-      this.cardTrunkSplitContainer.SplitterDistance = 25;
+      this.cardTrunkSplitContainer.Size = new System.Drawing.Size(550, 522);
+      this.cardTrunkSplitContainer.SplitterDistance = 60;
       this.cardTrunkSplitContainer.TabIndex = 1;
+      // 
+      // cardTrunkLabel
+      // 
+      this.cardTrunkLabel.AutoSize = true;
+      this.cardTrunkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.cardTrunkLabel.Location = new System.Drawing.Point(5, 6);
+      this.cardTrunkLabel.Name = "cardTrunkLabel";
+      this.cardTrunkLabel.Size = new System.Drawing.Size(54, 20);
+      this.cardTrunkLabel.TabIndex = 5;
+      this.cardTrunkLabel.Text = "Trunk";
       // 
       // trunkFilterTextBox
       // 
-      this.trunkFilterTextBox.Location = new System.Drawing.Point(55, 5);
+      this.trunkFilterTextBox.Location = new System.Drawing.Point(46, 34);
       this.trunkFilterTextBox.Name = "trunkFilterTextBox";
       this.trunkFilterTextBox.Size = new System.Drawing.Size(122, 20);
       this.trunkFilterTextBox.TabIndex = 4;
@@ -1025,7 +1038,7 @@
       // 
       // trunkClearFilterButton
       // 
-      this.trunkClearFilterButton.Location = new System.Drawing.Point(264, 3);
+      this.trunkClearFilterButton.Location = new System.Drawing.Point(255, 32);
       this.trunkClearFilterButton.Name = "trunkClearFilterButton";
       this.trunkClearFilterButton.Size = new System.Drawing.Size(75, 23);
       this.trunkClearFilterButton.TabIndex = 3;
@@ -1035,7 +1048,7 @@
       // 
       // trunkApplyFilterButton
       // 
-      this.trunkApplyFilterButton.Location = new System.Drawing.Point(183, 3);
+      this.trunkApplyFilterButton.Location = new System.Drawing.Point(174, 32);
       this.trunkApplyFilterButton.Name = "trunkApplyFilterButton";
       this.trunkApplyFilterButton.Size = new System.Drawing.Size(75, 23);
       this.trunkApplyFilterButton.TabIndex = 2;
@@ -1046,7 +1059,7 @@
       // trunkNameFilterLabel
       // 
       this.trunkNameFilterLabel.AutoSize = true;
-      this.trunkNameFilterLabel.Location = new System.Drawing.Point(5, 8);
+      this.trunkNameFilterLabel.Location = new System.Drawing.Point(8, 36);
       this.trunkNameFilterLabel.Name = "trunkNameFilterLabel";
       this.trunkNameFilterLabel.Size = new System.Drawing.Size(32, 13);
       this.trunkNameFilterLabel.TabIndex = 1;
@@ -1071,7 +1084,7 @@
       this.deckEditAllCardsDataGridView.Location = new System.Drawing.Point(0, 0);
       this.deckEditAllCardsDataGridView.Name = "deckEditAllCardsDataGridView";
       this.deckEditAllCardsDataGridView.RowHeadersVisible = false;
-      this.deckEditAllCardsDataGridView.Size = new System.Drawing.Size(400, 461);
+      this.deckEditAllCardsDataGridView.Size = new System.Drawing.Size(550, 458);
       this.deckEditAllCardsDataGridView.TabIndex = 0;
       // 
       // Index
@@ -1148,21 +1161,33 @@
       // 
       // deckEditorSplitContainer.Panel1
       // 
+      this.deckEditorSplitContainer.Panel1.Controls.Add(this.decksLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.comboBox1);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckEditSaveButton);
+      this.deckEditorSplitContainer.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.deckEditorSplitContainer_Panel1_Paint);
       // 
       // deckEditorSplitContainer.Panel2
       // 
       this.deckEditorSplitContainer.Panel2.Controls.Add(this.deckEditorDataGridView);
-      this.deckEditorSplitContainer.Size = new System.Drawing.Size(520, 490);
-      this.deckEditorSplitContainer.SplitterDistance = 25;
+      this.deckEditorSplitContainer.Size = new System.Drawing.Size(557, 522);
+      this.deckEditorSplitContainer.SplitterDistance = 60;
       this.deckEditorSplitContainer.TabIndex = 0;
+      // 
+      // decksLabel
+      // 
+      this.decksLabel.AutoSize = true;
+      this.decksLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.decksLabel.Location = new System.Drawing.Point(3, 6);
+      this.decksLabel.Name = "decksLabel";
+      this.decksLabel.Size = new System.Drawing.Size(59, 20);
+      this.decksLabel.TabIndex = 6;
+      this.decksLabel.Text = "Decks";
       // 
       // deckLabel
       // 
       this.deckLabel.AutoSize = true;
-      this.deckLabel.Location = new System.Drawing.Point(3, 8);
+      this.deckLabel.Location = new System.Drawing.Point(4, 37);
       this.deckLabel.Name = "deckLabel";
       this.deckLabel.Size = new System.Drawing.Size(36, 13);
       this.deckLabel.TabIndex = 2;
@@ -1172,7 +1197,7 @@
       // 
       this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBox1.FormattingEnabled = true;
-      this.comboBox1.Location = new System.Drawing.Point(45, 5);
+      this.comboBox1.Location = new System.Drawing.Point(46, 33);
       this.comboBox1.Name = "comboBox1";
       this.comboBox1.Size = new System.Drawing.Size(147, 21);
       this.comboBox1.TabIndex = 1;
@@ -1181,7 +1206,7 @@
       // deckEditSaveButton
       // 
       this.deckEditSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.deckEditSaveButton.Location = new System.Drawing.Point(442, 3);
+      this.deckEditSaveButton.Location = new System.Drawing.Point(479, 31);
       this.deckEditSaveButton.Name = "deckEditSaveButton";
       this.deckEditSaveButton.Size = new System.Drawing.Size(75, 23);
       this.deckEditSaveButton.TabIndex = 0;
@@ -1209,7 +1234,7 @@
       this.deckEditorDataGridView.Name = "deckEditorDataGridView";
       this.deckEditorDataGridView.RowHeadersVisible = false;
       this.deckEditorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.deckEditorDataGridView.Size = new System.Drawing.Size(520, 461);
+      this.deckEditorDataGridView.Size = new System.Drawing.Size(557, 458);
       this.deckEditorDataGridView.TabIndex = 0;
       // 
       // indexColumn
@@ -1281,7 +1306,7 @@
       this.deckLeaderAbilitiesTab.Location = new System.Drawing.Point(4, 22);
       this.deckLeaderAbilitiesTab.Name = "deckLeaderAbilitiesTab";
       this.deckLeaderAbilitiesTab.Padding = new System.Windows.Forms.Padding(3);
-      this.deckLeaderAbilitiesTab.Size = new System.Drawing.Size(930, 496);
+      this.deckLeaderAbilitiesTab.Size = new System.Drawing.Size(1117, 528);
       this.deckLeaderAbilitiesTab.TabIndex = 5;
       this.deckLeaderAbilitiesTab.Text = "Deck Leader Abilities";
       this.deckLeaderAbilitiesTab.UseVisualStyleBackColor = true;
@@ -1302,7 +1327,7 @@
       // cardDeckLeaderAbilitiesSplitContainer.Panel2
       // 
       this.cardDeckLeaderAbilitiesSplitContainer.Panel2.Controls.Add(this.cardDeckLeaderAbilitiesDatagridview);
-      this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(924, 490);
+      this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(1111, 522);
       this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 25;
       this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
       // 
@@ -1319,7 +1344,7 @@
       // deckLeaderAbilitiesSaveButton
       // 
       this.deckLeaderAbilitiesSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.deckLeaderAbilitiesSaveButton.Location = new System.Drawing.Point(844, 3);
+      this.deckLeaderAbilitiesSaveButton.Location = new System.Drawing.Point(1031, 3);
       this.deckLeaderAbilitiesSaveButton.Name = "deckLeaderAbilitiesSaveButton";
       this.deckLeaderAbilitiesSaveButton.Size = new System.Drawing.Size(75, 23);
       this.deckLeaderAbilitiesSaveButton.TabIndex = 0;
@@ -1343,7 +1368,7 @@
       this.cardDeckLeaderAbilitiesDatagridview.Name = "cardDeckLeaderAbilitiesDatagridview";
       this.cardDeckLeaderAbilitiesDatagridview.RowHeadersVisible = false;
       this.cardDeckLeaderAbilitiesDatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(924, 461);
+      this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(1111, 493);
       this.cardDeckLeaderAbilitiesDatagridview.TabIndex = 0;
       // 
       // cardDeckLeaderAbilitiesIndexColumn
@@ -1383,7 +1408,7 @@
       this.equipCompabilityTab.Location = new System.Drawing.Point(4, 22);
       this.equipCompabilityTab.Name = "equipCompabilityTab";
       this.equipCompabilityTab.Padding = new System.Windows.Forms.Padding(3);
-      this.equipCompabilityTab.Size = new System.Drawing.Size(930, 496);
+      this.equipCompabilityTab.Size = new System.Drawing.Size(1117, 528);
       this.equipCompabilityTab.TabIndex = 6;
       this.equipCompabilityTab.Text = "Equip Compatibility";
       this.equipCompabilityTab.UseVisualStyleBackColor = true;
@@ -1405,7 +1430,7 @@
       // equipCompabilitySplitContainer.Panel2
       // 
       this.equipCompabilitySplitContainer.Panel2.Controls.Add(this.equipCompatibilityDataGridView);
-      this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(924, 490);
+      this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(1111, 522);
       this.equipCompabilitySplitContainer.SplitterDistance = 31;
       this.equipCompabilitySplitContainer.TabIndex = 0;
       // 
@@ -1422,7 +1447,7 @@
       // equipCompatibilitySaveButton
       // 
       this.equipCompatibilitySaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.equipCompatibilitySaveButton.Location = new System.Drawing.Point(844, 5);
+      this.equipCompatibilitySaveButton.Location = new System.Drawing.Point(1031, 5);
       this.equipCompatibilitySaveButton.Name = "equipCompatibilitySaveButton";
       this.equipCompatibilitySaveButton.Size = new System.Drawing.Size(75, 23);
       this.equipCompatibilitySaveButton.TabIndex = 0;
@@ -1447,7 +1472,7 @@
       this.equipCompatibilityDataGridView.Name = "equipCompatibilityDataGridView";
       this.equipCompatibilityDataGridView.RowHeadersVisible = false;
       this.equipCompatibilityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(924, 455);
+      this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(1111, 487);
       this.equipCompatibilityDataGridView.TabIndex = 0;
       // 
       // EquipCompatabilityCardIndexColumn
@@ -1517,7 +1542,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(938, 547);
+      this.ClientSize = new System.Drawing.Size(1125, 579);
       this.Controls.Add(this.mainTabControl);
       this.Controls.Add(this.menuStrip1);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1712,5 +1737,7 @@
     private Button trunkApplyFilterButton;
     private Label trunkNameFilterLabel;
     private TextBox trunkFilterTextBox;
+    private Label cardTrunkLabel;
+    private Label decksLabel;
   }
 }

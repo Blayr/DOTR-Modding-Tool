@@ -89,5 +89,10 @@
       PropertyInfo property = typeof(DataGridView).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
       property.SetValue(view, true, null);
     }
+
+    private void deckEditorSplitContainer_Panel1_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
   }
 }
