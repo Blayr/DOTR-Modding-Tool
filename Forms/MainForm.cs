@@ -89,10 +89,5 @@
       PropertyInfo property = typeof(DataGridView).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
       property.SetValue(view, true, null);
     }
-
-    private void deckEditSaveButton_Click(object sender, EventArgs e)
-    {
-
-    }
   }
 }

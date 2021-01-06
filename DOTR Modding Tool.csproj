@@ -66,7 +66,7 @@
     <Compile Include="Forms\DeckLeaderAbilityForms\EditStrengthModifierDeckLeaderAbilityForm.Designer.cs">
       <DependentUpon>EditStrengthModifierDeckLeaderAbilityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainFormTabs\CardConstantsForm.cs">
+    <Compile Include="Forms\MainFormTabs\CardConstantsTab.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Classes\Ai.cs" />

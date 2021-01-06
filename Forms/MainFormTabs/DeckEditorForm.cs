@@ -13,11 +13,12 @@ namespace DOTR_Modding_Tool
   public partial class MainForm : Form
   {
     private List<Deck> deckList;
-    private BindingListView<CardConstant> trunkCardBinding;
+    private BindingListView<CardConstant> trunkCardConstantBinding;
     private BindingListView<DeckCard> deckEditDeckCardBinding;
 
     private void setupDeckEditorTab()
     {
+      trunkCardConstantBinding = new BindingListView<CardConstant>(CardConstant.List);
       setupDeckEditDataGridView();
       loadDeckData();
     }
@@ -42,7 +43,7 @@ namespace DOTR_Modding_Tool
     {
       this.formatCardTable(this.deckEditAllCardsDataGridView);
       this.formatCardTable(this.deckEditorDataGridView);
-      this.deckEditAllCardsDataGridView.DataSource = cardConstantsBinding;
+      this.deckEditAllCardsDataGridView.DataSource = trunkCardConstantBinding;
     }
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,6 +51,44 @@ namespace DOTR_Modding_Tool
       Deck selectedDeck = (Deck)comboBox1.SelectedItem;
       deckEditDeckCardBinding = new BindingListView<DeckCard>(selectedDeck.CardList);
       deckEditorDataGridView.DataSource = deckEditDeckCardBinding;
+    }
+
+    private void deckEditSaveButton_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void applyTrunkFilter()
+    {
+      string searchTerm = trunkFilterTextBox.Text.ToLower().Trim();
+
+      if (searchTerm == string.Empty)
+      {
+        trunkCardConstantBinding.RemoveFilter();
+        return;
+      }
+
+      trunkCardConstantBinding.ApplyFilter(delegate (CardConstant cardConstant) { return cardConstant.Name.ToLower().Contains(searchTerm); });
+    }
+
+    private void trunkSearchButton_Click(object sender, EventArgs e)
+    {
+      applyTrunkFilter();
+    }
+
+    private void trunkClearButton_Click(object sender, EventArgs e)
+    {
+      trunkFilterTextBox.Clear();
+      trunkCardConstantBinding.RemoveFilter();
+    }
+    private void trunkFilterTextbox_KeyDown(object sender, KeyEventArgs e)
+    {
+      if (e.KeyCode == Keys.Enter)
+      {
+        applyTrunkFilter();
+        e.Handled = true;
+        e.SuppressKeyPress = true;
+      }
     }
   }
 }

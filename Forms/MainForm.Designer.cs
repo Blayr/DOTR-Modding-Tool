@@ -106,6 +106,10 @@
       this.deckEditorTab = new System.Windows.Forms.TabPage();
       this.deckEditorTabSplitContainer = new System.Windows.Forms.SplitContainer();
       this.cardTrunkSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.trunkFilterTextBox = new System.Windows.Forms.TextBox();
+      this.trunkClearFilterButton = new System.Windows.Forms.Button();
+      this.trunkApplyFilterButton = new System.Windows.Forms.Button();
+      this.trunkNameFilterLabel = new System.Windows.Forms.Label();
       this.deckEditAllCardsDataGridView = new System.Windows.Forms.DataGridView();
       this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -185,6 +189,7 @@
       this.deckEditorTabSplitContainer.Panel2.SuspendLayout();
       this.deckEditorTabSplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardTrunkSplitContainer)).BeginInit();
+      this.cardTrunkSplitContainer.Panel1.SuspendLayout();
       this.cardTrunkSplitContainer.Panel2.SuspendLayout();
       this.cardTrunkSplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.deckEditAllCardsDataGridView)).BeginInit();
@@ -996,12 +1001,56 @@
       this.cardTrunkSplitContainer.Name = "cardTrunkSplitContainer";
       this.cardTrunkSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
       // 
+      // cardTrunkSplitContainer.Panel1
+      // 
+      this.cardTrunkSplitContainer.Panel1.Controls.Add(this.trunkFilterTextBox);
+      this.cardTrunkSplitContainer.Panel1.Controls.Add(this.trunkClearFilterButton);
+      this.cardTrunkSplitContainer.Panel1.Controls.Add(this.trunkApplyFilterButton);
+      this.cardTrunkSplitContainer.Panel1.Controls.Add(this.trunkNameFilterLabel);
+      // 
       // cardTrunkSplitContainer.Panel2
       // 
       this.cardTrunkSplitContainer.Panel2.Controls.Add(this.deckEditAllCardsDataGridView);
       this.cardTrunkSplitContainer.Size = new System.Drawing.Size(400, 490);
       this.cardTrunkSplitContainer.SplitterDistance = 25;
       this.cardTrunkSplitContainer.TabIndex = 1;
+      // 
+      // trunkFilterTextBox
+      // 
+      this.trunkFilterTextBox.Location = new System.Drawing.Point(55, 5);
+      this.trunkFilterTextBox.Name = "trunkFilterTextBox";
+      this.trunkFilterTextBox.Size = new System.Drawing.Size(122, 20);
+      this.trunkFilterTextBox.TabIndex = 4;
+      this.trunkFilterTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.trunkFilterTextbox_KeyDown);
+      // 
+      // trunkClearFilterButton
+      // 
+      this.trunkClearFilterButton.Location = new System.Drawing.Point(264, 3);
+      this.trunkClearFilterButton.Name = "trunkClearFilterButton";
+      this.trunkClearFilterButton.Size = new System.Drawing.Size(75, 23);
+      this.trunkClearFilterButton.TabIndex = 3;
+      this.trunkClearFilterButton.Text = "Clear";
+      this.trunkClearFilterButton.UseVisualStyleBackColor = true;
+      this.trunkClearFilterButton.Click += new System.EventHandler(this.trunkClearButton_Click);
+      // 
+      // trunkApplyFilterButton
+      // 
+      this.trunkApplyFilterButton.Location = new System.Drawing.Point(183, 3);
+      this.trunkApplyFilterButton.Name = "trunkApplyFilterButton";
+      this.trunkApplyFilterButton.Size = new System.Drawing.Size(75, 23);
+      this.trunkApplyFilterButton.TabIndex = 2;
+      this.trunkApplyFilterButton.Text = "Apply";
+      this.trunkApplyFilterButton.UseVisualStyleBackColor = true;
+      this.trunkApplyFilterButton.Click += new System.EventHandler(this.trunkSearchButton_Click);
+      // 
+      // trunkNameFilterLabel
+      // 
+      this.trunkNameFilterLabel.AutoSize = true;
+      this.trunkNameFilterLabel.Location = new System.Drawing.Point(5, 8);
+      this.trunkNameFilterLabel.Name = "trunkNameFilterLabel";
+      this.trunkNameFilterLabel.Size = new System.Drawing.Size(32, 13);
+      this.trunkNameFilterLabel.TabIndex = 1;
+      this.trunkNameFilterLabel.Text = "Filter:";
       // 
       // deckEditAllCardsDataGridView
       // 
@@ -1516,6 +1565,8 @@
       this.deckEditorTabSplitContainer.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.deckEditorTabSplitContainer)).EndInit();
       this.deckEditorTabSplitContainer.ResumeLayout(false);
+      this.cardTrunkSplitContainer.Panel1.ResumeLayout(false);
+      this.cardTrunkSplitContainer.Panel1.PerformLayout();
       this.cardTrunkSplitContainer.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardTrunkSplitContainer)).EndInit();
       this.cardTrunkSplitContainer.ResumeLayout(false);
@@ -1657,5 +1708,9 @@
     private DataGridViewTextBoxColumn cardTrunkTypeColumn;
     private DataGridViewTextBoxColumn cardTrunkDeckCostColumn;
     private SplitContainer cardTrunkSplitContainer;
+    private Button trunkClearFilterButton;
+    private Button trunkApplyFilterButton;
+    private Label trunkNameFilterLabel;
+    private TextBox trunkFilterTextBox;
   }
 }
