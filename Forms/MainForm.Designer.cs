@@ -104,13 +104,30 @@
       this.rankThresholdsDataGridView = new System.Windows.Forms.DataGridView();
       this.mainTabControl = new System.Windows.Forms.TabControl();
       this.deckEditorTab = new System.Windows.Forms.TabPage();
-      this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+      this.deckEditorTabSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.cardTrunkSplitContainer = new System.Windows.Forms.SplitContainer();
       this.deckEditAllCardsDataGridView = new System.Windows.Forms.DataGridView();
-      this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+      this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardTrunkAttackColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardTrunkDefenseColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardTrunkLevelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardTrunkAttributeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardTrunkTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.cardTrunkDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditorSplitContainer = new System.Windows.Forms.SplitContainer();
       this.deckLabel = new System.Windows.Forms.Label();
       this.comboBox1 = new System.Windows.Forms.ComboBox();
       this.deckEditSaveButton = new System.Windows.Forms.Button();
       this.deckEditorDataGridView = new System.Windows.Forms.DataGridView();
+      this.indexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckTableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditAttackColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditDefenseColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditLevelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditAttributeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.deckLeaderAbilitiesTab = new System.Windows.Forms.TabPage();
       this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
       this.deckLeaderAbilityTabTipsLabel = new System.Windows.Forms.Label();
@@ -133,22 +150,6 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.indexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.deckTableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.deckEditAttackColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.deckEditDefenseColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.deckEditLevelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.deckEditAttributeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.deckEditTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.deckEditDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.cardTrunkAttackColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.cardTrunkDefenseColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.cardTrunkLevelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.cardTrunkAttributeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.cardTrunkTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.cardTrunkDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -179,15 +180,18 @@
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).BeginInit();
       this.mainTabControl.SuspendLayout();
       this.deckEditorTab.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-      this.splitContainer3.Panel1.SuspendLayout();
-      this.splitContainer3.Panel2.SuspendLayout();
-      this.splitContainer3.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.deckEditorTabSplitContainer)).BeginInit();
+      this.deckEditorTabSplitContainer.Panel1.SuspendLayout();
+      this.deckEditorTabSplitContainer.Panel2.SuspendLayout();
+      this.deckEditorTabSplitContainer.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.cardTrunkSplitContainer)).BeginInit();
+      this.cardTrunkSplitContainer.Panel2.SuspendLayout();
+      this.cardTrunkSplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.deckEditAllCardsDataGridView)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
-      this.splitContainer4.Panel1.SuspendLayout();
-      this.splitContainer4.Panel2.SuspendLayout();
-      this.splitContainer4.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.deckEditorSplitContainer)).BeginInit();
+      this.deckEditorSplitContainer.Panel1.SuspendLayout();
+      this.deckEditorSplitContainer.Panel2.SuspendLayout();
+      this.deckEditorSplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.deckEditorDataGridView)).BeginInit();
       this.deckLeaderAbilitiesTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesSplitContainer)).BeginInit();
@@ -957,7 +961,7 @@
       // 
       // deckEditorTab
       // 
-      this.deckEditorTab.Controls.Add(this.splitContainer3);
+      this.deckEditorTab.Controls.Add(this.deckEditorTabSplitContainer);
       this.deckEditorTab.Location = new System.Drawing.Point(4, 22);
       this.deckEditorTab.Name = "deckEditorTab";
       this.deckEditorTab.Padding = new System.Windows.Forms.Padding(3);
@@ -966,22 +970,38 @@
       this.deckEditorTab.Text = "Deck Editor";
       this.deckEditorTab.UseVisualStyleBackColor = true;
       // 
-      // splitContainer3
+      // deckEditorTabSplitContainer
       // 
-      this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.splitContainer3.Location = new System.Drawing.Point(3, 3);
-      this.splitContainer3.Name = "splitContainer3";
+      this.deckEditorTabSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.deckEditorTabSplitContainer.Location = new System.Drawing.Point(3, 3);
+      this.deckEditorTabSplitContainer.Name = "deckEditorTabSplitContainer";
       // 
-      // splitContainer3.Panel1
+      // deckEditorTabSplitContainer.Panel1
       // 
-      this.splitContainer3.Panel1.Controls.Add(this.deckEditAllCardsDataGridView);
+      this.deckEditorTabSplitContainer.Panel1.Controls.Add(this.cardTrunkSplitContainer);
       // 
-      // splitContainer3.Panel2
+      // deckEditorTabSplitContainer.Panel2
       // 
-      this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-      this.splitContainer3.Size = new System.Drawing.Size(924, 490);
-      this.splitContainer3.SplitterDistance = 398;
-      this.splitContainer3.TabIndex = 0;
+      this.deckEditorTabSplitContainer.Panel2.Controls.Add(this.deckEditorSplitContainer);
+      this.deckEditorTabSplitContainer.Size = new System.Drawing.Size(924, 490);
+      this.deckEditorTabSplitContainer.SplitterDistance = 400;
+      this.deckEditorTabSplitContainer.TabIndex = 0;
+      // 
+      // cardTrunkSplitContainer
+      // 
+      this.cardTrunkSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.cardTrunkSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+      this.cardTrunkSplitContainer.IsSplitterFixed = true;
+      this.cardTrunkSplitContainer.Location = new System.Drawing.Point(0, 0);
+      this.cardTrunkSplitContainer.Name = "cardTrunkSplitContainer";
+      this.cardTrunkSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+      // 
+      // cardTrunkSplitContainer.Panel2
+      // 
+      this.cardTrunkSplitContainer.Panel2.Controls.Add(this.deckEditAllCardsDataGridView);
+      this.cardTrunkSplitContainer.Size = new System.Drawing.Size(400, 490);
+      this.cardTrunkSplitContainer.SplitterDistance = 25;
+      this.cardTrunkSplitContainer.TabIndex = 1;
       // 
       // deckEditAllCardsDataGridView
       // 
@@ -1002,28 +1022,93 @@
       this.deckEditAllCardsDataGridView.Location = new System.Drawing.Point(0, 0);
       this.deckEditAllCardsDataGridView.Name = "deckEditAllCardsDataGridView";
       this.deckEditAllCardsDataGridView.RowHeadersVisible = false;
-      this.deckEditAllCardsDataGridView.Size = new System.Drawing.Size(398, 490);
+      this.deckEditAllCardsDataGridView.Size = new System.Drawing.Size(400, 461);
       this.deckEditAllCardsDataGridView.TabIndex = 0;
       // 
-      // splitContainer4
+      // Index
       // 
-      this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-      this.splitContainer4.Name = "splitContainer4";
-      this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+      this.Index.DataPropertyName = "Index";
+      this.Index.HeaderText = "#";
+      this.Index.Name = "Index";
+      this.Index.ReadOnly = true;
+      this.Index.Width = 32;
       // 
-      // splitContainer4.Panel1
+      // nameColumn
       // 
-      this.splitContainer4.Panel1.Controls.Add(this.deckLabel);
-      this.splitContainer4.Panel1.Controls.Add(this.comboBox1);
-      this.splitContainer4.Panel1.Controls.Add(this.deckEditSaveButton);
+      this.nameColumn.DataPropertyName = "Name";
+      this.nameColumn.HeaderText = "Name";
+      this.nameColumn.Name = "nameColumn";
+      this.nameColumn.ReadOnly = true;
+      this.nameColumn.Width = 200;
       // 
-      // splitContainer4.Panel2
+      // cardTrunkAttackColumn
       // 
-      this.splitContainer4.Panel2.Controls.Add(this.deckEditorDataGridView);
-      this.splitContainer4.Size = new System.Drawing.Size(522, 490);
-      this.splitContainer4.SplitterDistance = 28;
-      this.splitContainer4.TabIndex = 0;
+      this.cardTrunkAttackColumn.DataPropertyName = "Attack";
+      this.cardTrunkAttackColumn.HeaderText = "Attack";
+      this.cardTrunkAttackColumn.Name = "cardTrunkAttackColumn";
+      this.cardTrunkAttackColumn.ReadOnly = true;
+      this.cardTrunkAttackColumn.Width = 40;
+      // 
+      // cardTrunkDefenseColumn
+      // 
+      this.cardTrunkDefenseColumn.DataPropertyName = "Defense";
+      this.cardTrunkDefenseColumn.HeaderText = "Defense";
+      this.cardTrunkDefenseColumn.Name = "cardTrunkDefenseColumn";
+      this.cardTrunkDefenseColumn.ReadOnly = true;
+      this.cardTrunkDefenseColumn.Width = 40;
+      // 
+      // cardTrunkLevelColumn
+      // 
+      this.cardTrunkLevelColumn.DataPropertyName = "Level";
+      this.cardTrunkLevelColumn.HeaderText = "Lvl";
+      this.cardTrunkLevelColumn.Name = "cardTrunkLevelColumn";
+      this.cardTrunkLevelColumn.ReadOnly = true;
+      this.cardTrunkLevelColumn.Width = 30;
+      // 
+      // cardTrunkAttributeColumn
+      // 
+      this.cardTrunkAttributeColumn.DataPropertyName = "AttributeName";
+      this.cardTrunkAttributeColumn.HeaderText = "Attribute";
+      this.cardTrunkAttributeColumn.Name = "cardTrunkAttributeColumn";
+      this.cardTrunkAttributeColumn.ReadOnly = true;
+      this.cardTrunkAttributeColumn.Width = 50;
+      // 
+      // cardTrunkTypeColumn
+      // 
+      this.cardTrunkTypeColumn.DataPropertyName = "Type";
+      this.cardTrunkTypeColumn.HeaderText = "Type";
+      this.cardTrunkTypeColumn.Name = "cardTrunkTypeColumn";
+      this.cardTrunkTypeColumn.ReadOnly = true;
+      // 
+      // cardTrunkDeckCostColumn
+      // 
+      this.cardTrunkDeckCostColumn.DataPropertyName = "DeckCost";
+      this.cardTrunkDeckCostColumn.HeaderText = "DC";
+      this.cardTrunkDeckCostColumn.Name = "cardTrunkDeckCostColumn";
+      this.cardTrunkDeckCostColumn.ReadOnly = true;
+      this.cardTrunkDeckCostColumn.Width = 30;
+      // 
+      // deckEditorSplitContainer
+      // 
+      this.deckEditorSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.deckEditorSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+      this.deckEditorSplitContainer.IsSplitterFixed = true;
+      this.deckEditorSplitContainer.Location = new System.Drawing.Point(0, 0);
+      this.deckEditorSplitContainer.Name = "deckEditorSplitContainer";
+      this.deckEditorSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+      // 
+      // deckEditorSplitContainer.Panel1
+      // 
+      this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckLabel);
+      this.deckEditorSplitContainer.Panel1.Controls.Add(this.comboBox1);
+      this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckEditSaveButton);
+      // 
+      // deckEditorSplitContainer.Panel2
+      // 
+      this.deckEditorSplitContainer.Panel2.Controls.Add(this.deckEditorDataGridView);
+      this.deckEditorSplitContainer.Size = new System.Drawing.Size(520, 490);
+      this.deckEditorSplitContainer.SplitterDistance = 25;
+      this.deckEditorSplitContainer.TabIndex = 0;
       // 
       // deckLabel
       // 
@@ -1046,6 +1131,7 @@
       // 
       // deckEditSaveButton
       // 
+      this.deckEditSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.deckEditSaveButton.Location = new System.Drawing.Point(442, 3);
       this.deckEditSaveButton.Name = "deckEditSaveButton";
       this.deckEditSaveButton.Size = new System.Drawing.Size(75, 23);
@@ -1074,8 +1160,71 @@
       this.deckEditorDataGridView.Name = "deckEditorDataGridView";
       this.deckEditorDataGridView.RowHeadersVisible = false;
       this.deckEditorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.deckEditorDataGridView.Size = new System.Drawing.Size(522, 458);
+      this.deckEditorDataGridView.Size = new System.Drawing.Size(520, 461);
       this.deckEditorDataGridView.TabIndex = 0;
+      // 
+      // indexColumn
+      // 
+      this.indexColumn.DataPropertyName = "Number";
+      this.indexColumn.HeaderText = "#";
+      this.indexColumn.Name = "indexColumn";
+      this.indexColumn.ReadOnly = true;
+      this.indexColumn.Width = 32;
+      // 
+      // deckTableNameColumn
+      // 
+      this.deckTableNameColumn.DataPropertyName = "Name";
+      this.deckTableNameColumn.HeaderText = "Name";
+      this.deckTableNameColumn.Name = "deckTableNameColumn";
+      this.deckTableNameColumn.ReadOnly = true;
+      this.deckTableNameColumn.Width = 200;
+      // 
+      // deckEditAttackColumn
+      // 
+      this.deckEditAttackColumn.DataPropertyName = "Attack";
+      this.deckEditAttackColumn.HeaderText = "Attack";
+      this.deckEditAttackColumn.Name = "deckEditAttackColumn";
+      this.deckEditAttackColumn.ReadOnly = true;
+      this.deckEditAttackColumn.Width = 40;
+      // 
+      // deckEditDefenseColumn
+      // 
+      this.deckEditDefenseColumn.DataPropertyName = "Defense";
+      this.deckEditDefenseColumn.HeaderText = "Defense";
+      this.deckEditDefenseColumn.Name = "deckEditDefenseColumn";
+      this.deckEditDefenseColumn.ReadOnly = true;
+      this.deckEditDefenseColumn.Width = 40;
+      // 
+      // deckEditLevelColumn
+      // 
+      this.deckEditLevelColumn.DataPropertyName = "Level";
+      this.deckEditLevelColumn.HeaderText = "Lvl";
+      this.deckEditLevelColumn.Name = "deckEditLevelColumn";
+      this.deckEditLevelColumn.ReadOnly = true;
+      this.deckEditLevelColumn.Width = 30;
+      // 
+      // deckEditAttributeColumn
+      // 
+      this.deckEditAttributeColumn.DataPropertyName = "Attribute";
+      this.deckEditAttributeColumn.HeaderText = "Attribute";
+      this.deckEditAttributeColumn.Name = "deckEditAttributeColumn";
+      this.deckEditAttributeColumn.ReadOnly = true;
+      this.deckEditAttributeColumn.Width = 50;
+      // 
+      // deckEditTypeColumn
+      // 
+      this.deckEditTypeColumn.DataPropertyName = "Type";
+      this.deckEditTypeColumn.HeaderText = "Type";
+      this.deckEditTypeColumn.Name = "deckEditTypeColumn";
+      this.deckEditTypeColumn.ReadOnly = true;
+      // 
+      // deckEditDeckCostColumn
+      // 
+      this.deckEditDeckCostColumn.DataPropertyName = "DeckCost";
+      this.deckEditDeckCostColumn.HeaderText = "DC";
+      this.deckEditDeckCostColumn.Name = "deckEditDeckCostColumn";
+      this.deckEditDeckCostColumn.ReadOnly = true;
+      this.deckEditDeckCostColumn.Width = 30;
       // 
       // deckLeaderAbilitiesTab
       // 
@@ -1105,7 +1254,7 @@
       // 
       this.cardDeckLeaderAbilitiesSplitContainer.Panel2.Controls.Add(this.cardDeckLeaderAbilitiesDatagridview);
       this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(924, 490);
-      this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 27;
+      this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 25;
       this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
       // 
       // deckLeaderAbilityTabTipsLabel
@@ -1145,7 +1294,7 @@
       this.cardDeckLeaderAbilitiesDatagridview.Name = "cardDeckLeaderAbilitiesDatagridview";
       this.cardDeckLeaderAbilitiesDatagridview.RowHeadersVisible = false;
       this.cardDeckLeaderAbilitiesDatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(924, 459);
+      this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(924, 461);
       this.cardDeckLeaderAbilitiesDatagridview.TabIndex = 0;
       // 
       // cardDeckLeaderAbilitiesIndexColumn
@@ -1315,132 +1464,6 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
-      // indexColumn
-      // 
-      this.indexColumn.DataPropertyName = "Number";
-      this.indexColumn.HeaderText = "#";
-      this.indexColumn.Name = "indexColumn";
-      this.indexColumn.ReadOnly = true;
-      this.indexColumn.Width = 32;
-      // 
-      // deckTableNameColumn
-      // 
-      this.deckTableNameColumn.DataPropertyName = "Name";
-      this.deckTableNameColumn.HeaderText = "Name";
-      this.deckTableNameColumn.Name = "deckTableNameColumn";
-      this.deckTableNameColumn.ReadOnly = true;
-      this.deckTableNameColumn.Width = 200;
-      // 
-      // deckEditAttackColumn
-      // 
-      this.deckEditAttackColumn.DataPropertyName = "Attack";
-      this.deckEditAttackColumn.HeaderText = "Attack";
-      this.deckEditAttackColumn.Name = "deckEditAttackColumn";
-      this.deckEditAttackColumn.ReadOnly = true;
-      this.deckEditAttackColumn.Width = 40;
-      // 
-      // deckEditDefenseColumn
-      // 
-      this.deckEditDefenseColumn.DataPropertyName = "Defense";
-      this.deckEditDefenseColumn.HeaderText = "Defense";
-      this.deckEditDefenseColumn.Name = "deckEditDefenseColumn";
-      this.deckEditDefenseColumn.ReadOnly = true;
-      this.deckEditDefenseColumn.Width = 40;
-      // 
-      // deckEditLevelColumn
-      // 
-      this.deckEditLevelColumn.DataPropertyName = "Level";
-      this.deckEditLevelColumn.HeaderText = "Lvl";
-      this.deckEditLevelColumn.Name = "deckEditLevelColumn";
-      this.deckEditLevelColumn.ReadOnly = true;
-      this.deckEditLevelColumn.Width = 30;
-      // 
-      // deckEditAttributeColumn
-      // 
-      this.deckEditAttributeColumn.DataPropertyName = "Attribute";
-      this.deckEditAttributeColumn.HeaderText = "Attribute";
-      this.deckEditAttributeColumn.Name = "deckEditAttributeColumn";
-      this.deckEditAttributeColumn.ReadOnly = true;
-      this.deckEditAttributeColumn.Width = 50;
-      // 
-      // deckEditTypeColumn
-      // 
-      this.deckEditTypeColumn.DataPropertyName = "Type";
-      this.deckEditTypeColumn.HeaderText = "Type";
-      this.deckEditTypeColumn.Name = "deckEditTypeColumn";
-      this.deckEditTypeColumn.ReadOnly = true;
-      // 
-      // deckEditDeckCostColumn
-      // 
-      this.deckEditDeckCostColumn.DataPropertyName = "DeckCost";
-      this.deckEditDeckCostColumn.HeaderText = "DC";
-      this.deckEditDeckCostColumn.Name = "deckEditDeckCostColumn";
-      this.deckEditDeckCostColumn.ReadOnly = true;
-      this.deckEditDeckCostColumn.Width = 30;
-      // 
-      // Index
-      // 
-      this.Index.DataPropertyName = "Index";
-      this.Index.HeaderText = "#";
-      this.Index.Name = "Index";
-      this.Index.ReadOnly = true;
-      this.Index.Width = 32;
-      // 
-      // nameColumn
-      // 
-      this.nameColumn.DataPropertyName = "Name";
-      this.nameColumn.HeaderText = "Name";
-      this.nameColumn.Name = "nameColumn";
-      this.nameColumn.ReadOnly = true;
-      this.nameColumn.Width = 200;
-      // 
-      // cardTrunkAttackColumn
-      // 
-      this.cardTrunkAttackColumn.DataPropertyName = "Attack";
-      this.cardTrunkAttackColumn.HeaderText = "Attack";
-      this.cardTrunkAttackColumn.Name = "cardTrunkAttackColumn";
-      this.cardTrunkAttackColumn.ReadOnly = true;
-      this.cardTrunkAttackColumn.Width = 40;
-      // 
-      // cardTrunkDefenseColumn
-      // 
-      this.cardTrunkDefenseColumn.DataPropertyName = "Defense";
-      this.cardTrunkDefenseColumn.HeaderText = "Defense";
-      this.cardTrunkDefenseColumn.Name = "cardTrunkDefenseColumn";
-      this.cardTrunkDefenseColumn.ReadOnly = true;
-      this.cardTrunkDefenseColumn.Width = 40;
-      // 
-      // cardTrunkLevelColumn
-      // 
-      this.cardTrunkLevelColumn.DataPropertyName = "Level";
-      this.cardTrunkLevelColumn.HeaderText = "Lvl";
-      this.cardTrunkLevelColumn.Name = "cardTrunkLevelColumn";
-      this.cardTrunkLevelColumn.ReadOnly = true;
-      this.cardTrunkLevelColumn.Width = 30;
-      // 
-      // cardTrunkAttributeColumn
-      // 
-      this.cardTrunkAttributeColumn.DataPropertyName = "AttributeName";
-      this.cardTrunkAttributeColumn.HeaderText = "Attribute";
-      this.cardTrunkAttributeColumn.Name = "cardTrunkAttributeColumn";
-      this.cardTrunkAttributeColumn.ReadOnly = true;
-      this.cardTrunkAttributeColumn.Width = 50;
-      // 
-      // cardTrunkTypeColumn
-      // 
-      this.cardTrunkTypeColumn.DataPropertyName = "Type";
-      this.cardTrunkTypeColumn.HeaderText = "Type";
-      this.cardTrunkTypeColumn.Name = "cardTrunkTypeColumn";
-      this.cardTrunkTypeColumn.ReadOnly = true;
-      // 
-      // cardTrunkDeckCostColumn
-      // 
-      this.cardTrunkDeckCostColumn.DataPropertyName = "DeckCost";
-      this.cardTrunkDeckCostColumn.HeaderText = "DC";
-      this.cardTrunkDeckCostColumn.Name = "cardTrunkDeckCostColumn";
-      this.cardTrunkDeckCostColumn.ReadOnly = true;
-      this.cardTrunkDeckCostColumn.Width = 30;
-      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1489,16 +1512,19 @@
       ((System.ComponentModel.ISupportInitialize)(this.rankThresholdsDataGridView)).EndInit();
       this.mainTabControl.ResumeLayout(false);
       this.deckEditorTab.ResumeLayout(false);
-      this.splitContainer3.Panel1.ResumeLayout(false);
-      this.splitContainer3.Panel2.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-      this.splitContainer3.ResumeLayout(false);
+      this.deckEditorTabSplitContainer.Panel1.ResumeLayout(false);
+      this.deckEditorTabSplitContainer.Panel2.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.deckEditorTabSplitContainer)).EndInit();
+      this.deckEditorTabSplitContainer.ResumeLayout(false);
+      this.cardTrunkSplitContainer.Panel2.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.cardTrunkSplitContainer)).EndInit();
+      this.cardTrunkSplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.deckEditAllCardsDataGridView)).EndInit();
-      this.splitContainer4.Panel1.ResumeLayout(false);
-      this.splitContainer4.Panel1.PerformLayout();
-      this.splitContainer4.Panel2.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
-      this.splitContainer4.ResumeLayout(false);
+      this.deckEditorSplitContainer.Panel1.ResumeLayout(false);
+      this.deckEditorSplitContainer.Panel1.PerformLayout();
+      this.deckEditorSplitContainer.Panel2.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.deckEditorSplitContainer)).EndInit();
+      this.deckEditorSplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.deckEditorDataGridView)).EndInit();
       this.deckLeaderAbilitiesTab.ResumeLayout(false);
       this.cardDeckLeaderAbilitiesSplitContainer.Panel1.ResumeLayout(false);
@@ -1607,9 +1633,9 @@
     private DataGridViewTextBoxColumn ResultingFusionId;
     private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
     private TabPage deckEditorTab;
-    private SplitContainer splitContainer3;
+    private SplitContainer deckEditorTabSplitContainer;
     private DataGridView deckEditAllCardsDataGridView;
-    private SplitContainer splitContainer4;
+    private SplitContainer deckEditorSplitContainer;
     private Label deckLabel;
     private ComboBox comboBox1;
     private Button deckEditSaveButton;
@@ -1630,5 +1656,6 @@
     private DataGridViewTextBoxColumn cardTrunkAttributeColumn;
     private DataGridViewTextBoxColumn cardTrunkTypeColumn;
     private DataGridViewTextBoxColumn cardTrunkDeckCostColumn;
+    private SplitContainer cardTrunkSplitContainer;
   }
 }
