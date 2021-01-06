@@ -109,6 +109,10 @@
         {
           DeckCard deckCard = (DeckCard)row.DataBoundItem;
           cardConstant = deckCard.CardConstant;
+        } else if (row.DataBoundItem.GetType() == typeof(ObjectView<DeckCard>))
+        {
+          DeckCard deckCard = ((ObjectView<DeckCard>)row.DataBoundItem).Object;
+          cardConstant = deckCard.CardConstant;
         } else
         {
           cardConstant = ((ObjectView<CardConstant>)row.DataBoundItem).Object;

@@ -4,13 +4,6 @@ public class DeckCard
 {
   private CardConstant cardConstant;
   private DeckLeaderRank rank;
-  public string CardName
-  {
-    get
-    {
-      return CardConstant.Name;
-    }
-  }
   public byte[] Bytes;
 
   public DeckCard(byte[] cardBytes)
@@ -55,6 +48,70 @@ public class DeckCard
     {
       cardConstant = value;
       calculateBytes(CardConstant, Rank);
+    }
+  }
+
+  public string Name
+  {
+    get
+    {
+      return CardConstant.Name;
+    }
+  }
+
+  public ushort Number
+  {
+    get
+    {
+      return CardConstant.Index;
+    }
+  }
+
+  public string Type
+  {
+    get
+    {
+      return CardConstant.Type;
+    }
+  }
+
+  public string Attribute
+  {
+    get
+    {
+      return CardConstant.AttributeName;
+    }
+  }
+
+  public ushort Attack
+  {
+    get
+    {
+      return CardConstant.Attack;
+    }
+  }
+
+  public ushort Defense
+  {
+    get
+    {
+      return CardConstant.Defense;
+    }
+  }
+
+  public byte DeckCost
+  {
+    get
+    {
+      return CardConstant.DeckCost;
+    }
+  }
+
+  public byte Level
+  {
+    get
+    {
+      return CardConstant.Level;
     }
   }
 

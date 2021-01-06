@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Equin.ApplicationFramework;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace DOTR_Modding_Tool
   public partial class MainForm : Form
   {
     private List<Deck> deckList;
+    private BindingListView<CardConstant> trunkCardBinding;
+    private BindingListView<DeckCard> deckEditDeckCardBinding;
 
     private void setupDeckEditorTab()
     {
@@ -23,8 +26,7 @@ namespace DOTR_Modding_Tool
     {
       byte[][][] deckBytes = dataAccess.LoadDecks();
       deckList = Deck.LoadDeckListFromBytes(deckBytes);
-
-      deckEditorDataGridView.DataSource = deckList[0].CardList;
+      comboBox1.DataSource = deckList;
     }
 
     private void formatCardTable(DataGridView table)
@@ -41,6 +43,13 @@ namespace DOTR_Modding_Tool
       this.formatCardTable(this.deckEditAllCardsDataGridView);
       this.formatCardTable(this.deckEditorDataGridView);
       this.deckEditAllCardsDataGridView.DataSource = cardConstantsBinding;
+    }
+
+    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      Deck selectedDeck = (Deck)comboBox1.SelectedItem;
+      deckEditDeckCardBinding = new BindingListView<DeckCard>(selectedDeck.CardList);
+      deckEditorDataGridView.DataSource = deckEditDeckCardBinding;
     }
   }
 }

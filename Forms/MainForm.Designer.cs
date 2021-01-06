@@ -137,6 +137,12 @@
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.indexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.deckTableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditAttackColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditDefenseColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditLevelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditAttributeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -1034,11 +1040,13 @@
       // 
       // comboBox1
       // 
+      this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBox1.FormattingEnabled = true;
       this.comboBox1.Location = new System.Drawing.Point(45, 5);
       this.comboBox1.Name = "comboBox1";
       this.comboBox1.Size = new System.Drawing.Size(147, 21);
       this.comboBox1.TabIndex = 1;
+      this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
       // 
       // deckEditSaveButton
       // 
@@ -1058,7 +1066,13 @@
       this.deckEditorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.deckEditorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.indexColumn,
-            this.deckTableNameColumn});
+            this.deckTableNameColumn,
+            this.deckEditAttackColumn,
+            this.deckEditDefenseColumn,
+            this.deckEditLevelColumn,
+            this.deckEditAttributeColumn,
+            this.deckEditTypeColumn,
+            this.deckEditDeckCostColumn});
       this.deckEditorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.deckEditorDataGridView.Location = new System.Drawing.Point(0, 0);
       this.deckEditorDataGridView.Name = "deckEditorDataGridView";
@@ -1307,7 +1321,7 @@
       // 
       // indexColumn
       // 
-      this.indexColumn.DataPropertyName = "Index";
+      this.indexColumn.DataPropertyName = "Number";
       this.indexColumn.HeaderText = "#";
       this.indexColumn.Name = "indexColumn";
       this.indexColumn.ReadOnly = true;
@@ -1315,11 +1329,58 @@
       // 
       // deckTableNameColumn
       // 
-      this.deckTableNameColumn.DataPropertyName = "CardName";
+      this.deckTableNameColumn.DataPropertyName = "Name";
       this.deckTableNameColumn.HeaderText = "Name";
       this.deckTableNameColumn.Name = "deckTableNameColumn";
       this.deckTableNameColumn.ReadOnly = true;
       this.deckTableNameColumn.Width = 200;
+      // 
+      // deckEditAttackColumn
+      // 
+      this.deckEditAttackColumn.DataPropertyName = "Attack";
+      this.deckEditAttackColumn.HeaderText = "Attack";
+      this.deckEditAttackColumn.Name = "deckEditAttackColumn";
+      this.deckEditAttackColumn.ReadOnly = true;
+      this.deckEditAttackColumn.Width = 40;
+      // 
+      // deckEditDefenseColumn
+      // 
+      this.deckEditDefenseColumn.DataPropertyName = "Defense";
+      this.deckEditDefenseColumn.HeaderText = "Defense";
+      this.deckEditDefenseColumn.Name = "deckEditDefenseColumn";
+      this.deckEditDefenseColumn.ReadOnly = true;
+      this.deckEditDefenseColumn.Width = 40;
+      // 
+      // deckEditLevelColumn
+      // 
+      this.deckEditLevelColumn.DataPropertyName = "Level";
+      this.deckEditLevelColumn.HeaderText = "Lvl";
+      this.deckEditLevelColumn.Name = "deckEditLevelColumn";
+      this.deckEditLevelColumn.ReadOnly = true;
+      this.deckEditLevelColumn.Width = 30;
+      // 
+      // deckEditAttributeColumn
+      // 
+      this.deckEditAttributeColumn.DataPropertyName = "Attribute";
+      this.deckEditAttributeColumn.HeaderText = "Attribute";
+      this.deckEditAttributeColumn.Name = "deckEditAttributeColumn";
+      this.deckEditAttributeColumn.ReadOnly = true;
+      this.deckEditAttributeColumn.Width = 50;
+      // 
+      // deckEditTypeColumn
+      // 
+      this.deckEditTypeColumn.DataPropertyName = "Type";
+      this.deckEditTypeColumn.HeaderText = "Type";
+      this.deckEditTypeColumn.Name = "deckEditTypeColumn";
+      this.deckEditTypeColumn.ReadOnly = true;
+      // 
+      // deckEditDeckCostColumn
+      // 
+      this.deckEditDeckCostColumn.DataPropertyName = "DeckCost";
+      this.deckEditDeckCostColumn.HeaderText = "DC";
+      this.deckEditDeckCostColumn.Name = "deckEditDeckCostColumn";
+      this.deckEditDeckCostColumn.ReadOnly = true;
+      this.deckEditDeckCostColumn.Width = 30;
       // 
       // MainForm
       // 
@@ -1498,5 +1559,11 @@
     private DataGridView deckEditorDataGridView;
     private DataGridViewTextBoxColumn indexColumn;
     private DataGridViewTextBoxColumn deckTableNameColumn;
+    private DataGridViewTextBoxColumn deckEditAttackColumn;
+    private DataGridViewTextBoxColumn deckEditDefenseColumn;
+    private DataGridViewTextBoxColumn deckEditLevelColumn;
+    private DataGridViewTextBoxColumn deckEditAttributeColumn;
+    private DataGridViewTextBoxColumn deckEditTypeColumn;
+    private DataGridViewTextBoxColumn deckEditDeckCostColumn;
   }
 }
