@@ -22,21 +22,6 @@ public class Deck
     }
   }
 
-  public void AddCard(DeckCard deckCard)
-  {
-    if (CardList.Count == 40)
-    {
-      return;
-    }
-
-    CardList.Add(deckCard);
-  }
-
-  public void RemoveCard(DeckCard deckCard)
-  {
-    // Stub
-  }
-
   public override string ToString()
   {
     return DeckLeader.CardConstant.Name;

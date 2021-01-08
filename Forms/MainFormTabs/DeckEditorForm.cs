@@ -121,6 +121,14 @@ namespace DOTR_Modding_Tool
     {
       List<DeckCard> cardList = (List<DeckCard>)deckBinding.DataSource;
       deckCardCountLabel.Text = $"Cards: {cardList.Count.ToString()}/40";
+
+      if (cardList.Count == 40)
+      {
+        deckCardCountLabel.ForeColor = Color.Black;
+      } else
+      {
+        deckCardCountLabel.ForeColor = Color.Red;
+      }
     }
   }
 }
