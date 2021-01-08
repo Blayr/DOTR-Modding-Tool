@@ -111,7 +111,7 @@
       this.trunkClearFilterButton = new System.Windows.Forms.Button();
       this.trunkApplyFilterButton = new System.Windows.Forms.Button();
       this.trunkNameFilterLabel = new System.Windows.Forms.Label();
-      this.deckEditAllCardsDataGridView = new System.Windows.Forms.DataGridView();
+      this.trunkDataGridView = new System.Windows.Forms.DataGridView();
       this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardTrunkAttackColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,7 +123,7 @@
       this.deckEditorSplitContainer = new System.Windows.Forms.SplitContainer();
       this.decksLabel = new System.Windows.Forms.Label();
       this.deckLabel = new System.Windows.Forms.Label();
-      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.deckDropdown = new System.Windows.Forms.ComboBox();
       this.deckEditSaveButton = new System.Windows.Forms.Button();
       this.deckEditorDataGridView = new System.Windows.Forms.DataGridView();
       this.indexColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,6 +156,7 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.deckCardCountLabel = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -194,7 +195,7 @@
       this.cardTrunkSplitContainer.Panel1.SuspendLayout();
       this.cardTrunkSplitContainer.Panel2.SuspendLayout();
       this.cardTrunkSplitContainer.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.deckEditAllCardsDataGridView)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.trunkDataGridView)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.deckEditorSplitContainer)).BeginInit();
       this.deckEditorSplitContainer.Panel1.SuspendLayout();
       this.deckEditorSplitContainer.Panel2.SuspendLayout();
@@ -1013,7 +1014,7 @@
       // 
       // cardTrunkSplitContainer.Panel2
       // 
-      this.cardTrunkSplitContainer.Panel2.Controls.Add(this.deckEditAllCardsDataGridView);
+      this.cardTrunkSplitContainer.Panel2.Controls.Add(this.trunkDataGridView);
       this.cardTrunkSplitContainer.Size = new System.Drawing.Size(550, 522);
       this.cardTrunkSplitContainer.SplitterDistance = 60;
       this.cardTrunkSplitContainer.TabIndex = 1;
@@ -1065,13 +1066,13 @@
       this.trunkNameFilterLabel.TabIndex = 1;
       this.trunkNameFilterLabel.Text = "Filter:";
       // 
-      // deckEditAllCardsDataGridView
+      // trunkDataGridView
       // 
-      this.deckEditAllCardsDataGridView.AllowUserToAddRows = false;
-      this.deckEditAllCardsDataGridView.AllowUserToDeleteRows = false;
-      this.deckEditAllCardsDataGridView.AllowUserToResizeRows = false;
-      this.deckEditAllCardsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.deckEditAllCardsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+      this.trunkDataGridView.AllowUserToAddRows = false;
+      this.trunkDataGridView.AllowUserToDeleteRows = false;
+      this.trunkDataGridView.AllowUserToResizeRows = false;
+      this.trunkDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.trunkDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Index,
             this.nameColumn,
             this.cardTrunkAttackColumn,
@@ -1080,12 +1081,12 @@
             this.cardTrunkAttributeColumn,
             this.cardTrunkTypeColumn,
             this.cardTrunkDeckCostColumn});
-      this.deckEditAllCardsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.deckEditAllCardsDataGridView.Location = new System.Drawing.Point(0, 0);
-      this.deckEditAllCardsDataGridView.Name = "deckEditAllCardsDataGridView";
-      this.deckEditAllCardsDataGridView.RowHeadersVisible = false;
-      this.deckEditAllCardsDataGridView.Size = new System.Drawing.Size(550, 458);
-      this.deckEditAllCardsDataGridView.TabIndex = 0;
+      this.trunkDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.trunkDataGridView.Location = new System.Drawing.Point(0, 0);
+      this.trunkDataGridView.Name = "trunkDataGridView";
+      this.trunkDataGridView.RowHeadersVisible = false;
+      this.trunkDataGridView.Size = new System.Drawing.Size(550, 458);
+      this.trunkDataGridView.TabIndex = 0;
       // 
       // Index
       // 
@@ -1161,9 +1162,10 @@
       // 
       // deckEditorSplitContainer.Panel1
       // 
+      this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckCardCountLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.decksLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckLabel);
-      this.deckEditorSplitContainer.Panel1.Controls.Add(this.comboBox1);
+      this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckDropdown);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckEditSaveButton);
       this.deckEditorSplitContainer.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.deckEditorSplitContainer_Panel1_Paint);
       // 
@@ -1193,15 +1195,15 @@
       this.deckLabel.TabIndex = 2;
       this.deckLabel.Text = "Deck:";
       // 
-      // comboBox1
+      // deckDropdown
       // 
-      this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.comboBox1.FormattingEnabled = true;
-      this.comboBox1.Location = new System.Drawing.Point(46, 33);
-      this.comboBox1.Name = "comboBox1";
-      this.comboBox1.Size = new System.Drawing.Size(147, 21);
-      this.comboBox1.TabIndex = 1;
-      this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+      this.deckDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.deckDropdown.FormattingEnabled = true;
+      this.deckDropdown.Location = new System.Drawing.Point(46, 33);
+      this.deckDropdown.Name = "deckDropdown";
+      this.deckDropdown.Size = new System.Drawing.Size(147, 21);
+      this.deckDropdown.TabIndex = 1;
+      this.deckDropdown.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
       // 
       // deckEditSaveButton
       // 
@@ -1538,6 +1540,15 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
+      // deckCardCountLabel
+      // 
+      this.deckCardCountLabel.AutoSize = true;
+      this.deckCardCountLabel.Location = new System.Drawing.Point(405, 36);
+      this.deckCardCountLabel.Name = "deckCardCountLabel";
+      this.deckCardCountLabel.Size = new System.Drawing.Size(40, 13);
+      this.deckCardCountLabel.TabIndex = 7;
+      this.deckCardCountLabel.Text = "Cards: ";
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1595,7 +1606,7 @@
       this.cardTrunkSplitContainer.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cardTrunkSplitContainer)).EndInit();
       this.cardTrunkSplitContainer.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.deckEditAllCardsDataGridView)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.trunkDataGridView)).EndInit();
       this.deckEditorSplitContainer.Panel1.ResumeLayout(false);
       this.deckEditorSplitContainer.Panel1.PerformLayout();
       this.deckEditorSplitContainer.Panel2.ResumeLayout(false);
@@ -1710,10 +1721,10 @@
     private DataGridViewComboBoxColumn FusionsDataGridViewFusionCard;
     private TabPage deckEditorTab;
     private SplitContainer deckEditorTabSplitContainer;
-    private DataGridView deckEditAllCardsDataGridView;
+    private DataGridView trunkDataGridView;
     private SplitContainer deckEditorSplitContainer;
     private Label deckLabel;
-    private ComboBox comboBox1;
+    private ComboBox deckDropdown;
     private Button deckEditSaveButton;
     private DataGridView deckEditorDataGridView;
     private DataGridViewTextBoxColumn indexColumn;
@@ -1739,5 +1750,6 @@
     private TextBox trunkFilterTextBox;
     private Label cardTrunkLabel;
     private Label decksLabel;
+    private Label deckCardCountLabel;
   }
 }

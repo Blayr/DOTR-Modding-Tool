@@ -17,8 +17,8 @@ public class DeckCard
 
   public DeckCard(CardConstant cardConstant, DeckLeaderRank deckLeaderRank)
   {
-    CardConstant = cardConstant;
-    Rank = deckLeaderRank;
+    this.cardConstant = cardConstant;
+    rank = deckLeaderRank;
 
     Bytes = calculateBytes(CardConstant, Rank);
   }

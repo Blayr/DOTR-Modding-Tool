@@ -1,6 +1,9 @@
-﻿using Equin.ApplicationFramework;
+﻿using DOTR_MODDING_TOOL.Classes;
+using Equin.ApplicationFramework;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,20 +17,23 @@ namespace DOTR_Modding_Tool
   {
     private List<Deck> deckList;
     private BindingListView<CardConstant> trunkCardConstantBinding;
-    private BindingListView<DeckCard> deckEditDeckCardBinding;
+    private BindingSource deckBinding = new BindingSource();
 
     private void setupDeckEditorTab()
     {
       trunkCardConstantBinding = new BindingListView<CardConstant>(CardConstant.List);
       setupDeckEditDataGridView();
       loadDeckData();
+      deckEditorDataGridView.CellDoubleClick += deckEditDataGridView_DoubleClick;
+      trunkDataGridView.CellDoubleClick += trunkDataGridView_DoubleClick;
     }
 
     private void loadDeckData()
     {
       byte[][][] deckBytes = dataAccess.LoadDecks();
       deckList = Deck.LoadDeckListFromBytes(deckBytes);
-      comboBox1.DataSource = deckList;
+      deckDropdown.DataSource = deckList;
+      refreshDeckCardCountLabel();
     }
 
     private void formatCardTable(DataGridView table)
@@ -41,16 +47,16 @@ namespace DOTR_Modding_Tool
 
     private void setupDeckEditDataGridView()
     {
-      this.formatCardTable(this.deckEditAllCardsDataGridView);
+      this.formatCardTable(this.trunkDataGridView);
       this.formatCardTable(this.deckEditorDataGridView);
-      this.deckEditAllCardsDataGridView.DataSource = trunkCardConstantBinding;
+      this.trunkDataGridView.DataSource = trunkCardConstantBinding;
     }
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Deck selectedDeck = (Deck)comboBox1.SelectedItem;
-      deckEditDeckCardBinding = new BindingListView<DeckCard>(selectedDeck.CardList);
-      deckEditorDataGridView.DataSource = deckEditDeckCardBinding;
+      Deck selectedDeck = (Deck)deckDropdown.SelectedItem;
+      deckBinding.DataSource = selectedDeck.CardList;
+      deckEditorDataGridView.DataSource = deckBinding;
     }
 
     private void deckEditSaveButton_Click(object sender, EventArgs e)
@@ -89,6 +95,32 @@ namespace DOTR_Modding_Tool
         e.Handled = true;
         e.SuppressKeyPress = true;
       }
+    }
+
+    private void deckEditDataGridView_DoubleClick(Object sender, DataGridViewCellEventArgs e)
+    {
+      if (e.RowIndex < 0)
+      {
+        return;
+      }
+
+      DeckCard deckCard = (DeckCard)deckBinding[e.RowIndex];
+      deckBinding.Remove(deckCard);
+      refreshDeckCardCountLabel();
+    }
+
+    private void trunkDataGridView_DoubleClick(Object sender, DataGridViewCellEventArgs e)
+    {
+      CardConstant cardConstant = ((ObjectView<CardConstant>)trunkDataGridView.Rows[e.RowIndex].DataBoundItem).Object;
+      DeckCard deckCard = new DeckCard(cardConstant, new DeckLeaderRank((int)DeckLeaderRankType.NCO));
+      deckBinding.Add(deckCard);
+      refreshDeckCardCountLabel();
+    }
+
+    private void refreshDeckCardCountLabel()
+    {
+      List<DeckCard> cardList = (List<DeckCard>)deckBinding.DataSource;
+      deckCardCountLabel.Text = $"Cards: {cardList.Count.ToString()}/40";
     }
   }
 }
