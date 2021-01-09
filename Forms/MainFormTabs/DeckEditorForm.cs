@@ -23,6 +23,7 @@ namespace DOTR_Modding_Tool
     {
       trunkCardConstantBinding = new BindingListView<CardConstant>(CardConstant.List);
       setupDeckEditDataGridView();
+      deckEditRemoveSelectedMenuItem.Click += DeckEditRemoveSelectedMenuItem_Click;
       loadDeckData();
       deckEditorDataGridView.CellDoubleClick += deckEditDataGridView_DoubleClick;
       trunkDataGridView.CellDoubleClick += trunkDataGridView_DoubleClick;
@@ -57,11 +58,6 @@ namespace DOTR_Modding_Tool
       Deck selectedDeck = (Deck)deckDropdown.SelectedItem;
       deckBinding.DataSource = selectedDeck.CardList;
       deckEditorDataGridView.DataSource = deckBinding;
-    }
-
-    private void deckEditSaveButton_Click(object sender, EventArgs e)
-    {
-
     }
 
     private void applyTrunkFilter()
@@ -129,6 +125,17 @@ namespace DOTR_Modding_Tool
       {
         deckCardCountLabel.ForeColor = Color.Red;
       }
+    }
+
+    private void DeckEditRemoveSelectedMenuItem_Click(object sender, EventArgs e)
+    {
+      foreach (DataGridViewRow row in deckEditorDataGridView.SelectedRows)
+      {
+        DeckCard deckCard = (DeckCard)row.DataBoundItem;
+        deckBinding.Remove(deckCard);
+      }
+
+      refreshDeckCardCountLabel();
     }
   }
 }
