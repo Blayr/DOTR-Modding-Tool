@@ -31,8 +31,8 @@ public class Ai
 			new Ai(16, "00158AB0", "Jasper Dice Tudor"),
 			new Ai(17, "0015D180", "Bakura"),
 			new Ai(18, "00162F60", "Yugi"),
-			new Ai(19, "001676E0", "Manawyddan fab Llyr (Skull Knight)"),
-			new Ai(20, "0016B1F0", "Manawyddan fab Llyr (Chakra)"),
+			new Ai(19, "001676E0", "Manawyddan fab Llyr (vs. White Rose)"),
+			new Ai(20, "0016B1F0", "Manawyddan fab Llyr (vs.Red Rose)"),
 			new Ai(21, "00172370", "Deck Master K"),
 			new Ai(-1, "00000000", "Bad Data")
 		};
