@@ -148,7 +148,9 @@ namespace DOTR_Modding_Tool
       } catch (InvalidOperationException error)
       {
         MessageBox.Show(error.Message, "Error");
-      } 
+      }
+
+      deckBinding.ResetBindings(false);
     }
   }
 }
