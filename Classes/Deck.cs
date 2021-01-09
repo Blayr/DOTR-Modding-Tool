@@ -55,6 +55,7 @@ public class Deck
       throw new InvalidOperationException("Deck must have 40 cards.");
     }
 
+    CardList.Sort((c1, c2) => c1.Number - c2.Number);
     dataAccess.SaveDeck(Index, Bytes);
   }
 
