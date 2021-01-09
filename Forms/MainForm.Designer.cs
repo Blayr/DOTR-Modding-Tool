@@ -121,6 +121,7 @@
       this.cardTrunkTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardTrunkDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.deckEditorSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.deckCardCountLabel = new System.Windows.Forms.Label();
       this.decksLabel = new System.Windows.Forms.Label();
       this.deckLabel = new System.Windows.Forms.Label();
       this.deckDropdown = new System.Windows.Forms.ComboBox();
@@ -134,6 +135,8 @@
       this.deckEditAttributeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.deckEditTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.deckEditDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.deckEditContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.deckEditRemoveSelectedMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.deckLeaderAbilitiesTab = new System.Windows.Forms.TabPage();
       this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
       this.deckLeaderAbilityTabTipsLabel = new System.Windows.Forms.Label();
@@ -156,9 +159,6 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.deckCardCountLabel = new System.Windows.Forms.Label();
-      this.deckEditContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.deckEditRemoveSelectedMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -203,6 +203,7 @@
       this.deckEditorSplitContainer.Panel2.SuspendLayout();
       this.deckEditorSplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.deckEditorDataGridView)).BeginInit();
+      this.deckEditContextMenuStrip.SuspendLayout();
       this.deckLeaderAbilitiesTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cardDeckLeaderAbilitiesSplitContainer)).BeginInit();
       this.cardDeckLeaderAbilitiesSplitContainer.Panel1.SuspendLayout();
@@ -216,7 +217,6 @@
       this.equipCompabilitySplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.equipCompatibilityDataGridView)).BeginInit();
       this.monsterCardEquipCompatibilitiesContextMenuStrip.SuspendLayout();
-      this.deckEditContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // openFileDialog1
@@ -1179,6 +1179,15 @@
       this.deckEditorSplitContainer.SplitterDistance = 60;
       this.deckEditorSplitContainer.TabIndex = 0;
       // 
+      // deckCardCountLabel
+      // 
+      this.deckCardCountLabel.AutoSize = true;
+      this.deckCardCountLabel.Location = new System.Drawing.Point(405, 36);
+      this.deckCardCountLabel.Name = "deckCardCountLabel";
+      this.deckCardCountLabel.Size = new System.Drawing.Size(40, 13);
+      this.deckCardCountLabel.TabIndex = 7;
+      this.deckCardCountLabel.Text = "Cards: ";
+      // 
       // decksLabel
       // 
       this.decksLabel.AutoSize = true;
@@ -1204,7 +1213,7 @@
       this.deckDropdown.FormattingEnabled = true;
       this.deckDropdown.Location = new System.Drawing.Point(46, 33);
       this.deckDropdown.Name = "deckDropdown";
-      this.deckDropdown.Size = new System.Drawing.Size(147, 21);
+      this.deckDropdown.Size = new System.Drawing.Size(249, 21);
       this.deckDropdown.TabIndex = 1;
       this.deckDropdown.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
       // 
@@ -1305,6 +1314,19 @@
       this.deckEditDeckCostColumn.Name = "deckEditDeckCostColumn";
       this.deckEditDeckCostColumn.ReadOnly = true;
       this.deckEditDeckCostColumn.Width = 30;
+      // 
+      // deckEditContextMenuStrip
+      // 
+      this.deckEditContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deckEditRemoveSelectedMenuItem});
+      this.deckEditContextMenuStrip.Name = "deckEditContextMenuStrip";
+      this.deckEditContextMenuStrip.Size = new System.Drawing.Size(195, 26);
+      // 
+      // deckEditRemoveSelectedMenuItem
+      // 
+      this.deckEditRemoveSelectedMenuItem.Name = "deckEditRemoveSelectedMenuItem";
+      this.deckEditRemoveSelectedMenuItem.Size = new System.Drawing.Size(194, 22);
+      this.deckEditRemoveSelectedMenuItem.Text = "Remove selected cards";
       // 
       // deckLeaderAbilitiesTab
       // 
@@ -1544,28 +1566,6 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
-      // deckCardCountLabel
-      // 
-      this.deckCardCountLabel.AutoSize = true;
-      this.deckCardCountLabel.Location = new System.Drawing.Point(405, 36);
-      this.deckCardCountLabel.Name = "deckCardCountLabel";
-      this.deckCardCountLabel.Size = new System.Drawing.Size(40, 13);
-      this.deckCardCountLabel.TabIndex = 7;
-      this.deckCardCountLabel.Text = "Cards: ";
-      // 
-      // deckEditContextMenuStrip
-      // 
-      this.deckEditContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deckEditRemoveSelectedMenuItem});
-      this.deckEditContextMenuStrip.Name = "deckEditContextMenuStrip";
-      this.deckEditContextMenuStrip.Size = new System.Drawing.Size(195, 26);
-      // 
-      // deckEditRemoveSelectedMenuItem
-      // 
-      this.deckEditRemoveSelectedMenuItem.Name = "deckEditRemoveSelectedMenuItem";
-      this.deckEditRemoveSelectedMenuItem.Size = new System.Drawing.Size(194, 22);
-      this.deckEditRemoveSelectedMenuItem.Text = "Remove selected cards";
-      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1630,6 +1630,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.deckEditorSplitContainer)).EndInit();
       this.deckEditorSplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.deckEditorDataGridView)).EndInit();
+      this.deckEditContextMenuStrip.ResumeLayout(false);
       this.deckLeaderAbilitiesTab.ResumeLayout(false);
       this.cardDeckLeaderAbilitiesSplitContainer.Panel1.ResumeLayout(false);
       this.cardDeckLeaderAbilitiesSplitContainer.Panel1.PerformLayout();
@@ -1645,7 +1646,6 @@
       this.equipCompabilitySplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.equipCompatibilityDataGridView)).EndInit();
       this.monsterCardEquipCompatibilitiesContextMenuStrip.ResumeLayout(false);
-      this.deckEditContextMenuStrip.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 

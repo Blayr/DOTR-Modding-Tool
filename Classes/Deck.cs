@@ -27,7 +27,7 @@ public class Deck
 
   public override string ToString()
   {
-    return DeckLeader.CardConstant.Name;
+    return $"{NamePrefix(Index)} - {DeckLeader.CardConstant.Name}";
   }
 
   public static List<Deck> LoadDeckListFromBytes(byte[][][] bytes)
@@ -74,5 +74,52 @@ public class Deck
 
       return byteArray;
     }
+  }
+
+  public static string NamePrefix(int deckIndex)
+  {
+    if (deckIndex < 17)
+    {
+      return "Starter Deck";
+    }
+
+    if (deckIndex < 27)
+    {
+      return "Tutorial Deck";
+    }
+
+    return CharacterNameDictionary[deckIndex];
+  }
+
+  public static Dictionary<int, string> CharacterNameDictionary;
+  static Deck()
+  {
+    CharacterNameDictionary = new Dictionary<int, string>
+    {
+      { 27, "Seto" },
+      { 28, "Weevil Underwood" },
+      { 29, "Rex Raptor" },
+      { 30, "Keith" },
+      { 31, "Ishtar" },
+      { 32, "Necromancer" },
+      { 33, "Darkness-ruler" },
+      { 34, "Labyrinth-ruler" },
+      { 35, "Pegasus Crawford" },
+      { 36, "Richard Slysheen of York" },
+      { 37, "Tea" },
+      { 38, "T. Tristan Grey" },
+      { 39, "Margaret Mai Beaufort" },
+      { 40, "Mako" },
+      { 41, "Joey" },
+      { 42, "J. Shadi Morton" },
+      { 43, "Jasper Dice Tudor" },
+      { 44, "Bakura" },
+      { 45, "Yugi" },
+      { 46, "Manawyddan fab Llyr (vs White Rose)" },
+      { 47, "Manawyddan fab Llyr (vs Red Rose)" },
+      { 48, "Deck Master K" },
+      { 49, "Deck Master I" },
+      { 50, "Deck Master T" }
+    };
   }
 }
