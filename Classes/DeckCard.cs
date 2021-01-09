@@ -33,7 +33,7 @@ public class DeckCard
     set
     {
       rank = value;
-      calculateBytes(CardConstant, Rank);
+      Bytes = calculateBytes(CardConstant, rank);
     }
   }
 
@@ -47,7 +47,7 @@ public class DeckCard
     set
     {
       cardConstant = value;
-      calculateBytes(CardConstant, Rank);
+      Bytes = calculateBytes(CardConstant, Rank);
     }
   }
 

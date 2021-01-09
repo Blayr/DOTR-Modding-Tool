@@ -34,6 +34,10 @@ namespace DOTR_Modding_Tool
       byte[][][] deckBytes = dataAccess.LoadDecks();
       deckList = Deck.LoadDeckListFromBytes(deckBytes);
       deckDropdown.DataSource = deckList;
+
+      deckEditDeckLeaderRankComboBox.DataSource = DeckLeaderRank.RankList();
+      deckEditDeckLeaderRankComboBox.SelectedIndex = ((Deck)deckDropdown.SelectedItem).DeckLeader.Rank.Index;
+
       refreshDeckCardCountLabel();
     }
 
@@ -58,6 +62,7 @@ namespace DOTR_Modding_Tool
       Deck selectedDeck = (Deck)deckDropdown.SelectedItem;
       deckBinding.DataSource = selectedDeck.CardList;
       deckEditorDataGridView.DataSource = deckBinding;
+      deckEditDeckLeaderRankComboBox.SelectedValue = ((Deck)deckDropdown.SelectedItem).DeckLeader.Rank.Index;
       refreshDeckCardCountLabel();
     }
 
@@ -152,6 +157,18 @@ namespace DOTR_Modding_Tool
       }
 
       deckBinding.ResetBindings(false);
+    }
+
+    private void deckEditDeckLeaderRankComboBox_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      // Prevent invalid setting of rank, usually happens on form load when SelectedIndex is initially null
+      if (deckEditDeckLeaderRankComboBox.SelectedIndex < 1)
+      {
+        return;
+      }
+
+      Deck selectedDeck = (Deck)deckDropdown.SelectedItem;
+      selectedDeck.DeckLeader.Rank = new DeckLeaderRank(deckEditDeckLeaderRankComboBox.SelectedIndex);
     }
   }
 }

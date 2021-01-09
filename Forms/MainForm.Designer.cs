@@ -159,6 +159,7 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.deckEditDeckLeaderRankComboBox = new System.Windows.Forms.ComboBox();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -1165,6 +1166,7 @@
       // 
       // deckEditorSplitContainer.Panel1
       // 
+      this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckEditDeckLeaderRankComboBox);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckCardCountLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.decksLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckLabel);
@@ -1181,6 +1183,7 @@
       // 
       // deckCardCountLabel
       // 
+      this.deckCardCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.deckCardCountLabel.AutoSize = true;
       this.deckCardCountLabel.Location = new System.Drawing.Point(405, 36);
       this.deckCardCountLabel.Name = "deckCardCountLabel";
@@ -1566,6 +1569,18 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
+      // deckEditDeckLeaderRankComboBox
+      // 
+      this.deckEditDeckLeaderRankComboBox.DisplayMember = "Name";
+      this.deckEditDeckLeaderRankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.deckEditDeckLeaderRankComboBox.FormattingEnabled = true;
+      this.deckEditDeckLeaderRankComboBox.Location = new System.Drawing.Point(301, 33);
+      this.deckEditDeckLeaderRankComboBox.Name = "deckEditDeckLeaderRankComboBox";
+      this.deckEditDeckLeaderRankComboBox.Size = new System.Drawing.Size(57, 21);
+      this.deckEditDeckLeaderRankComboBox.TabIndex = 8;
+      this.deckEditDeckLeaderRankComboBox.ValueMember = "Index";
+      this.deckEditDeckLeaderRankComboBox.SelectedIndexChanged += new System.EventHandler(this.deckEditDeckLeaderRankComboBox_SelectedIndexChanged);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1771,5 +1786,6 @@
     private Label deckCardCountLabel;
     private ContextMenuStrip deckEditContextMenuStrip;
     private ToolStripMenuItem deckEditRemoveSelectedMenuItem;
+    private ComboBox deckEditDeckLeaderRankComboBox;
   }
 }
