@@ -58,6 +58,7 @@ namespace DOTR_Modding_Tool
       Deck selectedDeck = (Deck)deckDropdown.SelectedItem;
       deckBinding.DataSource = selectedDeck.CardList;
       deckEditorDataGridView.DataSource = deckBinding;
+      refreshDeckCardCountLabel();
     }
 
     private void applyTrunkFilter()
@@ -116,7 +117,7 @@ namespace DOTR_Modding_Tool
     private void refreshDeckCardCountLabel()
     {
       List<DeckCard> cardList = (List<DeckCard>)deckBinding.DataSource;
-      deckCardCountLabel.Text = $"Cards: {cardList.Count.ToString()}/40";
+      deckCardCountLabel.Text = $"Cards: {cardList.Count}/40";
 
       if (cardList.Count == 40)
       {
