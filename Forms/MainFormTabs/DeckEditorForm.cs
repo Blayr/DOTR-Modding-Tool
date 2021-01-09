@@ -137,5 +137,18 @@ namespace DOTR_Modding_Tool
 
       refreshDeckCardCountLabel();
     }
+
+    private void deckEditSaveButton_Click(object sender, EventArgs e)
+    {
+      Deck deck = (Deck)deckDropdown.SelectedItem;
+
+      try
+      {
+        deck.Save(dataAccess);
+      } catch (InvalidOperationException error)
+      {
+        MessageBox.Show(error.Message, "Error");
+      } 
+    }
   }
 }

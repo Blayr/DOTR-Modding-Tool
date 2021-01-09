@@ -34,6 +34,17 @@ public class DataAccess
 	{
 	}
 
+  public void SaveDeck(int deckIndex, byte[] bytes)
+  {
+    int deckBytesLocation = (DeckByteOffset) + deckIndex * DeckCardCount * DeckCardByteCount;
+
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(deckBytesLocation, SeekOrigin.Begin);
+      fileStream.Write(bytes, 0, bytes.Length);
+    }
+  }
+
   public byte[][][] LoadDecks()
   {
     byte[][][] allDeckBytes = new byte[DeckCount][][];

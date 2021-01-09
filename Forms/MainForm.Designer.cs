@@ -157,7 +157,6 @@
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.deckCardCountLabel = new System.Windows.Forms.Label();
-      this.label9 = new System.Windows.Forms.Label();
       this.deckEditContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.deckEditRemoveSelectedMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
@@ -1166,7 +1165,6 @@
       // 
       // deckEditorSplitContainer.Panel1
       // 
-      this.deckEditorSplitContainer.Panel1.Controls.Add(this.label9);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckCardCountLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.decksLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckLabel);
@@ -1555,21 +1553,12 @@
       this.deckCardCountLabel.TabIndex = 7;
       this.deckCardCountLabel.Text = "Cards: ";
       // 
-      // label9
-      // 
-      this.label9.AutoSize = true;
-      this.label9.Location = new System.Drawing.Point(201, 13);
-      this.label9.Name = "label9";
-      this.label9.Size = new System.Drawing.Size(209, 13);
-      this.label9.TabIndex = 8;
-      this.label9.Text = "Add right click option for mass add/remove";
-      // 
       // deckEditContextMenuStrip
       // 
       this.deckEditContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deckEditRemoveSelectedMenuItem});
       this.deckEditContextMenuStrip.Name = "deckEditContextMenuStrip";
-      this.deckEditContextMenuStrip.Size = new System.Drawing.Size(195, 48);
+      this.deckEditContextMenuStrip.Size = new System.Drawing.Size(195, 26);
       // 
       // deckEditRemoveSelectedMenuItem
       // 
@@ -1780,7 +1769,6 @@
     private Label cardTrunkLabel;
     private Label decksLabel;
     private Label deckCardCountLabel;
-    private Label label9;
     private ContextMenuStrip deckEditContextMenuStrip;
     private ToolStripMenuItem deckEditRemoveSelectedMenuItem;
   }
