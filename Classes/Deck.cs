@@ -117,9 +117,9 @@ public class Deck
       { 45, "Yugi" },
       { 46, "Manawyddan fab Llyr (vs White Rose)" },
       { 47, "Manawyddan fab Llyr (vs Red Rose)" },
-      { 48, "Deck Master K" },
-      { 49, "Deck Master I" },
-      { 50, "Deck Master T" }
+      { 48, "Deck Master I" },
+      { 49, "Deck Master T" },
+      { 50, "Deck Master S" }
     };
   }
 }
