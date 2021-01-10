@@ -16,6 +16,7 @@ namespace DOTR_Modding_Tool
   public partial class MainForm : Form
   {
     private List<Deck> deckList;
+    private BindingSource deckListBinding = new BindingSource();
     private BindingListView<CardConstant> trunkCardConstantBinding;
     private BindingSource deckBinding = new BindingSource();
 
@@ -27,13 +28,22 @@ namespace DOTR_Modding_Tool
       loadDeckData();
       deckEditorDataGridView.CellDoubleClick += deckEditDataGridView_DoubleClick;
       trunkDataGridView.CellDoubleClick += trunkDataGridView_DoubleClick;
+      trunkContextMenuStrip.Opening += TrunkContextMenuStrip_Opening;
+    }
+
+    private void TrunkContextMenuStrip_Opening(object sender, CancelEventArgs e)
+    {
+      DataGridViewSelectedRowCollection selectedRows = trunkDataGridView.SelectedRows;
+
+      trunkContextMenuStrip.Items[0].Enabled = selectedRows.Count == 1;
     }
 
     private void loadDeckData()
     {
       byte[][][] deckBytes = dataAccess.LoadDecks();
       deckList = Deck.LoadDeckListFromBytes(deckBytes);
-      deckDropdown.DataSource = deckList;
+      deckListBinding.DataSource = deckList;
+      deckDropdown.DataSource = deckListBinding;
 
       deckEditDeckLeaderRankComboBox.DataSource = DeckLeaderRank.RankList();
       deckEditDeckLeaderRankComboBox.SelectedIndex = ((Deck)deckDropdown.SelectedItem).DeckLeader.Rank.Index;
@@ -111,14 +121,6 @@ namespace DOTR_Modding_Tool
       refreshDeckCardCountLabel();
     }
 
-    private void trunkDataGridView_DoubleClick(Object sender, DataGridViewCellEventArgs e)
-    {
-      CardConstant cardConstant = ((ObjectView<CardConstant>)trunkDataGridView.Rows[e.RowIndex].DataBoundItem).Object;
-      DeckCard deckCard = new DeckCard(cardConstant, new DeckLeaderRank((int)DeckLeaderRankType.NCO));
-      deckBinding.Add(deckCard);
-      refreshDeckCardCountLabel();
-    }
-
     private void refreshDeckCardCountLabel()
     {
       List<DeckCard> cardList = (List<DeckCard>)deckBinding.DataSource;
@@ -169,6 +171,46 @@ namespace DOTR_Modding_Tool
 
       Deck selectedDeck = (Deck)deckDropdown.SelectedItem;
       selectedDeck.DeckLeader.Rank = new DeckLeaderRank(deckEditDeckLeaderRankComboBox.SelectedIndex);
+    }
+    private void makeDeckLeaderToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      CardConstant selectedCard = ((ObjectView<CardConstant>)trunkDataGridView.SelectedRows[0].DataBoundItem).Object;
+      Deck deck = (Deck)deckDropdown.SelectedItem;
+
+      deck.DeckLeader = new DeckCard(selectedCard, deck.DeckLeader.Rank);
+      deckListBinding.ResetBindings(false);
+    }
+    private void trunkDataGridView_DoubleClick(Object sender, DataGridViewCellEventArgs e)
+    {
+      List<DataGridViewRow> rows = new List<DataGridViewRow> { trunkDataGridView.Rows[e.RowIndex] };
+      addCardsToDeck(rows);
+    }
+
+    private void addSelectedCardsToDeckToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      DataGridViewSelectedRowCollection selectedRows = trunkDataGridView.SelectedRows;
+      List<DataGridViewRow> rows = new List<DataGridViewRow> { };
+      
+      foreach (DataGridViewRow row in selectedRows)
+      {
+        rows.Add(row);
+      }
+
+      addCardsToDeck(rows);
+    }
+
+    private void addCardsToDeck(List<DataGridViewRow> rows)
+    {
+      foreach (DataGridViewRow row in rows)
+      {
+        CardConstant cardConstant = ((ObjectView<CardConstant>)row.DataBoundItem).Object;
+        DeckLeaderRank rank = new DeckLeaderRank((int)DeckLeaderRankType.NCO);
+        DeckCard deckCard = new DeckCard(cardConstant, rank);
+        deckBinding.Add(deckCard);
+      }
+
+      deckBinding.ResetBindings(false);
+      refreshDeckCardCountLabel();
     }
   }
 }

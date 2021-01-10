@@ -120,7 +120,11 @@
       this.cardTrunkAttributeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardTrunkTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.cardTrunkDeckCostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.trunkContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.makeDeckLeaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.addSelectedCardsToDeckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.deckEditorSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.deckEditDeckLeaderRankComboBox = new System.Windows.Forms.ComboBox();
       this.deckCardCountLabel = new System.Windows.Forms.Label();
       this.decksLabel = new System.Windows.Forms.Label();
       this.deckLabel = new System.Windows.Forms.Label();
@@ -159,7 +163,7 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.deckEditDeckLeaderRankComboBox = new System.Windows.Forms.ComboBox();
+      this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -199,6 +203,7 @@
       this.cardTrunkSplitContainer.Panel2.SuspendLayout();
       this.cardTrunkSplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.trunkDataGridView)).BeginInit();
+      this.trunkContextMenuStrip.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.deckEditorSplitContainer)).BeginInit();
       this.deckEditorSplitContainer.Panel1.SuspendLayout();
       this.deckEditorSplitContainer.Panel2.SuspendLayout();
@@ -1085,6 +1090,7 @@
             this.cardTrunkAttributeColumn,
             this.cardTrunkTypeColumn,
             this.cardTrunkDeckCostColumn});
+      this.trunkDataGridView.ContextMenuStrip = this.trunkContextMenuStrip;
       this.trunkDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.trunkDataGridView.Location = new System.Drawing.Point(0, 0);
       this.trunkDataGridView.Name = "trunkDataGridView";
@@ -1155,6 +1161,28 @@
       this.cardTrunkDeckCostColumn.ReadOnly = true;
       this.cardTrunkDeckCostColumn.Width = 30;
       // 
+      // trunkContextMenuStrip
+      // 
+      this.trunkContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.makeDeckLeaderToolStripMenuItem,
+            this.addSelectedCardsToDeckToolStripMenuItem});
+      this.trunkContextMenuStrip.Name = "trunkContextMenuStrip";
+      this.trunkContextMenuStrip.Size = new System.Drawing.Size(216, 48);
+      // 
+      // makeDeckLeaderToolStripMenuItem
+      // 
+      this.makeDeckLeaderToolStripMenuItem.Name = "makeDeckLeaderToolStripMenuItem";
+      this.makeDeckLeaderToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+      this.makeDeckLeaderToolStripMenuItem.Text = "Make Deck Leader";
+      this.makeDeckLeaderToolStripMenuItem.Click += new System.EventHandler(this.makeDeckLeaderToolStripMenuItem_Click);
+      // 
+      // addSelectedCardsToDeckToolStripMenuItem
+      // 
+      this.addSelectedCardsToDeckToolStripMenuItem.Name = "addSelectedCardsToDeckToolStripMenuItem";
+      this.addSelectedCardsToDeckToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+      this.addSelectedCardsToDeckToolStripMenuItem.Text = "Add selected cards to deck";
+      this.addSelectedCardsToDeckToolStripMenuItem.Click += new System.EventHandler(this.addSelectedCardsToDeckToolStripMenuItem_Click);
+      // 
       // deckEditorSplitContainer
       // 
       this.deckEditorSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1172,7 +1200,6 @@
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckDropdown);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckEditSaveButton);
-      this.deckEditorSplitContainer.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.deckEditorSplitContainer_Panel1_Paint);
       // 
       // deckEditorSplitContainer.Panel2
       // 
@@ -1180,6 +1207,18 @@
       this.deckEditorSplitContainer.Size = new System.Drawing.Size(557, 522);
       this.deckEditorSplitContainer.SplitterDistance = 60;
       this.deckEditorSplitContainer.TabIndex = 0;
+      // 
+      // deckEditDeckLeaderRankComboBox
+      // 
+      this.deckEditDeckLeaderRankComboBox.DisplayMember = "Name";
+      this.deckEditDeckLeaderRankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.deckEditDeckLeaderRankComboBox.FormattingEnabled = true;
+      this.deckEditDeckLeaderRankComboBox.Location = new System.Drawing.Point(301, 33);
+      this.deckEditDeckLeaderRankComboBox.Name = "deckEditDeckLeaderRankComboBox";
+      this.deckEditDeckLeaderRankComboBox.Size = new System.Drawing.Size(57, 21);
+      this.deckEditDeckLeaderRankComboBox.TabIndex = 8;
+      this.deckEditDeckLeaderRankComboBox.ValueMember = "Index";
+      this.deckEditDeckLeaderRankComboBox.SelectedIndexChanged += new System.EventHandler(this.deckEditDeckLeaderRankComboBox_SelectedIndexChanged);
       // 
       // deckCardCountLabel
       // 
@@ -1569,17 +1608,10 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
-      // deckEditDeckLeaderRankComboBox
+      // contextMenuStrip1
       // 
-      this.deckEditDeckLeaderRankComboBox.DisplayMember = "Name";
-      this.deckEditDeckLeaderRankComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.deckEditDeckLeaderRankComboBox.FormattingEnabled = true;
-      this.deckEditDeckLeaderRankComboBox.Location = new System.Drawing.Point(301, 33);
-      this.deckEditDeckLeaderRankComboBox.Name = "deckEditDeckLeaderRankComboBox";
-      this.deckEditDeckLeaderRankComboBox.Size = new System.Drawing.Size(57, 21);
-      this.deckEditDeckLeaderRankComboBox.TabIndex = 8;
-      this.deckEditDeckLeaderRankComboBox.ValueMember = "Index";
-      this.deckEditDeckLeaderRankComboBox.SelectedIndexChanged += new System.EventHandler(this.deckEditDeckLeaderRankComboBox_SelectedIndexChanged);
+      this.contextMenuStrip1.Name = "contextMenuStrip1";
+      this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
       // 
       // MainForm
       // 
@@ -1639,6 +1671,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.cardTrunkSplitContainer)).EndInit();
       this.cardTrunkSplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.trunkDataGridView)).EndInit();
+      this.trunkContextMenuStrip.ResumeLayout(false);
       this.deckEditorSplitContainer.Panel1.ResumeLayout(false);
       this.deckEditorSplitContainer.Panel1.PerformLayout();
       this.deckEditorSplitContainer.Panel2.ResumeLayout(false);
@@ -1787,5 +1820,9 @@
     private ContextMenuStrip deckEditContextMenuStrip;
     private ToolStripMenuItem deckEditRemoveSelectedMenuItem;
     private ComboBox deckEditDeckLeaderRankComboBox;
+    private ContextMenuStrip trunkContextMenuStrip;
+    private ToolStripMenuItem makeDeckLeaderToolStripMenuItem;
+    private ToolStripMenuItem addSelectedCardsToDeckToolStripMenuItem;
+    private ContextMenuStrip contextMenuStrip1;
   }
 }
