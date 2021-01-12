@@ -56,8 +56,9 @@
     private void cardConstantsSaveButton_Click(object sender, EventArgs e)
     {
       byte[] cardConstantsBytes = CardConstant.AllBytes;
-      this.dataAccess.SetCardConstantData(cardConstantsBytes);
-      this.LoadCardConstantsData();
+      dataAccess.SetCardConstantData(cardConstantsBytes);
+      LoadCardConstantsData();
+      MessageBox.Show("All card properties saved.", "Save successful");
     }
 
     private void SetupCardConstantsDataGridView()

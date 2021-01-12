@@ -130,6 +130,7 @@
     {
       this.dataAccess.SaveFusionData(this.fusions.Bytes);
       this.LoadFusionData();
+      MessageBox.Show("All fusion combinations saved.", "Save successful");
     }
   }
 }

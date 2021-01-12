@@ -153,6 +153,7 @@ namespace DOTR_Modding_Tool
       try
       {
         deck.Save(dataAccess);
+        MessageBox.Show("Deck saved.", "Save successful");
       } catch (InvalidOperationException error)
       {
         MessageBox.Show(error.Message, "Error");

@@ -38,6 +38,7 @@
       byte[] aiBytes = this.enemies.AiBytes;
       this.dataAccess.SaveEnemyAiData(aiBytes);
       this.LoadEnemyAI();
+      MessageBox.Show("All enemy Ais saved.", "Save successful");
     }
   }
 }

@@ -62,6 +62,7 @@
       byte[] bytes = this.cardDeckLeaderAbilities.Bytes;
       this.dataAccess.SaveCardDeckLeaderAbilities(bytes); ;
       this.LoadCardDeckLeaderAbilitesData();
+      MessageBox.Show("All deck leader abilities saved.", "Save successful");
     }
   }
 }

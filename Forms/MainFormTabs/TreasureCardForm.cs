@@ -48,6 +48,7 @@
       this.selectedTreasureCard.Column = columnByte;
 
       this.dataAccess.SaveTreasureCard(this.treasureCardsListbox.SelectedIndex, selectedTreasureCard.Bytes);
+      MessageBox.Show("Treasure card saved.", "Save successful");
     }
   }
 }
