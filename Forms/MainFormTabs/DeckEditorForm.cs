@@ -196,6 +196,12 @@ namespace DOTR_Modding_Tool
     }
     private void trunkDataGridView_DoubleClick(Object sender, DataGridViewCellEventArgs e)
     {
+      // avoid errors when doubleclicking column headers
+      if (e.RowIndex < 0)
+      {
+        return;
+      }
+
       List<DataGridViewRow> rows = new List<DataGridViewRow> { trunkDataGridView.Rows[e.RowIndex] };
       addCardsToDeck(rows);
     }
