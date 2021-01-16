@@ -115,10 +115,10 @@ namespace DOTR_MODDING_TOOL.Classes
       ParameterExpression comparer = Expression.Parameter(typeof(Comparison<T>));
       UnaryExpression castList = Expression.TypeAs(sourceList, list.GetType());
       MethodCallExpression call = Expression.Call(castList, sortMethod, comparer);
-      Expression<Action<IList<T>, Comparison<T>>> lambada =
+      Expression<Action<IList<T>, Comparison<T>>> lambda =
           Expression.Lambda<Action<IList<T>, Comparison<T>>>(call,
               sourceList, comparer);
-      Action<IList<T>, Comparison<T>> sortDelegate = lambada.Compile();
+      Action<IList<T>, Comparison<T>> sortDelegate = lambda.Compile();
       return sortDelegate;
     }
 
