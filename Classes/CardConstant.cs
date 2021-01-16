@@ -226,7 +226,7 @@ public class CardConstant
 				return this.attribute.Name;
       }
 
-			return null;
+			return "";
     }
   }
 
