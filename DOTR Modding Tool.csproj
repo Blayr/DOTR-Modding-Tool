@@ -60,6 +60,7 @@
     <Compile Include="Classes\DeckLeaderAbilities\StrengthModifierDeckLeaderAbility.cs" />
     <Compile Include="Classes\DeckLeaderRank.cs" />
     <Compile Include="Classes\DeckLeaderRankType.cs" />
+    <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="Forms\DeckLeaderAbilityForms\EditStrengthModifierDeckLeaderAbilityForm.cs">
       <SubType>Form</SubType>
     </Compile>

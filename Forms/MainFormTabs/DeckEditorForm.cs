@@ -18,7 +18,7 @@ namespace DOTR_Modding_Tool
     private List<Deck> deckList;
     private BindingSource deckListBinding = new BindingSource();
     private BindingListView<CardConstant> trunkCardConstantBinding;
-    private BindingSource deckBinding = new BindingSource();
+    private SortableBindingList<DeckCard> deckCardListBinding;
 
     private void setupDeckEditorTab()
     {
@@ -70,8 +70,8 @@ namespace DOTR_Modding_Tool
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
       Deck selectedDeck = (Deck)deckDropdown.SelectedItem;
-      deckBinding.DataSource = selectedDeck.CardList;
-      deckEditorDataGridView.DataSource = deckBinding;
+      deckCardListBinding = new SortableBindingList<DeckCard>(selectedDeck.CardList);
+      deckEditorDataGridView.DataSource = deckCardListBinding;
       deckEditDeckLeaderRankComboBox.SelectedValue = ((Deck)deckDropdown.SelectedItem).DeckLeader.Rank.Index;
       refreshDeckInfoLabels();
     }
@@ -116,14 +116,14 @@ namespace DOTR_Modding_Tool
         return;
       }
 
-      DeckCard deckCard = (DeckCard)deckBinding[e.RowIndex];
-      deckBinding.Remove(deckCard);
+      DeckCard deckCard = (DeckCard)deckCardListBinding[e.RowIndex];
+      deckCardListBinding.Remove(deckCard);
       refreshDeckInfoLabels();
     }
 
     private void refreshDeckCardCountLabel()
     {
-      List<DeckCard> cardList = (List<DeckCard>)deckBinding.DataSource;
+      List<DeckCard> cardList = (List<DeckCard>)deckCardListBinding.ToList();
       deckCardCountLabel.Text = $"Cards: {cardList.Count}/40";
 
       if (cardList.Count == 40)
@@ -138,7 +138,7 @@ namespace DOTR_Modding_Tool
     private void refreshDeckCostLabel()
     {
       Deck deck = new Deck();
-      deck.CardList = (List<DeckCard>)deckBinding.DataSource;
+      deck.CardList = (List<DeckCard>)deckCardListBinding.ToList();
       deckEditDeckCostLabel.Text = $"{deck.DeckCost} DC";
     }
 
@@ -153,7 +153,7 @@ namespace DOTR_Modding_Tool
       foreach (DataGridViewRow row in deckEditorDataGridView.SelectedRows)
       {
         DeckCard deckCard = (DeckCard)row.DataBoundItem;
-        deckBinding.Remove(deckCard);
+        deckCardListBinding.Remove(deckCard);
       }
 
       refreshDeckInfoLabels();
@@ -166,13 +166,13 @@ namespace DOTR_Modding_Tool
       try
       {
         deck.Save(dataAccess);
+        deckCardListBinding.ResetBindings();
         MessageBox.Show("Deck saved.", "Save successful");
       } catch (InvalidOperationException error)
       {
         MessageBox.Show(error.Message, "Error");
       }
 
-      deckBinding.ResetBindings(false);
     }
 
     private void deckEditDeckLeaderRankComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -220,10 +220,9 @@ namespace DOTR_Modding_Tool
         CardConstant cardConstant = ((ObjectView<CardConstant>)row.DataBoundItem).Object;
         DeckLeaderRank rank = new DeckLeaderRank((int)DeckLeaderRankType.NCO);
         DeckCard deckCard = new DeckCard(cardConstant, rank);
-        deckBinding.Add(deckCard);
+        deckCardListBinding.Add(deckCard);
       }
 
-      deckBinding.ResetBindings(false);
       refreshDeckInfoLabels();
     }
   }
