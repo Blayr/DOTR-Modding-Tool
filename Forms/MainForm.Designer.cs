@@ -8,7 +8,7 @@
     /// Required designer variable.
     /// </summary>
     private System.ComponentModel.IContainer components = null;
-    private System.Windows.Forms.OpenFileDialog openFileDialog1;
+    private System.Windows.Forms.OpenFileDialog isoSelectorFileDialog;
     private System.Windows.Forms.MenuStrip menuStrip1;
     private System.Windows.Forms.ToolStripMenuItem openISOMenuItem;
 
@@ -37,7 +37,7 @@
       this.components = new System.ComponentModel.Container();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+      this.isoSelectorFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -225,9 +225,9 @@
       this.monsterCardEquipCompatibilitiesContextMenuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
-      // openFileDialog1
+      // isoSelectorFileDialog
       // 
-      this.openFileDialog1.FileName = "openFileDialog1";
+      this.isoSelectorFileDialog.FileName = "openFileDialog1";
       // 
       // menuStrip1
       // 
@@ -528,7 +528,7 @@
       // fusionTableTipLabel
       // 
       this.fusionTableTipLabel.AutoSize = true;
-      this.fusionTableTipLabel.Location = new System.Drawing.Point(5, 6);
+      this.fusionTableTipLabel.Location = new System.Drawing.Point(5, 8);
       this.fusionTableTipLabel.Name = "fusionTableTipLabel";
       this.fusionTableTipLabel.Size = new System.Drawing.Size(279, 13);
       this.fusionTableTipLabel.TabIndex = 1;
@@ -893,7 +893,7 @@
       // 
       this.textBox2.BackColor = System.Drawing.SystemColors.Window;
       this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.textBox2.Location = new System.Drawing.Point(317, 25);
+      this.textBox2.Location = new System.Drawing.Point(326, 25);
       this.textBox2.Name = "textBox2";
       this.textBox2.ReadOnly = true;
       this.textBox2.Size = new System.Drawing.Size(71, 13);
@@ -904,7 +904,7 @@
       // 
       this.textBox1.BackColor = System.Drawing.SystemColors.Window;
       this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.textBox1.Location = new System.Drawing.Point(317, 6);
+      this.textBox1.Location = new System.Drawing.Point(326, 6);
       this.textBox1.Name = "textBox1";
       this.textBox1.ReadOnly = true;
       this.textBox1.Size = new System.Drawing.Size(71, 13);
@@ -915,7 +915,7 @@
       // 
       this.newRankThresholdsTextbox.BackColor = System.Drawing.SystemColors.Window;
       this.newRankThresholdsTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.newRankThresholdsTextbox.Location = new System.Drawing.Point(438, 25);
+      this.newRankThresholdsTextbox.Location = new System.Drawing.Point(403, 25);
       this.newRankThresholdsTextbox.Name = "newRankThresholdsTextbox";
       this.newRankThresholdsTextbox.ReadOnly = true;
       this.newRankThresholdsTextbox.Size = new System.Drawing.Size(493, 13);
@@ -925,7 +925,7 @@
       // 
       this.originalRankThresholdsTextbox.BackColor = System.Drawing.SystemColors.Window;
       this.originalRankThresholdsTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.originalRankThresholdsTextbox.Location = new System.Drawing.Point(438, 6);
+      this.originalRankThresholdsTextbox.Location = new System.Drawing.Point(403, 6);
       this.originalRankThresholdsTextbox.Name = "originalRankThresholdsTextbox";
       this.originalRankThresholdsTextbox.ReadOnly = true;
       this.originalRankThresholdsTextbox.Size = new System.Drawing.Size(493, 13);
@@ -933,9 +933,9 @@
       // 
       // rankThresholdsSaveButton
       // 
-      this.rankThresholdsSaveButton.Location = new System.Drawing.Point(385, 114);
+      this.rankThresholdsSaveButton.Location = new System.Drawing.Point(445, 164);
       this.rankThresholdsSaveButton.Name = "rankThresholdsSaveButton";
-      this.rankThresholdsSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.rankThresholdsSaveButton.Size = new System.Drawing.Size(75, 25);
       this.rankThresholdsSaveButton.TabIndex = 18;
       this.rankThresholdsSaveButton.Text = "Save";
       this.rankThresholdsSaveButton.UseVisualStyleBackColor = true;
@@ -1264,7 +1264,7 @@
       this.deckEditSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.deckEditSaveButton.Location = new System.Drawing.Point(479, 31);
       this.deckEditSaveButton.Name = "deckEditSaveButton";
-      this.deckEditSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.deckEditSaveButton.Size = new System.Drawing.Size(75, 25);
       this.deckEditSaveButton.TabIndex = 0;
       this.deckEditSaveButton.Text = "Save";
       this.deckEditSaveButton.UseVisualStyleBackColor = true;
@@ -1414,9 +1414,9 @@
       // deckLeaderAbilitiesSaveButton
       // 
       this.deckLeaderAbilitiesSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.deckLeaderAbilitiesSaveButton.Location = new System.Drawing.Point(1031, 3);
+      this.deckLeaderAbilitiesSaveButton.Location = new System.Drawing.Point(1036, 0);
       this.deckLeaderAbilitiesSaveButton.Name = "deckLeaderAbilitiesSaveButton";
-      this.deckLeaderAbilitiesSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.deckLeaderAbilitiesSaveButton.Size = new System.Drawing.Size(75, 25);
       this.deckLeaderAbilitiesSaveButton.TabIndex = 0;
       this.deckLeaderAbilitiesSaveButton.Text = "Save";
       this.deckLeaderAbilitiesSaveButton.UseVisualStyleBackColor = true;
@@ -1501,13 +1501,13 @@
       // 
       this.equipCompabilitySplitContainer.Panel2.Controls.Add(this.equipCompatibilityDataGridView);
       this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(1111, 522);
-      this.equipCompabilitySplitContainer.SplitterDistance = 31;
+      this.equipCompabilitySplitContainer.SplitterDistance = 25;
       this.equipCompabilitySplitContainer.TabIndex = 0;
       // 
       // cardEquipNoteLabel1
       // 
       this.cardEquipNoteLabel1.AutoSize = true;
-      this.cardEquipNoteLabel1.Location = new System.Drawing.Point(3, 10);
+      this.cardEquipNoteLabel1.Location = new System.Drawing.Point(5, 8);
       this.cardEquipNoteLabel1.Name = "cardEquipNoteLabel1";
       this.cardEquipNoteLabel1.Size = new System.Drawing.Size(412, 13);
       this.cardEquipNoteLabel1.TabIndex = 1;
@@ -1517,9 +1517,9 @@
       // equipCompatibilitySaveButton
       // 
       this.equipCompatibilitySaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      this.equipCompatibilitySaveButton.Location = new System.Drawing.Point(1031, 5);
+      this.equipCompatibilitySaveButton.Location = new System.Drawing.Point(1036, 0);
       this.equipCompatibilitySaveButton.Name = "equipCompatibilitySaveButton";
-      this.equipCompatibilitySaveButton.Size = new System.Drawing.Size(75, 23);
+      this.equipCompatibilitySaveButton.Size = new System.Drawing.Size(75, 25);
       this.equipCompatibilitySaveButton.TabIndex = 0;
       this.equipCompatibilitySaveButton.Text = "Save";
       this.equipCompatibilitySaveButton.UseVisualStyleBackColor = true;
@@ -1542,7 +1542,7 @@
       this.equipCompatibilityDataGridView.Name = "equipCompatibilityDataGridView";
       this.equipCompatibilityDataGridView.RowHeadersVisible = false;
       this.equipCompatibilityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(1111, 487);
+      this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(1111, 493);
       this.equipCompatibilityDataGridView.TabIndex = 0;
       // 
       // EquipCompatabilityCardIndexColumn
