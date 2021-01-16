@@ -48,7 +48,7 @@ namespace DOTR_Modding_Tool
       deckEditDeckLeaderRankComboBox.DataSource = DeckLeaderRank.RankList();
       deckEditDeckLeaderRankComboBox.SelectedIndex = ((Deck)deckDropdown.SelectedItem).DeckLeader.Rank.Index;
 
-      refreshDeckCardCountLabel();
+      refreshDeckInfoLabels();
     }
 
     private void formatCardTable(DataGridView table)
@@ -73,7 +73,7 @@ namespace DOTR_Modding_Tool
       deckBinding.DataSource = selectedDeck.CardList;
       deckEditorDataGridView.DataSource = deckBinding;
       deckEditDeckLeaderRankComboBox.SelectedValue = ((Deck)deckDropdown.SelectedItem).DeckLeader.Rank.Index;
-      refreshDeckCardCountLabel();
+      refreshDeckInfoLabels();
     }
 
     private void applyTrunkFilter()
@@ -118,7 +118,7 @@ namespace DOTR_Modding_Tool
 
       DeckCard deckCard = (DeckCard)deckBinding[e.RowIndex];
       deckBinding.Remove(deckCard);
-      refreshDeckCardCountLabel();
+      refreshDeckInfoLabels();
     }
 
     private void refreshDeckCardCountLabel()
@@ -135,6 +135,19 @@ namespace DOTR_Modding_Tool
       }
     }
 
+    private void refreshDeckCostLabel()
+    {
+      Deck deck = new Deck();
+      deck.CardList = (List<DeckCard>)deckBinding.DataSource;
+      deckEditDeckCostLabel.Text = $"{deck.DeckCost} DC";
+    }
+
+    private void refreshDeckInfoLabels()
+    {
+      refreshDeckCardCountLabel();
+      refreshDeckCostLabel();
+    }
+
     private void DeckEditRemoveSelectedMenuItem_Click(object sender, EventArgs e)
     {
       foreach (DataGridViewRow row in deckEditorDataGridView.SelectedRows)
@@ -143,7 +156,7 @@ namespace DOTR_Modding_Tool
         deckBinding.Remove(deckCard);
       }
 
-      refreshDeckCardCountLabel();
+      refreshDeckInfoLabels();
     }
 
     private void deckEditSaveButton_Click(object sender, EventArgs e)
@@ -211,7 +224,7 @@ namespace DOTR_Modding_Tool
       }
 
       deckBinding.ResetBindings(false);
-      refreshDeckCardCountLabel();
+      refreshDeckInfoLabels();
     }
   }
 }

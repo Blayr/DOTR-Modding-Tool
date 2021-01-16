@@ -164,6 +164,7 @@
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.deckEditDeckCostLabel = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -238,7 +239,7 @@
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
       this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-      this.menuStrip1.Size = new System.Drawing.Size(1125, 24);
+      this.menuStrip1.Size = new System.Drawing.Size(1164, 24);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
       // 
@@ -973,7 +974,7 @@
       this.mainTabControl.Location = new System.Drawing.Point(0, 27);
       this.mainTabControl.Name = "mainTabControl";
       this.mainTabControl.SelectedIndex = 0;
-      this.mainTabControl.Size = new System.Drawing.Size(1125, 554);
+      this.mainTabControl.Size = new System.Drawing.Size(1164, 539);
       this.mainTabControl.TabIndex = 3;
       // 
       // deckEditorTab
@@ -982,7 +983,7 @@
       this.deckEditorTab.Location = new System.Drawing.Point(4, 22);
       this.deckEditorTab.Name = "deckEditorTab";
       this.deckEditorTab.Padding = new System.Windows.Forms.Padding(3);
-      this.deckEditorTab.Size = new System.Drawing.Size(1117, 528);
+      this.deckEditorTab.Size = new System.Drawing.Size(1156, 513);
       this.deckEditorTab.TabIndex = 7;
       this.deckEditorTab.Text = "Deck Editor";
       this.deckEditorTab.UseVisualStyleBackColor = true;
@@ -1000,8 +1001,8 @@
       // deckEditorTabSplitContainer.Panel2
       // 
       this.deckEditorTabSplitContainer.Panel2.Controls.Add(this.deckEditorSplitContainer);
-      this.deckEditorTabSplitContainer.Size = new System.Drawing.Size(1111, 522);
-      this.deckEditorTabSplitContainer.SplitterDistance = 550;
+      this.deckEditorTabSplitContainer.Size = new System.Drawing.Size(1150, 507);
+      this.deckEditorTabSplitContainer.SplitterDistance = 569;
       this.deckEditorTabSplitContainer.TabIndex = 0;
       // 
       // cardTrunkSplitContainer
@@ -1024,7 +1025,7 @@
       // cardTrunkSplitContainer.Panel2
       // 
       this.cardTrunkSplitContainer.Panel2.Controls.Add(this.trunkDataGridView);
-      this.cardTrunkSplitContainer.Size = new System.Drawing.Size(550, 522);
+      this.cardTrunkSplitContainer.Size = new System.Drawing.Size(569, 507);
       this.cardTrunkSplitContainer.SplitterDistance = 60;
       this.cardTrunkSplitContainer.TabIndex = 1;
       // 
@@ -1095,7 +1096,7 @@
       this.trunkDataGridView.Location = new System.Drawing.Point(0, 0);
       this.trunkDataGridView.Name = "trunkDataGridView";
       this.trunkDataGridView.RowHeadersVisible = false;
-      this.trunkDataGridView.Size = new System.Drawing.Size(550, 458);
+      this.trunkDataGridView.Size = new System.Drawing.Size(569, 443);
       this.trunkDataGridView.TabIndex = 0;
       // 
       // Index
@@ -1194,6 +1195,7 @@
       // 
       // deckEditorSplitContainer.Panel1
       // 
+      this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckEditDeckCostLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckEditDeckLeaderRankComboBox);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.deckCardCountLabel);
       this.deckEditorSplitContainer.Panel1.Controls.Add(this.decksLabel);
@@ -1204,7 +1206,7 @@
       // deckEditorSplitContainer.Panel2
       // 
       this.deckEditorSplitContainer.Panel2.Controls.Add(this.deckEditorDataGridView);
-      this.deckEditorSplitContainer.Size = new System.Drawing.Size(557, 522);
+      this.deckEditorSplitContainer.Size = new System.Drawing.Size(577, 507);
       this.deckEditorSplitContainer.SplitterDistance = 60;
       this.deckEditorSplitContainer.TabIndex = 0;
       // 
@@ -1224,11 +1226,11 @@
       // 
       this.deckCardCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.deckCardCountLabel.AutoSize = true;
-      this.deckCardCountLabel.Location = new System.Drawing.Point(405, 36);
+      this.deckCardCountLabel.Location = new System.Drawing.Point(424, 37);
       this.deckCardCountLabel.Name = "deckCardCountLabel";
-      this.deckCardCountLabel.Size = new System.Drawing.Size(40, 13);
+      this.deckCardCountLabel.Size = new System.Drawing.Size(69, 13);
       this.deckCardCountLabel.TabIndex = 7;
-      this.deckCardCountLabel.Text = "Cards: ";
+      this.deckCardCountLabel.Text = "Cards: 40/40";
       // 
       // decksLabel
       // 
@@ -1262,7 +1264,7 @@
       // deckEditSaveButton
       // 
       this.deckEditSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.deckEditSaveButton.Location = new System.Drawing.Point(479, 31);
+      this.deckEditSaveButton.Location = new System.Drawing.Point(499, 31);
       this.deckEditSaveButton.Name = "deckEditSaveButton";
       this.deckEditSaveButton.Size = new System.Drawing.Size(75, 25);
       this.deckEditSaveButton.TabIndex = 0;
@@ -1291,7 +1293,7 @@
       this.deckEditorDataGridView.Name = "deckEditorDataGridView";
       this.deckEditorDataGridView.RowHeadersVisible = false;
       this.deckEditorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-      this.deckEditorDataGridView.Size = new System.Drawing.Size(557, 458);
+      this.deckEditorDataGridView.Size = new System.Drawing.Size(577, 443);
       this.deckEditorDataGridView.TabIndex = 0;
       // 
       // indexColumn
@@ -1613,15 +1615,25 @@
       this.contextMenuStrip1.Name = "contextMenuStrip1";
       this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
       // 
+      // deckEditDeckCostLabel
+      // 
+      this.deckEditDeckCostLabel.AutoSize = true;
+      this.deckEditDeckCostLabel.Location = new System.Drawing.Point(369, 37);
+      this.deckEditDeckCostLabel.Name = "deckEditDeckCostLabel";
+      this.deckEditDeckCostLabel.Size = new System.Drawing.Size(49, 13);
+      this.deckEditDeckCostLabel.TabIndex = 9;
+      this.deckEditDeckCostLabel.Text = "7777 DC";
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1125, 579);
+      this.ClientSize = new System.Drawing.Size(1164, 564);
       this.Controls.Add(this.mainTabControl);
       this.Controls.Add(this.menuStrip1);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MainMenuStrip = this.menuStrip1;
+      this.MinimumSize = new System.Drawing.Size(1180, 603);
       this.Name = "MainForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "DOTR Modding Tool";
@@ -1824,5 +1836,6 @@
     private ToolStripMenuItem makeDeckLeaderToolStripMenuItem;
     private ToolStripMenuItem addSelectedCardsToDeckToolStripMenuItem;
     private ContextMenuStrip contextMenuStrip1;
+    private Label deckEditDeckCostLabel;
   }
 }

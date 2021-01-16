@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Deck
 {
@@ -22,6 +23,14 @@ public class Deck
     {
       DeckCard deckCard = new DeckCard(bytes[cardIndex]);
       CardList.Add(deckCard);
+    }
+  }
+
+  public int DeckCost
+  {
+    get
+    {
+      return CardList.Sum(deckCard => deckCard.CardConstant.DeckCost);
     }
   }
 
