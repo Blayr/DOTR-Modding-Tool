@@ -24,6 +24,7 @@
       this.isoSelectorFileDialog.Filter = "ISO files (*.iso)|*.iso";
       this.isoSelectorFileDialog.Title = "Open DOTR ISO file";
       bool isoIsLoaded = false;
+      setWindowText();
 
       #if DEBUG
         this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\duelists of the roses\\DOTR_NTSC_TEST.iso");
@@ -40,6 +41,12 @@
       } 
 
       this.setupDeckEditorTab();
+    }
+
+    private void setWindowText()
+    {
+      AssemblyName assemblyName = Assembly.GetCallingAssembly().GetName();
+      Text = $"{assemblyName.Name} - v{assemblyName.Version}";
     }
 
     private void FileToolStripMenuItem_Click(object sender, EventArgs e)
