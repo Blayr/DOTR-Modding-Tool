@@ -40,11 +40,10 @@
       this.isoSelectorFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.additionalResourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.dOTRMapEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.viewSourceOnGithubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.additionalResourcesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.dOTRMapEditorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.viewSourceOnGithubToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.hiddenCardsTab = new System.Windows.Forms.TabPage();
       this.hiddenCardsSplitContainer = new System.Windows.Forms.SplitContainer();
       this.treasureCardsListbox = new System.Windows.Forms.ListBox();
@@ -239,7 +238,9 @@
       this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openISOMenuItem,
-            this.aboutToolStripMenuItem});
+            this.additionalResourcesToolStripMenuItem1,
+            this.viewSourceOnGithubToolStripMenuItem1,
+            this.aboutToolStripMenuItem2});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
       this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -254,44 +255,34 @@
       this.openISOMenuItem.Text = "Open ISO";
       this.openISOMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
       // 
-      // aboutToolStripMenuItem
+      // additionalResourcesToolStripMenuItem1
       // 
-      this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem1,
-            this.additionalResourcesToolStripMenuItem,
-            this.viewSourceOnGithubToolStripMenuItem});
-      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-      this.aboutToolStripMenuItem.Text = "About";
+      this.additionalResourcesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dOTRMapEditorToolStripMenuItem1});
+      this.additionalResourcesToolStripMenuItem1.Name = "additionalResourcesToolStripMenuItem1";
+      this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(130, 20);
+      this.additionalResourcesToolStripMenuItem1.Text = "Additional Resources";
       // 
-      // aboutToolStripMenuItem1
+      // dOTRMapEditorToolStripMenuItem1
       // 
-      this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-      this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(194, 22);
-      this.aboutToolStripMenuItem1.Text = "About";
-      this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
+      this.dOTRMapEditorToolStripMenuItem1.Name = "dOTRMapEditorToolStripMenuItem1";
+      this.dOTRMapEditorToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
+      this.dOTRMapEditorToolStripMenuItem1.Text = "DOTR Map Editor";
+      this.dOTRMapEditorToolStripMenuItem1.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem1_Click);
       // 
-      // additionalResourcesToolStripMenuItem
+      // viewSourceOnGithubToolStripMenuItem1
       // 
-      this.additionalResourcesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dOTRMapEditorToolStripMenuItem});
-      this.additionalResourcesToolStripMenuItem.Name = "additionalResourcesToolStripMenuItem";
-      this.additionalResourcesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-      this.additionalResourcesToolStripMenuItem.Text = "Additional Resources";
+      this.viewSourceOnGithubToolStripMenuItem1.Name = "viewSourceOnGithubToolStripMenuItem1";
+      this.viewSourceOnGithubToolStripMenuItem1.Size = new System.Drawing.Size(138, 20);
+      this.viewSourceOnGithubToolStripMenuItem1.Text = "View source on Github";
+      this.viewSourceOnGithubToolStripMenuItem1.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem1_Click);
       // 
-      // dOTRMapEditorToolStripMenuItem
+      // aboutToolStripMenuItem2
       // 
-      this.dOTRMapEditorToolStripMenuItem.Name = "dOTRMapEditorToolStripMenuItem";
-      this.dOTRMapEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-      this.dOTRMapEditorToolStripMenuItem.Text = "DOTR Map Editor";
-      this.dOTRMapEditorToolStripMenuItem.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem_Click);
-      // 
-      // viewSourceOnGithubToolStripMenuItem
-      // 
-      this.viewSourceOnGithubToolStripMenuItem.Name = "viewSourceOnGithubToolStripMenuItem";
-      this.viewSourceOnGithubToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-      this.viewSourceOnGithubToolStripMenuItem.Text = "View Source on Github";
-      this.viewSourceOnGithubToolStripMenuItem.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem_Click);
+      this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
+      this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(52, 20);
+      this.aboutToolStripMenuItem2.Text = "About";
+      this.aboutToolStripMenuItem2.Click += new System.EventHandler(this.aboutToolStripMenuItem2_Click);
       // 
       // hiddenCardsTab
       // 
@@ -1757,8 +1748,6 @@
     }
 
     #endregion
-    private ToolStripMenuItem aboutToolStripMenuItem;
-    private ToolStripMenuItem viewSourceOnGithubToolStripMenuItem;
     private TabPage hiddenCardsTab;
     private SplitContainer hiddenCardsSplitContainer;
     private TabPage enemyAiTab;
@@ -1883,8 +1872,9 @@
     private Label deckEditDeckCostLabel;
     private Label trunkTipLabel;
     private Label deckEditTipLabel;
-    private ToolStripMenuItem aboutToolStripMenuItem1;
-    private ToolStripMenuItem additionalResourcesToolStripMenuItem;
-    private ToolStripMenuItem dOTRMapEditorToolStripMenuItem;
+    private ToolStripMenuItem additionalResourcesToolStripMenuItem1;
+    private ToolStripMenuItem dOTRMapEditorToolStripMenuItem1;
+    private ToolStripMenuItem viewSourceOnGithubToolStripMenuItem1;
+    private ToolStripMenuItem aboutToolStripMenuItem2;
   }
 }

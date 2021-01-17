@@ -90,27 +90,26 @@
       this.menuStrip1.Focus();
     }
 
-    private void viewSourceOnGithubToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      System.Diagnostics.Process.Start("https://github.com/Blayr/DOTR-Modding-Tool");
-    }
-
     private static void EnableDoubleBuffering(DataGridView view)
     {
       // Reflection is a hack because the DoubleBuffered property is protected. Maybe this indicates we should be subclassing DataGridView.
       PropertyInfo property = typeof(DataGridView).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
       property.SetValue(view, true, null);
     }
-
-    private void dOTRMapEditorToolStripMenuItem_Click(object sender, EventArgs e)
+    private void dOTRMapEditorToolStripMenuItem1_Click(object sender, EventArgs e)
     {
       System.Diagnostics.Process.Start("https://github.com/rjoken/DOTRMap");
     }
 
-    private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+    private void aboutToolStripMenuItem2_Click(object sender, EventArgs e)
     {
       AboutForm aboutForm = new AboutForm();
       aboutForm.ShowDialog();
+    }
+
+    private void viewSourceOnGithubToolStripMenuItem1_Click(object sender, EventArgs e)
+    {
+      System.Diagnostics.Process.Start("https://github.com/Blayr/DOTR-Modding-Tool");
     }
   }
 }
