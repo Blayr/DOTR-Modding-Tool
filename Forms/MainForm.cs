@@ -100,5 +100,10 @@
       PropertyInfo property = typeof(DataGridView).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
       property.SetValue(view, true, null);
     }
+
+    private void dOTRMapEditorToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      System.Diagnostics.Process.Start("https://github.com/rjoken/DOTRMap");
+    }
   }
 }

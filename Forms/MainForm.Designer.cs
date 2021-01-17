@@ -106,6 +106,7 @@
       this.deckEditorTab = new System.Windows.Forms.TabPage();
       this.deckEditorTabSplitContainer = new System.Windows.Forms.SplitContainer();
       this.cardTrunkSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.trunkTipLabel = new System.Windows.Forms.Label();
       this.cardTrunkLabel = new System.Windows.Forms.Label();
       this.trunkFilterTextBox = new System.Windows.Forms.TextBox();
       this.trunkClearFilterButton = new System.Windows.Forms.Button();
@@ -124,6 +125,7 @@
       this.makeDeckLeaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.addSelectedCardsToDeckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.deckEditorSplitContainer = new System.Windows.Forms.SplitContainer();
+      this.deckEditTipLabel = new System.Windows.Forms.Label();
       this.deckEditDeckCostLabel = new System.Windows.Forms.Label();
       this.deckEditDeckLeaderRankComboBox = new System.Windows.Forms.ComboBox();
       this.deckCardCountLabel = new System.Windows.Forms.Label();
@@ -164,8 +166,9 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.trunkTipLabel = new System.Windows.Forms.Label();
-      this.deckEditTipLabel = new System.Windows.Forms.Label();
+      this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.additionalResourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.dOTRMapEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -254,6 +257,8 @@
       // aboutToolStripMenuItem
       // 
       this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem1,
+            this.additionalResourcesToolStripMenuItem,
             this.viewSourceOnGithubToolStripMenuItem});
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
       this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
@@ -300,7 +305,7 @@
       this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardSaveButton);
       this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardCardComboBox);
       this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(1150, 507);
-      this.hiddenCardsSplitContainer.SplitterDistance = 240;
+      this.hiddenCardsSplitContainer.SplitterDistance = 239;
       this.hiddenCardsSplitContainer.TabIndex = 0;
       // 
       // treasureCardsListbox
@@ -310,7 +315,7 @@
       this.treasureCardsListbox.FormattingEnabled = true;
       this.treasureCardsListbox.Location = new System.Drawing.Point(0, 0);
       this.treasureCardsListbox.Name = "treasureCardsListbox";
-      this.treasureCardsListbox.Size = new System.Drawing.Size(240, 507);
+      this.treasureCardsListbox.Size = new System.Drawing.Size(239, 507);
       this.treasureCardsListbox.TabIndex = 0;
       this.treasureCardsListbox.SelectedIndexChanged += new System.EventHandler(this.treasureCardsListbox_SelectedIndexChanged);
       // 
@@ -1031,6 +1036,16 @@
       this.cardTrunkSplitContainer.SplitterDistance = 60;
       this.cardTrunkSplitContainer.TabIndex = 1;
       // 
+      // trunkTipLabel
+      // 
+      this.trunkTipLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.trunkTipLabel.AutoSize = true;
+      this.trunkTipLabel.Location = new System.Drawing.Point(272, 11);
+      this.trunkTipLabel.Name = "trunkTipLabel";
+      this.trunkTipLabel.Size = new System.Drawing.Size(294, 13);
+      this.trunkTipLabel.TabIndex = 6;
+      this.trunkTipLabel.Text = "Double click card to add to deck, right click for more options.";
+      // 
       // cardTrunkLabel
       // 
       this.cardTrunkLabel.AutoSize = true;
@@ -1212,6 +1227,16 @@
       this.deckEditorSplitContainer.Size = new System.Drawing.Size(577, 507);
       this.deckEditorSplitContainer.SplitterDistance = 60;
       this.deckEditorSplitContainer.TabIndex = 0;
+      // 
+      // deckEditTipLabel
+      // 
+      this.deckEditTipLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.deckEditTipLabel.AutoSize = true;
+      this.deckEditTipLabel.Location = new System.Drawing.Point(245, 11);
+      this.deckEditTipLabel.Name = "deckEditTipLabel";
+      this.deckEditTipLabel.Size = new System.Drawing.Size(327, 13);
+      this.deckEditTipLabel.TabIndex = 10;
+      this.deckEditTipLabel.Text = "Double click to remove card from deck. Right click for more options.";
       // 
       // deckEditDeckCostLabel
       // 
@@ -1622,25 +1647,26 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
-      // trunkTipLabel
+      // aboutToolStripMenuItem1
       // 
-      this.trunkTipLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.trunkTipLabel.AutoSize = true;
-      this.trunkTipLabel.Location = new System.Drawing.Point(272, 11);
-      this.trunkTipLabel.Name = "trunkTipLabel";
-      this.trunkTipLabel.Size = new System.Drawing.Size(294, 13);
-      this.trunkTipLabel.TabIndex = 6;
-      this.trunkTipLabel.Text = "Double click card to add to deck, right click for more options.";
+      this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+      this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(194, 22);
+      this.aboutToolStripMenuItem1.Text = "About";
       // 
-      // deckEditTipLabel
+      // additionalResourcesToolStripMenuItem
       // 
-      this.deckEditTipLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.deckEditTipLabel.AutoSize = true;
-      this.deckEditTipLabel.Location = new System.Drawing.Point(245, 11);
-      this.deckEditTipLabel.Name = "deckEditTipLabel";
-      this.deckEditTipLabel.Size = new System.Drawing.Size(327, 13);
-      this.deckEditTipLabel.TabIndex = 10;
-      this.deckEditTipLabel.Text = "Double click to remove card from deck. Right click for more options.";
+      this.additionalResourcesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dOTRMapEditorToolStripMenuItem});
+      this.additionalResourcesToolStripMenuItem.Name = "additionalResourcesToolStripMenuItem";
+      this.additionalResourcesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+      this.additionalResourcesToolStripMenuItem.Text = "Additional Resources";
+      // 
+      // dOTRMapEditorToolStripMenuItem
+      // 
+      this.dOTRMapEditorToolStripMenuItem.Name = "dOTRMapEditorToolStripMenuItem";
+      this.dOTRMapEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.dOTRMapEditorToolStripMenuItem.Text = "DOTR Map Editor";
+      this.dOTRMapEditorToolStripMenuItem.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem_Click);
       // 
       // MainForm
       // 
@@ -1856,5 +1882,8 @@
     private Label deckEditDeckCostLabel;
     private Label trunkTipLabel;
     private Label deckEditTipLabel;
+    private ToolStripMenuItem aboutToolStripMenuItem1;
+    private ToolStripMenuItem additionalResourcesToolStripMenuItem;
+    private ToolStripMenuItem dOTRMapEditorToolStripMenuItem;
   }
 }
