@@ -128,5 +128,10 @@
     {
       System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=E_Aa2xC0Gig&ab_channel=Clovis");
     }
+
+    private void rOMMapDocumentationToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      System.Diagnostics.Process.Start("https://docs.google.com/document/d/1L_hkkhuF4C3miPzkiTSF_vPPOCov48kqNyhPqQBHTZQ/edit#");
+    }
   }
 }

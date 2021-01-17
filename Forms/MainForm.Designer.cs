@@ -171,6 +171,7 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.rOMMapDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -262,7 +263,8 @@
       // additionalResourcesToolStripMenuItem1
       // 
       this.additionalResourcesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dOTRMapEditorToolStripMenuItem1});
+            this.dOTRMapEditorToolStripMenuItem1,
+            this.rOMMapDocumentationToolStripMenuItem});
       this.additionalResourcesToolStripMenuItem1.Name = "additionalResourcesToolStripMenuItem1";
       this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(130, 20);
       this.additionalResourcesToolStripMenuItem1.Text = "Additional Resources";
@@ -270,7 +272,7 @@
       // dOTRMapEditorToolStripMenuItem1
       // 
       this.dOTRMapEditorToolStripMenuItem1.Name = "dOTRMapEditorToolStripMenuItem1";
-      this.dOTRMapEditorToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
+      this.dOTRMapEditorToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
       this.dOTRMapEditorToolStripMenuItem1.Text = "DOTR Map Editor";
       this.dOTRMapEditorToolStripMenuItem1.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem1_Click);
       // 
@@ -1688,6 +1690,13 @@
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
       // 
+      // rOMMapDocumentationToolStripMenuItem
+      // 
+      this.rOMMapDocumentationToolStripMenuItem.Name = "rOMMapDocumentationToolStripMenuItem";
+      this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+      this.rOMMapDocumentationToolStripMenuItem.Text = "ROM Map Documentation";
+      this.rOMMapDocumentationToolStripMenuItem.Click += new System.EventHandler(this.rOMMapDocumentationToolStripMenuItem_Click);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1907,5 +1916,6 @@
     private ToolStripMenuItem coolStuffToolStripMenuItem;
     private ToolStripMenuItem clovisYoutubeChannelToolStripMenuItem;
     private ToolStripMenuItem dOTRReduxModToolStripMenuItem;
+    private ToolStripMenuItem rOMMapDocumentationToolStripMenuItem;
   }
 }
