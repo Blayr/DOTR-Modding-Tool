@@ -28,6 +28,7 @@
     {
       this.dataAccess.SetDeckLeaderTresholds(this.newDeckLeaderRankThresholds.Bytes);
       this.LoadLeaderThresholdData();
+      MessageBox.Show("Deck leader rank thresholds saved.", "Save successful");
     }
 
     private void SetupRankThresholdDataGridView()

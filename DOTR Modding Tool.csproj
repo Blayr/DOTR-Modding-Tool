@@ -53,11 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Deck.cs" />
+    <Compile Include="Classes\DeckCard.cs" />
     <Compile Include="Classes\DeckLeaderAbilities\FlagDeckLeaderAbility.cs" />
     <Compile Include="Classes\DeckLeaderAbilities\DeckLeaderAbilityFactory.cs" />
     <Compile Include="Classes\DeckLeaderAbilities\StrengthModifierDeckLeaderAbility.cs" />
     <Compile Include="Classes\DeckLeaderRank.cs" />
     <Compile Include="Classes\DeckLeaderRankType.cs" />
+    <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="Forms\DeckLeaderAbilityForms\EditStrengthModifierDeckLeaderAbilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,13 +74,16 @@
     <Compile Include="Classes\BitHelper.cs" />
     <Compile Include="Classes\CardAttribute.cs" />
     <Compile Include="Classes\CardColorType.cs" />
-    <Compile Include="Classes\CardConstants.cs" />
+    <Compile Include="Classes\CardConstant.cs" />
     <Compile Include="Classes\CardKind.cs" />
     <Compile Include="Classes\Cards.cs" />
     <Compile Include="Classes\CustomExtensions.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\DebugHelper.cs" />
     <Compile Include="Classes\Enemies.cs" />
+    <Compile Include="Forms\MainFormTabs\DeckEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\TabDialogForms\CardConstantsMultiEditForm.cs">
       <SubType>Form</SubType>
     </Compile>

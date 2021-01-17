@@ -19,16 +19,26 @@
       this.toggleEnableControls(false);
       this.SetupRankThresholdDataGridView();
       this.SetupCardConstantsDataGridView();
-      this.openFileDialog1.FileName = "dotr.iso";
-      this.openFileDialog1.Filter = "ISO files (*.iso)|*.iso";
-      this.openFileDialog1.Title = "Open DOTR ISO file";
+      this.isoSelectorFileDialog.FileName = "dotr.iso";
+      this.isoSelectorFileDialog.Filter = "ISO files (*.iso)|*.iso";
+      this.isoSelectorFileDialog.Title = "Open DOTR ISO file";
+      bool isoIsLoaded = false;
 
       #if DEBUG
         this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\duelists of the roses\\DOTR_NTSC_TEST.iso");
         this.LoadDataFromIso();
+        isoIsLoaded = true;
       #else
-        this.OpenSelectISODialog();
+        isoIsLoaded = OpenSelectISODialog();
       #endif
+
+      if (!isoIsLoaded)
+      {
+        Close();
+        return;
+      } 
+
+      this.setupDeckEditorTab();
     }
 
     private void FileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,15 +46,18 @@
       this.OpenSelectISODialog();
     }
 
-    private void OpenSelectISODialog()
+    private bool OpenSelectISODialog()
     {
-      if (openFileDialog1.ShowDialog() != DialogResult.OK)
+      DialogResult isoSelectorDialogResult = isoSelectorFileDialog.ShowDialog();
+
+      if (isoSelectorDialogResult != DialogResult.OK)
       {
-        return;
+        return false;
       }
 
-      this.dataAccess.OpenIso(openFileDialog1.FileName);
+      this.dataAccess.OpenIso(isoSelectorFileDialog.FileName);
       this.LoadDataFromIso();
+      return true;
     }
 
     private void LoadDataFromIso()

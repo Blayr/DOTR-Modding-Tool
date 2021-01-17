@@ -20,7 +20,6 @@ public class CardConstantsMultiEditForm : Form
   private CheckBox passwordWorksCheckbox;
   private Label label1;
   private Label label2;
-  private CardConstants cardConstants;
   private Color touchedColor = Color.Lime;
   private bool deckCostTouched = false;
   private bool slotsTouched = false;
@@ -38,10 +37,9 @@ public class CardConstantsMultiEditForm : Form
   private Label label5;
   private Label label3;
 
-  public CardConstantsMultiEditForm(List<CardConstant> selectedCardConstants, ref CardConstants allCardConstants)
+  public CardConstantsMultiEditForm(List<CardConstant> selectedCardConstants)
 	{
     this.selectedCardConstants = selectedCardConstants;
-    this.cardConstants = allCardConstants;
 
     this.InitializeComponent();
     this.PopulateFields();
@@ -390,7 +388,7 @@ public class CardConstantsMultiEditForm : Form
     for (int i = 0; i < this.selectedCardConstants.Count; i++)
     {
       int cardIndex = this.selectedCardConstants[i].Index;
-      CardConstant cardConstant = this.cardConstants.Constants[cardIndex];
+      CardConstant cardConstant = CardConstant.List[cardIndex];
       this.applyCardChanges(ref cardConstant);
     }
 

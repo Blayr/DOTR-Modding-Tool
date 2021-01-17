@@ -4,19 +4,18 @@
   using System;
   using System.Collections.Generic;
   using System.Drawing;
-    using System.Reflection;
-    using System.Windows.Forms;
+  using System.Reflection;
+  using System.Windows.Forms;
 
   public partial class MainForm : Form
   {
-    private CardConstants cardConstants;
     private BindingListView<CardConstant> cardConstantsBinding;
 
     private void LoadCardConstantsData()
     {
       byte[][] cardConstantsBytes = dataAccess.LoadCardConstantData();
-      this.cardConstants = new CardConstants(cardConstantsBytes);
-      this.cardConstantsBinding = new BindingListView<CardConstant>(this.cardConstants.Constants);
+      CardConstant.LoadFromBytes(cardConstantsBytes);
+      this.cardConstantsBinding = new BindingListView<CardConstant>(CardConstant.List);
       this.cardConstantsDataGridView.DataSource = cardConstantsBinding;
     }
 
@@ -56,9 +55,10 @@
 
     private void cardConstantsSaveButton_Click(object sender, EventArgs e)
     {
-      byte[] cardConstantsBytes = this.cardConstants.Bytes;
-      this.dataAccess.SetCardConstantData(cardConstantsBytes);
-      this.LoadCardConstantsData();
+      byte[] cardConstantsBytes = CardConstant.AllBytes;
+      dataAccess.SetCardConstantData(cardConstantsBytes);
+      LoadCardConstantsData();
+      MessageBox.Show("All card properties saved.", "Save successful");
     }
 
     private void SetupCardConstantsDataGridView()
@@ -87,19 +87,38 @@
       for (int i = 0; i < this.cardConstantsDataGridView.SelectedRows.Count; i++)
       {
         CardConstant cardConstant = ((ObjectView<CardConstant>)this.cardConstantsDataGridView.SelectedRows[i].DataBoundItem).Object;
-        selectedCardConstants.Add(this.cardConstants.Constants[cardConstant.Index]);
+        selectedCardConstants.Add(CardConstant.List[cardConstant.Index]);
       }
 
-      CardConstantsMultiEditForm form = new CardConstantsMultiEditForm(selectedCardConstants, ref this.cardConstants);
+      CardConstantsMultiEditForm form = new CardConstantsMultiEditForm(selectedCardConstants);
       form.ShowDialog();
       this.cardConstantsDataGridView.Refresh();
     }
 
     private void FormatCardConstantTable(object sender, DataGridViewBindingCompleteEventArgs e)
     {
-      foreach (DataGridViewRow row in cardConstantsDataGridView.Rows)
+      DataGridView dataGridView = (DataGridView)sender;
+
+      foreach (DataGridViewRow row in dataGridView.Rows)
       {
-        CardConstant cardConstant = ((ObjectView<CardConstant>)row.DataBoundItem).Object;
+        CardConstant cardConstant;
+
+        if (row.DataBoundItem.GetType() == typeof(ObjectView<CardConstant>))
+        {
+          cardConstant = ((ObjectView<CardConstant>)row.DataBoundItem).Object;
+        } else if (row.DataBoundItem.GetType() == typeof(DeckCard))
+        {
+          DeckCard deckCard = (DeckCard)row.DataBoundItem;
+          cardConstant = deckCard.CardConstant;
+        } else if (row.DataBoundItem.GetType() == typeof(ObjectView<DeckCard>))
+        {
+          DeckCard deckCard = ((ObjectView<DeckCard>)row.DataBoundItem).Object;
+          cardConstant = deckCard.CardConstant;
+        } else
+        {
+          cardConstant = ((ObjectView<CardConstant>)row.DataBoundItem).Object;
+        }
+
         row.DefaultCellStyle.BackColor = CardConstantRowColor(cardConstant);
         row.DefaultCellStyle.ForeColor = Color.White;
       }

@@ -40,6 +40,7 @@
     {
       this.dataAccess.SetMonsterEquipCardCompatibility(this.equipCompatabilities.Bytes);
       this.LoadCardConstantsData();
+      MessageBox.Show("All monster equip data saved.", "Save successful");
     }
   }
 }

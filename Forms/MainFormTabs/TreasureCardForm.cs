@@ -23,7 +23,7 @@
         return;
       }
 
-      this.treasureCardCardComboBox.DataSource = this.cardConstants.Constants;
+      this.treasureCardCardComboBox.DataSource = CardConstant.List;
       this.treasureCardCardComboBox.DropDownStyle = ComboBoxStyle.DropDown;
       this.treasureCardCardComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
       this.treasureCardCardComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -48,6 +48,7 @@
       this.selectedTreasureCard.Column = columnByte;
 
       this.dataAccess.SaveTreasureCard(this.treasureCardsListbox.SelectedIndex, selectedTreasureCard.Bytes);
+      MessageBox.Show("Treasure card saved.", "Save successful");
     }
   }
 }

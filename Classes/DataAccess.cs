@@ -22,6 +22,10 @@ public class DataAccess
   public const int MonsterEquipCardCompatabilityOffset = 0x26D680;
   public const int MonsterEquipCardCompabilityCardCount = 687;
   public const int MonsterEquipCardCompabilityByteSize = 7;
+  public const int DeckByteOffset = 0x2A0A70;
+  public const int DeckCount = 51;
+  public const int DeckCardCount = 41;
+  public const int DeckCardByteCount = 2;
 
   private static readonly object FileStreamLock = new object();
 	private static FileStream fileStream;
@@ -29,6 +33,42 @@ public class DataAccess
 	public DataAccess()
 	{
 	}
+
+  public void SaveDeck(int deckIndex, byte[] bytes)
+  {
+    int deckBytesLocation = (DeckByteOffset) + deckIndex * DeckCardCount * DeckCardByteCount;
+
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(deckBytesLocation, SeekOrigin.Begin);
+      fileStream.Write(bytes, 0, bytes.Length);
+    }
+  }
+
+  public byte[][][] LoadDecks()
+  {
+    byte[][][] allDeckBytes = new byte[DeckCount][][];
+    byte[] buffer = new byte[DeckCount * DeckCardCount * DeckCardByteCount];
+
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(DeckByteOffset, SeekOrigin.Begin);
+      fileStream.Read(buffer, 0, buffer.Length);
+    }
+
+    for (int deckIndex = 0; deckIndex < DeckCount; deckIndex++)
+    {
+      allDeckBytes[deckIndex] = new byte[DeckCardCount][];
+
+      for (int cardIndex = 0; cardIndex < DeckCardCount; cardIndex++)
+      {
+        int cardByteStartLocation = (deckIndex * (DeckCardCount * DeckCardByteCount)) + (cardIndex * DeckCardByteCount);
+        allDeckBytes[deckIndex][cardIndex] = new byte[] { buffer[cardByteStartLocation], buffer[cardByteStartLocation + 1] };
+      }
+    }
+
+    return allDeckBytes;
+  }
 
   public byte[][] LoadMonsterEquipCardCompability()
   {
