@@ -123,10 +123,10 @@ namespace DOTR_Modding_Tool
 
     private void refreshDeckCardCountLabel()
     {
-      List<DeckCard> cardList = (List<DeckCard>)deckCardListBinding.ToList();
-      deckCardCountLabel.Text = $"Cards: {cardList.Count}/40";
+      Deck deck = (Deck)deckDropdown.SelectedItem;
+      deckCardCountLabel.Text = $"Cards: {deck.CardList.Count}/40";
 
-      if (cardList.Count == 40)
+      if (deck.CardList.Count == 40)
       {
         deckCardCountLabel.ForeColor = Color.Black;
       } else
@@ -137,8 +137,7 @@ namespace DOTR_Modding_Tool
 
     private void refreshDeckCostLabel()
     {
-      Deck deck = new Deck();
-      deck.CardList = (List<DeckCard>)deckCardListBinding.ToList();
+      Deck deck = (Deck)deckDropdown.SelectedItem;
       deckEditDeckCostLabel.Text = $"{deck.DeckCost} DC";
     }
 
