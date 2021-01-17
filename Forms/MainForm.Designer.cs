@@ -44,6 +44,9 @@
       this.dOTRMapEditorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.viewSourceOnGithubToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+      this.coolStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.clovisYoutubeChannelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.dOTRReduxModToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.hiddenCardsTab = new System.Windows.Forms.TabPage();
       this.hiddenCardsSplitContainer = new System.Windows.Forms.SplitContainer();
       this.treasureCardsListbox = new System.Windows.Forms.ListBox();
@@ -240,7 +243,8 @@
             this.openISOMenuItem,
             this.additionalResourcesToolStripMenuItem1,
             this.viewSourceOnGithubToolStripMenuItem1,
-            this.aboutToolStripMenuItem2});
+            this.aboutToolStripMenuItem2,
+            this.coolStuffToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
       this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -283,6 +287,30 @@
       this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(52, 20);
       this.aboutToolStripMenuItem2.Text = "About";
       this.aboutToolStripMenuItem2.Click += new System.EventHandler(this.aboutToolStripMenuItem2_Click);
+      // 
+      // coolStuffToolStripMenuItem
+      // 
+      this.coolStuffToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+      this.coolStuffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clovisYoutubeChannelToolStripMenuItem,
+            this.dOTRReduxModToolStripMenuItem});
+      this.coolStuffToolStripMenuItem.Name = "coolStuffToolStripMenuItem";
+      this.coolStuffToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+      this.coolStuffToolStripMenuItem.Text = "Cool Stuff";
+      // 
+      // clovisYoutubeChannelToolStripMenuItem
+      // 
+      this.clovisYoutubeChannelToolStripMenuItem.Name = "clovisYoutubeChannelToolStripMenuItem";
+      this.clovisYoutubeChannelToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+      this.clovisYoutubeChannelToolStripMenuItem.Text = "Clovis\' Youtube Channel";
+      this.clovisYoutubeChannelToolStripMenuItem.Click += new System.EventHandler(this.clovisYoutubeChannelToolStripMenuItem_Click);
+      // 
+      // dOTRReduxModToolStripMenuItem
+      // 
+      this.dOTRReduxModToolStripMenuItem.Name = "dOTRReduxModToolStripMenuItem";
+      this.dOTRReduxModToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+      this.dOTRReduxModToolStripMenuItem.Text = "DOTR Redux Mod";
+      this.dOTRReduxModToolStripMenuItem.Click += new System.EventHandler(this.dOTRReduxModToolStripMenuItem_Click);
       // 
       // hiddenCardsTab
       // 
@@ -1876,5 +1904,8 @@
     private ToolStripMenuItem dOTRMapEditorToolStripMenuItem1;
     private ToolStripMenuItem viewSourceOnGithubToolStripMenuItem1;
     private ToolStripMenuItem aboutToolStripMenuItem2;
+    private ToolStripMenuItem coolStuffToolStripMenuItem;
+    private ToolStripMenuItem clovisYoutubeChannelToolStripMenuItem;
+    private ToolStripMenuItem dOTRReduxModToolStripMenuItem;
   }
 }

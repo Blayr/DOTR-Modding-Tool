@@ -118,5 +118,15 @@
     {
       System.Diagnostics.Process.Start("https://github.com/Blayr/DOTR-Modding-Tool");
     }
+
+    private void clovisYoutubeChannelToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      System.Diagnostics.Process.Start("https://www.youtube.com/c/ClovissenpaiDotR/featured");
+    }
+
+    private void dOTRReduxModToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=E_Aa2xC0Gig&ab_channel=Clovis");
+    }
   }
 }
