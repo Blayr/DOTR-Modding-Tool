@@ -41,6 +41,9 @@
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.additionalResourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.dOTRMapEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.viewSourceOnGithubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.hiddenCardsTab = new System.Windows.Forms.TabPage();
       this.hiddenCardsSplitContainer = new System.Windows.Forms.SplitContainer();
@@ -166,9 +169,6 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.additionalResourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.dOTRMapEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -263,6 +263,28 @@
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
       this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
       this.aboutToolStripMenuItem.Text = "About";
+      // 
+      // aboutToolStripMenuItem1
+      // 
+      this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+      this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(194, 22);
+      this.aboutToolStripMenuItem1.Text = "About";
+      this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
+      // 
+      // additionalResourcesToolStripMenuItem
+      // 
+      this.additionalResourcesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dOTRMapEditorToolStripMenuItem});
+      this.additionalResourcesToolStripMenuItem.Name = "additionalResourcesToolStripMenuItem";
+      this.additionalResourcesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+      this.additionalResourcesToolStripMenuItem.Text = "Additional Resources";
+      // 
+      // dOTRMapEditorToolStripMenuItem
+      // 
+      this.dOTRMapEditorToolStripMenuItem.Name = "dOTRMapEditorToolStripMenuItem";
+      this.dOTRMapEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.dOTRMapEditorToolStripMenuItem.Text = "DOTR Map Editor";
+      this.dOTRMapEditorToolStripMenuItem.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem_Click);
       // 
       // viewSourceOnGithubToolStripMenuItem
       // 
@@ -1646,27 +1668,6 @@
       // 
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
-      // 
-      // aboutToolStripMenuItem1
-      // 
-      this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-      this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(194, 22);
-      this.aboutToolStripMenuItem1.Text = "About";
-      // 
-      // additionalResourcesToolStripMenuItem
-      // 
-      this.additionalResourcesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dOTRMapEditorToolStripMenuItem});
-      this.additionalResourcesToolStripMenuItem.Name = "additionalResourcesToolStripMenuItem";
-      this.additionalResourcesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-      this.additionalResourcesToolStripMenuItem.Text = "Additional Resources";
-      // 
-      // dOTRMapEditorToolStripMenuItem
-      // 
-      this.dOTRMapEditorToolStripMenuItem.Name = "dOTRMapEditorToolStripMenuItem";
-      this.dOTRMapEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-      this.dOTRMapEditorToolStripMenuItem.Text = "DOTR Map Editor";
-      this.dOTRMapEditorToolStripMenuItem.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem_Click);
       // 
       // MainForm
       // 

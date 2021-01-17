@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DOTR Modding Tool")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Tool that modifies the game Yu-Gi-Oh! Duelists of the Roses")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("DOTR Modding Tool")]

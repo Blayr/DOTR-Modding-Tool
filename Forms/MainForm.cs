@@ -1,5 +1,6 @@
 ﻿namespace DOTR_Modding_Tool
 {
+  using DOTR_MODDING_TOOL.Forms;
   using System;
   using System.Reflection;
   using System.Windows.Forms;
@@ -104,6 +105,12 @@
     private void dOTRMapEditorToolStripMenuItem_Click(object sender, EventArgs e)
     {
       System.Diagnostics.Process.Start("https://github.com/rjoken/DOTRMap");
+    }
+
+    private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+    {
+      AboutForm aboutForm = new AboutForm();
+      aboutForm.ShowDialog();
     }
   }
 }
