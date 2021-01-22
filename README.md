@@ -33,6 +33,10 @@ This is why Deck Leader Abilities and Card Equip compatibility are not included 
 
 Theres the possiblity of reorganizing the tool to be more intuitive, but it's fine how it is for now.
 
+## License
+This project is licensed under GNU General Public License v3.0
+This project uses [BindingListView library made by andrewdavey](https://sourceforge.net/projects/blw/)
+
 ## Acknowledgements
 * GenericMadScientist - Did extensive reverse engineering and documented the inner working of the game.
 * Clovis - His passion and dedication towards the game inspired me to create this tool for the purpose of fast-tracking his development of the [DotR Redux Mod](https://www.youtube.com/watch?v=E_Aa2xC0Gig&ab_channel=Clovis).
