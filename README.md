@@ -34,8 +34,8 @@ This is why Deck Leader Abilities and Card Equip compatibility are not included 
 Theres the possiblity of reorganizing the tool to be more intuitive, but it's fine how it is for now.
 
 ## License
-This project is licensed under GNU General Public License v3.0
-This project uses [BindingListView library made by andrewdavey](https://sourceforge.net/projects/blw/)
+This project is licensed under [GNU General Public License v3.0](./LICENSE)\
+This project uses the [BindingListView library made by andrewdavey](https://sourceforge.net/projects/blw/)
 
 ## Acknowledgements
 * GenericMadScientist - Did extensive reverse engineering and documented the inner working of the game.
