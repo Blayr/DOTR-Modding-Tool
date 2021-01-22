@@ -1,12 +1,12 @@
 # DOTR-Modding-Tool
-A tool to modify the NTSC version of the game Yu-Gi-Oh! Duelists of the Roses.
+A tool to modify the NTSC-U version of the game Yu-Gi-Oh! Duelists of the Roses.
 
 ## Install
 Download the latest version from the [Releases page](../../releases).\
 This tool currently only works on Windows with no plans of porting it to other platforms.
 
 ## Usage
-Upon starting the program, you'll be prompted to select an ISO of game. This must be the NTSC version of the game, PAL will not work.\
+Upon starting the program, you'll be prompted to select an ISO of game. This must be the NTSC-U (North American) version of the game, NTSC-J (Japanese) and PAL versions will not work.\
 Once the ISO is loaded you'll have access to all the different tabs and forms used to modify the game.\
 \
 The save button only saves information to the ISO specific to that tab (saving on the Deck Leader Abilities tab will only save changes related to Deck Leader Abilities).
