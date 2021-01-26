@@ -1,4 +1,4 @@
-# DOTR-Modding-Tool
+# DOTR Modding Tool
 A tool to modify the NTSC-U version of the game Yu-Gi-Oh! Duelists of the Roses.
 
 ## Install
