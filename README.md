@@ -11,6 +11,11 @@ Once the ISO is loaded you'll have access to all the different tabs and forms us
 \
 The save button only saves information to the ISO specific to that tab (saving on the Deck Leader Abilities tab will only save changes related to Deck Leader Abilities).
 
+## Tutorial
+Clovis was nice enough to create a video documenting how he created his DOTR Redux mod, this video explains how to use this modding tool, as well as Thotsicle's map editor.
+
+https://www.youtube.com/watch?v=Y2aqkEJWRT8
+
 ## Current Features
 * Modify deck leader + cards of all decks in the game (Starter decks, tutorial decks, enemy decks)
 * Modify global card properties such as Attack, Defense, Level, Deck Cost
