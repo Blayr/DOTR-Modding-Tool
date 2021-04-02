@@ -729,8 +729,8 @@
             // 
             // cardConstantsExportButton
             // 
-            this.cardConstantsExportButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cardConstantsExportButton.Location = new System.Drawing.Point(1000, 0);
+            this.cardConstantsExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardConstantsExportButton.Location = new System.Drawing.Point(994, 0);
             this.cardConstantsExportButton.Name = "cardConstantsExportButton";
             this.cardConstantsExportButton.Size = new System.Drawing.Size(75, 25);
             this.cardConstantsExportButton.TabIndex = 4;

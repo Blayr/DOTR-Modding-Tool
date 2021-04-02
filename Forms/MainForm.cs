@@ -2,11 +2,11 @@
 {
   using DOTR_MODDING_TOOL.Forms;
   using System;
-    using System.IO;
-    using System.Linq;
-    using System.Reflection;
-    using System.Text;
-    using System.Windows.Forms;
+  using System.IO;
+  using System.Linq;
+  using System.Reflection;
+  using System.Text;
+  using System.Windows.Forms;
 
   public partial class MainForm : Form
   {
