@@ -42,7 +42,6 @@
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.additionalResourcesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.dOTRMapEditorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-      this.rOMMapDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.viewSourceOnGithubToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.coolStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,6 +176,7 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.rOMMapDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.csvExporterFileDialog = new System.Windows.Forms.SaveFileDialog();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
@@ -247,11 +247,11 @@
       // 
       this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-      this.openISOMenuItem,
-      this.additionalResourcesToolStripMenuItem1,
-      this.viewSourceOnGithubToolStripMenuItem1,
-      this.aboutToolStripMenuItem2,
-      this.coolStuffToolStripMenuItem});
+            this.openISOMenuItem,
+            this.additionalResourcesToolStripMenuItem1,
+            this.viewSourceOnGithubToolStripMenuItem1,
+            this.aboutToolStripMenuItem2,
+            this.coolStuffToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
       this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -269,8 +269,8 @@
       // additionalResourcesToolStripMenuItem1
       // 
       this.additionalResourcesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-      this.dOTRMapEditorToolStripMenuItem1,
-      this.rOMMapDocumentationToolStripMenuItem});
+            this.dOTRMapEditorToolStripMenuItem1,
+            this.rOMMapDocumentationToolStripMenuItem});
       this.additionalResourcesToolStripMenuItem1.Name = "additionalResourcesToolStripMenuItem1";
       this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(130, 20);
       this.additionalResourcesToolStripMenuItem1.Text = "Additional Resources";
@@ -281,13 +281,6 @@
       this.dOTRMapEditorToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
       this.dOTRMapEditorToolStripMenuItem1.Text = "DOTR Map Editor";
       this.dOTRMapEditorToolStripMenuItem1.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem1_Click);
-      // 
-      // rOMMapDocumentationToolStripMenuItem
-      // 
-      this.rOMMapDocumentationToolStripMenuItem.Name = "rOMMapDocumentationToolStripMenuItem";
-      this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-      this.rOMMapDocumentationToolStripMenuItem.Text = "ROM Map Documentation";
-      this.rOMMapDocumentationToolStripMenuItem.Click += new System.EventHandler(this.rOMMapDocumentationToolStripMenuItem_Click);
       // 
       // viewSourceOnGithubToolStripMenuItem1
       // 
@@ -307,8 +300,8 @@
       // 
       this.coolStuffToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
       this.coolStuffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-      this.clovisYoutubeChannelToolStripMenuItem,
-      this.dOTRReduxModToolStripMenuItem});
+            this.clovisYoutubeChannelToolStripMenuItem,
+            this.dOTRReduxModToolStripMenuItem});
       this.coolStuffToolStripMenuItem.Name = "coolStuffToolStripMenuItem";
       this.coolStuffToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
       this.coolStuffToolStripMenuItem.Text = "Cool Stuff";
@@ -433,10 +426,10 @@
       // 
       this.treasureCardColumnNumericUpDown.Location = new System.Drawing.Point(128, 92);
       this.treasureCardColumnNumericUpDown.Maximum = new decimal(new int[] {
-      6,
-      0,
-      0,
-      0});
+            6,
+            0,
+            0,
+            0});
       this.treasureCardColumnNumericUpDown.Name = "treasureCardColumnNumericUpDown";
       this.treasureCardColumnNumericUpDown.Size = new System.Drawing.Size(46, 20);
       this.treasureCardColumnNumericUpDown.TabIndex = 7;
@@ -445,10 +438,10 @@
       // 
       this.treasureCardRowNumericUpDown.Location = new System.Drawing.Point(47, 92);
       this.treasureCardRowNumericUpDown.Maximum = new decimal(new int[] {
-      6,
-      0,
-      0,
-      0});
+            6,
+            0,
+            0,
+            0});
       this.treasureCardRowNumericUpDown.Name = "treasureCardRowNumericUpDown";
       this.treasureCardRowNumericUpDown.Size = new System.Drawing.Size(46, 20);
       this.treasureCardRowNumericUpDown.TabIndex = 6;
@@ -533,9 +526,9 @@
       this.enemyAiDataGridView.AllowUserToResizeRows = false;
       this.enemyAiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.enemyAiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-      this.EnemyIndex,
-      this.EnemyNameColumn,
-      this.EnemyAiColumn});
+            this.EnemyIndex,
+            this.EnemyNameColumn,
+            this.EnemyAiColumn});
       this.enemyAiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.enemyAiDataGridView.Location = new System.Drawing.Point(0, 0);
       this.enemyAiDataGridView.Name = "enemyAiDataGridView";
@@ -639,13 +632,13 @@
       this.fusionsDataGridView.AllowUserToResizeRows = false;
       this.fusionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.fusionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-      this.FusionsDataGridViewIndex,
-      this.LowerCardMaterialCardNumber,
-      this.FusionsDataGridViewLowerCard,
-      this.HigherCardMaterialCardNumber,
-      this.FusionsDataGridViewUpperCard,
-      this.ResultingFusionId,
-      this.FusionsDataGridViewFusionCard});
+            this.FusionsDataGridViewIndex,
+            this.LowerCardMaterialCardNumber,
+            this.FusionsDataGridViewLowerCard,
+            this.HigherCardMaterialCardNumber,
+            this.FusionsDataGridViewUpperCard,
+            this.ResultingFusionId,
+            this.FusionsDataGridViewFusionCard});
       this.fusionsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.fusionsDataGridView.Location = new System.Drawing.Point(0, 0);
       this.fusionsDataGridView.Name = "fusionsDataGridView";
@@ -840,18 +833,18 @@
       this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-      this.CardConstantId,
-      this.CardConstantName,
-      this.CardConstantAttack,
-      this.CardConstantDefense,
-      this.CardConstantsType,
-      this.CardConstantsAttribute,
-      this.CardConstantsLevel,
-      this.CardConstantDeckCost,
-      this.CardConstantSlots,
-      this.CardConstantIsSlotRare,
-      this.CardConstantReincarnation,
-      this.CardConstantPasswordWorks});
+            this.CardConstantId,
+            this.CardConstantName,
+            this.CardConstantAttack,
+            this.CardConstantDefense,
+            this.CardConstantsType,
+            this.CardConstantsAttribute,
+            this.CardConstantsLevel,
+            this.CardConstantDeckCost,
+            this.CardConstantSlots,
+            this.CardConstantIsSlotRare,
+            this.CardConstantReincarnation,
+            this.CardConstantPasswordWorks});
       this.cardConstantsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.cardConstantsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
       this.cardConstantsDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -1058,9 +1051,9 @@
       // 
       // mainTabControl
       // 
-      this.mainTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-      | System.Windows.Forms.AnchorStyles.Left) 
-      | System.Windows.Forms.AnchorStyles.Right)));
+      this.mainTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.mainTabControl.Controls.Add(this.deckEditorTab);
       this.mainTabControl.Controls.Add(this.cardPropertiesTab);
       this.mainTabControl.Controls.Add(this.deckLeaderAbilitiesTab);
@@ -1192,14 +1185,14 @@
       this.trunkDataGridView.AllowUserToResizeRows = false;
       this.trunkDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.trunkDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-      this.Index,
-      this.nameColumn,
-      this.cardTrunkAttackColumn,
-      this.cardTrunkDefenseColumn,
-      this.cardTrunkLevelColumn,
-      this.cardTrunkAttributeColumn,
-      this.cardTrunkTypeColumn,
-      this.cardTrunkDeckCostColumn});
+            this.Index,
+            this.nameColumn,
+            this.cardTrunkAttackColumn,
+            this.cardTrunkDefenseColumn,
+            this.cardTrunkLevelColumn,
+            this.cardTrunkAttributeColumn,
+            this.cardTrunkTypeColumn,
+            this.cardTrunkDeckCostColumn});
       this.trunkDataGridView.ContextMenuStrip = this.trunkContextMenuStrip;
       this.trunkDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.trunkDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -1274,8 +1267,8 @@
       // trunkContextMenuStrip
       // 
       this.trunkContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-      this.makeDeckLeaderToolStripMenuItem,
-      this.addSelectedCardsToDeckToolStripMenuItem});
+            this.makeDeckLeaderToolStripMenuItem,
+            this.addSelectedCardsToDeckToolStripMenuItem});
       this.trunkContextMenuStrip.Name = "trunkContextMenuStrip";
       this.trunkContextMenuStrip.Size = new System.Drawing.Size(216, 48);
       // 
@@ -1408,14 +1401,14 @@
       this.deckEditorDataGridView.AllowUserToResizeRows = false;
       this.deckEditorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.deckEditorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-      this.indexColumn,
-      this.deckTableNameColumn,
-      this.deckEditAttackColumn,
-      this.deckEditDefenseColumn,
-      this.deckEditLevelColumn,
-      this.deckEditAttributeColumn,
-      this.deckEditTypeColumn,
-      this.deckEditDeckCostColumn});
+            this.indexColumn,
+            this.deckTableNameColumn,
+            this.deckEditAttackColumn,
+            this.deckEditDefenseColumn,
+            this.deckEditLevelColumn,
+            this.deckEditAttributeColumn,
+            this.deckEditTypeColumn,
+            this.deckEditDeckCostColumn});
       this.deckEditorDataGridView.ContextMenuStrip = this.deckEditContextMenuStrip;
       this.deckEditorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.deckEditorDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -1491,7 +1484,7 @@
       // deckEditContextMenuStrip
       // 
       this.deckEditContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-      this.deckEditRemoveSelectedMenuItem});
+            this.deckEditRemoveSelectedMenuItem});
       this.deckEditContextMenuStrip.Name = "deckEditContextMenuStrip";
       this.deckEditContextMenuStrip.Size = new System.Drawing.Size(195, 26);
       // 
@@ -1572,10 +1565,10 @@
       this.cardDeckLeaderAbilitiesDatagridview.AllowUserToResizeRows = false;
       this.cardDeckLeaderAbilitiesDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardDeckLeaderAbilitiesDatagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-      this.cardDeckLeaderAbilitiesIndexColumn,
-      this.cardDeckLeaderAbilitiesNameColumn,
-      this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn,
-      this.Bytes});
+            this.cardDeckLeaderAbilitiesIndexColumn,
+            this.cardDeckLeaderAbilitiesNameColumn,
+            this.cardDeckLeaderAbilitiesEnabledAbilitiesColumn,
+            this.Bytes});
       this.cardDeckLeaderAbilitiesDatagridview.Dock = System.Windows.Forms.DockStyle.Fill;
       this.cardDeckLeaderAbilitiesDatagridview.Location = new System.Drawing.Point(0, 0);
       this.cardDeckLeaderAbilitiesDatagridview.Name = "cardDeckLeaderAbilitiesDatagridview";
@@ -1687,10 +1680,10 @@
       this.equipCompatibilityDataGridView.AllowUserToResizeRows = false;
       this.equipCompatibilityDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.equipCompatibilityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-      this.EquipCompatabilityCardIndexColumn,
-      this.EquipCompatabilityCardNameColumn,
-      this.CompatibleEquipCountColumn,
-      this.EquipCompatabilityEquipCardsColumn});
+            this.EquipCompatabilityCardIndexColumn,
+            this.EquipCompatabilityCardNameColumn,
+            this.CompatibleEquipCountColumn,
+            this.EquipCompatabilityEquipCardsColumn});
       this.equipCompatibilityDataGridView.ContextMenuStrip = this.monsterCardEquipCompatibilitiesContextMenuStrip;
       this.equipCompatibilityDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
       this.equipCompatibilityDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -1741,7 +1734,7 @@
       // monsterCardEquipCompatibilitiesContextMenuStrip
       // 
       this.monsterCardEquipCompatibilitiesContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-      this.editMonsterEquipMenuItem});
+            this.editMonsterEquipMenuItem});
       this.monsterCardEquipCompatibilitiesContextMenuStrip.Name = "monsterCardEquipCompatibilitiesContextMenuStrip";
       this.monsterCardEquipCompatibilitiesContextMenuStrip.Size = new System.Drawing.Size(173, 26);
       // 
@@ -1762,6 +1755,13 @@
       // 
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
+      // 
+      // rOMMapDocumentationToolStripMenuItem
+      // 
+      this.rOMMapDocumentationToolStripMenuItem.Name = "rOMMapDocumentationToolStripMenuItem";
+      this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+      this.rOMMapDocumentationToolStripMenuItem.Text = "ROM Map Documentation";
+      this.rOMMapDocumentationToolStripMenuItem.Click += new System.EventHandler(this.rOMMapDocumentationToolStripMenuItem_Click);
       // 
       // MainForm
       // 
