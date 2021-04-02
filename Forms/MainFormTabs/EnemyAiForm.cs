@@ -40,5 +40,13 @@
       this.LoadEnemyAI();
       MessageBox.Show("All enemy Ais saved.", "Save successful");
     }
+
+    private void enemyAiExportButton_Click(object sender, EventArgs e)
+    {
+      if (OpenExportCSVDialog())
+      {
+        ExportGridToCsv(this.enemyAiDataGridView, this.csvExporterFileDialog.FileName);
+      }
+    }
   }
 }

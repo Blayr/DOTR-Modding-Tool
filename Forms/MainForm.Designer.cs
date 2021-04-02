@@ -63,6 +63,7 @@
             this.treasureCardCardComboBox = new System.Windows.Forms.ComboBox();
             this.enemyAiTab = new System.Windows.Forms.TabPage();
             this.enemyAiTabSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.enemyAiExportButton = new System.Windows.Forms.Button();
             this.enemyAiSaveButton = new System.Windows.Forms.Button();
             this.enemyAiDataGridView = new System.Windows.Forms.DataGridView();
             this.EnemyIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +71,7 @@
             this.EnemyAiColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.fusionsTab = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.fusionExportButton = new System.Windows.Forms.Button();
             this.fusionTableTipLabel = new System.Windows.Forms.Label();
             this.fusionSaveButton = new System.Windows.Forms.Button();
             this.fusionsDataGridView = new System.Windows.Forms.DataGridView();
@@ -153,6 +155,7 @@
             this.deckEditRemoveSelectedMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deckLeaderAbilitiesTab = new System.Windows.Forms.TabPage();
             this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.deckLeaderAbilitiesExportButton = new System.Windows.Forms.Button();
             this.deckLeaderAbilityTabTipsLabel = new System.Windows.Forms.Label();
             this.deckLeaderAbilitiesSaveButton = new System.Windows.Forms.Button();
             this.cardDeckLeaderAbilitiesDatagridview = new System.Windows.Forms.DataGridView();
@@ -162,6 +165,7 @@
             this.Bytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipCompabilityTab = new System.Windows.Forms.TabPage();
             this.equipCompabilitySplitContainer = new System.Windows.Forms.SplitContainer();
+            this.equipCompatibilityExportButton = new System.Windows.Forms.Button();
             this.cardEquipNoteLabel1 = new System.Windows.Forms.Label();
             this.equipCompatibilitySaveButton = new System.Windows.Forms.Button();
             this.equipCompatibilityDataGridView = new System.Windows.Forms.DataGridView();
@@ -490,6 +494,7 @@
             // 
             // enemyAiTabSplitContainer.Panel1
             // 
+            this.enemyAiTabSplitContainer.Panel1.Controls.Add(this.enemyAiExportButton);
             this.enemyAiTabSplitContainer.Panel1.Controls.Add(this.enemyAiSaveButton);
             // 
             // enemyAiTabSplitContainer.Panel2
@@ -499,13 +504,24 @@
             this.enemyAiTabSplitContainer.SplitterDistance = 25;
             this.enemyAiTabSplitContainer.TabIndex = 1;
             // 
+            // enemyAiExportButton
+            // 
+            this.enemyAiExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.enemyAiExportButton.Location = new System.Drawing.Point(994, 0);
+            this.enemyAiExportButton.Name = "enemyAiExportButton";
+            this.enemyAiExportButton.Size = new System.Drawing.Size(75, 25);
+            this.enemyAiExportButton.TabIndex = 0;
+            this.enemyAiExportButton.Text = "Export";
+            this.enemyAiExportButton.UseVisualStyleBackColor = true;
+            this.enemyAiExportButton.Click += new System.EventHandler(this.enemyAiExportButton_Click);
+            // 
             // enemyAiSaveButton
             // 
             this.enemyAiSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.enemyAiSaveButton.Location = new System.Drawing.Point(1075, 0);
             this.enemyAiSaveButton.Name = "enemyAiSaveButton";
             this.enemyAiSaveButton.Size = new System.Drawing.Size(75, 25);
-            this.enemyAiSaveButton.TabIndex = 0;
+            this.enemyAiSaveButton.TabIndex = 1;
             this.enemyAiSaveButton.Text = "Save";
             this.enemyAiSaveButton.UseVisualStyleBackColor = true;
             this.enemyAiSaveButton.Click += new System.EventHandler(this.enemyAiSaveButton_Click);
@@ -574,6 +590,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.fusionExportButton);
             this.splitContainer2.Panel1.Controls.Add(this.fusionTableTipLabel);
             this.splitContainer2.Panel1.Controls.Add(this.fusionSaveButton);
             // 
@@ -584,13 +601,24 @@
             this.splitContainer2.SplitterDistance = 25;
             this.splitContainer2.TabIndex = 1;
             // 
+            // fusionExportButton
+            // 
+            this.fusionExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fusionExportButton.Location = new System.Drawing.Point(994, 0);
+            this.fusionExportButton.Name = "fusionExportButton";
+            this.fusionExportButton.Size = new System.Drawing.Size(75, 25);
+            this.fusionExportButton.TabIndex = 0;
+            this.fusionExportButton.Text = "Export";
+            this.fusionExportButton.UseVisualStyleBackColor = false;
+            this.fusionExportButton.Click += new System.EventHandler(this.fusionExportButton_Click);
+            // 
             // fusionTableTipLabel
             // 
             this.fusionTableTipLabel.AutoSize = true;
             this.fusionTableTipLabel.Location = new System.Drawing.Point(5, 8);
             this.fusionTableTipLabel.Name = "fusionTableTipLabel";
             this.fusionTableTipLabel.Size = new System.Drawing.Size(279, 13);
-            this.fusionTableTipLabel.TabIndex = 1;
+            this.fusionTableTipLabel.TabIndex = 2;
             this.fusionTableTipLabel.Text = "Tip: You can start typing immediately after selecting a cell.";
             // 
             // fusionSaveButton
@@ -599,7 +627,7 @@
             this.fusionSaveButton.Location = new System.Drawing.Point(1075, 0);
             this.fusionSaveButton.Name = "fusionSaveButton";
             this.fusionSaveButton.Size = new System.Drawing.Size(75, 25);
-            this.fusionSaveButton.TabIndex = 0;
+            this.fusionSaveButton.TabIndex = 1;
             this.fusionSaveButton.Text = "Save";
             this.fusionSaveButton.UseVisualStyleBackColor = false;
             this.fusionSaveButton.Click += new System.EventHandler(this.fusionSaveButton_Click);
@@ -1494,6 +1522,7 @@
             // 
             // cardDeckLeaderAbilitiesSplitContainer.Panel1
             // 
+            this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesExportButton);
             this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilityTabTipsLabel);
             this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesSaveButton);
             // 
@@ -1503,6 +1532,17 @@
             this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(1150, 507);
             this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 25;
             this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
+            // 
+            // deckLeaderAbilitiesExportButton
+            // 
+            this.deckLeaderAbilitiesExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deckLeaderAbilitiesExportButton.Location = new System.Drawing.Point(994, 0);
+            this.deckLeaderAbilitiesExportButton.Name = "deckLeaderAbilitiesExportButton";
+            this.deckLeaderAbilitiesExportButton.Size = new System.Drawing.Size(75, 25);
+            this.deckLeaderAbilitiesExportButton.TabIndex = 0;
+            this.deckLeaderAbilitiesExportButton.Text = "Export";
+            this.deckLeaderAbilitiesExportButton.UseVisualStyleBackColor = true;
+            this.deckLeaderAbilitiesExportButton.Click += new System.EventHandler(this.deckLeaderAbilitiesExportButton_Click);
             // 
             // deckLeaderAbilityTabTipsLabel
             // 
@@ -1520,7 +1560,7 @@
             this.deckLeaderAbilitiesSaveButton.Location = new System.Drawing.Point(1075, 0);
             this.deckLeaderAbilitiesSaveButton.Name = "deckLeaderAbilitiesSaveButton";
             this.deckLeaderAbilitiesSaveButton.Size = new System.Drawing.Size(75, 25);
-            this.deckLeaderAbilitiesSaveButton.TabIndex = 0;
+            this.deckLeaderAbilitiesSaveButton.TabIndex = 1;
             this.deckLeaderAbilitiesSaveButton.Text = "Save";
             this.deckLeaderAbilitiesSaveButton.UseVisualStyleBackColor = true;
             this.deckLeaderAbilitiesSaveButton.Click += new System.EventHandler(this.deckLeaderAbilitiesSaveButton_Click);
@@ -1597,6 +1637,7 @@
             // 
             // equipCompabilitySplitContainer.Panel1
             // 
+            this.equipCompabilitySplitContainer.Panel1.Controls.Add(this.equipCompatibilityExportButton);
             this.equipCompabilitySplitContainer.Panel1.Controls.Add(this.cardEquipNoteLabel1);
             this.equipCompabilitySplitContainer.Panel1.Controls.Add(this.equipCompatibilitySaveButton);
             // 
@@ -1607,13 +1648,24 @@
             this.equipCompabilitySplitContainer.SplitterDistance = 25;
             this.equipCompabilitySplitContainer.TabIndex = 0;
             // 
+            // equipCompatibilityExportButton
+            // 
+            this.equipCompatibilityExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.equipCompatibilityExportButton.Location = new System.Drawing.Point(994, 0);
+            this.equipCompatibilityExportButton.Name = "equipCompatibilityExportButton";
+            this.equipCompatibilityExportButton.Size = new System.Drawing.Size(75, 25);
+            this.equipCompatibilityExportButton.TabIndex = 0;
+            this.equipCompatibilityExportButton.Text = "Export";
+            this.equipCompatibilityExportButton.UseVisualStyleBackColor = true;
+            this.equipCompatibilityExportButton.Click += new System.EventHandler(this.equipCompatibilityExportButton_Click);
+            // 
             // cardEquipNoteLabel1
             // 
             this.cardEquipNoteLabel1.AutoSize = true;
             this.cardEquipNoteLabel1.Location = new System.Drawing.Point(5, 8);
             this.cardEquipNoteLabel1.Name = "cardEquipNoteLabel1";
             this.cardEquipNoteLabel1.Size = new System.Drawing.Size(412, 13);
-            this.cardEquipNoteLabel1.TabIndex = 1;
+            this.cardEquipNoteLabel1.TabIndex = 2;
             this.cardEquipNoteLabel1.Text = "Select multiple records with shift or control keys, right click to edit equip com" +
     "patibilities.";
             // 
@@ -1623,7 +1675,7 @@
             this.equipCompatibilitySaveButton.Location = new System.Drawing.Point(1075, 0);
             this.equipCompatibilitySaveButton.Name = "equipCompatibilitySaveButton";
             this.equipCompatibilitySaveButton.Size = new System.Drawing.Size(75, 25);
-            this.equipCompatibilitySaveButton.TabIndex = 0;
+            this.equipCompatibilitySaveButton.TabIndex = 1;
             this.equipCompatibilitySaveButton.Text = "Save";
             this.equipCompatibilitySaveButton.UseVisualStyleBackColor = true;
             this.equipCompatibilitySaveButton.Click += new System.EventHandler(this.equipCompatibilitySaveButton_Click);
@@ -1931,7 +1983,11 @@
     private ToolStripMenuItem clovisYoutubeChannelToolStripMenuItem;
     private ToolStripMenuItem dOTRReduxModToolStripMenuItem;
     private ToolStripMenuItem rOMMapDocumentationToolStripMenuItem;
-        private Button cardConstantsExportButton;
-        private SaveFileDialog csvExporterFileDialog;
-    }
+    private Button cardConstantsExportButton;
+    private SaveFileDialog csvExporterFileDialog;
+    private Button deckLeaderAbilitiesExportButton;
+    private Button equipCompatibilityExportButton;
+    private Button fusionExportButton;
+    private Button enemyAiExportButton;
+  }
 }

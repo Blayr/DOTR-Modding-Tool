@@ -75,6 +75,7 @@
 
     private bool OpenExportCSVDialog()
     {
+      csvExporterFileDialog.FileName = "";
       DialogResult csvExporterDialogResult = csvExporterFileDialog.ShowDialog();
 
       return csvExporterDialogResult == DialogResult.OK;
@@ -100,12 +101,12 @@
         {
           writer.WriteLine("sep=" + separator);
           var headers = grid.Columns.Cast<DataGridViewColumn>();
-          writer.WriteLine(string.Join(separator, headers.Select(column => column.HeaderText).ToArray()));
+          writer.WriteLine(string.Join(separator, headers.Where(column => column.Visible).Select(column => column.HeaderText).ToArray()));
 
           foreach (DataGridViewRow row in grid.Rows)
           {
             var cells = row.Cells.Cast<DataGridViewCell>();
-            writer.WriteLine(string.Join(separator, cells.Select(cell => cell.Value).ToArray()));
+            writer.WriteLine(string.Join(separator, cells.Where(cell => cell.Visible).Select(cell => cell.Value).ToArray()));
           }
         }
       }
@@ -120,7 +121,9 @@
       this.cardConstantsSaveButton.Enabled = enabled;
       this.cardConstantsExportButton.Enabled = enabled;
       this.fusionSaveButton.Enabled = enabled;
+      this.fusionExportButton.Enabled = enabled;
       this.enemyAiSaveButton.Enabled = enabled;
+      this.enemyAiExportButton.Enabled = enabled;
     }
 
     private void saveToolStripMenuItem_Click(object sender, EventArgs e)

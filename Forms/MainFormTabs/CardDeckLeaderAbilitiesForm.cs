@@ -64,5 +64,13 @@
       this.LoadCardDeckLeaderAbilitesData();
       MessageBox.Show("All deck leader abilities saved.", "Save successful");
     }
+
+    private void deckLeaderAbilitiesExportButton_Click(object sender, EventArgs e)
+    {
+      if (OpenExportCSVDialog())
+      {
+        ExportGridToCsv(this.cardDeckLeaderAbilitiesDatagridview, this.csvExporterFileDialog.FileName);
+      }
+    }
   }
 }

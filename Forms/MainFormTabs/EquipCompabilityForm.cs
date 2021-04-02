@@ -42,5 +42,13 @@
       this.LoadCardConstantsData();
       MessageBox.Show("All monster equip data saved.", "Save successful");
     }
+
+    private void equipCompatibilityExportButton_Click(object sender, EventArgs e)
+    {
+      if (OpenExportCSVDialog())
+      {
+        ExportGridToCsv(this.equipCompatibilityDataGridView, this.csvExporterFileDialog.FileName);
+      }
+    }
   }
 }

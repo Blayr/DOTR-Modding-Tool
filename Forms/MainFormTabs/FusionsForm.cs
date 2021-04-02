@@ -132,5 +132,13 @@
       this.LoadFusionData();
       MessageBox.Show("All fusion combinations saved.", "Save successful");
     }
+
+    private void fusionExportButton_Click(object sender, EventArgs e)
+    {
+      if (OpenExportCSVDialog())
+      {
+        ExportGridToCsv(this.fusionsDataGridView, this.csvExporterFileDialog.FileName);
+      }
+    }
   }
 }
