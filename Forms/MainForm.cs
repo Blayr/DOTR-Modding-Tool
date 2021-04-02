@@ -106,7 +106,7 @@
           foreach (DataGridViewRow row in grid.Rows)
           {
             var cells = row.Cells.Cast<DataGridViewCell>();
-            writer.WriteLine(string.Join(separator, cells.Where(cell => cell.Visible).Select(cell => cell.Value).ToArray()));
+            writer.WriteLine(string.Join(separator, cells.Where(cell => cell.Visible).Select(cell => cell.FormattedValue).ToArray()));
           }
         }
       }
