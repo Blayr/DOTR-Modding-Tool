@@ -62,7 +62,7 @@
 
     private void cardConstantsExportButton_Click(object sender, EventArgs e)
     {
-      if (OpenExportCSVDialog())
+      if (OpenExportCSVDialog("card_properties.csv"))
       {
         ExportGridToCsv(this.cardConstantsDataGridView, this.csvExporterFileDialog.FileName);
       }

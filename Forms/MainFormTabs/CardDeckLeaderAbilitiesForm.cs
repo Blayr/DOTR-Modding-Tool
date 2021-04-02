@@ -67,7 +67,7 @@
 
     private void deckLeaderAbilitiesExportButton_Click(object sender, EventArgs e)
     {
-      if (OpenExportCSVDialog())
+      if (OpenExportCSVDialog("deck_leader_abilities.csv"))
       {
         ExportGridToCsv(this.cardDeckLeaderAbilitiesDatagridview, this.csvExporterFileDialog.FileName);
       }

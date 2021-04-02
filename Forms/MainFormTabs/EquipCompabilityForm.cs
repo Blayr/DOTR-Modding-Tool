@@ -45,7 +45,7 @@
 
     private void equipCompatibilityExportButton_Click(object sender, EventArgs e)
     {
-      if (OpenExportCSVDialog())
+      if (OpenExportCSVDialog("equip_compatibility.csv"))
       {
         ExportGridToCsv(this.equipCompatibilityDataGridView, this.csvExporterFileDialog.FileName);
       }

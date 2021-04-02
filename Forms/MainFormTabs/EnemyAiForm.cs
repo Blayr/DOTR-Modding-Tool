@@ -43,7 +43,7 @@
 
     private void enemyAiExportButton_Click(object sender, EventArgs e)
     {
-      if (OpenExportCSVDialog())
+      if (OpenExportCSVDialog("enemy_ai.csv"))
       {
         ExportGridToCsv(this.enemyAiDataGridView, this.csvExporterFileDialog.FileName);
       }

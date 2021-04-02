@@ -135,7 +135,7 @@
 
     private void fusionExportButton_Click(object sender, EventArgs e)
     {
-      if (OpenExportCSVDialog())
+      if (OpenExportCSVDialog("fusions.csv"))
       {
         ExportGridToCsv(this.fusionsDataGridView, this.csvExporterFileDialog.FileName);
       }

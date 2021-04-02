@@ -73,9 +73,9 @@
       return true;
     }
 
-    private bool OpenExportCSVDialog()
+    private bool OpenExportCSVDialog(string defaultFilename = "")
     {
-      csvExporterFileDialog.FileName = "";
+      csvExporterFileDialog.FileName = defaultFilename;
       DialogResult csvExporterDialogResult = csvExporterFileDialog.ShowDialog();
 
       return csvExporterDialogResult == DialogResult.OK;
