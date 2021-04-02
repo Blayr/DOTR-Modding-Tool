@@ -61,6 +61,14 @@
       MessageBox.Show("All card properties saved.", "Save successful");
     }
 
+    private void cardConstantsExportButton_Click(object sender, EventArgs e)
+    {
+      byte[] cardConstantsBytes = CardConstant.AllBytes;
+      dataAccess.SetCardConstantData(cardConstantsBytes);
+      LoadCardConstantsData();
+      MessageBox.Show("All card properties saved.", "Save successful");
+    }
+
     private void SetupCardConstantsDataGridView()
     {
       this.cardConstantsDataGridView.AutoGenerateColumns = false;

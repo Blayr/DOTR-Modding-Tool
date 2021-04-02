@@ -87,6 +87,7 @@
       this.cardConstantsFilterButton.Enabled = enabled;
       this.cardConstantFilterClearButton.Enabled = enabled;
       this.cardConstantsSaveButton.Enabled = enabled;
+      this.cardConstantsExportButton.Enabled = enabled;
       this.fusionSaveButton.Enabled = enabled;
       this.enemyAiSaveButton.Enabled = enabled;
     }
