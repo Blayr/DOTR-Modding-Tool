@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 public class CardConstant
@@ -35,14 +34,6 @@ public class CardConstant
 			return List.SelectMany(c => c.Bytes).ToArray();
 		}
 	}
-
-	public static void WriteToCsvFile(Stream stream)
-    {
-		using (StreamWriter writer = new StreamWriter(stream))
-        {
-
-        }
-    }
 
 	public CardColorType CardColor { get; set; }
 

@@ -2,8 +2,11 @@
 {
   using DOTR_MODDING_TOOL.Forms;
   using System;
-  using System.Reflection;
-  using System.Windows.Forms;
+    using System.IO;
+    using System.Linq;
+    using System.Reflection;
+    using System.Text;
+    using System.Windows.Forms;
 
   public partial class MainForm : Form
   {
@@ -24,6 +27,8 @@
       this.isoSelectorFileDialog.Filter = "ISO files (*.iso)|*.iso";
       this.isoSelectorFileDialog.Title = "Open DOTR ISO file";
       bool isoIsLoaded = false;
+      this.csvExporterFileDialog.Filter = "CSV (Comma delimited) (*.csv)|*.csv";
+      this.csvExporterFileDialog.Title = "Export DOTR CSV file";
       setWindowText();
 
       #if DEBUG
@@ -68,6 +73,13 @@
       return true;
     }
 
+    private bool OpenExportCSVDialog()
+    {
+      DialogResult csvExporterDialogResult = csvExporterFileDialog.ShowDialog();
+
+      return csvExporterDialogResult == DialogResult.OK;
+    }
+
     private void LoadDataFromIso()
     {
       this.LoadEnemyAI();
@@ -78,6 +90,25 @@
       this.LoadCardDeckLeaderAbilitesData();
       this.LoadCardEquipData();
       this.toggleEnableControls(true);
+    }
+
+    private void ExportGridToCsv(DataGridView grid, string fileName, string separator = ";")
+    {
+      using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
+      {
+        using (StreamWriter writer = new StreamWriter(fileStream))
+        {
+          writer.WriteLine("sep=" + separator);
+          var headers = grid.Columns.Cast<DataGridViewColumn>();
+          writer.WriteLine(string.Join(separator, headers.Select(column => column.HeaderText).ToArray()));
+
+          foreach (DataGridViewRow row in grid.Rows)
+          {
+            var cells = row.Cells.Cast<DataGridViewCell>();
+            writer.WriteLine(string.Join(separator, cells.Select(cell => cell.Value).ToArray()));
+          }
+        }
+      }
     }
 
     private void toggleEnableControls(bool enabled)

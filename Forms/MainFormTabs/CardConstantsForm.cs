@@ -4,7 +4,6 @@
   using System;
   using System.Collections.Generic;
   using System.Drawing;
-  using System.Reflection;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -63,10 +62,10 @@
 
     private void cardConstantsExportButton_Click(object sender, EventArgs e)
     {
-      byte[] cardConstantsBytes = CardConstant.AllBytes;
-      dataAccess.SetCardConstantData(cardConstantsBytes);
-      LoadCardConstantsData();
-      MessageBox.Show("All card properties saved.", "Save successful");
+      if (OpenExportCSVDialog())
+      {
+        ExportGridToCsv(this.cardConstantsDataGridView, this.csvExporterFileDialog.FileName);
+      }
     }
 
     private void SetupCardConstantsDataGridView()

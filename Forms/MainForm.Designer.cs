@@ -173,6 +173,7 @@
             this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.csvExporterFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.hiddenCardsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -726,6 +727,17 @@
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 1;
             // 
+            // cardConstantsExportButton
+            // 
+            this.cardConstantsExportButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cardConstantsExportButton.Location = new System.Drawing.Point(1000, 0);
+            this.cardConstantsExportButton.Name = "cardConstantsExportButton";
+            this.cardConstantsExportButton.Size = new System.Drawing.Size(75, 25);
+            this.cardConstantsExportButton.TabIndex = 4;
+            this.cardConstantsExportButton.Text = "Export";
+            this.cardConstantsExportButton.UseVisualStyleBackColor = true;
+            this.cardConstantsExportButton.Click += new System.EventHandler(this.cardConstantsExportButton_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -745,17 +757,6 @@
             this.cardConstantsSaveButton.Text = "Save";
             this.cardConstantsSaveButton.UseVisualStyleBackColor = true;
             this.cardConstantsSaveButton.Click += new System.EventHandler(this.cardConstantsSaveButton_Click);
-            // 
-            // cardConstantsExportButton
-            // 
-            this.cardConstantsExportButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cardConstantsExportButton.Location = new System.Drawing.Point(994, 0);
-            this.cardConstantsExportButton.Name = "cardConstantsExportButton";
-            this.cardConstantsExportButton.Size = new System.Drawing.Size(75, 25);
-            this.cardConstantsExportButton.TabIndex = 4;
-            this.cardConstantsExportButton.Text = "Export";
-            this.cardConstantsExportButton.UseVisualStyleBackColor = true;
-            this.cardConstantsExportButton.Click += new System.EventHandler(this.cardConstantsExportButton_Click);
             // 
             // cardConstantFilterClearButton
             // 
@@ -1931,5 +1932,6 @@
     private ToolStripMenuItem dOTRReduxModToolStripMenuItem;
     private ToolStripMenuItem rOMMapDocumentationToolStripMenuItem;
         private Button cardConstantsExportButton;
+        private SaveFileDialog csvExporterFileDialog;
     }
 }
