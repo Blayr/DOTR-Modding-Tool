@@ -31,9 +31,9 @@
       this.csvExporterFileDialog.Title = "Export DOTR CSV file";
       setWindowText();
 
-      #if DEBUG
-        this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\duelists of the roses\\DOTR_NTSC_TEST.iso");
-        this.LoadDataFromIso();
+#if DEBUG
+      this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\duelists of the roses\\DOTR_NTSC_TEST.iso");
+      this.LoadDataFromIso();
         isoIsLoaded = true;
       #else
         isoIsLoaded = OpenSelectISODialog();
@@ -110,6 +110,7 @@
           }
         }
       }
+      MessageBox.Show("CSV was successfully exported.", "Export successful");
     }
 
     private void toggleEnableControls(bool enabled)
