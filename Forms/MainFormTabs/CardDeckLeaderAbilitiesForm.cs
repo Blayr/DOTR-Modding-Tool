@@ -3,6 +3,8 @@
   using Equin.ApplicationFramework;
   using System;
   using System.Collections.Generic;
+  using System.IO;
+  using System.Linq;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -13,7 +15,11 @@
 
     private void LoadCardDeckLeaderAbilitesData()
     {
-      byte[][][] byteArray = this.dataAccess.LoadCardDeckLeaderAbilities();
+      LoadCardDeckLeaderAbilitesData(this.dataAccess.LoadCardDeckLeaderAbilities());
+    }
+    
+    private void LoadCardDeckLeaderAbilitesData(byte[][][] byteArray)
+    {
       this.cardDeckLeaderAbilities = new CardDeckLeaderAbilities(byteArray);
       this.cardDeckLeaderAbilitiesBinding = new BindingListView<CardDeckLeaderAbility>(this.cardDeckLeaderAbilities.List);
       this.cardDeckLeaderAbilitiesDatagridview.DataSource = this.cardDeckLeaderAbilitiesBinding;
@@ -65,11 +71,35 @@
       MessageBox.Show("All deck leader abilities saved.", "Save successful");
     }
 
-    private void deckLeaderAbilitiesExportButton_Click(object sender, EventArgs e)
+    private void deckLeaderAbilitiesExportCsvButton_Click(object sender, EventArgs e)
     {
       if (OpenExportCSVDialog("deck_leader_abilities.csv"))
       {
         ExportGridToCsv(this.cardDeckLeaderAbilitiesDatagridview, this.csvExporterFileDialog.FileName);
+      }
+    }
+
+    private void deckLeaderAbilitiesExportBinButton_Click(object sender, EventArgs e)
+    {
+      if (OpenExportBinaryDialog("deck_leader_abilities.dat"))
+      {
+        File.WriteAllBytes(this.binExporterFileDialog.FileName, this.cardDeckLeaderAbilities.Bytes);
+        MessageBox.Show("Binaries were successfully exported.", "Export successful");
+      }
+    }
+
+    private void deckLeaderAbilitiesImportBinButton_Click(object sender, EventArgs e)
+    {
+      if (OpenImportBinaryDialog("deck_leader_abilities.dat"))
+      {
+        deckLeaderAbilityDataGridViewIsSetup = false;
+
+        using (FileStream fileStream = new FileStream(this.binImporterFileDialog.FileName, FileMode.Open))
+        {
+          LoadCardDeckLeaderAbilitesData(this.dataAccess.LoadCardDeckLeaderAbilities(fileStream, 0));
+        }
+
+        MessageBox.Show("Binaries were successfully imported.", "Import successful");
       }
     }
   }

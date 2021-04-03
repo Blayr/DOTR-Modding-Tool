@@ -35,13 +35,14 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.isoSelectorFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1 = new System.Windows.Forms.MenuStrip();
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.additionalResourcesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.dOTRMapEditorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.rOMMapDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.viewSourceOnGithubToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.coolStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -154,7 +155,9 @@
       this.deckEditRemoveSelectedMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.deckLeaderAbilitiesTab = new System.Windows.Forms.TabPage();
       this.cardDeckLeaderAbilitiesSplitContainer = new System.Windows.Forms.SplitContainer();
-      this.deckLeaderAbilitiesExportButton = new System.Windows.Forms.Button();
+      this.deckLeaderAbilitiesImportBinButton = new System.Windows.Forms.Button();
+      this.deckLeaderAbilitiesExportBinButton = new System.Windows.Forms.Button();
+      this.deckLeaderAbilitiesExportCsvButton = new System.Windows.Forms.Button();
       this.deckLeaderAbilityTabTipsLabel = new System.Windows.Forms.Label();
       this.deckLeaderAbilitiesSaveButton = new System.Windows.Forms.Button();
       this.cardDeckLeaderAbilitiesDatagridview = new System.Windows.Forms.DataGridView();
@@ -176,8 +179,9 @@
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.rOMMapDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.csvExporterFileDialog = new System.Windows.Forms.SaveFileDialog();
+      this.binExporterFileDialog = new System.Windows.Forms.SaveFileDialog();
+      this.binImporterFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -281,6 +285,13 @@
       this.dOTRMapEditorToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
       this.dOTRMapEditorToolStripMenuItem1.Text = "DOTR Map Editor";
       this.dOTRMapEditorToolStripMenuItem1.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem1_Click);
+      // 
+      // rOMMapDocumentationToolStripMenuItem
+      // 
+      this.rOMMapDocumentationToolStripMenuItem.Name = "rOMMapDocumentationToolStripMenuItem";
+      this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+      this.rOMMapDocumentationToolStripMenuItem.Text = "ROM Map Documentation";
+      this.rOMMapDocumentationToolStripMenuItem.Click += new System.EventHandler(this.rOMMapDocumentationToolStripMenuItem_Click);
       // 
       // viewSourceOnGithubToolStripMenuItem1
       // 
@@ -823,14 +834,14 @@
       this.cardConstantsDataGridView.AllowUserToOrderColumns = true;
       this.cardConstantsDataGridView.AllowUserToResizeRows = false;
       this.cardConstantsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
       this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardConstantId,
@@ -1051,8 +1062,8 @@
       // 
       // mainTabControl
       // 
-      this.mainTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+      this.mainTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.mainTabControl.Controls.Add(this.deckEditorTab);
       this.mainTabControl.Controls.Add(this.cardPropertiesTab);
@@ -1515,7 +1526,9 @@
       // 
       // cardDeckLeaderAbilitiesSplitContainer.Panel1
       // 
-      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesExportButton);
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesImportBinButton);
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesExportBinButton);
+      this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesExportCsvButton);
       this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilityTabTipsLabel);
       this.cardDeckLeaderAbilitiesSplitContainer.Panel1.Controls.Add(this.deckLeaderAbilitiesSaveButton);
       // 
@@ -1526,16 +1539,38 @@
       this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 25;
       this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
       // 
-      // deckLeaderAbilitiesExportButton
+      // deckLeaderAbilitiesImportBinButton
       // 
-      this.deckLeaderAbilitiesExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.deckLeaderAbilitiesExportButton.Location = new System.Drawing.Point(994, 0);
-      this.deckLeaderAbilitiesExportButton.Name = "deckLeaderAbilitiesExportButton";
-      this.deckLeaderAbilitiesExportButton.Size = new System.Drawing.Size(75, 25);
-      this.deckLeaderAbilitiesExportButton.TabIndex = 0;
-      this.deckLeaderAbilitiesExportButton.Text = "Export";
-      this.deckLeaderAbilitiesExportButton.UseVisualStyleBackColor = true;
-      this.deckLeaderAbilitiesExportButton.Click += new System.EventHandler(this.deckLeaderAbilitiesExportButton_Click);
+      this.deckLeaderAbilitiesImportBinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.deckLeaderAbilitiesImportBinButton.Location = new System.Drawing.Point(913, 0);
+      this.deckLeaderAbilitiesImportBinButton.Name = "deckLeaderAbilitiesImportBinButton";
+      this.deckLeaderAbilitiesImportBinButton.Size = new System.Drawing.Size(75, 25);
+      this.deckLeaderAbilitiesImportBinButton.TabIndex = 1;
+      this.deckLeaderAbilitiesImportBinButton.Text = "Import";
+      this.deckLeaderAbilitiesImportBinButton.UseVisualStyleBackColor = true;
+      this.deckLeaderAbilitiesImportBinButton.Click += new System.EventHandler(this.deckLeaderAbilitiesImportBinButton_Click);
+      // 
+      // deckLeaderAbilitiesExportBinButton
+      // 
+      this.deckLeaderAbilitiesExportBinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.deckLeaderAbilitiesExportBinButton.Location = new System.Drawing.Point(994, 0);
+      this.deckLeaderAbilitiesExportBinButton.Name = "deckLeaderAbilitiesExportBinButton";
+      this.deckLeaderAbilitiesExportBinButton.Size = new System.Drawing.Size(75, 25);
+      this.deckLeaderAbilitiesExportBinButton.TabIndex = 2;
+      this.deckLeaderAbilitiesExportBinButton.Text = "Export";
+      this.deckLeaderAbilitiesExportBinButton.UseVisualStyleBackColor = true;
+      this.deckLeaderAbilitiesExportBinButton.Click += new System.EventHandler(this.deckLeaderAbilitiesExportBinButton_Click);
+      // 
+      // deckLeaderAbilitiesExportCsvButton
+      // 
+      this.deckLeaderAbilitiesExportCsvButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.deckLeaderAbilitiesExportCsvButton.Location = new System.Drawing.Point(832, 0);
+      this.deckLeaderAbilitiesExportCsvButton.Name = "deckLeaderAbilitiesExportCsvButton";
+      this.deckLeaderAbilitiesExportCsvButton.Size = new System.Drawing.Size(75, 25);
+      this.deckLeaderAbilitiesExportCsvButton.TabIndex = 0;
+      this.deckLeaderAbilitiesExportCsvButton.Text = "Export CSV";
+      this.deckLeaderAbilitiesExportCsvButton.UseVisualStyleBackColor = true;
+      this.deckLeaderAbilitiesExportCsvButton.Click += new System.EventHandler(this.deckLeaderAbilitiesExportCsvButton_Click);
       // 
       // deckLeaderAbilityTabTipsLabel
       // 
@@ -1543,7 +1578,7 @@
       this.deckLeaderAbilityTabTipsLabel.Location = new System.Drawing.Point(5, 8);
       this.deckLeaderAbilityTabTipsLabel.Name = "deckLeaderAbilityTabTipsLabel";
       this.deckLeaderAbilityTabTipsLabel.Size = new System.Drawing.Size(411, 13);
-      this.deckLeaderAbilityTabTipsLabel.TabIndex = 2;
+      this.deckLeaderAbilityTabTipsLabel.TabIndex = 4;
       this.deckLeaderAbilityTabTipsLabel.Text = "Select multiple records with shift or control keys, right click to edit deck lead" +
     "er abilities.";
       // 
@@ -1553,7 +1588,7 @@
       this.deckLeaderAbilitiesSaveButton.Location = new System.Drawing.Point(1075, 0);
       this.deckLeaderAbilitiesSaveButton.Name = "deckLeaderAbilitiesSaveButton";
       this.deckLeaderAbilitiesSaveButton.Size = new System.Drawing.Size(75, 25);
-      this.deckLeaderAbilitiesSaveButton.TabIndex = 1;
+      this.deckLeaderAbilitiesSaveButton.TabIndex = 3;
       this.deckLeaderAbilitiesSaveButton.Text = "Save";
       this.deckLeaderAbilitiesSaveButton.UseVisualStyleBackColor = true;
       this.deckLeaderAbilitiesSaveButton.Click += new System.EventHandler(this.deckLeaderAbilitiesSaveButton_Click);
@@ -1755,13 +1790,6 @@
       // 
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
-      // 
-      // rOMMapDocumentationToolStripMenuItem
-      // 
-      this.rOMMapDocumentationToolStripMenuItem.Name = "rOMMapDocumentationToolStripMenuItem";
-      this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-      this.rOMMapDocumentationToolStripMenuItem.Text = "ROM Map Documentation";
-      this.rOMMapDocumentationToolStripMenuItem.Click += new System.EventHandler(this.rOMMapDocumentationToolStripMenuItem_Click);
       // 
       // MainForm
       // 
@@ -1985,9 +2013,13 @@
     private ToolStripMenuItem rOMMapDocumentationToolStripMenuItem;
     private Button cardConstantsExportButton;
     private SaveFileDialog csvExporterFileDialog;
-    private Button deckLeaderAbilitiesExportButton;
+    private Button deckLeaderAbilitiesExportCsvButton;
     private Button equipCompatibilityExportButton;
     private Button fusionExportButton;
     private Button enemyAiExportButton;
+    private Button deckLeaderAbilitiesImportBinButton;
+    private Button deckLeaderAbilitiesExportBinButton;
+    private SaveFileDialog binExporterFileDialog;
+    private OpenFileDialog binImporterFileDialog;
   }
 }

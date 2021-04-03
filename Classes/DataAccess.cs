@@ -109,6 +109,11 @@ public class DataAccess
 
   public byte[][][] LoadCardDeckLeaderAbilities()
   {
+    return LoadCardDeckLeaderAbilities(fileStream, DataAccess.CardLeaderAbilitiesOffset);
+  }
+
+  public byte[][][] LoadCardDeckLeaderAbilities(FileStream stream, int offset)
+  {
     byte[][][] cardLeaderAbilitiesBytes = new byte[CardLeaderAbilityCount][][];
 
     lock (FileStreamLock)
@@ -121,8 +126,8 @@ public class DataAccess
         {
           byte[] buffer = new byte[CardLeaderAbilityByteSize];
           int cardIndexOffset = (cardIndex * (CardLeaderAbilityTypeCount* CardLeaderAbilityByteSize)) + (abilityTypeIndex * CardLeaderAbilityByteSize);
-          fileStream.Seek(DataAccess.CardLeaderAbilitiesOffset + cardIndexOffset, SeekOrigin.Begin);
-          fileStream.Read(buffer, 0, buffer.Length);
+          stream.Seek(offset + cardIndexOffset, SeekOrigin.Begin);
+          stream.Read(buffer, 0, buffer.Length);
           cardLeaderAbilitiesBytes[cardIndex][abilityTypeIndex] = buffer;
         }
       }
