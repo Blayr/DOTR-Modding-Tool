@@ -2,7 +2,10 @@
 {
   using DOTR_MODDING_TOOL.Forms;
   using System;
+  using System.IO;
+  using System.Linq;
   using System.Reflection;
+  using System.Text;
   using System.Windows.Forms;
 
   public partial class MainForm : Form
@@ -24,11 +27,17 @@
       this.isoSelectorFileDialog.Filter = "ISO files (*.iso)|*.iso";
       this.isoSelectorFileDialog.Title = "Open DOTR ISO file";
       bool isoIsLoaded = false;
+      this.csvExporterFileDialog.Filter = "CSV (Comma delimited) (*.csv)|*.csv";
+      this.csvExporterFileDialog.Title = "Export DOTR CSV file";
+      this.binExporterFileDialog.Filter = "DAT files (*.dat)|*.dat";
+      this.binExporterFileDialog.Title = "Export DOTR binary file";
+      this.binImporterFileDialog.Filter = "DAT files (*.dat)|*.dat";
+      this.binImporterFileDialog.Title = "Import DOTR binary file";
       setWindowText();
 
-      #if DEBUG
-        this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\duelists of the roses\\DOTR_NTSC_TEST.iso");
-        this.LoadDataFromIso();
+#if DEBUG
+      this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\duelists of the roses\\DOTR_NTSC_TEST.iso");
+      this.LoadDataFromIso();
         isoIsLoaded = true;
       #else
         isoIsLoaded = OpenSelectISODialog();
@@ -68,6 +77,30 @@
       return true;
     }
 
+    private bool OpenExportCSVDialog(string defaultFilename = "")
+    {
+      csvExporterFileDialog.FileName = defaultFilename;
+      DialogResult csvExporterDialogResult = csvExporterFileDialog.ShowDialog();
+
+      return csvExporterDialogResult == DialogResult.OK;
+    }
+
+    private bool OpenExportBinaryDialog(string defaultFilename = "")
+    {
+      binExporterFileDialog.FileName = defaultFilename;
+      DialogResult binExporterDialogResult = binExporterFileDialog.ShowDialog();
+
+      return binExporterDialogResult == DialogResult.OK;
+    }
+
+    private bool OpenImportBinaryDialog(string defaultFilename = "")
+    {
+      binImporterFileDialog.FileName = defaultFilename;
+      DialogResult binImporterDialogResult = binImporterFileDialog.ShowDialog();
+
+      return binImporterDialogResult == DialogResult.OK;
+    }
+
     private void LoadDataFromIso()
     {
       this.LoadEnemyAI();
@@ -87,8 +120,11 @@
       this.cardConstantsFilterButton.Enabled = enabled;
       this.cardConstantFilterClearButton.Enabled = enabled;
       this.cardConstantsSaveButton.Enabled = enabled;
+      this.cardConstantsExportButton.Enabled = enabled;
       this.fusionSaveButton.Enabled = enabled;
+      this.fusionExportButton.Enabled = enabled;
       this.enemyAiSaveButton.Enabled = enabled;
+      this.enemyAiExportButton.Enabled = enabled;
     }
 
     private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -132,6 +168,26 @@
     private void rOMMapDocumentationToolStripMenuItem_Click(object sender, EventArgs e)
     {
       System.Diagnostics.Process.Start("https://docs.google.com/document/d/1L_hkkhuF4C3miPzkiTSF_vPPOCov48kqNyhPqQBHTZQ/edit#");
+    }
+
+    private void ExportGridToCsv(DataGridView grid, string fileName, string separator = ";")
+    {
+      using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
+      {
+        using (StreamWriter writer = new StreamWriter(fileStream))
+        {
+          writer.WriteLine("sep=" + separator);
+          var headers = grid.Columns.Cast<DataGridViewColumn>();
+          writer.WriteLine(string.Join(separator, headers.Where(column => column.Visible).Select(column => column.HeaderText).ToArray()));
+
+          foreach (DataGridViewRow row in grid.Rows)
+          {
+            var cells = row.Cells.Cast<DataGridViewCell>();
+            writer.WriteLine(string.Join(separator, cells.Where(cell => cell.Visible).Select(cell => cell.FormattedValue).ToArray()));
+          }
+        }
+      }
+      MessageBox.Show("CSV was successfully exported.", "Export successful");
     }
   }
 }
