@@ -42,6 +42,7 @@
       this.openISOMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.additionalResourcesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.dOTRMapEditorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.rOMMapDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.viewSourceOnGithubToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
       this.coolStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -169,9 +170,12 @@
       this.EquipCompatabilityEquipCardsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.monsterCardEquipCompatibilitiesContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.editMonsterEquipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.batzpupModsTab = new System.Windows.Forms.TabPage();
+      this.allowNonMonsterFusionsGroup = new System.Windows.Forms.GroupBox();
+      this.allowNonMonsterFusionsSaveButton = new System.Windows.Forms.Button();
+      this.enableAllCardTypeFusionsCheckBox = new System.Windows.Forms.CheckBox();
       this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.rOMMapDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip1.SuspendLayout();
       this.hiddenCardsTab.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -231,6 +235,8 @@
       this.equipCompabilitySplitContainer.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.equipCompatibilityDataGridView)).BeginInit();
       this.monsterCardEquipCompatibilitiesContextMenuStrip.SuspendLayout();
+      this.batzpupModsTab.SuspendLayout();
+      this.allowNonMonsterFusionsGroup.SuspendLayout();
       this.SuspendLayout();
       // 
       // isoSelectorFileDialog
@@ -275,6 +281,13 @@
       this.dOTRMapEditorToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
       this.dOTRMapEditorToolStripMenuItem1.Text = "DOTR Map Editor";
       this.dOTRMapEditorToolStripMenuItem1.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem1_Click);
+      // 
+      // rOMMapDocumentationToolStripMenuItem
+      // 
+      this.rOMMapDocumentationToolStripMenuItem.Name = "rOMMapDocumentationToolStripMenuItem";
+      this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+      this.rOMMapDocumentationToolStripMenuItem.Text = "ROM Map Documentation";
+      this.rOMMapDocumentationToolStripMenuItem.Click += new System.EventHandler(this.rOMMapDocumentationToolStripMenuItem_Click);
       // 
       // viewSourceOnGithubToolStripMenuItem1
       // 
@@ -1020,6 +1033,7 @@
       this.mainTabControl.Controls.Add(this.enemyAiTab);
       this.mainTabControl.Controls.Add(this.hiddenCardsTab);
       this.mainTabControl.Controls.Add(this.leaderRankTresholdsTab);
+      this.mainTabControl.Controls.Add(this.batzpupModsTab);
       this.mainTabControl.Location = new System.Drawing.Point(0, 27);
       this.mainTabControl.Name = "mainTabControl";
       this.mainTabControl.SelectedIndex = 0;
@@ -1679,6 +1693,47 @@
       this.editMonsterEquipMenuItem.Text = "Edit selected items";
       this.editMonsterEquipMenuItem.Click += new System.EventHandler(this.ShowMonsterCardEquipCompatibilityEditDialog);
       // 
+      // batzpupModsTab
+      // 
+      this.batzpupModsTab.Controls.Add(this.allowNonMonsterFusionsGroup);
+      this.batzpupModsTab.Location = new System.Drawing.Point(4, 22);
+      this.batzpupModsTab.Name = "batzpupModsTab";
+      this.batzpupModsTab.Padding = new System.Windows.Forms.Padding(3);
+      this.batzpupModsTab.Size = new System.Drawing.Size(1156, 513);
+      this.batzpupModsTab.TabIndex = 8;
+      this.batzpupModsTab.Text = "Batzpup Mods";
+      this.batzpupModsTab.UseVisualStyleBackColor = true;
+      // 
+      // allowNonMonsterFusionsGroup
+      // 
+      this.allowNonMonsterFusionsGroup.Controls.Add(this.allowNonMonsterFusionsSaveButton);
+      this.allowNonMonsterFusionsGroup.Controls.Add(this.enableAllCardTypeFusionsCheckBox);
+      this.allowNonMonsterFusionsGroup.Location = new System.Drawing.Point(8, 6);
+      this.allowNonMonsterFusionsGroup.Name = "allowNonMonsterFusionsGroup";
+      this.allowNonMonsterFusionsGroup.Size = new System.Drawing.Size(164, 80);
+      this.allowNonMonsterFusionsGroup.TabIndex = 1;
+      this.allowNonMonsterFusionsGroup.TabStop = false;
+      // 
+      // allowNonMonsterFusionsSaveButton
+      // 
+      this.allowNonMonsterFusionsSaveButton.Location = new System.Drawing.Point(6, 42);
+      this.allowNonMonsterFusionsSaveButton.Name = "allowNonMonsterFusionsSaveButton";
+      this.allowNonMonsterFusionsSaveButton.Size = new System.Drawing.Size(75, 23);
+      this.allowNonMonsterFusionsSaveButton.TabIndex = 1;
+      this.allowNonMonsterFusionsSaveButton.Text = "Apply";
+      this.allowNonMonsterFusionsSaveButton.UseVisualStyleBackColor = true;
+      this.allowNonMonsterFusionsSaveButton.Click += new System.EventHandler(this.allowNonMonsterFusionsSaveButton_Click);
+      // 
+      // enableAllCardTypeFusionsCheckBox
+      // 
+      this.enableAllCardTypeFusionsCheckBox.AutoSize = true;
+      this.enableAllCardTypeFusionsCheckBox.Location = new System.Drawing.Point(6, 19);
+      this.enableAllCardTypeFusionsCheckBox.Name = "enableAllCardTypeFusionsCheckBox";
+      this.enableAllCardTypeFusionsCheckBox.Size = new System.Drawing.Size(154, 17);
+      this.enableAllCardTypeFusionsCheckBox.TabIndex = 0;
+      this.enableAllCardTypeFusionsCheckBox.Text = "Allow Non-Monster Fusions";
+      this.enableAllCardTypeFusionsCheckBox.UseVisualStyleBackColor = true;
+      // 
       // cardConstantsContextStrip
       // 
       this.cardConstantsContextStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -1689,13 +1744,6 @@
       // 
       this.cardDeckLeaderAbilitiesContextStrip.Name = "cardDeckLeaderAbilitiesContextStrip";
       this.cardDeckLeaderAbilitiesContextStrip.Size = new System.Drawing.Size(61, 4);
-      // 
-      // rOMMapDocumentationToolStripMenuItem
-      // 
-      this.rOMMapDocumentationToolStripMenuItem.Name = "rOMMapDocumentationToolStripMenuItem";
-      this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-      this.rOMMapDocumentationToolStripMenuItem.Text = "ROM Map Documentation";
-      this.rOMMapDocumentationToolStripMenuItem.Click += new System.EventHandler(this.rOMMapDocumentationToolStripMenuItem_Click);
       // 
       // MainForm
       // 
@@ -1779,6 +1827,9 @@
       this.equipCompabilitySplitContainer.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.equipCompatibilityDataGridView)).EndInit();
       this.monsterCardEquipCompatibilitiesContextMenuStrip.ResumeLayout(false);
+      this.batzpupModsTab.ResumeLayout(false);
+      this.allowNonMonsterFusionsGroup.ResumeLayout(false);
+      this.allowNonMonsterFusionsGroup.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1917,5 +1968,9 @@
     private ToolStripMenuItem clovisYoutubeChannelToolStripMenuItem;
     private ToolStripMenuItem dOTRReduxModToolStripMenuItem;
     private ToolStripMenuItem rOMMapDocumentationToolStripMenuItem;
+    private TabPage batzpupModsTab;
+    private GroupBox allowNonMonsterFusionsGroup;
+    private Button allowNonMonsterFusionsSaveButton;
+    private CheckBox enableAllCardTypeFusionsCheckBox;
   }
 }

@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 
 public class DataAccess
 {
@@ -260,6 +261,28 @@ public class DataAccess
     {
       fileStream.Seek(writeOffset, SeekOrigin.Begin);
       fileStream.Write(treasureCardBytes, 0, DataAccess.TreasureCardByteSize);
+    }
+  }
+
+  public bool CheckIfPatchApplied(int offset, byte[] patch)
+  {
+    byte[] buffer = new byte[patch.Length];
+
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(offset, SeekOrigin.Begin);
+      fileStream.Read(buffer, 0, buffer.Length);
+    }
+
+    return buffer.SequenceEqual(patch);
+  }
+
+  public void ApplyPatch(int offset, byte[] patch)
+  {
+    lock (FileStreamLock)
+    {
+      fileStream.Seek(offset, SeekOrigin.Begin);
+      fileStream.Write(patch, 0, patch.Length);
     }
   }
 }

@@ -26,13 +26,32 @@
       bool isoIsLoaded = false;
       setWindowText();
 
-      #if DEBUG
-        this.dataAccess.OpenIso("C:\\Users\\Blair\\Desktop\\duelists of the roses\\DOTR_NTSC_TEST.iso");
+      string configFilePath = "dotr_modding_tool_config.yml";
+
+#if DEBUG
+      // when running in debug, the executable is in bin/Debug inside the repo, let's drop the config file
+      // in the root directory of the repo instead to make it easier
+      configFilePath = "../../dotr_modding_tool_config.yml";
+#endif
+
+      ConfigManager.InitializeInstance(configFilePath);
+      ConfigManager config = ConfigManager.Instance;
+
+      string isoPath = config.GetIsoPath();
+      bool skipIsoDialog = config.GetSkipIsoDialog();
+
+      if (!string.IsNullOrEmpty(isoPath) && skipIsoDialog)
+      {
+        this.dataAccess.OpenIso(isoPath);
         this.LoadDataFromIso();
         isoIsLoaded = true;
-      #else
+        Console.WriteLine("ISO Path is not empty and Skip ISO Dialog is true.");
+      }
+      else
+      {
         isoIsLoaded = OpenSelectISODialog();
-      #endif
+        Console.WriteLine("Condition not met. ISO Path: " + isoPath + ", Skip ISO Dialog: " + skipIsoDialog);
+      }
 
       if (!isoIsLoaded)
       {
@@ -63,8 +82,11 @@
         return false;
       }
 
-      this.dataAccess.OpenIso(isoSelectorFileDialog.FileName);
+      String isoPath= isoSelectorFileDialog.FileName;
+      this.dataAccess.OpenIso(isoPath);
       this.LoadDataFromIso();
+      ConfigManager.Instance.SetIsoPath(isoPath);
+      ConfigManager.Instance.SaveConfig();
       return true;
     }
 
@@ -77,6 +99,7 @@
       this.LoadTreasureCardData();
       this.LoadCardDeckLeaderAbilitesData();
       this.LoadCardEquipData();
+      this.loadBatzpupMods();
       this.toggleEnableControls(true);
     }
 

@@ -27,6 +27,14 @@ public class CardConstant
 		}
 	}
 
+	public static List<CardConstant> NonEquips
+	{
+		get
+		{
+			return List.FindAll(cardConstant => cardConstant.cardKind.Id != 64);
+		}
+	}
+
 	public static byte[] AllBytes
 	{
 		get
