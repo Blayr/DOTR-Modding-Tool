@@ -19,7 +19,7 @@ namespace DOTR_MODDING_TOOL.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,38 +61,58 @@ namespace DOTR_MODDING_TOOL.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blue Eyes White Dragon
+        ///   Looks up a localized string similar to Blue-Eyes White Dragon
         ///Seiyaryu
         ///Blue-Eyes Ultimate Dragon
         ///Kaiser Dragon
         ///Blackland Fire Dragon
         ///Koumori Dragon
-        ///Curse of Dragon 
-        ///Red Eyes Black Dragon
+        ///Curse of Dragon
+        ///Red-Eyes B. Dragon
         ///Darkfire Dragon
         ///B. Skull Dragon
         ///Tri-Horned Dragon
         ///Serpent Night Dragon
         ///Mikazukinoyaiba
         ///Yamadron
-        ///Meteor B Dragon
-        ///Tyhone #2  
+        ///Meteor B. Dragon
+        ///Tyhone #2
         ///Ryu-Ran
         ///Manga Ryu-Ran
-        ///Crawling Dragon  
+        ///Crawling Dragon
         ///Meteor Dragon
         ///B. Dragon Jungle King
         ///Baby Dragon
         ///Winged Dragon, Guardian of the Fortress #1
-        ///Gaia the Dragon Champion 
+        ///Gaia the Dragon Champion
         ///Thousand Dragon
         ///Yamatano Dragon Scroll
-        ///Petit Dragon 
-        ///One [rest of string was truncated]&quot;;.
+        ///Petit Dragon
+        ///One-Eyed Shi [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CardList {
             get {
                 return ResourceManager.GetString("CardList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CRUSH {
+            get {
+                object obj = ResourceManager.GetObject("CRUSH", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DARK {
+            get {
+                object obj = ResourceManager.GetObject("DARK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -212,6 +232,86 @@ namespace DOTR_MODDING_TOOL.Properties {
         internal static System.Drawing.Bitmap DeckRank_9_VADM {
             get {
                 object obj = ResourceManager.GetObject("DeckRank_9_VADM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FOREST {
+            get {
+                object obj = ResourceManager.GetObject("FOREST", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LABYRINTH {
+            get {
+                object obj = ResourceManager.GetObject("LABYRINTH", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MEADOW {
+            get {
+                object obj = ResourceManager.GetObject("MEADOW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MOUNTAIN {
+            get {
+                object obj = ResourceManager.GetObject("MOUNTAIN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NORMAL {
+            get {
+                object obj = ResourceManager.GetObject("NORMAL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SEA {
+            get {
+                object obj = ResourceManager.GetObject("SEA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TOON {
+            get {
+                object obj = ResourceManager.GetObject("TOON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WASTELAND {
+            get {
+                object obj = ResourceManager.GetObject("WASTELAND", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
