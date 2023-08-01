@@ -157,7 +157,7 @@
                 }
             }
             //
-            int CapValue = BitConverter.ToInt16(dataAccess.ReadBytes(0x2209d4, 2), 0);
+            int CapValue = BitConverter.ToUInt16(dataAccess.ReadBytes(0x2209d4, 2), 0);
             if (CapValue != 10000)
             {
                 cbLPCap.Checked = true;
