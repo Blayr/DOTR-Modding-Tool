@@ -35,7 +35,7 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.isoSelectorFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -407,7 +407,7 @@
             // openISOMenuItem
             // 
             this.openISOMenuItem.Name = "openISOMenuItem";
-            this.openISOMenuItem.Size = new System.Drawing.Size(86, 26);
+            this.openISOMenuItem.Size = new System.Drawing.Size(86, 24);
             this.openISOMenuItem.Text = "Open ISO";
             this.openISOMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
             // 
@@ -417,7 +417,7 @@
             this.dOTRMapEditorToolStripMenuItem1,
             this.rOMMapDocumentationToolStripMenuItem});
             this.additionalResourcesToolStripMenuItem1.Name = "additionalResourcesToolStripMenuItem1";
-            this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(163, 26);
+            this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(163, 24);
             this.additionalResourcesToolStripMenuItem1.Text = "Additional Resources";
             // 
             // dOTRMapEditorToolStripMenuItem1
@@ -437,14 +437,14 @@
             // viewSourceOnGithubToolStripMenuItem1
             // 
             this.viewSourceOnGithubToolStripMenuItem1.Name = "viewSourceOnGithubToolStripMenuItem1";
-            this.viewSourceOnGithubToolStripMenuItem1.Size = new System.Drawing.Size(171, 26);
+            this.viewSourceOnGithubToolStripMenuItem1.Size = new System.Drawing.Size(171, 24);
             this.viewSourceOnGithubToolStripMenuItem1.Text = "View source on Github";
             this.viewSourceOnGithubToolStripMenuItem1.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem2
             // 
             this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
-            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(64, 26);
+            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem2.Text = "About";
             this.aboutToolStripMenuItem2.Click += new System.EventHandler(this.aboutToolStripMenuItem2_Click);
             // 
@@ -455,7 +455,7 @@
             this.clovisYoutubeChannelToolStripMenuItem,
             this.dOTRReduxModToolStripMenuItem});
             this.coolStuffToolStripMenuItem.Name = "coolStuffToolStripMenuItem";
-            this.coolStuffToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
+            this.coolStuffToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.coolStuffToolStripMenuItem.Text = "Cool Stuff";
             // 
             // clovisYoutubeChannelToolStripMenuItem
@@ -475,10 +475,10 @@
             // hiddenCardsTab
             // 
             this.hiddenCardsTab.Controls.Add(this.hiddenCardsSplitContainer);
-            this.hiddenCardsTab.Location = new System.Drawing.Point(4, 22);
+            this.hiddenCardsTab.Location = new System.Drawing.Point(4, 27);
             this.hiddenCardsTab.Name = "hiddenCardsTab";
             this.hiddenCardsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.hiddenCardsTab.Size = new System.Drawing.Size(1156, 682);
+            this.hiddenCardsTab.Size = new System.Drawing.Size(1156, 677);
             this.hiddenCardsTab.TabIndex = 4;
             this.hiddenCardsTab.Text = "Hidden Cards";
             this.hiddenCardsTab.UseVisualStyleBackColor = true;
@@ -505,7 +505,7 @@
             this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardRowNumericUpDown);
             this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardSaveButton);
             this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardCardComboBox);
-            this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(1150, 676);
+            this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.hiddenCardsSplitContainer.SplitterDistance = 239;
             this.hiddenCardsSplitContainer.TabIndex = 0;
             // 
@@ -517,7 +517,7 @@
             this.treasureCardsListbox.ItemHeight = 18;
             this.treasureCardsListbox.Location = new System.Drawing.Point(0, 0);
             this.treasureCardsListbox.Name = "treasureCardsListbox";
-            this.treasureCardsListbox.Size = new System.Drawing.Size(239, 676);
+            this.treasureCardsListbox.Size = new System.Drawing.Size(239, 671);
             this.treasureCardsListbox.TabIndex = 0;
             this.treasureCardsListbox.SelectedIndexChanged += new System.EventHandler(this.treasureCardsListbox_SelectedIndexChanged);
             // 
@@ -622,10 +622,10 @@
             // enemyAiTab
             // 
             this.enemyAiTab.Controls.Add(this.enemyAiTabSplitContainer);
-            this.enemyAiTab.Location = new System.Drawing.Point(4, 22);
+            this.enemyAiTab.Location = new System.Drawing.Point(4, 27);
             this.enemyAiTab.Name = "enemyAiTab";
             this.enemyAiTab.Padding = new System.Windows.Forms.Padding(3);
-            this.enemyAiTab.Size = new System.Drawing.Size(1156, 682);
+            this.enemyAiTab.Size = new System.Drawing.Size(1156, 677);
             this.enemyAiTab.TabIndex = 3;
             this.enemyAiTab.Text = "Enemy Ai";
             this.enemyAiTab.UseVisualStyleBackColor = true;
@@ -645,7 +645,7 @@
             // enemyAiTabSplitContainer.Panel2
             // 
             this.enemyAiTabSplitContainer.Panel2.Controls.Add(this.enemyAiDataGridView);
-            this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(1150, 676);
+            this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.enemyAiTabSplitContainer.SplitterDistance = 25;
             this.enemyAiTabSplitContainer.TabIndex = 1;
             // 
@@ -675,7 +675,7 @@
             this.enemyAiDataGridView.Name = "enemyAiDataGridView";
             this.enemyAiDataGridView.RowHeadersVisible = false;
             this.enemyAiDataGridView.RowHeadersWidth = 51;
-            this.enemyAiDataGridView.Size = new System.Drawing.Size(1150, 647);
+            this.enemyAiDataGridView.Size = new System.Drawing.Size(1150, 642);
             this.enemyAiDataGridView.TabIndex = 0;
             // 
             // EnemyIndex
@@ -706,10 +706,10 @@
             // fusionsTab
             // 
             this.fusionsTab.Controls.Add(this.splitContainer2);
-            this.fusionsTab.Location = new System.Drawing.Point(4, 22);
+            this.fusionsTab.Location = new System.Drawing.Point(4, 27);
             this.fusionsTab.Name = "fusionsTab";
             this.fusionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.fusionsTab.Size = new System.Drawing.Size(1156, 682);
+            this.fusionsTab.Size = new System.Drawing.Size(1156, 677);
             this.fusionsTab.TabIndex = 2;
             this.fusionsTab.Text = "Fusions";
             this.fusionsTab.UseVisualStyleBackColor = true;
@@ -730,7 +730,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.fusionsDataGridView);
-            this.splitContainer2.Size = new System.Drawing.Size(1150, 676);
+            this.splitContainer2.Size = new System.Drawing.Size(1150, 671);
             this.splitContainer2.SplitterDistance = 25;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -773,7 +773,7 @@
             this.fusionsDataGridView.Name = "fusionsDataGridView";
             this.fusionsDataGridView.RowHeadersVisible = false;
             this.fusionsDataGridView.RowHeadersWidth = 51;
-            this.fusionsDataGridView.Size = new System.Drawing.Size(1150, 647);
+            this.fusionsDataGridView.Size = new System.Drawing.Size(1150, 642);
             this.fusionsDataGridView.TabIndex = 0;
             // 
             // FusionsDataGridViewIndex
@@ -943,14 +943,14 @@
             this.cardConstantsDataGridView.AllowUserToOrderColumns = true;
             this.cardConstantsDataGridView.AllowUserToResizeRows = false;
             this.cardConstantsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardConstantId,
@@ -1641,10 +1641,10 @@
             // deckLeaderAbilitiesTab
             // 
             this.deckLeaderAbilitiesTab.Controls.Add(this.cardDeckLeaderAbilitiesSplitContainer);
-            this.deckLeaderAbilitiesTab.Location = new System.Drawing.Point(4, 25);
+            this.deckLeaderAbilitiesTab.Location = new System.Drawing.Point(4, 27);
             this.deckLeaderAbilitiesTab.Name = "deckLeaderAbilitiesTab";
             this.deckLeaderAbilitiesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.deckLeaderAbilitiesTab.Size = new System.Drawing.Size(1156, 679);
+            this.deckLeaderAbilitiesTab.Size = new System.Drawing.Size(1156, 677);
             this.deckLeaderAbilitiesTab.TabIndex = 5;
             this.deckLeaderAbilitiesTab.Text = "Deck Leader Abilities";
             this.deckLeaderAbilitiesTab.UseVisualStyleBackColor = true;
@@ -1665,7 +1665,7 @@
             // cardDeckLeaderAbilitiesSplitContainer.Panel2
             // 
             this.cardDeckLeaderAbilitiesSplitContainer.Panel2.Controls.Add(this.cardDeckLeaderAbilitiesDatagridview);
-            this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(1150, 673);
+            this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 25;
             this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
             // 
@@ -1707,7 +1707,7 @@
             this.cardDeckLeaderAbilitiesDatagridview.RowHeadersVisible = false;
             this.cardDeckLeaderAbilitiesDatagridview.RowHeadersWidth = 51;
             this.cardDeckLeaderAbilitiesDatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(1150, 644);
+            this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(1150, 642);
             this.cardDeckLeaderAbilitiesDatagridview.TabIndex = 0;
             // 
             // cardDeckLeaderAbilitiesIndexColumn
@@ -1749,10 +1749,10 @@
             // equipCompabilityTab
             // 
             this.equipCompabilityTab.Controls.Add(this.equipCompabilitySplitContainer);
-            this.equipCompabilityTab.Location = new System.Drawing.Point(4, 22);
+            this.equipCompabilityTab.Location = new System.Drawing.Point(4, 27);
             this.equipCompabilityTab.Name = "equipCompabilityTab";
             this.equipCompabilityTab.Padding = new System.Windows.Forms.Padding(3);
-            this.equipCompabilityTab.Size = new System.Drawing.Size(1156, 682);
+            this.equipCompabilityTab.Size = new System.Drawing.Size(1156, 677);
             this.equipCompabilityTab.TabIndex = 6;
             this.equipCompabilityTab.Text = "Equip Compatibility";
             this.equipCompabilityTab.UseVisualStyleBackColor = true;
@@ -1774,7 +1774,7 @@
             // equipCompabilitySplitContainer.Panel2
             // 
             this.equipCompabilitySplitContainer.Panel2.Controls.Add(this.equipCompatibilityDataGridView);
-            this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(1150, 676);
+            this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.equipCompabilitySplitContainer.SplitterDistance = 25;
             this.equipCompabilitySplitContainer.TabIndex = 0;
             // 
@@ -1817,7 +1817,7 @@
             this.equipCompatibilityDataGridView.RowHeadersVisible = false;
             this.equipCompatibilityDataGridView.RowHeadersWidth = 51;
             this.equipCompatibilityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(1150, 647);
+            this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(1150, 642);
             this.equipCompatibilityDataGridView.TabIndex = 0;
             // 
             // EquipCompatabilityCardIndexColumn
@@ -1877,10 +1877,10 @@
             // batzpupModsTab
             // 
             this.batzpupModsTab.Controls.Add(this.scBatzpupSave);
-            this.batzpupModsTab.Location = new System.Drawing.Point(4, 25);
+            this.batzpupModsTab.Location = new System.Drawing.Point(4, 27);
             this.batzpupModsTab.Name = "batzpupModsTab";
             this.batzpupModsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.batzpupModsTab.Size = new System.Drawing.Size(1156, 679);
+            this.batzpupModsTab.Size = new System.Drawing.Size(1156, 677);
             this.batzpupModsTab.TabIndex = 8;
             this.batzpupModsTab.Text = "Batzpup Mods";
             this.batzpupModsTab.UseVisualStyleBackColor = true;
@@ -1899,8 +1899,8 @@
             // scBatzpupSave.Panel2
             // 
             this.scBatzpupSave.Panel2.Controls.Add(this.tbBatzpup);
-            this.scBatzpupSave.Size = new System.Drawing.Size(1150, 673);
-            this.scBatzpupSave.SplitterDistance = 57;
+            this.scBatzpupSave.Size = new System.Drawing.Size(1150, 671);
+            this.scBatzpupSave.SplitterDistance = 56;
             this.scBatzpupSave.TabIndex = 0;
             // 
             // BatzpupSaveButton
@@ -1909,7 +1909,7 @@
             this.BatzpupSaveButton.Location = new System.Drawing.Point(0, 0);
             this.BatzpupSaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BatzpupSaveButton.Name = "BatzpupSaveButton";
-            this.BatzpupSaveButton.Size = new System.Drawing.Size(1150, 57);
+            this.BatzpupSaveButton.Size = new System.Drawing.Size(1150, 56);
             this.BatzpupSaveButton.TabIndex = 1;
             this.BatzpupSaveButton.Text = "Save";
             this.BatzpupSaveButton.UseVisualStyleBackColor = true;
@@ -1926,7 +1926,7 @@
             this.tbBatzpup.Location = new System.Drawing.Point(0, 0);
             this.tbBatzpup.Name = "tbBatzpup";
             this.tbBatzpup.SelectedIndex = 0;
-            this.tbBatzpup.Size = new System.Drawing.Size(1150, 612);
+            this.tbBatzpup.Size = new System.Drawing.Size(1150, 611);
             this.tbBatzpup.TabIndex = 1;
             this.tbBatzpup.SelectedIndexChanged += new System.EventHandler(this.tbBatzpups_SelectedIndexChanged);
             // 
@@ -1937,7 +1937,7 @@
             this.batzpupTbMain.Location = new System.Drawing.Point(4, 27);
             this.batzpupTbMain.Name = "batzpupTbMain";
             this.batzpupTbMain.Padding = new System.Windows.Forms.Padding(3);
-            this.batzpupTbMain.Size = new System.Drawing.Size(1142, 581);
+            this.batzpupTbMain.Size = new System.Drawing.Size(1142, 580);
             this.batzpupTbMain.TabIndex = 0;
             this.batzpupTbMain.Text = "Main";
             // 
@@ -1969,7 +1969,7 @@
             this.scBatzpupMain.Panel2.Controls.Add(this.gbChangeLpCap);
             this.scBatzpupMain.Panel2.Controls.Add(this.gbForceNewGameSide);
             this.scBatzpupMain.Panel2.Controls.Add(this.gpSideToGoFirst);
-            this.scBatzpupMain.Size = new System.Drawing.Size(1136, 575);
+            this.scBatzpupMain.Size = new System.Drawing.Size(1136, 574);
             this.scBatzpupMain.SplitterDistance = 521;
             this.scBatzpupMain.TabIndex = 0;
             // 
@@ -2210,15 +2210,15 @@
             // numReincarnationCount
             // 
             this.numReincarnationCount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.numReincarnationCount.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
             this.numReincarnationCount.Location = new System.Drawing.Point(5, 51);
             this.numReincarnationCount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numReincarnationCount.Maximum = new decimal(new int[] {
             254,
+            0,
+            0,
+            0});
+            this.numReincarnationCount.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -2380,10 +2380,10 @@
             // tbBatzpupSlotRewards
             // 
             this.tbBatzpupSlotRewards.Controls.Add(this.dgvSlotRewards);
-            this.tbBatzpupSlotRewards.Location = new System.Drawing.Point(4, 25);
+            this.tbBatzpupSlotRewards.Location = new System.Drawing.Point(4, 27);
             this.tbBatzpupSlotRewards.Name = "tbBatzpupSlotRewards";
             this.tbBatzpupSlotRewards.Padding = new System.Windows.Forms.Padding(3);
-            this.tbBatzpupSlotRewards.Size = new System.Drawing.Size(1142, 583);
+            this.tbBatzpupSlotRewards.Size = new System.Drawing.Size(1142, 580);
             this.tbBatzpupSlotRewards.TabIndex = 1;
             this.tbBatzpupSlotRewards.Text = "Slot Rewards";
             this.tbBatzpupSlotRewards.UseVisualStyleBackColor = true;
@@ -2412,7 +2412,7 @@
             this.dgvSlotRewards.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSlotRewards.RowTemplate.Height = 24;
             this.dgvSlotRewards.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvSlotRewards.Size = new System.Drawing.Size(1136, 577);
+            this.dgvSlotRewards.Size = new System.Drawing.Size(1136, 574);
             this.dgvSlotRewards.TabIndex = 1;
             // 
             // SlotRewardNumber
@@ -4154,10 +4154,10 @@
             // tbBatzpupEditMap
             // 
             this.tbBatzpupEditMap.Controls.Add(this.scBatzpupEditMap);
-            this.tbBatzpupEditMap.Location = new System.Drawing.Point(4, 25);
+            this.tbBatzpupEditMap.Location = new System.Drawing.Point(4, 27);
             this.tbBatzpupEditMap.Name = "tbBatzpupEditMap";
             this.tbBatzpupEditMap.Padding = new System.Windows.Forms.Padding(3);
-            this.tbBatzpupEditMap.Size = new System.Drawing.Size(1142, 583);
+            this.tbBatzpupEditMap.Size = new System.Drawing.Size(1142, 580);
             this.tbBatzpupEditMap.TabIndex = 2;
             this.tbBatzpupEditMap.Text = "Edit Map";
             this.tbBatzpupEditMap.UseVisualStyleBackColor = true;
@@ -4176,7 +4176,7 @@
             // scBatzpupEditMap.Panel2
             // 
             this.scBatzpupEditMap.Panel2.Controls.Add(this.scBatzpupEditMapTiles);
-            this.scBatzpupEditMap.Size = new System.Drawing.Size(1136, 577);
+            this.scBatzpupEditMap.Size = new System.Drawing.Size(1136, 574);
             this.scBatzpupEditMap.SplitterDistance = 195;
             this.scBatzpupEditMap.TabIndex = 0;
             // 
@@ -4194,8 +4194,8 @@
             // scBatzpupEditDuelMapSelect.Panel2
             // 
             this.scBatzpupEditDuelMapSelect.Panel2.Controls.Add(this.lbDuelistMaps);
-            this.scBatzpupEditDuelMapSelect.Size = new System.Drawing.Size(195, 577);
-            this.scBatzpupEditDuelMapSelect.SplitterDistance = 35;
+            this.scBatzpupEditDuelMapSelect.Size = new System.Drawing.Size(195, 574);
+            this.scBatzpupEditDuelMapSelect.SplitterDistance = 34;
             this.scBatzpupEditDuelMapSelect.TabIndex = 0;
             // 
             // lblMapToSelect
@@ -4265,7 +4265,7 @@
             this.lbDuelistMaps.Location = new System.Drawing.Point(0, 0);
             this.lbDuelistMaps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbDuelistMaps.Name = "lbDuelistMaps";
-            this.lbDuelistMaps.Size = new System.Drawing.Size(195, 538);
+            this.lbDuelistMaps.Size = new System.Drawing.Size(195, 536);
             this.lbDuelistMaps.TabIndex = 2;
             this.lbDuelistMaps.SelectedIndexChanged += new System.EventHandler(this.lbDuelistMaps_SelectedIndexChanged);
             // 
@@ -4288,7 +4288,7 @@
             this.scBatzpupEditMapTiles.Panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.splitContainer4_Panel2_MouseDown);
             this.scBatzpupEditMapTiles.Panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MapEditor_MouseMove);
             this.scBatzpupEditMapTiles.Panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MapEditor_MouseUp);
-            this.scBatzpupEditMapTiles.Size = new System.Drawing.Size(937, 577);
+            this.scBatzpupEditMapTiles.Size = new System.Drawing.Size(937, 574);
             this.scBatzpupEditMapTiles.SplitterDistance = 367;
             this.scBatzpupEditMapTiles.TabIndex = 0;
             // 
@@ -4307,8 +4307,8 @@
             // scBatzpupEditMapThanks.Panel2
             // 
             this.scBatzpupEditMapThanks.Panel2.Controls.Add(this.scBatzpupEditMapPallete);
-            this.scBatzpupEditMapThanks.Size = new System.Drawing.Size(367, 577);
-            this.scBatzpupEditMapThanks.SplitterDistance = 59;
+            this.scBatzpupEditMapThanks.Size = new System.Drawing.Size(367, 574);
+            this.scBatzpupEditMapThanks.SplitterDistance = 58;
             this.scBatzpupEditMapThanks.TabIndex = 0;
             // 
             // llblDotrMap
@@ -4348,7 +4348,7 @@
             // scBatzpupEditMapPallete.Panel2
             // 
             this.scBatzpupEditMapPallete.Panel2.Controls.Add(this.tbPallete);
-            this.scBatzpupEditMapPallete.Size = new System.Drawing.Size(367, 514);
+            this.scBatzpupEditMapPallete.Size = new System.Drawing.Size(367, 512);
             this.scBatzpupEditMapPallete.SplitterDistance = 150;
             this.scBatzpupEditMapPallete.TabIndex = 0;
             // 
@@ -4412,7 +4412,7 @@
             this.tbPallete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tbPallete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tbPallete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tbPallete.Size = new System.Drawing.Size(213, 514);
+            this.tbPallete.Size = new System.Drawing.Size(213, 512);
             this.tbPallete.TabIndex = 0;
             // 
             // pbCrush
@@ -4587,10 +4587,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.scMusicMain);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Location = new System.Drawing.Point(4, 27);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1142, 583);
+            this.tabPage4.Size = new System.Drawing.Size(1142, 580);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Music Editor";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -4609,7 +4609,7 @@
             // scMusicMain.Panel2
             // 
             this.scMusicMain.Panel2.Controls.Add(this.scBatzpupMusic2);
-            this.scMusicMain.Size = new System.Drawing.Size(1136, 577);
+            this.scMusicMain.Size = new System.Drawing.Size(1136, 574);
             this.scMusicMain.SplitterDistance = 378;
             this.scMusicMain.TabIndex = 0;
             // 
@@ -4645,7 +4645,7 @@
             this.lbMusicDuelists.Location = new System.Drawing.Point(0, 0);
             this.lbMusicDuelists.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbMusicDuelists.Name = "lbMusicDuelists";
-            this.lbMusicDuelists.Size = new System.Drawing.Size(378, 577);
+            this.lbMusicDuelists.Size = new System.Drawing.Size(378, 574);
             this.lbMusicDuelists.TabIndex = 1;
             this.lbMusicDuelists.SelectedIndexChanged += new System.EventHandler(this.lbMusicDuelists_SelectedIndexChanged);
             // 
@@ -4662,7 +4662,7 @@
             // scBatzpupMusic2.Panel2
             // 
             this.scBatzpupMusic2.Panel2.Controls.Add(this.scBatzpupMusicPlayer);
-            this.scBatzpupMusic2.Size = new System.Drawing.Size(754, 577);
+            this.scBatzpupMusic2.Size = new System.Drawing.Size(754, 574);
             this.scBatzpupMusic2.SplitterDistance = 333;
             this.scBatzpupMusic2.TabIndex = 0;
             // 
@@ -4720,7 +4720,7 @@
             this.lbMusicTrack.Location = new System.Drawing.Point(0, 0);
             this.lbMusicTrack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbMusicTrack.Name = "lbMusicTrack";
-            this.lbMusicTrack.Size = new System.Drawing.Size(333, 577);
+            this.lbMusicTrack.Size = new System.Drawing.Size(333, 574);
             this.lbMusicTrack.TabIndex = 2;
             this.lbMusicTrack.SelectedIndexChanged += new System.EventHandler(this.lbMusicTrack_SelectedIndexChanged);
             // 
@@ -4742,8 +4742,8 @@
             this.scBatzpupMusicPlayer.Panel2.Controls.Add(this.lblCurrentlyPlayingTitle);
             this.scBatzpupMusicPlayer.Panel2.Controls.Add(this.lblVolume);
             this.scBatzpupMusicPlayer.Panel2.Controls.Add(this.tbMusicVolume);
-            this.scBatzpupMusicPlayer.Size = new System.Drawing.Size(417, 577);
-            this.scBatzpupMusicPlayer.SplitterDistance = 261;
+            this.scBatzpupMusicPlayer.Size = new System.Drawing.Size(417, 574);
+            this.scBatzpupMusicPlayer.SplitterDistance = 259;
             this.scBatzpupMusicPlayer.TabIndex = 0;
             // 
             // scBatzpupMusicButtons
@@ -4760,8 +4760,8 @@
             // scBatzpupMusicButtons.Panel2
             // 
             this.scBatzpupMusicButtons.Panel2.Controls.Add(this.btnToggleMusic);
-            this.scBatzpupMusicButtons.Size = new System.Drawing.Size(417, 261);
-            this.scBatzpupMusicButtons.SplitterDistance = 133;
+            this.scBatzpupMusicButtons.Size = new System.Drawing.Size(417, 259);
+            this.scBatzpupMusicButtons.SplitterDistance = 131;
             this.scBatzpupMusicButtons.TabIndex = 0;
             // 
             // btnExtractMusic
@@ -4770,7 +4770,7 @@
             this.btnExtractMusic.Location = new System.Drawing.Point(0, 0);
             this.btnExtractMusic.Margin = new System.Windows.Forms.Padding(4);
             this.btnExtractMusic.Name = "btnExtractMusic";
-            this.btnExtractMusic.Size = new System.Drawing.Size(417, 133);
+            this.btnExtractMusic.Size = new System.Drawing.Size(417, 131);
             this.btnExtractMusic.TabIndex = 1;
             this.btnExtractMusic.Text = "Extract Music From ISO";
             this.btnExtractMusic.UseVisualStyleBackColor = true;
@@ -4825,7 +4825,7 @@
             // 
             this.tbMusicVolume.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbMusicVolume.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbMusicVolume.Location = new System.Drawing.Point(0, 256);
+            this.tbMusicVolume.Location = new System.Drawing.Point(0, 255);
             this.tbMusicVolume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMusicVolume.Name = "tbMusicVolume";
             this.tbMusicVolume.Size = new System.Drawing.Size(417, 56);

@@ -781,17 +781,18 @@
                     //Mem.PatchEx(0x201b1b00, "\x10\x00\x0b\x24", 4);
                 }
                 //Changes stat cap function
-                byte[] bytes = BitConverter.GetBytes((int)numLPCap.Value + 1);
-                //Changes the if check from 9999 to 20k
-                dataAccess.ApplyPatch(0x2209d4, new byte[4] { bytes[0], bytes[1], 0x81, 0x2c });
-                dataAccess.ApplyPatch(0x2209e0, new byte[4] { bytes[0], bytes[1], 0x81, 0x2c });
-                //changes the assignment to 20k
-                dataAccess.ApplyPatch(0x2209ec, new byte[4] { bytes[0], bytes[1], 0x04, 0x24 });
+                byte[] CapBytes = BitConverter.GetBytes((int)numLPCap.Value + 1);
+                byte[] SetBytes = BitConverter.GetBytes((int)numLPCap.Value);
+                //Changes the if check from 9999 to value
+                dataAccess.ApplyPatch(0x2209d4, new byte[4] { CapBytes[0], CapBytes[1], 0x81, 0x28 });
+                dataAccess.ApplyPatch(0x2209e0, new byte[4] { CapBytes[0], CapBytes[1], 0x81, 0x28 });
+                //changes the assignment to value -1
+                dataAccess.ApplyPatch(0x2209ec, new byte[4] { SetBytes[0], SetBytes[1], 0x04, 0x24 });
                 //Changes SzDuel_CalcLP function
-                //Changes the if check from 9999 to 20k
-                dataAccess.ApplyPatch(0x1af61c, new byte[4] { bytes[0], bytes[1], 0x41, 0x2c });
-                //changes the assignment to 20k
-                dataAccess.ApplyPatch(0x1af624, new byte[4] { bytes[0], bytes[1], 0x41, 0x2c });
+                //Changes the if check from 9999 to value
+                dataAccess.ApplyPatch(0x1af61c, new byte[4] { CapBytes[0], CapBytes[1], 0x41, 0x28 });
+                //changes the assignment to to value -1
+                dataAccess.ApplyPatch(0x1af624, new byte[4] { SetBytes[0], SetBytes[1], 0x06, 0x24 });
             }
             else
             {
