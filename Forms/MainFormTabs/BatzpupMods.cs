@@ -485,7 +485,7 @@
 
         private void HandleMainSave()
         {
-            RestoreCrushCardsGlory();
+            //RestoreCrushCardsGlory();
             if (IsUsingFastIntroMods())
             {
                 cbFastIntro.Checked = true;
