@@ -7,28 +7,36 @@ public class DataAccess
 {
     public const int DeckLeaderRankThresholdsByteOffset = 0x2A0952;
     public const int DeckLeaderRankThresholdByteLength = 24;
-    public const int CardConstantsByteOffset = 0x28F180;
+
     public const int FusionListByteOffset = 0x26E930;
     public const int FusionListByteLength = 26540 * 4;
+
+    public const int CardConstantsByteOffset = 0x28F180;
     public const int CardConstantByteLength = 20;
     public const int CardConstantCount = Cards.TotalCardCount;
+
     public const int EnemyAiByteOffset = 0x28AFB0;
     public const int EnemyAiByteLength = 4;
     public const int EnemyAiCount = 32;
+
     public const int TreasureCardByteOffset = 0x2A09D0;
     public const int TreasureCardByteSize = 4;
     public const int TreasureCardCount = 22;
+
     public const int CardLeaderAbilitiesOffset = 0x293438;
     public const int CardLeaderAbilityCount = 683;
     public const int CardLeaderAbilityTypeCount = 20;
     public const int CardLeaderAbilityByteSize = 2;
+
     public const int MonsterEquipCardCompatabilityOffset = 0x26D680;
     public const int MonsterEquipCardCompabilityCardCount = 687;
     public const int MonsterEquipCardCompabilityByteSize = 7;
+
     public const int DeckByteOffset = 0x2A0A70;
     public const int DeckCount = 51;
     public const int DeckCardCount = 41;
     public const int DeckCardByteCount = 2;
+
     public DotrMap[] maps = new DotrMap[46];
     private static readonly object FileStreamLock = new object();
     public static FileStream fileStream;
