@@ -73,7 +73,7 @@ public class DataAccess
     /// <summary>
     /// TODO Find why it takes up so much memory and fix it. 2 why does loading a new iso each time not reset the filestream size
     /// </summary>
-    public void LoadMapsFromIso(String isopath)
+    public void LoadMapsFromIso()
     {
         lock (FileStreamLock)
         {
@@ -81,8 +81,10 @@ public class DataAccess
             {
                 int mapOffset = 0x29EF5C;
                 mapOffset += i * 0x31;
+
                 byte[] slusMap = new byte[49];
                 fileStream.Seek(mapOffset, SeekOrigin.Begin);
+
                 for (int j = 0; j < slusMap.Length; j++)
                 {
                     slusMap[j] = Convert.ToByte(fileStream.ReadByte());
@@ -92,8 +94,6 @@ public class DataAccess
 
             }
         }
-
-        OpenIso(isopath);
     }
     public void SaveDeck(int deckIndex, byte[] bytes)
     {

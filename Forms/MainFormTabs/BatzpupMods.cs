@@ -240,7 +240,7 @@
                 scBatzpupEditMapTiles.IsSplitterFixed = true;
                 scBatzpupEditMapPallete.IsSplitterFixed = true;
                 scBatzpupEditDuelMapSelect.IsSplitterFixed = true;
-                dataAccess.LoadMapsFromIso(isoPath);
+                dataAccess.LoadMapsFromIso();
                 currentMap = dataAccess.maps[0];
                 lbDuelistMaps.SelectedIndex = 0;
                 haveMapsLoaded = true;
@@ -941,10 +941,12 @@
             {
                 Directory.CreateDirectory(MusicDirectory);
             }
+
             MediaFoundationApi.Startup();
             CDReader isoFile = new CDReader(DataAccess.fileStream, true);
             // Get the file from inside the ISO
             EnableDisableSelection(false);
+
             for (int i = 0; i < 5; i++)
             {
                 var fileEntry = isoFile.GetFiles($"SOUND\\BGM\\0{i}");
