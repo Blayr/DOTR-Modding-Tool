@@ -7,7 +7,7 @@
 
     public partial class MainForm : Form
     {
-        private DataAccess dataAccess = new DataAccess();
+        private DataAccess dataAccess = DataAccess.Instance;
         String isoPath;
 
         public MainForm()

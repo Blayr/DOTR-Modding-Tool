@@ -10,12 +10,9 @@ namespace GameplayPatches
         public byte[] Patch { get; set; }
     }
 
-
     public class Patcher
     {
         protected DataAccess dataAccess = null;
-
-
 
         public Patcher(DataAccess dataAccess)
         {

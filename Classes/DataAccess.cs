@@ -42,6 +42,19 @@ public class DataAccess
     public static FileStream fileStream;
     public string filePath = null;
 
+    private static DataAccess instance;
+
+    public static DataAccess Instance {
+        get
+        {
+            if (instance == null) {
+                instance = new DataAccess();
+            }
+
+            return instance;
+        }
+    }
+
     public DataAccess()
     {
     }
