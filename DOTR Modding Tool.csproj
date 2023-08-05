@@ -105,6 +105,8 @@
     <Compile Include="Classes\DeckLeaderRankType.cs" />
     <Compile Include="Classes\DotrMap.cs" />
     <Compile Include="Classes\GameplayPatches.cs" />
+    <Compile Include="Classes\GameplayPatches\FastIntro.cs" />
+    <Compile Include="Classes\GameplayPatches\Patch.cs" />
     <Compile Include="Classes\MapTile.cs" />
     <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="Classes\VanillaMapBytes.cs" />

@@ -7,32 +7,53 @@ public class DataAccess
 {
     public const int DeckLeaderRankThresholdsByteOffset = 0x2A0952;
     public const int DeckLeaderRankThresholdByteLength = 24;
-    public const int CardConstantsByteOffset = 0x28F180;
+
     public const int FusionListByteOffset = 0x26E930;
     public const int FusionListByteLength = 26540 * 4;
+
+    public const int CardConstantsByteOffset = 0x28F180;
     public const int CardConstantByteLength = 20;
     public const int CardConstantCount = Cards.TotalCardCount;
+
     public const int EnemyAiByteOffset = 0x28AFB0;
     public const int EnemyAiByteLength = 4;
     public const int EnemyAiCount = 32;
+
     public const int TreasureCardByteOffset = 0x2A09D0;
     public const int TreasureCardByteSize = 4;
     public const int TreasureCardCount = 22;
+
     public const int CardLeaderAbilitiesOffset = 0x293438;
     public const int CardLeaderAbilityCount = 683;
     public const int CardLeaderAbilityTypeCount = 20;
     public const int CardLeaderAbilityByteSize = 2;
+
     public const int MonsterEquipCardCompatabilityOffset = 0x26D680;
     public const int MonsterEquipCardCompabilityCardCount = 687;
     public const int MonsterEquipCardCompabilityByteSize = 7;
+
     public const int DeckByteOffset = 0x2A0A70;
     public const int DeckCount = 51;
     public const int DeckCardCount = 41;
     public const int DeckCardByteCount = 2;
+
     public DotrMap[] maps = new DotrMap[46];
     private static readonly object FileStreamLock = new object();
     public static FileStream fileStream;
     public string filePath = null;
+
+    private static DataAccess instance;
+
+    public static DataAccess Instance {
+        get
+        {
+            if (instance == null) {
+                instance = new DataAccess();
+            }
+
+            return instance;
+        }
+    }
 
     public DataAccess()
     {
@@ -65,7 +86,7 @@ public class DataAccess
     /// <summary>
     /// TODO Find why it takes up so much memory and fix it. 2 why does loading a new iso each time not reset the filestream size
     /// </summary>
-    public void LoadMapsFromIso(String isopath)
+    public void LoadMapsFromIso()
     {
         lock (FileStreamLock)
         {
@@ -73,8 +94,10 @@ public class DataAccess
             {
                 int mapOffset = 0x29EF5C;
                 mapOffset += i * 0x31;
+
                 byte[] slusMap = new byte[49];
                 fileStream.Seek(mapOffset, SeekOrigin.Begin);
+
                 for (int j = 0; j < slusMap.Length; j++)
                 {
                     slusMap[j] = Convert.ToByte(fileStream.ReadByte());
@@ -84,8 +107,6 @@ public class DataAccess
 
             }
         }
-
-        OpenIso(isopath);
     }
     public void SaveDeck(int deckIndex, byte[] bytes)
     {
