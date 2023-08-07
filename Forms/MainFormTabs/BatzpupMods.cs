@@ -70,9 +70,11 @@
         //Music
         static int AddCustomMusicPtr = 0x17ac58;
         static int TaTuto_DrawTrapArea = 0x24f800;
+        static int SlotTrackPtr = 0x17ae34;
         private WaveOutEvent waveOut;
         private Mp3FileReader mp3Reader;
         private bool isMusicPlaying = false;
+        
         private void loadBatzpupMods()
         {
             this.InitDataGridView();
@@ -233,10 +235,14 @@
             {
                 if (tbBatzpup.SelectedIndex != 3)
                 {
-                    waveOut.Stop();
-                    mp3Reader?.Dispose();
-                    btnToggleMusic.Text = "Play";
-                    isMusicPlaying = false;
+                    if (waveOut.PlaybackState != PlaybackState.Stopped)
+                    {
+                        waveOut.Stop();
+                        mp3Reader?.Dispose();
+                        btnToggleMusic.Text = "Play";
+                        isMusicPlaying = false;
+                    }
+                  
                     
                 }
             }
@@ -461,6 +467,7 @@
 
         private void HandleMainSave()
         {
+            ChangeSlotMusic();
             //RestoreCrushCardsGlory();
             if (IsUsingFastIntroMods())
             {
@@ -751,6 +758,18 @@
             }
         }
 
+        private void ChangeSlotMusic()
+        {
+            //Somehow break the music to be crush battle always?
+            int trackNum = Convert.ToInt32(DuelistMusic[0].Substring(0, 2));
+            byte[] bytes = BitConverter.GetBytes(trackNum);
+            if(trackNum >= 45)
+            {
+                MessageBox.Show("Slot Track Number is invalid");
+            }
+            dataAccess.ApplyPatch(SlotTrackPtr, new byte[4] { bytes[0], 0x00, 0x04, 0x24 });
+        }
+
         private void RestoreCrushCardsGlory()
         {
             //Change Card Effect
@@ -955,7 +974,7 @@
                 string selectedMp3FilePath = Path.Combine(MusicDirectory, "00" + CurrentSongSelected.Substring(0, 2) + ".mp3");
                 if (File.Exists(selectedMp3FilePath))
                 {
-                    isMusicPlaying = true;
+                    
                     mp3Reader = new Mp3FileReader(selectedMp3FilePath);
 
                     // Toggle the play state
@@ -963,6 +982,7 @@
                     // Update the button text
 
                     // Play or stop the MP3 based on the current state
+                   
                     waveOut.Init(mp3Reader);
                     waveOut.Play();
                 }
@@ -973,9 +993,12 @@
             }
             else
             {
-                waveOut.Stop();
-                mp3Reader?.Dispose();
-                btnToggleMusic.Text = "Play";
+                if (waveOut.PlaybackState != PlaybackState.Stopped)
+                {
+                    waveOut.Stop();
+                    mp3Reader?.Dispose();
+                    btnToggleMusic.Text = "Play";
+                }
 
             }
             isMusicPlaying = !isMusicPlaying;
@@ -983,8 +1006,12 @@
 
         private void UpdateSelectedMusic()
         {
-            waveOut.Stop();
-            mp3Reader?.Dispose();
+            if (waveOut.PlaybackState != PlaybackState.Stopped)
+            {
+                waveOut.Stop();
+                mp3Reader?.Dispose();
+            }
+            
             string selectedMp3FilePath = Path.Combine(MusicDirectory, "00" + CurrentSongSelected.Substring(0, 2) + ".mp3");
             if (File.Exists(selectedMp3FilePath))
             {
