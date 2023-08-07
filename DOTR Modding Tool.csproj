@@ -105,6 +105,8 @@
     <Compile Include="Classes\DeckLeaderRankType.cs" />
     <Compile Include="Classes\DotrMap.cs" />
     <Compile Include="Classes\GameplayPatches.cs" />
+    <Compile Include="Classes\GameplayPatches\AIFasterTurnPassing.cs" />
+    <Compile Include="Classes\GameplayPatches\EmulatorCameraFix.cs" />
     <Compile Include="Classes\GameplayPatches\FastIntro.cs" />
     <Compile Include="Classes\GameplayPatches\NoNegativeXP.cs" />
     <Compile Include="Classes\GameplayPatches\Patch.cs" />
