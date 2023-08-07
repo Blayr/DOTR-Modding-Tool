@@ -106,6 +106,7 @@
     <Compile Include="Classes\DotrMap.cs" />
     <Compile Include="Classes\GameplayPatches.cs" />
     <Compile Include="Classes\GameplayPatches\AIFasterTurnPassing.cs" />
+    <Compile Include="Classes\GameplayPatches\AllowAllCustomDuels.cs" />
     <Compile Include="Classes\GameplayPatches\EmulatorCameraFix.cs" />
     <Compile Include="Classes\GameplayPatches\ExpandedZoom.cs" />
     <Compile Include="Classes\GameplayPatches\FastIntro.cs" />
