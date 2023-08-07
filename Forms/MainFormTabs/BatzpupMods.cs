@@ -79,8 +79,6 @@
             waveOut.Volume = 0.1f;
             patcher = new Patcher(dataAccess);
             ReadBatzpupModsFromIso();
-
-
         }
 
         private void ReadBatzpupModsFromIso()
@@ -96,7 +94,6 @@
             cbKeepReincarnatedCard.Checked = dataAccess.CheckIfPatchApplied(RemoveLoseCardOnReincarnation, new byte[4] { 0x00, 0x00, 0x00, 0x00 });
             cbAllFusions.Checked = dataAccess.CheckIfPatchApplied(Patcher.AllowAllHandFusions.Offset, Patcher.AllowAllHandFusions.Patch) || dataAccess.CheckIfPatchApplied(Patcher.AllowAllFieldFusions.Offset, Patcher.AllowAllFieldFusions.Patch);
             ReadValuesFromIso();
-
         }
 
         private void ReadValuesFromIso()
@@ -237,8 +234,6 @@
                         btnToggleMusic.Text = "Play";
                         isMusicPlaying = false;
                     }
-                  
-                    
                 }
             }
         }
@@ -283,9 +278,8 @@
                 value = rewardCell.Items.IndexOf(rewardCell.Value);
                 SpecialSlotRewards[i] = value;
             }
-
-
         }
+
         public void SetDoubleBuffered(Control c)
         {
             PropertyInfo pi = typeof(Control).GetProperty("DoubleBuffered",
@@ -303,6 +297,7 @@
             // Do something with the column and row values, such as displaying them
             ChangeSelectedTile((Terrain)value);
         }
+
         void ChangeSelectedTile(Terrain terrain)
         {
             selectedTile = terrain;
@@ -318,6 +313,7 @@
             currentMap = dataAccess.maps[0];
             lbDuelistMaps.SelectedIndex = 0;
         }
+
         private void splitContainer4_Panel2_MouseDown(object sender, MouseEventArgs e)
         {
             // Determine the clicked tile based on the mouse position
@@ -450,6 +446,7 @@
         {
             currentMap.Draw(e.Graphics, 75, 75);
         }
+
         private void BatzpupSaveButton_Click(object sender, EventArgs e)
         {
             HandleMainSave();
@@ -457,8 +454,6 @@
             SaveSlots();
             MessageBox.Show("Changes Save Successfully");
         }
-
-
 
         private void HandleMainSave()
         {
@@ -492,7 +487,6 @@
                     patcher.undoPatch(Patcher.AllowAllHandFusions);
                     patcher.undoPatch(Patcher.AllowAllFieldFusions);
                 }
-
             }
 
             new GameplayPatches.EmulatorCameraFix().ApplyOrRemove(cbEmulatorCameraFix.Checked);
@@ -812,12 +806,11 @@
             }
         }
 
-
-
         private void SaveMaps()
         {
             dataAccess.SaveMaps();
         }
+
         private void LoadDefaultMusic()
         {
             DuelistMusic = new Dictionary<int, string>();
@@ -833,8 +826,6 @@
         {
             GetMusicFiles();
         }
-
-
 
         private void GetMusicFiles()
         {
@@ -924,6 +915,7 @@
                 UpdateSelectedMusic();
             }
         }
+
         private void tbMusicVolume_ValueChanged(object sender, EventArgs e)
         {
             float volume = tbMusicVolume.Value / 50f; // Convert to a value between 0 and 1
@@ -1003,6 +995,7 @@
                 // MessageBox.Show("Selected MP3 file not found.");
             }
         }
+
         void EnableDisableSelection(bool enabled)
         {
 
@@ -1013,6 +1006,7 @@
             SetTabsEnabled(enabled);
 
         }
+
         public void SetTabsEnabled(bool enabled)
         {
             foreach (TabPage tabPage in mainTabControl.TabPages)
@@ -1021,6 +1015,5 @@
             }
         }
     }
-
 }
 
