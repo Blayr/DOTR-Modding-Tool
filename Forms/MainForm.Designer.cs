@@ -35,7 +35,7 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.isoSelectorFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -176,6 +176,7 @@
             this.tbBatzpup = new System.Windows.Forms.TabControl();
             this.batzpupTbMain = new System.Windows.Forms.TabPage();
             this.scBatzpupMain = new System.Windows.Forms.SplitContainer();
+            this.cbCrushCardChange = new System.Windows.Forms.CheckBox();
             this.cbNoDCRequirementPostGame = new System.Windows.Forms.CheckBox();
             this.cbKeepReincarnatedCard = new System.Windows.Forms.CheckBox();
             this.cbAddAddtionalSlotRewards = new System.Windows.Forms.CheckBox();
@@ -251,6 +252,9 @@
             this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RefreshEditor = new System.Windows.Forms.Timer(this.components);
+            this.gbLpRecovery = new System.Windows.Forms.GroupBox();
+            this.numLpRecoveryValue = new System.Windows.Forms.NumericUpDown();
+            this.cbChangeLpRecovery = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.hiddenCardsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -382,6 +386,8 @@
             this.scBatzpupMusicButtons.Panel2.SuspendLayout();
             this.scBatzpupMusicButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMusicVolume)).BeginInit();
+            this.gbLpRecovery.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLpRecoveryValue)).BeginInit();
             this.SuspendLayout();
             // 
             // isoSelectorFileDialog
@@ -407,7 +413,7 @@
             // openISOMenuItem
             // 
             this.openISOMenuItem.Name = "openISOMenuItem";
-            this.openISOMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.openISOMenuItem.Size = new System.Drawing.Size(86, 26);
             this.openISOMenuItem.Text = "Open ISO";
             this.openISOMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
             // 
@@ -417,7 +423,7 @@
             this.dOTRMapEditorToolStripMenuItem1,
             this.rOMMapDocumentationToolStripMenuItem});
             this.additionalResourcesToolStripMenuItem1.Name = "additionalResourcesToolStripMenuItem1";
-            this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(163, 24);
+            this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(163, 26);
             this.additionalResourcesToolStripMenuItem1.Text = "Additional Resources";
             // 
             // dOTRMapEditorToolStripMenuItem1
@@ -437,14 +443,14 @@
             // viewSourceOnGithubToolStripMenuItem1
             // 
             this.viewSourceOnGithubToolStripMenuItem1.Name = "viewSourceOnGithubToolStripMenuItem1";
-            this.viewSourceOnGithubToolStripMenuItem1.Size = new System.Drawing.Size(171, 24);
+            this.viewSourceOnGithubToolStripMenuItem1.Size = new System.Drawing.Size(171, 26);
             this.viewSourceOnGithubToolStripMenuItem1.Text = "View source on Github";
             this.viewSourceOnGithubToolStripMenuItem1.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem2
             // 
             this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
-            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(64, 24);
+            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(64, 26);
             this.aboutToolStripMenuItem2.Text = "About";
             this.aboutToolStripMenuItem2.Click += new System.EventHandler(this.aboutToolStripMenuItem2_Click);
             // 
@@ -455,7 +461,7 @@
             this.clovisYoutubeChannelToolStripMenuItem,
             this.dOTRReduxModToolStripMenuItem});
             this.coolStuffToolStripMenuItem.Name = "coolStuffToolStripMenuItem";
-            this.coolStuffToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.coolStuffToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
             this.coolStuffToolStripMenuItem.Text = "Cool Stuff";
             // 
             // clovisYoutubeChannelToolStripMenuItem
@@ -943,14 +949,14 @@
             this.cardConstantsDataGridView.AllowUserToOrderColumns = true;
             this.cardConstantsDataGridView.AllowUserToResizeRows = false;
             this.cardConstantsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cardConstantsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.cardConstantsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cardConstantsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardConstantId,
@@ -1949,6 +1955,7 @@
             // 
             // scBatzpupMain.Panel1
             // 
+            this.scBatzpupMain.Panel1.Controls.Add(this.cbCrushCardChange);
             this.scBatzpupMain.Panel1.Controls.Add(this.cbNoDCRequirementPostGame);
             this.scBatzpupMain.Panel1.Controls.Add(this.cbKeepReincarnatedCard);
             this.scBatzpupMain.Panel1.Controls.Add(this.cbAddAddtionalSlotRewards);
@@ -1964,6 +1971,7 @@
             // 
             // scBatzpupMain.Panel2
             // 
+            this.scBatzpupMain.Panel2.Controls.Add(this.gbLpRecovery);
             this.scBatzpupMain.Panel2.Controls.Add(this.gbChangeTerrainValues);
             this.scBatzpupMain.Panel2.Controls.Add(this.gbReincarnationCount);
             this.scBatzpupMain.Panel2.Controls.Add(this.gbChangeLpCap);
@@ -1972,6 +1980,20 @@
             this.scBatzpupMain.Size = new System.Drawing.Size(1136, 574);
             this.scBatzpupMain.SplitterDistance = 521;
             this.scBatzpupMain.TabIndex = 0;
+            // 
+            // cbCrushCardChange
+            // 
+            this.cbCrushCardChange.AutoSize = true;
+            this.cbCrushCardChange.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbCrushCardChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCrushCardChange.Location = new System.Drawing.Point(0, 480);
+            this.cbCrushCardChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbCrushCardChange.Name = "cbCrushCardChange";
+            this.cbCrushCardChange.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.cbCrushCardChange.Size = new System.Drawing.Size(521, 40);
+            this.cbCrushCardChange.TabIndex = 23;
+            this.cbCrushCardChange.Text = "Restore Crush Cards Glory";
+            this.cbCrushCardChange.UseVisualStyleBackColor = true;
             // 
             // cbNoDCRequirementPostGame
             // 
@@ -4849,6 +4871,58 @@
             // 
             this.RefreshEditor.Tick += new System.EventHandler(this.RefreshEditor_Tick);
             // 
+            // gbLpRecovery
+            // 
+            this.gbLpRecovery.Controls.Add(this.numLpRecoveryValue);
+            this.gbLpRecovery.Controls.Add(this.cbChangeLpRecovery);
+            this.gbLpRecovery.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbLpRecovery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbLpRecovery.Location = new System.Drawing.Point(0, 400);
+            this.gbLpRecovery.Margin = new System.Windows.Forms.Padding(3, 10, 3, 2);
+            this.gbLpRecovery.Name = "gbLpRecovery";
+            this.gbLpRecovery.Padding = new System.Windows.Forms.Padding(5, 10, 3, 10);
+            this.gbLpRecovery.Size = new System.Drawing.Size(611, 80);
+            this.gbLpRecovery.TabIndex = 21;
+            this.gbLpRecovery.TabStop = false;
+            this.gbLpRecovery.Text = "Lp Recovery Deck Leader Amount";
+            // 
+            // numLpRecoveryValue
+            // 
+            this.numLpRecoveryValue.Dock = System.Windows.Forms.DockStyle.Top;
+            this.numLpRecoveryValue.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numLpRecoveryValue.Location = new System.Drawing.Point(5, 51);
+            this.numLpRecoveryValue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numLpRecoveryValue.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numLpRecoveryValue.Name = "numLpRecoveryValue";
+            this.numLpRecoveryValue.Size = new System.Drawing.Size(603, 24);
+            this.numLpRecoveryValue.TabIndex = 11;
+            this.numLpRecoveryValue.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // cbChangeLpRecovery
+            // 
+            this.cbChangeLpRecovery.AutoSize = true;
+            this.cbChangeLpRecovery.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbChangeLpRecovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbChangeLpRecovery.Location = new System.Drawing.Point(5, 27);
+            this.cbChangeLpRecovery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbChangeLpRecovery.Name = "cbChangeLpRecovery";
+            this.cbChangeLpRecovery.Size = new System.Drawing.Size(603, 24);
+            this.cbChangeLpRecovery.TabIndex = 10;
+            this.cbChangeLpRecovery.Text = "Enabled";
+            this.cbChangeLpRecovery.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5013,6 +5087,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.scBatzpupMusicButtons)).EndInit();
             this.scBatzpupMusicButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbMusicVolume)).EndInit();
+            this.gbLpRecovery.ResumeLayout(false);
+            this.gbLpRecovery.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numLpRecoveryValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5230,5 +5307,9 @@
         private Label lblCurrentMusic;
         private CheckBox cbNoDCRequirementPostGame;
         private Timer RefreshEditor;
+        private CheckBox cbCrushCardChange;
+        private GroupBox gbLpRecovery;
+        private NumericUpDown numLpRecoveryValue;
+        private CheckBox cbChangeLpRecovery;
     }
 }

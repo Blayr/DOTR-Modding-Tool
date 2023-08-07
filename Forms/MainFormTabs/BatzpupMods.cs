@@ -478,7 +478,7 @@
         private void HandleMainSave()
         {
             ChangeSlotMusic();
-            //RestoreCrushCardsGlory();
+            
             if (IsUsingFastIntroMods())
             {
                 cbFastIntro.Checked = true;
@@ -797,8 +797,26 @@
             {
                 dataAccess.ApplyPatch(ChangeTerrainValues, new byte[16] { 0x0c, 0xfe, 0xb5, 0x26, 0x01, 0x00, 0x03, 0x24, 0x04, 0x00, 0x43, 0x50, 0xf4, 0x01, 0xb5, 0x26 });
             }
+            if(cbCrushCardChange.Checked)
+            {
+                RestoreCrushCardsGlory();
+            }
+            else
+            {
+                RevertCrushCard();
+            }
+            if (cbChangeLpRecovery.Checked)
+            {
+                byte[] value = BitConverter.GetBytes((uint)numLpRecoveryValue.Value);
+                dataAccess.ApplyPatch(0x24268C, new byte[4] { value[0], value[1], 0x04, 0x24 });
+            }
+            else
+            {
+                dataAccess.ApplyPatch(0x24268C, new byte[4] { 0x32, 0x00, 0x04, 0x24 });
+            }
         }
 
+   
         private void ChangeSlotMusic()
         {
             //Somehow break the music to be crush battle always?
@@ -820,6 +838,17 @@
 
             //Change Card Type
             dataAccess.ApplyPatch(0x292f88, new byte[1] { 0x20});
+        }
+
+        private void RevertCrushCard()
+        {
+            //Change Card Effect
+            dataAccess.ApplyPatch(0x29ca68, new byte[4] { 0x00, 0x00, 0x00, 0x00 });
+            //Change Card Param
+            dataAccess.ApplyPatch(0x29ca6c, new byte[4] { 0x00, 0x00, 0x00, 0x00 });
+
+            //Change Card Type
+            dataAccess.ApplyPatch(0x292f88, new byte[1] { 0x40 });
         }
 
         private void NopTutorialsForOtherMods()
@@ -1009,56 +1038,29 @@
             }
             if (!isMusicPlaying)
             {
-                // Open the file dialog to select an MP3 file
-
-                // Load the selected MP3 file
-                string selectedMp3FilePath = Path.Combine(MusicDirectory, "00" + CurrentSongSelected.Substring(0, 2) + ".mp3");
-                if (File.Exists(selectedMp3FilePath))
-                {
-                    
-                    mp3Reader = new Mp3FileReader(selectedMp3FilePath);
-
-                    // Toggle the play state
-                    btnToggleMusic.Text = "Stop";
-                    // Update the button text
-
-                    // Play or stop the MP3 based on the current state
-                   
-                    waveOut.Init(mp3Reader);
-                    waveOut.Play();
-                }
-                else
-                {
-                    //MessageBox.Show($"Track {CurrentSongSelected} not Found");
-                }
+                PlaySelectedTrack();
             }
             else
             {
-                if (waveOut.PlaybackState != PlaybackState.Stopped)
-                {
-                    waveOut.Stop();
-                    mp3Reader?.Dispose();
-                    btnToggleMusic.Text = "Play";
-                }
-
+                StopMusic();
             }
-            isMusicPlaying = !isMusicPlaying;
         }
 
         private void UpdateSelectedMusic()
         {
-            if (waveOut.PlaybackState != PlaybackState.Stopped)
-            {
-                waveOut.Stop();
-                mp3Reader?.Dispose();
-            }
-            
+            PlaySelectedTrack();
+
+        }
+
+        private void PlaySelectedTrack()
+        {
+            StopMusic();
+
             string selectedMp3FilePath = Path.Combine(MusicDirectory, "00" + CurrentSongSelected.Substring(0, 2) + ".mp3");
             if (File.Exists(selectedMp3FilePath))
             {
-                isMusicPlaying = true;
                 mp3Reader = new Mp3FileReader(selectedMp3FilePath);
-
+                
                 // Toggle the play state
                 btnToggleMusic.Text = "Stop";
                 // Update the button text
@@ -1066,13 +1068,22 @@
                 // Play or stop the MP3 based on the current state
                 waveOut.Init(mp3Reader);
                 waveOut.Play();
-            }
-            else
-            {
-                // The selected MP3 file does not exist
-                // MessageBox.Show("Selected MP3 file not found.");
+                isMusicPlaying = true;
             }
         }
+
+        private void StopMusic()
+        {
+            if (waveOut.PlaybackState != PlaybackState.Stopped)
+            {
+                
+                waveOut.Stop();
+                mp3Reader?.Dispose();
+                isMusicPlaying = false;
+                btnToggleMusic.Text = "Start";
+            }
+        }
+
         void EnableDisableSelection(bool enabled)
         {
 
