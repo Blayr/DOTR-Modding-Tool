@@ -48,12 +48,7 @@
 
         //Allow 5 digits for LP
         static int MoreDigitsOnScreen = 0x181cd0;
-        //Emulator Camera fixes
-        static int EmulatorCameraFix1 = 0x1a9428;
-        static int EmulatorCameraFix2 = 0x1a2c78;
-        static int EmulatorCameraFix3 = 0x1a2c80;
-        static int EmulatorCameraSpyFix1 = 0x225edc;
-        static int EmulatorCameraSpyFix2 = 0x225efc;
+
         //BELOW HERE REQUIRE FAST INTRO TO BE ENABLED:
         //Remove Dc Requirements
         static int TaTutoDbgInit34 = 0x145f60;
@@ -92,7 +87,7 @@
         {
             cbFastIntro.Checked = new GameplayPatches.FastIntro().IsApplied();
             cbAIInputFix.Checked = new GameplayPatches.AIFasterTurnPassing().IsApplied();
-            cbEmulatorCameraFix.Checked = dataAccess.CheckIfPatchApplied(EmulatorCameraFix1, new byte[4] { 0x00, 0x38, 0x02, 0x24 });
+            cbEmulatorCameraFix.Checked = new GameplayPatches.EmulatorCameraFix().IsApplied();
             cbExpandedZoom.Checked = dataAccess.CheckIfPatchApplied(ExpandZoom, new byte[12] { 0x71, 0x02, 0x41, 0x28, 0x04, 0x00, 0x20, 0x50, 0x71, 0x02, 0x03, 0x24 });
             cbRemoveRNGFromSlots.Checked = dataAccess.CheckIfPatchApplied(RemoveRngFromSlots, new byte[4] { 0x01, 0x00, 0x60, 0xa2 });
             cbAllowAllCustomDuels.Checked = dataAccess.CheckIfPatchApplied(0x197328, new byte[8] { 0x7c, 0xd1, 0x05, 0x08, 0x00, 0x00, 0x00, 0x00 });
@@ -499,22 +494,9 @@
                 }
 
             }
-            if (cbEmulatorCameraFix.Checked)
-            {
-                dataAccess.ApplyPatch(EmulatorCameraFix1, new byte[4] { 0x00, 0x38, 0x02, 0x24 });
-                dataAccess.ApplyPatch(EmulatorCameraFix2, new byte[4] { 0x00, 0x38, 0x41, 0x28 });
-                dataAccess.ApplyPatch(EmulatorCameraFix3, new byte[4] { 0x00, 0x38, 0x03, 0x24 });
-                dataAccess.ApplyPatch(EmulatorCameraSpyFix1, new byte[4] { 0x00, 0x38, 0x03, 0x24 });
-                dataAccess.ApplyPatch(EmulatorCameraSpyFix2, new byte[4] { 0x00, 0x38, 0x03, 0x24 });
-            }
-            else
-            {
-                dataAccess.ApplyPatch(EmulatorCameraFix1, new byte[4] { 0x00, 0x40, 0x02, 0x24 });
-                dataAccess.ApplyPatch(EmulatorCameraFix2, new byte[4] { 0x00, 0x40, 0x41, 0x28 });
-                dataAccess.ApplyPatch(EmulatorCameraFix3, new byte[4] { 0x00, 0x40, 0x03, 0x24 });
-                dataAccess.ApplyPatch(EmulatorCameraSpyFix1, new byte[4] { 0x00, 0x40, 0x03, 0x24 });
-                dataAccess.ApplyPatch(EmulatorCameraSpyFix2, new byte[4] { 0x00, 0x40, 0x03, 0x24 });
-            }
+
+            new GameplayPatches.EmulatorCameraFix().ApplyOrRemove(cbEmulatorCameraFix.Checked);
+
             if (cbExpandedZoom.Checked)
             {
                 dataAccess.ApplyPatch(ExpandZoom, new byte[12] { 0x71, 0x02, 0x41, 0x28, 0x04, 0x00, 0x20, 0x50, 0x71, 0x02, 0x03, 0x24 });
