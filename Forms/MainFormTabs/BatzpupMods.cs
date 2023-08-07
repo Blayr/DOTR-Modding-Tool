@@ -57,7 +57,7 @@
         //BELOW HERE REQUIRE FAST INTRO TO BE ENABLED:
         //Remove Dc Requirements
         static int TaTutoDbgInit34 = 0x145f60;
-        static int RemoveDcRequirements = 0x209f40;
+        
         static int TaTutoFocusUnit33 = 0x1446f0;
         static int TaTutoFocusInit34 = 0x145ca0;
         //TutorialStuff
@@ -95,7 +95,7 @@
             cbRemoveRNGFromSlots.Checked = dataAccess.CheckIfPatchApplied(RemoveRngFromSlots, new byte[4] { 0x01, 0x00, 0x60, 0xa2 });
             cbAllowAllCustomDuels.Checked = dataAccess.CheckIfPatchApplied(0x197328, new byte[8] { 0x7c, 0xd1, 0x05, 0x08, 0x00, 0x00, 0x00, 0x00 });
             cbRemoveNegetiveXP.Checked = new GameplayPatches.NoNegativeXP().IsApplied();
-            cbNoDCRequirementPostGame.Checked = dataAccess.CheckIfPatchApplied(RemoveDcRequirements, new byte[8] { 0x98, 0xd7, 0x05, 0x08, 0x00, 0x00, 0x00, 0x00 });
+            cbNoDCRequirementPostGame.Checked = new GameplayPatches.RemoveDCRequirements().IsApplied();
             cbKeepReincarnatedCard.Checked = dataAccess.CheckIfPatchApplied(RemoveLoseCardOnReincarnation, new byte[4] { 0x00, 0x00, 0x00, 0x00 });
             cbAllFusions.Checked = dataAccess.CheckIfPatchApplied(Patcher.AllowAllHandFusions.Offset, Patcher.AllowAllHandFusions.Patch) || dataAccess.CheckIfPatchApplied(Patcher.AllowAllFieldFusions.Offset, Patcher.AllowAllFieldFusions.Patch);
             ReadValuesFromIso();
@@ -583,17 +583,9 @@
             {
                 dataAccess.ApplyPatch(RemoveLoseCardOnReincarnation, new byte[4] { 0x24, 0x59, 0x08, 0x0c });
             }
-            if (cbNoDCRequirementPostGame.Checked)
-            {
 
-                dataAccess.ApplyPatch(RemoveDcRequirements, new byte[8] { 0x98, 0xd7, 0x05, 0x08, 0x00, 0x00, 0x00, 0x00 });
-                dataAccess.ApplyPatch(TaTutoDbgInit34, new byte[60] { 0x01, 0x00, 0x0c, 0x82, 0x03, 0x00, 0x80, 0x15, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x10, 0x08, 0x08, 0x00, 0x70, 0x02, 0x00, 0x0c, 0x82, 0x06, 0x00, 0x80, 0x15, 0x00, 0x00, 0x00, 0x00, 0x2a, 0x08, 0x43, 0x00, 0x03, 0x00, 0x20, 0x10, 0x00, 0x00, 0x00, 0x00, 0x93, 0xe7, 0x08, 0x08, 0x00, 0x00, 0x00, 0x00, 0x99, 0xe7, 0x08, 0x08, 0x00, 0x00, 0x00, 0x00 });
-            }
-            else
-            {
-                dataAccess.ApplyPatch(RemoveDcRequirements, new byte[8] { 0x2a, 0x08, 0x43, 0x00, 0x08, 0x00, 0x20, 0x10 });
+            new GameplayPatches.RemoveDCRequirements().ApplyOrRemove(cbNoDCRequirementPostGame.Checked);
 
-            }
             if (cbSideFirst.Checked)
             {
                 if (cboSideFirst.SelectedIndex == -1)
