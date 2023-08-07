@@ -107,10 +107,12 @@
     <Compile Include="Classes\GameplayPatches.cs" />
     <Compile Include="Classes\GameplayPatches\AIFasterTurnPassing.cs" />
     <Compile Include="Classes\GameplayPatches\EmulatorCameraFix.cs" />
+    <Compile Include="Classes\GameplayPatches\ExpandedZoom.cs" />
     <Compile Include="Classes\GameplayPatches\FastIntro.cs" />
     <Compile Include="Classes\GameplayPatches\NoNegativeXP.cs" />
     <Compile Include="Classes\GameplayPatches\Patch.cs" />
     <Compile Include="Classes\GameplayPatches\RemoveDCRequirements.cs" />
+    <Compile Include="Classes\GameplayPatches\RemoveRNGFromSlots.cs" />
     <Compile Include="Classes\MapTile.cs" />
     <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="Classes\VanillaMapBytes.cs" />
