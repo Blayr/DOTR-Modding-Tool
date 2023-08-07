@@ -42,7 +42,6 @@
         static int ChangeTerrainValues = 0x236590;
         //Reincarnation
         static int ChangeReincarnationAmountPtr = 0x1f8290;
-        static int RemoveLoseCardOnReincarnation = 0x189f1c;
 
         //Allow 5 digits for LP
         static int MoreDigitsOnScreen = 0x181cd0;
@@ -89,7 +88,7 @@
             cbAllowAllCustomDuels.Checked = new GameplayPatches.AllowAllCustomDuels().IsApplied();
             cbRemoveNegetiveXP.Checked = new GameplayPatches.NoNegativeXP().IsApplied();
             cbNoDCRequirementPostGame.Checked = new GameplayPatches.RemoveDCRequirements().IsApplied();
-            cbKeepReincarnatedCard.Checked = dataAccess.CheckIfPatchApplied(RemoveLoseCardOnReincarnation, new byte[4] { 0x00, 0x00, 0x00, 0x00 });
+            cbKeepReincarnatedCard.Checked = new GameplayPatches.KeepReincarnatedCard().IsApplied();
             cbAllFusions.Checked = dataAccess.CheckIfPatchApplied(Patcher.AllowAllHandFusions.Offset, Patcher.AllowAllHandFusions.Patch) || dataAccess.CheckIfPatchApplied(Patcher.AllowAllFieldFusions.Offset, Patcher.AllowAllFieldFusions.Patch);
             ReadValuesFromIso();
         }
@@ -518,16 +517,7 @@
             }
 
             new GameplayPatches.AllowAllCustomDuels().ApplyOrRemove(cbAllowAllCustomDuels.Checked);
-
-            if (cbKeepReincarnatedCard.Checked)
-            {
-                dataAccess.NopInstructions(RemoveLoseCardOnReincarnation, 1);
-            }
-            else
-            {
-                dataAccess.ApplyPatch(RemoveLoseCardOnReincarnation, new byte[4] { 0x24, 0x59, 0x08, 0x0c });
-            }
-
+            new GameplayPatches.KeepReincarnatedCard().ApplyOrRemove(cbKeepReincarnatedCard.Checked);
             new GameplayPatches.RemoveDCRequirements().ApplyOrRemove(cbNoDCRequirementPostGame.Checked);
 
             if (cbSideFirst.Checked)

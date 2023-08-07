@@ -110,6 +110,7 @@
     <Compile Include="Classes\GameplayPatches\EmulatorCameraFix.cs" />
     <Compile Include="Classes\GameplayPatches\ExpandedZoom.cs" />
     <Compile Include="Classes\GameplayPatches\FastIntro.cs" />
+    <Compile Include="Classes\GameplayPatches\KeepReincarnatedCard.cs" />
     <Compile Include="Classes\GameplayPatches\NoNegativeXP.cs" />
     <Compile Include="Classes\GameplayPatches\Patch.cs" />
     <Compile Include="Classes\GameplayPatches\RemoveDCRequirements.cs" />
