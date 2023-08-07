@@ -3,6 +3,13 @@ using System;
 namespace GameplayPatches {
   public class Patch
   {
+    protected DataAccess dataAccess {
+      get { 
+        return DataAccess.Instance;
+      }
+    }
+
+
     public void ApplyOrRemove(bool apply)
     {
       if (apply)
