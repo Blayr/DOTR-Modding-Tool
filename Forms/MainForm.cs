@@ -102,6 +102,7 @@
             this.LoadCardEquipData();
             this.loadBatzpupMods();
             this.toggleEnableControls(true);
+            this.HandleLoadMaps();
         }
 
         private void toggleEnableControls(bool enabled)
@@ -126,10 +127,6 @@
             // Reflection is a hack because the DoubleBuffered property is protected. Maybe this indicates we should be subclassing DataGridView.
             PropertyInfo property = typeof(DataGridView).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
             property.SetValue(view, true, null);
-        }
-        private void dOTRMapEditorToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/rjoken/DOTRMap");
         }
 
         private void aboutToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -157,7 +154,5 @@
         {
             System.Diagnostics.Process.Start("https://docs.google.com/document/d/1L_hkkhuF4C3miPzkiTSF_vPPOCov48kqNyhPqQBHTZQ/edit#");
         }
-
-      
-    }
+  }
 }
