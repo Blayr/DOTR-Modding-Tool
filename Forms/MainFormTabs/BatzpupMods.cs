@@ -82,11 +82,20 @@
             cbNoDCRequirementPostGame.Checked = new GameplayPatches.RemoveDCRequirements().IsApplied();
             cbKeepReincarnatedCard.Checked = new GameplayPatches.KeepReincarnatedCard().IsApplied();
             cbAllFusions.Checked = dataAccess.CheckIfPatchApplied(Patcher.AllowAllHandFusions.Offset, Patcher.AllowAllHandFusions.Patch) || dataAccess.CheckIfPatchApplied(Patcher.AllowAllFieldFusions.Offset, Patcher.AllowAllFieldFusions.Patch);
+            cbCrushCardChange.Checked = dataAccess.CheckIfPatchApplied(0x29ca68, new byte[4] { 0xfd, 0x02, 0x00, 0x00 });
+            cbToonLeaderTerrainChange.Checked = new GameplayPatches.ToonLeadersMovePatch().IsApplied();
             ReadValuesFromIso();
         }
 
         private void ReadValuesFromIso()
         {
+            
+            cbChangeLpRecovery.Checked = !dataAccess.CheckIfPatchApplied(0x24268C, new byte[4] { 0x32, 0x00, 0x04, 0x24 });
+            if(cbChangeLpRecovery.Checked )
+            {
+                
+                numLpRecoveryValue.Value = BitConverter.ToInt16(dataAccess.ReadBytes(0x24268C, 2),0);
+            }
             cbSideFirst.Checked = dataAccess.CheckIfPatchApplied(0x1a7b08, new byte[4] { 0x00, 0xff, 0x23, 0x92 });
             if (cbSideFirst.Checked)
             {
@@ -295,6 +304,7 @@
             new GameplayPatches.ExpandedZoom().ApplyOrRemove(cbExpandedZoom.Checked);
             new GameplayPatches.NoNegativeXP().ApplyOrRemove(cbRemoveNegetiveXP.Checked);
             new GameplayPatches.RemoveRNGFromSlots().ApplyOrRemove(cbRemoveRNGFromSlots.Checked);
+            new GameplayPatches.ToonLeadersMovePatch().ApplyOrRemove(cbToonLeaderTerrainChange.Checked);
 
             if (cbUseCustomMusic.Checked)
             {
@@ -315,10 +325,22 @@
                 //patch jump
                 dataAccess.ApplyPatch(AddCustomMusicPtr, new byte[8] { 0xc0, 0xfd, 0x09, 0x08, 0x15, 0x00, 0x03, 0x24 });
                 dataAccess.ApplyPatch(TaTuto_DrawTrapArea, bytes);
+
+                //Add music restart fix for combat
+
+                dataAccess.ApplyPatch(0x1a0208, new byte[4] { 0x01, 0x00, 0x04, 0x24 });
+                dataAccess.ApplyPatch(0x1a0d04, new byte[4] { 0x01, 0x00, 0x04, 0x24 });
+                dataAccess.ApplyPatch(0x1a0ee0, new byte[4] { 0x01, 0x00, 0x04, 0x24 });
+                dataAccess.ApplyPatch(0x1a0f80, new byte[4] { 0x01, 0x00, 0x04, 0x24 });
             }
             else
             {
                 dataAccess.ApplyPatch(AddCustomMusicPtr, new byte[8] { 0x3c, 0x01, 0xe6, 0x8c, 0x15, 0x00, 0x03, 0x24 });
+
+                dataAccess.ApplyPatch(0x1a0208, new byte[4] { 0x84, 0x0c, 0x24, 0x96 });
+                dataAccess.ApplyPatch(0x1a0d04, new byte[4] { 0x84, 0x0c, 0x24, 0x96 });
+                dataAccess.ApplyPatch(0x1a0ee0, new byte[4] { 0x84, 0x0c, 0x24, 0x96 });
+                dataAccess.ApplyPatch(0x1a0f80, new byte[4] { 0x84, 0x0c, 0x24, 0x96 });
             }
 
             new GameplayPatches.AllowAllCustomDuels().ApplyOrRemove(cbAllowAllCustomDuels.Checked);
@@ -518,6 +540,10 @@
                 MessageBox.Show("Slot Track Number is invalid");
             }
             dataAccess.ApplyPatch(SlotTrackPtr, new byte[4] { bytes[0], 0x00, 0x04, 0x24 });
+
+
+
+     
         }
 
         private void RestoreCrushCardsGlory()

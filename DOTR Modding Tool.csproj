@@ -116,6 +116,7 @@
     <Compile Include="Classes\GameplayPatches\Patcher.cs" />
     <Compile Include="Classes\GameplayPatches\RemoveDCRequirements.cs" />
     <Compile Include="Classes\GameplayPatches\RemoveRNGFromSlots.cs" />
+    <Compile Include="Classes\GameplayPatches\ToonLeadersMovePatch.cs" />
     <Compile Include="Classes\MapTile.cs" />
     <Compile Include="Classes\SortableBindingList.cs" />
     <Compile Include="Classes\VanillaMapBytes.cs" />
