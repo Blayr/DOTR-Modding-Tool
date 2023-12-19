@@ -176,6 +176,7 @@
             this.tbBatzpup = new System.Windows.Forms.TabControl();
             this.batzpupTbMain = new System.Windows.Forms.TabPage();
             this.scBatzpupMain = new System.Windows.Forms.SplitContainer();
+            this.cbToonLeaderTerrainChange = new System.Windows.Forms.CheckBox();
             this.cbCrushCardChange = new System.Windows.Forms.CheckBox();
             this.cbNoDCRequirementPostGame = new System.Windows.Forms.CheckBox();
             this.cbKeepReincarnatedCard = new System.Windows.Forms.CheckBox();
@@ -257,7 +258,6 @@
             this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RefreshEditor = new System.Windows.Forms.Timer(this.components);
-            this.cbToonLeaderTerrainChange = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.hiddenCardsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -413,14 +413,14 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1164, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1164, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // openISOMenuItem
             // 
             this.openISOMenuItem.Name = "openISOMenuItem";
-            this.openISOMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.openISOMenuItem.Size = new System.Drawing.Size(86, 24);
             this.openISOMenuItem.Text = "Open ISO";
             this.openISOMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
             // 
@@ -430,34 +430,34 @@
             this.dOTRMapEditorToolStripMenuItem1,
             this.rOMMapDocumentationToolStripMenuItem});
             this.additionalResourcesToolStripMenuItem1.Name = "additionalResourcesToolStripMenuItem1";
-            this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(130, 20);
+            this.additionalResourcesToolStripMenuItem1.Size = new System.Drawing.Size(163, 24);
             this.additionalResourcesToolStripMenuItem1.Text = "Additional Resources";
             // 
             // dOTRMapEditorToolStripMenuItem1
             // 
             this.dOTRMapEditorToolStripMenuItem1.Name = "dOTRMapEditorToolStripMenuItem1";
-            this.dOTRMapEditorToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
+            this.dOTRMapEditorToolStripMenuItem1.Size = new System.Drawing.Size(266, 26);
             this.dOTRMapEditorToolStripMenuItem1.Text = "DOTR Map Editor";
             this.dOTRMapEditorToolStripMenuItem1.Click += new System.EventHandler(this.dOTRMapEditorToolStripMenuItem1_Click);
             // 
             // rOMMapDocumentationToolStripMenuItem
             // 
             this.rOMMapDocumentationToolStripMenuItem.Name = "rOMMapDocumentationToolStripMenuItem";
-            this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.rOMMapDocumentationToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
             this.rOMMapDocumentationToolStripMenuItem.Text = "ROM Map Documentation";
             this.rOMMapDocumentationToolStripMenuItem.Click += new System.EventHandler(this.rOMMapDocumentationToolStripMenuItem_Click);
             // 
             // viewSourceOnGithubToolStripMenuItem1
             // 
             this.viewSourceOnGithubToolStripMenuItem1.Name = "viewSourceOnGithubToolStripMenuItem1";
-            this.viewSourceOnGithubToolStripMenuItem1.Size = new System.Drawing.Size(138, 20);
+            this.viewSourceOnGithubToolStripMenuItem1.Size = new System.Drawing.Size(171, 24);
             this.viewSourceOnGithubToolStripMenuItem1.Text = "View source on Github";
             this.viewSourceOnGithubToolStripMenuItem1.Click += new System.EventHandler(this.viewSourceOnGithubToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem2
             // 
             this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
-            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem2.Text = "About";
             this.aboutToolStripMenuItem2.Click += new System.EventHandler(this.aboutToolStripMenuItem2_Click);
             // 
@@ -468,30 +468,30 @@
             this.clovisYoutubeChannelToolStripMenuItem,
             this.dOTRReduxModToolStripMenuItem});
             this.coolStuffToolStripMenuItem.Name = "coolStuffToolStripMenuItem";
-            this.coolStuffToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.coolStuffToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.coolStuffToolStripMenuItem.Text = "Cool Stuff";
             // 
             // clovisYoutubeChannelToolStripMenuItem
             // 
             this.clovisYoutubeChannelToolStripMenuItem.Name = "clovisYoutubeChannelToolStripMenuItem";
-            this.clovisYoutubeChannelToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.clovisYoutubeChannelToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.clovisYoutubeChannelToolStripMenuItem.Text = "Clovis\' Youtube Channel";
             this.clovisYoutubeChannelToolStripMenuItem.Click += new System.EventHandler(this.clovisYoutubeChannelToolStripMenuItem_Click);
             // 
             // dOTRReduxModToolStripMenuItem
             // 
             this.dOTRReduxModToolStripMenuItem.Name = "dOTRReduxModToolStripMenuItem";
-            this.dOTRReduxModToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.dOTRReduxModToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.dOTRReduxModToolStripMenuItem.Text = "DOTR Redux Mod";
             this.dOTRReduxModToolStripMenuItem.Click += new System.EventHandler(this.dOTRReduxModToolStripMenuItem_Click);
             // 
             // hiddenCardsTab
             // 
             this.hiddenCardsTab.Controls.Add(this.hiddenCardsSplitContainer);
-            this.hiddenCardsTab.Location = new System.Drawing.Point(4, 24);
+            this.hiddenCardsTab.Location = new System.Drawing.Point(4, 27);
             this.hiddenCardsTab.Name = "hiddenCardsTab";
             this.hiddenCardsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.hiddenCardsTab.Size = new System.Drawing.Size(1156, 680);
+            this.hiddenCardsTab.Size = new System.Drawing.Size(1156, 677);
             this.hiddenCardsTab.TabIndex = 4;
             this.hiddenCardsTab.Text = "Hidden Cards";
             this.hiddenCardsTab.UseVisualStyleBackColor = true;
@@ -518,7 +518,7 @@
             this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardRowNumericUpDown);
             this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardSaveButton);
             this.hiddenCardsSplitContainer.Panel2.Controls.Add(this.treasureCardCardComboBox);
-            this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(1150, 674);
+            this.hiddenCardsSplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.hiddenCardsSplitContainer.SplitterDistance = 239;
             this.hiddenCardsSplitContainer.TabIndex = 0;
             // 
@@ -527,10 +527,10 @@
             this.treasureCardsListbox.DisplayMember = "EnemyName";
             this.treasureCardsListbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treasureCardsListbox.FormattingEnabled = true;
-            this.treasureCardsListbox.ItemHeight = 15;
+            this.treasureCardsListbox.ItemHeight = 18;
             this.treasureCardsListbox.Location = new System.Drawing.Point(0, 0);
             this.treasureCardsListbox.Name = "treasureCardsListbox";
-            this.treasureCardsListbox.Size = new System.Drawing.Size(239, 674);
+            this.treasureCardsListbox.Size = new System.Drawing.Size(239, 671);
             this.treasureCardsListbox.TabIndex = 0;
             this.treasureCardsListbox.SelectedIndexChanged += new System.EventHandler(this.treasureCardsListbox_SelectedIndexChanged);
             // 
@@ -539,7 +539,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(44, 132);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(319, 15);
+            this.label7.Size = new System.Drawing.Size(385, 18);
             this.label7.TabIndex = 14;
             this.label7.Text = "Valid Row and Column numbers are 0-6 ( total of 7 each )";
             // 
@@ -548,7 +548,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(44, 176);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(353, 15);
+            this.label6.Size = new System.Drawing.Size(431, 18);
             this.label6.TabIndex = 13;
             this.label6.Text = "Vs Red Rose - Row # and Column # start at 0 in the bottom right";
             // 
@@ -557,7 +557,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(44, 154);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(332, 15);
+            this.label5.Size = new System.Drawing.Size(407, 18);
             this.label5.TabIndex = 12;
             this.label5.Text = "Vs White Rose - Row # and Column # start at 0 in the top left";
             // 
@@ -566,7 +566,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(44, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 15);
+            this.label4.Size = new System.Drawing.Size(40, 18);
             this.label4.TabIndex = 11;
             this.label4.Text = "Card";
             // 
@@ -575,7 +575,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(125, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
+            this.label3.Size = new System.Drawing.Size(72, 18);
             this.label3.TabIndex = 9;
             this.label3.Text = "Column #";
             // 
@@ -584,7 +584,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(44, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 15);
+            this.label2.Size = new System.Drawing.Size(51, 18);
             this.label2.TabIndex = 8;
             this.label2.Text = "Row #";
             // 
@@ -597,7 +597,7 @@
             0,
             0});
             this.treasureCardColumnNumericUpDown.Name = "treasureCardColumnNumericUpDown";
-            this.treasureCardColumnNumericUpDown.Size = new System.Drawing.Size(46, 21);
+            this.treasureCardColumnNumericUpDown.Size = new System.Drawing.Size(46, 24);
             this.treasureCardColumnNumericUpDown.TabIndex = 7;
             // 
             // treasureCardRowNumericUpDown
@@ -609,7 +609,7 @@
             0,
             0});
             this.treasureCardRowNumericUpDown.Name = "treasureCardRowNumericUpDown";
-            this.treasureCardRowNumericUpDown.Size = new System.Drawing.Size(46, 21);
+            this.treasureCardRowNumericUpDown.Size = new System.Drawing.Size(46, 24);
             this.treasureCardRowNumericUpDown.TabIndex = 6;
             // 
             // treasureCardSaveButton
@@ -628,17 +628,17 @@
             this.treasureCardCardComboBox.FormattingEnabled = true;
             this.treasureCardCardComboBox.Location = new System.Drawing.Point(47, 40);
             this.treasureCardCardComboBox.Name = "treasureCardCardComboBox";
-            this.treasureCardCardComboBox.Size = new System.Drawing.Size(166, 23);
+            this.treasureCardCardComboBox.Size = new System.Drawing.Size(166, 26);
             this.treasureCardCardComboBox.TabIndex = 0;
             this.treasureCardCardComboBox.ValueMember = "Index";
             // 
             // enemyAiTab
             // 
             this.enemyAiTab.Controls.Add(this.enemyAiTabSplitContainer);
-            this.enemyAiTab.Location = new System.Drawing.Point(4, 24);
+            this.enemyAiTab.Location = new System.Drawing.Point(4, 27);
             this.enemyAiTab.Name = "enemyAiTab";
             this.enemyAiTab.Padding = new System.Windows.Forms.Padding(3);
-            this.enemyAiTab.Size = new System.Drawing.Size(1156, 680);
+            this.enemyAiTab.Size = new System.Drawing.Size(1156, 677);
             this.enemyAiTab.TabIndex = 3;
             this.enemyAiTab.Text = "Enemy Ai";
             this.enemyAiTab.UseVisualStyleBackColor = true;
@@ -658,7 +658,7 @@
             // enemyAiTabSplitContainer.Panel2
             // 
             this.enemyAiTabSplitContainer.Panel2.Controls.Add(this.enemyAiDataGridView);
-            this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(1150, 674);
+            this.enemyAiTabSplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.enemyAiTabSplitContainer.SplitterDistance = 25;
             this.enemyAiTabSplitContainer.TabIndex = 1;
             // 
@@ -688,7 +688,7 @@
             this.enemyAiDataGridView.Name = "enemyAiDataGridView";
             this.enemyAiDataGridView.RowHeadersVisible = false;
             this.enemyAiDataGridView.RowHeadersWidth = 51;
-            this.enemyAiDataGridView.Size = new System.Drawing.Size(1150, 645);
+            this.enemyAiDataGridView.Size = new System.Drawing.Size(1150, 642);
             this.enemyAiDataGridView.TabIndex = 0;
             // 
             // EnemyIndex
@@ -719,10 +719,10 @@
             // fusionsTab
             // 
             this.fusionsTab.Controls.Add(this.splitContainer2);
-            this.fusionsTab.Location = new System.Drawing.Point(4, 24);
+            this.fusionsTab.Location = new System.Drawing.Point(4, 27);
             this.fusionsTab.Name = "fusionsTab";
             this.fusionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.fusionsTab.Size = new System.Drawing.Size(1156, 680);
+            this.fusionsTab.Size = new System.Drawing.Size(1156, 677);
             this.fusionsTab.TabIndex = 2;
             this.fusionsTab.Text = "Fusions";
             this.fusionsTab.UseVisualStyleBackColor = true;
@@ -743,7 +743,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.fusionsDataGridView);
-            this.splitContainer2.Size = new System.Drawing.Size(1150, 674);
+            this.splitContainer2.Size = new System.Drawing.Size(1150, 671);
             this.splitContainer2.SplitterDistance = 25;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -752,7 +752,7 @@
             this.fusionTableTipLabel.AutoSize = true;
             this.fusionTableTipLabel.Location = new System.Drawing.Point(5, 8);
             this.fusionTableTipLabel.Name = "fusionTableTipLabel";
-            this.fusionTableTipLabel.Size = new System.Drawing.Size(319, 15);
+            this.fusionTableTipLabel.Size = new System.Drawing.Size(384, 18);
             this.fusionTableTipLabel.TabIndex = 1;
             this.fusionTableTipLabel.Text = "Tip: You can start typing immediately after selecting a cell.";
             // 
@@ -786,7 +786,7 @@
             this.fusionsDataGridView.Name = "fusionsDataGridView";
             this.fusionsDataGridView.RowHeadersVisible = false;
             this.fusionsDataGridView.RowHeadersWidth = 51;
-            this.fusionsDataGridView.Size = new System.Drawing.Size(1150, 645);
+            this.fusionsDataGridView.Size = new System.Drawing.Size(1150, 642);
             this.fusionsDataGridView.TabIndex = 0;
             // 
             // FusionsDataGridViewIndex
@@ -859,10 +859,10 @@
             // cardPropertiesTab
             // 
             this.cardPropertiesTab.Controls.Add(this.splitContainer1);
-            this.cardPropertiesTab.Location = new System.Drawing.Point(4, 24);
+            this.cardPropertiesTab.Location = new System.Drawing.Point(4, 27);
             this.cardPropertiesTab.Name = "cardPropertiesTab";
             this.cardPropertiesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.cardPropertiesTab.Size = new System.Drawing.Size(1156, 680);
+            this.cardPropertiesTab.Size = new System.Drawing.Size(1156, 677);
             this.cardPropertiesTab.TabIndex = 1;
             this.cardPropertiesTab.Text = "Card Properties";
             this.cardPropertiesTab.UseVisualStyleBackColor = true;
@@ -888,7 +888,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.cardConstantsDataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(1150, 674);
+            this.splitContainer1.Size = new System.Drawing.Size(1150, 671);
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -897,7 +897,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(323, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(320, 15);
+            this.label8.Size = new System.Drawing.Size(392, 18);
             this.label8.TabIndex = 5;
             this.label8.Text = "Select multiple rows with shift or ctrl keys, right click to edit";
             // 
@@ -927,7 +927,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(5, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.Size = new System.Drawing.Size(44, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Filter:";
             // 
@@ -945,7 +945,7 @@
             // 
             this.cardConstantsFilterTextbox.Location = new System.Drawing.Point(43, 4);
             this.cardConstantsFilterTextbox.Name = "cardConstantsFilterTextbox";
-            this.cardConstantsFilterTextbox.Size = new System.Drawing.Size(112, 21);
+            this.cardConstantsFilterTextbox.Size = new System.Drawing.Size(112, 24);
             this.cardConstantsFilterTextbox.TabIndex = 0;
             this.cardConstantsFilterTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cardConstantsFilterTextbox_KeyDown);
             // 
@@ -985,7 +985,7 @@
             this.cardConstantsDataGridView.RowHeadersVisible = false;
             this.cardConstantsDataGridView.RowHeadersWidth = 51;
             this.cardConstantsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cardConstantsDataGridView.Size = new System.Drawing.Size(1150, 645);
+            this.cardConstantsDataGridView.Size = new System.Drawing.Size(1150, 642);
             this.cardConstantsDataGridView.TabIndex = 0;
             // 
             // CardConstantId
@@ -1106,10 +1106,10 @@
             this.leaderRankTresholdsTab.Controls.Add(this.originalRankThresholdsTextbox);
             this.leaderRankTresholdsTab.Controls.Add(this.rankThresholdsSaveButton);
             this.leaderRankTresholdsTab.Controls.Add(this.rankThresholdsDataGridView);
-            this.leaderRankTresholdsTab.Location = new System.Drawing.Point(4, 24);
+            this.leaderRankTresholdsTab.Location = new System.Drawing.Point(4, 27);
             this.leaderRankTresholdsTab.Name = "leaderRankTresholdsTab";
             this.leaderRankTresholdsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.leaderRankTresholdsTab.Size = new System.Drawing.Size(1156, 680);
+            this.leaderRankTresholdsTab.Size = new System.Drawing.Size(1156, 677);
             this.leaderRankTresholdsTab.TabIndex = 0;
             this.leaderRankTresholdsTab.Text = "Rank Thresholds";
             this.leaderRankTresholdsTab.UseVisualStyleBackColor = true;
@@ -1121,7 +1121,7 @@
             this.textBox2.Location = new System.Drawing.Point(326, 25);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(71, 14);
+            this.textBox2.Size = new System.Drawing.Size(71, 17);
             this.textBox2.TabIndex = 22;
             this.textBox2.Text = "New Bytes:";
             // 
@@ -1132,7 +1132,7 @@
             this.textBox1.Location = new System.Drawing.Point(326, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(71, 14);
+            this.textBox1.Size = new System.Drawing.Size(71, 17);
             this.textBox1.TabIndex = 21;
             this.textBox1.Text = "Orignal Bytes:";
             // 
@@ -1143,7 +1143,7 @@
             this.newRankThresholdsTextbox.Location = new System.Drawing.Point(403, 25);
             this.newRankThresholdsTextbox.Name = "newRankThresholdsTextbox";
             this.newRankThresholdsTextbox.ReadOnly = true;
-            this.newRankThresholdsTextbox.Size = new System.Drawing.Size(493, 14);
+            this.newRankThresholdsTextbox.Size = new System.Drawing.Size(493, 17);
             this.newRankThresholdsTextbox.TabIndex = 20;
             // 
             // originalRankThresholdsTextbox
@@ -1153,7 +1153,7 @@
             this.originalRankThresholdsTextbox.Location = new System.Drawing.Point(403, 6);
             this.originalRankThresholdsTextbox.Name = "originalRankThresholdsTextbox";
             this.originalRankThresholdsTextbox.ReadOnly = true;
-            this.originalRankThresholdsTextbox.Size = new System.Drawing.Size(493, 14);
+            this.originalRankThresholdsTextbox.Size = new System.Drawing.Size(493, 17);
             this.originalRankThresholdsTextbox.TabIndex = 0;
             // 
             // rankThresholdsSaveButton
@@ -1207,10 +1207,10 @@
             // deckEditorTab
             // 
             this.deckEditorTab.Controls.Add(this.deckEditorTabSplitContainer);
-            this.deckEditorTab.Location = new System.Drawing.Point(4, 24);
+            this.deckEditorTab.Location = new System.Drawing.Point(4, 27);
             this.deckEditorTab.Name = "deckEditorTab";
             this.deckEditorTab.Padding = new System.Windows.Forms.Padding(3);
-            this.deckEditorTab.Size = new System.Drawing.Size(1156, 680);
+            this.deckEditorTab.Size = new System.Drawing.Size(1156, 677);
             this.deckEditorTab.TabIndex = 7;
             this.deckEditorTab.Text = "Deck Editor";
             this.deckEditorTab.UseVisualStyleBackColor = true;
@@ -1228,7 +1228,7 @@
             // deckEditorTabSplitContainer.Panel2
             // 
             this.deckEditorTabSplitContainer.Panel2.Controls.Add(this.deckEditorSplitContainer);
-            this.deckEditorTabSplitContainer.Size = new System.Drawing.Size(1150, 674);
+            this.deckEditorTabSplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.deckEditorTabSplitContainer.SplitterDistance = 569;
             this.deckEditorTabSplitContainer.TabIndex = 0;
             // 
@@ -1253,7 +1253,7 @@
             // cardTrunkSplitContainer.Panel2
             // 
             this.cardTrunkSplitContainer.Panel2.Controls.Add(this.trunkDataGridView);
-            this.cardTrunkSplitContainer.Size = new System.Drawing.Size(569, 674);
+            this.cardTrunkSplitContainer.Size = new System.Drawing.Size(569, 671);
             this.cardTrunkSplitContainer.SplitterDistance = 60;
             this.cardTrunkSplitContainer.TabIndex = 1;
             // 
@@ -1263,7 +1263,7 @@
             this.trunkTipLabel.AutoSize = true;
             this.trunkTipLabel.Location = new System.Drawing.Point(272, 11);
             this.trunkTipLabel.Name = "trunkTipLabel";
-            this.trunkTipLabel.Size = new System.Drawing.Size(332, 15);
+            this.trunkTipLabel.Size = new System.Drawing.Size(408, 18);
             this.trunkTipLabel.TabIndex = 6;
             this.trunkTipLabel.Text = "Double click card to add to deck, right click for more options.";
             // 
@@ -1273,7 +1273,7 @@
             this.cardTrunkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cardTrunkLabel.Location = new System.Drawing.Point(5, 6);
             this.cardTrunkLabel.Name = "cardTrunkLabel";
-            this.cardTrunkLabel.Size = new System.Drawing.Size(54, 20);
+            this.cardTrunkLabel.Size = new System.Drawing.Size(68, 25);
             this.cardTrunkLabel.TabIndex = 5;
             this.cardTrunkLabel.Text = "Trunk";
             // 
@@ -1281,7 +1281,7 @@
             // 
             this.trunkFilterTextBox.Location = new System.Drawing.Point(46, 34);
             this.trunkFilterTextBox.Name = "trunkFilterTextBox";
-            this.trunkFilterTextBox.Size = new System.Drawing.Size(122, 21);
+            this.trunkFilterTextBox.Size = new System.Drawing.Size(122, 24);
             this.trunkFilterTextBox.TabIndex = 4;
             this.trunkFilterTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.trunkFilterTextbox_KeyDown);
             // 
@@ -1310,7 +1310,7 @@
             this.trunkNameFilterLabel.AutoSize = true;
             this.trunkNameFilterLabel.Location = new System.Drawing.Point(8, 36);
             this.trunkNameFilterLabel.Name = "trunkNameFilterLabel";
-            this.trunkNameFilterLabel.Size = new System.Drawing.Size(37, 15);
+            this.trunkNameFilterLabel.Size = new System.Drawing.Size(44, 18);
             this.trunkNameFilterLabel.TabIndex = 1;
             this.trunkNameFilterLabel.Text = "Filter:";
             // 
@@ -1335,7 +1335,7 @@
             this.trunkDataGridView.Name = "trunkDataGridView";
             this.trunkDataGridView.RowHeadersVisible = false;
             this.trunkDataGridView.RowHeadersWidth = 51;
-            this.trunkDataGridView.Size = new System.Drawing.Size(569, 610);
+            this.trunkDataGridView.Size = new System.Drawing.Size(569, 607);
             this.trunkDataGridView.TabIndex = 0;
             // 
             // Index
@@ -1417,19 +1417,19 @@
             this.makeDeckLeaderToolStripMenuItem,
             this.addSelectedCardsToDeckToolStripMenuItem});
             this.trunkContextMenuStrip.Name = "trunkContextMenuStrip";
-            this.trunkContextMenuStrip.Size = new System.Drawing.Size(216, 48);
+            this.trunkContextMenuStrip.Size = new System.Drawing.Size(258, 52);
             // 
             // makeDeckLeaderToolStripMenuItem
             // 
             this.makeDeckLeaderToolStripMenuItem.Name = "makeDeckLeaderToolStripMenuItem";
-            this.makeDeckLeaderToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.makeDeckLeaderToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
             this.makeDeckLeaderToolStripMenuItem.Text = "Make Deck Leader";
             this.makeDeckLeaderToolStripMenuItem.Click += new System.EventHandler(this.makeDeckLeaderToolStripMenuItem_Click);
             // 
             // addSelectedCardsToDeckToolStripMenuItem
             // 
             this.addSelectedCardsToDeckToolStripMenuItem.Name = "addSelectedCardsToDeckToolStripMenuItem";
-            this.addSelectedCardsToDeckToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.addSelectedCardsToDeckToolStripMenuItem.Size = new System.Drawing.Size(257, 24);
             this.addSelectedCardsToDeckToolStripMenuItem.Text = "Add selected cards to deck";
             this.addSelectedCardsToDeckToolStripMenuItem.Click += new System.EventHandler(this.addSelectedCardsToDeckToolStripMenuItem_Click);
             // 
@@ -1456,7 +1456,7 @@
             // deckEditorSplitContainer.Panel2
             // 
             this.deckEditorSplitContainer.Panel2.Controls.Add(this.deckEditorDataGridView);
-            this.deckEditorSplitContainer.Size = new System.Drawing.Size(577, 674);
+            this.deckEditorSplitContainer.Size = new System.Drawing.Size(577, 671);
             this.deckEditorSplitContainer.SplitterDistance = 60;
             this.deckEditorSplitContainer.TabIndex = 0;
             // 
@@ -1466,7 +1466,7 @@
             this.deckEditTipLabel.AutoSize = true;
             this.deckEditTipLabel.Location = new System.Drawing.Point(245, 11);
             this.deckEditTipLabel.Name = "deckEditTipLabel";
-            this.deckEditTipLabel.Size = new System.Drawing.Size(372, 15);
+            this.deckEditTipLabel.Size = new System.Drawing.Size(458, 18);
             this.deckEditTipLabel.TabIndex = 10;
             this.deckEditTipLabel.Text = "Double click to remove card from deck. Right click for more options.";
             // 
@@ -1475,7 +1475,7 @@
             this.deckEditDeckCostLabel.AutoSize = true;
             this.deckEditDeckCostLabel.Location = new System.Drawing.Point(369, 37);
             this.deckEditDeckCostLabel.Name = "deckEditDeckCostLabel";
-            this.deckEditDeckCostLabel.Size = new System.Drawing.Size(55, 15);
+            this.deckEditDeckCostLabel.Size = new System.Drawing.Size(66, 18);
             this.deckEditDeckCostLabel.TabIndex = 9;
             this.deckEditDeckCostLabel.Text = "7777 DC";
             // 
@@ -1486,7 +1486,7 @@
             this.deckEditDeckLeaderRankComboBox.FormattingEnabled = true;
             this.deckEditDeckLeaderRankComboBox.Location = new System.Drawing.Point(301, 33);
             this.deckEditDeckLeaderRankComboBox.Name = "deckEditDeckLeaderRankComboBox";
-            this.deckEditDeckLeaderRankComboBox.Size = new System.Drawing.Size(57, 23);
+            this.deckEditDeckLeaderRankComboBox.Size = new System.Drawing.Size(57, 26);
             this.deckEditDeckLeaderRankComboBox.TabIndex = 8;
             this.deckEditDeckLeaderRankComboBox.ValueMember = "Index";
             this.deckEditDeckLeaderRankComboBox.SelectedIndexChanged += new System.EventHandler(this.deckEditDeckLeaderRankComboBox_SelectedIndexChanged);
@@ -1497,7 +1497,7 @@
             this.deckCardCountLabel.AutoSize = true;
             this.deckCardCountLabel.Location = new System.Drawing.Point(424, 37);
             this.deckCardCountLabel.Name = "deckCardCountLabel";
-            this.deckCardCountLabel.Size = new System.Drawing.Size(76, 15);
+            this.deckCardCountLabel.Size = new System.Drawing.Size(92, 18);
             this.deckCardCountLabel.TabIndex = 7;
             this.deckCardCountLabel.Text = "Cards: 40/40";
             // 
@@ -1507,7 +1507,7 @@
             this.decksLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.decksLabel.Location = new System.Drawing.Point(3, 6);
             this.decksLabel.Name = "decksLabel";
-            this.decksLabel.Size = new System.Drawing.Size(59, 20);
+            this.decksLabel.Size = new System.Drawing.Size(72, 25);
             this.decksLabel.TabIndex = 6;
             this.decksLabel.Text = "Decks";
             // 
@@ -1516,7 +1516,7 @@
             this.deckLabel.AutoSize = true;
             this.deckLabel.Location = new System.Drawing.Point(4, 37);
             this.deckLabel.Name = "deckLabel";
-            this.deckLabel.Size = new System.Drawing.Size(38, 15);
+            this.deckLabel.Size = new System.Drawing.Size(47, 18);
             this.deckLabel.TabIndex = 2;
             this.deckLabel.Text = "Deck:";
             // 
@@ -1526,7 +1526,7 @@
             this.deckDropdown.FormattingEnabled = true;
             this.deckDropdown.Location = new System.Drawing.Point(46, 33);
             this.deckDropdown.Name = "deckDropdown";
-            this.deckDropdown.Size = new System.Drawing.Size(249, 23);
+            this.deckDropdown.Size = new System.Drawing.Size(249, 26);
             this.deckDropdown.TabIndex = 1;
             this.deckDropdown.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -1563,7 +1563,7 @@
             this.deckEditorDataGridView.RowHeadersVisible = false;
             this.deckEditorDataGridView.RowHeadersWidth = 51;
             this.deckEditorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.deckEditorDataGridView.Size = new System.Drawing.Size(577, 610);
+            this.deckEditorDataGridView.Size = new System.Drawing.Size(577, 607);
             this.deckEditorDataGridView.TabIndex = 0;
             // 
             // indexColumn
@@ -1644,21 +1644,21 @@
             this.deckEditContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deckEditRemoveSelectedMenuItem});
             this.deckEditContextMenuStrip.Name = "deckEditContextMenuStrip";
-            this.deckEditContextMenuStrip.Size = new System.Drawing.Size(195, 26);
+            this.deckEditContextMenuStrip.Size = new System.Drawing.Size(231, 28);
             // 
             // deckEditRemoveSelectedMenuItem
             // 
             this.deckEditRemoveSelectedMenuItem.Name = "deckEditRemoveSelectedMenuItem";
-            this.deckEditRemoveSelectedMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.deckEditRemoveSelectedMenuItem.Size = new System.Drawing.Size(230, 24);
             this.deckEditRemoveSelectedMenuItem.Text = "Remove selected cards";
             // 
             // deckLeaderAbilitiesTab
             // 
             this.deckLeaderAbilitiesTab.Controls.Add(this.cardDeckLeaderAbilitiesSplitContainer);
-            this.deckLeaderAbilitiesTab.Location = new System.Drawing.Point(4, 24);
+            this.deckLeaderAbilitiesTab.Location = new System.Drawing.Point(4, 27);
             this.deckLeaderAbilitiesTab.Name = "deckLeaderAbilitiesTab";
             this.deckLeaderAbilitiesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.deckLeaderAbilitiesTab.Size = new System.Drawing.Size(1156, 680);
+            this.deckLeaderAbilitiesTab.Size = new System.Drawing.Size(1156, 677);
             this.deckLeaderAbilitiesTab.TabIndex = 5;
             this.deckLeaderAbilitiesTab.Text = "Deck Leader Abilities";
             this.deckLeaderAbilitiesTab.UseVisualStyleBackColor = true;
@@ -1679,7 +1679,7 @@
             // cardDeckLeaderAbilitiesSplitContainer.Panel2
             // 
             this.cardDeckLeaderAbilitiesSplitContainer.Panel2.Controls.Add(this.cardDeckLeaderAbilitiesDatagridview);
-            this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(1150, 674);
+            this.cardDeckLeaderAbilitiesSplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.cardDeckLeaderAbilitiesSplitContainer.SplitterDistance = 25;
             this.cardDeckLeaderAbilitiesSplitContainer.TabIndex = 0;
             // 
@@ -1688,7 +1688,7 @@
             this.deckLeaderAbilityTabTipsLabel.AutoSize = true;
             this.deckLeaderAbilityTabTipsLabel.Location = new System.Drawing.Point(5, 8);
             this.deckLeaderAbilityTabTipsLabel.Name = "deckLeaderAbilityTabTipsLabel";
-            this.deckLeaderAbilityTabTipsLabel.Size = new System.Drawing.Size(471, 15);
+            this.deckLeaderAbilityTabTipsLabel.Size = new System.Drawing.Size(572, 18);
             this.deckLeaderAbilityTabTipsLabel.TabIndex = 2;
             this.deckLeaderAbilityTabTipsLabel.Text = "Select multiple records with shift or control keys, right click to edit deck lead" +
     "er abilities.";
@@ -1721,7 +1721,7 @@
             this.cardDeckLeaderAbilitiesDatagridview.RowHeadersVisible = false;
             this.cardDeckLeaderAbilitiesDatagridview.RowHeadersWidth = 51;
             this.cardDeckLeaderAbilitiesDatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(1150, 645);
+            this.cardDeckLeaderAbilitiesDatagridview.Size = new System.Drawing.Size(1150, 642);
             this.cardDeckLeaderAbilitiesDatagridview.TabIndex = 0;
             // 
             // cardDeckLeaderAbilitiesIndexColumn
@@ -1763,10 +1763,10 @@
             // equipCompabilityTab
             // 
             this.equipCompabilityTab.Controls.Add(this.equipCompabilitySplitContainer);
-            this.equipCompabilityTab.Location = new System.Drawing.Point(4, 24);
+            this.equipCompabilityTab.Location = new System.Drawing.Point(4, 27);
             this.equipCompabilityTab.Name = "equipCompabilityTab";
             this.equipCompabilityTab.Padding = new System.Windows.Forms.Padding(3);
-            this.equipCompabilityTab.Size = new System.Drawing.Size(1156, 680);
+            this.equipCompabilityTab.Size = new System.Drawing.Size(1156, 677);
             this.equipCompabilityTab.TabIndex = 6;
             this.equipCompabilityTab.Text = "Equip Compatibility";
             this.equipCompabilityTab.UseVisualStyleBackColor = true;
@@ -1788,7 +1788,7 @@
             // equipCompabilitySplitContainer.Panel2
             // 
             this.equipCompabilitySplitContainer.Panel2.Controls.Add(this.equipCompatibilityDataGridView);
-            this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(1150, 674);
+            this.equipCompabilitySplitContainer.Size = new System.Drawing.Size(1150, 671);
             this.equipCompabilitySplitContainer.SplitterDistance = 25;
             this.equipCompabilitySplitContainer.TabIndex = 0;
             // 
@@ -1797,7 +1797,7 @@
             this.cardEquipNoteLabel1.AutoSize = true;
             this.cardEquipNoteLabel1.Location = new System.Drawing.Point(5, 8);
             this.cardEquipNoteLabel1.Name = "cardEquipNoteLabel1";
-            this.cardEquipNoteLabel1.Size = new System.Drawing.Size(475, 15);
+            this.cardEquipNoteLabel1.Size = new System.Drawing.Size(576, 18);
             this.cardEquipNoteLabel1.TabIndex = 1;
             this.cardEquipNoteLabel1.Text = "Select multiple records with shift or control keys, right click to edit equip com" +
     "patibilities.";
@@ -1831,7 +1831,7 @@
             this.equipCompatibilityDataGridView.RowHeadersVisible = false;
             this.equipCompatibilityDataGridView.RowHeadersWidth = 51;
             this.equipCompatibilityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(1150, 645);
+            this.equipCompatibilityDataGridView.Size = new System.Drawing.Size(1150, 642);
             this.equipCompatibilityDataGridView.TabIndex = 0;
             // 
             // EquipCompatabilityCardIndexColumn
@@ -1879,22 +1879,22 @@
             this.monsterCardEquipCompatibilitiesContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editMonsterEquipMenuItem});
             this.monsterCardEquipCompatibilitiesContextMenuStrip.Name = "monsterCardEquipCompatibilitiesContextMenuStrip";
-            this.monsterCardEquipCompatibilitiesContextMenuStrip.Size = new System.Drawing.Size(173, 26);
+            this.monsterCardEquipCompatibilitiesContextMenuStrip.Size = new System.Drawing.Size(204, 28);
             // 
             // editMonsterEquipMenuItem
             // 
             this.editMonsterEquipMenuItem.Name = "editMonsterEquipMenuItem";
-            this.editMonsterEquipMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.editMonsterEquipMenuItem.Size = new System.Drawing.Size(203, 24);
             this.editMonsterEquipMenuItem.Text = "Edit selected items";
             this.editMonsterEquipMenuItem.Click += new System.EventHandler(this.ShowMonsterCardEquipCompatibilityEditDialog);
             // 
             // batzpupModsTab
             // 
             this.batzpupModsTab.Controls.Add(this.scBatzpupSave);
-            this.batzpupModsTab.Location = new System.Drawing.Point(4, 24);
+            this.batzpupModsTab.Location = new System.Drawing.Point(4, 27);
             this.batzpupModsTab.Name = "batzpupModsTab";
             this.batzpupModsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.batzpupModsTab.Size = new System.Drawing.Size(1156, 680);
+            this.batzpupModsTab.Size = new System.Drawing.Size(1156, 677);
             this.batzpupModsTab.TabIndex = 8;
             this.batzpupModsTab.Text = "Batzpup Mods";
             this.batzpupModsTab.UseVisualStyleBackColor = true;
@@ -1913,8 +1913,8 @@
             // scBatzpupSave.Panel2
             // 
             this.scBatzpupSave.Panel2.Controls.Add(this.tbBatzpup);
-            this.scBatzpupSave.Size = new System.Drawing.Size(1150, 674);
-            this.scBatzpupSave.SplitterDistance = 55;
+            this.scBatzpupSave.Size = new System.Drawing.Size(1150, 671);
+            this.scBatzpupSave.SplitterDistance = 54;
             this.scBatzpupSave.TabIndex = 0;
             // 
             // BatzpupSaveButton
@@ -1923,7 +1923,7 @@
             this.BatzpupSaveButton.Location = new System.Drawing.Point(0, 0);
             this.BatzpupSaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BatzpupSaveButton.Name = "BatzpupSaveButton";
-            this.BatzpupSaveButton.Size = new System.Drawing.Size(1150, 55);
+            this.BatzpupSaveButton.Size = new System.Drawing.Size(1150, 54);
             this.BatzpupSaveButton.TabIndex = 1;
             this.BatzpupSaveButton.Text = "Save";
             this.BatzpupSaveButton.UseVisualStyleBackColor = true;
@@ -1939,7 +1939,7 @@
             this.tbBatzpup.Location = new System.Drawing.Point(0, 0);
             this.tbBatzpup.Name = "tbBatzpup";
             this.tbBatzpup.SelectedIndex = 0;
-            this.tbBatzpup.Size = new System.Drawing.Size(1150, 615);
+            this.tbBatzpup.Size = new System.Drawing.Size(1150, 613);
             this.tbBatzpup.TabIndex = 1;
             this.tbBatzpup.SelectedIndexChanged += new System.EventHandler(this.tbBatzpups_SelectedIndexChanged);
             // 
@@ -1947,10 +1947,10 @@
             // 
             this.batzpupTbMain.BackColor = System.Drawing.SystemColors.ControlLight;
             this.batzpupTbMain.Controls.Add(this.scBatzpupMain);
-            this.batzpupTbMain.Location = new System.Drawing.Point(4, 24);
+            this.batzpupTbMain.Location = new System.Drawing.Point(4, 27);
             this.batzpupTbMain.Name = "batzpupTbMain";
             this.batzpupTbMain.Padding = new System.Windows.Forms.Padding(3);
-            this.batzpupTbMain.Size = new System.Drawing.Size(1142, 587);
+            this.batzpupTbMain.Size = new System.Drawing.Size(1142, 582);
             this.batzpupTbMain.TabIndex = 0;
             this.batzpupTbMain.Text = "Main";
             // 
@@ -1985,20 +1985,34 @@
             this.scBatzpupMain.Panel2.Controls.Add(this.gbChangeLpCap);
             this.scBatzpupMain.Panel2.Controls.Add(this.gbForceNewGameSide);
             this.scBatzpupMain.Panel2.Controls.Add(this.gpSideToGoFirst);
-            this.scBatzpupMain.Size = new System.Drawing.Size(1136, 581);
+            this.scBatzpupMain.Size = new System.Drawing.Size(1136, 576);
             this.scBatzpupMain.SplitterDistance = 521;
             this.scBatzpupMain.TabIndex = 0;
+            // 
+            // cbToonLeaderTerrainChange
+            // 
+            this.cbToonLeaderTerrainChange.AutoSize = true;
+            this.cbToonLeaderTerrainChange.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbToonLeaderTerrainChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbToonLeaderTerrainChange.Location = new System.Drawing.Point(0, 520);
+            this.cbToonLeaderTerrainChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbToonLeaderTerrainChange.Name = "cbToonLeaderTerrainChange";
+            this.cbToonLeaderTerrainChange.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.cbToonLeaderTerrainChange.Size = new System.Drawing.Size(521, 40);
+            this.cbToonLeaderTerrainChange.TabIndex = 24;
+            this.cbToonLeaderTerrainChange.Text = "Toon Deck Leader Land Change";
+            this.cbToonLeaderTerrainChange.UseVisualStyleBackColor = true;
             // 
             // cbCrushCardChange
             // 
             this.cbCrushCardChange.AutoSize = true;
             this.cbCrushCardChange.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbCrushCardChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCrushCardChange.Location = new System.Drawing.Point(0, 444);
+            this.cbCrushCardChange.Location = new System.Drawing.Point(0, 480);
             this.cbCrushCardChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCrushCardChange.Name = "cbCrushCardChange";
             this.cbCrushCardChange.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbCrushCardChange.Size = new System.Drawing.Size(521, 37);
+            this.cbCrushCardChange.Size = new System.Drawing.Size(521, 40);
             this.cbCrushCardChange.TabIndex = 23;
             this.cbCrushCardChange.Text = "Restore Crush Cards Glory";
             this.cbCrushCardChange.UseVisualStyleBackColor = true;
@@ -2008,11 +2022,11 @@
             this.cbNoDCRequirementPostGame.AutoSize = true;
             this.cbNoDCRequirementPostGame.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbNoDCRequirementPostGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNoDCRequirementPostGame.Location = new System.Drawing.Point(0, 407);
+            this.cbNoDCRequirementPostGame.Location = new System.Drawing.Point(0, 440);
             this.cbNoDCRequirementPostGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbNoDCRequirementPostGame.Name = "cbNoDCRequirementPostGame";
             this.cbNoDCRequirementPostGame.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbNoDCRequirementPostGame.Size = new System.Drawing.Size(521, 37);
+            this.cbNoDCRequirementPostGame.Size = new System.Drawing.Size(521, 40);
             this.cbNoDCRequirementPostGame.TabIndex = 22;
             this.cbNoDCRequirementPostGame.Text = "No DC Requirement Post Game";
             this.cbNoDCRequirementPostGame.UseVisualStyleBackColor = true;
@@ -2022,11 +2036,11 @@
             this.cbKeepReincarnatedCard.AutoSize = true;
             this.cbKeepReincarnatedCard.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbKeepReincarnatedCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKeepReincarnatedCard.Location = new System.Drawing.Point(0, 370);
+            this.cbKeepReincarnatedCard.Location = new System.Drawing.Point(0, 400);
             this.cbKeepReincarnatedCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbKeepReincarnatedCard.Name = "cbKeepReincarnatedCard";
             this.cbKeepReincarnatedCard.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbKeepReincarnatedCard.Size = new System.Drawing.Size(521, 37);
+            this.cbKeepReincarnatedCard.Size = new System.Drawing.Size(521, 40);
             this.cbKeepReincarnatedCard.TabIndex = 21;
             this.cbKeepReincarnatedCard.Text = "Keep Reincarnated Card";
             this.cbKeepReincarnatedCard.UseVisualStyleBackColor = true;
@@ -2036,11 +2050,11 @@
             this.cbAddAddtionalSlotRewards.AutoSize = true;
             this.cbAddAddtionalSlotRewards.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbAddAddtionalSlotRewards.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAddAddtionalSlotRewards.Location = new System.Drawing.Point(0, 333);
+            this.cbAddAddtionalSlotRewards.Location = new System.Drawing.Point(0, 360);
             this.cbAddAddtionalSlotRewards.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAddAddtionalSlotRewards.Name = "cbAddAddtionalSlotRewards";
             this.cbAddAddtionalSlotRewards.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbAddAddtionalSlotRewards.Size = new System.Drawing.Size(521, 37);
+            this.cbAddAddtionalSlotRewards.Size = new System.Drawing.Size(521, 40);
             this.cbAddAddtionalSlotRewards.TabIndex = 20;
             this.cbAddAddtionalSlotRewards.Text = "Add Additional Slot Rewards";
             this.cbAddAddtionalSlotRewards.UseVisualStyleBackColor = true;
@@ -2050,11 +2064,11 @@
             this.cbAllowAllCustomDuels.AutoSize = true;
             this.cbAllowAllCustomDuels.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbAllowAllCustomDuels.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAllowAllCustomDuels.Location = new System.Drawing.Point(0, 296);
+            this.cbAllowAllCustomDuels.Location = new System.Drawing.Point(0, 320);
             this.cbAllowAllCustomDuels.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAllowAllCustomDuels.Name = "cbAllowAllCustomDuels";
             this.cbAllowAllCustomDuels.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbAllowAllCustomDuels.Size = new System.Drawing.Size(521, 37);
+            this.cbAllowAllCustomDuels.Size = new System.Drawing.Size(521, 40);
             this.cbAllowAllCustomDuels.TabIndex = 19;
             this.cbAllowAllCustomDuels.Text = "Use All Custom Duels";
             this.cbAllowAllCustomDuels.UseVisualStyleBackColor = true;
@@ -2064,11 +2078,11 @@
             this.cbUseCustomMusic.AutoSize = true;
             this.cbUseCustomMusic.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbUseCustomMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUseCustomMusic.Location = new System.Drawing.Point(0, 259);
+            this.cbUseCustomMusic.Location = new System.Drawing.Point(0, 280);
             this.cbUseCustomMusic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbUseCustomMusic.Name = "cbUseCustomMusic";
             this.cbUseCustomMusic.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbUseCustomMusic.Size = new System.Drawing.Size(521, 37);
+            this.cbUseCustomMusic.Size = new System.Drawing.Size(521, 40);
             this.cbUseCustomMusic.TabIndex = 18;
             this.cbUseCustomMusic.Text = "Use Custom Music";
             this.cbUseCustomMusic.UseVisualStyleBackColor = true;
@@ -2078,11 +2092,11 @@
             this.cbRemoveRNGFromSlots.AutoSize = true;
             this.cbRemoveRNGFromSlots.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbRemoveRNGFromSlots.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRemoveRNGFromSlots.Location = new System.Drawing.Point(0, 222);
+            this.cbRemoveRNGFromSlots.Location = new System.Drawing.Point(0, 240);
             this.cbRemoveRNGFromSlots.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbRemoveRNGFromSlots.Name = "cbRemoveRNGFromSlots";
             this.cbRemoveRNGFromSlots.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbRemoveRNGFromSlots.Size = new System.Drawing.Size(521, 37);
+            this.cbRemoveRNGFromSlots.Size = new System.Drawing.Size(521, 40);
             this.cbRemoveRNGFromSlots.TabIndex = 17;
             this.cbRemoveRNGFromSlots.Text = "Remove RNG from slots";
             this.cbRemoveRNGFromSlots.UseVisualStyleBackColor = true;
@@ -2092,11 +2106,11 @@
             this.cbRemoveNegetiveXP.AutoSize = true;
             this.cbRemoveNegetiveXP.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbRemoveNegetiveXP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRemoveNegetiveXP.Location = new System.Drawing.Point(0, 185);
+            this.cbRemoveNegetiveXP.Location = new System.Drawing.Point(0, 200);
             this.cbRemoveNegetiveXP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbRemoveNegetiveXP.Name = "cbRemoveNegetiveXP";
             this.cbRemoveNegetiveXP.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbRemoveNegetiveXP.Size = new System.Drawing.Size(521, 37);
+            this.cbRemoveNegetiveXP.Size = new System.Drawing.Size(521, 40);
             this.cbRemoveNegetiveXP.TabIndex = 16;
             this.cbRemoveNegetiveXP.Text = "Remove Exp Loss";
             this.cbRemoveNegetiveXP.UseVisualStyleBackColor = true;
@@ -2106,11 +2120,11 @@
             this.cbExpandedZoom.AutoSize = true;
             this.cbExpandedZoom.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbExpandedZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbExpandedZoom.Location = new System.Drawing.Point(0, 148);
+            this.cbExpandedZoom.Location = new System.Drawing.Point(0, 160);
             this.cbExpandedZoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbExpandedZoom.Name = "cbExpandedZoom";
             this.cbExpandedZoom.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbExpandedZoom.Size = new System.Drawing.Size(521, 37);
+            this.cbExpandedZoom.Size = new System.Drawing.Size(521, 40);
             this.cbExpandedZoom.TabIndex = 15;
             this.cbExpandedZoom.Text = "Expanded zoom";
             this.cbExpandedZoom.UseVisualStyleBackColor = true;
@@ -2120,11 +2134,11 @@
             this.cbEmulatorCameraFix.AutoSize = true;
             this.cbEmulatorCameraFix.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbEmulatorCameraFix.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEmulatorCameraFix.Location = new System.Drawing.Point(0, 111);
+            this.cbEmulatorCameraFix.Location = new System.Drawing.Point(0, 120);
             this.cbEmulatorCameraFix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEmulatorCameraFix.Name = "cbEmulatorCameraFix";
             this.cbEmulatorCameraFix.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbEmulatorCameraFix.Size = new System.Drawing.Size(521, 37);
+            this.cbEmulatorCameraFix.Size = new System.Drawing.Size(521, 40);
             this.cbEmulatorCameraFix.TabIndex = 14;
             this.cbEmulatorCameraFix.Text = "Emulator camera fix";
             this.cbEmulatorCameraFix.UseVisualStyleBackColor = true;
@@ -2134,11 +2148,11 @@
             this.cbAllFusions.AutoSize = true;
             this.cbAllFusions.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbAllFusions.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAllFusions.Location = new System.Drawing.Point(0, 74);
+            this.cbAllFusions.Location = new System.Drawing.Point(0, 80);
             this.cbAllFusions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAllFusions.Name = "cbAllFusions";
             this.cbAllFusions.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbAllFusions.Size = new System.Drawing.Size(521, 37);
+            this.cbAllFusions.Size = new System.Drawing.Size(521, 40);
             this.cbAllFusions.TabIndex = 13;
             this.cbAllFusions.Text = "Allow non-equip Fusions";
             this.cbAllFusions.UseVisualStyleBackColor = true;
@@ -2148,11 +2162,11 @@
             this.cbFastIntro.AutoSize = true;
             this.cbFastIntro.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbFastIntro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFastIntro.Location = new System.Drawing.Point(0, 37);
+            this.cbFastIntro.Location = new System.Drawing.Point(0, 40);
             this.cbFastIntro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFastIntro.Name = "cbFastIntro";
             this.cbFastIntro.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbFastIntro.Size = new System.Drawing.Size(521, 37);
+            this.cbFastIntro.Size = new System.Drawing.Size(521, 40);
             this.cbFastIntro.TabIndex = 12;
             this.cbFastIntro.Text = "Fast intro (recommended)";
             this.cbFastIntro.UseVisualStyleBackColor = true;
@@ -2166,7 +2180,7 @@
             this.cbAIInputFix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAIInputFix.Name = "cbAIInputFix";
             this.cbAIInputFix.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbAIInputFix.Size = new System.Drawing.Size(521, 37);
+            this.cbAIInputFix.Size = new System.Drawing.Size(521, 40);
             this.cbAIInputFix.TabIndex = 11;
             this.cbAIInputFix.Text = "AI Passes instead of double X (recommended)";
             this.cbAIInputFix.UseVisualStyleBackColor = true;
@@ -2193,7 +2207,7 @@
             0,
             0,
             0});
-            this.numLpRecoveryValue.Location = new System.Drawing.Point(5, 45);
+            this.numLpRecoveryValue.Location = new System.Drawing.Point(5, 51);
             this.numLpRecoveryValue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numLpRecoveryValue.Maximum = new decimal(new int[] {
             2000,
@@ -2206,7 +2220,7 @@
             0,
             0});
             this.numLpRecoveryValue.Name = "numLpRecoveryValue";
-            this.numLpRecoveryValue.Size = new System.Drawing.Size(603, 21);
+            this.numLpRecoveryValue.Size = new System.Drawing.Size(603, 24);
             this.numLpRecoveryValue.TabIndex = 11;
             this.numLpRecoveryValue.Value = new decimal(new int[] {
             50,
@@ -2219,10 +2233,10 @@
             this.cbChangeLpRecovery.AutoSize = true;
             this.cbChangeLpRecovery.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbChangeLpRecovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbChangeLpRecovery.Location = new System.Drawing.Point(5, 24);
+            this.cbChangeLpRecovery.Location = new System.Drawing.Point(5, 27);
             this.cbChangeLpRecovery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbChangeLpRecovery.Name = "cbChangeLpRecovery";
-            this.cbChangeLpRecovery.Size = new System.Drawing.Size(603, 21);
+            this.cbChangeLpRecovery.Size = new System.Drawing.Size(603, 24);
             this.cbChangeLpRecovery.TabIndex = 10;
             this.cbChangeLpRecovery.Text = "Enabled";
             this.cbChangeLpRecovery.UseVisualStyleBackColor = true;
@@ -2250,7 +2264,7 @@
             0,
             0,
             0});
-            this.numChangeTerrainValue.Location = new System.Drawing.Point(5, 45);
+            this.numChangeTerrainValue.Location = new System.Drawing.Point(5, 51);
             this.numChangeTerrainValue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numChangeTerrainValue.Maximum = new decimal(new int[] {
             9000,
@@ -2258,7 +2272,7 @@
             0,
             0});
             this.numChangeTerrainValue.Name = "numChangeTerrainValue";
-            this.numChangeTerrainValue.Size = new System.Drawing.Size(603, 21);
+            this.numChangeTerrainValue.Size = new System.Drawing.Size(603, 24);
             this.numChangeTerrainValue.TabIndex = 11;
             this.numChangeTerrainValue.Value = new decimal(new int[] {
             500,
@@ -2271,10 +2285,10 @@
             this.cbTerrainChangeEnabled.AutoSize = true;
             this.cbTerrainChangeEnabled.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbTerrainChangeEnabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTerrainChangeEnabled.Location = new System.Drawing.Point(5, 24);
+            this.cbTerrainChangeEnabled.Location = new System.Drawing.Point(5, 27);
             this.cbTerrainChangeEnabled.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTerrainChangeEnabled.Name = "cbTerrainChangeEnabled";
-            this.cbTerrainChangeEnabled.Size = new System.Drawing.Size(603, 21);
+            this.cbTerrainChangeEnabled.Size = new System.Drawing.Size(603, 24);
             this.cbTerrainChangeEnabled.TabIndex = 10;
             this.cbTerrainChangeEnabled.Text = "Enabled";
             this.cbTerrainChangeEnabled.UseVisualStyleBackColor = true;
@@ -2296,7 +2310,7 @@
             // numReincarnationCount
             // 
             this.numReincarnationCount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.numReincarnationCount.Location = new System.Drawing.Point(5, 45);
+            this.numReincarnationCount.Location = new System.Drawing.Point(5, 51);
             this.numReincarnationCount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numReincarnationCount.Maximum = new decimal(new int[] {
             254,
@@ -2309,7 +2323,7 @@
             0,
             0});
             this.numReincarnationCount.Name = "numReincarnationCount";
-            this.numReincarnationCount.Size = new System.Drawing.Size(603, 21);
+            this.numReincarnationCount.Size = new System.Drawing.Size(603, 24);
             this.numReincarnationCount.TabIndex = 11;
             this.numReincarnationCount.Value = new decimal(new int[] {
             5,
@@ -2322,10 +2336,10 @@
             this.cbReincarnationCount.AutoSize = true;
             this.cbReincarnationCount.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbReincarnationCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbReincarnationCount.Location = new System.Drawing.Point(5, 24);
+            this.cbReincarnationCount.Location = new System.Drawing.Point(5, 27);
             this.cbReincarnationCount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbReincarnationCount.Name = "cbReincarnationCount";
-            this.cbReincarnationCount.Size = new System.Drawing.Size(603, 21);
+            this.cbReincarnationCount.Size = new System.Drawing.Size(603, 24);
             this.cbReincarnationCount.TabIndex = 10;
             this.cbReincarnationCount.Text = "Enabled";
             this.cbReincarnationCount.UseVisualStyleBackColor = true;
@@ -2352,7 +2366,7 @@
             0,
             0,
             0});
-            this.numLPCap.Location = new System.Drawing.Point(5, 45);
+            this.numLPCap.Location = new System.Drawing.Point(5, 51);
             this.numLPCap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numLPCap.Maximum = new decimal(new int[] {
             65000,
@@ -2360,7 +2374,7 @@
             0,
             0});
             this.numLPCap.Name = "numLPCap";
-            this.numLPCap.Size = new System.Drawing.Size(603, 21);
+            this.numLPCap.Size = new System.Drawing.Size(603, 24);
             this.numLPCap.TabIndex = 11;
             this.numLPCap.Value = new decimal(new int[] {
             9999,
@@ -2373,10 +2387,10 @@
             this.cbLPCap.AutoSize = true;
             this.cbLPCap.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbLPCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLPCap.Location = new System.Drawing.Point(5, 24);
+            this.cbLPCap.Location = new System.Drawing.Point(5, 27);
             this.cbLPCap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLPCap.Name = "cbLPCap";
-            this.cbLPCap.Size = new System.Drawing.Size(603, 21);
+            this.cbLPCap.Size = new System.Drawing.Size(603, 24);
             this.cbLPCap.TabIndex = 10;
             this.cbLPCap.Text = "Enabled";
             this.cbLPCap.UseVisualStyleBackColor = true;
@@ -2402,10 +2416,10 @@
             this.cboForceNewGameSide.Items.AddRange(new object[] {
             "Red",
             "White"});
-            this.cboForceNewGameSide.Location = new System.Drawing.Point(5, 45);
+            this.cboForceNewGameSide.Location = new System.Drawing.Point(5, 51);
             this.cboForceNewGameSide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboForceNewGameSide.Name = "cboForceNewGameSide";
-            this.cboForceNewGameSide.Size = new System.Drawing.Size(603, 23);
+            this.cboForceNewGameSide.Size = new System.Drawing.Size(603, 26);
             this.cboForceNewGameSide.TabIndex = 11;
             this.cboForceNewGameSide.Text = "Red";
             // 
@@ -2414,10 +2428,10 @@
             this.cbForceNewGameSide.AutoSize = true;
             this.cbForceNewGameSide.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbForceNewGameSide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbForceNewGameSide.Location = new System.Drawing.Point(5, 24);
+            this.cbForceNewGameSide.Location = new System.Drawing.Point(5, 27);
             this.cbForceNewGameSide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbForceNewGameSide.Name = "cbForceNewGameSide";
-            this.cbForceNewGameSide.Size = new System.Drawing.Size(603, 21);
+            this.cbForceNewGameSide.Size = new System.Drawing.Size(603, 24);
             this.cbForceNewGameSide.TabIndex = 10;
             this.cbForceNewGameSide.Text = "Enabled";
             this.cbForceNewGameSide.UseVisualStyleBackColor = true;
@@ -2443,10 +2457,10 @@
             this.cboSideFirst.Items.AddRange(new object[] {
             "Red",
             "White"});
-            this.cboSideFirst.Location = new System.Drawing.Point(5, 45);
+            this.cboSideFirst.Location = new System.Drawing.Point(5, 51);
             this.cboSideFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboSideFirst.Name = "cboSideFirst";
-            this.cboSideFirst.Size = new System.Drawing.Size(603, 23);
+            this.cboSideFirst.Size = new System.Drawing.Size(603, 26);
             this.cboSideFirst.TabIndex = 11;
             this.cboSideFirst.Text = "Red";
             // 
@@ -2455,10 +2469,10 @@
             this.cbSideFirst.AutoSize = true;
             this.cbSideFirst.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbSideFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSideFirst.Location = new System.Drawing.Point(5, 24);
+            this.cbSideFirst.Location = new System.Drawing.Point(5, 27);
             this.cbSideFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSideFirst.Name = "cbSideFirst";
-            this.cbSideFirst.Size = new System.Drawing.Size(603, 21);
+            this.cbSideFirst.Size = new System.Drawing.Size(603, 24);
             this.cbSideFirst.TabIndex = 10;
             this.cbSideFirst.Text = "Enabled";
             this.cbSideFirst.UseVisualStyleBackColor = true;
@@ -2466,10 +2480,10 @@
             // tbBatzpupSlotRewards
             // 
             this.tbBatzpupSlotRewards.Controls.Add(this.dgvSlotRewards);
-            this.tbBatzpupSlotRewards.Location = new System.Drawing.Point(4, 24);
+            this.tbBatzpupSlotRewards.Location = new System.Drawing.Point(4, 27);
             this.tbBatzpupSlotRewards.Name = "tbBatzpupSlotRewards";
             this.tbBatzpupSlotRewards.Padding = new System.Windows.Forms.Padding(3);
-            this.tbBatzpupSlotRewards.Size = new System.Drawing.Size(1142, 587);
+            this.tbBatzpupSlotRewards.Size = new System.Drawing.Size(1142, 582);
             this.tbBatzpupSlotRewards.TabIndex = 1;
             this.tbBatzpupSlotRewards.Text = "Slot Rewards";
             this.tbBatzpupSlotRewards.UseVisualStyleBackColor = true;
@@ -2498,7 +2512,7 @@
             this.dgvSlotRewards.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSlotRewards.RowTemplate.Height = 24;
             this.dgvSlotRewards.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvSlotRewards.Size = new System.Drawing.Size(1136, 581);
+            this.dgvSlotRewards.Size = new System.Drawing.Size(1136, 576);
             this.dgvSlotRewards.TabIndex = 1;
             // 
             // SlotRewardNumber
@@ -4240,10 +4254,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.scMusicMain);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Location = new System.Drawing.Point(4, 27);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1142, 587);
+            this.tabPage4.Size = new System.Drawing.Size(1142, 582);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Music Editor";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -4262,7 +4276,7 @@
             // scMusicMain.Panel2
             // 
             this.scMusicMain.Panel2.Controls.Add(this.scBatzpupMusic2);
-            this.scMusicMain.Size = new System.Drawing.Size(1136, 581);
+            this.scMusicMain.Size = new System.Drawing.Size(1136, 576);
             this.scMusicMain.SplitterDistance = 378;
             this.scMusicMain.TabIndex = 0;
             // 
@@ -4271,7 +4285,7 @@
             this.lbMusicDuelists.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbMusicDuelists.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMusicDuelists.FormattingEnabled = true;
-            this.lbMusicDuelists.ItemHeight = 15;
+            this.lbMusicDuelists.ItemHeight = 18;
             this.lbMusicDuelists.Items.AddRange(new object[] {
             "Tutorial",
             "Seto",
@@ -4298,7 +4312,7 @@
             this.lbMusicDuelists.Location = new System.Drawing.Point(0, 0);
             this.lbMusicDuelists.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbMusicDuelists.Name = "lbMusicDuelists";
-            this.lbMusicDuelists.Size = new System.Drawing.Size(378, 581);
+            this.lbMusicDuelists.Size = new System.Drawing.Size(378, 576);
             this.lbMusicDuelists.TabIndex = 1;
             this.lbMusicDuelists.SelectedIndexChanged += new System.EventHandler(this.lbMusicDuelists_SelectedIndexChanged);
             // 
@@ -4315,7 +4329,7 @@
             // scBatzpupMusic2.Panel2
             // 
             this.scBatzpupMusic2.Panel2.Controls.Add(this.scBatzpupMusicPlayer);
-            this.scBatzpupMusic2.Size = new System.Drawing.Size(754, 581);
+            this.scBatzpupMusic2.Size = new System.Drawing.Size(754, 576);
             this.scBatzpupMusic2.SplitterDistance = 333;
             this.scBatzpupMusic2.TabIndex = 0;
             // 
@@ -4324,7 +4338,7 @@
             this.lbMusicTrack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbMusicTrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMusicTrack.FormattingEnabled = true;
-            this.lbMusicTrack.ItemHeight = 15;
+            this.lbMusicTrack.ItemHeight = 18;
             this.lbMusicTrack.Items.AddRange(new object[] {
             "01OpeningCutscene",
             "02MainMenu",
@@ -4373,7 +4387,7 @@
             this.lbMusicTrack.Location = new System.Drawing.Point(0, 0);
             this.lbMusicTrack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbMusicTrack.Name = "lbMusicTrack";
-            this.lbMusicTrack.Size = new System.Drawing.Size(333, 581);
+            this.lbMusicTrack.Size = new System.Drawing.Size(333, 576);
             this.lbMusicTrack.TabIndex = 2;
             this.lbMusicTrack.SelectedIndexChanged += new System.EventHandler(this.lbMusicTrack_SelectedIndexChanged);
             // 
@@ -4395,8 +4409,8 @@
             this.scBatzpupMusicPlayer.Panel2.Controls.Add(this.lblCurrentlyPlayingTitle);
             this.scBatzpupMusicPlayer.Panel2.Controls.Add(this.lblVolume);
             this.scBatzpupMusicPlayer.Panel2.Controls.Add(this.tbMusicVolume);
-            this.scBatzpupMusicPlayer.Size = new System.Drawing.Size(417, 581);
-            this.scBatzpupMusicPlayer.SplitterDistance = 260;
+            this.scBatzpupMusicPlayer.Size = new System.Drawing.Size(417, 576);
+            this.scBatzpupMusicPlayer.SplitterDistance = 257;
             this.scBatzpupMusicPlayer.TabIndex = 0;
             // 
             // scBatzpupMusicButtons
@@ -4413,8 +4427,8 @@
             // scBatzpupMusicButtons.Panel2
             // 
             this.scBatzpupMusicButtons.Panel2.Controls.Add(this.btnToggleMusic);
-            this.scBatzpupMusicButtons.Size = new System.Drawing.Size(417, 260);
-            this.scBatzpupMusicButtons.SplitterDistance = 129;
+            this.scBatzpupMusicButtons.Size = new System.Drawing.Size(417, 257);
+            this.scBatzpupMusicButtons.SplitterDistance = 127;
             this.scBatzpupMusicButtons.TabIndex = 0;
             // 
             // btnExtractMusic
@@ -4423,7 +4437,7 @@
             this.btnExtractMusic.Location = new System.Drawing.Point(0, 0);
             this.btnExtractMusic.Margin = new System.Windows.Forms.Padding(4);
             this.btnExtractMusic.Name = "btnExtractMusic";
-            this.btnExtractMusic.Size = new System.Drawing.Size(417, 129);
+            this.btnExtractMusic.Size = new System.Drawing.Size(417, 127);
             this.btnExtractMusic.TabIndex = 1;
             this.btnExtractMusic.Text = "Extract Music From ISO";
             this.btnExtractMusic.UseVisualStyleBackColor = true;
@@ -4435,7 +4449,7 @@
             this.btnToggleMusic.Location = new System.Drawing.Point(0, 0);
             this.btnToggleMusic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnToggleMusic.Name = "btnToggleMusic";
-            this.btnToggleMusic.Size = new System.Drawing.Size(417, 127);
+            this.btnToggleMusic.Size = new System.Drawing.Size(417, 126);
             this.btnToggleMusic.TabIndex = 2;
             this.btnToggleMusic.Text = "Play";
             this.btnToggleMusic.UseVisualStyleBackColor = true;
@@ -4445,10 +4459,10 @@
             // 
             this.lblCurrentMusic.AutoSize = true;
             this.lblCurrentMusic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCurrentMusic.Location = new System.Drawing.Point(0, 33);
+            this.lblCurrentMusic.Location = new System.Drawing.Point(0, 36);
             this.lblCurrentMusic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentMusic.Name = "lblCurrentMusic";
-            this.lblCurrentMusic.Size = new System.Drawing.Size(0, 15);
+            this.lblCurrentMusic.Size = new System.Drawing.Size(0, 18);
             this.lblCurrentMusic.TabIndex = 5;
             this.lblCurrentMusic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -4460,7 +4474,7 @@
             this.lblCurrentlyPlayingTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentlyPlayingTitle.Name = "lblCurrentlyPlayingTitle";
             this.lblCurrentlyPlayingTitle.Padding = new System.Windows.Forms.Padding(0, 0, 0, 18);
-            this.lblCurrentlyPlayingTitle.Size = new System.Drawing.Size(98, 33);
+            this.lblCurrentlyPlayingTitle.Size = new System.Drawing.Size(118, 36);
             this.lblCurrentlyPlayingTitle.TabIndex = 4;
             this.lblCurrentlyPlayingTitle.Text = "CurrentlyPlaying:";
             this.lblCurrentlyPlayingTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -4470,7 +4484,7 @@
             this.lblVolume.AutoSize = true;
             this.lblVolume.Location = new System.Drawing.Point(178, 213);
             this.lblVolume.Name = "lblVolume";
-            this.lblVolume.Size = new System.Drawing.Size(49, 15);
+            this.lblVolume.Size = new System.Drawing.Size(58, 18);
             this.lblVolume.TabIndex = 3;
             this.lblVolume.Text = "Volume";
             // 
@@ -4478,10 +4492,10 @@
             // 
             this.tbMusicVolume.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tbMusicVolume.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbMusicVolume.Location = new System.Drawing.Point(0, 272);
+            this.tbMusicVolume.Location = new System.Drawing.Point(0, 259);
             this.tbMusicVolume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMusicVolume.Name = "tbMusicVolume";
-            this.tbMusicVolume.Size = new System.Drawing.Size(417, 45);
+            this.tbMusicVolume.Size = new System.Drawing.Size(417, 56);
             this.tbMusicVolume.TabIndex = 2;
             this.tbMusicVolume.Value = 5;
             this.tbMusicVolume.ValueChanged += new System.EventHandler(this.tbMusicVolume_ValueChanged);
@@ -4489,9 +4503,9 @@
             // mapEditorTab
             // 
             this.mapEditorTab.Controls.Add(this.mapEditorSaveSplitContainer);
-            this.mapEditorTab.Location = new System.Drawing.Point(4, 24);
+            this.mapEditorTab.Location = new System.Drawing.Point(4, 27);
             this.mapEditorTab.Name = "mapEditorTab";
-            this.mapEditorTab.Size = new System.Drawing.Size(1156, 680);
+            this.mapEditorTab.Size = new System.Drawing.Size(1156, 677);
             this.mapEditorTab.TabIndex = 9;
             this.mapEditorTab.Text = "Map Editor";
             this.mapEditorTab.UseVisualStyleBackColor = true;
@@ -4510,7 +4524,7 @@
             // mapEditorSaveSplitContainer.Panel2
             // 
             this.mapEditorSaveSplitContainer.Panel2.Controls.Add(this.scBatzpupEditMap);
-            this.mapEditorSaveSplitContainer.Size = new System.Drawing.Size(1156, 680);
+            this.mapEditorSaveSplitContainer.Size = new System.Drawing.Size(1156, 677);
             this.mapEditorSaveSplitContainer.SplitterDistance = 25;
             this.mapEditorSaveSplitContainer.TabIndex = 0;
             // 
@@ -4538,7 +4552,7 @@
             // scBatzpupEditMap.Panel2
             // 
             this.scBatzpupEditMap.Panel2.Controls.Add(this.scBatzpupEditMapTiles);
-            this.scBatzpupEditMap.Size = new System.Drawing.Size(1156, 651);
+            this.scBatzpupEditMap.Size = new System.Drawing.Size(1156, 648);
             this.scBatzpupEditMap.SplitterDistance = 198;
             this.scBatzpupEditMap.TabIndex = 0;
             // 
@@ -4556,8 +4570,8 @@
             // scBatzpupEditDuelMapSelect.Panel2
             // 
             this.scBatzpupEditDuelMapSelect.Panel2.Controls.Add(this.lbDuelistMaps);
-            this.scBatzpupEditDuelMapSelect.Size = new System.Drawing.Size(198, 651);
-            this.scBatzpupEditDuelMapSelect.SplitterDistance = 37;
+            this.scBatzpupEditDuelMapSelect.Size = new System.Drawing.Size(198, 648);
+            this.scBatzpupEditDuelMapSelect.SplitterDistance = 36;
             this.scBatzpupEditDuelMapSelect.TabIndex = 0;
             // 
             // lblMapToSelect
@@ -4567,7 +4581,7 @@
             this.lblMapToSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMapToSelect.Location = new System.Drawing.Point(0, 0);
             this.lblMapToSelect.Name = "lblMapToSelect";
-            this.lblMapToSelect.Size = new System.Drawing.Size(132, 24);
+            this.lblMapToSelect.Size = new System.Drawing.Size(170, 29);
             this.lblMapToSelect.TabIndex = 1;
             this.lblMapToSelect.Text = "Map To Select";
             // 
@@ -4576,7 +4590,7 @@
             this.lbDuelistMaps.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbDuelistMaps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbDuelistMaps.FormattingEnabled = true;
-            this.lbDuelistMaps.ItemHeight = 15;
+            this.lbDuelistMaps.ItemHeight = 18;
             this.lbDuelistMaps.Items.AddRange(new object[] {
             "Tutorial",
             "Seto",
@@ -4627,7 +4641,7 @@
             this.lbDuelistMaps.Location = new System.Drawing.Point(0, 0);
             this.lbDuelistMaps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbDuelistMaps.Name = "lbDuelistMaps";
-            this.lbDuelistMaps.Size = new System.Drawing.Size(198, 610);
+            this.lbDuelistMaps.Size = new System.Drawing.Size(198, 608);
             this.lbDuelistMaps.TabIndex = 2;
             this.lbDuelistMaps.SelectedIndexChanged += new System.EventHandler(this.lbDuelistMaps_SelectedIndexChanged);
             // 
@@ -4650,7 +4664,7 @@
             this.scBatzpupEditMapTiles.Panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.splitContainer4_Panel2_MouseDown);
             this.scBatzpupEditMapTiles.Panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MapEditor_MouseMove);
             this.scBatzpupEditMapTiles.Panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MapEditor_MouseUp);
-            this.scBatzpupEditMapTiles.Size = new System.Drawing.Size(954, 651);
+            this.scBatzpupEditMapTiles.Size = new System.Drawing.Size(954, 648);
             this.scBatzpupEditMapTiles.SplitterDistance = 373;
             this.scBatzpupEditMapTiles.TabIndex = 0;
             // 
@@ -4669,17 +4683,17 @@
             // scBatzpupEditMapThanks.Panel2
             // 
             this.scBatzpupEditMapThanks.Panel2.Controls.Add(this.scBatzpupEditMapPallete);
-            this.scBatzpupEditMapThanks.Size = new System.Drawing.Size(373, 651);
-            this.scBatzpupEditMapThanks.SplitterDistance = 64;
+            this.scBatzpupEditMapThanks.Size = new System.Drawing.Size(373, 648);
+            this.scBatzpupEditMapThanks.SplitterDistance = 62;
             this.scBatzpupEditMapThanks.TabIndex = 0;
             // 
             // llblDotrMap
             // 
             this.llblDotrMap.AutoSize = true;
             this.llblDotrMap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.llblDotrMap.Location = new System.Drawing.Point(0, 25);
+            this.llblDotrMap.Location = new System.Drawing.Point(0, 28);
             this.llblDotrMap.Name = "llblDotrMap";
-            this.llblDotrMap.Size = new System.Drawing.Size(93, 15);
+            this.llblDotrMap.Size = new System.Drawing.Size(113, 18);
             this.llblDotrMap.TabIndex = 2;
             this.llblDotrMap.TabStop = true;
             this.llblDotrMap.Text = "rjoken/Thotsicle";
@@ -4691,7 +4705,7 @@
             this.lblDotrMap.Location = new System.Drawing.Point(0, 0);
             this.lblDotrMap.Name = "lblDotrMap";
             this.lblDotrMap.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.lblDotrMap.Size = new System.Drawing.Size(183, 25);
+            this.lblDotrMap.Size = new System.Drawing.Size(226, 28);
             this.lblDotrMap.TabIndex = 1;
             this.lblDotrMap.Text = "Ported Version of DOTR Map by:";
             // 
@@ -4710,7 +4724,7 @@
             // scBatzpupEditMapPallete.Panel2
             // 
             this.scBatzpupEditMapPallete.Panel2.Controls.Add(this.tbPallete);
-            this.scBatzpupEditMapPallete.Size = new System.Drawing.Size(373, 583);
+            this.scBatzpupEditMapPallete.Size = new System.Drawing.Size(373, 582);
             this.scBatzpupEditMapPallete.SplitterDistance = 152;
             this.scBatzpupEditMapPallete.TabIndex = 0;
             // 
@@ -4774,7 +4788,7 @@
             this.tbPallete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tbPallete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tbPallete.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tbPallete.Size = new System.Drawing.Size(217, 583);
+            this.tbPallete.Size = new System.Drawing.Size(217, 582);
             this.tbPallete.TabIndex = 0;
             // 
             // pbCrush
@@ -4922,7 +4936,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(219, 538);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 20);
+            this.label10.Size = new System.Drawing.Size(92, 25);
             this.label10.TabIndex = 3;
             this.label10.Text = "Red Side";
             // 
@@ -4932,7 +4946,7 @@
             this.lblWhiteSide.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWhiteSide.Location = new System.Drawing.Point(219, 23);
             this.lblWhiteSide.Name = "lblWhiteSide";
-            this.lblWhiteSide.Size = new System.Drawing.Size(86, 20);
+            this.lblWhiteSide.Size = new System.Drawing.Size(108, 25);
             this.lblWhiteSide.TabIndex = 2;
             this.lblWhiteSide.Text = "White Side";
             // 
@@ -4942,7 +4956,7 @@
             this.lblMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMap.Location = new System.Drawing.Point(28, 12);
             this.lblMap.Name = "lblMap";
-            this.lblMap.Size = new System.Drawing.Size(74, 31);
+            this.lblMap.Size = new System.Drawing.Size(89, 38);
             this.lblMap.TabIndex = 1;
             this.lblMap.Text = "Map:";
             // 
@@ -4961,20 +4975,6 @@
             // RefreshEditor
             // 
             this.RefreshEditor.Tick += new System.EventHandler(this.RefreshEditor_Tick);
-            // 
-            // cbToonLeaderTerrainChange
-            // 
-            this.cbToonLeaderTerrainChange.AutoSize = true;
-            this.cbToonLeaderTerrainChange.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbToonLeaderTerrainChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbToonLeaderTerrainChange.Location = new System.Drawing.Point(0, 481);
-            this.cbToonLeaderTerrainChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbToonLeaderTerrainChange.Name = "cbToonLeaderTerrainChange";
-            this.cbToonLeaderTerrainChange.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.cbToonLeaderTerrainChange.Size = new System.Drawing.Size(521, 37);
-            this.cbToonLeaderTerrainChange.TabIndex = 24;
-            this.cbToonLeaderTerrainChange.Text = "Toon Deck Leader Land Change";
-            this.cbToonLeaderTerrainChange.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

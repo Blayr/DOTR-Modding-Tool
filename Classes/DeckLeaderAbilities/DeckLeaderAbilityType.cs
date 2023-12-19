@@ -3,7 +3,7 @@
 	HiddenCard = 0,
 	ExtraSlots = 1,
 	DestinyDraw = 2,
-  LPRecovery = 4,
+	LPRecovery = 4,
 	IncreasedMovement = 5,
 	TerrainChange = 6,
 	DirectDamageHalved = 7,

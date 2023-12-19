@@ -1,4 +1,5 @@
 ﻿using DOTR_MODDING_TOOL.Classes;
+
 using Equin.ApplicationFramework;
 using System;
 using System.Collections.Generic;
@@ -166,6 +167,7 @@ namespace DOTR_Modding_Tool
       {
         deck.Save(dataAccess);
         deckCardListBinding.ResetBindings();
+        UpdateStartingDeck.CreateNewStartingDeckData(deckList);
         MessageBox.Show("Deck saved.", "Save successful");
       } catch (InvalidOperationException error)
       {

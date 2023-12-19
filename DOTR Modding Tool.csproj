@@ -114,11 +114,14 @@
     <Compile Include="Classes\GameplayPatches\Patch.cs" />
     <Compile Include="Classes\GameplayPatches\PatchByteSequences.cs" />
     <Compile Include="Classes\GameplayPatches\Patcher.cs" />
+    <Compile Include="Classes\GameplayPatches\PreloadAllImages.cs" />
     <Compile Include="Classes\GameplayPatches\RemoveDCRequirements.cs" />
     <Compile Include="Classes\GameplayPatches\RemoveRNGFromSlots.cs" />
     <Compile Include="Classes\GameplayPatches\ToonLeadersMovePatch.cs" />
+    <Compile Include="Classes\UpdateStartingDeck.cs" />
     <Compile Include="Classes\MapTile.cs" />
     <Compile Include="Classes\SortableBindingList.cs" />
+    <Compile Include="Classes\StarterDeckDataEnums.cs" />
     <Compile Include="Classes\VanillaMapBytes.cs" />
     <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
