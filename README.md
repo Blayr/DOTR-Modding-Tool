@@ -28,8 +28,8 @@ https://www.youtube.com/watch?v=Y2aqkEJWRT8
 * Adjust deck leader rank thresholds (no more grinding to get SD!)
 
 ## Plans for future releases
-- Fix starter deck image load when picking your deck and allow modification of starter deck average summoning level / dominant types + attributes
-- Integrate [Thotsicle's map editor](https://github.com/rjoken/DOTRMap) for a more complete modding experience
+- Fix starter deck image load when picking your deck and allow modification of starter deck average summoning level / dominant types + attributes (completed in batzpup patches)
+- Integrate [Thotsicle's map editor](https://github.com/rjoken/DOTRMap) for a more complete modding experience  (completed in batzpup patches)
 - Make hidden card editor more intuitive to use
 
 ## Tool orgranization
