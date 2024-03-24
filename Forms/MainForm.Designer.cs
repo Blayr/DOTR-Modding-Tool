@@ -4915,6 +4915,7 @@
             this.pbWasteland.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbWasteland.TabIndex = 2;
             this.pbWasteland.TabStop = false;
+            this.pbWasteland.Click += new System.EventHandler(this.pbWasteland_Click);
             // 
             // pbForest
             // 

@@ -1,4 +1,5 @@
-    namespace GameplayPatches {
+
+namespace GameplayPatches {
     public class NoNegativeXP : Patch {
         static int DelUnit = 0x21f48c;
         static int DelUnit2 = 0x21f504;

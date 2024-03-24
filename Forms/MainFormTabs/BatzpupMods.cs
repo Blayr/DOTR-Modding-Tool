@@ -308,6 +308,9 @@
             new GameplayPatches.NoNegativeXP().ApplyOrRemove(cbRemoveNegetiveXP.Checked);
             new GameplayPatches.RemoveRNGFromSlots().ApplyOrRemove(cbRemoveRNGFromSlots.Checked);
             new GameplayPatches.ToonLeadersMovePatch().ApplyOrRemove(cbToonLeaderTerrainChange.Checked);
+            new GameplayPatches.AllowAllCustomDuels().ApplyOrRemove(cbAllowAllCustomDuels.Checked);
+            new GameplayPatches.KeepReincarnatedCard().ApplyOrRemove(cbKeepReincarnatedCard.Checked);
+            new GameplayPatches.RemoveDCRequirements().ApplyOrRemove(cbNoDCRequirementPostGame.Checked);
 
             if (cbUseCustomMusic.Checked)
             {
@@ -346,9 +349,7 @@
                 dataAccess.ApplyPatch(0x1a0f80, new byte[4] { 0x84, 0x0c, 0x24, 0x96 });
             }
 
-            new GameplayPatches.AllowAllCustomDuels().ApplyOrRemove(cbAllowAllCustomDuels.Checked);
-            new GameplayPatches.KeepReincarnatedCard().ApplyOrRemove(cbKeepReincarnatedCard.Checked);
-            new GameplayPatches.RemoveDCRequirements().ApplyOrRemove(cbNoDCRequirementPostGame.Checked);
+
 
             if (cbSideFirst.Checked)
             {
