@@ -176,6 +176,8 @@
             this.tbBatzpup = new System.Windows.Forms.TabControl();
             this.batzpupTbMain = new System.Windows.Forms.TabPage();
             this.scBatzpupMain = new System.Windows.Forms.SplitContainer();
+            this.cbVariousAIFixes = new System.Windows.Forms.CheckBox();
+            this.cbFixSlotsExtraSlotsAbility = new System.Windows.Forms.CheckBox();
             this.cbToonLeaderTerrainChange = new System.Windows.Forms.CheckBox();
             this.cbCrushCardChange = new System.Windows.Forms.CheckBox();
             this.cbNoDCRequirementPostGame = new System.Windows.Forms.CheckBox();
@@ -258,6 +260,8 @@
             this.cardConstantsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cardDeckLeaderAbilitiesContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RefreshEditor = new System.Windows.Forms.Timer(this.components);
+            this.cbFixSlotsExtraSlotsAbility = new System.Windows.Forms.CheckBox();
+            this.cbVariousAIFixes = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.hiddenCardsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenCardsSplitContainer)).BeginInit();
@@ -1962,6 +1966,8 @@
             // 
             // scBatzpupMain.Panel1
             // 
+            this.scBatzpupMain.Panel1.Controls.Add(this.cbVariousAIFixes);
+            this.scBatzpupMain.Panel1.Controls.Add(this.cbFixSlotsExtraSlotsAbility);
             this.scBatzpupMain.Panel1.Controls.Add(this.cbToonLeaderTerrainChange);
             this.scBatzpupMain.Panel1.Controls.Add(this.cbCrushCardChange);
             this.scBatzpupMain.Panel1.Controls.Add(this.cbNoDCRequirementPostGame);
@@ -1989,11 +1995,39 @@
             this.scBatzpupMain.SplitterDistance = 521;
             this.scBatzpupMain.TabIndex = 0;
             // 
+            // cbVariousAIFixes
+            // 
+            this.cbVariousAIFixes.AutoSize = true;
+            this.cbVariousAIFixes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbVariousAIFixes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVariousAIFixes.Location = new System.Drawing.Point(0, 666);
+            this.cbVariousAIFixes.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.cbVariousAIFixes.Name = "cbVariousAIFixes";
+            this.cbVariousAIFixes.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.cbVariousAIFixes.Size = new System.Drawing.Size(697, 50);
+            this.cbVariousAIFixes.TabIndex = 26;
+            this.cbVariousAIFixes.Text = "Various AI Fixes";
+            this.cbVariousAIFixes.UseVisualStyleBackColor = true;
+            // 
+            // cbFixSlotsExtraSlotsAbility
+            // 
+            this.cbFixSlotsExtraSlotsAbility.AutoSize = true;
+            this.cbFixSlotsExtraSlotsAbility.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFixSlotsExtraSlotsAbility.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFixSlotsExtraSlotsAbility.Location = new System.Drawing.Point(0, 616);
+            this.cbFixSlotsExtraSlotsAbility.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.cbFixSlotsExtraSlotsAbility.Name = "cbFixSlotsExtraSlotsAbility";
+            this.cbFixSlotsExtraSlotsAbility.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
+            this.cbFixSlotsExtraSlotsAbility.Size = new System.Drawing.Size(697, 50);
+            this.cbFixSlotsExtraSlotsAbility.TabIndex = 25;
+            this.cbFixSlotsExtraSlotsAbility.Text = "Fix Extra Slots Ability";
+            this.cbFixSlotsExtraSlotsAbility.UseVisualStyleBackColor = true;
+            // 
             // cbToonLeaderTerrainChange
             // 
             this.cbToonLeaderTerrainChange.AutoSize = true;
             this.cbToonLeaderTerrainChange.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbToonLeaderTerrainChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbToonLeaderTerrainChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.cbToonLeaderTerrainChange.Location = new System.Drawing.Point(0, 520);
             this.cbToonLeaderTerrainChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbToonLeaderTerrainChange.Name = "cbToonLeaderTerrainChange";
@@ -4977,6 +5011,34 @@
             // 
             this.RefreshEditor.Tick += new System.EventHandler(this.RefreshEditor_Tick);
             // 
+            // cbFixSlotsExtraSlotsAbility
+            // 
+            this.cbFixSlotsExtraSlotsAbility.AutoSize = true;
+            this.cbFixSlotsExtraSlotsAbility.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFixSlotsExtraSlotsAbility.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFixSlotsExtraSlotsAbility.Location = new System.Drawing.Point(0, 616);
+            this.cbFixSlotsExtraSlotsAbility.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.cbFixSlotsExtraSlotsAbility.Name = "cbFixSlotsExtraSlotsAbility";
+            this.cbFixSlotsExtraSlotsAbility.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+            this.cbFixSlotsExtraSlotsAbility.Size = new System.Drawing.Size(697, 44);
+            this.cbFixSlotsExtraSlotsAbility.TabIndex = 25;
+            this.cbFixSlotsExtraSlotsAbility.Text = "Fix Extra Slots Ability";
+            this.cbFixSlotsExtraSlotsAbility.UseVisualStyleBackColor = true;
+            // 
+            // cbVariousAIFixes
+            // 
+            this.cbVariousAIFixes.AutoSize = true;
+            this.cbVariousAIFixes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbVariousAIFixes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVariousAIFixes.Location = new System.Drawing.Point(0, 660);
+            this.cbVariousAIFixes.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.cbVariousAIFixes.Name = "cbVariousAIFixes";
+            this.cbVariousAIFixes.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+            this.cbVariousAIFixes.Size = new System.Drawing.Size(697, 44);
+            this.cbVariousAIFixes.TabIndex = 26;
+            this.cbVariousAIFixes.Text = "Various AI Fixes";
+            this.cbVariousAIFixes.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5372,5 +5434,7 @@
         private CheckBox cbChangeLpRecovery;
         private CheckBox cbCrushCardChange;
         private CheckBox cbToonLeaderTerrainChange;
+        private CheckBox cbFixSlotsExtraSlotsAbility;
+        private CheckBox cbVariousAIFixes;
     }
 }
