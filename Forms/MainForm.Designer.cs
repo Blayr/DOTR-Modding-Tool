@@ -176,8 +176,7 @@
             this.tbBatzpup = new System.Windows.Forms.TabControl();
             this.batzpupTbMain = new System.Windows.Forms.TabPage();
             this.scBatzpupMain = new System.Windows.Forms.SplitContainer();
-            this.cbVariousAIFixes = new System.Windows.Forms.CheckBox();
-            this.cbFixSlotsExtraSlotsAbility = new System.Windows.Forms.CheckBox();
+            
             this.cbToonLeaderTerrainChange = new System.Windows.Forms.CheckBox();
             this.cbCrushCardChange = new System.Windows.Forms.CheckBox();
             this.cbNoDCRequirementPostGame = new System.Windows.Forms.CheckBox();

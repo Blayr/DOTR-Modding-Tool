@@ -1,7 +1,7 @@
 ﻿namespace DOTR_Modding_Tool
 {
     using DiscUtils.Iso9660;
-    using DOTR_MODDING_TOOL.Classes;
+    
     using NAudio.MediaFoundation;
     using NAudio.Wave;
     using System;
@@ -85,9 +85,13 @@
             cbAllFusions.Checked = dataAccess.CheckIfPatchApplied(Patcher.AllowAllHandFusions.Offset, Patcher.AllowAllHandFusions.Patch) || dataAccess.CheckIfPatchApplied(Patcher.AllowAllFieldFusions.Offset, Patcher.AllowAllFieldFusions.Patch);
             cbCrushCardChange.Checked = dataAccess.CheckIfPatchApplied(0x29ca68, new byte[4] { 0xfd, 0x02, 0x00, 0x00 });
             cbToonLeaderTerrainChange.Checked = new GameplayPatches.ToonLeadersMovePatch().IsApplied();
+            cbFixSlotsExtraSlotsAbility.Checked = new FixExtraCardPower().IsApplied();
+            cbVariousAIFixes.Checked = CheckForVariousAIFixes();
             
             ReadValuesFromIso();
         }
+
+      
 
         private void ReadValuesFromIso()
         {
@@ -311,6 +315,9 @@
             new GameplayPatches.AllowAllCustomDuels().ApplyOrRemove(cbAllowAllCustomDuels.Checked);
             new GameplayPatches.KeepReincarnatedCard().ApplyOrRemove(cbKeepReincarnatedCard.Checked);
             new GameplayPatches.RemoveDCRequirements().ApplyOrRemove(cbNoDCRequirementPostGame.Checked);
+            new GameplayPatches.FixExtraCardPower().ApplyOrRemove(cbFixSlotsExtraSlotsAbility.Checked);
+            new GameplayPatches.AiFixDarkhole().ApplyOrRemove(cbVariousAIFixes.Checked);
+            new GameplayPatches.FixFeatherDusterUsage().ApplyOrRemove(cbVariousAIFixes.Checked);
 
             if (cbUseCustomMusic.Checked)
             {
@@ -603,6 +610,10 @@
             return cbAddAddtionalSlotRewards.Checked || cbAIInputFix.Checked || cbUseCustomMusic.Checked || cbAllowAllCustomDuels.Checked || cbNoDCRequirementPostGame.Checked || cbFastIntro.Checked || cbForceNewGameSide.Checked;
         }
 
+        private bool CheckForVariousAIFixes()
+        {
+            return new AiFixDarkhole().IsApplied() || new FixFeatherDusterUsage().IsApplied();
+        }
         private void SaveSlots()
         {
             if (cbAddAddtionalSlotRewards.Checked)

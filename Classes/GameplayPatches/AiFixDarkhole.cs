@@ -7,8 +7,8 @@ namespace GameplayPatches
     /// </summary>
     public class AiFixDarkhole : Patch
     {
-        static int patchLocation = 0x16b0f0;
-        static int bonesPatchLocation = 0x0012b000;
+        static int patchLocation = 0x13B1F0;
+        static int bonesPatchLocation = 0xFB100;
 
         public override bool IsApplied()
         {
