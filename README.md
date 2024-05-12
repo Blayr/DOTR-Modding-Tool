@@ -26,12 +26,12 @@ https://www.youtube.com/watch?v=Y2aqkEJWRT8
 * Change which AI each duelist uses
 * Customize hidden card location and reward
 * Adjust deck leader rank thresholds (no more grinding to get SD!)
+- Fix starter deck image load when picking your deck and allow modification of starter deck average summoning level / dominant types + attributes 
+- Integrate [Thotsicle's map editor](https://github.com/rjoken/DOTRMap) for a more complete modding experience
 
 ## Plans for future releases
-- Fix starter deck image load when picking your deck and allow modification of starter deck average summoning level / dominant types + attributes (completed in batzpup patches)
-- Integrate [Thotsicle's map editor](https://github.com/rjoken/DOTRMap) for a more complete modding experience  (completed in batzpup patches)
 - Make hidden card editor more intuitive to use
-
+- 
 ## Tool orgranization
 Due to the nature of how this tool was developed, things are grouped together based on how the associated information was stored on the game's disc.
 This is why Deck Leader Abilities and Card Equip compatibility are not included in the Card Properties tab, they are stored in a different area of the disc than the rest of the card information.
@@ -45,3 +45,4 @@ This project uses the [BindingListView library made by andrewdavey](https://sour
 ## Acknowledgements
 * GenericMadScientist - Did extensive reverse engineering and documented the inner working of the game.
 * Clovis - His passion and dedication towards the game inspired me to create this tool for the purpose of fast-tracking his development of the [DotR Redux Mod](https://www.youtube.com/watch?v=E_Aa2xC0Gig&ab_channel=Clovis).
+* Batzpup for the batzpup mod changes
