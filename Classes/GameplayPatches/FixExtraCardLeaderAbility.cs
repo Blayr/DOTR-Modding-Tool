@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameplayPatches
 {
-    internal class FixExtraCardPower : Patch
+    internal class FixExtraCardLeaderAbility : Patch
     {
 
 
