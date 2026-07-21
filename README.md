@@ -1,3 +1,12 @@
+# ⚠️ NOTICE - project stale + recommended alternative
+This tool has not been worked on in several years, with no plans to update it anytime soon (or at all).
+I highly recommend checking out Batzpup's DOTR Modding Tool Redux, which includes several additional features
+
+https://github.com/batzpup/DotrModdingToolRedux
+
+---
+
+
 # DOTR Modding Tool
 A tool to modify the NTSC-U version of the game Yu-Gi-Oh! Duelists of the Roses.
 
@@ -28,9 +37,11 @@ https://www.youtube.com/watch?v=Y2aqkEJWRT8
 * Adjust deck leader rank thresholds (no more grinding to get SD!)
 
 ## Plans for future releases
-- Fix starter deck image load when picking your deck and allow modification of starter deck average summoning level / dominant types + attributes
-- Integrate [Thotsicle's map editor](https://github.com/rjoken/DOTRMap) for a more complete modding experience
-- Make hidden card editor more intuitive to use
+- ~~Fix starter deck image load when picking your deck and allow modification of starter deck average summoning level / dominant types + attributes~~
+- ~~Integrate [Thotsicle's map editor](https://github.com/rjoken/DOTRMap) for a more complete modding experience~~
+- ~~Make hidden card editor more intuitive to use~~
+
+I haven't touched this project in years, updates are extremely unlikely. I highly recommend you checkout Batzpup's DOTR Modding Tool Redux tool linked above.
 
 ## Tool orgranization
 Due to the nature of how this tool was developed, things are grouped together based on how the associated information was stored on the game's disc.
