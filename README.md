@@ -1,6 +1,9 @@
 # ⚠️ NOTICE - project stale + recommended alternative
 This tool has not been worked on in several years, with no plans to update it anytime soon (or at all).
-I highly recommend checking out Batzpup's DOTR Modding Tool Redux, which includes several additional features
+
+
+Although there are little to no known bugs and overall functions well, I recommend checking out
+Batzpup's DOTR Modding Tool Redux, which is more actively maintained and includes several additional features.
 
 https://github.com/batzpup/DotrModdingToolRedux
 
